@@ -22,4 +22,5 @@
     <string name="hiccup_summary">"Informe de estabilidad"</string>
     <string name="fairphone_settings_title">"Funciones de hardware avanzadas"</string>
     <string name="fairphone_settings_summary">"Habilita OpenGL ES 3.0 y el giroscopio"</string>
+    <string name="processor_info">"Procesador"</string>
 </resources>

@@ -34,4 +34,8 @@
     <string name="fairphone_settings_title">Enhanced hardware features</string>
     <!-- Maintenance settings screen, the summary for the item to take the user to the Fairphone settings. -->
     <string name="fairphone_settings_summary">Enable OpenGL ES 3.0 and gyroscope sensor</string>
+
+    <!-- About --> <skip />
+    <!-- About phone, status item label.  The device's processor. -->
+    <string name="processor_info">Processor</string>
 </resources>

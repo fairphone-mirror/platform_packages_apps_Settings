@@ -22,4 +22,5 @@
     <string name="hiccup_summary">"Rapport de stabilité"</string>
     <string name="fairphone_settings_title">"Fonctionnalités matérielles améliorées"</string>
     <string name="fairphone_settings_summary">"Activer OpenGL ES 3.0 et le capteur gyroscopique"</string>
+    <string name="processor_info">"Processeur"</string>
 </resources>
