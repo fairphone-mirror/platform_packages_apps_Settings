@@ -760,6 +760,11 @@ public class ApnEditor extends SettingsPreferenceFragment
                         telephonyManager = telephonyManagerForSubId;
                     }
                     mMvnoMatchData.setText(telephonyManager.getGroupIdLevel1());
+                } else if (values[mvnoIndex].equals("ICCID")) {
+                    if (mMvnoMatchDataStr != null) {
+                        Log.d(TAG, "mMvnoMatchDataStr: " + mMvnoMatchDataStr);
+                        mMvnoMatchData.setText(mMvnoMatchDataStr);
+                    }
                 } else {
                     // mvno type 'none' case. At this time, mvnoIndex should be 0.
                     mMvnoMatchData.setText("");
