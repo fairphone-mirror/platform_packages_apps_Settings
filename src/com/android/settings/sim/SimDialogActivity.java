@@ -55,6 +55,8 @@ public class SimDialogActivity extends FragmentActivity {
     // Show the "select SMS subscription" dialog, but don't save as default, just return a result
     public static final int SMS_PICK_FOR_MESSAGE = 4;
 
+    private static final String SETTING_USER_PREF_DATA_SUB = "user_preferred_data_sub";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -115,6 +117,7 @@ public class SimDialogActivity extends FragmentActivity {
         switch (dialogType) {
             case DATA_PICK:
                 setDefaultDataSubId(subId);
+                setUserPrefDataSubIdInDb(subId);
                 break;
             case CALLS_PICK:
                 setDefaultCallsSubId(subId);
@@ -160,6 +163,12 @@ public class SimDialogActivity extends FragmentActivity {
         telecomManager.setUserSelectedOutgoingPhoneAccount(phoneAccount);
     }
 
+    private void setUserPrefDataSubIdInDb(int subId) {
+        android.provider.Settings.Global.putInt(getContentResolver(),
+                SETTING_USER_PREF_DATA_SUB, subId);
+        Log.d(TAG, "updating data subId: " + subId + " in DB");
+    }
+
     private void setDefaultSmsSubId(final int subId) {
         final SubscriptionManager subscriptionManager = getSystemService(SubscriptionManager.class);
         subscriptionManager.setDefaultSmsSubId(subId);
@@ -167,6 +176,7 @@ public class SimDialogActivity extends FragmentActivity {
 
     private void setPreferredSim(final int subId) {
         setDefaultDataSubId(subId);
+        setUserPrefDataSubIdInDb(subId);
         setDefaultSmsSubId(subId);
         setDefaultCallsSubId(subId);
     }
