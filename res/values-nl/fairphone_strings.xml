@@ -19,4 +19,5 @@
     <string name="proximity_sensor_settings_list_item_title">"Afstandssensor"</string>
     <string name="hiccup_settings_list_item_title">"Hiccup"</string>
     <string name="hiccup_settings_list_item_summary">"Stabiliteit Rapportage"</string>
+    <string name="status_assembly_number">Assemblage nummer</string>
 </resources>

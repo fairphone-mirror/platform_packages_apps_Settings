@@ -19,4 +19,5 @@
     <string name="proximity_sensor_settings_list_item_title">"Capteur de proximité"</string>
     <string name="hiccup_settings_list_item_title">"Hiccup"</string>
     <string name="hiccup_settings_list_item_summary">"Rapport de stabilité"</string>
+    <string name="status_assembly_number">"Numéro d'assemblage"</string>
 </resources>

@@ -26,4 +26,7 @@
     <!-- Maintenance settings screen, the title for the item to take the user to the Hiccup settings. -->
     <string name="hiccup_settings_list_item_title">Hiccup</string>
     <string name="hiccup_settings_list_item_summary">Stability reporting</string>
+
+    <!-- The assembly number (set at the factory). -->
+    <string name="status_assembly_number">Assembly number</string>
 </resources>

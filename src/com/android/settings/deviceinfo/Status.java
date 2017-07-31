@@ -37,6 +37,7 @@ import android.os.SystemProperties;
 import android.os.UserManager;
 import android.support.v7.preference.Preference;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.internal.util.ArrayUtils;
@@ -44,6 +45,10 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.ref.WeakReference;
 
 /**
@@ -55,12 +60,16 @@ import java.lang.ref.WeakReference;
  *
  */
 public class Status extends SettingsPreferenceFragment {
+    private static final String TAG = "Settings.Status";
+
+    private static final String ASSEMBLY_NUMBER_FILE = "/persist/phoneid.bin";
 
     private static final String KEY_BATTERY_STATUS = "battery_status";
     private static final String KEY_BATTERY_LEVEL = "battery_level";
     private static final String KEY_IP_ADDRESS = "wifi_ip_address";
     private static final String KEY_WIFI_MAC_ADDRESS = "wifi_mac_address";
     private static final String KEY_BT_ADDRESS = "bt_address";
+    private static final String KEY_ASSEMBLY_NUMBER = "assembly_number";
     private static final String KEY_SERIAL_NUMBER = "serial_number";
     private static final String KEY_WIMAX_MAC_ADDRESS = "wimax_mac_address";
     private static final String KEY_SIM_STATUS = "sim_status";
@@ -194,6 +203,11 @@ public class Status extends SettingsPreferenceFragment {
         }
 
         updateConnectivity();
+
+        String assemblyNumber = getAssemblyNumber();
+        if (!TextUtils.isEmpty(assemblyNumber)) {
+            setSummaryText(KEY_ASSEMBLY_NUMBER, assemblyNumber);
+        }
 
         String serial = Build.SERIAL;
         if (serial != null && !serial.equals("")) {
@@ -341,5 +355,32 @@ public class Status extends SettingsPreferenceFragment {
         int h = (int)((t / 3600));
 
         return h + ":" + pad(m) + ":" + pad(s);
+    }
+
+    private static String getAssemblyNumber() {
+        String assemblyNumber = null;
+        FileInputStream input = null;
+
+        try {
+            input = new FileInputStream(new File(ASSEMBLY_NUMBER_FILE));
+            final byte[] bytes = new byte[input.available()];
+
+            input.read(bytes);
+            assemblyNumber = new String(bytes, "ASCII");
+        } catch (FileNotFoundException e) {
+            Log.wtf(TAG, "Assembly number file not found", e);
+        } catch(IOException e) {
+            Log.wtf(TAG, "Could not read the assembly number file", e);
+        } finally {
+            try {
+                if (input != null) {
+                    input.close();
+                }
+            } catch (Exception e) {
+                Log.wtf(TAG, e);
+            }
+        }
+
+        return assemblyNumber;
     }
 }
