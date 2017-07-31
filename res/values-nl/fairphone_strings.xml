@@ -23,4 +23,5 @@
     <string name="fairphone_settings_title">"Verbeterde hardwarefuncties"</string>
     <string name="fairphone_settings_summary">"Schakel OpenGL ES 3.0 en gyroscoopsensor in"</string>
     <string name="processor_info">"Processor"</string>
+    <string name="assembly_number">"Assemblagenummer"</string>
 </resources>

@@ -23,4 +23,5 @@
     <string name="fairphone_settings_title">"Funzioni hardware avanzate"</string>
     <string name="fairphone_settings_summary">"Abilita OpenGL ES 3.0 e il giroscopico"</string>
     <string name="processor_info">"Processore"</string>
+    <string name="assembly_number">"Numero di assemblaggio"</string>
 </resources>

@@ -38,4 +38,6 @@
     <!-- About --> <skip />
     <!-- About phone, status item label.  The device's processor. -->
     <string name="processor_info">Processor</string>
+    <!-- About phone, status item label.  The hardware assembly number (set at the factory). -->
+    <string name="assembly_number">Assembly number</string>
 </resources>

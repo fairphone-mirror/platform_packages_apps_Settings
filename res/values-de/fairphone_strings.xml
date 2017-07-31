@@ -23,4 +23,5 @@
     <string name="fairphone_settings_title">"Erweiterte Hardware-Funktionen"</string>
     <string name="fairphone_settings_summary">"OpenGL ES 3.0 und Gyroskop aktivieren"</string>
     <string name="processor_info">"Prozessor"</string>
+    <string name="assembly_number">"Fertigungsnummer"</string>
 </resources>
