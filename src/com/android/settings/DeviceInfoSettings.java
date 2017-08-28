@@ -78,6 +78,14 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
     private static final String KEY_DEVICE_FEEDBACK = "device_feedback";
     private static final String KEY_SAFETY_LEGAL = "safetylegal";
+    private static final String KEY_RECEIVER_MODULE_INFO = "receiver_module_info";
+    private static final String PROPERTY_FRONT_CAMERA_SENSOR = "fp2.cam.front.sensor";
+    private static final String VALUE_FRONT_CAMERA_SENSOR_OV2685 = "ov2685";
+    private static final String VALUE_FRONT_CAMERA_SENSOR_OV5670 = "ov5670";
+    private static final String KEY_CAMERA_MODULE_INFO = "camera_module_info";
+    private static final String PROPERTY_MAIN_CAMERA_SENSOR = "fp2.cam.main.sensor";
+    private static final String VALUE_MAIN_CAMERA_SENSOR_OV8865 = "ov8865_q8v18a";
+    private static final String VALUE_MAIN_CAMERA_SENSOR_OV12870 = "ov12870";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
@@ -222,6 +230,9 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                 getActivity(), UserManager.DISALLOW_DEBUGGING_FEATURES, UserHandle.myUserId());
         mDebuggingFeaturesDisallowedBySystem = RestrictedLockUtils.hasBaseUserRestriction(
                 getActivity(), UserManager.DISALLOW_DEBUGGING_FEATURES, UserHandle.myUserId());
+
+        setStringSummary(KEY_RECEIVER_MODULE_INFO, getReceiverModuleInfo());
+        setStringSummary(KEY_CAMERA_MODULE_INFO, getCameraModuleInfo());
     }
 
     @Override
@@ -403,6 +414,45 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         intent.setPackage(reporterPackage);
         startActivityForResult(intent, 0);
     }
+
+    private String getReceiverModuleInfo() {
+        final String frontCameraSensor =
+                SystemProperties.get(PROPERTY_FRONT_CAMERA_SENSOR);
+        String info;
+
+        if (VALUE_FRONT_CAMERA_SENSOR_OV2685.equals(frontCameraSensor)) {
+            info = getResources().getString(R.string.receiver_module_ov2685);
+        } else if (VALUE_FRONT_CAMERA_SENSOR_OV5670.equals(frontCameraSensor)) {
+            info = getResources().getString(R.string.receiver_module_ov5670);
+        } else {
+            // Unexpected property value, or missing
+            info = getResources().getString(R.string.device_info_default);
+            Log.w(LOG_TAG, "Property " + PROPERTY_FRONT_CAMERA_SENSOR
+                    + " has an unknown value of " + frontCameraSensor);
+        }
+
+        return info;
+    }
+
+    private String getCameraModuleInfo() {
+        final String mainCameraSensor =
+                SystemProperties.get(PROPERTY_MAIN_CAMERA_SENSOR);
+        String info;
+
+        if (VALUE_MAIN_CAMERA_SENSOR_OV8865.equals(mainCameraSensor)) {
+            info = getResources().getString(R.string.camera_module_ov8865);
+        } else if (VALUE_MAIN_CAMERA_SENSOR_OV12870.equals(mainCameraSensor)) {
+            info = getResources().getString(R.string.camera_module_ov12870);
+        } else {
+            // Unexpected property value, or missing
+            info = getResources().getString(R.string.device_info_default);
+            Log.w(LOG_TAG, "Property " + PROPERTY_MAIN_CAMERA_SENSOR
+                    + " has an unknown value of " + mainCameraSensor);
+        }
+
+        return info;
+    }
+
 
     private static class SummaryProvider implements SummaryLoader.SummaryProvider {
 

@@ -89,6 +89,18 @@
                 android:title="@string/processor_info"
                 android:summary="@string/device_info_default"/>
 
+        <!-- Installed receiver module info -->
+        <Preference android:key="receiver_module_info"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/receiver_module_info"
+                android:summary="@string/device_info_default"/>
+
+        <!-- Installed camera module info -->
+        <Preference android:key="camera_module_info"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/camera_module_info"
+                android:summary="@string/device_info_default"/>
+
         <!-- Device firmware version -->
         <Preference android:key="firmware_version"
                 android:enabled="false"
