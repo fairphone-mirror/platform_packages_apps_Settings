@@ -19,4 +19,12 @@
     <string name="proximity_sensor_settings_list_item_title">"Sensor de proximidad"</string>
     <string name="hiccup_settings_list_item_title">"Hiccup"</string>
     <string name="hiccup_settings_list_item_summary">"Informe de estabilidad"</string>
+    <string name="processor_info">Información del procesador</string>
+    <string name="status_assembly_number">Número de ensamblaje</string>
+    <string name="receiver_module_info">Información del módulo superior</string>
+    <string name="receiver_module_ov2685">Cámara frontal 2MP &#8211; OmniVision OV2685</string>
+    <string name="receiver_module_ov5670">Cámara frontal 5MP &#8211; OmniVision OV5670</string>
+    <string name="camera_module_info">Información del módulo de cámara</string>
+    <string name="camera_module_ov8865">Cámara principal &#8211; 8MP OmniVision OV8865</string>
+    <string name="camera_module_ov12870">Cámara principal &#8211; 8MP OmniVision OV12870</string>
 </resources>

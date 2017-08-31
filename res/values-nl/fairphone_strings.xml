@@ -20,4 +20,11 @@
     <string name="hiccup_settings_list_item_title">"Hiccup"</string>
     <string name="hiccup_settings_list_item_summary">"Stabiliteit Rapportage"</string>
     <string name="status_assembly_number">Assemblage nummer</string>
+    <string name="processor_info">Processorinformatie</string>
+    <string name="receiver_module_info">Bovenste module info</string>
+    <string name="receiver_module_ov2685">Camera voorzijde 2MP &#8211; OmniVision OV2685</string>
+    <string name="receiver_module_ov5670">Camera voorzijde 5MP &#8211; OmniVision OV5670</string>
+    <string name="camera_module_info">Cameramodule info</string>
+    <string name="camera_module_ov8865">Primaire camera 8MP &#8211; OmniVision OV8865</string>
+    <string name="camera_module_ov12870">Primaire camera 12MP &#8211; OmniVision OV12870</string>
 </resources>

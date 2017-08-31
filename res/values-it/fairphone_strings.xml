@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2018 Fairphone B.V.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+    <string name="processor_info">Informazioni sul processore</string>
+    <string name="status_assembly_number">Numero di assemblaggio</string>
+    <string name="receiver_module_info">Informazioni sul modulo superiore</string>
+    <string name="receiver_module_ov2685">Fotocamera frontale 2MP &#8211; OmniVision OV2685</string>
+    <string name="receiver_module_ov5670">Fotocamera frontale 5MP &#8211; OmniVision OV5670</string>
+    <string name="camera_module_info">Informazioni sul modulo fotocamera</string>
+    <string name="camera_module_ov8865">Fotocamera principale 8MP &#8211; OmniVision OV8865</string>
+    <string name="camera_module_ov12870">Fotocamera principale 12MP &#8211; OmniVision OV12870</string>
+</resources>

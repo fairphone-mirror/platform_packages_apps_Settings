@@ -20,4 +20,11 @@
     <string name="hiccup_settings_list_item_title">"Hiccup"</string>
     <string name="hiccup_settings_list_item_summary">"Stabilitätsberichte"</string>
     <string name="status_assembly_number">Fertigungsnummer</string>
+    <string name="processor_info">Prozessor Info</string>
+    <string name="receiver_module_info">Top-Modul Info</string>
+    <string name="receiver_module_ov2685">Front-Kamera 2MP &#8211; OmniVision OV2685</string>
+    <string name="receiver_module_ov5670">Front-Kamera 5MP &#8211; OmniVision OV5670</string>
+    <string name="camera_module_info">Camera-Modul Info</string>
+    <string name="camera_module_ov8865">Hauptkamera 8MP &#8211; OmniVision OV8865</string>
+    <string name="camera_module_ov12870">Hauptkamera 12MP &#8211; OmniVision OV12870</string>
 </resources>
