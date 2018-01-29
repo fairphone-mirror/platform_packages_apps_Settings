@@ -101,6 +101,8 @@
             android:defaultToDeviceProtectedStorage="true"
             android:directBootAware="true">
 
+        <uses-library android:name="com.fairphone.common" />
+
         <!-- Settings -->
 
         <activity android:name="Settings"

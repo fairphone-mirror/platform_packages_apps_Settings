@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2008 The Android Open Source Project
+ * Copyright (C) 2018 Fairphone B.V.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +45,8 @@ import com.android.settings.search.Indexable;
 import com.android.settingslib.DeviceInfoUtils;
 import com.android.settingslib.RestrictedLockUtils;
 
+import com.fairphone.common.modules.BatteryModule;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -86,6 +89,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String PROPERTY_MAIN_CAMERA_SENSOR = "fp2.cam.main.sensor";
     private static final String VALUE_MAIN_CAMERA_SENSOR_OV8865 = "ov8865_q8v18a";
     private static final String VALUE_MAIN_CAMERA_SENSOR_OV12870 = "ov12870";
+    private static final String KEY_BATTERY_MODULE_INFO = "battery_module_info";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
@@ -130,6 +134,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         setValueSummary(KEY_BASEBAND_VERSION, "gsm.version.baseband");
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL + DeviceInfoUtils.getMsvSuffix());
         setStringSummary(KEY_DEVICE_PROCESSOR, getDeviceProcessorInfo());
+        setStringSummary(KEY_BATTERY_MODULE_INFO, getBatteryModuleInfo());
         setValueSummary(KEY_EQUIPMENT_ID, PROPERTY_EQUIPMENT_ID);
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL);
         setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
@@ -448,6 +453,24 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
             info = getResources().getString(R.string.device_info_default);
             Log.w(LOG_TAG, "Property " + PROPERTY_MAIN_CAMERA_SENSOR
                     + " has an unknown value of " + mainCameraSensor);
+        }
+
+        return info;
+    }
+
+    private String getBatteryModuleInfo() {
+        final BatteryModule module = BatteryModule.getModule(getContext());
+
+        String info;
+
+        if (module != null) {
+            info = getResources().getString(R.string.battery_module_summary,
+                    module.getVersionId(), module.getDesignCapacity());
+        } else {
+            info = getResources().getString(R.string.device_info_default);
+
+            Log.w(LOG_TAG, "Unknown battery module, property " + KEY_BATTERY_MODULE_INFO
+                    + " set to default value");
         }
 
         return info;

@@ -101,6 +101,12 @@
                 android:title="@string/camera_module_info"
                 android:summary="@string/device_info_default"/>
 
+        <!-- Installed battery module info -->
+        <Preference android:key="battery_module_info"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/battery_module_info"
+                android:summary="@string/device_info_default"/>
+
         <!-- Device firmware version -->
         <Preference android:key="firmware_version"
                 android:enabled="false"
