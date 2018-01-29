@@ -30,4 +30,5 @@
     <string name="camera_module_info">"Cameramodule info"</string>
     <string name="camera_module_ov8865">"Primaire camera 8MP &#8211; OmniVision OV8865"</string>
     <string name="camera_module_ov12870">"Primaire camera 12MP &#8211; OmniVision OV12870"</string>
+    <string name="battery_module_info">"Batterij info"</string>
 </resources>

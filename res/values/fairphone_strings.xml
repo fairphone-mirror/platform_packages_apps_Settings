@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Maintenance settings --> <skip />
     <!-- Preference title for maintenance settings -->
     <string name="maintenance_preference_title">Maintenance</string>
@@ -52,4 +52,10 @@
     <string name="camera_module_ov8865">Main camera 8MP &#8211; OmniVision OV8865</string>
     <!-- About phone, status item value.  2017 camera module with OV12870 sensor. -->
     <string name="camera_module_ov12870">Main camera 12MP &#8211; OmniVision OV12870</string>
+    <!-- About phone, status item label.  The installed battery module. -->
+    <string name="battery_module_info">Battery info</string>
+    <!-- About phone, status item value.  Battery module info. -->
+    <string name="battery_module_summary" translatable="false"><xliff:g id="version"
+            example="FP2-BAT01">%1$s</xliff:g> &#8211; <xliff:g id="capacity"
+            example="2420">%2$d</xliff:g> mAh</string>
 </resources>

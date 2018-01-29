@@ -78,4 +78,12 @@
         settings:controller="com.android.settings.deviceinfo.hardwareinfo.CameraModulePreferenceController"
         settings:enableCopying="true"/>
 
+    <!-- Battery module -->
+    <Preference
+        android:key="hardware_info_batter_module"
+        android:title="@string/battery_module_info"
+        android:summary="@string/summary_placeholder"
+        settings:controller="com.android.settings.deviceinfo.hardwareinfo.BatteryModulePreferenceController"
+        settings:enableCopying="true"/>
+
 </PreferenceScreen>
