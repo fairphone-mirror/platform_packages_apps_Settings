@@ -158,6 +158,7 @@
     <item msgid="8568003268185342352">"SPN"</item>
     <item msgid="1804537219968457989">"IMSI"</item>
     <item msgid="3441876902463317017">"GID"</item>
+    <item>ICCID</item>
   </string-array>
   <string-array name="app_ops_summaries">
     <item msgid="8837238583601420163">"прыблiзнае месцазнаходжанне"</item>
