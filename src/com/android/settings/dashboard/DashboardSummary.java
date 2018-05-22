@@ -16,8 +16,11 @@
 
 package com.android.settings.dashboard;
 
+import android.content.BroadcastReceiver;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -28,6 +31,7 @@ import android.view.ViewGroup;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.internal.telephony.TelephonyIntents;
 import com.android.settings.InstrumentedFragment;
 import com.android.settings.R;
 import com.android.settings.Settings;
@@ -77,6 +81,18 @@ public class DashboardSummary extends InstrumentedFragment
     private ArrayList<String> mSuggestionsShownLogged;
     private ArrayList<String> mSuggestionsHiddenLogged;
 
+    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (TelephonyIntents.ACTION_SIM_STATE_CHANGED.equals(action)
+                    || Intent.ACTION_AIRPLANE_MODE_CHANGED.equals(action)) {
+               Log.d(TAG, "Received ACTION_SIM_STATE_CHANGED or ACTION_AIRPLANE_MODE_CHANGED");
+               mAdapter.updateLte4GEnabler();
+            }
+        }
+    };
+
     @Override
     protected int getMetricsCategory() {
         return MetricsEvent.DASHBOARD_SUMMARY;
@@ -119,6 +135,7 @@ public class DashboardSummary extends InstrumentedFragment
         long startTime = System.currentTimeMillis();
         super.onStart();
 
+        mAdapter.getLte4GEnabler().resume();
         ((SettingsDrawerActivity) getActivity()).addCategoryListener(this);
         mSummaryLoader.setListening(true);
         for (Condition c : mConditionManager.getConditions()) {
@@ -126,6 +143,17 @@ public class DashboardSummary extends InstrumentedFragment
                 MetricsLogger.visible(getContext(), c.getMetricsConstant());
             }
         }
+
+        if (mAdapter.getSuggestions() != null) {
+            for (Tile suggestion : mAdapter.getSuggestions()) {
+                MetricsLogger.action(getContext(), MetricsEvent.ACTION_SHOW_SETTINGS_SUGGESTION,
+                        DashboardAdapter.getSuggestionIdentifier(getContext(), suggestion));
+            }
+        }
+        // Register for intent broadcasts
+        IntentFilter intentFilter = new IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+        intentFilter.addAction(TelephonyIntents.ACTION_SIM_STATE_CHANGED);
+        getActivity().registerReceiver(mReceiver, intentFilter);
         if (DEBUG_TIMING) Log.d(TAG, "onStart took " + (System.currentTimeMillis() - startTime)
                 + " ms");
     }
@@ -133,7 +161,8 @@ public class DashboardSummary extends InstrumentedFragment
     @Override
     public void onStop() {
         super.onStop();
-
+        mAdapter.getLte4GEnabler().pause();
+        getActivity().unregisterReceiver(mReceiver);
         ((SettingsDrawerActivity) getActivity()).remCategoryListener(this);
         mSummaryLoader.setListening(false);
         for (Condition c : mConditionManager.getConditions()) {
@@ -216,6 +245,10 @@ public class DashboardSummary extends InstrumentedFragment
             Log.w(TAG, "Cannot build the DashboardSummary UI yet as the Fragment is not added");
             return;
         }
+
+        List<DashboardCategory> categories =
+                ((SettingsActivity) getActivity()).getDashboardCategories();
+        mAdapter.setCategories(categories);
 
         // recheck to see if any suggestions have been changed.
         new SuggestionLoader().execute();

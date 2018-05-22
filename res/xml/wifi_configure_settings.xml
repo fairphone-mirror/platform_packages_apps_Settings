@@ -30,6 +30,11 @@
         android:summary="@string/wifi_notify_open_networks_summary" />
 
     <SwitchPreference
+        android:key="enable_hs2_rel1"
+        android:title="@string/wifi_enable_hs2_rel1_title"
+        android:persistent="false" />
+
+    <SwitchPreference
         android:key="connect_carrier_networks"
         android:title="@string/wifi_connect_carrier_networks"
         android:summary="@string/wifi_connect_carrier_networks_summary" />
@@ -60,6 +65,16 @@
     <Preference
         android:key="current_ip_address"
         android:title="@string/wifi_advanced_ip_address_title"
+        android:layout="@layout/wifi_advance_layout" />
+
+    <Preference
+        android:key="current_gateway"
+        android:title="@string/wifi_advanced_gateway"
+        android:layout="@layout/wifi_advance_layout" />
+
+    <Preference
+        android:key="current_netmask"
+        android:title="@string/wifi_advanced_network_netmask"
         android:layout="@layout/wifi_advance_layout" />
 
 </PreferenceScreen>

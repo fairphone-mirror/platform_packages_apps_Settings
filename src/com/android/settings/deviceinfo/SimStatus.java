@@ -24,6 +24,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.support.v7.preference.Preference;
@@ -58,9 +59,9 @@ import com.android.settingslib.DeviceInfoUtils;
 
 import java.util.List;
 
+import org.codeaurora.ims.utils.QtiImsExtUtils;
 import static android.content.Context.CARRIER_CONFIG_SERVICE;
 import static android.content.Context.TELEPHONY_SERVICE;
-
 
 /**
  * Display the following information
@@ -276,10 +277,12 @@ public class SimStatus extends SettingsPreferenceFragment {
 
         boolean show4GForLTE = false;
         try {
-            Context con = getActivity().createPackageContext("com.android.systemui", 0);
-            int id = con.getResources().getIdentifier("config_show4GForLTE",
-                    "bool", "com.android.systemui");
-            show4GForLTE = con.getResources().getBoolean(id);
+            if (getActivity() != null) {
+                Context con = getActivity().createPackageContext("com.android.systemui", 0);
+                int id = con.getResources().getIdentifier("config_show4GForLTE",
+                        "bool", "com.android.systemui");
+                show4GForLTE = con.getResources().getBoolean(id);
+            }
         } catch (NameNotFoundException e) {
             Log.e(TAG, "NameNotFoundException for show4GFotLTE");
         }
@@ -287,6 +290,18 @@ public class SimStatus extends SettingsPreferenceFragment {
         if (networktype != null && networktype.equals("LTE") && show4GForLTE) {
             networktype = "4G";
         }
+
+        if (QtiImsExtUtils.isCarrierOneSupported()) {
+            if (TelephonyManager.NETWORK_TYPE_LTE == actualDataNetworkType ||
+                    TelephonyManager.NETWORK_TYPE_LTE == actualVoiceNetworkType) {
+                if (mTelephonyManager.isImsRegisteredForSubscriber(subId)) {
+                    networktype = getResources().
+                            getString(R.string.lte_data_and_voice_calling_enabled);
+                } else {
+                    networktype = getResources().getString(R.string.lte_data_service_enabled);
+                }
+            }
+         }
         setSummaryText(KEY_NETWORK_TYPE, networktype);
     }
 
@@ -315,29 +330,20 @@ public class SimStatus extends SettingsPreferenceFragment {
     }
 
     private void updateServiceState(ServiceState serviceState) {
-        final int state = serviceState.getState();
-        String display = mRes.getString(R.string.radioInfo_unknown);
+        final int voiceState = serviceState.getState();
+        final int dataState = mPhone.getServiceState().getDataRegState();
 
-        switch (state) {
-            case ServiceState.STATE_IN_SERVICE:
-                display = mRes.getString(R.string.radioInfo_service_in);
-                break;
-            case ServiceState.STATE_OUT_OF_SERVICE:
-                // Set signal strength to 0 when service state is STATE_OUT_OF_SERVICE
+        // Set signal strength to 0 when service state is
+        // STATE_OUT_OF_SERVICE or STATE_POWER_OFF
+        if ((ServiceState.STATE_OUT_OF_SERVICE == voiceState) ||
+                    (ServiceState.STATE_POWER_OFF == voiceState)) {
                 mSignalStrength.setSummary("0");
-            case ServiceState.STATE_EMERGENCY_ONLY:
-                // Set summary string of service state to radioInfo_service_out when
-                // service state is both STATE_OUT_OF_SERVICE & STATE_EMERGENCY_ONLY
-                display = mRes.getString(R.string.radioInfo_service_out);
-                break;
-            case ServiceState.STATE_POWER_OFF:
-                display = mRes.getString(R.string.radioInfo_service_off);
-                // Also set signal strength to 0
-                mSignalStrength.setSummary("0");
-                break;
-        }
+            }
 
-        setSummaryText(KEY_SERVICE_STATE, display);
+        String voiceDisplay = Utils.getServiceStateString(voiceState, mRes);
+        String dataDisplay = Utils.getServiceStateString(dataState, mRes);
+
+        setSummaryText(KEY_SERVICE_STATE, "Voice: " + voiceDisplay + " / Data: " + dataDisplay);
 
         if (serviceState.getRoaming()) {
             setSummaryText(KEY_ROAMING_STATE, mRes.getString(R.string.radioInfo_roaming_in));
@@ -356,7 +362,6 @@ public class SimStatus extends SettingsPreferenceFragment {
     void updateSignalStrength(SignalStrength signalStrength) {
         if (mSignalStrength != null) {
             final int state = mPhone.getServiceState().getState();
-            Resources r = getResources();
 
             if ((ServiceState.STATE_OUT_OF_SERVICE == state) ||
                     (ServiceState.STATE_POWER_OFF == state)) {
@@ -375,7 +380,7 @@ public class SimStatus extends SettingsPreferenceFragment {
                 signalAsu = 0;
             }
 
-            mSignalStrength.setSummary(r.getString(R.string.sim_signal_strength,
+            mSignalStrength.setSummary(mRes.getString(R.string.sim_signal_strength,
                         signalDbm, signalAsu));
         }
     }
@@ -426,6 +431,11 @@ public class SimStatus extends SettingsPreferenceFragment {
                 }
 
                 mPhone = phone;
+                //avoid left at TelephonyManager Memory leak before create a new PhoneStateLister
+                if (mPhoneStateListener != null && mTelephonyManager != null) {
+                    mTelephonyManager.listen(mPhoneStateListener,
+                            PhoneStateListener.LISTEN_NONE);
+                }
                 mPhoneStateListener = new PhoneStateListener(mSir.getSubscriptionId()) {
                     @Override
                     public void onDataConnectionStateChanged(int state) {

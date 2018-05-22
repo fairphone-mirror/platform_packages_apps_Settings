@@ -19,6 +19,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.database.ContentObserver;
+import android.net.DhcpInfo;
 import android.content.res.Resources;
 import android.net.NetworkScoreManager;
 import android.net.NetworkScorerAppManager;
@@ -26,12 +28,14 @@ import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.UserManager;
 import android.provider.Settings;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.text.TextUtils;
+import android.text.format.Formatter;
 import android.util.Log;
 import android.widget.Toast;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
@@ -54,13 +58,30 @@ public class ConfigureWifiSettings extends SettingsPreferenceFragment
     private static final String KEY_SLEEP_POLICY = "sleep_policy";
     private static final String KEY_CELLULAR_FALLBACK = "wifi_cellular_data_fallback";
     private static final String KEY_WIFI_ASSISTANT = "wifi_assistant";
+    private static final String KEY_ENABLE_HS2_REL1 = "enable_hs2_rel1";
+    private static final String IS_USER_DISABLE_HS2_REL1 = "is_user_disable_hs2_rel1";
+
+    // Wifi extension requirement
+    private static final String KEY_CURRENT_GATEWAY = "current_gateway";
+    private static final String KEY_CURRENT_NETMASK = "current_netmask";
     private static final String KEY_CONNECT_CARRIER_NETWORKS = "connect_carrier_networks";
 
     private WifiManager mWifiManager;
     private NetworkScoreManager mNetworkScoreManager;
     private AppListSwitchPreference mWifiAssistantPreference;
+    private SwitchPreference mEnableHs2Rel1;
 
     private IntentFilter mFilter;
+
+    private ContentObserver mPasspointObserver = new ContentObserver(new Handler()) {
+        @Override
+        public void onChange(boolean selfChange) {
+            if (mEnableHs2Rel1 != null) {
+                mEnableHs2Rel1.setChecked(Settings.Global.getInt(getContentResolver(),
+                      Settings.Global.WIFI_HOTSPOT2_REL1_ENABLED, 0) == 1);
+            }
+        }
+    };
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -84,6 +105,11 @@ public class ConfigureWifiSettings extends SettingsPreferenceFragment
         super.onResume();
         initPreferences();
         getActivity().registerReceiver(mReceiver, mFilter);
+        if(getResources().getBoolean(R.bool.config_wifi_hotspot2_enabled_Rel1)) {
+            getActivity().getContentResolver().registerContentObserver(
+                Settings.Global.getUriFor(Settings.Global.WIFI_HOTSPOT2_REL1_ENABLED), false,
+                mPasspointObserver);
+        }
         refreshWifiInfo();
     }
 
@@ -91,6 +117,9 @@ public class ConfigureWifiSettings extends SettingsPreferenceFragment
     public void onPause() {
         super.onPause();
         getActivity().unregisterReceiver(mReceiver);
+        if(getResources().getBoolean(R.bool.config_wifi_hotspot2_enabled_Rel1)) {
+            getActivity().getContentResolver().unregisterContentObserver(mPasspointObserver);
+        }
     }
 
     private void initPreferences() {
@@ -139,6 +168,24 @@ public class ConfigureWifiSettings extends SettingsPreferenceFragment
             initWifiAssistantPreference(scorers);
         } else if (mWifiAssistantPreference != null) {
             getPreferenceScreen().removePreference(mWifiAssistantPreference);
+        }
+
+        mEnableHs2Rel1 = (SwitchPreference) findPreference(KEY_ENABLE_HS2_REL1);
+        if (mEnableHs2Rel1 != null) {
+            mEnableHs2Rel1.setEnabled(mWifiManager.isWifiEnabled());
+        }
+        if (mEnableHs2Rel1 != null && getResources().getBoolean(
+                com.android.internal.R.bool.config_wifi_hotspot2_enabled) &&
+            getResources().getBoolean(R.bool.config_wifi_hotspot2_enabled_Rel1)) {
+            // Hotspot option should only be enabled when wifi is enabled.
+            // If wifi is disabled, add network and remove network will not work
+            mEnableHs2Rel1.setChecked(Settings.Global.getInt(getContentResolver(),
+                      Settings.Global.WIFI_HOTSPOT2_REL1_ENABLED, 0) == 1);
+
+        } else {
+            if (mEnableHs2Rel1 != null) {
+                getPreferenceScreen().removePreference(mEnableHs2Rel1);
+            }
         }
 
         ListPreference sleepPolicyPref = (ListPreference) findPreference(KEY_SLEEP_POLICY);
@@ -199,6 +246,15 @@ public class ConfigureWifiSettings extends SettingsPreferenceFragment
             String settingName = Settings.Global.NETWORK_AVOID_BAD_WIFI;
             Settings.Global.putString(getContentResolver(), settingName,
                     ((SwitchPreference) preference).isChecked() ? "1" : null);
+        } else if (KEY_ENABLE_HS2_REL1.equals(key)) {
+            Settings.Global.putInt(getContentResolver(),
+                    Settings.Global.WIFI_HOTSPOT2_REL1_ENABLED,
+                    ((SwitchPreference) preference).isChecked() ? 1 : 0);
+            Settings.Global.putInt(getContentResolver(),
+                    IS_USER_DISABLE_HS2_REL1,
+                    ((SwitchPreference) preference).isChecked() ? 1 : 0);
+            Intent i = new Intent("com.android.settings.action.USER_TAP_PASSPOINT");
+            getActivity().sendBroadcast(i);
         } else if (KEY_CONNECT_CARRIER_NETWORKS.equals(key)) {
             Settings.Global.putInt(getContentResolver(),
                     Settings.Global.WIFI_CONNECT_CARRIER_NETWORKS,
@@ -273,6 +329,36 @@ public class ConfigureWifiSettings extends SettingsPreferenceFragment
         wifiIpAddressPref.setSummary(ipAddress == null ?
                 context.getString(R.string.status_unavailable) : ipAddress);
         wifiIpAddressPref.setSelectable(false);
+
+        // Wifi extension requirement
+        Preference wifiGatewayPref = findPreference(KEY_CURRENT_GATEWAY);
+        String gateway = null;
+        Preference wifiNetmaskPref = findPreference(KEY_CURRENT_NETMASK);
+        String netmask = null;
+        if (getResources().getBoolean(R.bool.config_netinfo)) {
+            DhcpInfo dhcpInfo = mWifiManager.getDhcpInfo();
+            if (wifiInfo != null) {
+                if (dhcpInfo != null) {
+                    gateway = Formatter.formatIpAddress(dhcpInfo.gateway);
+                    netmask = Formatter.formatIpAddress(dhcpInfo.netmask);
+                }
+            }
+            if (wifiGatewayPref != null) {
+                wifiGatewayPref.setSummary((gateway == null || dhcpInfo.gateway == 0) ?
+                        getString(R.string.status_unavailable) : gateway);
+            }
+            if (wifiNetmaskPref != null) {
+                wifiNetmaskPref.setSummary((netmask == null || dhcpInfo.netmask == 0) ?
+                        getString(R.string.status_unavailable) : netmask);
+            }
+        } else {
+            if (wifiGatewayPref != null) {
+                getPreferenceScreen().removePreference(wifiGatewayPref);
+            }
+            if (wifiNetmaskPref != null) {
+                getPreferenceScreen().removePreference(wifiNetmaskPref);
+            }
+        }
     }
 
     private void initWifiAssistantPreference(

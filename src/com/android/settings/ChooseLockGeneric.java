@@ -148,6 +148,8 @@ public class ChooseLockGeneric extends SettingsActivity {
             mKeyStore = KeyStore.getInstance();
             mChooseLockSettingsHelper = new ChooseLockSettingsHelper(this.getActivity());
             mLockPatternUtils = new LockPatternUtils(getActivity());
+
+            mLockPatternUtils.sanitizePassword();
             mIsSetNewPassword = ACTION_SET_NEW_PARENT_PROFILE_PASSWORD.equals(chooseLockAction)
                     || ACTION_SET_NEW_PASSWORD.equals(chooseLockAction);
 
@@ -765,6 +767,7 @@ public class ChooseLockGeneric extends SettingsActivity {
         @Override
         public void onDestroy() {
             super.onDestroy();
+            mLockPatternUtils.sanitizePassword();
         }
 
         @Override

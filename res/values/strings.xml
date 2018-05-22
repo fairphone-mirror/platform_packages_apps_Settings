@@ -25,6 +25,15 @@
     <!-- Strings for Dialog deny button -->
     <string name="deny">Deny</string>
 
+    <string name="wifiap_settings_desc">WLAN wifiap can share this phone\u2019s data Internet connection with other PC/mobile devices via WLAN.</string>
+    <string name="wifiap_settings_indication">After the WLAN wifiap is turned on, other PC/mobile devices can connect to it and start using the internet by following steps:</string>
+    <string name="wifiap_settings_indication_step1">1. Turn on WLAN on PC/Mobile device.</string>
+    <string name="wifiap_settings_indication_step2">2. Find \u201c<xliff:g id="ssid_name">%s</xliff:g>\u201d in the list of WLAN networks.</string>
+    <string name="wifiap_title">WLAN hotspot</string>
+    <string name="wifiap_configure_ap_text">Set up WLAN wifiap</string>
+    <string name="wifiap_configure_subtext"><xliff:g id="network_ssid">%1$s</xliff:g><xliff:g id="network_security">%2$s</xliff:g> portable WLAN wifiap</string>
+    <string name="wifiap_turn_on_hint">To use WLAN wifiap, turn it on.</string>
+
     <!-- Strings for Dialog close button [CHAR LIMIT=20] -->
     <string name="dlg_close">Close</string>
     <!-- Strings for Dialog switch button [CHAR LIMIT=20] -->
@@ -590,6 +599,8 @@
     <string name="cancel">Cancel</string>
     <!-- Button label for generic OK action [CHAR LIMIT=20] -->
     <string name="okay">OK</string>
+    <!-- Button label for generic later action [CHAR LIMIT=20] -->
+    <string name="later">LATER</string>
     <!-- Button label for generic forget action [CHAR LIMIT=20] -->
     <string name="forget">Forget</string>
     <!-- Button label for generic save action [CHAR LIMIT=20] -->
@@ -694,6 +705,10 @@
     <!-- Title string shown above TimePicker, letting a user select system time
          [CHAR LIMIT=20] -->
     <string name="time_picker_title">Time</string>
+
+    <!-- Timer Switch Settings --><skip />
+    <!-- Main Settings screen setting option name to go into the timer switch settings-->
+    <string name="timer_switch_settings_title">Scheduled power on and off</string>
 
     <!-- Security Settings --><skip />
 
@@ -1570,6 +1585,10 @@
     <string name="wifi_notify_open_networks">Network notification</string>
     <!-- Checkbox summary for option to notify user when open networks are nearby [CHAR LIMIT=60]-->
     <string name="wifi_notify_open_networks_summary">Notify whenever a public network is available</string>
+
+    <string name="wifi_enable_hs2_title">Passpoint On</string>
+    <string name="wifi_enable_hs2_rel1_title">Automatically connect to WiFi</string>
+
     <!-- Checkbox title for option to toggle poor network detection -->
     <string name="wifi_poor_network_detection">Avoid poor connections</string>
     <!-- Checkbox summary for option to toggle poor network detection -->
@@ -1709,6 +1728,12 @@
     <string name="passpoint_label">Saved via</string>
     <!-- Content for Passpoint network -->
     <string name="passpoint_content"><xliff:g id="name">%1$s</xliff:g> credentials</string>
+    <!-- Label for Passpoint network FQDN -->
+    <string name="passpoint_fqdn">3gppnetwork.org</string>
+    <!-- Label for Passpoint network Provider Friendly Name-->
+    <string name="passpoint_provider_friendly_name">Jio</string>
+    <!-- Label for Passpoint Enterprise Security method [SIM/AKA/AKA_PRIME]-->
+    <string name="passpoint_eap_method">AKA</string>
     <!-- Label for the EAP method of the network -->
     <string name="wifi_eap_method">EAP method</string>
     <!-- Label for the phase2 -->
@@ -2379,6 +2404,8 @@
     <!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
     <string name="build_number">Build number</string>
     <!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
+    <string name="qgp_version">QGP Version</string>
+    <!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
     <string name="selinux_status">SELinux status</string>
 
     <!-- About phone screen, show when a value of some status item is unavailable. -->
@@ -2835,6 +2862,18 @@
     <string name="apn_protocol">APN protocol</string>
     <!-- Edit access point labels: The protocol of the APN when roaming, e.g., "IPv4", "IPv6", or "IPv4/IPv6". -->
     <string name="apn_roaming_protocol">APN roaming protocol</string>
+    <!-- apn names for carriers -->
+    <string name="APN_NAME_CMNET">CMNET</string>
+    <string name="APN_NAME_CMWAP">CMWAP</string>
+    <string name="APN_NAME_CMMMS">CMMMS</string>
+    <string name="APN_NAME_CUWAP">China Unicom WAP</string>
+    <string name="APN_NAME_CUNET">China Unicom NET</string>
+    <string name="APN_NAME_CUMMS">China Unicom MMS</string>
+    <string name="APN_NAME_CUSUPL">China Unicom AGPS</string>
+    <string name="APN_NAME_CTNET">CTNET</string>
+    <string name="APN_NAME_CTWAP">CTWAP</string>
+    <string name="APN_NAME_CTLTE">ctlte</string>
+    <string name="APN_NAME_CTMMS">CTWAP</string>
     <!-- Edit enable/disable of APN -->
     <string name="carrier_enabled">APN enable/disable</string>
     <string name="carrier_enabled_summaryOn">APN enabled</string>
@@ -5608,6 +5647,11 @@
     <!-- Warning message title for global locale change [CHAR LIMIT=40] -->
     <string name="global_locale_change_title">Change language</string>
 
+    <!-- Warning message title for global font change [CHAR LIMIT=40] -->
+    <string name="global_font_change_title">Change font size</string>
+    <!-- Warning message title for global font change [CHAR LIMIT=40] -->
+    <string name="choose_font_huge">Warinig font size</string>
+
     <!-- NFC payment settings --><skip/>
     <string name="nfc_payment_settings_title">Tap &amp; pay</string>
     <!-- Caption for button linking to a page explaining how Tap and Pay works-->
@@ -7007,6 +7051,8 @@
          for this device should be used for. Choices are usb_use_charging_only,
          usb_use_file_transfer, use_use_photo_transfer, and usb_use_MIDI -->
     <string name="usb_use">Use USB to</string>
+    <string name="usb_tethering_title">USB tethering</string>
+    <string name="usb_tethering_desc">Use device for USB tethering</string>
 
     <!-- Settings item title for background check prefs [CHAR LIMIT=35] -->
     <string name="background_check_pref">Background check</string>
@@ -7320,11 +7366,14 @@
     <!-- Content description used when collapsing a condition item to see less details -->
     <string name="condition_expand_hide">Hide</string>
 
-    <!-- Title of condition that hotspot is on [CHAR LIMIT=30] -->
+<!-- Title of condition that hotspot is on [CHAR LIMIT=30] -->
     <string name="condition_hotspot_title">Hotspot is on</string>
 
     <!-- Summary of condition that hotspot is on [CHAR LIMIT=NONE] -->
     <string name="condition_hotspot_summary">Portable Wi-Fi hotspot <xliff:g name="ap_name" example="AndroidAP">%1$s</xliff:g> is active, Wi-Fi for this device is turned off.</string>
+
+    <!-- Summary of condition that hotspot is on in STA+SAP concurrency [CHAR LIMIT=NONE] -->
+    <string name="condition_hotspot_concurrency_summary">Portable Wi-Fi hotspot <xliff:g name="ap_name" example="AndroidAP">%1$s</xliff:g> is active.</string>
 
     <!-- Title of condition that airplane mode is on [CHAR LIMIT=30] -->
     <string name="condition_airplane_title">Airplane mode is on</string>
@@ -7773,6 +7822,103 @@
     <!-- Message for telling the user the kind of BT device being displayed in list. -->
     <string name="bluetooth_talkback_bluetooth">Bluetooth</string>
 
+    <!-- Wifi extension requirement -->
+    <string name="wifi_set_priority_settings_title">AP priority settings</string>
+    <string name="wifi_set_priority_settings_summary">Click to set priority of each access point</string>
+    <string name="cellular_to_wlan_title">Cellular->WLAN</string>
+    <string name="wifi_auto_connect_type_title">Auto connect type</string>
+    <string name="wifi_auto_connect_type_summary">Specify network connection type</string>
+    <string name="wifi_menu_disconnect">Disconnect from network</string>
+    <string name="cellular_to_wlan_hint_title">Cellular->WLAN hint</string>
+    <string name="cellular_to_wlan_hint_summary">Allow hint when choose manually or always ask in Cellular->WLAN</string>
+    <string name="cellular_to_wlan_hint_toast">Cellular->WLAN connection may be affected</string>
+    <string name="wlan_to_cellular_hint_title">WLAN->Cellular hint</string>
+    <string name="notify_connect">CMCC WLAN prompt</string>
+    <string name="notify_connect_summary">Prompt me when access to CMCC WLAN</string>
+    <string name="wifi_setting_connect_type_error">There was a problem setting the connect type.</string>
+    <string name="wifi_advanced_gateway">Gateway</string>
+    <string name="wifi_advanced_network_netmask">Netmask</string>
+
+    <string name="app_ops_permiss_name">App network access</string>
+
+    <!-- Roaming Data Settings -->
+    <string name="label_global_roaming_settings">Roaming Settings</string>
+    <string name="set_data_time_range">Show time range</string>
+    <string name="lte_4g_settings_title">Enable 4G</string>
+    <string name="lte_4g_switch_prompt">The phone will change from 3G/2G to 4G, some active task may be stopped</string>
+    <string name="lte_4g_settings_4genable_summary">4G Enabled</string>
+    <string name="lte_4g_settings_4gdisable_summary">4G Disabled</string>
+    <string name="lte_4g_settings_disable">Airplane mode or SIM card is not ready</string>
+
+    <!-- StorageCleaner Settings -->
+    <string name="storage_menu_cleanup">Storage Cleanup</string>
+    <string name="profiles_settings_title">System profiles</string>
+    <string name="select_sim_card">Select SIM card</string>
+
+    <string name="mbn_version">MBN version</string>
+    <!-- show security alert for open type end -->
+    <string name="voice_over_lte">Voice over LTE</string>
+
+    <string name="network_operator_display_title">Show Network Operator</string>
+    <string name="keywords_network_name_display">network name displayed</string>
+    <string name="network_name_displayed_summary">Show network name on status bar</string>
+    <string name="tethering_help_dialog_title">Help</string>
+    <string name="tethering_help_dialog_text"><b>USB tethering</b> \n You can tether your Android device to your computer with a USB cable, to share your device\'s Internet connection with your computer. \n\n1.USB tethering works with Windows Vista, Windows 7, Windows 8, Windows 8.1 and Linux. \n\n2.If your device has an SD card or USB storage, you can\'t mount it on your computer when USB tethered. \n\n <b>Portable Wi-Fi hotspot</b> \n You can turn your Android device into a portable Wi-Fi hotspot, to share your Android device\'s Internet connection with one or more computers or other devices. \n\n1.When your device is serving as a Wi-Fi hotspot, you can\'t use your device\'s applications to access the Internet via its Wi-Fi connection (but of course you remain connected to the Internet via your mobile data network). \n\n2.You configure the hotspot with the Wi-Fi hotspot settings.</string>
+
+    <string name="turn_on_wifi_dialog_title">Turn on wifi</string>
+    <string name="turn_on_wifi_dialog_text">Wi-Fi is turned off when Mobile HotSpot is active. To turn on Wi-Fi, please turn off Mobile HotSpot.</string>
+    <string name="dialog_not_show_again">Do not show again</string>
+    <string name="volte_preferred">Volte Preferred</string>
+    <string name="tethering_settings_summary">Share your device\'s mobile data connection via USB or a Mobile HotSpot</string>
+
+    <string name="collect_diagnostics_title">Collect Diagnostics</string>
+    <string name="collect_diagnostics_summary">Collect diagnostics data for troubleshooting</string>
+
+    <string name="tethering_no_sim_alert_title">No SIM Card</string>
+    <string name="tethering_no_sim_card_text">Please install SIM card in order to share your data connection with other devices using Mobile HotSpot or USB tethering for Internet access.</string>
+    <string name="tether_settings_launch_title">Mobile HotSpot</string>
+    <string name="wifi_tether_first_use_message">Set up Wi-Fi hotspot at the First Use</string>
+    <string name="lte_data_and_voice_calling_enabled">LTE data and Voice Calling (IMS/VoLTE) service enabled </string>
+    <string name="lte_data_service_enabled">LTE data service enabled </string>
+    <string name="turn_off_wifi_dialog_title">Turn off Wi-Fi</string>
+    <string name="turn_off_wifi_dialog_text">Wi-Fi is turned off when Mobile HotSpot is active. To turn on Wi-Fi, please turn off Mobile HotSpot.</string>
+
+    <string name="show_battery_percentage">Show battery percentage</string>
+    <string name="show_battery_percentage_summary">Show battery level percentage inside the status bar</string>
+
+    <string name="learn_usb_dialog_title">USB tethering is activated</string>
+    <string name="learn_usb_dialog_text">Would you like to learn more about USB Tethering on your phone?</string>
+    <string name="mobile_tether_help_dialog_title">Mobile HotSpot Help</string>
+    <string name="mobile_usb_help_dialog_text">You can tether your Android device to your computer with a USB cable, to share your device\'s Internet connection with your computer. \n\n1. USB tethering works with Windows Vista, Windows 7, and Linux, the USB drivers for tethering may be needed.\n\n2. If your device has an SD card or USB storage, you can\'t mount it on your computer when USB tethered</string>
+    <string name="mobile_hotspot_help_dialog_title">Mobile HotSpot Help</string>
+    <string name="mobile_hotspot_help_dialog_text">You can turn your Android device into a portable Wi-Fi hotspot, to share your Android device\'s Internet connection with one or more computers or other devices. \n\n1.When your device is serving as a Wi-Fi hotspot, you can not use your device\'s applications to access the Internet via its Wi-Fi connection (but of course you remain connected to the Internet via your mobile data network). \n\n2.You configure the hotspot with the Wi-Fi hotspot settings</string>
+
+    <string name="wifiap_mobile_hotspot_help">Status</string>
+
+    <string name="dialog_font_warining_title">Information</string>
+    <string name="dialog_font_warining_content">Very large font size will only be applied in specific applications.Large font size will be applied in all other application </string>
+    <string name="dialog_font_warining_ck_information">Do not show this again</string>
+    <string name="dialog_font_warining_ok">OK</string>
+    <string name="choose_font_Minimum">Minimum</string>
+    <string name="choose_font_Small">Small</string>
+    <string name="choose_font_Medium">Medium</string>
+    <string name="choose_font_Large">Large</string>
+    <string name="choose_font_VeryLarge">VeryLarge</string>
+
+    <string name="maximum_connections_dialog_title_text">Set Maximum Connections</string>
+    <string name="maximum_connections_dialog_positive_text">YES</string>
+    <string name="maximum_connections_dialog_negative_text">NO</string>
+    <string name="ssid_broadcast_dialog_title">Your HotSpot is not visible now</string>
+    <string name="ssid_broadcast_dialog_text">If you switch the Broadcast Network Name (SSID) option off, your phone will not be visible to other devices and will not appear in the list of available Wi-Fi networks. Other devices can still connect to your HotSpot by entering its network name manually.</string>
+    <string name="qtifeedback_settings_title">Hardware Feedback</string>
+    <string name="qtifeedback_settings_subtitle">Qualcomm Technologies Reporting</string>
+    <string name="qtifeedback_intent_action">com.qti.smq.snapdragonSettings</string>
+    <string name="qtifeedback_package">com.qti.smq.qualcommFeedback</string>
+    <string name="qtifeedback_activity">com.qti.smq.ui.QtiFeedbackActivity</string>
+
+    <string name="learn_hotspot_dialog_title">Wi-Fi tethering is activated</string>
+    <string name="learn_hotspot_dialog_text">Would you like to learn more about wifi Tethering on your phone?</string>
+    <string name="open_security_settings_note">With Open security, any device can connect to your Mobile HotSpot and use your mobile data connection.</string>
     <!-- Used as title on the automatic storage manager settings. [CHAR LIMIT=60] -->
     <string name="automatic_storage_manager_settings">Manage storage</string>
 
