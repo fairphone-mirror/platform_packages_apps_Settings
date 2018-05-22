@@ -7850,10 +7850,10 @@
 
     <!-- StorageCleaner Settings -->
     <string name="storage_menu_cleanup">Storage Cleanup</string>
+
+    <!-- ProfileMgr Main -->
     <string name="profiles_settings_title">System profiles</string>
     <string name="select_sim_card">Select SIM card</string>
-
-    <string name="mbn_version">MBN version</string>
     <!-- show security alert for open type end -->
     <string name="voice_over_lte">Voice over LTE</string>
 
