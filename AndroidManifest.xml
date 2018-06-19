@@ -3219,6 +3219,25 @@
                        android:value="com.android.settings.deletionhelper.AutomaticStorageManagerSettings" />
         </activity>
 
+        <activity android:name="Settings$MaintenanceSettingsActivity"
+                android:label="@string/maintenance_settings_title"
+                android:icon="@drawable/ic_settings_maintenance"
+                android:taskAffinity="com.android.settings"
+                android:parentActivityName="Settings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.VOICE_LAUNCH" />
+            </intent-filter>
+            <intent-filter android:priority="3">
+                <action android:name="com.android.settings.action.SETTINGS" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                android:value="com.android.settings.category.system" />
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.MaintenanceSettings" />
+        </activity>
+
         <service
             android:name=".SettingsDumpService"
             android:exported="true"
