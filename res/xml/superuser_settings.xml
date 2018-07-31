@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:title="@string/application_info_label">
+
+    <PreferenceCategory
+        android:key="superuser_category"
+        android:title="@string/superuser_label">
+
+        <com.android.settings.applications.LayoutPreference
+            android:key="superuser_preference"
+            android:layout="@layout/preference_superuser" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

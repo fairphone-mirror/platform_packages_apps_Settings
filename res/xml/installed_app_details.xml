@@ -57,4 +57,9 @@
         android:enabled="false"
         android:selectable="true" />
 
+    <Preference
+        android:key="superuser_settings"
+        android:title="@string/superuser_label"
+        android:selectable="true" />
+
 </PreferenceScreen>
