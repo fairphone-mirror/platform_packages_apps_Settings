@@ -30,6 +30,7 @@ import android.text.InputFilter;
 import android.text.InputFilter.LengthFilter;
 import android.text.InputType;
 import android.text.TextWatcher;
+import android.util.EventLog;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -217,8 +218,9 @@ public final class BluetoothPairingDialog extends AlertActivity implements
         } else {
             if ((mDevice.getBluetoothClass() != null) && (mDevice.getBluetoothClass().getDeviceClass()
                     == BluetoothClass.Device.AUDIO_VIDEO_HANDSFREE)) {
-                contactSharing.setChecked(true);
-                mDevice.setPhonebookAccessPermission(BluetoothDevice.ACCESS_ALLOWED);
+                contactSharing.setChecked(false);
+                mDevice.setPhonebookAccessPermission(BluetoothDevice.ACCESS_REJECTED);
+                EventLog.writeEvent(0x534e4554, "73173182", -1, "");
             } else {
                 contactSharing.setChecked(false);
                 mDevice.setPhonebookAccessPermission(BluetoothDevice.ACCESS_REJECTED);
