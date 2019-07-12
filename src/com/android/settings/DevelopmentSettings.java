@@ -89,10 +89,17 @@ import com.android.settingslib.RestrictedLockUtils;
 import com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
 import com.android.settingslib.RestrictedSwitchPreference;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.InputMismatchException;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
 
 /*
  * Displays preferences for application developers.
@@ -112,6 +119,8 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
      */
     public static final String PREF_SHOW = "show";
 
+    private static final String EXPERIMENTAL_GLES3_PROPERTY = "experimental_gles3";
+    private static final String EXPERIMENTAL_GLES3_PROPERTY_FILE = "/data/misc/fairphone/experimental_gles3";
     private static final String ENABLE_ADB = "enable_adb";
     private static final String CLEAR_ADB_KEYS = "clear_adb_keys";
     private static final String ENABLE_TERMINAL = "enable_terminal";
@@ -246,6 +255,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     private SwitchPreference mEnableAdb;
     private Preference mClearAdbKeys;
     private SwitchPreference mEnableTerminal;
+    private SwitchPreference mExperimentalGLES3;
     private Preference mBugreport;
     private SwitchPreference mBugreportInPower;
     private RestrictedSwitchPreference mKeepScreenOn;
@@ -387,6 +397,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             mEnableTerminal = null;
         }
 
+        mExperimentalGLES3 = findAndInitSwitchPref(EXPERIMENTAL_GLES3_PROPERTY);
         mBugreport = findPreference(BUGREPORT);
         mBugreportInPower = findAndInitSwitchPref(BUGREPORT_IN_POWER_KEY);
         mKeepScreenOn = (RestrictedSwitchPreference) findAndInitSwitchPref(KEEP_SCREEN_ON);
@@ -701,6 +712,9 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
                     context.getPackageManager().getApplicationEnabledSetting(TERMINAL_APP_PACKAGE)
                             == PackageManager.COMPONENT_ENABLED_STATE_ENABLED);
         }
+
+        updateFairphoneExperimentalOptions();
+
         updateSwitchPreference(mBugreportInPower, Settings.Secure.getInt(cr,
                 Settings.Global.BUGREPORT_IN_POWER_MENU, 0) != 0);
         updateSwitchPreference(mKeepScreenOn, Settings.Global.getInt(cr,
@@ -782,6 +796,51 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         updateAllOptions();
         mDontPokeProperties = false;
         pokeSystemProperties();
+    }
+
+    private boolean readCurrentExperimentalGLES3Option() {
+        boolean result = false;
+        try {
+            Scanner exptGLES3Reader = new Scanner(new File(EXPERIMENTAL_GLES3_PROPERTY_FILE));
+            result = exptGLES3Reader.nextInt() == 1;
+            exptGLES3Reader.close();
+        } catch (FileNotFoundException | NoSuchElementException e) {
+            Log.d(TAG, "No choice stored regarding experimental OpenGL ES 3.0. "
+                    + "Falling back to default (off).");
+        }
+        return result;
+    }
+
+    private void updateFairphoneExperimentalOptions() {
+        updateSwitchPreference(mExperimentalGLES3, readCurrentExperimentalGLES3Option());
+
+        // Notify the user if a reboot is required to apply the new setting.
+
+        final String glesVersionSystemProp = SystemProperties.get("ro.opengles.version");
+        final String glesV30String = "196608";
+        final boolean expGLES3SystemState = glesVersionSystemProp.equals(glesV30String);
+        String expGLES3SummaryOn = getContext().getString(R.string.experimental_gles3_summary_on);
+        String expGLES3SummaryOff = getContext().getString(R.string.experimental_gles3_summary_off);
+        // Apply a reboot advice to the mismatching preference summary.
+        if (expGLES3SystemState) {
+            expGLES3SummaryOff += " " + getContext().getString(
+                R.string.experimental_gles3_summary_reboot_advice);
+        } else {
+            expGLES3SummaryOn += " " + getContext().getString(
+                R.string.experimental_gles3_summary_reboot_advice);
+        }
+        mExperimentalGLES3.setSummaryOn(expGLES3SummaryOn);
+        mExperimentalGLES3.setSummaryOff(expGLES3SummaryOff);
+    }
+
+    private void writeExperimentalGLES3Option() {
+        try {
+            FileWriter wr = new FileWriter(EXPERIMENTAL_GLES3_PROPERTY_FILE);
+            wr.write(mExperimentalGLES3.isChecked() ? "1" : "0");
+            wr.close();
+        } catch(IOException e) {
+            Log.e(TAG, "Error while writing ExperimentalGLES3 file.", e);
+        }
     }
 
     private void updateWebViewProviderOptions() {
@@ -1981,7 +2040,10 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             return false;
         }
 
-        if (preference == mEnableAdb) {
+        if (preference == mExperimentalGLES3) {
+            writeExperimentalGLES3Option();
+        }
+        else if (preference == mEnableAdb) {
             if (mEnableAdb.isChecked()) {
                 mDialogClicked = false;
                 if (mAdbDialog != null) dismissDialogs();
