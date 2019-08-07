@@ -58,6 +58,7 @@ android_library {
         "android.hardware.dumpstate-V1.1-java",
         "setup-wizard-lib",
         "setup-wizard-lib-gingerbread-compat",
+        "oemunlock",
     ],
 
     libs: [

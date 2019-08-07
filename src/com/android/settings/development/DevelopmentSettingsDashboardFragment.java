@@ -76,7 +76,7 @@ import java.util.List;
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class DevelopmentSettingsDashboardFragment extends RestrictedDashboardFragment
         implements SwitchBar.OnSwitchChangeListener, OemUnlockDialogHost, AdbDialogHost,
-        AdbClearKeysDialogHost, LogPersistDialogHost,
+        AdbClearKeysDialogHost, LogPersistDialogHost, OemUnlockVerifyDialogHost,
         BluetoothA2dpHwOffloadRebootDialog.OnA2dpHwDialogConfirmedListener,
         AbstractBluetoothPreferenceController.Callback {
 
@@ -295,6 +295,20 @@ public class DevelopmentSettingsDashboardFragment extends RestrictedDashboardFra
                 }
             }
         }
+    }
+
+    @Override
+    public void onOemUnlockVerifyDialogConfirmed(String password) {
+        final OemUnlockPreferenceController controller =
+                getDevelopmentOptionsController(OemUnlockPreferenceController.class);
+        controller.onOemUnlockVerifyDialogConfirmed(password);
+    }
+
+    @Override
+    public void onOemUnlockVerifyDialogDismissed() {
+        final OemUnlockPreferenceController controller =
+                getDevelopmentOptionsController(OemUnlockPreferenceController.class);
+        controller.onOemUnlockVerifyDialogDismissed();
     }
 
     @Override
