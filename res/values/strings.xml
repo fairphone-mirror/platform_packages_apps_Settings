@@ -14596,4 +14596,6 @@
 
     <!-- Title for the Longevity & device statistics -->
     <string name="longevity_device_statistics_list_item_title">Longevity &amp; device statistics</string>
+    <!--verify oem_lock-->
+    <string name="verification_confirm_your_password_header">Input verify code :</string>
 </resources>
