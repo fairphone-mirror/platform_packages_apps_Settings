@@ -812,25 +812,37 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     }
 
     private void updateFairphoneExperimentalOptions() {
+        // This option does currently not work on encrypted devices: The init process reads it from
+        // the data partition, which is not decrypted yet when read-only system properties are
+        // initialized. Make this limitation clear to the user.
+        final int deviceEncryptionStatus = mDpm.getStorageEncryptionStatus();
+        final boolean deviceIsEncrypted =
+            deviceEncryptionStatus == DevicePolicyManager.ENCRYPTION_STATUS_ACTIVE
+            || deviceEncryptionStatus == DevicePolicyManager.ENCRYPTION_STATUS_ACTIVE_DEFAULT_KEY
+            || deviceEncryptionStatus == DevicePolicyManager.ENCRYPTION_STATUS_ACTIVE_PER_USER;
+        if (deviceIsEncrypted) {
+            // Ensure that the option is disabled, e.g., after encrypting while the option was on.
+            updateSwitchPreference(mExperimentalGLES3, false);
+            writeExperimentalGLES3Option();
+            // Disable the toggle and give an explanation.
+            mExperimentalGLES3.setEnabled(false);
+            mExperimentalGLES3.setSummary(R.string.experimental_gles3_summary_encrypted);
+            return;
+        }
+
         updateSwitchPreference(mExperimentalGLES3, readCurrentExperimentalGLES3Option());
 
         // Notify the user if a reboot is required to apply the new setting.
-
         final String glesVersionSystemProp = SystemProperties.get("ro.opengles.version");
         final String glesV30String = "196608";
         final boolean expGLES3SystemState = glesVersionSystemProp.equals(glesV30String);
-        String expGLES3SummaryOn = getContext().getString(R.string.experimental_gles3_summary_on);
-        String expGLES3SummaryOff = getContext().getString(R.string.experimental_gles3_summary_off);
-        // Apply a reboot advice to the mismatching preference summary.
         if (expGLES3SystemState) {
-            expGLES3SummaryOff += " " + getContext().getString(
-                R.string.experimental_gles3_summary_reboot_advice);
+            mExperimentalGLES3.setSummaryOn("");
+            mExperimentalGLES3.setSummaryOff(R.string.experimental_gles3_summary_ask_restart);
         } else {
-            expGLES3SummaryOn += " " + getContext().getString(
-                R.string.experimental_gles3_summary_reboot_advice);
+            mExperimentalGLES3.setSummaryOn(R.string.experimental_gles3_summary_ask_restart);
+            mExperimentalGLES3.setSummaryOff("");
         }
-        mExperimentalGLES3.setSummaryOn(expGLES3SummaryOn);
-        mExperimentalGLES3.setSummaryOff(expGLES3SummaryOff);
     }
 
     private void writeExperimentalGLES3Option() {
