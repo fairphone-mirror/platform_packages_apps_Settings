@@ -53,5 +53,4 @@
     <!-- Developer settings screen, experimental OpenGL ES 3.0 setting. -->
     <string name="experimental_gles3_title">Experimental OpenGL ES 3.0</string>
     <string name="experimental_gles3_summary_ask_restart">Please restart your phone to apply the new setting.</string>
-    <string name="experimental_gles3_summary_encrypted">Currently unavailable on encrypted devices.</string>
 </resources>

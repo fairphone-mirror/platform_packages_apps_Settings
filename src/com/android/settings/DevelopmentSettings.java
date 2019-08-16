@@ -812,24 +812,6 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     }
 
     private void updateFairphoneExperimentalOptions() {
-        // This option does currently not work on encrypted devices: The init process reads it from
-        // the data partition, which is not decrypted yet when read-only system properties are
-        // initialized. Make this limitation clear to the user.
-        final int deviceEncryptionStatus = mDpm.getStorageEncryptionStatus();
-        final boolean deviceIsEncrypted =
-            deviceEncryptionStatus == DevicePolicyManager.ENCRYPTION_STATUS_ACTIVE
-            || deviceEncryptionStatus == DevicePolicyManager.ENCRYPTION_STATUS_ACTIVE_DEFAULT_KEY
-            || deviceEncryptionStatus == DevicePolicyManager.ENCRYPTION_STATUS_ACTIVE_PER_USER;
-        if (deviceIsEncrypted) {
-            // Ensure that the option is disabled, e.g., after encrypting while the option was on.
-            updateSwitchPreference(mExperimentalGLES3, false);
-            writeExperimentalGLES3Option();
-            // Disable the toggle and give an explanation.
-            mExperimentalGLES3.setEnabled(false);
-            mExperimentalGLES3.setSummary(R.string.experimental_gles3_summary_encrypted);
-            return;
-        }
-
         updateSwitchPreference(mExperimentalGLES3, readCurrentExperimentalGLES3Option());
 
         // Notify the user if a reboot is required to apply the new setting.
