@@ -49,8 +49,4 @@
     <string name="battery_module_summary" translatable="false"><xliff:g id="version"
             example="FP2-BAT01">%1$s</xliff:g> &#8211; <xliff:g id="capacity"
             example="2420">%2$d</xliff:g> mAh</string>
-
-    <!-- Developer settings screen, experimental OpenGL ES 3.0 setting. -->
-    <string name="experimental_gles3_title">Experimental OpenGL ES 3.0</string>
-    <string name="experimental_gles3_summary_ask_restart">Please restart your phone to apply the new setting.</string>
 </resources>
