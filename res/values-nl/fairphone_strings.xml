@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 Fairphone B.V.
+<!-- Copyright (C) 2018-2019 Fairphone B.V.
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -28,4 +28,6 @@
     <string name="camera_module_ov8865">Primaire camera 8MP &#8211; OmniVision OV8865</string>
     <string name="camera_module_ov12870">Primaire camera 12MP &#8211; OmniVision OV12870</string>
     <string name="battery_module_info">Batterij info</string>
+    <string name="opengles3_setting_title">Verbeterde 3D graphics ondersteuning</string>
+    <string name="opengles3_setting_summary">Schakel OpenGL ES 3.0 in</string>
 </resources>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 Fairphone B.V.
+<!-- Copyright (C) 2018-2019 Fairphone B.V.
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -49,4 +49,6 @@
     <string name="battery_module_summary" translatable="false"><xliff:g id="version"
             example="FP2-BAT01">%1$s</xliff:g> &#8211; <xliff:g id="capacity"
             example="2420">%2$d</xliff:g> mAh</string>
+    <string name="opengles3_setting_title">Enhanced 3D graphics support</string>
+    <string name="opengles3_setting_summary">Enable OpenGL ES 3.0</string>
 </resources>
