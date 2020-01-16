@@ -4107,6 +4107,9 @@
     <!-- About phone settings screen, setting option name to see wallpapers attributions values -->
     <string name="wallpaper_attributions_values">Satellite imagery providers:\n©2014 CNES / Astrium, DigitalGlobe, Bluesky</string>
 
+    <!-- About phone settings screen, setting option name to see wallpapers attributions values for FP customer. -->
+    <string name="wallpaper_attributions_values_fp">"© Fairphone B.V., 2019</string>
+
     <!-- Phone Manual -->
     <string name="settings_manual_activity_title">Manual</string>
     <!-- About phone settings screen, Manual dialog message when manual cannot be loaded -->
