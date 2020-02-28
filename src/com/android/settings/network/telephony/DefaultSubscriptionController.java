@@ -28,6 +28,7 @@ import android.telephony.PhoneStateListener;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 
@@ -69,6 +70,9 @@ public abstract class DefaultSubscriptionController extends TelephonyBasePrefere
     private boolean mIsRtlMode;
 
     protected TelephonyManager mTelephonyManager;
+
+    //String keys for data preference lookup
+    private static final String LIST_DATA_PREFERENCE_KEY = "data_preference";
 
     private int mPhoneCount;
     private PhoneStateListener[] mPhoneStateListener;
@@ -218,7 +222,9 @@ public abstract class DefaultSubscriptionController extends TelephonyBasePrefere
         }
 
         mPreference.setEnabled(true);
-        if (isAskEverytimeSupported()) {
+        if (TextUtils.equals(getPreferenceKey(), LIST_DATA_PREFERENCE_KEY)) {
+            mPreference.setEnabled(isCallStateIdle());
+        } else if (isAskEverytimeSupported()) {
             // Add the extra "Ask every time" value at the end.
             displayNames.add(mContext.getString(R.string.calls_and_sms_ask_every_time));
             subscriptionIds.add(Integer.toString(SubscriptionManager.INVALID_SUBSCRIPTION_ID));
