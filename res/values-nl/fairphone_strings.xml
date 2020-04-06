@@ -24,4 +24,10 @@
     <string name="fairphone_settings_summary">"Schakel OpenGL ES 3.0 en gyroscoopsensor in"</string>
     <string name="processor_info">"Processor"</string>
     <string name="assembly_number">"Assemblagenummer"</string>
+    <string name="receiver_module_info">"Bovenste module info"</string>
+    <string name="receiver_module_ov2685">"Camera voorzijde 2MP &#8211; OmniVision OV2685"</string>
+    <string name="receiver_module_ov5670">"Camera voorzijde 5MP &#8211; OmniVision OV5670"</string>
+    <string name="camera_module_info">"Cameramodule info"</string>
+    <string name="camera_module_ov8865">"Primaire camera 8MP &#8211; OmniVision OV8865"</string>
+    <string name="camera_module_ov12870">"Primaire camera 12MP &#8211; OmniVision OV12870"</string>
 </resources>

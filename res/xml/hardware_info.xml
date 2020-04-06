@@ -62,4 +62,20 @@
         settings:controller="com.android.settings.deviceinfo.hardwareinfo.AssemblyNumberPreferenceController"
         settings:enableCopying="true"/>
 
+    <!-- Receiver module -->
+    <Preference
+        android:key="hardware_info_receiver_module"
+        android:title="@string/receiver_module_info"
+        android:summary="@string/summary_placeholder"
+        settings:controller="com.android.settings.deviceinfo.hardwareinfo.ReceiverModulePreferenceController"
+        settings:enableCopying="true"/>
+
+    <!-- Camera module -->
+    <Preference
+        android:key="hardware_info_camera_module"
+        android:title="@string/camera_module_info"
+        android:summary="@string/summary_placeholder"
+        settings:controller="com.android.settings.deviceinfo.hardwareinfo.CameraModulePreferenceController"
+        settings:enableCopying="true"/>
+
 </PreferenceScreen>

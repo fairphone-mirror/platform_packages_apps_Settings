@@ -24,4 +24,10 @@
     <string name="fairphone_settings_summary">"Abilita OpenGL ES 3.0 e il giroscopico"</string>
     <string name="processor_info">"Processore"</string>
     <string name="assembly_number">"Numero di assemblaggio"</string>
+    <string name="receiver_module_info">"Informazioni sul modulo superiore"</string>
+    <string name="receiver_module_ov2685">"Fotocamera frontale 2MP &#8211; OmniVision OV2685"</string>
+    <string name="receiver_module_ov5670">"Fotocamera frontale 5MP &#8211; OmniVision OV5670"</string>
+    <string name="camera_module_info">"Informazioni sul modulo fotocamera"</string>
+    <string name="camera_module_ov8865">"Fotocamera principale 8MP &#8211; OmniVision OV8865"</string>
+    <string name="camera_module_ov12870">"Fotocamera principale 12MP &#8211; OmniVision OV12870"</string>
 </resources>

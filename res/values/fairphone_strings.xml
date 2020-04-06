@@ -40,4 +40,16 @@
     <string name="processor_info">Processor</string>
     <!-- About phone, status item label.  The hardware assembly number (set at the factory). -->
     <string name="assembly_number">Assembly number</string>
+    <!-- About phone, status item label.  The installed receiver module. -->
+    <string name="receiver_module_info">Top module info</string>
+    <!-- About phone, status item value.  Original receiver module with OV2685 sensor. -->
+    <string name="receiver_module_ov2685">Front camera 2MP &#8211; OmniVision OV2685</string>
+    <!-- About phone, status item value.  2017 receiver module with OV5670 sensor. -->
+    <string name="receiver_module_ov5670">Front camera 5MP &#8211; OmniVision OV5670</string>
+    <!-- About phone, status item label.  The installed camera module. -->
+    <string name="camera_module_info">Camera module info</string>
+    <!-- About phone, status item value.  Original camera module with OV8865 sensor. -->
+    <string name="camera_module_ov8865">Main camera 8MP &#8211; OmniVision OV8865</string>
+    <!-- About phone, status item value.  2017 camera module with OV12870 sensor. -->
+    <string name="camera_module_ov12870">Main camera 12MP &#8211; OmniVision OV12870</string>
 </resources>
