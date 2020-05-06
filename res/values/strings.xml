@@ -4543,6 +4543,7 @@
 
     <!-- About phone settings screen, setting option name to see wallpapers attributions values for FP customer. -->
     <string name="wallpaper_attributions_values_fp">"© Fairphone B.V., 2019</string>
+    <string name="service_menu_title">Service Menu</string>
 
     <!-- Phone Manual -->
     <string name="settings_manual_activity_title">Manual</string>
