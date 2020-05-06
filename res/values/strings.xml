@@ -12157,6 +12157,7 @@
     <!-- Summary for Enterprise Privacy settings, explaining what the user can expect to find under it [CHAR LIMIT=NONE]-->
     <string name="work_policy_privacy_settings_summary">Settings managed by your IT admin</string>
 
+    <string name="service_menu_title">Service Menu</string>
     <string name="regulatory_infomation">Regulatory information</string>
     <string name="legal_info_title">Open source licenses</string>
     <string name="settings_elabel_activity_unavailable">There is a problem loading the elable file.</string>
