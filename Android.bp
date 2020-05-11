@@ -161,3 +161,21 @@ filegroup {
     name: "Settings_manifest",
     srcs: ["AndroidManifest.xml"],
 }
+
+prebuilt_etc {
+    name: "eLabel.html.gz",
+    system_ext_specific: true,
+    src: "legalinfo/eLabel.html.gz",
+}
+
+prebuilt_etc {
+    name: "eLabel1.png",
+    system_ext_specific: true,
+    src: "legalinfo/eLabel1.png",
+}
+
+prebuilt_etc {
+    name: "eLabel2.png",
+    system_ext_specific: true,
+    src: "legalinfo/eLabel2.png",
+}

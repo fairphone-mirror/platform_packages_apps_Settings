@@ -17,22 +17,30 @@
 package com.android.settings;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
+import android.content.ContentResolver;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.FileProvider;
 
+import java.io.File;
 import java.util.Locale;
 
 /**
@@ -45,8 +53,8 @@ import java.util.Locale;
  * or add a string resource named "regulatory_info_text" with an HTML version of the required
  * information (text will be centered in the dialog).
  */
-public class RegulatoryInfoDisplayActivity extends Activity implements
-        DialogInterface.OnDismissListener {
+public class RegulatoryInfoDisplayActivity extends Activity {
+    private static final String TAG = "RegulatoryInfoDisplayActivity";
 
     private final String REGULATORY_INFO_RESOURCE = "regulatory_info";
     private static final String DEFAULT_REGULATORY_INFO_FILEPATH =
@@ -54,118 +62,77 @@ public class RegulatoryInfoDisplayActivity extends Activity implements
     private static final String REGULATORY_INFO_FILEPATH_TEMPLATE =
             "/data/misc/elabel/regulatory_info_%s.png";
 
+    private static final String DEFAULT_ELABEL_PATH = "/system_ext/etc/eLabel.html.gz";
+
+    private static final String FILEPROVIDER_AUTHORITY = "com.android.settings.files";
+
+    // Used in com.android.htmlviewer.HTMLViewerActivity
+    private static final String HTMLVIEWER_EXTRA_MODULE = "extra.module";
+    private static final String HTMLVIEWER_EXTRA_MODULE_REGULATORY_INFORMATION = "Regulatory information";
+
     /**
      * Display the regulatory info graphic in a dialog window.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AlertDialog.Builder builder = new AlertDialog.Builder(this)
-                .setTitle(R.string.regulatory_labels)
-                .setOnDismissListener(this)
-                .setPositiveButton(android.R.string.ok, null /* onClickListener */);
+        if (isFilePathValid(DEFAULT_ELABEL_PATH)) {
+            showSelectedFile(DEFAULT_ELABEL_PATH);
+        }
+    }
 
-        boolean regulatoryInfoDrawableExists = false;
-
-        final String regulatoryInfoFile = getRegulatoryInfoImageFileName();
-        final Bitmap regulatoryInfoBitmap = BitmapFactory.decodeFile(regulatoryInfoFile);
-
-        if (regulatoryInfoBitmap != null) {
-            regulatoryInfoDrawableExists = true;
+    private void showSelectedFile(final String path) {
+        if (TextUtils.isEmpty(path)) {
+            Log.e(TAG, "The elabel file is empty");
+            showErrorAndFinish();
+            return;
         }
 
-        int resId = 0;
-        if (!regulatoryInfoDrawableExists) {
-            resId = getResourceId();
+        final File file = new File(path);
+        if (!isFileValid(file)) {
+            Log.e(TAG, "elabel file " + path + " does not exist");
+            showErrorAndFinish();
+            return;
         }
-        if (resId != 0) {
-            try {
-                Drawable d = getDrawable(resId);
-                // set to false if the width or height is <= 2
-                // (missing PNG can return an empty 2x2 pixel Drawable)
-                regulatoryInfoDrawableExists = (d.getIntrinsicWidth() > 2
-                        && d.getIntrinsicHeight() > 2);
-            } catch (Resources.NotFoundException ignored) {
-                regulatoryInfoDrawableExists = false;
-            }
+        showHtmlFromUri(FileProvider.getUriForFile(getApplicationContext(), FILEPROVIDER_AUTHORITY, file));
+    }
+
+    private void showErrorAndFinish() {
+        Toast.makeText(this, R.string.settings_elabel_activity_unavailable, Toast.LENGTH_LONG)
+                .show();
+        finish();
+    }
+
+    private void showHtmlFromUri(Uri uri) {
+        // Kick off external viewer due to WebView security restrictions; we
+        // carefully point it at HTMLViewer, since it offers to decompress
+        // before viewing.
+        final Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setDataAndType(uri, "text/html");
+        intent.putExtra(Intent.EXTRA_TITLE, getString(R.string.regulatory_labels));
+        // Magic string to trigger custom functionality in htmlviewer
+        intent.putExtra(HTMLVIEWER_EXTRA_MODULE, HTMLVIEWER_EXTRA_MODULE_REGULATORY_INFORMATION);
+        if (ContentResolver.SCHEME_CONTENT.equals(uri.getScheme())) {
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         }
+        intent.addCategory(Intent.CATEGORY_DEFAULT);
+        intent.setPackage("com.android.htmlviewer");
 
-        CharSequence regulatoryText = getResources()
-                .getText(R.string.regulatory_info_text);
-
-        if (regulatoryInfoDrawableExists) {
-            View view = getLayoutInflater().inflate(R.layout.regulatory_info, null);
-            ImageView image = view.findViewById(R.id.regulatoryInfo);
-            if (regulatoryInfoBitmap != null) {
-                image.setImageBitmap(regulatoryInfoBitmap);
-            } else {
-                image.setImageResource(resId);
-            }
-            builder.setView(view);
-            builder.show();
-        } else if (regulatoryText.length() > 0) {
-            builder.setMessage(regulatoryText);
-            AlertDialog dialog = builder.show();
-            // we have to show the dialog first, or the setGravity() call will throw a NPE
-            TextView messageText = (TextView) dialog.findViewById(android.R.id.message);
-            messageText.setGravity(Gravity.CENTER);
-        } else {
-            // neither drawable nor text resource exists, finish activity
+        try {
+            startActivity(intent);
             finish();
+        } catch (ActivityNotFoundException e) {
+            Log.e(TAG, "Failed to find viewer", e);
+            showErrorAndFinish();
         }
+    }
+
+    private boolean isFilePathValid(final String path) {
+        return !TextUtils.isEmpty(path) && isFileValid(new File(path));
     }
 
     @VisibleForTesting
-    int getResourceId() {
-        // Use regulatory_info by default.
-        int resId = getResources().getIdentifier(
-                REGULATORY_INFO_RESOURCE, "drawable", getPackageName());
-
-        // When hardware sku property exists, use regulatory_info_<sku> resource if valid.
-        final String sku = getSku();
-        if (!TextUtils.isEmpty(sku)) {
-            String regulatory_info_res = REGULATORY_INFO_RESOURCE + "_" + sku.toLowerCase();
-            int id = getResources().getIdentifier(
-                    regulatory_info_res, "drawable", getPackageName());
-            if (id != 0) {
-                resId = id;
-            }
-        }
-
-        // When hardware coo property exists, use regulatory_info_<sku>_<coo> resource if valid.
-        final String coo = getCoo();
-        if (!TextUtils.isEmpty(coo) && !TextUtils.isEmpty(sku)) {
-            final String regulatory_info_coo_res =
-                    REGULATORY_INFO_RESOURCE + "_" + sku.toLowerCase() + "_" + coo.toLowerCase();
-            final int id = getResources().getIdentifier(
-                    regulatory_info_coo_res, "drawable", getPackageName());
-            if (id != 0) {
-                resId = id;
-            }
-        }
-        return resId;
-    }
-
-    @Override
-    public void onDismiss(DialogInterface dialog) {
-        finish();   // close the activity
-    }
-
-    private String getCoo() {
-        return SystemProperties.get("ro.boot.hardware.coo", "");
-    }
-
-    private String getSku() {
-        return SystemProperties.get("ro.boot.hardware.sku", "");
-    }
-
-    private String getRegulatoryInfoImageFileName() {
-        final String sku = getSku();
-        if (TextUtils.isEmpty(sku)) {
-            return DEFAULT_REGULATORY_INFO_FILEPATH;
-        } else {
-            return String.format(Locale.US, REGULATORY_INFO_FILEPATH_TEMPLATE,
-                    sku.toLowerCase());
-        }
+    boolean isFileValid(final File file) {
+        return file.exists() && file.length() != 0;
     }
 }
