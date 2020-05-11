@@ -96,3 +96,30 @@ android_library_import {
     name: "contextualcards",
     aars: ["libs/contextualcards.aar"],
 }
+
+prebuilt_etc {
+
+    name: "eLabel.html.gz",
+    system_ext_specific: true,
+
+    // This will install the file in /system_ext/etc
+    src: "legalinfo/eLabel.html.gz",
+}
+
+prebuilt_etc {
+
+    name: "eLabel1.png",
+    system_ext_specific: true,
+
+    // This will install the file in /system_ext/etc
+    src: "legalinfo/eLabel1.png",
+}
+
+prebuilt_etc {
+
+    name: "eLabel2.png",
+    system_ext_specific: true,
+
+    // This will install the file in /system_ext/etc
+    src: "legalinfo/eLabel2.png",
+}

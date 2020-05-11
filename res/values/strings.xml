@@ -4082,7 +4082,7 @@
     <!-- About phone settings screen, setting option name to show Manual [CHAR LIMIT=25] -->
     <string name="manual">Manual</string>
     <!-- About phone settings screen, setting option name to show regulatory labels [CHAR LIMIT=25] -->
-    <string name="regulatory_labels">Regulatory labels</string>
+    <string name="regulatory_labels">Regulatory information</string>
     <!-- About phone settings screen, setting option name to show the safety and regulatory manual [CHAR LIMIT=40] -->
     <string name="safety_and_regulatory_info">Safety &amp; regulatory manual</string>
     <!-- Note: this may be replaced by a more-specific title of the activity that will get launched --> <skip />
@@ -12148,6 +12148,9 @@
     <string name="work_policy_privacy_settings">Your work policy info</string>
     <!-- Summary for Enterprise Privacy settings, explaining what the user can expect to find under it [CHAR LIMIT=NONE]-->
     <string name="work_policy_privacy_settings_summary">Settings managed by your IT admin</string>
+
+    <string name="regulatory_infomation">Regulatory information</string>
+    <string name="settings_elabel_activity_unavailable">There is a problem loading the elable file.</string>
 
     <!-- Developer Settings: Search keywords for the Profile HWUI rendering. [CHAR_LIMIT=NONE] -->
     <string name="track_frame_time_keywords">GPU</string>
