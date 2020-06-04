@@ -37,6 +37,7 @@ import android.widget.TextView;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.FileProvider;
 
 import android.widget.Toast;
 import java.io.File;
@@ -63,6 +64,8 @@ public class RegulatoryInfoDisplayActivity extends Activity  {
     private static final String DEFAULT_ELABEL_PATH = "/system_ext/etc/eLabel.html.gz";
     public static final String EXTRA_MODULE = "extra.module";
 
+    private static final String FILEPROVIDER_AUTHORITY = "com.android.settings.files";
+
     /**
      * Display the regulatory info graphic in a dialog window.
      */
@@ -88,7 +91,7 @@ public class RegulatoryInfoDisplayActivity extends Activity  {
             showErrorAndFinish();
             return;
         }
-        showHtmlFromUri(Uri.fromFile(file));
+        showHtmlFromUri(FileProvider.getUriForFile(getApplicationContext(), FILEPROVIDER_AUTHORITY, file));
     }
 
     private void showErrorAndFinish() {

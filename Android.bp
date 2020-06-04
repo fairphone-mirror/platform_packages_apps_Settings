@@ -123,3 +123,21 @@ prebuilt_etc {
     // This will install the file in /system_ext/etc
     src: "legalinfo/eLabel2.png",
 }
+
+prebuilt_etc {
+
+    name: "FAIRPHONE.html.gz",
+    system_ext_specific: true,
+
+    // This will install the file in /system_ext/etc
+    src: "legalinfo/FAIRPHONE.html.gz",
+}
+
+prebuilt_etc {
+
+    name: "FAIRPHONE.png",
+    system_ext_specific: true,
+
+    // This will install the file in /system_ext/etc
+    src: "legalinfo/FAIRPHONE.png",
+}
