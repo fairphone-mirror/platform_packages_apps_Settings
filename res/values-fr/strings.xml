@@ -4968,6 +4968,7 @@
     <string name="keywords_media_controls" msgid="8345490568291778638">"Multimédia"</string>
     <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Le Bluetooth sera activé"</string>
     <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"Indisponible, car le mode Heure du coucher est activé"</string>
+    <string name="battery_info">Batterie Information</string>
     <string name="bluetooth_message_access_notification_content" msgid="5111712860712823893">"Un appareil souhaite accéder à vos messages. Appuyez ici pour plus de détails."</string>
     <string name="bluetooth_message_access_dialog_title" msgid="9009836130395061579">"Autoriser l\'accès aux messages ?"</string>
     <string name="bluetooth_message_access_dialog_content" msgid="7186694737578788487">"Un appareil Bluetooth, <xliff:g id="DEVICE_NAME_0">%1$s</xliff:g>, souhaite accéder à vos messages.\n\nVous ne vous êtes jamais connecté à <xliff:g id="DEVICE_NAME_1">%2$s</xliff:g> auparavant."</string>

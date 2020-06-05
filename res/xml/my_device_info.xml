@@ -116,6 +116,11 @@
         settings:keywords="@string/keywords_imei_info"
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.imei.ImeiInfoPreferenceController"/>
+    <Preference
+        android:key="battery_info"
+        android:title="@string/battery_info"
+        android:order="41"
+        android:summary="@string/summary_placeholder"/>
 
     <!-- Android version -->
     <Preference
