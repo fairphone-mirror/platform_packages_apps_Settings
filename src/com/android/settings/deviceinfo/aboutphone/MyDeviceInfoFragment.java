@@ -28,6 +28,7 @@ import android.view.View;
 import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.dashboard.DashboardFragment;
+import com.android.settings.deviceinfo.BatteryInfoPreferenceController;
 import com.android.settings.deviceinfo.BluetoothAddressPreferenceController;
 import com.android.settings.deviceinfo.BuildNumberPreferenceController;
 import com.android.settings.deviceinfo.DeviceNamePreferenceController;
@@ -116,6 +117,7 @@ public class MyDeviceInfoFragment extends DashboardFragment
                 fragment.getLifecycle();
         final SlotSimStatus slotSimStatus = new SlotSimStatus(context, executor, lifecycleObject);
 
+        controllers.add(new BatteryInfoPreferenceController(context));
         controllers.add(new IpAddressPreferenceController(context, lifecycle));
         controllers.add(new WifiMacAddressPreferenceController(context, lifecycle));
         controllers.add(new BluetoothAddressPreferenceController(context, lifecycle));
