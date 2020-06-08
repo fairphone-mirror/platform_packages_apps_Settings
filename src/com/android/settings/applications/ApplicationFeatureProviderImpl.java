@@ -180,6 +180,10 @@ public class ApplicationFeatureProviderImpl implements ApplicationFeatureProvide
         // Keep Package Installer enabled.
         keepEnabledPackages.add(mContext.getString(R.string.config_package_installer_package_name));
 
+        // Keep Google CarrierServices enabled as per operator requirement
+        final String googleCarrierService = "com.google.android.ims";
+        keepEnabledPackages.add(googleCarrierService);
+
         return keepEnabledPackages;
     }
 
