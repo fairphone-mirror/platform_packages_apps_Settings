@@ -61,6 +61,7 @@ import com.android.settings.network.SubscriptionUtil;
 import com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /** Handle each different apn setting. */
 public class ApnSettings extends RestrictedSettingsFragment
@@ -136,6 +137,22 @@ public class ApnSettings extends RestrictedSettingsFragment
     private boolean mHideImsApn;
     private boolean mAllowAddingApns;
     private boolean mHidePresetApnDetails;
+
+    private static final ArrayList<String> VODAFONE_NUMERICS =
+            new ArrayList<>(
+                    List.of(
+                            "26202", // Germany
+                            "26209", // Germany
+                            "23415", // UK
+                            "22210", // Italy
+                            "21401", // Spain
+                            "27201", // Ireland
+                            "20404", // Netherlands
+                            "26801", // Portugal
+                            "20205", // Greece
+                            "22801" // Switzerland
+                            ));
+
 
     public ApnSettings() {
         super(UserManager.DISALLOW_CONFIG_MOBILE_NETWORKS);
@@ -318,6 +335,8 @@ public class ApnSettings extends RestrictedSettingsFragment
     private void fillList() {
         final int subId = mSubscriptionInfo != null ? mSubscriptionInfo.getSubscriptionId()
                 : SubscriptionManager.INVALID_SUBSCRIPTION_ID;
+        final TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        final String mccmnc = mSubscriptionInfo == null ? "" : tm.getSimOperator(subId);
         final Uri simApnUri = Uri.withAppendedPath(Telephony.Carriers.SIM_APN_URI,
                 String.valueOf(subId));
         final StringBuilder where =
@@ -365,8 +384,18 @@ public class ApnSettings extends RestrictedSettingsFragment
                     pref.setSummary(apn);
                 }
 
-                final boolean selectable =
+                boolean selectable =
                         ((type == null) || type.contains(ApnSetting.TYPE_DEFAULT_STRING));
+
+                if ("20801".equals(mccmnc) && "Orange Internet".equalsIgnoreCase(name)) {
+                    selectable = false;
+                }
+                if (VODAFONE_NUMERICS.contains(mccmnc)
+                        && type.equals("dun")
+                        && TextUtils.isEmpty(mMvnoType)) {
+                    selectable = false;
+                }
+
                 pref.setSelectable(selectable);
                 if (selectable) {
                     if ((mSelectedKey != null) && mSelectedKey.equals(key)) {
