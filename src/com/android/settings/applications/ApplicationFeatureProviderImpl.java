@@ -183,6 +183,11 @@ public class ApplicationFeatureProviderImpl implements ApplicationFeatureProvide
         if (mPm.getWellbeingPackageName() != null) {
             keepEnabledPackages.add(mPm.getWellbeingPackageName());
         }
+
+        // Keep Google CarrierServices enabled as per operator requirement
+        final String googleCarrierService = "com.google.android.ims";
+        keepEnabledPackages.add(googleCarrierService);
+
         return keepEnabledPackages;
     }
 
