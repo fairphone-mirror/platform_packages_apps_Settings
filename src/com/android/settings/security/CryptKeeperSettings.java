@@ -58,6 +58,7 @@ public class CryptKeeperSettings extends InstrumentedPreferenceFragment {
     private Button mInitiateButton;
     private View mPowerWarning;
     private View mBatteryWarning;
+    private View mBetaUnsupportedMesssage;
     private IntentFilter mIntentFilter;
 
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
@@ -76,9 +77,12 @@ public class CryptKeeperSettings extends InstrumentedPreferenceFragment {
                      invalidCharger == 0;
 
                 // Update UI elements based on power/battery status
-                mInitiateButton.setEnabled(levelOk && pluggedOk);
-                mPowerWarning.setVisibility(pluggedOk ? View.GONE : View.VISIBLE );
-                mBatteryWarning.setVisibility(levelOk ? View.GONE : View.VISIBLE);
+                // mInitiateButton.setEnabled(levelOk && pluggedOk);
+                // mPowerWarning.setVisibility(pluggedOk ? View.GONE : View.VISIBLE );
+                // mBatteryWarning.setVisibility(levelOk ? View.GONE : View.VISIBLE);
+
+                // Encryption is disabled in the current beta version of Fairphone OS.
+                mInitiateButton.setEnabled(false);
             }
         }
     };
@@ -116,6 +120,7 @@ public class CryptKeeperSettings extends InstrumentedPreferenceFragment {
 
         mPowerWarning = mContentView.findViewById(R.id.warning_unplugged);
         mBatteryWarning = mContentView.findViewById(R.id.warning_low_charge);
+        mBetaUnsupportedMesssage = mContentView.findViewById(R.id.message_beta_unsupported);
 
         return mContentView;
     }

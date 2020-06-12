@@ -1070,6 +1070,9 @@
     <string name="crypt_keeper_low_charge_text">Charge your battery and try again.</string>
     <!-- Warning string that will be displayed when encryption cannot be started -->
     <string name="crypt_keeper_unplugged_text">Plug in your charger and try again.</string>
+    <string name="crypt_keeper_beta_unsupported_text">
+    Encryption is disabled in this beta version of Fairphone OS.
+    </string>
 
     <!-- Dialog title, shown when encryption cannot proceed because a PIN/Password is needed -->
     <string name="crypt_keeper_dialog_need_password_title">No lock screen PIN or password</string>
