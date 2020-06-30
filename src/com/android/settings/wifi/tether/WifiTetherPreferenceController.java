@@ -17,11 +17,16 @@
 package com.android.settings.wifi.tether;
 
 import android.annotation.NonNull;
+import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.wifi.SoftApConfiguration;
 import android.net.wifi.WifiClient;
 import android.net.wifi.WifiManager;
+import android.provider.Settings;
 import android.text.BidiFormatter;
 
 import androidx.annotation.VisibleForTesting;
@@ -44,6 +49,9 @@ public class WifiTetherPreferenceController extends AbstractPreferenceController
 
     private static final String WIFI_TETHER_SETTINGS = "wifi_tether";
 
+    private static final IntentFilter AIRPLANE_INTENT_FILTER =
+            new IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+    private static final int ID_NULL = -1;
     private final ConnectivityManager mConnectivityManager;
     private final String[] mWifiRegexs;
     private final WifiManager mWifiManager;
@@ -100,6 +108,9 @@ public class WifiTetherPreferenceController extends AbstractPreferenceController
     @Override
     public void onStart() {
         if (mPreference != null) {
+            mContext.registerReceiver(mReceiver, AIRPLANE_INTENT_FILTER);
+            clearSummaryForAirplaneMode();
+
             if (mWifiTetherSoftApManager != null) {
                 mWifiTetherSoftApManager.registerSoftApCallback();
             }
@@ -109,6 +120,7 @@ public class WifiTetherPreferenceController extends AbstractPreferenceController
     @Override
     public void onStop() {
         if (mPreference != null) {
+            mContext.unregisterReceiver(mReceiver);
             if (mWifiTetherSoftApManager != null) {
                 mWifiTetherSoftApManager.unRegisterSoftApCallback();
             }
@@ -147,6 +159,17 @@ public class WifiTetherPreferenceController extends AbstractPreferenceController
                 });
     }
 
+    private final BroadcastReceiver mReceiver =
+            new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    String action = intent.getAction();
+                    if (Intent.ACTION_AIRPLANE_MODE_CHANGED.equals(action)) {
+                        clearSummaryForAirplaneMode(R.string.wifi_hotspot_off_subtext);
+                    }
+                }
+            };
+
     @VisibleForTesting
     void handleWifiApStateChanged(int state, int reason) {
         switch (state) {
@@ -162,6 +185,7 @@ public class WifiTetherPreferenceController extends AbstractPreferenceController
                 break;
             case WifiManager.WIFI_AP_STATE_DISABLED:
                 mPreference.setSummary(R.string.wifi_hotspot_off_subtext);
+                clearSummaryForAirplaneMode();
                 break;
             default:
                 if (reason == WifiManager.SAP_START_FAILURE_NO_CHANNEL) {
@@ -169,6 +193,7 @@ public class WifiTetherPreferenceController extends AbstractPreferenceController
                 } else {
                     mPreference.setSummary(R.string.wifi_error);
                 }
+                clearSummaryForAirplaneMode();
         }
     }
 
@@ -179,5 +204,20 @@ public class WifiTetherPreferenceController extends AbstractPreferenceController
         }
         mPreference.setSummary(mContext.getString(R.string.wifi_tether_enabled_subtext,
                 BidiFormatter.getInstance().unicodeWrap(softApConfig.getSsid())));
+    }
+
+    private void clearSummaryForAirplaneMode() {
+        clearSummaryForAirplaneMode(ID_NULL);
+    }
+
+    private void clearSummaryForAirplaneMode(int defaultId) {
+        ContentResolver resolver = mContext.getContentResolver();
+        boolean isAirplaneMode =
+                Settings.Global.getInt(resolver, Settings.Global.AIRPLANE_MODE_ON, 0) != 0;
+        if (isAirplaneMode) {
+            mPreference.setSummary(R.string.wifi_tether_disabled_by_airplane);
+        } else if (defaultId != ID_NULL) {
+            mPreference.setSummary(defaultId);
+        }
     }
 }

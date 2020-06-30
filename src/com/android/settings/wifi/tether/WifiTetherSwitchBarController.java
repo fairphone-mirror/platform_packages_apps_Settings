@@ -19,6 +19,7 @@ package com.android.settings.wifi.tether;
 import static android.net.ConnectivityManager.TETHERING_WIFI;
 
 import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -26,6 +27,7 @@ import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
 import android.os.Handler;
 import android.os.Looper;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Switch;
 
@@ -94,7 +96,12 @@ public class WifiTetherSwitchBarController implements
 
     @Override
     public void onClick(View v) {
-        if (((Switch) v).isChecked()) {
+        ContentResolver resolver = mContext.getContentResolver();
+        boolean isAirplaneMode =
+                Settings.Global.getInt(resolver, Settings.Global.AIRPLANE_MODE_ON, 0) != 0;
+        if (isAirplaneMode) {
+            mSwitchBar.setChecked(false);
+        } else if (((Switch) v).isChecked()) {
             startTether();
         } else {
             stopTether();

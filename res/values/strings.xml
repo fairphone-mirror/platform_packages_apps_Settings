@@ -12162,6 +12162,9 @@
     <string name="legal_info_title">Open source licenses</string>
     <string name="settings_elabel_activity_unavailable">There is a problem loading the elable file.</string>
 
+    <!-- Summary text when hotspot is disabled because airplane mode is on [CHAR LIMIT=80]-->
+    <string name="wifi_tether_disabled_by_airplane">Unavailable because airplane mode is turned on</string>
+
     <!-- Developer Settings: Search keywords for the Profile HWUI rendering. [CHAR_LIMIT=NONE] -->
     <string name="track_frame_time_keywords">GPU</string>
 
