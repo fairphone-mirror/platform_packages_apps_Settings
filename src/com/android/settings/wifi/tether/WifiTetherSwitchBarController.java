@@ -24,6 +24,7 @@ import static android.net.wifi.WifiManager.WIFI_AP_STATE_ENABLING;
 import static android.net.wifi.WifiManager.WIFI_AP_STATE_FAILED;
 
 import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -31,6 +32,7 @@ import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
 import android.os.Handler;
 import android.os.Looper;
+import android.provider.Settings;
 import android.util.Log;
 import android.widget.Switch;
 
@@ -107,7 +109,12 @@ public class WifiTetherSwitchBarController implements
         // Filter out unnecessary callbacks when switch is disabled.
         if (!switchView.isEnabled()) return;
 
-        if (isChecked) {
+        ContentResolver resolver = mContext.getContentResolver();
+        boolean isAirplaneMode =
+                Settings.Global.getInt(resolver, Settings.Global.AIRPLANE_MODE_ON, 0) != 0;
+        if (isAirplaneMode) {
+            mSwitchBar.setChecked(false);
+        } else if (isChecked) {
             startTether();
         } else {
             stopTether();
