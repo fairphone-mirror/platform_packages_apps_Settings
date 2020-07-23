@@ -120,6 +120,18 @@
             android:appComponentFactory="androidx.core.app.CoreComponentFactory">
 
         <uses-library android:name="org.apache.http.legacy" />
+
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenSize"
+                  android:excludeFromRecents="true"
+                  android:label="@string/summary_empty"
+                  android:name="LaunchMyFairphoneActivity"
+                  android:theme="@android:style/Theme.DeviceDefault.Wallpaper.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.settings.LAUNCH_MY_FAIRPHONE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <!-- Settings -->
 
         <activity android:name=".homepage.SettingsHomepageActivity"
