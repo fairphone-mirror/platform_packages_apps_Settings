@@ -77,6 +77,8 @@ android_library {
         "lottie",
         "WifiTrackerLib",
         "SettingsLibActivityEmbedding",
+        "setup-wizard-lib",
+        "setup-wizard-lib-gingerbread-compat",
     ],
 
     libs: [
