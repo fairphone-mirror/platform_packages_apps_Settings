@@ -102,6 +102,13 @@ public class MobileNetworkSwitchController extends BasePreferenceController impl
             return;
         }
 
+        if (mTelephonyManager.getActiveModemCount() == 1 && !mSubscriptionManager.
+                canDisablePhysicalSubscription()) {
+            Log.d(TAG, "update: Hide SIM option for 1.4 HAL in single sim");
+            mSwitchBar.hide();
+            return;
+        }
+
         for (SubscriptionInfo info : SubscriptionUtil.getAvailableSubscriptions(mContext)) {
             if (info.getSubscriptionId() == mSubId) {
                 mSubInfo = info;
@@ -112,7 +119,6 @@ public class MobileNetworkSwitchController extends BasePreferenceController impl
         if (TelephonyManager.CALL_STATE_IDLE != mCallState) {
             Log.d(TAG, "update: disable switchbar, callstate=" + mCallState);
             mSwitchBar.setEnabled(false);
-            return;
         } else {
             mSwitchBar.setEnabled(true);
         }
