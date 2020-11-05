@@ -17,6 +17,7 @@
 package com.android.settings.deviceinfo.hardwareinfo;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.SystemProperties;
 import android.text.TextUtils;
 
@@ -42,6 +43,10 @@ public class HardwareRevisionPreferenceController extends BasePreferenceControll
 
     @Override
     public CharSequence getSummary() {
-        return SystemProperties.get("ro.boot.hardware.revision");
+        if (Build.getFairphoneModel().contains("FP3+")) {
+            return "Fairphone 3+";
+        } else {
+            return "Fairphone 3";
+        }
     }
 }
