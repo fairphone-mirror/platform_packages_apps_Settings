@@ -1225,7 +1225,7 @@
     <string name="wifi_add_app_networks_summary" product="tablet" msgid="2088967184512169910">"<xliff:g id="APPNAME">%1$s</xliff:g> möchte diese Netzwerke auf deinem Tablet speichern"</string>
     <string name="wifi_add_app_networks_saving_summary" msgid="577680250954742033">"<xliff:g id="NUMBER">%d</xliff:g> Netzwerke werden gespeichert…"</string>
     <string name="wifi_add_app_networks_saved_summary" msgid="1648417628665152905">"Netzwerke gespeichert"</string>
-    <string name="wifi_calling_settings_title" msgid="264665264535884440">"WLAN-Telefonie"</string>
+    <string name="wifi_calling_settings_title" msgid="264665264535884440">"Wi-Fi Calling"</string>
     <string name="wifi_calling_suggestion_title" msgid="4791435106729906727">"Anrufoptionen um WLAN-Anrufe erweitern"</string>
     <string name="wifi_calling_suggestion_summary" msgid="5413024679599742858">"\"WLAN-Telefonie\" aktivieren, um Abdeckung zu erweitern"</string>
     <string name="wifi_calling_mode_title" msgid="5145896168360825619">"Bevorzugte Anrufeinstellung"</string>
