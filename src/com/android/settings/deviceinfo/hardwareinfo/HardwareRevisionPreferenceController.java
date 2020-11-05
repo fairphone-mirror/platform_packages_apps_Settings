@@ -24,6 +24,8 @@ import com.android.settings.Utils;
 import com.android.settings.core.BasePreferenceController;
 import com.android.settings.slices.Sliceable;
 
+import android.os.Build;
+
 public class HardwareRevisionPreferenceController extends BasePreferenceController {
 
     public HardwareRevisionPreferenceController(Context context, String preferenceKey) {
@@ -55,6 +57,15 @@ public class HardwareRevisionPreferenceController extends BasePreferenceControll
                 return hardwareVersion;
             }
         }
-        return SystemProperties.get("ro.boot.hardware.revision");
+        return getModelInfo();
+    }
+
+    private String getModelInfo()
+    {
+        if (Build.getFairphoneModel().contains("FP3+")) {
+            return "Fairphone 3+";
+        } else {
+            return "Fairphone 3";
+        }
     }
 }
