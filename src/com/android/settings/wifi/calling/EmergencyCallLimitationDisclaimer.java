@@ -18,6 +18,8 @@ package com.android.settings.wifi.calling;
 
 import android.content.Context;
 import android.telephony.CarrierConfigManager;
+import android.telephony.TelephonyManager;
+import android.util.Log;
 
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.settings.R;
@@ -32,9 +34,14 @@ public class EmergencyCallLimitationDisclaimer extends DisclaimerItem {
     static final String KEY_HAS_AGREED_EMERGENCY_LIMITATION_DISCLAIMER =
             "key_has_agreed_emergency_limitation_disclaimer";
     private static final int UNINITIALIZED_DELAY_VALUE = -1;
+    private boolean mDontShowThisInfo = false;
 
     public EmergencyCallLimitationDisclaimer(Context context, int subId) {
         super(context, subId);
+        TelephonyManager tm =
+                (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        String plmn = tm.getSimOperator(subId);
+        if ("26202".equals(plmn) || "26209".equals(plmn)) mDontShowThisInfo = true;
     }
 
     /**
@@ -48,6 +55,7 @@ public class EmergencyCallLimitationDisclaimer extends DisclaimerItem {
             logd("shouldShow: false due to carrier config is default(-1).");
             return false;
         }
+        if (mDontShowThisInfo) return false;
 
         return super.shouldShow();
     }

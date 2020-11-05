@@ -16,8 +16,6 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="wifi_calling_off_explanation_2" msgid="5645212744935818562">\n\n"Du kannst von deinem Gerät via \"Wi-Fi Calling\" keine Notrufe tätigen. Wenn du versuchst, den Notruf zu erreichen, nutzt dein Gerät automatisch das Mobilfunknetz. Notrufe sind nur an Orten mit Mobilfunkabdeckung möglich."</string>
-
     <!-- Label for the title on wfc disclaimer location. [CHAR LIMIT=30] -->
     <string name="wfc_disclaimer_emergency_limitation_title_text">Notruf über WiFi Calling</string>
 
