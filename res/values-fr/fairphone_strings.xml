@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018-2020 Fairphone B.V.
+<!-- Copyright (C) 2018-2021 Fairphone B.V.
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
 -->
 
 <resources>
+    <string name="crypt_keeper_unsupported_text">"Nous sommes désolés, mais le cryptage n\'est pas disponible sur le Fairphone 2 lorsque vous utilisez Android 10.\n\nSi vous souhaitez crypter votre appareil, il existe une solution de contournement :\n\t1. Retourner sur Android 7 en l\'installant manuellement.\n\t2. Chiffrez votre appareil.\n\t3. Mettez à jour vers Android 9.\n\t4. Mettez à jour vers Android 10.\n\n<b>Ressources</b>\n<a href="https://support.fairphone.com/hc/en-us/articles/213290023">Forfaits Fairphone 2 et instructions</a>.\nTout ce dont vous avez besoin pour réussir votre retour à Android 7\n\n<a href="https://support.fairphone.com/hc/en-us">Service client</a>.\nAu cas où vous auriez besoin d\'aide pour le processus."</string>
     <string name="maintenance_preference_title">"Maintenance"</string>
     <string name="checkup_summary">"Diagnostic matériel"</string>
     <string name="proximity_sensor_title">"Capteur de proximité"</string>

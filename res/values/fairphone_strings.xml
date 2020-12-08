@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018-2020 Fairphone B.V.
+<!-- Copyright (C) 2018-2021 Fairphone B.V.
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="crypt_keeper_unsupported_text">We are sorry, but encryption is not available on the Fairphone 2 while using Android 10.\n\nIf you want to encrypt your device, there is a workaround:\n\t1. Manually downgrade to Android 7.\n\t2. Encrypt your device.\n\t3. Upgrade to Android 9.\n\t4. Upgrade to Android 10.\n\n<b>Resources</b>\n<a href="https://support.fairphone.com/hc/en-us/articles/213290023">Fairphone 2 packages and instructions</a>.\nEverything you need to successfully downgrade\n\n<a href="https://support.fairphone.com/hc/en-us">Customer support</a>.\nIn case you need help with the process.</string>
+
     <!-- Maintenance settings --> <skip />
     <!-- Preference title for maintenance settings -->
     <string name="maintenance_preference_title">Maintenance</string>

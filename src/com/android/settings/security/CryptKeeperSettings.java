@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2008 The Android Open Source Project
+ * Copyright (c) 2020-2021 Fairphone B.V.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,10 +30,12 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.os.storage.StorageManager;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.Preference;
@@ -59,6 +62,7 @@ public class CryptKeeperSettings extends InstrumentedPreferenceFragment {
     private Button mInitiateButton;
     private View mPowerWarning;
     private View mBatteryWarning;
+    private TextView mUnsupportedMesssage;
     private IntentFilter mIntentFilter;
 
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
@@ -77,9 +81,12 @@ public class CryptKeeperSettings extends InstrumentedPreferenceFragment {
                      invalidCharger == 0;
 
                 // Update UI elements based on power/battery status
-                mInitiateButton.setEnabled(levelOk && pluggedOk);
-                mPowerWarning.setVisibility(pluggedOk ? View.GONE : View.VISIBLE );
-                mBatteryWarning.setVisibility(levelOk ? View.GONE : View.VISIBLE);
+                // mInitiateButton.setEnabled(levelOk && pluggedOk);
+                // mPowerWarning.setVisibility(pluggedOk ? View.GONE : View.VISIBLE );
+                // mBatteryWarning.setVisibility(levelOk ? View.GONE : View.VISIBLE);
+
+                // Encryption is disabled in the current version of Fairphone OS.
+                mInitiateButton.setEnabled(false);
             }
         }
     };
@@ -117,6 +124,8 @@ public class CryptKeeperSettings extends InstrumentedPreferenceFragment {
 
         mPowerWarning = mContentView.findViewById(R.id.warning_unplugged);
         mBatteryWarning = mContentView.findViewById(R.id.warning_low_charge);
+        mUnsupportedMesssage = (TextView)mContentView.findViewById(R.id.message_unsupported);
+        mUnsupportedMesssage.setMovementMethod(LinkMovementMethod.getInstance());
 
         return mContentView;
     }
