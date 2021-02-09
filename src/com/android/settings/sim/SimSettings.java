@@ -16,8 +16,8 @@
 
 package com.android.settings.sim;
 
-import static org.lineageos.internal.util.TelephonyExtUtils.PROVISIONED;
-import static org.lineageos.internal.util.TelephonyExtUtils.NOT_PROVISIONED;
+import static com.android.internal.telephony.util.TelephonyExtUtils.PROVISIONED;
+import static com.android.internal.telephony.util.TelephonyExtUtils.NOT_PROVISIONED;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -59,8 +59,8 @@ import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
-import org.lineageos.internal.util.TelephonyExtUtils;
-import org.lineageos.internal.util.TelephonyExtUtils.ProvisioningChangedListener;
+import com.android.internal.telephony.util.TelephonyExtUtils;
+import com.android.internal.telephony.util.TelephonyExtUtils.ProvisioningChangedListener;
 
 import java.util.ArrayList;
 import java.util.List;
