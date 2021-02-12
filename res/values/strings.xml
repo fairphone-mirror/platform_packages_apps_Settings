@@ -10080,4 +10080,7 @@
 
     <!-- Title for Connected device shortcut [CHAR LIMIT=30] -->
     <string name="devices_title">Devices</string>
+
+    <!-- Privacy Guard -->
+    <string name="privacy_guard_manager_title">Privacy Guard</string>
 </resources>

@@ -26,13 +26,11 @@ import android.support.annotation.VisibleForTesting;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
-
 import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.core.PreferenceControllerMixin;
 import com.android.settingslib.development.DeveloperOptionsPreferenceController;
-
-import org.lineageos.internal.util.FileUtils;
+import java.io.File;
 
 public class RootAccessPreferenceController extends DeveloperOptionsPreferenceController
         implements Preference.OnPreferenceChangeListener, PreferenceControllerMixin {
@@ -67,7 +65,9 @@ public class RootAccessPreferenceController extends DeveloperOptionsPreferenceCo
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
 
-        if (FileUtils.fileExists("/system/xbin/su")) {
+        File file = new File("/system/xbin/su");
+
+        if (file.exists()) {
             ((ListPreference) mPreference).setEntries(R.array.root_access_entries);
             ((ListPreference) mPreference).setEntryValues(R.array.root_access_values);
         } else {

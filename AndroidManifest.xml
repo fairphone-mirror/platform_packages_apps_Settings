@@ -1259,7 +1259,7 @@
         </activity>
 
         <activity android:name="Settings$AppOpsSummaryActivity"
-                android:label="@*lineageos.platform:string/privacy_guard_manager_title"
+                android:label="@string/privacy_guard_manager_title"
                 android:taskAffinity=""
                 android:excludeFromRecents="true">
             <intent-filter>
@@ -1288,7 +1288,7 @@
              trick is so the code that is now a fragment can still be called
              AppOpsDetails. -->
         <activity android:name=".applications.appops.AppOpsDetailsTop"
-                  android:label="@*lineageos.platform:string/privacy_guard_manager_title"
+                  android:label="@string/privacy_guard_manager_title"
                   android:exported="true"
                   android:taskAffinity=""
                   android:excludeFromRecents="true"
@@ -1297,7 +1297,7 @@
 
         <!-- Keep compatibility with old shortcuts. -->
         <activity-alias android:name=".applications.appops.AppOpsDetails"
-                android:label="@*lineageos.platform:string/privacy_guard_manager_title"
+                android:label="@string/privacy_guard_manager_title"
                 android:exported="true"
                 android:excludeFromRecents="true"
                 android:targetActivity=".applications.appops.AppOpsDetailsTop">

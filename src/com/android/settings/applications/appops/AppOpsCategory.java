@@ -364,7 +364,7 @@ public class AppOpsCategory extends ListFragment implements
 
         new SubSettingLauncher(getContext())
                 .setDestination(AppOpsDetails.class.getName())
-                .setTitle(org.lineageos.platform.internal.R.string.privacy_guard_manager_title)
+                .setTitle(R.string.privacy_guard_manager_title)
                 .setArguments(args)
                 .setSourceMetricsCategory(MetricsProto.MetricsEvent.VIEW_UNKNOWN)
                 .setResultListener(this, RESULT_APP_DETAILS)
