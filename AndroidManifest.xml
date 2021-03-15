@@ -132,6 +132,20 @@
             </intent-filter>
         </activity>
 
+        <receiver android:name="com.arima.settings.AppInstallPSWLReceiver" >
+            <intent-filter >
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.arima.settings.AppInstallPSWLService"
+             android:enabled="true"
+             android:exported="true" >
+            <intent-filter>
+                <action android:name="arima.settings.AppInstallPSWLService" />
+            </intent-filter>
+        </service>
+
         <!-- Settings -->
 
         <activity android:name=".homepage.SettingsHomepageActivity"
