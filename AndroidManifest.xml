@@ -135,6 +135,20 @@
 
         <uses-library android:name="org.apache.http.legacy" />
 
+        <receiver android:name="com.arima.settings.AppInstallPSWLReceiver"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.arima.settings.AppInstallPSWLService"
+                 android:enabled="true"
+                 android:exported="true">
+            <intent-filter>
+                <action android:name="arima.settings.AppInstallPSWLService" />
+            </intent-filter>
+        </service>
+
         <!-- Settings -->
         <activity android:name=".homepage.SettingsHomepageActivity"
                   android:label="@string/settings_label_launcher"
