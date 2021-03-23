@@ -12019,6 +12019,9 @@
     <!-- Summary for the top level Privacy Settings [CHAR LIMIT=NONE]-->
     <string name="privacy_dashboard_summary">Permissions, account activity, personal data</string>
 
+    <!-- Title for the Longevity & device statistics -->
+    <string name="longevity_device_statistics_list_item_title">Longevity &amp; device statistics</string>
+
     <!-- Label for button in contextual card for users to remove the card [CHAR LIMIT=30] -->
     <string name="contextual_card_dismiss_remove">Remove</string>
     <!-- Label for button in contextual card for users to keep the card [CHAR LIMIT=30] -->
