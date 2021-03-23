@@ -14192,4 +14192,6 @@
     <!-- [CHAR LIMIT=NONE] Hint for QR code process failure -->
     <string name="bt_le_audio_qr_code_is_not_valid_format">QR code isn\u0027t a valid format</string>
 
+    <!-- Title for the Longevity & device statistics -->
+    <string name="longevity_device_statistics_list_item_title">Longevity &amp; device statistics</string>
 </resources>
