@@ -37,6 +37,7 @@ import com.android.settings.biometrics.face.FaceProfileStatusPreferenceControlle
 import com.android.settings.biometrics.fingerprint.FingerprintProfileStatusPreferenceController;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.notification.LockScreenNotificationPreferenceController;
+import com.android.settings.privacy.LongevityDeviceStatisticsPreferenceController;
 import com.android.settings.privacy.PrivacyDashboardFragment;
 import com.android.settings.security.ChangeProfileScreenLockPreferenceController;
 import com.android.settings.security.LockUnificationPreferenceController;
@@ -104,6 +105,7 @@ public final class SafetyCenterUtils {
             lifecycle.addObserver(notificationController);
         }
         controllers.add(notificationController);
+        controllers.add(new LongevityDeviceStatisticsPreferenceController(context));
         return controllers;
     }
 

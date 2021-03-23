@@ -12140,4 +12140,6 @@
 
     <!-- Warning message when we try to dock an app not supporting multiple instances split into multiple sides [CHAR LIMIT=NONE] -->
     <string name="dock_multi_instances_not_supported_text">"This app can only be opened in 1 window"</string>
+    <!-- Title for the Longevity & device statistics -->
+    <string name="longevity_device_statistics_list_item_title">Longevity &amp; device statistics</string>
 </resources>
