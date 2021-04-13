@@ -23,8 +23,16 @@ import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.core.BasePreferenceController;
 import com.android.settings.slices.Sliceable;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import android.util.Log;
 
 public class HardwareRevisionPreferenceController extends BasePreferenceController {
+
+    private static final String TAG = "HwRevisionPref";
 
     public HardwareRevisionPreferenceController(Context context, String preferenceKey) {
         super(context, preferenceKey);
@@ -49,12 +57,28 @@ public class HardwareRevisionPreferenceController extends BasePreferenceControll
 
     @Override
     public CharSequence getSummary() {
-        if (Utils.isSupportCTPA(mContext)) {
-            String hardwareVersion = Utils.getString(mContext, Utils.KEY_HARDWARE_VERSION);
-            if (null != hardwareVersion && !hardwareVersion.isEmpty()) {
-                return hardwareVersion;
-            }
+//        if (Utils.isSupportCTPA(mContext)) {
+//            String hardwareVersion = Utils.getString(mContext, Utils.KEY_HARDWARE_VERSION);
+//            if (null != hardwareVersion && !hardwareVersion.isEmpty()) {
+//                return hardwareVersion;
+//            }
+//        }
+//        return SystemProperties.get("ro.boot.hardware.revision");
+        return getVersion();
+    }
+
+    private String getVersion() {
+        String version = null;
+        try {
+            InputStream is = new FileInputStream("/sys/class/board_id/version");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            version = reader.readLine();
+            reader.close();
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e(TAG, "getVersion fail" + e);
         }
-        return SystemProperties.get("ro.boot.hardware.revision");
+        return version;
     }
 }
