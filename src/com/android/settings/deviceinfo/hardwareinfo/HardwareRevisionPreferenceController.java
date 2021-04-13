@@ -19,12 +19,21 @@ package com.android.settings.deviceinfo.hardwareinfo;
 import android.content.Context;
 import android.os.SystemProperties;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.core.BasePreferenceController;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 public class HardwareRevisionPreferenceController extends BasePreferenceController {
+
+    private static final String TAG = "HwRevisionPref";
 
     public HardwareRevisionPreferenceController(Context context, String preferenceKey) {
         super(context, preferenceKey);
@@ -43,12 +52,17 @@ public class HardwareRevisionPreferenceController extends BasePreferenceControll
 
     @Override
     public CharSequence getSummary() {
-        if (Utils.isSupportCTPA(mContext)) {
-            String hardwareVersion = Utils.getString(mContext, Utils.KEY_HARDWARE_VERSION);
-            if (null != hardwareVersion && !hardwareVersion.isEmpty()) {
-                return hardwareVersion;
-            }
+        String version = null;
+        try {
+            InputStream is = new FileInputStream("/sys/class/board_id/version");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            version = reader.readLine();
+            reader.close();
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e(TAG, "getVersion fail" + e);
         }
-        return SystemProperties.get("ro.boot.hardware.revision");
+        return version;
     }
 }
