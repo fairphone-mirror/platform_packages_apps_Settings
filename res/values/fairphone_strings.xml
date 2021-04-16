@@ -37,9 +37,9 @@
     <!-- Maintenance settings screen, the summary for the item to take the user to the Hiccup settings. -->
     <string name="hiccup_summary">Stability reporting</string>
     <!-- Maintenance settings screen, the title for the item to take the user to the OpenGL ES settings. -->
-    <string name="fairphone_setting_title">Enhanced hardware features</string>
+    <string name="opengles3_title">Enhanced 3D graphics support</string>
     <!-- Maintenance settings screen, the summary for the item to take the user to the OpenGL ES settings. -->
-    <string name="fairphone_settings_summary">Enable OpenGL ES 3.0 and hardware video playback</string>
+    <string name="opengles3_summary">Enable OpenGL ES 3.0</string>
 
     <!-- About --> <skip />
     <!-- About phone, status item label.  The hardware assembly number (set at the factory). -->

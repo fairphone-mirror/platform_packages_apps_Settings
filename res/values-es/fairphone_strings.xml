@@ -19,8 +19,8 @@
     <string name="maintenance_preference_title">"Mantenimiento"</string>
     <string name="proximity_sensor_title">"Sensor de proximidad"</string>
     <string name="hiccup_summary">"Informe de estabilidad"</string>
-    <!-- <string name="fairphone_setting_title">TODO</string> -->
-    <!-- <string name="fairphone_settings_summary">TODO</string> -->
+    <string name="opengles3_title">"Sporte de gráficos 3D mejorado"</string>
+    <string name="opengles3_summary">"Habilitar OpenGL ES 3.0"</string>
     <string name="assembly_number">"Número de ensamblaje"</string>
     <string name="processor_info">"Procesador"</string>
     <string name="receiver_module_info">"Información del módulo superior"</string>

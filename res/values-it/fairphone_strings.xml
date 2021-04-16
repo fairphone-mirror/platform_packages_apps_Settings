@@ -16,8 +16,6 @@
 
 <resources>
     <!-- <string name="crypt_keeper_unsupported_text">TODO</string> -->
-    <!-- <string name="fairphone_setting_title">TODO</string> -->
-    <!-- <string name="fairphone_settings_summary">TODO</string> -->
     <string name="assembly_number">"Numero di assemblaggio"</string>
     <string name="processor_info">"Processore"</string>
     <string name="receiver_module_info">"Informazioni sul modulo superiore"</string>

@@ -23,8 +23,8 @@
     <string name="maintenance_preference_title">"Maintenance"</string>
     <string name="proximity_sensor_title">"Capteur de proximité"</string>
     <string name="hiccup_summary">"Rapport de stabilité"</string>
-    <string name="fairphone_setting_title">"Fonctionnalités matérielles améliorées"</string>
-    <string name="fairphone_settings_summary">"Activer OpenGL ES 3.0 et l'accélération matérielle pour la lecture vidéo"</string>
+    <string name="opengles3_title">"Support graphique 3D amélioré"</string>
+    <string name="opengles3_summary">"Activer OpenGL ES 3.0"</string>
     <string name="assembly_number">"Numéro d'assemblage"</string>
     <string name="processor_info">"Processeur"</string>
     <string name="receiver_module_info">"Informations sur le module supérieur"</string>
