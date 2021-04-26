@@ -108,6 +108,8 @@ android_library {
         "app-compat-annotations",
         "telephony-ext",
         "extphonelib",
+        "qcrilhook",
+        "sysrilcmd",
     ],
 }
 
@@ -134,8 +136,11 @@ android_app {
     optimize: {
         proguard_flags_files: ["proguard.flags"],
     },
+
     libs: [
         "extphonelib"
+        "qcrilhook",
+        "sysrilcmd",
     ],
 }
 
