@@ -63,6 +63,8 @@ android_library {
         "ims-common",
         "app-compat-annotations",
         "telephony-ext",
+        "qcrilhook",
+        "sysrilcmd",
     ],
 }
 
@@ -87,8 +89,11 @@ android_app {
     optimize: {
         proguard_flags_files: ["proguard.flags"],
     },
+
     libs: [
         "telephony-ext",
+        "qcrilhook",
+        "sysrilcmd",
     ],
 }
 

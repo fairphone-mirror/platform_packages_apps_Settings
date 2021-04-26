@@ -12299,4 +12299,15 @@
     <string name="nr_nsa_sa">NSA + SA</string>
     <string name="nr_nsa">NSA</string>
     <string name="nr_sa">SA</string>
+
+
+    <!--add by renjie-->
+    <string name="ims_unlock_enable">"IMS settings display"</string>
+    <string name="ims_unlock_enable_summary">"Debug mode when IMS enable"</string>
+
+    <string name="ims_settings_title">"IMS Settings"</string>
+    <string name="ims_settings_summary">"Debug mode for IMS Settings"</string>
+
+
+
 </resources>
