@@ -20,6 +20,9 @@ import android.app.settings.SettingsEnums;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.ArrayMap;
 import android.util.FeatureFlagUtils;
@@ -58,6 +61,13 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
+import android.os.Handler;
+import android.os.Message;
+import android.provider.Settings;
+import com.qualcomm.qcrilhook.QcRilHookCallback;
+import com.qualcomm.sysrilcmd.ISysRilCmd;
+import com.qualcomm.sysrilcmd.SysRilCmd;
+
 /**
  * Base fragment for dashboard style UI containing a list of static and dynamic setting items.
  */
@@ -80,6 +90,80 @@ public abstract class DashboardFragment extends SettingsPreferenceFragment
     private DashboardTilePlaceholderPreferenceController mPlaceholderPreferenceController;
     private boolean mListeningToCategoryChange;
     private List<String> mSuppressInjectedTileKeys;
+
+
+    /* -------begin  add for sysrilcmd    --------  */
+
+    private boolean mRilHookReady = false;
+
+    private boolean mEnabled;
+    private boolean mFirstCheck;
+
+    private Context mContext;
+
+
+    private static final int MESSAGE_IMS_SWITCH = 1000;
+    private static final int MESSAGE_IMS_SWITCH_COMPLETE = 1001;
+
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+
+                case MESSAGE_IMS_SWITCH:
+                    Log.d(TAG, " receive MESSAGE_IMS_SWITCH,mRilHookReady = "+ mRilHookReady);
+
+                    if (mRilHookReady) {
+                        try {
+                            mEnabled = (mSysRil.getInt8Val(ISysRilCmd.RIL_SUB_CMD_INT8_IMS_ENABLE) == 1);
+                            Message msg1 = mHandler.obtainMessage(MESSAGE_IMS_SWITCH_COMPLETE);
+                            mHandler.sendMessageDelayed(msg1, 1000);
+                        } catch (Exception e) {
+                            mEnabled = false;
+                            Log.e(TAG, "SysRilCmd IOException" + e.getMessage());
+
+                        }
+                    } else {
+                        if (mSysRil == null) {
+                            mSysRil = new SysRilCmd(mContext, mQcrilHookCb);
+                        }
+                        Message msg2 = mHandler.obtainMessage(MESSAGE_IMS_SWITCH);
+                        mHandler.sendMessageDelayed(msg2, 3000);
+                    }
+                    break;
+
+                case MESSAGE_IMS_SWITCH_COMPLETE:
+                    Log.d(TAG, " receive MESSAGE_IMS_SWITCH_COMPLETE,mEnabled = " + mEnabled);
+
+                    Settings.Global.putInt(mContext.getContentResolver(), "flag_ims_nv_bootup_check", 1);
+                    Settings.Global.putInt(mContext.getContentResolver(), "nv_ims_enable",
+                            mEnabled ? 1 : 0);
+                    try {
+                        if (mSysRil != null) {
+                            mSysRil.SysRilDispose();
+                        }
+                    } catch (Exception e) {
+                        Log.e(TAG, e.getMessage());
+                    }
+                    break;
+            }
+        }
+    };
+
+    private QcRilHookCallback mQcrilHookCb = new QcRilHookCallback() {
+        public void onQcRilHookReady() {
+            Log.d(TAG, " onQcRilHookReady");
+            mRilHookReady = true;
+        }
+
+        @Override
+        public void onQcRilHookDisconnected() {
+            Log.d(TAG, " onQcRilHookDisconnected");
+        }
+    };
+    private SysRilCmd mSysRil;
+   /*------ end  add for sysrilcmd ------*/
 
     @Override
     public void onAttach(Context context) {
@@ -127,6 +211,7 @@ public abstract class DashboardFragment extends SettingsPreferenceFragment
         for (AbstractPreferenceController controller : mControllers) {
             addPreferenceController(controller);
         }
+        mContext = context;
     }
 
     @VisibleForTesting
@@ -156,6 +241,12 @@ public abstract class DashboardFragment extends SettingsPreferenceFragment
             // Upon rotation configuration change we need to update preference states before any
             // editing dialog is recreated (that would happen before onResume is called).
             updatePreferenceStates();
+        }
+
+        mFirstCheck = Settings.Global.getInt(mContext.getContentResolver(), "flag_ims_nv_bootup_check", 0) == 0;
+        if (mFirstCheck) {
+            Message msg = mHandler.obtainMessage(MESSAGE_IMS_SWITCH);
+            mHandler.sendMessageDelayed(msg, 1000);
         }
     }
 
