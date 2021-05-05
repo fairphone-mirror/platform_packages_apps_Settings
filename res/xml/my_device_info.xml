@@ -56,6 +56,14 @@
         settings:enableCopying="true"/>
 
     <Preference
+        android:key="phone_sdn"
+        android:order="8"
+        android:title="@string/status_sdn"
+        android:summary="@string/summary_placeholder"
+        settings:controller="com.android.settings.deviceinfo.SdnPreferenceController"/>
+
+
+    <Preference
         android:key="emergency_info"
         android:order="14"
         android:title="@string/emergency_info_title"
