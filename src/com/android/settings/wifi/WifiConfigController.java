@@ -171,6 +171,7 @@ public class WifiConfigController implements TextWatcher,
     private String mMultipleCertSetString;
     private String mUseSystemCertsString;
     private String mDoNotProvideEapUserCertString;
+    private String mDoNotValidateEapServerString;
 
     private ScrollView mDialogContainer;
     private Spinner mSecuritySpinner;
@@ -287,6 +288,8 @@ public class WifiConfigController implements TextWatcher,
         mUseSystemCertsString = mContext.getString(R.string.wifi_use_system_certs);
         mDoNotProvideEapUserCertString =
             mContext.getString(R.string.wifi_do_not_provide_eap_user_cert);
+        mDoNotValidateEapServerString =
+            mContext.getString(R.string.wifi_do_not_validate_eap_server);
 
         mSsidScanButton = (ImageButton) mView.findViewById(R.id.ssid_scanner_button);
         mDialogContainer = mView.findViewById(R.id.dialog_scrollview);
@@ -587,7 +590,9 @@ public class WifiConfigController implements TextWatcher,
                 // Disallow submit if the user has not selected a CA certificate for an EAP network
                 // configuration.
                 enabled = false;
-            } else if (mEapDomainView != null
+            }
+            if (caCertSelection.equals(mUseSystemCertsString)
+                    && mEapDomainView != null
                     && mView.findViewById(R.id.l_domain).getVisibility() != View.GONE
                     && TextUtils.isEmpty(mEapDomainView.getText().toString())) {
                 // Disallow submit if the user chooses to use a certificate for EAP server
@@ -608,6 +613,7 @@ public class WifiConfigController implements TextWatcher,
     }
 
     void showWarningMessagesIfAppropriate() {
+        mView.findViewById(R.id.no_ca_cert_warning).setVisibility(View.GONE);
         mView.findViewById(R.id.no_user_cert_warning).setVisibility(View.GONE);
         mView.findViewById(R.id.no_domain_warning).setVisibility(View.GONE);
         mView.findViewById(R.id.ssid_too_long_warning).setVisibility(View.GONE);
@@ -620,7 +626,14 @@ public class WifiConfigController implements TextWatcher,
         }
         if (mEapCaCertSpinner != null
                 && mView.findViewById(R.id.l_ca_cert).getVisibility() != View.GONE) {
-            if (mEapDomainView != null
+            String caCertSelection = (String) mEapCaCertSpinner.getSelectedItem();
+            if (caCertSelection.equals(mDoNotValidateEapServerString)) {
+                // Display warning if user chooses not to validate the EAP server with a
+                // user-supplied CA certificate in an EAP network configuration.
+                mView.findViewById(R.id.no_ca_cert_warning).setVisibility(View.VISIBLE);
+            }
+            if (caCertSelection.equals(mUseSystemCertsString)
+                    && mEapDomainView != null
                     && mView.findViewById(R.id.l_domain).getVisibility() != View.GONE
                     && TextUtils.isEmpty(mEapDomainView.getText().toString())) {
                 // Display warning if user chooses to use a certificate without restricting the
@@ -765,7 +778,8 @@ public class WifiConfigController implements TextWatcher,
                 config.enterpriseConfig.setCaCertificateAliases(null);
                 config.enterpriseConfig.setCaPath(null);
                 config.enterpriseConfig.setDomainSuffixMatch(mEapDomainView.getText().toString());
-                if (caCert.equals(mUnspecifiedCertString)) {
+                if (caCert.equals(mUnspecifiedCertString)
+                        || caCert.equals(mDoNotValidateEapServerString)) {
                     // ca_cert already set to null, so do nothing.
                 } else if (caCert.equals(mUseSystemCertsString)) {
                     config.enterpriseConfig.setCaPath(SYSTEM_CA_STORE_PATH);
@@ -799,7 +813,8 @@ public class WifiConfigController implements TextWatcher,
                 }
 
                 // Only set OCSP option if there is a valid CA certificate.
-                if (caCert.equals(mUnspecifiedCertString)) {
+                if (caCert.equals(mUnspecifiedCertString)
+                        || caCert.equals(mDoNotValidateEapServerString)) {
                     config.enterpriseConfig.setOcsp(WifiEnterpriseConfig.OCSP_NONE);
                 } else {
                     config.enterpriseConfig.setOcsp(mEapOcspSpinner.getSelectedItemPosition());
@@ -1106,7 +1121,7 @@ public class WifiConfigController implements TextWatcher,
             loadCertificates(
                     mEapCaCertSpinner,
                     Credentials.CA_CERTIFICATE,
-                    null /* noCertificateString */,
+                    mDoNotValidateEapServerString,
                     false /* showMultipleCerts */,
                     true /* showUsePreinstalledCertOption */);
             loadCertificates(
@@ -1201,7 +1216,7 @@ public class WifiConfigController implements TextWatcher,
             } else {
                 String[] caCerts = enterpriseConfig.getCaCertificateAliases();
                 if (caCerts == null) {
-                    setSelection(mEapCaCertSpinner, mUnspecifiedCertString);
+                    setSelection(mEapCaCertSpinner, mDoNotValidateEapServerString);
                 } else if (caCerts.length == 1) {
                     setSelection(mEapCaCertSpinner, caCerts[0]);
                 } else {
@@ -1209,7 +1224,7 @@ public class WifiConfigController implements TextWatcher,
                     loadCertificates(
                             mEapCaCertSpinner,
                             Credentials.CA_CERTIFICATE,
-                            null /* noCertificateString */,
+                            mDoNotValidateEapServerString,
                             true /* showMultipleCerts */,
                             true /* showUsePreinstalledCertOption */);
                     setSelection(mEapCaCertSpinner, mMultipleCertSetString);
@@ -1369,7 +1384,8 @@ public class WifiConfigController implements TextWatcher,
 
         if (mView.findViewById(R.id.l_ca_cert).getVisibility() != View.GONE) {
             String eapCertSelection = (String) mEapCaCertSpinner.getSelectedItem();
-            if (eapCertSelection.equals(mUnspecifiedCertString)) {
+            if (eapCertSelection.equals(mDoNotValidateEapServerString)
+                    || eapCertSelection.equals(mUnspecifiedCertString)) {
                 // Domain suffix matching is not relevant if the user hasn't chosen a CA
                 // certificate yet, or chooses not to validate the EAP server.
                 setDomainInvisible();
@@ -1631,8 +1647,7 @@ public class WifiConfigController implements TextWatcher,
                     }).collect(Collectors.toList()));
         }
 
-        if (!TextUtils.isEmpty(noCertificateString)
-                && mAccessPointSecurity != AccessPoint.SECURITY_EAP_SUITE_B) {
+        if (mAccessPointSecurity != AccessPoint.SECURITY_EAP_SUITE_B) {
             certs.add(noCertificateString);
         }
 
