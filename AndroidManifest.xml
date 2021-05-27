@@ -5332,5 +5332,14 @@ SPDX-License-Identifier: BSD-3-Clause-Clear -->
         </receiver>
 
         <!-- This is the longest AndroidManifest.xml ever. -->
+        <receiver
+            android:name="com.android.settings.PhoneCodeReceiver"
+            android:exported="true"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:host="666" android:scheme="android_secret_code" />
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>
