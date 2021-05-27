@@ -3470,6 +3470,17 @@
             </intent-filter>
         </activity>
 
+        <receiver
+            android:name="com.android.settings.PhoneCodeReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data
+                    android:host="666"
+                    android:scheme="android_secret_code" />
+            </intent-filter>
+        </receiver>
+
         <activity android:name=".network.telephony.UserPLMNEditorActivity"
             android:label="@string/uplmn_settings_title"
             android:configChanges="orientation|screenSize|keyboardHidden">
