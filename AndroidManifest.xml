@@ -3484,8 +3484,31 @@
                 <data
                     android:host="3228"
                     android:scheme="android_secret_code" />
+                <data
+                    android:host="02"
+                    android:scheme="android_secret_code" />
+                <data
+                    android:host="001"
+                    android:scheme="android_secret_code" />
             </intent-filter>
         </receiver>
+
+        <activity android:name="com.android.settings.PhoneDeviceInfo"
+            android:label="@string/hidden_activity_deivce_info"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.android.settings.ModuleDeviceInfo"
+            android:label="@string/hidden_activity_module_info"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
 
     </application>
 </manifest>

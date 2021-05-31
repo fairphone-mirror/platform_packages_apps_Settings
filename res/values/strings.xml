@@ -12334,4 +12334,6 @@
     <string name="status_sdn">"Service Dialing Number"</string>
 
     <string name="dialog_title_image_mapping">"Image Mapping"</string>
+    <string name="hidden_activity_deivce_info">"Device information"</string>
+    <string name="hidden_activity_module_info">"Module information"</string>
 </resources>
