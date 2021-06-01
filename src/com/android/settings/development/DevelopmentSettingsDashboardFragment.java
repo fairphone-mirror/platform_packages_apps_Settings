@@ -74,6 +74,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.actionbar.SearchMenuController;
 import com.android.settings.theme.ContrastPreferenceController;
 import com.android.settings.widget.SettingsMainSwitchBar;
+import com.android.settings.wifi.calling.WifiCallingSettings;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.development.DeveloperOptionsPreferenceController;
@@ -81,6 +82,7 @@ import com.android.settingslib.development.DevelopmentSettingsEnabler;
 import com.android.settingslib.development.SystemPropPoker;
 import com.android.settingslib.search.SearchIndexable;
 import com.android.settingslib.widget.OnMainSwitchChangeListener;
+import com.arima.settings.VoWifiQSTileService;
 
 import com.google.android.setupcompat.util.WizardManagerHelper;
 
@@ -298,6 +300,16 @@ public class DevelopmentSettingsDashboardFragment extends RestrictedDashboardFra
                     .launch();
         }
         // Add other qstiles here
+        if (VoWifiQSTileService.class.getName().equals(componentName.getClassName())) {
+            Log.d(TAG, "Long press from Wi-Fi Calling qstile");
+            new SubSettingLauncher(getContext())
+                    .setDestination(WifiCallingSettings.class.getName())
+                    .setSourceMetricsCategory(SettingsEnums.WIFI_CALLING)
+                    .launch();
+            if (getActivity() != null) {
+                getActivity().finish();
+            }
+        }
     }
 
     @Override
