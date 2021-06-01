@@ -68,7 +68,8 @@
             android:title="@string/doze_always_on_title"
             android:summary="@string/doze_always_on_summary"
             settings:controller="com.android.settings.display.AmbientDisplayAlwaysOnPreferenceController"
-            settings:userRestriction="no_ambient_display" />
+            settings:userRestriction="no_ambient_display" 
+            settings:searchable="false"/>
 
         <Preference
             android:key="ambient_display_tap"
