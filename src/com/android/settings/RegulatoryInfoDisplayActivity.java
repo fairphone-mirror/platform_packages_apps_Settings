@@ -26,12 +26,11 @@ import android.os.Bundle;
 import android.os.SystemProperties;
 import android.text.TextUtils;
 import android.view.Gravity;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.bumptech.glide.Glide;
 
 import androidx.annotation.VisibleForTesting;
-import androidx.appcompat.app.AlertDialog;
 
 import java.util.Locale;
 
@@ -54,64 +53,18 @@ public class RegulatoryInfoDisplayActivity extends Activity implements
     private static final String REGULATORY_INFO_FILEPATH_TEMPLATE =
             "/data/misc/elabel/regulatory_info_%s.png";
 
+    private static final String sRegulatoryUrl =
+            "https://techsupport.fairphone.com/labels/FP4_e-Label.png";
+
     /**
      * Display the regulatory info graphic in a dialog window.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AlertDialog.Builder builder = new AlertDialog.Builder(this)
-                .setTitle(R.string.regulatory_labels)
-                .setOnDismissListener(this);
-
-        boolean regulatoryInfoDrawableExists = false;
-
-        final String regulatoryInfoFile = getRegulatoryInfoImageFileName();
-        final Bitmap regulatoryInfoBitmap = BitmapFactory.decodeFile(regulatoryInfoFile);
-
-        if (regulatoryInfoBitmap != null) {
-            regulatoryInfoDrawableExists = true;
-        }
-
-        int resId = 0;
-        if (!regulatoryInfoDrawableExists) {
-            resId = getResourceId();
-        }
-        if (resId != 0) {
-            try {
-                Drawable d = getDrawable(resId);
-                // set to false if the width or height is <= 2
-                // (missing PNG can return an empty 2x2 pixel Drawable)
-                regulatoryInfoDrawableExists = (d.getIntrinsicWidth() > 2
-                        && d.getIntrinsicHeight() > 2);
-            } catch (Resources.NotFoundException ignored) {
-                regulatoryInfoDrawableExists = false;
-            }
-        }
-
-        CharSequence regulatoryText = getResources()
-                .getText(R.string.regulatory_info_text);
-
-        if (regulatoryInfoDrawableExists) {
-            View view = getLayoutInflater().inflate(R.layout.regulatory_info, null);
-            ImageView image = view.findViewById(R.id.regulatoryInfo);
-            if (regulatoryInfoBitmap != null) {
-                image.setImageBitmap(regulatoryInfoBitmap);
-            } else {
-                image.setImageResource(resId);
-            }
-            builder.setView(view);
-            builder.show();
-        } else if (regulatoryText.length() > 0) {
-            builder.setMessage(regulatoryText);
-            AlertDialog dialog = builder.show();
-            // we have to show the dialog first, or the setGravity() call will throw a NPE
-            TextView messageText = (TextView) dialog.findViewById(android.R.id.message);
-            messageText.setGravity(Gravity.CENTER);
-        } else {
-            // neither drawable nor text resource exists, finish activity
-            finish();
-        }
+        setContentView(R.layout.regulatory_info);
+        ImageView image = findViewById(R.id.regulatoryInfo);
+        Glide.with(this).load(sRegulatoryUrl).error(R.drawable.regulatory_info).into(image);
     }
 
     @VisibleForTesting
