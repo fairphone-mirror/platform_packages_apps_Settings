@@ -27,6 +27,7 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
     private static final String HOST_CODE_GMS = "666";
     private static final String HOST_CODE_VERSIONINFO = "3228";
     private static final String HOST_CODE_DEVICEINFO = "02";
+    private static final String HOST_CODE_REGULATORY_INFO = "3522";
     private static final String HOST_CODE_MODULEINFO = "001";
     private static final String HOST_CODE_TEST_OEM_UNLOCK = "002";
     private Context mContext;
@@ -95,6 +96,10 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                 Intent i = new Intent(context, PhoneDeviceInfo.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(i);
+            } else if (HOST_CODE_REGULATORY_INFO.equals(host)) {
+                Intent intent2 = new Intent("android.settings.SHOW_REGULATORY_INFO");
+                intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent2);
             } else if (HOST_CODE_MODULEINFO.equals(host)) {
                 Intent i = new Intent(context, ModuleDeviceInfo.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

@@ -13856,5 +13856,5 @@
     <string name="swap_back_recents_summary">Swap the back and recents button in the navigation bar.</string>
     <string name="reboot_required_title">Reboot Required</string>
     <string name="reboot_required_message">Change the search bar visibility requires a reboot. Reboot now?</string>
-
+    <string name="settings_elabel_activity_unavailable">There is a problem loading the elabel file.</string>
 </resources>

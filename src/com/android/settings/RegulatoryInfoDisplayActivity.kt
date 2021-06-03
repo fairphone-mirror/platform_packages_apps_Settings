@@ -24,6 +24,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import com.android.settings.deviceinfo.regulatory.RegulatoryInfo.getRegulatoryInfo
 import com.android.settings.overlay.FeatureFactory.Companion.featureFactory
+import com.bumptech.glide.Glide;
 
 /**
  * [Activity] that displays regulatory information for the "Regulatory information"
@@ -36,34 +37,18 @@ import com.android.settings.overlay.FeatureFactory.Companion.featureFactory
  * information (text will be centered in the dialog).
  */
 class RegulatoryInfoDisplayActivity : Activity() {
+    val sRegulatoryUrl = "https://techsupport.fairphone.com/labels/FP4_e-Label.png"
 
     /** Display the regulatory info graphic in a dialog window. */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val builder = AlertDialog.Builder(this)
-            .setTitle(R.string.regulatory_labels)
-            .setOnDismissListener { finish() }  // close the activity
-            .setPositiveButton(android.R.string.ok, null)
+        setContentView(R.layout.regulatory_info)
 
-        getRegulatoryInfo()?.let {
-            val view = layoutInflater.inflate(R.layout.regulatory_info, null)
-            val image = view.requireViewById<ImageView>(R.id.regulatoryInfo)
-            image.setImageDrawable(it)
-            builder.setView(view)
-            builder.show()
-            return
-        }
-
-        val regulatoryText = getRegulatoryText()
-        if (!regulatoryText.isNullOrEmpty()) {
-            builder.setMessage(regulatoryText)
-            val dialog = builder.show()
-            // we have to show the dialog first, or the setGravity() call will throw a NPE
-            dialog.findViewById<TextView>(android.R.id.message)?.gravity = Gravity.CENTER
-        } else {
-            // neither drawable nor text resource exists, finish activity
-            finish()
-        }
+        val image: ImageView? = findViewById(R.id.regulatoryInfo)
+        Glide.with(this)
+            .load(sRegulatoryUrl)
+            .error(R.drawable.regulatory_info)
+            .into(image!!) // Asserting that image is not null
     }
 
     private fun getRegulatoryText(): CharSequence? {
