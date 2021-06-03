@@ -200,7 +200,7 @@ public class Enhanced4gBasePreferenceController extends TelephonyTogglePreferenc
     }
 
     private boolean isUserControlAllowed(final PersistableBundle carrierConfig) {
-        return (mCallState != null) && (mCallState == TelephonyManager.CALL_STATE_IDLE)
+        return ((mCallState != null) && (mCallState == TelephonyManager.CALL_STATE_IDLE) || (mCallState == null))
                 && (carrierConfig != null)
                 && carrierConfig.getBoolean(
                 CarrierConfigManager.KEY_EDITABLE_ENHANCED_4G_LTE_BOOL);
