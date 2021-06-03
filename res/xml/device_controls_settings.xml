@@ -20,10 +20,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/device_controls_sentence">
 
-    <com.android.settings.widget.VideoPreference
-        android:key="device_controls_video"
-        app:animation="@raw/gesture_device_controls"/>
-
     <SwitchPreference
         android:key="gesture_device_controls_switch"
         android:title="@string/device_controls_setting_toggle"
