@@ -40,6 +40,13 @@ import android.text.format.DateUtils;
 import android.os.SystemClock;
 import android.os.Handler;
 import android.os.Message;
+import java.io.FileReader;
+import android.util.Xml;
+import com.android.internal.util.XmlUtils;
+import android.os.Environment;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import java.io.FileNotFoundException;
 /**
  * The "dialog" that shows from "Manual" in the Settings app.
  */
@@ -61,7 +68,13 @@ public class PhoneDeviceInfo extends Activity {
     private TextView mTFT;
     private TextView mUpdateTime;
     static final String BASEBAND_PROPERTY = "gsm.version.baseband";
+    static final String FACTORY_SN_PROPERTY = "ro.vendor.tct.trace.bsn";
     private Handler mHandler;
+
+    private static final String PARTNER_APNS_PATH = "etc/apns-conf.xml";
+    private static final String OEM_APNS_PATH = "telephony/apns-conf.xml";
+    private static final String OTA_UPDATED_APNS_PATH = "misc/apns/apns-conf.xml";
+    private static final String OLD_APNS_PATH = "etc/old-apns-conf.xml";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -148,8 +161,8 @@ public class PhoneDeviceInfo extends Activity {
     }
 
     private String readFactorySN(){
-        String version = null;
-        return version;
+        return SystemProperties.get(FACTORY_SN_PROPERTY,
+            getString(R.string.device_info_default));
     }
 
     private String readKernelVersion(){
@@ -171,8 +184,43 @@ public class PhoneDeviceInfo extends Activity {
                getString(R.string.device_info_default));
     }
 
+    private File pickSecondIfExists(File sysApnFile, File altApnFile) {
+        if (altApnFile.exists()) {
+            return altApnFile;
+        } else {
+            return sysApnFile;
+        }
+    }
+
+    private File getApnConfFile() {
+        File confFile = new File(Environment.getRootDirectory(), PARTNER_APNS_PATH);
+        File oemConfFile =  new File(Environment.getOemDirectory(), OEM_APNS_PATH);
+        File updatedConfFile = new File(Environment.getDataDirectory(), OTA_UPDATED_APNS_PATH);
+        File productConfFile = new File(Environment.getProductDirectory(), PARTNER_APNS_PATH);
+        confFile = pickSecondIfExists(confFile, oemConfFile);
+        confFile = pickSecondIfExists(confFile, productConfFile);
+        confFile = pickSecondIfExists(confFile, updatedConfFile);
+        return confFile;
+    }
+
     private String readAPNtableversion(){
         String version = null;
+        XmlPullParser confparser = null;
+        File confFile = getApnConfFile();
+        FileReader confreader = null;
+        try {
+            confreader = new FileReader(confFile);
+            confparser = Xml.newPullParser();
+            confparser.setInput(confreader);
+            XmlUtils.beginDocument(confparser, "apns");
+
+            // Sanity check. Force internal version and confidential versions to agree
+            int confversion = Integer.parseInt(confparser.getAttributeValue(null, "version"));
+            version = confversion + "";
+        } catch (FileNotFoundException e) {
+            Log.e(TAG, "readAPNtableversion FileNotFoundException ");
+        } catch (Exception e) {
+        }
         return version;
     }
 
@@ -223,7 +271,7 @@ public class PhoneDeviceInfo extends Activity {
             e.printStackTrace();
             Log.e(TAG, "getVersion fail" + e);
         }
-        return version.substring(11);
+        return version != null ? version.substring(11):getString(R.string.device_info_default);
     }
 
     private String readMFGdate(){
