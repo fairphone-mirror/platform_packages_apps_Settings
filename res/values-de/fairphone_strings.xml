@@ -25,8 +25,8 @@
     <string name="proximity_sensor_title">"Näherungssensor"</string>
     <string name="proximity_sensor_summary">"Näherungssensor kalibieren"</string>
     <string name="hiccup_summary">"Stabilitätsberichte"</string>
-    <string name="opengles3_title">"Erweiterte 3D-Graphik-Unterstützung"</string>
-    <string name="opengles3_summary">"OpenGL ES 3.0 aktivieren"</string>
+    <string name="fairphone_settings_title">"Erweiterte Hardware-Funktionen"</string>
+    <string name="fairphone_settings_summary">"OpenGL ES 3.0 und Gyroskop aktivieren"</string>
     <string name="assembly_number">"Fertigungsnummer"</string>
     <string name="processor_info">"Prozessor"</string>
     <string name="receiver_module_info">"Top-Modul Info"</string>

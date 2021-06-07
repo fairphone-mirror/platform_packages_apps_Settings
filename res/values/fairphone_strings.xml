@@ -36,10 +36,10 @@
     <string name="hiccup_title" translatable="false">Hiccup</string>
     <!-- Maintenance settings screen, the summary for the item to take the user to the Hiccup settings. -->
     <string name="hiccup_summary">Stability reporting</string>
-    <!-- Maintenance settings screen, the title for the item to take the user to the OpenGL ES settings. -->
-    <string name="opengles3_title">Enhanced 3D graphics support</string>
-    <!-- Maintenance settings screen, the summary for the item to take the user to the OpenGL ES settings. -->
-    <string name="opengles3_summary">Enable OpenGL ES 3.0</string>
+    <!-- Maintenance settings screen, the title for the item to take the user to the Fairphone settings. -->
+    <string name="fairphone_settings_title">Enhanced hardware features</string>
+    <!-- Maintenance settings screen, the summary for the item to take the user to the Fairphone settings. -->
+    <string name="fairphone_settings_summary">Enable OpenGL ES 3.0 and gyroscope sensor</string>
 
     <!-- About --> <skip />
     <!-- About phone, status item label.  The hardware assembly number (set at the factory). -->

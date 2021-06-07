@@ -54,9 +54,9 @@
     </Preference>
 
     <Preference
-        android:key="opengles3"
-        android:title="@string/opengles3_title"
-        android:summary="@string/opengles3_summary">
+        android:key="fairphone_settings"
+        android:title="@string/fairphone_settings_title"
+        android:summary="@string/fairphone_settings_summary">
 
         <intent android:action="android.intent.action.MAIN"
             android:targetPackage="com.fairphone.fp2.settings"
