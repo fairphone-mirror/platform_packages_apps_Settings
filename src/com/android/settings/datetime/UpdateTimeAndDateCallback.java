@@ -20,7 +20,7 @@ import android.content.Context;
 
 public interface UpdateTimeAndDateCallback {
     // Minimum time is Nov 5, 2007, 0:00.
-    long MIN_DATE = 1194220800000L;
+    long MIN_DATE = 1167580800000L;
 
     void updateTimeAndDateDisplay(Context context);
 }
