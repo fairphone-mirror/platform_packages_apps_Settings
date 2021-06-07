@@ -143,8 +143,18 @@ public class ModuleDeviceInfo extends Activity {
     }
 
     private String readBattaryInfo() {
-        String version = null;
-        return version;
+        String battaryInfo = null;
+        try {
+            InputStream is = new FileInputStream("/sys/class/power_supply/bms/resistance_id");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            battaryInfo = reader.readLine();
+            reader.close();
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e(TAG, "getVersion fail" + e);
+        }
+        return battaryInfo;
     }
 
     private String readDisplayInfo() {
