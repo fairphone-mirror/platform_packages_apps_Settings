@@ -96,7 +96,18 @@ public class VideoCallingPreferenceController extends TelephonyTogglePreferenceC
             return;
         }
         final SwitchPreference switchPreference = (SwitchPreference) preference;
-        final boolean videoCallEnabled = isVideoCallEnabled(mSubId);
+
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14 begin
+        Log.d(TAG, "update VT");
+        boolean vtToggleShow = false;
+        final PersistableBundle carrierConfig = mCarrierConfigManager.getConfigForSubId(mSubId);
+        if (carrierConfig != null) {
+            vtToggleShow = carrierConfig.getBoolean("vt_toggle_show", false);
+            Log.d(TAG, "vt toggle show: " + vtToggleShow);
+        }
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14 end
+
+        final boolean videoCallEnabled = isVideoCallEnabled(mSubId) && vtToggleShow;
         switchPreference.setVisible(videoCallEnabled);
         if (videoCallEnabled) {
             final boolean videoCallEditable = queryVoLteState(mSubId).isEnabledByUser()

@@ -103,6 +103,25 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
             Log.d(TAG, "Skip update under mCallState=" + mCallState);
             return;
         }
+
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14 begin
+        Log.d(TAG, "update WFC");
+        String title = SubscriptionManager.getResourcesForSubId(mContext, mSubId)
+                .getString(R.string.wifi_calling_settings_title);
+        if (mCarrierConfigManager != null) {
+            PersistableBundle b = mCarrierConfigManager.getConfigForSubId(mSubId);
+            if (b != null) {
+                boolean isWFCEnabled = b.getBoolean("wfc_toggle_show", false);
+                title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+                Log.d(TAG, "wfc toggle show: " + isWFCEnabled);
+                if (!isWFCEnabled) {
+                    preference.setVisible(false);
+                    return;
+                }
+            }
+        }
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14 end
+
         CharSequence summaryText = null;
         if (mSimCallManager != null) {
             final Intent intent = MobileNetworkUtils.buildPhoneAccountConfigureIntent(mContext,
@@ -113,11 +132,10 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
             }
             final PackageManager pm = mContext.getPackageManager();
             final List<ResolveInfo> resolutions = pm.queryIntentActivities(intent, 0);
-            preference.setTitle(resolutions.get(0).loadLabel(pm));
+            //preference.setTitle(resolutions.get(0).loadLabel(pm));
+            preference.setTitle(title);
             preference.setIntent(intent);
         } else {
-            final String title = SubscriptionManager.getResourcesForSubId(mContext, mSubId)
-                    .getString(R.string.wifi_calling_settings_title);
             preference.setTitle(title);
             summaryText = getResourceIdForWfcMode(mSubId);
         }
