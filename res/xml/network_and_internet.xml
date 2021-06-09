@@ -125,4 +125,14 @@
         android:summary="@string/summary_placeholder"
         android:order="25"
         settings:controller="com.android.settings.network.AdaptiveConnectivityPreferenceController"/>
+
+
+    <Preference
+        android:fragment="com.android.settings.network.ImsSettings"
+        android:key="ims_settings"
+        android:title="@string/ims_settings_title"
+        android:summary="@string/summary_placeholder"
+        android:order="30"
+        settings:controller="com.android.settings.network.ImsSettingsPreferenceController"/>
+
 </PreferenceScreen>

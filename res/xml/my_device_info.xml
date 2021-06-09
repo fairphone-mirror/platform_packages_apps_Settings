@@ -56,6 +56,14 @@
         settings:enableCopying="true"/>
 
     <Preference
+        android:key="phone_sdn"
+        android:order="8"
+        android:title="@string/status_sdn"
+        android:summary="@string/summary_placeholder"
+        settings:controller="com.android.settings.deviceinfo.SdnPreferenceController"/>
+
+
+    <Preference
         android:key="emergency_info"
         android:order="14"
         android:title="@string/emergency_info_title"
@@ -100,7 +108,7 @@
     <Preference
         android:key="device_model"
         android:order="31"
-        android:title="@string/model_info"
+        android:title="@string/hardware_info"
         android:summary="@string/summary_placeholder"
         android:fragment="com.android.settings.deviceinfo.hardwareinfo.HardwareInfoFragment"
         settings:enableCopying="true"

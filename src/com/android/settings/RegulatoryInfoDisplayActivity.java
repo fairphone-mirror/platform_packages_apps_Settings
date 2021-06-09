@@ -29,6 +29,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.bumptech.glide.Glide;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AlertDialog;
@@ -54,13 +55,18 @@ public class RegulatoryInfoDisplayActivity extends Activity implements
     private static final String REGULATORY_INFO_FILEPATH_TEMPLATE =
             "/data/misc/elabel/regulatory_info_%s.png";
 
+    //TODO only test now
+    private static final String sRegulatoryUrl = "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3795759044,946303999&fm=26&gp=0.jpg";
+
     /**
      * Display the regulatory info graphic in a dialog window.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AlertDialog.Builder builder = new AlertDialog.Builder(this)
+        showFpRegulatoryInfo(this, R.drawable.regulatory_info);
+
+        /*AlertDialog.Builder builder = new AlertDialog.Builder(this)
                 .setTitle(R.string.regulatory_labels)
                 .setOnDismissListener(this);
 
@@ -111,7 +117,7 @@ public class RegulatoryInfoDisplayActivity extends Activity implements
         } else {
             // neither drawable nor text resource exists, finish activity
             finish();
-        }
+        }*/
     }
 
     @VisibleForTesting
@@ -166,5 +172,18 @@ public class RegulatoryInfoDisplayActivity extends Activity implements
             return String.format(Locale.US, REGULATORY_INFO_FILEPATH_TEMPLATE,
                     sku.toLowerCase());
         }
+    }
+
+    private void showFpRegulatoryInfo(Activity context,int localRes){
+        View view = getLayoutInflater().inflate(R.layout.regulatory_info, null);
+        ImageView image = view.findViewById(R.id.regulatoryInfo);
+        Glide.with(context).load(sRegulatoryUrl).error(localRes).into(image);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this)
+                .setTitle(R.string.regulatory_labels)
+                .setOnDismissListener(this);
+        builder.setView(view);
+        builder.show();
+
     }
 }

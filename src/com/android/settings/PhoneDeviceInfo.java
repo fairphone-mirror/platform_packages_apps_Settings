@@ -1,0 +1,308 @@
+/*
+ * Copyright (C) 2015 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.android.settings;
+
+import android.app.Activity;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.net.Uri;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
+import android.widget.TextView;
+import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import android.view.View;
+import android.os.SystemProperties;
+import android.os.Build;
+import com.android.settingslib.DeviceInfoUtils;
+import com.android.settings.Utils;
+import android.text.format.DateUtils;
+import android.os.SystemClock;
+import android.os.Handler;
+import android.os.Message;
+import java.io.FileReader;
+import android.util.Xml;
+import com.android.internal.util.XmlUtils;
+import android.os.Environment;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import java.io.FileNotFoundException;
+/**
+ * The "dialog" that shows from "Manual" in the Settings app.
+ */
+public class PhoneDeviceInfo extends Activity {
+    private static final String TAG = "PhoneDeviceInfo";
+    private static final int EVENT_UPDATE_STATS = 500;
+    private TextView mdeviceInfo;
+    private TextView mHwstage;
+    private TextView mEmcp;
+    private TextView mBuildType;
+    private TextView mFactorySN;
+    private TextView mKernelVersion;
+    private TextView mBaseband;
+    private TextView mAPNtableversion;
+    private TextView mAudioversion;
+    private TextView mAudioSmartPAversion;
+    private TextView mTPversion;
+    private TextView mMFGDate;
+    private TextView mTFT;
+    private TextView mUpdateTime;
+    static final String BASEBAND_PROPERTY = "gsm.version.baseband";
+    static final String FACTORY_SN_PROPERTY = "ro.vendor.tct.trace.bsn";
+    private Handler mHandler;
+
+    private static final String PARTNER_APNS_PATH = "etc/apns-conf.xml";
+    private static final String OEM_APNS_PATH = "telephony/apns-conf.xml";
+    private static final String OTA_UPDATED_APNS_PATH = "misc/apns/apns-conf.xml";
+    private static final String OLD_APNS_PATH = "etc/old-apns-conf.xml";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        View view = getLayoutInflater().inflate(R.layout.deviceinfo_activity, null);
+        mHwstage = (TextView)view.findViewById(R.id.hwstage);
+        mEmcp = (TextView)view.findViewById(R.id.emcp);
+        mBuildType = (TextView)view.findViewById(R.id.buildtype);
+        mFactorySN = (TextView)view.findViewById(R.id.factorycn);
+        mKernelVersion = (TextView)view.findViewById(R.id.kernelversion);
+        mBaseband = (TextView)view.findViewById(R.id.baseband);
+        mAPNtableversion = (TextView)view.findViewById(R.id.apntableversion);
+        mAudioversion = (TextView)view.findViewById(R.id.audioversion);
+        mAudioSmartPAversion = (TextView)view.findViewById(R.id.audiosmartpaversion);
+        mTPversion = (TextView)view.findViewById(R.id.tpversion);
+        mMFGDate = (TextView)view.findViewById(R.id.mfgdate);
+        mTFT = (TextView)view.findViewById(R.id.tft);
+        mUpdateTime = (TextView)view.findViewById(R.id.updatetime);
+        setContentView(view);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        showAllDeviceInfo();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        getHandler().sendEmptyMessage(EVENT_UPDATE_STATS);
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        getHandler().removeMessages(EVENT_UPDATE_STATS);
+    }
+
+    private Handler getHandler() {
+        if (mHandler == null) {
+            mHandler = new MyHandler(mUpdateTime);
+        }
+        return mHandler;
+    }
+
+    private void showAllDeviceInfo(){
+        mHwstage.setText("HW Stage : " + readHWStage());
+        mEmcp.setText("EMCP : " + readEMCP());
+        mBuildType.setText("Build type : " + readBuildtype());
+        mFactorySN.setText("Factory SN : " + readFactorySN());
+        mKernelVersion.setText("Kernel Version : \n" + readKernelVersion());
+        mBaseband.setText("Baseband version : \n" + readBasebandversion());
+        mAPNtableversion.setText("APN table version : " + readAPNtableversion());
+        mAudioversion.setText("Audio Version : " + readAudioVersion());
+        mAudioSmartPAversion.setText("Audio Smart PA version : " + readAudioSmartPAversion());
+        mTPversion.setText("TP/LCM Version : " + readTPLCMVersion());
+        mMFGDate.setText("MFG date : " + readMFGdate());
+        mTFT.setText("TFT : " + readTFT());
+        mUpdateTime.setText("Up time \n" + DateUtils.formatElapsedTime(SystemClock.elapsedRealtime() / 1000));
+    }
+
+    private String readHWStage(){
+        String version = null;
+        try {
+            InputStream is = new FileInputStream("/sys/class/board_id/version");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            version = reader.readLine();
+            reader.close();
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e(TAG, "getVersion fail" + e);
+        }
+        return version;
+    }
+
+    private String readEMCP(){
+        String version = null;
+        return version;
+    }
+
+    private String readBuildtype(){
+        return Build.TYPE;
+    }
+
+    private String readFactorySN(){
+        return SystemProperties.get(FACTORY_SN_PROPERTY,
+            getString(R.string.device_info_default));
+    }
+
+    private String readKernelVersion(){
+        return DeviceInfoUtils.getFormattedKernelVersion(this);
+    }
+
+    private String readBasebandversion(){
+        if (Utils.isSupportCTPA(getApplicationContext())) {
+            String baseBands = SystemProperties.get(BASEBAND_PROPERTY,
+                   getString(R.string.device_info_default));
+             if (null != baseBands) {
+                String[] baseBandArray = baseBands.split(",");
+                if ((baseBandArray != null) && (baseBandArray.length > 0)) {
+                   return baseBandArray[0];
+                }
+            }
+        }
+        return SystemProperties.get(BASEBAND_PROPERTY,
+               getString(R.string.device_info_default));
+    }
+
+    private File pickSecondIfExists(File sysApnFile, File altApnFile) {
+        if (altApnFile.exists()) {
+            return altApnFile;
+        } else {
+            return sysApnFile;
+        }
+    }
+
+    private File getApnConfFile() {
+        File confFile = new File(Environment.getRootDirectory(), PARTNER_APNS_PATH);
+        File oemConfFile =  new File(Environment.getOemDirectory(), OEM_APNS_PATH);
+        File updatedConfFile = new File(Environment.getDataDirectory(), OTA_UPDATED_APNS_PATH);
+        File productConfFile = new File(Environment.getProductDirectory(), PARTNER_APNS_PATH);
+        confFile = pickSecondIfExists(confFile, oemConfFile);
+        confFile = pickSecondIfExists(confFile, productConfFile);
+        confFile = pickSecondIfExists(confFile, updatedConfFile);
+        return confFile;
+    }
+
+    private String readAPNtableversion(){
+        String version = null;
+        XmlPullParser confparser = null;
+        File confFile = getApnConfFile();
+        FileReader confreader = null;
+        try {
+            confreader = new FileReader(confFile);
+            confparser = Xml.newPullParser();
+            confparser.setInput(confreader);
+            XmlUtils.beginDocument(confparser, "apns");
+
+            // Sanity check. Force internal version and confidential versions to agree
+            int confversion = Integer.parseInt(confparser.getAttributeValue(null, "version"));
+            version = confversion + "";
+        } catch (FileNotFoundException e) {
+            Log.e(TAG, "readAPNtableversion FileNotFoundException ");
+        } catch (Exception e) {
+        }
+        return version;
+    }
+
+    private String readAudioVersion(){
+        String version = null;
+        try {
+            InputStream is = new FileInputStream("/vendor/etc/audio_ver");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            version = reader.readLine();
+            reader.close();
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e(TAG, "getVersion fail" + e);
+        }
+        return version;
+    }
+
+    private String readAudioSmartPAversion(){
+        String version = null;
+        try {
+            InputStream is = new FileInputStream("/vendor/etc/aw882xx_ver");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            version = reader.readLine();
+            reader.close();
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e(TAG, "getVersion fail" + e);
+        }
+        return version;
+    }
+
+    private String readTPLCMVersion(){
+        String version = null;
+        try {
+            InputStream is = new FileInputStream("proc/android_touch/vendor");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            while ((version = reader.readLine()) != null) {
+                Log.e(TAG, "readTPLCMVersion " + version);
+                if(version.contains("TOUCH_VER")){
+                    break;
+                }
+            }
+            reader.close();
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e(TAG, "getVersion fail" + e);
+        }
+        return version != null ? version.substring(11):getString(R.string.device_info_default);
+    }
+
+    private String readMFGdate(){
+        String version = null;
+        return version;
+    }
+
+    private String readTFT(){
+        String version = null;
+        return version;
+    }
+
+
+    private static class MyHandler extends Handler {
+        private TextView m_updatetime;
+        public MyHandler(TextView updatetime) {
+            m_updatetime = updatetime;
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case EVENT_UPDATE_STATS:
+                    m_updatetime.setText("Up time \n" + DateUtils.formatElapsedTime(SystemClock.elapsedRealtime() / 1000));
+                    sendEmptyMessageDelayed(EVENT_UPDATE_STATS, 1000);
+                    break;
+
+                default:
+                    throw new IllegalStateException("Unknown message " + msg.what);
+            }
+        }
+    }
+}
+

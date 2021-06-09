@@ -2162,6 +2162,8 @@
     <string name="wifi_do_not_provide_eap_user_cert">Do not provide</string>
     <!-- Menu option for not validating the EAP server -->
     <string name="wifi_do_not_validate_eap_server">Do not validate</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">No certificate specified. Your connection will not be private.</string>
     <!-- Warning message displayed if network name (ssid) is too long -->
     <string name="wifi_ssid_too_long">Network name is too long.</string>
     <!-- Warning message displayed if user does not specify a domain for the CA certificate.
@@ -12328,4 +12330,20 @@
     <string name="bluetooth_phonebook_access_dialog_title">Allow access to contacts and call log?</string>
     <!-- Bluetooth phonebook permission alert for dialog content [CHAR LIMIT=none] -->
     <string name="bluetooth_phonebook_access_dialog_content">An untrusted Bluetooth device, <xliff:g id="device_name" example="My device">%1$s</xliff:g>, wants to access your contacts and call log. This includes data about incoming and outgoing calls.\n\nYou haven\u2019t connected to <xliff:g id="device_name" example="My device">%2$s</xliff:g> before.</string>
+
+    <!--add by renjie-->
+    <string name="ims_unlock_enable">"IMS settings display"</string>
+    <string name="ims_unlock_enable_summary">"Debug mode when IMS enable"</string>
+
+    <string name="ims_settings_title">"IMS Settings"</string>
+    <string name="ims_settings_summary">"Debug mode for IMS Settings"</string>
+
+    <string name="status_sdn">"Service Dialing Number"</string>
+    
+    <string name="dialog_title_image_mapping">"Image Mapping"</string>
+    <string name="hidden_activity_deivce_info">"Device information"</string>
+
+
+    <string name="settings_elabel_activity_unavailable">There is a problem loading the elaebl file.</string>
+    <string name="hidden_activity_module_info">"Module information"</string>
 </resources>

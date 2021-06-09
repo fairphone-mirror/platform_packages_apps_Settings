@@ -422,6 +422,12 @@ public class ApnSettings extends RestrictedSettingsFragment
                     if ((mSelectedKey != null) && mSelectedKey.equals(key)) {
                         pref.setChecked();
                     }
+                    /* Add by T2M.feizhang 20210603 for 11190535 FP4-473 start*/
+                    if((mSelectedKey == null) && (type != null && type.contains("default") ))
+                    {
+                        pref.setChecked();
+                    }
+                    /* Add by T2M.feizhang 20210603 for 11190535 FP4-473 end*/
                     apnList.add(pref);
                 } else {
                     mmsApnList.add(pref);
