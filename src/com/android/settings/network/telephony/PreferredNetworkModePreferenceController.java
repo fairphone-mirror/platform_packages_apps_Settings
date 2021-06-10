@@ -148,6 +148,8 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
         mPreference = screen.findPreference(getPreferenceKey());
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14
+        updateState(mPreference);
     }
 
     @Override
@@ -208,9 +210,7 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
             case TelephonyManagerConstants.NETWORK_MODE_WCDMA_PREF:
                 return R.string.preferred_network_mode_wcdma_perf_summary;
             case TelephonyManagerConstants.NETWORK_MODE_GSM_ONLY:
-                //[11086878] The preferred network modes defined by T2M
-                //return R.string.preferred_network_mode_gsm_only_summary;
-                return R.string.network_2G;
+                return R.string.preferred_network_mode_gsm_only_summary;
             case TelephonyManagerConstants.NETWORK_MODE_TDSCDMA_WCDMA:
                 return R.string.preferred_network_mode_tdscdma_wcdma_summary;
             case TelephonyManagerConstants.NETWORK_MODE_WCDMA_ONLY:
@@ -240,9 +240,7 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
             case TelephonyManagerConstants.NETWORK_MODE_TDSCDMA_ONLY:
                 return R.string.preferred_network_mode_tdscdma_summary;
             case TelephonyManagerConstants.NETWORK_MODE_LTE_TDSCDMA_CDMA_EVDO_GSM_WCDMA:
-                //[11086878] The preferred network modes defined by T2M
-                //return R.string.preferred_network_mode_lte_tdscdma_cdma_evdo_gsm_wcdma_summary;
-                return R.string.network_4G;
+                return R.string.preferred_network_mode_lte_tdscdma_cdma_evdo_gsm_wcdma_summary;
             case TelephonyManagerConstants.NETWORK_MODE_LTE_CDMA_EVDO_GSM_WCDMA:
                 if (mTelephonyManager.getPhoneType() == TelephonyManager.PHONE_TYPE_CDMA
                         || mIsGlobalCdma
@@ -252,9 +250,7 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
                     return R.string.preferred_network_mode_lte_summary;
                 }
             case TelephonyManagerConstants.NETWORK_MODE_TDSCDMA_CDMA_EVDO_GSM_WCDMA:
-                //[11086878] The preferred network modes defined by T2M
-                //return R.string.preferred_network_mode_tdscdma_cdma_evdo_gsm_wcdma_summary;
-                return R.string.network_3G;
+                return R.string.preferred_network_mode_tdscdma_cdma_evdo_gsm_wcdma_summary;
             case TelephonyManagerConstants.NETWORK_MODE_GLOBAL:
                 return R.string.preferred_network_mode_cdma_evdo_gsm_wcdma_summary;
             case TelephonyManagerConstants.NETWORK_MODE_LTE_TDSCDMA_WCDMA:
@@ -282,9 +278,7 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
             case TelephonyManagerConstants.NETWORK_MODE_NR_LTE_TDSCDMA_GSM_WCDMA:
                 return R.string.preferred_network_mode_nr_lte_tdscdma_gsm_wcdma_summary;
             case TelephonyManagerConstants.NETWORK_MODE_NR_LTE_TDSCDMA_CDMA_EVDO_GSM_WCDMA:
-                //[11086878] The preferred network modes defined by T2M
-                //return R.string.preferred_network_mode_nr_lte_tdscdma_cdma_evdo_gsm_wcdma_summary;
-                return R.string.network_5G;
+                return R.string.preferred_network_mode_nr_lte_tdscdma_cdma_evdo_gsm_wcdma_summary;
             default:
                 return R.string.preferred_network_mode_global_summary;
         }
@@ -292,10 +286,29 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
 
     private void updatePreferenceEntries(ListPreference preference) {
         // Default values
-        //[11086878] The preferred network modes defined by T2M begin
-        preference.setEntries(R.array.preferred_network_mode_custom_choices);
-        preference.setEntryValues(R.array.preferred_network_mode_custom_choices_value);
-        //[11086878] The preferred network modes defined by T2M end
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14 begin
+        final PersistableBundle carrierConfig = mCarrierConfigManager.getConfigForSubId(mSubId);
+        String[] pref_network_mode = null;
+        String[] pref_network_value = null;
+
+        if (carrierConfig != null) {
+            pref_network_mode = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_MODE);
+            pref_network_value = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_VALUE);
+            Log.d(LOG_TAG, "get preferred network mode: " + pref_network_mode);
+        }
+
+        if (pref_network_mode != null && pref_network_value != null) {
+            Log.d(LOG_TAG, "init preferred network from carrier config");
+            preference.setEntries(pref_network_mode);
+            preference.setEntryValues(pref_network_value);
+        } else {
+            Log.d(LOG_TAG, "init preferred network from default config");
+            //[11086878] The preferred network modes defined by T2M begin
+            preference.setEntries(R.array.preferred_network_mode_custom_choices);
+            preference.setEntryValues(R.array.preferred_network_mode_custom_choices_value);
+            //[11086878] The preferred network modes defined by T2M end
+        }
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14 end
 
         // Primary Card Feature
         // If the current SIM is not the primary card

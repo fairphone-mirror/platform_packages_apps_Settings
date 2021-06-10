@@ -134,8 +134,10 @@ public class ModuleDeviceInfo extends Activity {
     }
 
     private String readRam() {
-        String version = null;
-        return version;
+        String model = readHwInfo("sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:49476/model");
+        String brand = readHwInfo("sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:49476/vendor");
+        String ramInfo = "model : " + model + "\n" + "brand : " + brand;
+        return ramInfo;
     }
 
     private String readCamera() {
@@ -143,22 +145,46 @@ public class ModuleDeviceInfo extends Activity {
     }
 
     private String readBattaryInfo() {
-        String battaryInfo = null;
+        return readHwInfo("/sys/class/power_supply/bms/resistance_id");
+    }
+
+    private String readDisplayInfo() {
+        StringBuffer info = new StringBuffer("");
         try {
-            InputStream is = new FileInputStream("/sys/class/power_supply/bms/resistance_id");
+            InputStream is = new FileInputStream("/proc/android_touch/vendor");
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-            battaryInfo = reader.readLine();
+            String line = "";
+            while ((line = reader.readLine()) != null) {
+                if (line.contains("IC")) {
+                    info = info.append(line);
+                    info = info.append("\n");
+                }
+                if (line.contains("Cusomer")) {
+                    info = info.append(line);
+                }
+            }
             reader.close();
             is.close();
         } catch (IOException e) {
             e.printStackTrace();
             Log.e(TAG, "getVersion fail" + e);
         }
-        return battaryInfo;
+        return info.toString();
     }
 
-    private String readDisplayInfo() {
-        return null;
+    private String readHwInfo(String path) {
+        String info = null;
+        try {
+            InputStream is = new FileInputStream(path);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            info = reader.readLine();
+            reader.close();
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e(TAG, "getVersion fail" + e);
+        }
+        return info;
     }
 
 
