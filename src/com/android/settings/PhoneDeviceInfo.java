@@ -69,6 +69,7 @@ public class PhoneDeviceInfo extends Activity {
     private TextView mUpdateTime;
     static final String BASEBAND_PROPERTY = "gsm.version.baseband";
     static final String FACTORY_SN_PROPERTY = "ro.vendor.tct.trace.bsn";
+    static final String MFG_DATE_PROPERTY = "ro.vendor.tct.mfg.date";
     private Handler mHandler;
 
     private static final String PARTNER_APNS_PATH = "etc/apns-conf.xml";
@@ -274,9 +275,44 @@ public class PhoneDeviceInfo extends Activity {
         return version != null ? version.substring(11):getString(R.string.device_info_default);
     }
 
+    private String formatDateCode(byte[] raw) {
+        String dayString = "**";
+        String monthString = "**";
+        String yearString = "****";
+        int i;
+
+        if (raw.length != 3) {
+            return null;
+        }
+
+        String dayRule = "123456789ABCDEFGHIJKLMNOPQRSTUV";
+        String monthRule = "EFGHIJKLMNOP";
+        String yearRule = "UVWXYZ6ABCDEFGHIJKLMNOPQ";// "KLMNOPQRSTUVWXYZ";
+        // get day value
+        i = dayRule.indexOf(raw[0]);
+        if (i >= 0) {
+            dayString = String.format("%02d", i + 1);
+        }
+        // get month value
+        i = monthRule.indexOf(raw[1]);
+        if (i >= 0) {
+            monthString = String.format("%02d", i + 1);
+        }
+        // get year value
+        i = yearRule.indexOf(raw[2]);
+        if (i >= 0) {
+            yearString = String.format("20%02d", i + 10);
+        }
+
+        return yearString + monthString + dayString;
+    }
+
     private String readMFGdate(){
-        String version = null;
-        return version;
+        String date = SystemProperties.get(MFG_DATE_PROPERTY,"");
+        if(date != null && !"".equals(date)){
+            return formatDateCode(date.getBytes());
+        }
+        return getString(R.string.device_info_default);
     }
 
     private String readTFT(){
