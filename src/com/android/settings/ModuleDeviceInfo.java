@@ -141,7 +141,11 @@ public class ModuleDeviceInfo extends Activity {
     }
 
     private String readCamera() {
-        return null;
+        String frontInfo = "front camera info = " + readHwInfo("/sys/sensor_module/camera_front");
+        String auxInfo = "aux camera info = " + readHwInfo("/sys/sensor_module/camera_aux");
+        String mainInfo = "main camera info = " + readHwInfo("/sys/sensor_module/camera_main");
+        String cameraInfo = frontInfo + "\n" + auxInfo + "\n" + mainInfo;
+        return cameraInfo;
     }
 
     private String readBattaryInfo() {
@@ -186,7 +190,5 @@ public class ModuleDeviceInfo extends Activity {
         }
         return info;
     }
-
-
 }
 
