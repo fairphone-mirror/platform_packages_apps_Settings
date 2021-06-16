@@ -320,7 +320,10 @@ public class MobileNetworkUtils {
         if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
             return false;
         }
-        final TelephonyManager telephonyManager = context.getSystemService(TelephonyManager.class)
+
+        //[Bug]-Modify-begin by shaopan.tang 2021-06-15 [FP4-870]Remove unused settings options
+        return false;
+        /*final TelephonyManager telephonyManager = context.getSystemService(TelephonyManager.class)
                 .createForSubscriptionId(subId);
         final PersistableBundle carrierConfig = context.getSystemService(
                 CarrierConfigManager.class).getConfigForSubId(subId);
@@ -352,7 +355,8 @@ public class MobileNetworkUtils {
             }
         }
 
-        return false;
+        return false;*/
+        //[Bug]-Modify-end by shaopan.tang
     }
 
     /**
