@@ -70,6 +70,7 @@ public class PhoneDeviceInfo extends Activity {
     static final String BASEBAND_PROPERTY = "gsm.version.baseband";
     static final String FACTORY_SN_PROPERTY = "ro.vendor.tct.trace.bsn";
     static final String MFG_DATE_PROPERTY = "ro.vendor.tct.mfg.date";
+    static final String TFT_DATE_PROPERTY = "persist.sys.tct.tft.date";
     private Handler mHandler;
 
     private static final String PARTNER_APNS_PATH = "etc/apns-conf.xml";
@@ -116,7 +117,7 @@ public class PhoneDeviceInfo extends Activity {
 
     private Handler getHandler() {
         if (mHandler == null) {
-            mHandler = new MyHandler(mUpdateTime);
+            mHandler = new MyHandler(mUpdateTime,mTFT);
         }
         return mHandler;
     }
@@ -133,7 +134,7 @@ public class PhoneDeviceInfo extends Activity {
         mAudioSmartPAversion.setText("Audio Smart PA version : " + readAudioSmartPAversion());
         mTPversion.setText("TP/LCM Version : " + readTPLCMVersion());
         mMFGDate.setText("MFG date : " + readMFGdate());
-        mTFT.setText("TFT : " + readTFT());
+        mTFT.setText("TFT : \n" + readTFT());
         mUpdateTime.setText("Up time \n" + DateUtils.formatElapsedTime(SystemClock.elapsedRealtime() / 1000));
     }
 
@@ -316,15 +317,27 @@ public class PhoneDeviceInfo extends Activity {
     }
 
     private String readTFT(){
-        String version = null;
-        return version;
+        long date = SystemProperties.getLong(TFT_DATE_PROPERTY,0);
+        if(date == 0){
+            return DateUtils.formatElapsedTime(SystemClock.elapsedRealtime() / 1000);
+        }else{
+            if(SystemClock.elapsedRealtime() > date){
+                return DateUtils.formatElapsedTime(SystemClock.elapsedRealtime() / 1000);
+            }else{
+                return DateUtils.formatElapsedTime(date/1000);
+            }
+        }
     }
 
 
-    private static class MyHandler extends Handler {
+    private class MyHandler extends Handler {
         private TextView m_updatetime;
-        public MyHandler(TextView updatetime) {
+        private TextView m_tft;
+        private long m_tftdate;
+        public MyHandler(TextView updatetime, TextView tft) {
             m_updatetime = updatetime;
+            m_tft = tft;
+            m_tftdate = SystemProperties.getLong(TFT_DATE_PROPERTY,0);
         }
 
         @Override
@@ -332,6 +345,13 @@ public class PhoneDeviceInfo extends Activity {
             switch (msg.what) {
                 case EVENT_UPDATE_STATS:
                     m_updatetime.setText("Up time \n" + DateUtils.formatElapsedTime(SystemClock.elapsedRealtime() / 1000));
+                    m_tftdate += 1000;
+                    if(m_tftdate < SystemClock.elapsedRealtime()){
+                        m_tft.setText("TFT :  \n" + DateUtils.formatElapsedTime(SystemClock.elapsedRealtime() / 1000));
+                    }else{
+                        m_tft.setText("TFT :  \n" + DateUtils.formatElapsedTime(m_tftdate/1000));
+                    }
+                    
                     sendEmptyMessageDelayed(EVENT_UPDATE_STATS, 1000);
                     break;
 
