@@ -15,7 +15,7 @@
 -->
 
 <resources>
-    <!-- <string name="crypt_keeper_unsupported_text">TODO</string> -->
+    <string name="crypt_keeper_unsupported_text">"Het spijt ons, maar versleuteling is niet beschikbaar op de Fairphone 2 tijdens het gebruik van Android 9.\n\nAls je je telefoon wil versleutelen is er een tijdelijke oplossing:\n\t1. Downgrade handmatig naar Android 7.\n\t2. Versleutel je telefoon.\n\t3. Upgrade naar Android 9.\n\n<b>Bronnen</b>\n<a href="https://support.fairphone.com/hc/en-us/articles/213290023">Fairphone 2 pakketten en instructies</a>.\nAlles wat je nodig hebt om succesvol te downgraden\n\n<a href="https://support.fairphone.com/hc/en-us">Klantenservice</a>.\nVoor het geval je hulp nodig hebt bij het proces."</string>
     <string name="maintenance_preference_title">"Onderhoud"</string>
     <string name="checkup_summary">"Hardwarediagnostiek"</string>
     <string name="proximity_sensor_title">"Afstandssensor"</string>

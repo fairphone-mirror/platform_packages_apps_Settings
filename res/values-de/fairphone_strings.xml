@@ -15,11 +15,7 @@
 -->
 
 <resources>
-    <string name="crypt_keeper_unsupported_text">
-    Verschlüsselung ist momentan auf Android 9 auf dem FP2 nicht unterstützt. Um
-    dein Telefon zu verschlüsseln, installiere bitte Android 7, verschlüssele
-    dort und installiere dann das Upgrade auf Android 9.
-    </string>
+    <string name="crypt_keeper_unsupported_text">"Es tut uns leid, aber auf dem Fairphone 2 ist Verschlüsselung auf Android 9 nicht verfügbar.\n\nWenn Du dein Gerät verschlüsseln möchtest gibt es eine Behelfslösung:\n\t1. Installiere Android 7 manuell.\n\t2. Verschlüssele dein Gerät.\n\t3. Aktualisiere auf Android 9.\n\n<b>Ressourcen</b>\n<a href="https://support.fairphone.com/hc/en-us/articles/213290023">Fairphone 2 manuelle Installationsanweisungen</a>.\nAlles, was du für ein erfolgreiches Downgrade auf Android 7 benötigst\n\n<a href="https://support.fairphone.com/hc/en-us">Kundendienst</a>.\nFalls Du Hilfe beim Prozess benötigst."</string>
     <string name="maintenance_preference_title">"Wartung"</string>
     <string name="checkup_summary">"Hardware-Diagnose"</string>
     <string name="proximity_sensor_title">"Näherungssensor"</string>

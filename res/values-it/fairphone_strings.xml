@@ -15,7 +15,7 @@
 -->
 
 <resources>
-    <!-- <string name="crypt_keeper_unsupported_text">TODO</string> -->
+    <string name="crypt_keeper_unsupported_text">"Putroppo la crittografia non è disponibile sul Fairphone 2 con Android 9.\n\nSe vuoi criptare il telefono, c\'è una soluzione alternativa:\n\t1. Installa manualmente ad Android 7.\n\t2. Cripta il dispositivo.\n\t3. Aggiorna ad Android 9.\n\n<b>Risorse</b>\n<a href="https://support.fairphone.com/hc/en-us/articles/213290023">Pacchetti software per il Fairphone 2, con istruzioni</a>.\nTutto quello che ti serve per l\'installazione manuale\n\n<a href="https://support.fairphone.com/hc/en-us">Assitenza clienti</a>.\nNel caso ti servisse aiuto durante la procedura."</string>
     <string name="maintenance_preference_title">"Manutenzione"</string>
     <string name="checkup_summary">"Diagnostica hardware"</string>
     <string name="proximity_sensor_title">"Sensore di prossimità"</string>

@@ -15,11 +15,7 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="crypt_keeper_unsupported_text">
-    Encrypting the phone is currently not supported on Android 9 on the FP2. For
-    now, to encrypt the phone please install Android 7, encrypt, and upgrade to
-    Android 9 again.
-    </string>
+    <string name="crypt_keeper_unsupported_text">We are sorry, but encryption is not available on the Fairphone 2 while using Android 9.\n\nIf you want to encrypt your device, there is a workaround:\n\t1. Manually downgrade to Android 7.\n\t2. Encrypt your device.\n\t3. Upgrade to Android 9.\n\n<b>Resources</b>\n<a href="https://support.fairphone.com/hc/en-us/articles/213290023">Fairphone 2 packages and instructions</a>.\nEverything you need to successfully downgrade\n\n<a href="https://support.fairphone.com/hc/en-us">Customer support</a>.\nIn case you need help with the process.</string>
 
     <!-- Maintenance settings --> <skip />
     <!-- Preference title for maintenance settings -->
