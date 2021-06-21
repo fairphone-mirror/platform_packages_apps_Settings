@@ -47,6 +47,12 @@ import android.os.Environment;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import java.io.FileNotFoundException;
+import com.android.settingslib.deviceinfo.StorageManagerVolumeProvider;
+import com.android.settingslib.deviceinfo.PrivateStorageInfo;
+import android.os.storage.StorageManager;
+import android.text.format.Formatter;
+import com.android.internal.util.MemInfoReader;
+import java.lang.Math;
 /**
  * The "dialog" that shows from "Manual" in the Settings app.
  */
@@ -124,7 +130,7 @@ public class PhoneDeviceInfo extends Activity {
 
     private void showAllDeviceInfo(){
         mHwstage.setText("HW Stage : " + readHWStage());
-        mEmcp.setText("EMCP : " + readEMCP());
+        mEmcp.setText("EMCP : \n" + readEMCP());
         mBuildType.setText("Build type : " + readBuildtype());
         mFactorySN.setText("Factory SN : " + readFactorySN());
         mKernelVersion.setText("Kernel Version : \n" + readKernelVersion());
@@ -154,8 +160,44 @@ public class PhoneDeviceInfo extends Activity {
     }
 
     private String readEMCP(){
-        String version = null;
-        return version;
+        String emcpinfo = null;
+        String vendor = null;
+        String model = null;
+        try {
+            InputStream is = new FileInputStream("/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/vendor");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            vendor = reader.readLine();
+            reader.close();
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e(TAG, "readEMCP fail" + e);
+        }
+
+        try {
+            InputStream is = new FileInputStream("/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/model");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            model = reader.readLine();
+            reader.close();
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e(TAG, "readEMCP fail" + e);
+        }
+
+        final StorageManagerVolumeProvider smvp = new StorageManagerVolumeProvider(getSystemService(StorageManager.class));
+        final PrivateStorageInfo info = PrivateStorageInfo.getPrivateStorageInfo(smvp);
+        final long privateTotalBytes = info.totalBytes;
+        String totalRomBytes = Formatter.formatFileSize(this, privateTotalBytes);
+
+        MemInfoReader memInfo = new MemInfoReader();
+        memInfo.readMemInfo();
+        double totalkb = memInfo.getTotalSize();
+        double totalGB = totalkb/1024/1024/1024;
+        int realGB = (int)Math.ceil(totalGB);
+        String totalRamBytes = Formatter.formatFileSize(this, (long)realGB*1000*1000*1000);
+        emcpinfo = vendor + " " + model + " " + totalRamBytes + " " + totalRomBytes;
+        return emcpinfo;
     }
 
     private String readBuildtype(){
@@ -272,6 +314,24 @@ public class PhoneDeviceInfo extends Activity {
         } catch (IOException e) {
             e.printStackTrace();
             Log.e(TAG, "getVersion fail" + e);
+        }
+        //read null try again
+        if(version == null){
+            try {
+                InputStream is = new FileInputStream("proc/android_touch/vendor");
+                BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+                while ((version = reader.readLine()) != null) {
+                    Log.e(TAG, "readTPLCMVersion " + version);
+                    if(version.contains("TOUCH_VER")){
+                        break;
+                    }
+                }
+                reader.close();
+                is.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.e(TAG, "getVersion fail" + e);
+            }
         }
         return version != null ? version.substring(11):getString(R.string.device_info_default);
     }
