@@ -111,7 +111,7 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
         if (mCarrierConfigManager != null) {
             PersistableBundle b = mCarrierConfigManager.getConfigForSubId(mSubId);
             if (b != null) {
-                boolean isWFCEnabled = b.getBoolean("wfc_toggle_show", false);
+                boolean isWFCEnabled = b.getBoolean(CarrierConfigManager.KEY_WFC_TOGGLE_SHOW_BOOL, false);
                 title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
                 Log.d(TAG, "wfc toggle show: " + isWFCEnabled);
                 if (!isWFCEnabled) {

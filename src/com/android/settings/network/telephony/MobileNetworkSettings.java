@@ -23,11 +23,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.UserManager;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -56,6 +58,7 @@ import com.android.settingslib.utils.ThreadUtils;
 
 import org.codeaurora.internal.IExtTelephony;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -399,5 +402,57 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings {
                 protected boolean isPageSearchEnabled(Context context) {
                     return context.getSystemService(UserManager.class).isAdminUser();
                 }
+
+                // add by T2M.dengxiangyu for FP4-61 2021-06-21 begin
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys;
+
+                    if (isPageSearchEnabled(context)) {
+                        keys = getMobileNonIndexableKeysFromXml(context, false);
+                        CarrierConfigManager mCarrierConfigManager = context.getSystemService(CarrierConfigManager.class);
+                        final PersistableBundle carrierConfig = mCarrierConfigManager.getConfig();
+                        if (carrierConfig != null) {
+                            boolean showVTToggle = carrierConfig.getBoolean(CarrierConfigManager.KEY_VT_TOGGLE_SHOW_BOOL);
+                            boolean showWFCToggle = carrierConfig.getBoolean(CarrierConfigManager.KEY_WFC_TOGGLE_SHOW_BOOL);
+
+                            Log.d(LOG_TAG, "get vt show: " + showVTToggle);
+                            Log.d(LOG_TAG, "get wfc show: " + showWFCToggle);
+
+                            if (!showVTToggle) {
+                                keys.add("video_calling_key");
+                            }
+
+                            if (!showWFCToggle) {
+                                keys.add("wifi_calling");
+                            }
+                        }
+                    } else {
+                        Log.d(LOG_TAG, "it's not admin user");
+                        keys = getMobileNonIndexableKeysFromXml(context, true);
+                    }
+
+                    Log.d(LOG_TAG, "getNonIndexableKeys: ");
+                    for (String str : keys) {
+                        Log.d(LOG_TAG, str);
+                    }
+
+                    return keys;
+                }
+
+                private List<String> getMobileNonIndexableKeysFromXml(Context context, boolean suppressAllPage) {
+                    final List<SearchIndexableResource> resources = super.getXmlResourcesToIndex(
+                            context, true);
+                    if (resources == null || resources.isEmpty()) {
+                        return new ArrayList<>();
+                    }
+                    final List<String> nonIndexableKeys = new ArrayList<>();
+                    for (SearchIndexableResource res : resources) {
+                        nonIndexableKeys.addAll(
+                                getNonIndexableKeysFromXml(context, res.xmlResId, suppressAllPage));
+                    }
+                    return nonIndexableKeys;
+                }
+                // add by T2M.dengxiangyu for FP4-61 2021-06-21 end
             };
 }
