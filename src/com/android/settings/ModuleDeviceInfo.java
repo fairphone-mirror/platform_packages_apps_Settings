@@ -19,6 +19,7 @@ package com.android.settings;
 import android.app.Activity;
 
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -122,7 +123,8 @@ public class ModuleDeviceInfo extends Activity {
     }
 
     private String readFinglerInfo() {
-        return null;
+        String chipId = SystemProperties.get("vendor.t2m.fingerprint.chipid", "7312");
+        return chipId;
     }
 
     private String readSmartPaInfo() {
