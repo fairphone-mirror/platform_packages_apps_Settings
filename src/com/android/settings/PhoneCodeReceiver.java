@@ -46,13 +46,18 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                     && !pi.packageName.equals("com.google.android.networkstack.permissionconfig")
                     && !pi.packageName.equals("com.google.android.setupwizard") 
                     && !pi.packageName.equals("com.google.android.packageinstaller") 
-                    && !pi.packageName.equals("com.google.android.permissioncontroller") 
+                    && !pi.packageName.equals("com.google.android.permissioncontroller")
+                    && !pi.packageName.equals("com.google.android.apps.work.oobconfig")  
                     || pi.packageName.equals("com.android.chrome") 
                     ||pi.packageName.equals("com.android.vending"))
-                    if(hasDisabled == 0){
-                        pm.setApplicationEnabledSetting(pi.packageName,PackageManager.COMPONENT_ENABLED_STATE_DISABLED_USER, 0);
-                    }else{
-                        pm.setApplicationEnabledSetting(pi.packageName,PackageManager.COMPONENT_ENABLED_STATE_ENABLED, 0);
+                    try{
+                        if(hasDisabled == 0){
+                            pm.setApplicationEnabledSetting(pi.packageName,PackageManager.COMPONENT_ENABLED_STATE_DISABLED_USER, 0);
+                        }else{
+                            pm.setApplicationEnabledSetting(pi.packageName,PackageManager.COMPONENT_ENABLED_STATE_ENABLED, 0);
+                        }
+                    } catch (Exception e){
+                        //do nothing
                     }
                 }
                 if(hasDisabled == 0){
