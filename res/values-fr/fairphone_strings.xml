@@ -21,7 +21,9 @@
     Android 7, crypter et passer à nouveau à Android 9."
     </string>
     <string name="maintenance_preference_title">"Maintenance"</string>
+    <string name="checkup_summary">"Diagnostic matériel"</string>
     <string name="proximity_sensor_title">"Capteur de proximité"</string>
+    <string name="proximity_sensor_summary">"Calibrer le capteur de proximité"</string>
     <string name="hiccup_summary">"Rapport de stabilité"</string>
     <string name="opengles3_title">"Support graphique 3D amélioré"</string>
     <string name="opengles3_summary">"Activer OpenGL ES 3.0"</string>

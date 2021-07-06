@@ -21,7 +21,9 @@
     dort und installiere dann das Upgrade auf Android 9.
     </string>
     <string name="maintenance_preference_title">"Wartung"</string>
+    <string name="checkup_summary">"Hardware-Diagnose"</string>
     <string name="proximity_sensor_title">"Näherungssensor"</string>
+    <string name="proximity_sensor_summary">"Näherungssensor kalibieren"</string>
     <string name="hiccup_summary">"Stabilitätsberichte"</string>
     <string name="opengles3_title">"Erweiterte 3D-Graphik-Unterstützung"</string>
     <string name="opengles3_summary">"OpenGL ES 3.0 aktivieren"</string>

@@ -16,6 +16,13 @@
 
 <resources>
     <!-- <string name="crypt_keeper_unsupported_text">TODO</string> -->
+    <string name="maintenance_preference_title">"Manutenzione"</string>
+    <string name="checkup_summary">"Diagnostica hardware"</string>
+    <string name="proximity_sensor_title">"Sensore di prossimità"</string>
+    <string name="proximity_sensor_summary">"Calibra il sensore di prossimità"</string>
+    <string name="hiccup_summary">"Report di stablità"</string>
+    <string name="opengles3_title">"Supporto grafica 3D avanzata"</string>
+    <string name="opengles3_summary">"Abilita OpenGL ES 3.0"</string>
     <string name="assembly_number">"Numero di assemblaggio"</string>
     <string name="processor_info">"Processore"</string>
     <string name="receiver_module_info">"Informazioni sul modulo superiore"</string>
