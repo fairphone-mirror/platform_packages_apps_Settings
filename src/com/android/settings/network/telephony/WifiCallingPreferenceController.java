@@ -72,6 +72,7 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
     public int getAvailabilityStatus(int subId) {
         return SubscriptionManager.isValidSubscriptionId(subId)
                 && isWifiCallingEnabled(mContext, subId)
+                && isWfcEnabledByCarrierConfig(subId)
                 ? AVAILABLE
                 : UNSUPPORTED_ON_DEVICE;
     }
@@ -96,6 +97,22 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
         }
     }
 
+    private boolean isWfcEnabledByCarrierConfig(int mSubId){
+        Log.d(TAG, "update WFC");
+        String title = SubscriptionManager.getResourcesForSubId(mContext, mSubId)
+                .getString(R.string.wifi_calling_settings_title);
+        if (mCarrierConfigManager != null) {
+            PersistableBundle b = mCarrierConfigManager.getConfigForSubId(mSubId);
+            if (b != null) {
+                boolean isWFCEnabled = b.getBoolean(CarrierConfigManager.KEY_WFC_TOGGLE_SHOW_BOOL
+                        , false);
+                Log.d(TAG, "wfc toggle show: " + isWFCEnabled);
+                return isWFCEnabled;
+            }
+        }
+        return false;
+    }
+
     @Override
     public void updateState(Preference preference) {
         super.updateState(preference);
@@ -111,13 +128,8 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
         if (mCarrierConfigManager != null) {
             PersistableBundle b = mCarrierConfigManager.getConfigForSubId(mSubId);
             if (b != null) {
-                boolean isWFCEnabled = b.getBoolean(CarrierConfigManager.KEY_WFC_TOGGLE_SHOW_BOOL, false);
                 title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
-                Log.d(TAG, "wfc toggle show: " + isWFCEnabled);
-                if (!isWFCEnabled) {
-                    preference.setVisible(false);
-                    return;
-                }
+
             }
         }
         // add by T2M.dengxiangyu for FP4-61 2021-04-14 end
