@@ -21,6 +21,14 @@
     android:key="privacy_dashboard_page"
     android:title="@string/privacy_dashboard_title">
 
+    <!-- Longevity & device statistics -->
+    <Preference
+        android:key="longevity_device_statistics"
+        android:title="@string/longevity_device_statistics_list_item_title"
+        android:summary="@string/summary_placeholder"
+        android:order="997">
+    </Preference>
+
     <!-- Work Policy info -->
     <Preference
         android:key="work_policy_info"
