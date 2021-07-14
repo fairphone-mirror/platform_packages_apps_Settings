@@ -12346,4 +12346,7 @@
 
     <string name="settings_elabel_activity_unavailable">There is a problem loading the elaebl file.</string>
     <string name="hidden_activity_module_info">"Module information"</string>
+
+        <!-- Title for the Longevity & device statistics -->
+    <string name="longevity_device_statistics_list_item_title">Longevity &amp; device statistics</string>
 </resources>
