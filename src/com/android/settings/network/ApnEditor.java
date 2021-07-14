@@ -757,10 +757,22 @@ public class ApnEditor extends SettingsPreferenceFragment
                     }
                     mMvnoMatchData.setText(telephonyManager.getGroupIdLevel1());
                 } else if (values[mvnoIndex].equals("ICCID")) {
-                    if (mMvnoMatchDataStr != null) {
-                        Log.d(TAG, "mMvnoMatchDataStr: " + mMvnoMatchDataStr);
-                        mMvnoMatchData.setText(mMvnoMatchDataStr);
+                    // add by T2M.dengxiangyu for FP4-1630 2021-07-08, new APN did not have mMvnoMatchDataStr begin
+                    if (mMvnoMatchDataStr == null) {
+                        TelephonyManager telephonyManager = (TelephonyManager)
+                                getContext().getSystemService(TelephonyManager.class);
+                        final TelephonyManager telephonyManagerForSubId =
+                                telephonyManager.createForSubscriptionId(mSubId);
+                        if (telephonyManagerForSubId != null) {
+                            telephonyManager = telephonyManagerForSubId;
+                        }
+                        mMvnoMatchDataStr = telephonyManager.getUiccCardsInfo().get(0).getIccId();
+                        Log.d(TAG, "get iccid: " + mMvnoMatchDataStr);
                     }
+
+                    Log.d(TAG, "mMvnoMatchDataStr: " + mMvnoMatchDataStr);
+                    mMvnoMatchData.setText(mMvnoMatchDataStr);
+                    // add by T2M.dengxiangyu for FP4-1630 2021-07-08 end
                 }
             }
 
