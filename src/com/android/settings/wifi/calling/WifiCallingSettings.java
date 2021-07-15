@@ -215,7 +215,6 @@ public class WifiCallingSettings extends InstrumentedFragment implements HelpRes
     }
 
     private void updateTitleForCurrentSub() {
-        if (CollectionUtils.size(mSil) > 1) {
             final int subId = mSil.get(mViewPager.getCurrentItem()).getSubscriptionId();
             String title = SubscriptionManager.getResourcesForSubId(getContext(), subId)
                     .getString(R.string.wifi_calling_settings_title);
@@ -234,7 +233,6 @@ public class WifiCallingSettings extends InstrumentedFragment implements HelpRes
 
             getActivity().getActionBar().setTitle(title);
             // add by T2M.dengxiangyu for FP4-61 2021-04-14 end
-        }
     }
 
     @VisibleForTesting
