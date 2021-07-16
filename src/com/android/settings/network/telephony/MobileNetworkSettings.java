@@ -389,6 +389,7 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings {
         return super.onOptionsItemSelected(menuItem);
     }
 
+
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.mobile_network_settings) {
                 @Override
@@ -415,9 +416,16 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings {
                         if (carrierConfig != null) {
                             boolean showVTToggle = carrierConfig.getBoolean(CarrierConfigManager.KEY_VT_TOGGLE_SHOW_BOOL);
                             boolean showWFCToggle = carrierConfig.getBoolean(CarrierConfigManager.KEY_WFC_TOGGLE_SHOW_BOOL);
-
+                            // add by T2M.zhangrenjie for FP4-1777 2021-07-16 end
+                            boolean showEnhanced4GToggle = !carrierConfig.getBoolean(CarrierConfigManager.KEY_HIDE_ENHANCED_4G_LTE_BOOL);
+                            int m4gCurrentMode = carrierConfig.getInt(CarrierConfigManager.KEY_ENHANCED_4G_LTE_TITLE_VARIANT_INT);
+                            boolean show4GForLTE = carrierConfig.getBoolean(
+                                    CarrierConfigManager.KEY_SHOW_4G_FOR_LTE_DATA_ICON_BOOL);
                             Log.d(LOG_TAG, "get vt show: " + showVTToggle);
                             Log.d(LOG_TAG, "get wfc show: " + showWFCToggle);
+                            Log.d(LOG_TAG, "showEnhanced4GToggle: " + showEnhanced4GToggle);
+                            Log.d(LOG_TAG, "m4gCurrentMode: " + m4gCurrentMode);
+                            Log.d(LOG_TAG, "show4GForLTE: " + show4GForLTE);
 
                             if (!showVTToggle) {
                                 keys.add("video_calling_key");
@@ -426,7 +434,21 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings {
                             if (!showWFCToggle) {
                                 keys.add("wifi_calling");
                             }
+
+                            if (m4gCurrentMode != 1 /*MODE_ADVANCED_CALL*/) {
+                                keys.add("advance_call");
+                            }
+
+                            if (!showEnhanced4GToggle){
+                                keys.add("enhanced_4g_lte");
+                                keys.add("4g_calling");
+                            } else if (show4GForLTE){
+                                keys.add("enhanced_4g_lte");
+                            }else {
+                                keys.add("4g_calling");
+                            }
                         }
+                        // add by T2M.zhangrenjie for FP4-1777 2021-07-16 end
                     } else {
                         Log.d(LOG_TAG, "it's not admin user");
                         keys = getMobileNonIndexableKeysFromXml(context, true);
