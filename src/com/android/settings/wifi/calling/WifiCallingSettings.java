@@ -204,6 +204,13 @@ public class WifiCallingSettings extends InstrumentedFragment implements HelpRes
         if (mSil == null) {
             return;
         }
+        // add by T2M.zhangrenjie for FP4-847 2021-07-22 begin
+        boolean ims_enabled = Settings.Global.getInt(getContext().getContentResolver(), "ims_enable_settings",0) == 1;
+        if (ims_enabled){
+            Log.d(TAG, "wfc skip checking, because of debugging ims_enabled =" + ims_enabled);
+            return;
+        }
+        // add by T2M.zhangrenjie for FP4-847 2021-07-22 end
         for (int i = 0; i < mSil.size(); ) {
             final SubscriptionInfo info = mSil.get(i);
             if (!queryImsState(info.getSubscriptionId()).isWifiCallingProvisioned()) {

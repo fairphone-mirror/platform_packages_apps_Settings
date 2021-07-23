@@ -12338,6 +12338,10 @@
     <string name="ims_settings_title">"IMS Settings"</string>
     <string name="ims_settings_summary">"Debug mode for IMS Settings"</string>
 
+    <string name="ims_settings_summary_on">"Debug mode for IMS Settings is ON."</string>
+    <string name="ims_settings_summary_off">"Debug mode for IMS Settings is OFF"</string>
+
+
     <string name="status_sdn">"Service Dialing Number"</string>
     
     <string name="dialog_title_image_mapping">"Image Mapping"</string>

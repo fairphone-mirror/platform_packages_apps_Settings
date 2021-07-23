@@ -23,6 +23,10 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
     private static final String HOST_CODE_DEVICEINFO = "02";
     private static final String HOST_CODE_REGULATORY_INFO = "3522";
     private static final String HOST_CODE_MODULEINFO = "001";
+    private static final String HOST_CODE_IMS = "23486583";
+
+
+
     private Context mContext;
     private String READ_ERROR_STR = "????????";
 
@@ -85,6 +89,28 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                 Intent i = new Intent(context, ModuleDeviceInfo.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(i);
+            } else if (HOST_CODE_IMS.equals(host)){
+
+               boolean ims_enabled = Settings.Global.getInt(mContext.getContentResolver(), "ims_enable_settings",0) == 1;
+                Settings.Global.putInt(mContext.getContentResolver(), "ims_enable_settings",
+                        !ims_enabled ? 1 : 0);
+                String show ="";
+                Log.i(TAG, "onReceive : ims_enabled = " + ims_enabled + ",ims_enabled set to "+!ims_enabled);
+                if (!ims_enabled){
+                    show = context.getResources().getString(R.string.ims_settings_summary_on);
+                }else{
+                    show = context.getResources().getString(R.string.ims_settings_summary_off);
+                }
+                AlertDialog alert = new AlertDialog.Builder(context.getApplicationContext())
+                        .setTitle(R.string.ims_settings_title)
+                        .setMessage(show)
+                        .setPositiveButton(android.R.string.ok, null)
+                        .setCancelable(false)
+                        .create();
+
+                alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+                alert.show();
+
             }
         }
 

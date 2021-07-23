@@ -61,15 +61,25 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
     PhoneAccountHandle mSimCallManager;
     private PhoneCallStateListener mPhoneStateListener;
     private Preference mPreference;
+    private Context mContext;
 
     public WifiCallingPreferenceController(Context context, String key) {
         super(context, key);
         mCarrierConfigManager = context.getSystemService(CarrierConfigManager.class);
         mPhoneStateListener = new PhoneCallStateListener();
+        mContext = context;
     }
 
     @Override
     public int getAvailabilityStatus(int subId) {
+
+        // add by T2M.zhangrenjie for FP4-847 2021-07-22 begin
+        boolean ims_enabled = Settings.Global.getInt(mContext.getContentResolver(), "ims_enable_settings",0) == 1;
+        if (ims_enabled){
+            Log.d(TAG, "wfc toggle show because of ims_enabled =" + ims_enabled);
+            return AVAILABLE;
+        }
+        // add by T2M.zhangrenjie for FP4-847 2021-07-22 end
         return SubscriptionManager.isValidSubscriptionId(subId)
                 && isWifiCallingEnabled(mContext, subId)
                 && isWfcEnabledByCarrierConfig(subId)

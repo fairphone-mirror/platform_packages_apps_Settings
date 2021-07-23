@@ -22,6 +22,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Looper;
 import android.os.PersistableBundle;
+import android.provider.Settings;
 import android.telephony.CarrierConfigManager;
 import android.telephony.PhoneStateListener;
 import android.telephony.SubscriptionManager;
@@ -107,11 +108,19 @@ public class Enhanced4gBasePreferenceController extends TelephonyTogglePreferenc
         if (!isModeMatched()) {
             return CONDITIONALLY_UNAVAILABLE;
         }
+        // add by T2M.zhangrenjie for FP4-847 2021-07-22 begin
+        boolean ims_enabled = Settings.Global.getInt(mContext.getContentResolver(), "ims_enable_settings",0) == 1;
+        if (ims_enabled){
+            Log.d(TAG, "volte toggle show because of ims_enabled =" + ims_enabled);
+            return AVAILABLE;
+        }
+        // add by T2M.zhangrenjie for FP4-847 2021-07-22 end
         final PersistableBundle carrierConfig = getCarrierConfigForSubId(subId);
         if ((carrierConfig == null)
                 || carrierConfig.getBoolean(CarrierConfigManager.KEY_HIDE_ENHANCED_4G_LTE_BOOL)) {
             return CONDITIONALLY_UNAVAILABLE;
         }
+
         final VolteQueryImsState queryState = queryImsState(subId);
         if (!queryState.isReadyToVoLte()) {
             return CONDITIONALLY_UNAVAILABLE;
