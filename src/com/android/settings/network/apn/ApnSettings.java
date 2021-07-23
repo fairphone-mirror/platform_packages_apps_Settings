@@ -257,7 +257,7 @@ public class ApnSettings extends RestrictedSettingsFragment
         Context appContext = getActivity().getApplicationContext();
         boolean isVoLTEEnabled = ImsManager.getInstance(appContext, phoneId)
                 .isEnhanced4gLteModeSettingEnabledByUser();
-        if (mHideImsApn || (Utils.isSupportCTPA(appContext) && !isVoLTEEnabled)) {
+        if (mHideImsApn) {
             where.append(" AND NOT (type='ims')");
         }
 
@@ -265,9 +265,10 @@ public class ApnSettings extends RestrictedSettingsFragment
 
         Log.d(TAG, "where = " + where.toString());
 
+        String order = SubscriptionManager.getResourcesForSubId(getContext(), mSubId).getString(R.string.config_settings_order_apnlist);
         final Cursor cursor = getContentResolver().query(simApnUri,
                 CARRIERS_PROJECTION, where.toString(), null,
-                Telephony.Carriers.DEFAULT_SORT_ORDER);
+                order);
 
         if (cursor != null) {
             final PreferenceGroup apnPrefList = findPreference(APN_LIST);
@@ -281,8 +282,7 @@ public class ApnSettings extends RestrictedSettingsFragment
             // TODO (b/338076914) upstream refactor removed this functionality
             // ApnPreference.setSelectedKey(mSelectedKey);
             cursor.moveToFirst();
-            final int radioTech = networkTypeToRilRidioTechnology(TelephonyManager.getDefault()
-                    .getDataNetworkType(mSubId));
+
             while (!cursor.isAfterLast()) {
                 String name = cursor.getString(NAME_INDEX);
                 final String apn = cursor.getString(APN_INDEX);
@@ -297,18 +297,6 @@ public class ApnSettings extends RestrictedSettingsFragment
 
                 if (!TextUtils.isEmpty(localizedName)) {
                     name = localizedName;
-                }
-                int bearer = cursor.getInt(BEARER_INDEX);
-                int bearerBitMask = cursor.getInt(BEARER_BITMASK_INDEX);
-                int fullBearer = ServiceState.getBitmaskForTech(bearer) | bearerBitMask;
-                if (!ServiceState.bitmaskHasTech(fullBearer, radioTech)
-                        && (bearer != 0 || bearerBitMask != 0)) {
-                    // In OOS, show APN with bearer as default
-                    if ((radioTech != ServiceState.RIL_RADIO_TECHNOLOGY_UNKNOWN) || (bearer == 0
-                            && radioTech == ServiceState.RIL_RADIO_TECHNOLOGY_UNKNOWN)) {
-                        cursor.moveToNext();
-                        continue;
-                    }
                 }
                 final ApnPreference pref = new ApnPreference(getPrefContext());
 

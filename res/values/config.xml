@@ -849,4 +849,6 @@
 
     <!-- Package name for diagnostics app. -->
     <string name="config_device_diagnostics_package_name" translatable="false">com.android.devicediagnostics</string>
+
+    <string name="config_settings_order_apnlist">_id</string>
 </resources>
