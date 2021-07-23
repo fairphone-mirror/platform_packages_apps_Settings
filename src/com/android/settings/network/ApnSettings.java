@@ -346,18 +346,20 @@ public class ApnSettings extends RestrictedSettingsFragment
         Context appContext = getActivity().getApplicationContext();
         boolean isVoLTEEnabled = ImsManager.getInstance(appContext, phoneId)
                 .isEnhanced4gLteModeSettingEnabledByUser();
-        if (mHideImsApn || (Utils.isSupportCTPA(appContext) && !isVoLTEEnabled)) {
+        //Modify Begin by cheng-he for FP4-1772 on 2021/07/23
+        if (mHideImsApn) {
             where.append(" AND NOT (type='ims')");
         }
-
+        //Modify End by cheng-he for FP4-1772 on 2021/07/23
         appendFilter(where);
 
         Log.d(TAG, "where = " + where.toString());
-
+        //Modify Begin by cheng-he for FP4-1772 on 2021/07/23
+	String order = SubscriptionManager.getResourcesForSubId(getContext(), subId).getString(R.string.config_settings_order_apnlist);
         final Cursor cursor = getContentResolver().query(simApnUri,
                 CARRIERS_PROJECTION, where.toString(), null,
-                Telephony.Carriers.DEFAULT_SORT_ORDER);
-
+                order);
+        //Modify End by cheng-he for FP4-1772 on 2021/07/23
         if (cursor != null) {
             final PreferenceGroup apnPrefList = (PreferenceGroup) findPreference("apn_list");
             apnPrefList.removeAll();
@@ -386,7 +388,8 @@ public class ApnSettings extends RestrictedSettingsFragment
                 if (!TextUtils.isEmpty(localizedName)) {
                     name = localizedName;
                 }
-                int bearer = cursor.getInt(BEARER_INDEX);
+                //Delete Begin by cheng-he for FP4-1772 on 2021/07/23
+                /*int bearer = cursor.getInt(BEARER_INDEX);
                 int bearerBitMask = cursor.getInt(BEARER_BITMASK_INDEX);
                 int fullBearer = ServiceState.getBitmaskForTech(bearer) | bearerBitMask;
                 int radioTech = networkTypeToRilRidioTechnology(TelephonyManager.getDefault()
@@ -399,7 +402,8 @@ public class ApnSettings extends RestrictedSettingsFragment
                         cursor.moveToNext();
                         continue;
                     }
-                }
+                }*/
+                //Delete End by cheng-he for FP4-1772 on 2021/07/23
                 final ApnPreference pref = new ApnPreference(getPrefContext());
 
                 pref.setKey(key);

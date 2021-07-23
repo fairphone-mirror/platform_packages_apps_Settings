@@ -472,4 +472,7 @@
     <!-- Playing tone setting -->
     <bool name="config_show_connect_tone_ui">false</bool>
     <integer name="config_default_tone_after_connected">0</integer>
+    <!--Add Begin by cheng-he for FP4-1772 on 2021/07/23-->
+    <string name="config_settings_order_apnlist">_id</string>
+    <!--Add End by cheng-he for FP4-1772 on 2021/07/23-->
 </resources>
