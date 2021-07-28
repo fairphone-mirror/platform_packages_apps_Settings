@@ -42,6 +42,7 @@ import com.android.settings.network.ims.WifiCallingQueryImsState;
 import com.android.settingslib.core.lifecycle.LifecycleObserver;
 import com.android.settingslib.core.lifecycle.events.OnStart;
 import com.android.settingslib.core.lifecycle.events.OnStop;
+import com.android.ims.ImsConfig;
 
 import java.util.List;
 
@@ -145,6 +146,8 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
             final int wfcMode = (isRoaming && !useWfcHomeModeForRoaming)
                     ? mImsMmTelManager.getVoWiFiRoamingModeSetting() :
                     mImsMmTelManager.getVoWiFiModeSetting();
+
+            Log.i(TAG, "getWfcModeSummary: wfcMode =" + wfcMode);
             switch (wfcMode) {
                 case ImsMmTelManager.WIFI_MODE_WIFI_ONLY:
                     resId = com.android.internal.R.string.wfc_mode_wifi_only_summary;
