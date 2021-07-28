@@ -683,6 +683,7 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
     private CharSequence getWfcModeSummary(int wfcMode) {
         int resId = com.android.internal.R.string.wifi_calling_off_summary;
         if (queryImsState(mSubId).isEnabledByUser()) {
+        Log.i(TAG, "getWfcModeSummary: wfcMode =" + wfcMode);
             switch (wfcMode) {
                 case ImsMmTelManager.WIFI_MODE_WIFI_ONLY:
                     resId = com.android.internal.R.string.wfc_mode_wifi_only_summary;
