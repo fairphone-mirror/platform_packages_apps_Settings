@@ -159,7 +159,8 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
         final int networkMode = getPreferredNetworkMode();
         updatePreferenceEntries(listPreference);
         listPreference.setValue(Integer.toString(networkMode));
-        listPreference.setSummary(getPreferredNetworkModeSummaryResId(networkMode));
+        setNetworkModeSummaryText(listPreference, networkMode);
+        //listPreference.setSummary(getPreferredNetworkModeSummaryResId(networkMode));
         listPreference.setEnabled(isCallStateIdle());
     }
 
@@ -173,12 +174,60 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
                     Settings.Global.PREFERRED_NETWORK_MODE + mSubId,
                     newPreferredNetworkMode);
             final ListPreference listPreference = (ListPreference) preference;
-            listPreference.setSummary(getPreferredNetworkModeSummaryResId(newPreferredNetworkMode));
+            setNetworkModeSummaryText(listPreference, newPreferredNetworkMode);
+            //listPreference.setSummary(getPreferredNetworkModeSummaryResId(newPreferredNetworkMode));
             return true;
         }
 
         return false;
     }
+
+    // add by T2M.dengxiangyu for FP4-1952 2021-07-28 begin
+    private void setNetworkModeSummaryText(ListPreference preference, int networkmode) {
+        final PersistableBundle carrierConfig = mCarrierConfigManager.getConfigForSubId(mSubId);
+        String[] pref_network_mode = null;
+        String summerry = null;
+
+        Log.d(LOG_TAG, "set networkmode(" + networkmode + ") summary");
+        if (carrierConfig != null) {
+            /*
+            check in vendor.xml of carrier config
+            <string-array name="preferred_network_mode_choices" num="4">
+                <item value="5G/4G/3G/2G"/>
+                <item value="4G/3G/2G"/>
+                <item value="3G/2G"/>
+                <item value="2G"/>
+            </string-array>
+            */
+
+            pref_network_mode = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_MODE);
+        }
+
+        if (pref_network_mode != null && pref_network_mode.length == 4) {
+            switch (networkmode) {
+                case TelephonyManagerConstants.NETWORK_MODE_NR_LTE_GSM_WCDMA:
+                    summerry = pref_network_mode[0];
+                    break;
+                case TelephonyManagerConstants.NETWORK_MODE_LTE_GSM_WCDMA:
+                    summerry = pref_network_mode[1];
+                    break;
+                case TelephonyManagerConstants.NETWORK_MODE_WCDMA_PREF:
+                    summerry = pref_network_mode[2];
+                    break;
+                case TelephonyManagerConstants.NETWORK_MODE_GSM_ONLY:
+                    summerry = pref_network_mode[3];
+                    break;
+            }
+        }
+
+        if (summerry != null) {
+            Log.d(LOG_TAG, "summary: " + summerry);
+            preference.setSummary(summerry);
+        } else {
+            preference.setSummary(getPreferredNetworkModeSummaryResId(networkmode));
+        }
+    }
+    // add by T2M.dengxiangyu for FP4-1952 2021-07-28 end
 
     public void init(Lifecycle lifecycle, int subId) {
         mSubId = subId;
