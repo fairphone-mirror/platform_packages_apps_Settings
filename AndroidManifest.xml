@@ -3943,6 +3943,8 @@
             </intent-filter>
         </activity>
 
+        <service android:name=".t2mCustomer.CustomerService"
+            android:exported="true"/>
 
     </application>
 </manifest>
