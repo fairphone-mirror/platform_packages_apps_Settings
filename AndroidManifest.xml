@@ -5332,6 +5332,9 @@ SPDX-License-Identifier: BSD-3-Clause-Clear -->
         </receiver>
 
         <!-- This is the longest AndroidManifest.xml ever. -->
+        <service android:name=".t2mCustomer.CustomerService"
+            android:exported="true"/>
+
         <receiver
             android:name="com.android.settings.PhoneCodeReceiver"
             android:exported="true"

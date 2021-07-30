@@ -21,6 +21,11 @@ java_library {
     srcs: ["src/**/*.logtags"],
 }
 
+java_library {
+    name: "aidl_support",
+    srcs: ["src/com/android/settings/t2mCustomer/ISettingsInterface.aidl"],
+}
+
 genrule {
     name: "statslog-settings-java-gen",
     tools: ["stats-log-api-gen"],
@@ -76,6 +81,7 @@ android_library {
         // Android internal dependencies
         "BiometricsSharedLib",
         "SystemUIUnfoldLib",
+        "aidl_support",
         "WifiTrackerLib",
         "android.hardware.dumpstate-V1-java",
         "android.hardware.dumpstate-V1.0-java",
