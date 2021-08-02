@@ -3076,7 +3076,7 @@
     <string name="access_point_names" msgid="5768430498022188057">"Zugangspunkte (APNs)"</string>
     <string name="enhanced_4g_lte_mode_title" msgid="6624700245232361149">"VoLTE"</string>
     <string name="enhanced_4g_lte_mode_title_advanced_calling" msgid="7066009898031465265">"Erweiterte Anruffunktionen"</string>
-    <string name="enhanced_4g_lte_mode_title_4g_calling" msgid="7445853566718786195">"4G-Anrufe"</string>
+    <string name="enhanced_4g_lte_mode_title_4g_calling" msgid="7445853566718786195">"Volte verwenden"</string>
     <string name="enhanced_4g_lte_mode_summary" msgid="1067066329756036427">"Zur Verbesserung von Sprachanrufen LTE-Dienste verwenden (empfohlen)"</string>
     <string name="enhanced_4g_lte_mode_summary_4g_calling" msgid="2575004054914178405">"Zur Verbesserung von Sprachanrufen 4G-Dienste verwenden (empfohlen)"</string>
     <string name="nr_advanced_calling_title" msgid="6106286679535355939">"Vo5G"</string>
