@@ -316,11 +316,16 @@ public class UserPLMNEditorActivity extends PreferenceActivity implements
 
     public int selectNetworkChoices(String plmn) {
         Log.d(LOG_TAG, "plmn = " + plmn);
-        String[] CuPlmnArray = getResources().getStringArray(R.array.uplmn_cu_mcc_mnc_values);
+        /*String[] CuPlmnArray = getResources().getStringArray(R.array.uplmn_cu_mcc_mnc_values);
         for (String CuPlmn : CuPlmnArray) {
             if (plmn.equals(CuPlmn)) return R.array.uplmn_prefer_network_mode_w_choices;
         }
         return R.array.uplmn_prefer_network_mode_td_choices;
+
+        FP4-2159
+        */
+
+        return R.array.uplmn_prefer_network_mode_w_choices;
     }
 
     private String genText(String value) {
