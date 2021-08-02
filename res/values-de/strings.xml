@@ -3104,7 +3104,7 @@
     <string name="access_point_names" msgid="5768430498022188057">"Zugangspunkte (APNs)"</string>
     <string name="enhanced_4g_lte_mode_title" msgid="6624700245232361149">"VoLTE"</string>
     <string name="enhanced_4g_lte_mode_title_advanced_calling" msgid="7066009898031465265">"Erweiterte Anruffunktionen"</string>
-    <string name="enhanced_4g_lte_mode_title_4g_calling" msgid="7445853566718786195">"4G-Anrufe"</string>
+    <string name="enhanced_4g_lte_mode_title_4g_calling" msgid="7445853566718786195">"Volte verwenden"</string>
     <string name="enhanced_4g_lte_mode_summary" msgid="6776190202179584104">"Zur Verbesserung von Sprache und Kommunikation LTE-Dienste verwenden (empfohlen)"</string>
     <string name="enhanced_4g_lte_mode_summary_4g_calling" msgid="7814006095552641136">"Zur Verbesserung von Sprache und Kommunikation 4G-Dienste verwenden (empfohlen)"</string>
     <string name="contact_discovery_opt_in_title" msgid="8708034790649773814">"Kontakte an Mobilfunkanbieter senden"</string>
