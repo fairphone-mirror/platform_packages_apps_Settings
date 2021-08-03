@@ -30,6 +30,20 @@ import androidx.fragment.app.FragmentManager;
 
 import com.android.settings.R;
 import com.android.settings.core.instrumentation.InstrumentedDialogFragment;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.widget.Toast;
+import android.content.Context;
+
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import android.widget.ImageView;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import java.util.Hashtable;
 
 public class SimStatusDialogFragment extends InstrumentedDialogFragment {
 
@@ -37,6 +51,8 @@ public class SimStatusDialogFragment extends InstrumentedDialogFragment {
     private static final String DIALOG_TITLE_BUNDLE_KEY = "arg_key_dialog_title";
 
     private static final String TAG = "SimStatusDialog";
+
+    private static final int COLOR = Color.BLACK;
 
     private View mRootView;
     private SimStatusDialogController mController;
@@ -95,5 +111,73 @@ public class SimStatusDialogFragment extends InstrumentedDialogFragment {
         if (textView != null) {
             textView.setText(text);
         }
+    }
+
+    public void setQRCode(int qrIdText,int qrIdImage){
+        Bitmap qrCodeBitmap;
+        ImageView qrImageView = mRootView.findViewById(qrIdImage);
+        TextView textView = mRootView.findViewById(qrIdText);
+        String ecid = textView.getText().toString();
+        int width = qrImageView.getWidth();
+        int height = qrImageView.getHeight();
+
+        if (width <= 0 || height <= 0) {
+            qrCodeBitmap = createQRCode(ecid, 300, 300);
+        } else {
+            qrCodeBitmap = createQRCode(ecid, width, height);
+        }
+        qrImageView.setImageBitmap(qrCodeBitmap);
+        qrImageView.setVisibility(View.VISIBLE);
+
+    }
+
+    public void setLongClick(int viewId) {
+        final TextView textView = mRootView.findViewById(viewId);
+        textView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                String ecid = textView.getText().toString();
+                clickClipboardButton(ecid);
+                return true;
+            }
+        });
+    }
+
+    private void clickClipboardButton(String tips) {
+//        mTips
+        ClipboardManager clipboardManager = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+        clipboardManager.setPrimaryClip(ClipData.newPlainText("text",tips));
+//        main_copy_to_clipboard
+        Toast.makeText(getActivity(),getResources().getString(R.string.main_copy_to_clipboard), Toast.LENGTH_SHORT).show();
+    }
+
+
+    public static Bitmap createQRCode(String str, int width, int height){
+
+        try {
+            Hashtable<EncodeHintType, String> hints = new Hashtable<EncodeHintType, String>();
+            hints.put(EncodeHintType.CHARACTER_SET, "utf-8");
+            BitMatrix matrix = new MultiFormatWriter().encode(str, BarcodeFormat.QR_CODE, width, height);
+            int w = matrix.getWidth();
+            int h = matrix.getHeight();
+            int[] pixels = new int[w * h];
+
+            for (int y = 0; y < h; y++) {
+                for (int x = 0; x < w; x++) {
+                    if (matrix.get(x, y)) {
+                        pixels[y * w + x] = COLOR;
+                    }
+                }
+            }
+
+            Bitmap bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+            bitmap.setPixels(pixels, 0, w, 0, 0, w, h);
+            return bitmap;
+        } catch (WriterException e) {
+            // TODO Auto-generated catch block
+            android.util.Log.e(TAG, "createQRCode fail", e);
+        }
+
+        return null;
     }
 }

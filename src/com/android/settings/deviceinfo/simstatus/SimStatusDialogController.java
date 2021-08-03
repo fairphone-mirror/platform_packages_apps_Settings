@@ -107,6 +107,8 @@ public class SimStatusDialogController implements LifecycleObserver {
     @VisibleForTesting
     final static int EID_INFO_VALUE_ID = R.id.esim_id_value;
     @VisibleForTesting
+    final static int EID_INFO_IMAGE_VALUE_ID = R.id.iv_qr_image;
+    @VisibleForTesting
     final static int IMS_REGISTRATION_STATE_LABEL_ID = R.id.ims_reg_state_label;
     @VisibleForTesting
     final static int IMS_REGISTRATION_STATE_VALUE_ID = R.id.ims_reg_state_value;
@@ -661,6 +663,8 @@ public class SimStatusDialogController implements LifecycleObserver {
             mDialog.removeSettingFromScreen(EID_INFO_VALUE_ID);
         } else if (eid.get() != null) {
             mDialog.setText(EID_INFO_VALUE_ID, eid.get());
+            mDialog.setQRCode(EID_INFO_VALUE_ID,EID_INFO_IMAGE_VALUE_ID);
+            // mDialog.setLongClick(EID_INFO_VALUE_ID);
         }
     }
 
