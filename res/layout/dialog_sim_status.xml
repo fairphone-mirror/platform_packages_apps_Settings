@@ -162,11 +162,22 @@
             android:layout_height="wrap_content"
             android:text="@string/status_esim_id"/>
         <TextView
-            style="@style/device_info_dialog_value"
+            style="@style/device_info_dialog_value_noPaddingBottom"
             android:id="@+id/esim_id_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textIsSelectable="true"
             android:text="@string/device_info_not_available"/>
+
+        <ImageView
+            android:id="@+id/iv_qr_image"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="120.0dip"
+            android:layout_height="100.0dip"
+            android:background="#ffffffff"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="24dp"
+            android:visibility="gone" />
 
         <TextView
             style="@style/device_info_dialog_label"
