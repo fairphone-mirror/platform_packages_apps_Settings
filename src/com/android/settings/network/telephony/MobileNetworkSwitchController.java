@@ -41,11 +41,13 @@ import com.android.settings.network.SubscriptionUtil;
 import com.android.settings.network.SubscriptionsChangeListener;
 import com.android.settings.widget.SwitchBar;
 import com.android.settingslib.widget.LayoutPreference;
+import android.os.SystemProperties;
 
 /** This controls a switch to allow enabling/disabling a mobile network */
 public class MobileNetworkSwitchController extends BasePreferenceController implements
         SubscriptionsChangeListener.SubscriptionsChangeListenerClient, LifecycleObserver {
     private static final String TAG = "MobileNetworkSwitchCtrl";
+    private static final String SIM_DATA_SWITCH = "persist.sys.settingswitch.sim";
     private SwitchBar mSwitchBar;
     private int mSubId;
     private SubscriptionsChangeListener mChangeListener;
@@ -152,6 +154,9 @@ public class MobileNetworkSwitchController extends BasePreferenceController impl
             mSwitchBar.show();
             int phoneId = mSubscriptionManager.getSlotIndex(mSubId);
             int uiccStatus = PrimaryCardAndSubsidyLockUtils.getUiccCardProvisioningStatus(phoneId);
+            boolean isCheck = uiccStatus == PrimaryCardAndSubsidyLockUtils.CARD_PROVISIONED;
+            Log.d(TAG, "update: isCheck=" + isCheck);
+            SystemProperties.set(SIM_DATA_SWITCH, isCheck + "");
             mSwitchBar.setCheckedInternal(uiccStatus == PrimaryCardAndSubsidyLockUtils.CARD_PROVISIONED);
         }
     }
