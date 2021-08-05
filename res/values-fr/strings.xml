@@ -4895,7 +4895,7 @@
     <string name="wfc_disclaimer_agree_button_text" msgid="4082872292910770344">"CONTINUER"</string>
     <string name="wfc_disclaimer_disagree_text" msgid="8424457394700137703">"NON MERCI"</string>
     <string name="wfc_disclaimer_location_title_text" msgid="7913919887475418423">"Position"</string>
-    <string name="wfc_disclaimer_location_desc_text" msgid="2799241640320172899">"Il se peut que votre fournisseur de services recueille votre position pour vous fournir ce service.\n\nVeuillez consulter les règles de confidentialité de votre fournisseur de services."</string>
+    <string name="wfc_disclaimer_location_desc_text" msgid="2799241640320172899">"Vos informations de localisation peuvent être transmises à Google et à votre opérateur afin d’établir  les appels en  Wi-Fi, que vous ayez activé ou non la fonctionnalité position."</string>
     <string name="forget_passpoint_dialog_message" msgid="2433875063907365760">"Vous risquez de perdre l\'accès au temps ou aux données restants. Contactez votre opérateur avant de procéder au retrait."</string>
     <string name="keywords_content_capture" msgid="7802155522681936956">"capture de contenu, contenu de l\'application"</string>
     <string name="content_capture" msgid="868372905432812238">"Contenu des applications"</string>
@@ -4968,4 +4968,6 @@
     <string name="keywords_media_controls" msgid="8345490568291778638">"Multimédia"</string>
     <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Le Bluetooth sera activé"</string>
     <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"Indisponible, car le mode Heure du coucher est activé"</string>
+    <string name="wfc_help_desc_text">Appels Wi-Fi\n\nUtilisez les réseaux Wi-Fi pour passer et recevoir des appels n’importe où en France métropolitaine, même sans réseau mobile.\n\nPour activer le service, veuillez vérifier auprès de votre opérateur la compatibilité de votre offre. Ensuite, connectez-vous à un réseau Wi-Fi, puis activer les Appels Wi-Fi directement dans les paramètres de votre téléphone. Dès que vous verrez cette icône, vous pourrez alors passer et recevoir vos appels grâce au Wi-Fi. </string>
+
 </resources>
