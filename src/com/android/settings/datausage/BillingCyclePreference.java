@@ -28,6 +28,7 @@ import androidx.preference.Preference;
 import com.android.settings.R;
 import com.android.settings.core.SubSettingLauncher;
 import com.android.settings.network.MobileDataEnabledListener;
+import android.telephony.SubscriptionManager;
 
 /**
  * Preference which displays billing cycle of subscription
@@ -76,14 +77,36 @@ public class BillingCyclePreference extends Preference
     }
 
     private void updateEnabled() {
-        try {
-            setEnabled(mServices.mNetworkService.isBandwidthControlEnabled()
-                    && mServices.mTelephonyManager.createForSubscriptionId(mSubId)
-                            .isDataEnabledForApn(ApnSetting.TYPE_DEFAULT)
-                    && mServices.mUserManager.isAdminUser());
-        } catch (RemoteException e) {
-            setEnabled(false);
+        // try {
+            setEnabled(updateEnabledNew());
+            // setEnabled(mServices.mNetworkService.isBandwidthControlEnabled()
+            //         && mServices.mTelephonyManager.createForSubscriptionId(mSubId)
+            //                 .isDataEnabledForApn(ApnSetting.TYPE_DEFAULT)
+            //         && mServices.mUserManager.isAdminUser());
+        // } catch (RemoteException e) {
+        //     setEnabled(false);
+        // }
+    }
+
+    private boolean updateEnabledNew(){
+        return mServices.mSubscriptionManager.getActiveSubscriptionInfo(mSubId) != null 
+        && isBandwidthControlEnabled() && mServices.mUserManager.isAdminUser() && isDataEnabled(mSubId);
+    }
+
+    private boolean isBandwidthControlEnabled() {
+          try {
+              return mServices.mNetworkService.isBandwidthControlEnabled();
+          } catch (RemoteException e) {
+              android.util.Log.e("chuanzhi", "problem talking with INetworkManagementService: ", e);
+              return false;
+          }
+    }
+
+    private boolean isDataEnabled(int subId) {
+        if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
+            return true;
         }
+        return mServices.mTelephonyManager.getDataEnabled(subId);
     }
 
     @Override
