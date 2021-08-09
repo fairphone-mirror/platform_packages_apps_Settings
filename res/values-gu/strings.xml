@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"ફિંગરપ્રિન્ટ નોંધણી કામ કરતી ન હતી. ફરીથી પ્રયાસ કરો અથવા એક અલગ આંગળીનો ઉપયોગ કરો."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"બીજી ઉમેરો"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"આગલું"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"તમારા ફોનને અનલૉક કરવા ઉપરાંત, તમે ખરીદીઓ અને ઍપ અ‍ૅક્સેસને અધિકૃત કરવા માટે તમારી ફિંગરપ્રિન્ટનો પણ ઉપયોગ કરી શકો છો. "<annotation id="url">"વધુ જાણો"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"તમારા ફોનને અનલૉક કરવા ઉપરાંત, તમે ખરીદીઓ અને ઍપ અ‍ૅક્સેસને અધિકૃત કરવા માટે તમારી ફિંગરપ્રિન્ટનો પણ ઉપયોગ કરી શકો છો. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" સ્ક્રીન લૉક વિકલ્પ અક્ષમ કરેલ છે. વધુ જાણવા માટે, તમારી સંસ્થાના વ્યવસ્થાપકનો સંપર્ક કરો. "<annotation id="admin_details">"વધુ વિગતો"</annotation>\n\n"તમે ખરીદીઓ અને ઍપ્લિકેશનની ઍક્સેસ અધિકૃત કરવા માટે હજુ પણ તમારી ફિંગરપ્રિન્ટનો ઉપયોગ કરી શકો છો. "<annotation id="url">"વધુ જાણો"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"આંગળીને ઉંચકો, પછી ફરીથી સેન્સરને સ્પર્શ કરો"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"તમે <xliff:g id="COUNT">%d</xliff:g> જેટલી ફિંગરપ્રિન્ટ્સ ઉમેરી શકો છો"</string>

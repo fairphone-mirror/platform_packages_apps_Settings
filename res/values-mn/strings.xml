@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Хурууны хээг оруулж чадсангүй. Дахин оролдох, эсвэл өөр хуруу ашиглана уу."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Өөрийг нэмэх"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Дараах"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Хурууны хээгээ ашиглан утасны түгжээг нээхээс гадна, худалдан авалт хийж, апп-д нэвтэрч болно. "<annotation id="url">"Дэлгэрэнгүй мэдээлэл"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Хурууны хээгээ ашиглан утасны түгжээг нээхээс гадна, худалдан авалт хийж, апп-д нэвтэрч болно. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" Дэлгэцийн түгжээний сонголтыг цуцалсан. Дэлгэрэнгүй үзэхийн тулд байгууллагынхаа админтай холбогдоно уу. "<annotation id="admin_details">"Дэлгэрэнгүй мэдээлэл"</annotation>\n\n"Ta хурууны хээгээ ашиглан худалдан авалт болон аппын хандалтыг баталгаажуулах боломжтой. "<annotation id="url">"Дэлгэрэнгүй үзэх"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Хуруугаа өргөөд мэдрэгч дээр дахин хүрнэ үү."</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"Та <xliff:g id="COUNT">%d</xliff:g> хүртэлх хурууны хээ нэмж болно"</string>

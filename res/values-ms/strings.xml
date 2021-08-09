@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Pendaftaran cap jari tidak berjaya. Cuba lagi atau gunakan jari yang lain."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Tambah yang lain"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Seterusnya"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Selain membuka kunci telefon, anda boleh menggunakan cap jari untuk membenarkan pembelian dan akses apl juga. "<annotation id="url">"Ketahui lebih lanjut"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Selain membuka kunci telefon, anda boleh menggunakan cap jari untuk membenarkan pembelian dan akses apl juga. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" Pilihan kunci skrin dilumpuhkan. Untuk mengetahui lebih lanjut, hubungi pentadbir organisasi anda. "<annotation id="admin_details">"Butiran lanjut"</annotation>\n\n"Anda masih dapat menggunakan cap jari untuk membenarkan pembelian dan akses apl. "<annotation id="url">"Ketahui lebih lanjut"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Angkat jari, kemudian sentuh penderia sekali lagi"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"Anda boleh menambah sehingga <xliff:g id="COUNT">%d</xliff:g> cap jari"</string>

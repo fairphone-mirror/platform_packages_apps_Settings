@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"వేలిముద్ర నమోదు పని చేయలేదు. మళ్లీ ప్రయత్నించండి లేదా మరొక వేలిని ఉపయోగించండి."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"మరొకటి జోడించు"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"తర్వాత"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"మీ ఫోన్‌ను అన్‌లాక్ చేయడంతో పాటుగా, కొనుగోళ్లు మరియు యాప్ యాక్సెస్‌ను అనుమతించడానికి కూడా మీ వేలిముద్రను ఉపయోగించవచ్చు. "<annotation id="url">"మరింత తెలుసుకోండి"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"మీ ఫోన్‌ను అన్‌లాక్ చేయడంతో పాటుగా, కొనుగోళ్లు మరియు యాప్ యాక్సెస్‌ను అనుమతించడానికి కూడా మీ వేలిముద్రను ఉపయోగించవచ్చు. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" స్క్రీన్ లాక్ ఎంపిక నిలిపివేయబడింది. మరింత తెలుసుకోవాలంటే, మీ సంస్థ యొక్క నిర్వాహకులను సంప్రదించండి. "<annotation id="admin_details">"మరిన్ని వివరాలు"</annotation>\n\n"ఇప్పటికీ మీరు మీ వేలిముద్రను ఉపయోగించి కొనుగోళ్లను ప్రమాణీకరించవచ్చు మరియు యాప్‌ను యాక్సెస్ చేయవచ్చు. "<annotation id="url">"మరింత తెలుసుకోండి"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"వేలిని పైకి ఎత్తి, ఆపై మళ్లీ సెన్సార్‌ను తాకండి"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"మీరు గరిష్టంగా <xliff:g id="COUNT">%d</xliff:g> వేలిముద్రలను జోడించవచ్చు"</string>

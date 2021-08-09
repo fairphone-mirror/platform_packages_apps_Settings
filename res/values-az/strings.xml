@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Barmaq izi qeydiyyatı işləmədi. Yenidən cəhd edin və ya başqa barmaq istifadə edin."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Başqasını əlavə edin"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Növbəti"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Telefonun kiliddən çıxarılmasından əlavə, alışları doğrulamaq və tətbiqlərə giriş üçün barmaq izinizi də istifadə edə bilərsiniz. "<annotation id="url">"Ətraflı məlumat"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Telefonun kiliddən çıxarılmasından əlavə, alışları doğrulamaq və tətbiqlərə giriş üçün barmaq izinizi də istifadə edə bilərsiniz. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" Ekran kilid seçimi deaktivdir. Ətraflı məlumat üçün təşkilatın admini ilə əlaqə saxlayın. "<annotation id="admin_details">"Daha ətraflı"</annotation>\n\n"Hələ də alışları və tətbiq girişlərini təsdiq etmək üçün barmaq izi istifadə edə bilərsiniz. "<annotation id="url">"Daha ətraflı"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Barmağınızı qaldırın, sonra yenidən sensora toxunun"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"<xliff:g id="COUNT">%d</xliff:g> ədədə qədər barmaq izi əlavə edə bilərsiniz"</string>

@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"فنگر پرنٹ اندراج نہیں ہوا۔ دوبارہ کوشش کریں یا مختلف انگلی استعمال کریں۔"</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"کوئی دوسرا شامل کریں"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"آگے جائیں"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"اپنے فون کو غیر مقفل کرنے کے علاوہ، آپ خریداریوں کی توثیق کرنے اور ایپ تک رسائی حاصل کرنے کیلئے اپنے فنگر پرنٹ کا بھی استعمال کر سکتے ہیں۔ "<annotation id="url">"مزید جانیں"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"اپنے فون کو غیر مقفل کرنے کے علاوہ، آپ خریداریوں کی توثیق کرنے اور ایپ تک رسائی حاصل کرنے کیلئے اپنے فنگر پرنٹ کا بھی استعمال کر سکتے ہیں۔ "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" اسکرین لاک اختیار غیر فعال ہے۔ مزید جاننے کیلئے اپنی تنظیم کے منتظم سے رابطہ کریں۔ "<annotation id="admin_details">"مزید تفصیلات"</annotation>\n\n"آپ پھر بھی خریداریوں کی اجازت دینے کیلئے اور ایپ کی رسائی کیلئے اپنا فنگر پرنٹ استعمال کر سکتے ہیں۔ "<annotation id="url">"مزید جانیں"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"انگلی اٹھائیں اور سنسر کو دوبارہ ٹچ کریں"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"آپ <xliff:g id="COUNT">%d</xliff:g> تک فنگر پرنٹس کا اضافہ کر سکتے ہیں"</string>

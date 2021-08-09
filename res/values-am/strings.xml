@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"የጣት አሻራ ምዝገባ አልሰራም። እንደገና ይሞክሩ ወይም የተለየ ጣት ይጠቀሙ።"</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"ሌላ ያክሉ"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"ቀጣይ"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ስልክዎን ከማስከፈት በተጨማሪም እንዲሁም ግዢዎችን እና የመተግበሪያ መዳረሻን ለመፍቀድ የጣት አሻራዎንም መጠቀም ይችላሉ። "<annotation id="url">"ተጨማሪ ለመረዳት"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ስልክዎን ከማስከፈት በተጨማሪም እንዲሁም ግዢዎችን እና የመተግበሪያ መዳረሻን ለመፍቀድ የጣት አሻራዎንም መጠቀም ይችላሉ። "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" የማያ ገጽ ቁልፍ አማራጩ ተሰናክሏል። ተጨማሪ ለማወቅ የድርጅትዎን አስተዳዳሪ ያነጋግሩ። "<annotation id="admin_details">"ተጨማሪ ዝርዝሮች"</annotation>\n\n"ለግዢዎች እና የመተግበሪያ መዳረሻ ፈቃድ ለመስጠት አሁንም የጣት አሻራዎን መጠቀም ይችላሉ። "<annotation id="url">"የበለጠ ለመረዳት"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"ጣትዎን ያንሱ፣ ከዚያ በድጋሚ ዳሳሽ ይንኩ"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"እስከ <xliff:g id="COUNT">%d</xliff:g> የሚደርሱ የጣት አሻራዎችን ማከል ይችላሉ"</string>

@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Մատնահետքը չգրանցվեց: Փորձեք նորից կամ ուրիշ մատով:"</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Նոր մատնահետք"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Հաջորդը"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Բացի հեռախոսը ապակողպելուց՝ մատնահետքը կարող եք նաև օգտագործել գնումները հաստատելու և հավելվածներից օգտվելու համար: "<annotation id="url">"Մանրամասն"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Բացի հեռախոսը ապակողպելուց՝ մատնահետքը կարող եք նաև օգտագործել գնումները հաստատելու և հավելվածներից օգտվելու համար: "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" Էկրանի կողպման ընտրանքն անջատված է: Ավելին իմանալու համար դիմեք ձեր կազմակերպության ադմինիստրատորին: "<annotation id="admin_details">"Մանրամասներ"</annotation>\n\n"Գնումները և հավելվածների օգտագործումը թույլատրելու համար դուք կարող եք օգտագործել մատնահետքը: "<annotation id="url">"Իմանալ ավելին"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Բարձրացրեք մատը, ապա կրկին հպեք մատնահետքի ընթերցիչին"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"Կարող եք ավելացնել առավելագույնը <xliff:g id="COUNT">%d</xliff:g> մատնահետք"</string>

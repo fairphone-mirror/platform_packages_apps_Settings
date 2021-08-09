@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"फिंगरप्रिंट नोंदणीने कार्य केले नाही. पुन्हा प्रयत्न करा किंवा भिन्न बोट वापरून पहा."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"आणखी एक जोडा"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"पुढील"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"तुमचा फोन अनलॉक करण्‍याव्यतिरिक्त, तुम्ही आपल्या फिंगरप्रिंटचा वापर खरेदी आणि अ‍ॅप प्रवेश प्रमाणित करण्‍यासाठी देखील करू शकता. "<annotation id="url">"अधिक जाणून घ्‍या"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"तुमचा फोन अनलॉक करण्‍याव्यतिरिक्त, तुम्ही आपल्या फिंगरप्रिंटचा वापर खरेदी आणि अ‍ॅप प्रवेश प्रमाणित करण्‍यासाठी देखील करू शकता. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" स्क्रीन लॉक पर्याय अक्षम केला आहे. अधिक जाणून घेण्यासाठी, आपल्या संस्थेच्या प्रशासकाशी संपर्क साधा. "<annotation id="admin_details">"अधिक तपशील"</annotation>\n\n"आपण अजूनही खरेद्या आणि अ‍ॅप प्रवेश अधिकृत करण्यासाठी तुमचे फिंगरप्रिंट वापरू शकता. "<annotation id="url">"अधिक जाणून घ्या"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"बोट उचला, नंतर पुन्हा सेन्सरला स्पर्श करा"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"तुम्ही <xliff:g id="COUNT">%d</xliff:g> पर्यंत फिंगरप्रिंट जोडू शकता"</string>

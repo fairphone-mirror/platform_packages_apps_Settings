@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"თითის ანაბეჭდის რეგისტრაცია ვერ მოხერხდა. ცადეთ ისევ ან გამოიყენეთ სხვა თითი."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"კიდევ ერთის დამატება"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"შემდეგი"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"თქვენი ტელეფონის განბლოკვასთან ერთად, თქვენი თითის ანაბეჭდი ასევე შეგიძლიათ გამოიყენოთ  შესყიდვებისა და აპების წვდომის დასამოწმებლად. "<annotation id="url">"შეიტყვეთ მეტი"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"თქვენი ტელეფონის განბლოკვასთან ერთად, თქვენი თითის ანაბეჭდი ასევე შეგიძლიათ გამოიყენოთ  შესყიდვებისა და აპების წვდომის დასამოწმებლად. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" ეკრანის დაბლოკვის ვარიანტი გათიშულია. დამატებითი ინფორმაციისთვის დაუკავშირდით თქვენი ორგანიზაციის ადმინისტრატორს. "<annotation id="admin_details">"ვრცლად"</annotation>\n\n"შენაძენებისა და აპებზე წვდომის ავტორიზაცია კვლავ შეგიძლიათ თითის ანაბეჭდის მეშვეობით. "<annotation id="url">"შეიტყვეთ მეტი"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"თითი აიღეთ და შემდეგ ხელახლა შეეხეთ სენსორს"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"შეგიძლიათ დაამატოთ მაქსიმუმ <xliff:g id="COUNT">%d</xliff:g> თითის ანაბეჭდი"</string>
