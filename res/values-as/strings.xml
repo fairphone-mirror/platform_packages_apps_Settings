@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"ফিংগাৰপ্ৰিণ্ট যোগ দিব পৰা নগ\'ল। পুনৰ চেষ্টা কৰক বা বেলেগ এটা আঙুলি ব্যৱহাৰ কৰক।"</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"অইন এটা ফিংগাৰপ্ৰিণ্ট যোগ কৰক"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"পৰৱৰ্তী"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"আপুনি ফিংগাৰপ্ৰিণ্ট ব্যৱহাৰ কৰি ফ\'নটো আনলক কৰাৰ উপৰি ক্ৰয় আৰু এপ্ প্ৰৱেশৰ অনুমতি দিব পাৰিব। "<annotation id="url">"অধিক জানক"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"আপুনি ফিংগাৰপ্ৰিণ্ট ব্যৱহাৰ কৰি ফ\'নটো আনলক কৰাৰ উপৰি ক্ৰয় আৰু এপ্ প্ৰৱেশৰ অনুমতি দিব পাৰিব। "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" স্ক্ৰীণ লক বিকল্পটো অক্ষম হৈ আছে। অধিক জানিবলৈ আপোনাৰ প্ৰতিষ্ঠানৰ প্ৰশাসকৰ সৈতে যোগাযোগ কৰক। "<annotation id="admin_details">"অধিক বিৱৰণ"</annotation>\n\n"আপুনি ক্ৰয়ৰ অনুমতি দিবলৈ আৰু এপ্ প্ৰৱেশৰ অনুমতি দিবলৈ ফিংগাৰপ্ৰিণ্ট ব্যৱহাৰ কৰি থাকিব পাৰিব। "<annotation id="url">"অধিক জানক"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"আঙুলিটো আঁতৰাওক আৰু ছেন্সৰটো আকৌ স্পৰ্শ কৰক"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"আপুনি <xliff:g id="COUNT">%d</xliff:g>লৈকে ফিংগাৰপ্ৰিণ্ট যোগ কৰিব পাৰে"</string>

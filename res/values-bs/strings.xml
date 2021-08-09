@@ -450,7 +450,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Registracija otiska prsta nije uspjela. Pokušajte ponovo ili koristite drugi prst."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Dodaj još jedan"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Naprijed"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Osim otključavanja telefona, otisak prsta takođe možete koristiti za odobravanje kupovine i pristup aplikacijama. "<annotation id="url">"Saznajte više"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Osim otključavanja telefona, otisak prsta takođe možete koristiti za odobravanje kupovine i pristup aplikacijama. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" Opcija zaključavanja ekrana je onemogućena. Da saznate više, obratite se administratoru organizacije. "<annotation id="admin_details">"Više informacija"</annotation>\n\n"I dalje možete koristiti otisak prsta za odobravanje kupovine i pristup aplikacijama. "<annotation id="url">"Saznajte više"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Podignite prst, zatim ponovo dodirnite senzor"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"Možete dodati do <xliff:g id="COUNT">%d</xliff:g> otisaka prstiju"</string>

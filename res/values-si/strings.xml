@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"ඇඟිලි සලකුණ ඇතුළත් කිරිම ක්‍රියා කළේ නැත. නැවත උත්සාහ කරන්න, නැතහොත් වෙනත් ඇඟිල්ලක් භාවිත කරන්න."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"තවත් එකක් එක් කරන්න"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"මීළඟ"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ඔබේ දුරකථනය අගුලු හැරීමට අමතරව, ඔබට ඔබේ ඇඟිලි සලකුණ මිලදී ගැනීම් සහ යෙදුම් ප්‍රවේශ සත්‍යාපනය සඳහාද භාවිත කළ හැකිය. "<annotation id="url">"තව දැන ගන්න"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ඔබේ දුරකථනය අගුලු හැරීමට අමතරව, ඔබට ඔබේ ඇඟිලි සලකුණ මිලදී ගැනීම් සහ යෙදුම් ප්‍රවේශ සත්‍යාපනය සඳහාද භාවිත කළ හැකිය. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" තිර අගුලු විකල්පය අබලයි. තව දැන ගැනීමට ඔබේ සංවිධානයේ පරිපාලක අමතන්න. "<annotation id="admin_details">"තවත් විස්තර"</annotation>\n\n"ඔබට තවමත් මිලදී ගැනීම් සහ යෙදුම් ප්‍රවේශය සඳහා අනුමැතිය දීමට ඔබේ ඇඟිලි සලකුණ භාවිත කළ හැකිය. "<annotation id="url">"තව දැන ගන්න"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"ඇඟිල්ල ඔසවා, අනතුරුව නැවත සංවේදකය ස්පර්ශ කරන්න"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"ඔබට ඇඟිලි සලකුණු <xliff:g id="COUNT">%d</xliff:g> දක්වා එකතු කළ හැකිය"</string>

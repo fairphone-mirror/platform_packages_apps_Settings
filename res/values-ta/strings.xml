@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"கைரேகையைப் பதிவுசெய்ய முடியவில்லை. மீண்டும் முயற்சிக்கவும் அல்லது வேறு விரலைப் பயன்படுத்தவும்."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"மற்றொன்றைச் சேர்"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"அடுத்து"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"மொபைலைத் திறக்க மட்டுமில்லாமல், பர்ச்சேஸ்களை உறுதிப்படுத்தவும் ஆப்ஸை அணுகவும் கைரேகையைப் பயன்படுத்தலாம். "<annotation id="url">"மேலும் அறிக"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"மொபைலைத் திறக்க மட்டுமில்லாமல், பர்ச்சேஸ்களை உறுதிப்படுத்தவும் ஆப்ஸை அணுகவும் கைரேகையைப் பயன்படுத்தலாம். "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" திரைப் பூட்டு விருப்பம் முடக்கப்பட்டது. மேலும் அறிய, உங்கள் நிறுவனத்தின் நிர்வாகியைத் தொடர்புகொள்ளவும். "<annotation id="admin_details">"மேலும் விவரங்கள்"</annotation>\n\n"வாங்குவதை அங்கீகரிக்கவும் ஆப்ஸை அணுகவும் தொடர்ந்து நீங்கள் கைரேகையைப் பயன்படுத்தலாம். "<annotation id="url">"மேலும் அறிக"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"விரலை எடுத்துவிட்டு, மீண்டும் உணர்வியைத் தொடவும்"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"<xliff:g id="COUNT">%d</xliff:g> கைரேகைகள் வரை சேர்க்கலாம்"</string>

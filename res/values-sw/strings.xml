@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Alama ya kidole haijawekwa. Jaribu tena au utumie kidole tofauti."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Ongeza kingine"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Endelea"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Mbali na kufungua simu yako, unaweza pia kutumia alama ya kidole chako kuidhinisha ununuzi na ufikiaji programu. "<annotation id="url">"Pata maelezo zaidi"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Mbali na kufungua simu yako, unaweza pia kutumia alama ya kidole chako kuidhinisha ununuzi na ufikiaji programu. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" Chaguo la kufunga skrini limezimwa. Wasiliana na msimamizi wa shirika lako ili upate maelezo zaidi "<annotation id="admin_details">"Pata maelezo zaidi"</annotation>\n\n"Bado unaweza kutumia alama ya kidole chako kuidhinisha ununuzi na kufikia programu. "<annotation id="url">"Pata maelezo zaidi"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Inua kidole, kisha gusa kitambuzi tena"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"Unaweza kuongeza hadi vitambulisho <xliff:g id="COUNT">%d</xliff:g>"</string>

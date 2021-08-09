@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"ثبت اثر انگشت کار نمی‌کند. دوباره امتحان کنید یا از انگشت دیگری استفاده کنید."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"افزودن یک انگشت دیگر"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"بعدی"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"علاوه بر باز کردن قفل تلفنتان، همچنین می‌توانید از اثر انگشتتان برای اجازه دادن به خریدها و دسترسی برنامه استفاده کنید."<annotation id="url">"بیشتر بدانید"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"علاوه بر باز کردن قفل تلفنتان، همچنین می‌توانید از اثر انگشتتان برای اجازه دادن به خریدها و دسترسی برنامه استفاده کنید."</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" گزینه قفل صفحه غیرفعال است. با سرپرست دستگاه تماس بگیرید تا بیشتر بدانید. "<annotation id="admin_details">"جزئیات بیشتر"</annotation>\n\n"برای تأیید خریدها و دسترسی به برنامه، همچنان می‌توانید از اثر انگشتتان استفاده کنید. "<annotation id="url">" بیشتر بدانید"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"انگشت را بلند کنید، سپس دوباره حسگر را لمس کنید"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"می‌توانید حداکثر <xliff:g id="COUNT">%d</xliff:g> اثرانگشت اضافه کنید"</string>

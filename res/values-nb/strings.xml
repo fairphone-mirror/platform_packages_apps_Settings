@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Registrering av fingeravtrykket mislyktes. Prøv på nytt, eller bruk en annen finger."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Legg til ett til"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Neste"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"I tillegg til å låse opp telefonen din, kan du bruke fingeravtrykket ditt til å godkjenne kjøp og apptilgang. "<annotation id="url">"Finn ut mer"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"I tillegg til å låse opp telefonen din, kan du bruke fingeravtrykket ditt til å godkjenne kjøp og apptilgang. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" Skjermlåsalternativet er slått av. Ta kontakt med administratoren i organisasjonen din for å finne ut mer. "<annotation id="admin_details">"Mer informasjon"</annotation>\n\n"Du kan fortsatt bruke fingeravtrykket ditt til å autorisere kjøp og apptilgang. "<annotation id="url">"Finn ut mer"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Løft fingeren og trykk på sensoren igjen"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"Du kan legge til opptil <xliff:g id="COUNT">%d</xliff:g> fingeravtrykk"</string>

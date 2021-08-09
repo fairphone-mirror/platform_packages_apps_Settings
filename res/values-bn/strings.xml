@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"আঙ্গুলের ছাপ তালিকাভুক্তিকরণ কাজ করেনি৷ আবার চেষ্টা করুন অথবা আলাদা কোনো আঙুল ব্যবহার করুন৷"</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"আরেকটি জুড়ুন"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"পরবর্তী"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"উপরন্তু আপনার ফোন আনলক করতে, কেনাকাটা এবং অ্যাপ্লিকেশান অ্যাক্সেস অনুমোদন করতে আপনি আপনার আঙ্গুলের ছাপও ব্যবহার করতে পারেন৷ "<annotation id="url">"আরো জানুন"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"উপরন্তু আপনার ফোন আনলক করতে, কেনাকাটা এবং অ্যাপ্লিকেশান অ্যাক্সেস অনুমোদন করতে আপনি আপনার আঙ্গুলের ছাপও ব্যবহার করতে পারেন৷ "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" স্ক্রিন লক বিকল্প নিষ্ক্রিয় করা হয়েছে। আরো জানতে, আপনার প্রতিষ্ঠানের প্রশাসকের সাথে যোগাযোগ করুন। "<annotation id="admin_details">"আরো বিবরণ"</annotation>\n\n"আপনি এখনও কেনাকাটা করতে এবং অ্যাপের অ্যাক্সেস দিতে আপনার আঙ্গুলের ছাপ ব্যবহার করতে পারেন। "<annotation id="url">"আরো জানুন"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"আঙ্গুল তুলুন, তারপরে আবার সেন্সরে স্পর্শ করুন"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"আপনি <xliff:g id="COUNT">%d</xliff:g>টি পর্যন্ত আঙ্গুলের ছাপ যোগ করতে পারেন"</string>

@@ -454,7 +454,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Registrácia odtlačku prsta nefungovala. Skúste to znova alebo použite iný prst."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Pridať ďalší"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Ďalej"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Okrem odomknutia svojho telefónu môžete pomocou odtlačku prsta schvaľovať nákupy a prístup aplikácií. "<annotation id="url">"Ďalšie informácie"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Okrem odomknutia svojho telefónu môžete pomocou odtlačku prsta schvaľovať nákupy a prístup aplikácií. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" Možnosť zámky obrazovky je zakázaná. Ďalšie informácie vám poskytne správca vašej organizácie. "<annotation id="admin_details">"Ďalšie podrobnosti"</annotation>\n\n"Naďalej môžete pomocou odtlačku prsta schvaľovať nákupy a prístup do aplikácií. "<annotation id="url">"Ďalšie informácie"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Nadvihnite prst, potom sa opäť dotknite senzora"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"Môžete pridať ďalšie odtlačky (max. <xliff:g id="COUNT">%d</xliff:g>)"</string>

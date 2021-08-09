@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"ଟିପଚିହ୍ନ ଏନରୋଲମ୍ୟାଣ୍ଟ କାମ କଲା ନାହିଁ। ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ କିମ୍ବା ଭିନ୍ନ ଏକ ଆଙ୍ଗୁଠି ବ୍ୟବହାର କରନ୍ତୁ।"</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"ଆଉ ଗୋଟିଏ ଯୋଗ କରନ୍ତୁ"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"ପରବର୍ତ୍ତୀ"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ଆପଣଙ୍କ ଫୋନ୍‌ ଅନଲକ୍‌ କରିବା ସହ, କ୍ରୟ କରିବାକୁ ଏବଂ ଆପ୍‌ ଆକ୍ସେସ୍‌ ସ୍ୱୀକୃତି ଦେବାକୁ ଆପଣଙ୍କ ଟିପଚିହ୍ନ ମଧ୍ୟ ବ୍ୟବହାର କରିପାରିବେ। "<annotation id="url">"ଅଧିକ ଜାଣନ୍ତୁ"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ଆପଣଙ୍କ ଫୋନ୍‌ ଅନଲକ୍‌ କରିବା ସହ, କ୍ରୟ କରିବାକୁ ଏବଂ ଆପ୍‌ ଆକ୍ସେସ୍‌ ସ୍ୱୀକୃତି ଦେବାକୁ ଆପଣଙ୍କ ଟିପଚିହ୍ନ ମଧ୍ୟ ବ୍ୟବହାର କରିପାରିବେ। "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" ସ୍କ୍ରୀନ୍‌ ଲକ୍‌ ବିକଳ୍ପ ଅକ୍ଷମ ହୋଇଛି। ଅଧିକ ଜାଣିବା ପାଇଁ ନିଜ ସଂସ୍ଥାର ଆଡ୍‌ମିନ୍‌ଙ୍କୁ ସମ୍ପର୍କ କରନ୍ତୁ। "<annotation id="admin_details">"ଅଧିକ ବିବରଣୀ"</annotation>\n\n"କିଣାକିଣିକୁ ଆଧିକୃତ ଓ ଆପ୍‌ ଆକ୍ସେସ୍‌ ପାଇଁ ନିଜ ଆଙ୍ଗୁଠି ଚିହ୍ନକୁ ଆପଣ ତଥାପି ବ୍ୟବହାର କରିପାରିବେ। "<annotation id="url">"ଅଧିକ ଜାଣନ୍ତୁ"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"ଆଙ୍ଗୁଠିକୁ ଉଠାନ୍ତୁ ଓ ତା’ପରେ ସେନ୍ସରକୁ ପୁଣିଥରେ ଛୁଅଁନ୍ତୁ"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"ଆପଣ ସର୍ବାଧିକ <xliff:g id="COUNT">%d</xliff:g>ଟି ଆଙ୍ଗୁଠି ଚିହ୍ନ ଯୋଡ଼ିପାରିବେ"</string>

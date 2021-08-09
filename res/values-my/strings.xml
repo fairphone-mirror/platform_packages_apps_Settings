@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"လက်ဗွေထည့်သွင်းမှု အဆင်မပြေပါ။ အခြားလက်ချောင်းကို သုံးပါ သို့မဟုတ် ထပ်စမ်းကြည့်ပါ။"</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"နောက်တစ်ခု ထည့်ရန်"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"ရှေ့သို့"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ဖုန်းကို လော့ခ်ဖွင့်ရန်သာမက ဝယ်ယူမှုများနှင့် အက်ပ်ခွင့်ပြုရန်အတွက် သင့်လက်ဗွေကို အသုံးပြုနိုင်သည်။ "<annotation id="url">"ပိုမိုလေ့လာရန်"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ဖုန်းကို လော့ခ်ဖွင့်ရန်သာမက ဝယ်ယူမှုများနှင့် အက်ပ်ခွင့်ပြုရန်အတွက် သင့်လက်ဗွေကို အသုံးပြုနိုင်သည်။ "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" မျက်နှာပြင်လော့ခ်ချခြင်းစနစ်များကို ပိတ်ထားသည်။ ပိုမိုလေ့လာရန် သင့်အဖွဲ့အစည်း၏ စီမံခန့်ခွဲသူကို ဆက်သွယ်ပါ။ "<annotation id="admin_details">"နောက်ထပ် အသေးစိတ်များ"</annotation>\n\n"ဝယ်ယူမှုများနှင့် အက်ပ်အသုံးပြုမှုကို ခွင့်ပြုရန် သင့်လက်ဗွေကို အသုံးပြုနိုင်ပါသေးသည်။ "<annotation id="url">"ပိုမိုလေ့လာရန်"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"လက်ချောင်းကို မ ပြီး၊ အာရုံခံနေရာကို ထပ်မံထိပါ"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"လက်ဗွေရာ <xliff:g id="COUNT">%d</xliff:g> ခု အထိ သင်ထည့်နိုင်၏"</string>

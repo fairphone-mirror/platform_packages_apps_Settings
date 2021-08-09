@@ -454,7 +454,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Nepavyko užregistruoti piršto antspaudo. Bandykite dar kartą arba atlikite tai kitu pirštu."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Pridėti kitą"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Kitas"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Naudodami piršto antspaudą galite atrakinti telefoną, be to, galite įgalioti pirkimo veiksmus ir programų prieigą. "<annotation id="url">"Sužinokite daugiau"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Naudodami piršto antspaudą galite atrakinti telefoną, be to, galite įgalioti pirkimo veiksmus ir programų prieigą. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" Ekrano užrakto parinktis išjungta. Jei norite sužinoti daugiau, susisiekite su savo organizacijos administratoriumi. "<annotation id="admin_details">"Daugiau išsamios informacijos"</annotation>\n\n"Vis tiek galite naudoti savo piršto antspaudą ir įgalioti pirkinius bei prieigą prie programų. "<annotation id="url">"Sužinokite daugiau"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Patraukite pirštą, tada vėl palieskite jutiklį"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"Galite pridėti iki <xliff:g id="COUNT">%d</xliff:g> kontrol. kod."</string>
