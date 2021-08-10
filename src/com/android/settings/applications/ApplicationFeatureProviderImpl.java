@@ -167,6 +167,8 @@ public class ApplicationFeatureProviderImpl implements ApplicationFeatureProvide
         if (locationHistoryPackage != null) {
             keepEnabledPackages.add(locationHistoryPackage);
         }
+        // Add SearchSelector
+        keepEnabledPackages.add("com.google.android.apps.setupwizard.searchselector");
         return keepEnabledPackages;
     }
 
