@@ -122,7 +122,11 @@ public class SimStatusPreferenceController extends
                             return operatorName;
                         }
                     }
-                    return info.getCarrierName();
+                    CharSequence carrierName = info.getCarrierName();
+                    if (carrierName == null) {
+                       carrierName = mContext.getText(R.string.device_info_default);
+                    }
+                    return carrierName;
                 }
             }
         }
