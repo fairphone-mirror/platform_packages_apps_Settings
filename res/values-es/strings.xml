@@ -413,7 +413,7 @@
     <string name="go_back_button_label" msgid="6139455414099035594">"Volver"</string>
     <string name="skip_lock_screen_dialog_button_label" msgid="641984698150020591">"Saltar"</string>
     <string name="cancel_lock_screen_dialog_button_label" msgid="1801132985957491690">"Cancelar"</string>
-    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Toca el sensor"</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Toque el sensor de huellas dactilares"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"Está en la parte trasera del teléfono. Utiliza el dedo índice."</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_content_description" msgid="3065850549419750523">"Ilustración con la ubicación del sensor de huellas digitales y dispositivo"</string>
     <string name="security_settings_fingerprint_enroll_dialog_name_label" msgid="7298812463228440333">"Nombre"</string>
@@ -4970,4 +4970,7 @@
     <string name="keywords_media_controls" msgid="8345490568291778638">"multimedia"</string>
     <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Se activará el Bluetooth"</string>
     <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"No disponible porque el modo Descanso está activado"</string>
+    <string name="longevity_device_statistics_list_item_title">Longevidad y estadísticas del dispositivo</string>
+    <string name="status_sdn">Número de marcación de servicio.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"Es el botón de encendido en el lateral del teléfono."</string>
 </resources>

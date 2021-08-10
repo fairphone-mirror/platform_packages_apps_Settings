@@ -413,7 +413,7 @@
     <string name="go_back_button_label" msgid="6139455414099035594">"Retour"</string>
     <string name="skip_lock_screen_dialog_button_label" msgid="641984698150020591">"Passer"</string>
     <string name="cancel_lock_screen_dialog_button_label" msgid="1801132985957491690">"Annuler"</string>
-    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Posez le doigt sur le lecteur"</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Touchez le capteur d'empreinte digitale"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"Le lecteur se trouve à l\'arrière du téléphone. Utilisez l\'index."</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_content_description" msgid="3065850549419750523">"Illustration présentant l\'appareil et la position du lecteur d\'empreintes digitales"</string>
     <string name="security_settings_fingerprint_enroll_dialog_name_label" msgid="7298812463228440333">"Nom"</string>
@@ -4968,4 +4968,7 @@
     <string name="keywords_media_controls" msgid="8345490568291778638">"Multimédia"</string>
     <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Le Bluetooth sera activé"</string>
     <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"Indisponible, car le mode Heure du coucher est activé"</string>
+    <string name="longevity_device_statistics_list_item_title">"Statistiques de l’appareil et sur la longévité."</string>
+    <string name="status_sdn">Numéro de numérotation de service</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"C'est le bouton d'alimentation sur le côté de votre téléphone"</string>
 </resources>

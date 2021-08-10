@@ -413,7 +413,7 @@
     <string name="go_back_button_label" msgid="6139455414099035594">"Zurück"</string>
     <string name="skip_lock_screen_dialog_button_label" msgid="641984698150020591">"Überspringen"</string>
     <string name="cancel_lock_screen_dialog_button_label" msgid="1801132985957491690">"Abbrechen"</string>
-    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Sensor berühren"</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Berühre den Fingerabdrucksensor."</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"Er befindet sich auf der Rückseite des Smartphones. Am besten den Zeigefinger verwenden."</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_content_description" msgid="3065850549419750523">"Abbildung mit Gerät und Position des Fingerabdrucksensors"</string>
     <string name="security_settings_fingerprint_enroll_dialog_name_label" msgid="7298812463228440333">"Name"</string>
@@ -4969,4 +4969,7 @@
     <string name="keywords_media_controls" msgid="8345490568291778638">"Medien"</string>
     <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Bluetooth wird aktiviert"</string>
     <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"Nicht verfügbar, weil der Modus „Schlafenszeit“ aktiviert ist"</string>
+    <string name="longevity_device_statistics_list_item_title">Gerätestatistiken &amp; Langlebigkeit.</string>    
+    <string name="status_sdn">Service Rufnummer</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"Es ist die Ein/Aus-Taste an der Seite deines Smartphones."</string>
 </resources>

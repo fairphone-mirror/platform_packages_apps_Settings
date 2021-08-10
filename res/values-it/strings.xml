@@ -413,7 +413,7 @@
     <string name="go_back_button_label" msgid="6139455414099035594">"Torna indietro"</string>
     <string name="skip_lock_screen_dialog_button_label" msgid="641984698150020591">"Ignora"</string>
     <string name="cancel_lock_screen_dialog_button_label" msgid="1801132985957491690">"Annulla"</string>
-    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Tocca il sensore"</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Tocca il sensore di impronte digitali"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"Si trova sulla parte posteriore del telefono. Utilizza il dito indice."</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_content_description" msgid="3065850549419750523">"Illustrazione con il dispositivo e la posizione del sensore di impronte"</string>
     <string name="security_settings_fingerprint_enroll_dialog_name_label" msgid="7298812463228440333">"Nome"</string>
@@ -4968,4 +4968,7 @@
     <string name="keywords_media_controls" msgid="8345490568291778638">"contenuti multimediali"</string>
     <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Verrà attivato il Bluetooth"</string>
     <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"Non disponibili perché la modalità Riposo è attiva"</string>
+    <string name="longevity_device_statistics_list_item_title">Durata e statistiche del dispositivo</string>
+    <string name="status_sdn">Servizio chiamata (SDN).</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"È il pulsante di accensione sul lato del telefono"</string>
 </resources>
