@@ -460,7 +460,7 @@
     <string name="go_back_button_label" msgid="6139455414099035594">"Retour"</string>
     <string name="skip_lock_screen_dialog_button_label" msgid="641984698150020591">"Passer"</string>
     <string name="cancel_lock_screen_dialog_button_label" msgid="1801132985957491690">"Annuler"</string>
-    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Posez le doigt sur le lecteur"</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Touchez le capteur d'empreinte digitale"</string>
     <string name="security_settings_sfps_enroll_find_sensor_title" msgid="8327884364635804363">"Touchez le bouton Marche/Arrêt sans appuyer dessus"</string>
     <string name="security_settings_udfps_enroll_find_sensor_title" msgid="8077484429913330179">"Configurer votre empreinte digitale"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"Le lecteur se trouve à l\'arrière du téléphone. Utilisez l\'index."</string>
@@ -5220,6 +5220,7 @@
     <string name="contrast_medium" msgid="384414510709285811">"Moyen"</string>
     <string name="contrast_high" msgid="3988567609694797696">"Élevé"</string>
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"Cette appli ne peut être ouverte que dans 1 fenêtre"</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"C'est le bouton d'alimentation sur le côté de votre téléphone"</string>
     <string name="generic_accessibility_service_on" msgid="4466229372357726824">"Activé"</string>
     <string name="generic_accessibility_service_off" msgid="4759859497651675724">"Désactivé"</string>
     <string name="generic_accessibility_feature_shortcut_off" msgid="4022872394514077907">"Désactivé"</string>

@@ -1059,7 +1059,7 @@
     <!-- Button text to cancel lock screen skip dialog [CHAR LIMIT=20] -->
     <string name="cancel_lock_screen_dialog_button_label">Cancel</string>
     <!-- Introduction title shown in fingerprint enrollment dialog to locate the sensor [CHAR LIMIT=29] -->
-    <string name="security_settings_fingerprint_enroll_find_sensor_title">Touch the sensor</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_title">Touch the Fingerprint Sensor</string>
     <!-- Introduction title shown in SFPS enrollment dialog to locate the sensor [CHAR LIMIT=60] -->
     <string name="security_settings_sfps_enroll_find_sensor_title">Touch the power button without pressing it</string>
     <!-- Introduction title shown in UDFPS enrollment dialog to locate the sensor [CHAR LIMIT=60] -->
@@ -13816,4 +13816,5 @@
     <string name="hidden_activity_device_info">"Device information"</string>
     <string name="hidden_activity_module_info">"Module information"</string>
     <string name="verification_confirm_your_password_header">Input verify code:</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">It is the power button on the side of your phone</string>
 </resources>

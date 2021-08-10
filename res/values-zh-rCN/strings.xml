@@ -5240,6 +5240,7 @@
     <string name="contrast_medium" msgid="384414510709285811">"中"</string>
     <string name="contrast_high" msgid="3988567609694797696">"高"</string>
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"此应用只能在 1 个窗口中打开"</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"指纹传感器位于您手机的侧面。请用食指触摸传感器。"</string>
     <string name="generic_accessibility_service_on" msgid="4466229372357726824">"已开启"</string>
     <string name="generic_accessibility_service_off" msgid="4759859497651675724">"已关闭"</string>
     <string name="generic_accessibility_feature_shortcut_off" msgid="4022872394514077907">"关闭"</string>

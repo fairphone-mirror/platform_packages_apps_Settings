@@ -5220,6 +5220,7 @@
     <string name="contrast_medium" msgid="384414510709285811">"Middel"</string>
     <string name="contrast_high" msgid="3988567609694797696">"Høj"</string>
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"Denne app kan kun åbnes i 1 vindue"</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"Det er tænk og sluk knappen på siden af din telefon"</string>
     <string name="generic_accessibility_service_on" msgid="4466229372357726824">"Til"</string>
     <string name="generic_accessibility_service_off" msgid="4759859497651675724">"Fra"</string>
     <string name="generic_accessibility_feature_shortcut_off" msgid="4022872394514077907">"Fra"</string>
