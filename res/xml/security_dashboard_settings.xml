@@ -155,4 +155,12 @@
         android:summary="@string/confirm_sim_deletion_description"
         settings:controller="com.android.settings.security.ConfirmSimDeletionPreferenceController"/>
 
+    <SwitchPreference
+        android:order="100"
+        android:key="unlock_failed_reset"
+        android:title="@string/unlock_failed_reset_title"
+        android:summary="@string/unlock_failed_reset_description"
+        settings:controller="com.android.settings.security.UnlockFailedResetController"/>
+
+
 </PreferenceScreen>

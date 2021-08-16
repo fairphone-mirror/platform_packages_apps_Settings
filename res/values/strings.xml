@@ -9433,6 +9433,11 @@
     <!-- [CHAR LIMIT=NONE] eSim deletion confirmation description  -->
     <string name="confirm_sim_deletion_description">Verify it\u0027s you before erasing a downloaded SIM</string>
 
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="unlock_failed_reset_title">Auto factory reset</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="unlock_failed_reset_description">If you attempt to unlock your phone incorrectly 15times it will be reset to factory settings.All data,including files and downloaded apps,will be deleted.</string>
+
     <!-- Opening string on the dialog that prompts the user to confirm that they really want to delete their existing work profile. The administration app icon and name appear after the final colon. [CHAR LIMIT=NONE] -->
     <string name="opening_paragraph_delete_profile_unknown_company">This work profile is managed by:</string>
     <!-- Summary for work profile accounts group. [CHAR LIMIT=25] -->
