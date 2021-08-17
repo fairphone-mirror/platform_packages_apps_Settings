@@ -45,6 +45,7 @@ import com.android.settingslib.RestrictedSwitchPreference;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Populates the PreferenceCategory with notification channels associated with the given app.
@@ -59,7 +60,7 @@ public class AppChannelsBypassingDndPreferenceController extends NotificationPre
 
     private RestrictedSwitchPreference mAllNotificationsToggle;
     private PreferenceCategory mPreferenceCategory;
-    private final List<NotificationChannel> mChannels = new ArrayList<>();
+    private final List<NotificationChannel> mChannels = new CopyOnWriteArrayList<>();
 
     public AppChannelsBypassingDndPreferenceController(
             Context context,
