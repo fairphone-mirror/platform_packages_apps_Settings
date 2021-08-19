@@ -446,6 +446,9 @@ public class ApnSettings extends RestrictedSettingsFragment
             for (Preference preference : mmsApnList) {
                 apnPrefList.addPreference(preference);
             }
+            //Add Begin by cheng-he for FP4-2439 on 2021/08/19
+            setPreferApnChecked(apnList);
+            //Add End by cheng-he for FP4-2439 on 2021/08/19
         }
     }
 
@@ -771,4 +774,35 @@ public class ApnSettings extends RestrictedSettingsFragment
         }
         return 0;
     }
+
+    //Add Begin by cheng-he for FP4-2439 on 2021/08/19
+    private void setPreferApnChecked(ArrayList<ApnPreference> apnList) {
+        if (apnList == null || apnList.isEmpty()) {
+            return;
+        }
+
+        String selectedKey = null;
+        if (mSelectedKey != null) {
+            for (ApnPreference pref : apnList) {
+                if (mSelectedKey.equals(pref.getKey())) {
+                    pref.setChecked();
+                    selectedKey = mSelectedKey;
+                }
+            }
+        }
+
+        // can't find prefer APN in the list, reset to the first one
+        if (selectedKey == null && apnList.get(0) != null) {
+            apnList.get(0).setChecked();
+            selectedKey = apnList.get(0).getKey();
+        }
+
+        // save the new APN
+        if (selectedKey != null && !selectedKey.equals(mSelectedKey)) {
+            setSelectedApnKey(selectedKey);
+        }
+
+        Log.d(TAG, "setPreferApnChecked, APN = " + mSelectedKey);
+    }
+    //Add End by cheng-he for FP4-2439 on 2021/08/19
 }
