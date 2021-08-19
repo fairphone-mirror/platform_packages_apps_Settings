@@ -379,6 +379,11 @@ public class ApnSettings extends RestrictedSettingsFragment
                 final String key = cursor.getString(ID_INDEX);
                 final String type = cursor.getString(TYPES_INDEX);
                 final int edited = cursor.getInt(EDITED_INDEX);
+                //Add Begin by cheng-he for FP4-2551 on 2021/08/19
+                if(apn == null || apn.trim().equals("")) {
+                    continue;
+                }
+                //Add End by cheng-he for FP4-2551 on 2021/08/19
                 mMvnoType = cursor.getString(MVNO_TYPE_INDEX);
                 mMvnoMatchData = cursor.getString(MVNO_MATCH_DATA_INDEX);
 
