@@ -2,25 +2,24 @@ package com.android.settings.qs;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.content.BroadcastReceiver;
 import android.graphics.drawable.Icon;
-import android.os.Build;
 import android.os.PersistableBundle;
+import android.provider.Settings;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
-import android.telephony.SubscriptionManager;
-import android.telephony.ims.ImsMmTelManager;
-import android.telephony.CarrierConfigManager;
 import android.telecom.PhoneAccountHandle;
 import android.telecom.TelecomManager;
-import android.provider.Settings;
-import com.android.settings.network.ims.WifiCallingQueryImsState;
-import com.android.settings.R;
-import android.util.Log;
+import android.telephony.CarrierConfigManager;
+import android.telephony.SubscriptionManager;
+import android.telephony.ims.ImsMmTelManager;
 import android.text.TextUtils;
+import android.util.Log;
+
+import com.android.settings.R;
+import com.android.settings.network.ims.WifiCallingQueryImsState;
+
 import java.util.List;
 
 public class VoWifiTile extends TileService {
@@ -31,24 +30,17 @@ public class VoWifiTile extends TileService {
     private int mSubId = SubscriptionManager.INVALID_SUBSCRIPTION_ID;
     private ImsMmTelManager mImsMmTelManager;
     private CarrierConfigManager mCarrierConfigManager;
-    private IntentFilter mIntentFilter;
-    private boolean mAirplaneModeOn = false;
 
     @Override
     public void onCreate() {
         super.onCreate();
         mCarrierConfigManager = getSystemService(CarrierConfigManager.class);
         getImsMmTelManager();
-        mAirplaneModeOn =
-            Settings.System.getInt(getContentResolver(), Settings.Global.AIRPLANE_MODE_ON, 0) == 1;
-        mIntentFilter = new IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED);
-        registerReceiver(mReceiver, mIntentFilter);
     }
     
     @Override
     public void onDestroy() {
         super.onDestroy();
-        unregisterReceiver(mReceiver);
     }
 
     @Override
@@ -193,22 +185,10 @@ public class VoWifiTile extends TileService {
         return intent;
     }
 
-    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-            Log.d(TAG, "onReceive, action = " + action);
-            if (Intent.ACTION_AIRPLANE_MODE_CHANGED.equals(action)) {
-                mAirplaneModeOn = intent.getBooleanExtra("state", false);
-                updateIcon();
-            }
-        }
-    };
 
     private void updateIcon() {
-        Log.i(TAG, "updateIcon # mAirplaneModeOn = " + mAirplaneModeOn);
         Icon icon;
-        if(mAirplaneModeOn || getImsMmTelManager() == null || !getAvailabilityStatus(mSubId)) {
+        if(getImsMmTelManager() == null || !getAvailabilityStatus(mSubId)) {
             icon = Icon.createWithResource(getApplicationContext(), R.drawable.ic_vowifi_calling_disable);
             getQsTile().setState(Tile.STATE_UNAVAILABLE);
         } else if (getImsMmTelManager().isVoWiFiSettingEnabled()) {
