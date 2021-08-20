@@ -43,6 +43,7 @@ import com.android.settingslib.core.lifecycle.events.OnResume;
 import com.android.settingslib.net.NetworkCycleDataForUid;
 import com.android.settingslib.net.NetworkCycleDataForUidLoader;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -54,6 +55,10 @@ public class AppDataUsagePreferenceController extends AppInfoPreferenceControlle
         OnResume, OnPause {
 
     private List<NetworkCycleDataForUid> mAppUsageData;
+    private NetworkTemplate mTemplate = null;
+    private String ARG_NETWORK_TEMPLATE = "network_template";
+    private String ARG_NETWORK_CYCLES = "network_cycles";
+    private ArrayList<Long> mCycles;
 
     public AppDataUsagePreferenceController(Context context, String key) {
         super(context, key);
@@ -95,13 +100,13 @@ public class AppDataUsagePreferenceController extends AppInfoPreferenceControlle
 
     @Override
     public Loader<List<NetworkCycleDataForUid>> onCreateLoader(int id, Bundle args) {
-        final NetworkTemplate template = NetworkTemplates.INSTANCE.getDefaultTemplate(mContext);
+        mTemplate = NetworkTemplates.INSTANCE.getDefaultTemplate(mContext);
         final int uid = mParent.getAppEntry().info.uid;
 
         final NetworkCycleDataForUidLoader.Builder builder =
                 NetworkCycleDataForUidLoader.builder(mContext);
         builder.setRetrieveDetail(false)
-               .setNetworkTemplate(template);
+               .setNetworkTemplate(mTemplate);
 
         builder.addUid(uid);
         if (Process.isApplicationUid(uid)) {
@@ -109,6 +114,23 @@ public class AppDataUsagePreferenceController extends AppInfoPreferenceControlle
             builder.addUid(Process.toSdkSandboxUid(uid));
         }
         return builder.build();
+    }
+
+    @Override
+    protected Bundle getArguments() {
+        Bundle args = new Bundle();
+        if (mCycles == null && mAppUsageData != null) {
+            args.putParcelable(ARG_NETWORK_TEMPLATE, mTemplate);
+            mCycles = new ArrayList<>();
+            for (NetworkCycleDataForUid data : mAppUsageData) {
+                if (mCycles.isEmpty()) {
+                    mCycles.add(data.getEndTime());
+                }
+                mCycles.add(data.getStartTime());
+            }
+        }
+        args.putSerializable(ARG_NETWORK_CYCLES, mCycles);
+        return args;
     }
 
     @Override
