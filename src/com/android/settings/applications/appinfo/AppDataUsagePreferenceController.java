@@ -41,12 +41,18 @@ import com.android.settingslib.net.NetworkCycleDataForUid;
 import com.android.settingslib.net.NetworkCycleDataForUidLoader;
 
 import java.util.List;
+import android.os.Bundle;
+import java.util.ArrayList;
 
 public class AppDataUsagePreferenceController extends AppInfoPreferenceControllerBase
         implements LoaderManager.LoaderCallbacks<List<NetworkCycleDataForUid>>, LifecycleObserver,
         OnResume, OnPause {
 
     private List<NetworkCycleDataForUid> mAppUsageData;
+    private NetworkTemplate mTemplate = null;
+    private String ARG_NETWORK_TEMPLATE = "network_template";
+    private String ARG_NETWORK_CYCLES = "network_cycles";
+    private ArrayList<Long> mCycles;
 
     public AppDataUsagePreferenceController(Context context, String key) {
         super(context, key);
@@ -87,12 +93,29 @@ public class AppDataUsagePreferenceController extends AppInfoPreferenceControlle
 
     @Override
     public Loader<List<NetworkCycleDataForUid>> onCreateLoader(int id, Bundle args) {
-        final NetworkTemplate template = getTemplate(mContext);
+        mTemplate = getTemplate(mContext);
         return NetworkCycleDataForUidLoader.builder(mContext)
             .addUid(mParent.getAppEntry().info.uid)
             .setRetrieveDetail(false)
-            .setNetworkTemplate(template)
+            .setNetworkTemplate(mTemplate)
             .build();
+    }
+
+    @Override
+    protected Bundle getArguments() {
+        Bundle args = new Bundle();
+        if (mCycles == null && mAppUsageData != null) {
+            args.putParcelable(ARG_NETWORK_TEMPLATE, mTemplate);
+            mCycles = new ArrayList<>();
+            for (NetworkCycleDataForUid data : mAppUsageData) {
+                if (mCycles.isEmpty()) {
+                    mCycles.add(data.getEndTime());
+                }
+                mCycles.add(data.getStartTime());
+            }
+        }
+        args.putSerializable(ARG_NETWORK_CYCLES, mCycles);
+        return args;
     }
 
     @Override
