@@ -115,7 +115,7 @@ public class WifiCallingSettings extends InstrumentedFragment implements HelpRes
         if (configManager != null) {
             PersistableBundle b = configManager.getConfigForSubId(subId);
             if (b != null) {
-                if (b.getBoolean("wifi_call_new_feature_enabled",false)){
+                if (b.getBoolean("orange_new_feature_enabled",false)){
                     orange_freature = true;
                 }
             }
