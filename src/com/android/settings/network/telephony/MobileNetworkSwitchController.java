@@ -47,7 +47,8 @@ import android.os.SystemProperties;
 public class MobileNetworkSwitchController extends BasePreferenceController implements
         SubscriptionsChangeListener.SubscriptionsChangeListenerClient, LifecycleObserver {
     private static final String TAG = "MobileNetworkSwitchCtrl";
-    private static final String SIM_DATA_SWITCH = "persist.sys.settingswitch.sim";
+    private static final String SIM_DATA_SWITCH_DEFAULT = "persist.sys.settingswitch.sim";
+    private static final String SIM_DATA_SWITCH_ESIM = "persist.sys.settingswitch.esim";
     private SwitchBar mSwitchBar;
     private int mSubId;
     private SubscriptionsChangeListener mChangeListener;
@@ -155,8 +156,21 @@ public class MobileNetworkSwitchController extends BasePreferenceController impl
             int phoneId = mSubscriptionManager.getSlotIndex(mSubId);
             int uiccStatus = PrimaryCardAndSubsidyLockUtils.getUiccCardProvisioningStatus(phoneId);
             boolean isCheck = uiccStatus == PrimaryCardAndSubsidyLockUtils.CARD_PROVISIONED;
-            Log.d(TAG, "update: isCheck=" + isCheck);
-            SystemProperties.set(SIM_DATA_SWITCH, isCheck + "");
+            Log.d(
+                    TAG,
+                    "update: isCheck="
+                            + isCheck
+                            + " ; phoneId = "
+                            + phoneId
+                            + " ; uiccStatus = "
+                            + uiccStatus
+                            + " ; mSubId = "
+                            + mSubId);
+            if (phoneId == 0) {
+                SystemProperties.set(SIM_DATA_SWITCH_DEFAULT, isCheck + "");
+            } else {
+                SystemProperties.set(SIM_DATA_SWITCH_ESIM, isCheck + "");
+            }
             mSwitchBar.setCheckedInternal(uiccStatus == PrimaryCardAndSubsidyLockUtils.CARD_PROVISIONED);
         }
     }
