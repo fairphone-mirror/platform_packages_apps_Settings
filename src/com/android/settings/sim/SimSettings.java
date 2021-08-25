@@ -566,7 +566,7 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
             for (int i = 0; i < mPhoneCount; i++) {
                 int[] subId = SubscriptionManager.getSubId(i);
                 // when voice call is in progress, subscription can't be activated/deactivated.
-                if (TelephonyManager.getDefault().getCallState(subId[0])
+                if (subId != null && TelephonyManager.getDefault().getCallState(subId[0])
                         != TelephonyManager.CALL_STATE_IDLE) {
                     logd("Call state for phoneId: " + i + " is not idle, exiting!");
                     showAlertDialog(ERROR_ALERT_DLG_ID, R.string.sim_enabler_in_call);
