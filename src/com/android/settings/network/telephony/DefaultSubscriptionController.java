@@ -23,6 +23,7 @@ import android.content.Context;
 import android.telephony.PhoneStateListener;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 
@@ -184,9 +185,11 @@ public abstract class DefaultSubscriptionController extends TelephonyBasePrefere
         updatePreferenceState(mPreference);
 
         if (isAskEverytimeSupported()) {
-            // Add the extra "Ask every time" value at the end.
-            displayNames.add(mContext.getString(R.string.calls_and_sms_ask_every_time));
-            subscriptionIds.add(Integer.toString(SubscriptionManager.INVALID_SUBSCRIPTION_ID));
+            if (!TextUtils.equals(getPreferenceKey(), "sms_preference")) {
+                // Add the extra "Ask every time" value at the end.
+                displayNames.add(mContext.getString(R.string.calls_and_sms_ask_every_time));
+                subscriptionIds.add(Integer.toString(SubscriptionManager.INVALID_SUBSCRIPTION_ID));
+            }
         }
 
         mPreference.setEntries(displayNames.toArray(new CharSequence[0]));
