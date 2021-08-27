@@ -25,6 +25,11 @@
         android:layout="@layout/styled_switch_bar"
         settings:controller="com.android.settings.network.telephony.MobileNetworkSwitchController"/>
 
+    <Preference
+        android:key="mno_euicc"
+        android:title="MNO EUICC"
+        settings:controller="com.android.settings.datausage.MNOPreferenceController"/>
+
     <PreferenceCategory
         android:key="enabled_state_container"
         android:title="@string/summary_placeholder"

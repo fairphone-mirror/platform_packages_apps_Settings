@@ -46,6 +46,7 @@ import com.android.internal.telephony.TelephonyIntents;
 import com.android.settings.R;
 import com.android.settings.datausage.BillingCyclePreferenceController;
 import com.android.settings.datausage.DataUsageSummaryPreferenceController;
+import com.android.settings.datausage.MNOPreferenceController;
 import com.android.settings.network.ActiveSubsciptionsListener;
 import com.android.settings.network.telephony.cdma.CdmaSubscriptionPreferenceController;
 import com.android.settings.network.telephony.cdma.CdmaSystemSelectPreferenceController;
@@ -200,6 +201,7 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings {
         use(ApnPreferenceController.class).init(mSubId);
         use(UserPLMNPreferenceController.class).init(mSubId);
         use(CarrierPreferenceController.class).init(mSubId);
+        use(MNOPreferenceController.class).init(mSubId);
         use(DataUsagePreferenceController.class).init(mSubId);
         use(PreferredNetworkModePreferenceController.class).init(getLifecycle(), mSubId);
         use(EnabledNetworkModePreferenceController.class).init(getLifecycle(), mSubId);
