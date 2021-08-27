@@ -30,6 +30,7 @@ public class VoWifiTile extends TileService {
     private int mSubId = SubscriptionManager.INVALID_SUBSCRIPTION_ID;
     private ImsMmTelManager mImsMmTelManager;
     private CarrierConfigManager mCarrierConfigManager;
+    private String title = "";
 
     @Override
     public void onCreate() {
@@ -64,7 +65,9 @@ public class VoWifiTile extends TileService {
             getQsTile().updateTile();//更新Tile
         }
 
-
+        if (!"".equals(title)) {
+            getQsTile().setLabel(title);
+        }
     }
 
     @Override
@@ -133,6 +136,7 @@ public class VoWifiTile extends TileService {
             if (b != null) {
                 boolean isWFCEnabled = b.getBoolean(CarrierConfigManager.KEY_WFC_TOGGLE_SHOW_BOOL
                         , false);
+                title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE,"");
                 Log.d(TAG, "wfc toggle show: " + isWFCEnabled);
                 return isWFCEnabled;
             }
@@ -197,6 +201,9 @@ public class VoWifiTile extends TileService {
         } else {
             icon = Icon.createWithResource(getApplicationContext(), R.drawable.ic_vowifi_calling_disable);
             getQsTile().setState(Tile.STATE_INACTIVE);
+        }
+        if (!"".equals(title)) {
+            getQsTile().setLabel(title);
         }
         getQsTile().setIcon(icon);//设置图标
         getQsTile().updateTile();//更新Tile
