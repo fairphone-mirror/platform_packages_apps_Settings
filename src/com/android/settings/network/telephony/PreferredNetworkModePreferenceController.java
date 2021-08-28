@@ -186,6 +186,7 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
     private void setNetworkModeSummaryText(ListPreference preference, int networkmode) {
         final PersistableBundle carrierConfig = mCarrierConfigManager.getConfigForSubId(mSubId);
         String[] pref_network_mode = null;
+        String[] pref_network_value = null;
         String summerry = null;
 
         Log.d(LOG_TAG, "set networkmode(" + networkmode + ") summary");
@@ -201,9 +202,11 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
             */
 
             pref_network_mode = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_MODE);
+            pref_network_value = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_VALUE);
+
         }
 
-        if (pref_network_mode != null && pref_network_mode.length == 4) {
+        /*if (pref_network_mode != null && pref_network_mode.length == 4) {
             switch (networkmode) {
                 case TelephonyManagerConstants.NETWORK_MODE_NR_LTE_GSM_WCDMA:
                     summerry = pref_network_mode[0];
@@ -218,8 +221,17 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
                     summerry = pref_network_mode[3];
                     break;
             }
+        }*/
+        // modify by T2M.zhang renjie for FP4-2652 21-8-28 begin
+        if (pref_network_mode != null && pref_network_value != null){
+            for (int index = 0; index < pref_network_value.length; index++) {
+                if (pref_network_value[index].equals(String.valueOf(networkmode))){
+                    summerry = pref_network_mode[index];
+                    break;
+                }
+            }
         }
-
+        // modify by T2M.zhang renjie for FP4-2652 21-8-28 end
         if (summerry != null) {
             Log.d(LOG_TAG, "summary: " + summerry);
             preference.setSummary(summerry);
