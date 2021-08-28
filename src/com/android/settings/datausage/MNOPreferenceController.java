@@ -44,19 +44,15 @@ public class MNOPreferenceController extends BasePreferenceController {
     }
 
     @Override
-    public String getPreferenceKey() {
-        return mPreferenceKey;
-    }
-
-    @Override
     public boolean handlePreferenceTreeClick(Preference preference) {
-        Log.i("test00","---------" + getPreferenceKey());
-        if("mno_euicc".equals(getPreferenceKey())) {
+        Log.i("test00","---------" + preference.getKey());
+        if("mno_euicc".equals(preference.getKey())) {
             Intent intent = new Intent(Intent.ACTION_MAIN);
             ComponentName componentName = new ComponentName("com.google.android.euicc", "com.android.euicc.ui.settings.CurrentProfileListActivity");
             intent.setComponent(componentName);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             mContext.startActivity(intent);
+            return false;
         }
         return false;
     }
