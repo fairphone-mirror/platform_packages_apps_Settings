@@ -20,6 +20,7 @@ import static android.service.quicksettings.TileService.ACTION_QS_TILE_PREFERENC
 
 import android.app.Activity;
 import android.app.settings.SettingsEnums;
+import android.provider.SearchIndexableResource;
 import android.bluetooth.BluetoothA2dp;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothCodecStatus;
@@ -648,6 +649,27 @@ public class DevelopmentSettingsDashboardFragment extends RestrictedDashboardFra
                     return buildPreferenceControllers(context, null /* activity */,
                             null /* lifecycle */, null /* devOptionsDashboardFragment */,
                             null /* bluetoothA2dpConfigStore */);
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys;
+                    keys = getMobileNonIndexableKeysFromXml(context, true);
+                    return keys;
+                }
+
+                private List<String> getMobileNonIndexableKeysFromXml(Context context, boolean suppressAllPage) {
+                    final List<SearchIndexableResource> resources = super.getXmlResourcesToIndex(
+                            context, true);
+                    if (resources == null || resources.isEmpty() || !Utils.isMonkeyRunning()) {
+                        return new ArrayList<>();
+                    }
+                    final List<String> nonIndexableKeys = new ArrayList<>();
+                    for (SearchIndexableResource res : resources) {
+                        nonIndexableKeys.addAll(
+                                getNonIndexableKeysFromXml(context, res.xmlResId, suppressAllPage));
+                    }
+                    return nonIndexableKeys;
                 }
             };
 }
