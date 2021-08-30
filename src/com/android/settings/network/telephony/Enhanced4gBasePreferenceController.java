@@ -104,6 +104,7 @@ public class Enhanced4gBasePreferenceController extends TelephonyTogglePreferenc
 
     @Override
     public int getAvailabilityStatus(int subId) {
+        Log.d(TAG, "getAvailabilityStatus " + subId);
         init(subId);
         if (!isModeMatched()) {
             return CONDITIONALLY_UNAVAILABLE;
@@ -120,11 +121,15 @@ public class Enhanced4gBasePreferenceController extends TelephonyTogglePreferenc
                 || carrierConfig.getBoolean(CarrierConfigManager.KEY_HIDE_ENHANCED_4G_LTE_BOOL)) {
             return CONDITIONALLY_UNAVAILABLE;
         }
+        Log.d(TAG, "hide enhanced 4G: " + carrierConfig.getBoolean(CarrierConfigManager.KEY_HIDE_ENHANCED_4G_LTE_BOOL));
 
         final VolteQueryImsState queryState = queryImsState(subId);
         if (!queryState.isReadyToVoLte()) {
             return CONDITIONALLY_UNAVAILABLE;
         }
+        Log.d(TAG, "isReadyToVoLte: " + queryState.isReadyToVoLte());
+        Log.d(TAG, "isAllowUserControl: " + queryState.isAllowUserControl());
+        Log.d(TAG, "isUserControlAllowed: " + isUserControlAllowed(carrierConfig));
         return (isUserControlAllowed(carrierConfig) && queryState.isAllowUserControl())
                 ? AVAILABLE : AVAILABLE_UNSEARCHABLE;
     }

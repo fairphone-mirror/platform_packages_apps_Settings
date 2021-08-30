@@ -73,13 +73,14 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
 
     @Override
     public int getAvailabilityStatus(int subId) {
-
+        Log.d(TAG, "getAvailabilityStatus " + subId);
         // add by T2M.zhangrenjie for FP4-847 2021-07-22 begin
         boolean ims_enabled = Settings.Global.getInt(mContext.getContentResolver(), "ims_enable_settings",0) == 1;
         if (ims_enabled){
             Log.d(TAG, "wfc toggle show because of ims_enabled =" + ims_enabled);
             return AVAILABLE;
         }
+
         // add by T2M.zhangrenjie for FP4-847 2021-07-22 end
         return SubscriptionManager.isValidSubscriptionId(subId)
                 && isWifiCallingEnabled(mContext, subId)
@@ -109,7 +110,7 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
     }
 
     private boolean isWfcEnabledByCarrierConfig(int mSubId){
-        Log.d(TAG, "update WFC");
+        Log.d(TAG, "update wfc");
         String title = SubscriptionManager.getResourcesForSubId(mContext, mSubId)
                 .getString(R.string.wifi_calling_settings_title);
         if (mCarrierConfigManager != null) {
@@ -268,6 +269,7 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
     }
 
     private boolean isWifiCallingEnabled(Context context, int subId) {
+        Log.d(TAG, "isWifiCallingEnabled " + subId);
         final PhoneAccountHandle simCallManager =
                 context.getSystemService(TelecomManager.class)
                        .getSimCallManagerForSubscription(subId);
@@ -279,9 +281,13 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
                     context, simCallManager);
 
             isWifiCallingEnabled = intent != null;
+            Log.d(TAG, "simCallManager");
         } else {
             isWifiCallingEnabled = queryImsState(subId).isReadyToWifiCalling();
+            Log.d(TAG, "queryImsState");
         }
+
+        Log.d(TAG, "isWifiCallingEnabled: " + isWifiCallingEnabled);
 
         return isWifiCallingEnabled;
     }
