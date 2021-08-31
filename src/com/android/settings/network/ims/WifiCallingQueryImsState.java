@@ -100,12 +100,18 @@ public class WifiCallingQueryImsState extends ImsQueryController  {
         if (!isWifiCallingProvisioned()) {
             return false;
         }
+
+        // modify by T2M.dengxiangyu for FP4-2214 2021-08-31
+        /*
         try {
             return isServiceStateReady(mSubId);
         } catch (InterruptedException | IllegalArgumentException | ImsException exception) {
             Log.w(LOG_TAG, "fail to get WFC service status. subId=" + mSubId, exception);
         }
         return false;
+        */
+
+        return true;
     }
 
     /**
