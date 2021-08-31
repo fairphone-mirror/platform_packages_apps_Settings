@@ -55,8 +55,7 @@ public class RegulatoryInfoDisplayActivity extends Activity implements
     private static final String REGULATORY_INFO_FILEPATH_TEMPLATE =
             "/data/misc/elabel/regulatory_info_%s.png";
 
-    //TODO only test now
-    private static final String sRegulatoryUrl = "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3795759044,946303999&fm=26&gp=0.jpg";
+    private static final String sRegulatoryUrl = "https://techsupport.fairphone.com/labels/FP4_e-Label.png";
 
     /**
      * Display the regulatory info graphic in a dialog window.
