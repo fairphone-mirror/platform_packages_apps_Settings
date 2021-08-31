@@ -97,12 +97,7 @@ public class VolteQueryImsState extends ImsQueryController {
         if (!isVoLteProvisioned()) {
             return false;
         }
-        try {
-            return isServiceStateReady(mSubId);
-        } catch (InterruptedException | IllegalArgumentException | ImsException exception) {
-            Log.w(LOG_TAG, "fail to get VoLte service status. subId=" + mSubId, exception);
-        }
-        return false;
+        return true;
     }
 
     /**
