@@ -124,6 +124,18 @@
         <uses-library android:name="com.qualcomm.qcrilhook"/>
         <!-- Settings -->
 
+        <!-- Launch T-Mobile OOBE in SetupWizard FINISH page II. -->
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenSize" 
+                  android:excludeFromRecents="true" 
+                  android:label="@string/summary_empty" 
+                  android:name="LaunchMyFairphoneActivity" 
+                  android:theme="@android:style/Theme.DeviceDefault.Wallpaper.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.settings.LAUNCH_MY_FAIRPHONE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".homepage.SettingsHomepageActivity"
                   android:label="@string/settings_label_launcher"
                   android:theme="@style/Theme.Settings.Home"
