@@ -187,8 +187,11 @@ public class BatteryInfo {
         final Intent batteryBroadcast = context.registerReceiver(null,
                 new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
         // 0 means we are discharging, anything else means charging
+        // final boolean discharging =
+        //         batteryBroadcast.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1) == 0;
+
         final boolean discharging =
-                batteryBroadcast.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1) == 0;
+                batteryBroadcast.getIntExtra(BatteryManager.EXTRA_PLUGGED, 0) == 0;
 
         if (discharging && provider != null
                 && provider.isEnhancedBatteryPredictionEnabled(context)) {
