@@ -38,6 +38,7 @@ import com.android.settingslib.fuelgauge.Estimate;
 import com.android.settingslib.fuelgauge.EstimateKt;
 import com.android.settingslib.utils.PowerUtil;
 import com.android.settingslib.utils.StringUtil;
+import android.content.SharedPreferences;
 
 public class BatteryInfo {
 
@@ -190,7 +191,11 @@ public class BatteryInfo {
         final boolean discharging =
                 batteryBroadcast.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1) == 0;
 
-        if (discharging && provider != null
+        // final boolean discharging =
+        //         batteryBroadcast.getIntExtra(BatteryManager.EXTRA_PLUGGED, 0) == 0;
+
+        if (discharging
+                && provider != null
                 && provider.isEnhancedBatteryPredictionEnabled(context)) {
             Estimate estimate = provider.getEnhancedBatteryPrediction(context);
             if (estimate != null) {
@@ -201,8 +206,20 @@ public class BatteryInfo {
                         estimate, elapsedRealtimeUs, shortString);
             }
         }
-        final long prediction = discharging
-                ? stats.computeBatteryTimeRemaining(elapsedRealtimeUs) : 0;
+        long defaultTime = 0;
+        if (discharging) {
+            defaultTime = stats.computeBatteryTimeRemaining(elapsedRealtimeUs);
+            SharedPreferences prefss =
+                    context.getSharedPreferences("batteryinfo_time", Context.MODE_PRIVATE);
+            if (defaultTime == -1 || defaultTime == 0) {
+                defaultTime = prefss.getLong("batteryinfo_time_key", 222222222000l);
+            } else {
+                SharedPreferences.Editor comeditor = prefss.edit();
+                comeditor.putLong("batteryinfo_time_key", defaultTime);
+                comeditor.commit();
+            }
+        }
+        final long prediction = discharging ? defaultTime : 0;
         final Estimate estimate = new Estimate(
                 PowerUtil.convertUsToMs(prediction),
                 false, /* isBasedOnUsage */
