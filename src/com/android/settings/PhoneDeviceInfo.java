@@ -77,6 +77,7 @@ public class PhoneDeviceInfo extends Activity {
     static final String FACTORY_SN_PROPERTY = "ro.vendor.tct.trace.bsn";
     static final String MFG_DATE_PROPERTY = "ro.vendor.tct.mfg.date";
     static final String TFT_DATE_PROPERTY = "persist.sys.tct.tft.date";
+    static final String TFT_PERSIST_PROPERTY = "sys.t2m.tft";
     private Handler mHandler;
 
     private static final String PARTNER_APNS_PATH = "etc/apns-conf.xml";
@@ -378,6 +379,12 @@ public class PhoneDeviceInfo extends Activity {
 
     private String readTFT(){
         long date = SystemProperties.getLong(TFT_DATE_PROPERTY,0);
+        if(date == 0){
+            long persistTFTdate = SystemProperties.getLong(TFT_PERSIST_PROPERTY,0);
+            if(persistTFTdate != 0){
+                date = persistTFTdate;
+            }
+        }
         if(date == 0){
             return DateUtils.formatElapsedTime(SystemClock.elapsedRealtime() / 1000);
         }else{
