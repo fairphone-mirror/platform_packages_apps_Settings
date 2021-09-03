@@ -16,10 +16,14 @@
 
 package com.android.settings.network.telephony;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.database.ContentObserver;
+import android.net.Uri;
+import android.os.Handler;
 import android.os.Looper;
 import android.os.PersistableBundle;
 import android.provider.Settings;
@@ -43,6 +47,7 @@ import com.android.settingslib.core.lifecycle.events.OnStart;
 import com.android.settingslib.core.lifecycle.events.OnStop;
 import com.android.ims.ImsConfig;
 
+
 import java.util.List;
 
 /**
@@ -64,11 +69,18 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
     private Preference mPreference;
     private Context mContext;
 
+    private ContentResolver mContentResolver;
+    private static final Uri WFC_URI = Uri.parse("content://telephony/siminfo");
+    private ContentObserver mWfcObserver;
+
+
     public WifiCallingPreferenceController(Context context, String key) {
         super(context, key);
         mCarrierConfigManager = context.getSystemService(CarrierConfigManager.class);
         mPhoneStateListener = new PhoneCallStateListener();
         mContext = context;
+
+        mContentResolver = context.getContentResolver();
     }
 
     @Override
@@ -92,11 +104,21 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
     @Override
     public void onStart() {
         mPhoneStateListener.register(mContext, mSubId);
+        if (mWfcObserver == null) {
+            mWfcObserver = new ContentObserver(new Handler(Looper.getMainLooper())) {
+                @Override
+                public void onChange(boolean selfChange) {
+                    updateState(mPreference);
+                }
+            };
+        }
+        mContentResolver.registerContentObserver(WFC_URI, false, mWfcObserver);
     }
 
     @Override
     public void onStop() {
         mPhoneStateListener.unregister();
+        mContentResolver.unregisterContentObserver(mWfcObserver);
     }
 
     @Override
