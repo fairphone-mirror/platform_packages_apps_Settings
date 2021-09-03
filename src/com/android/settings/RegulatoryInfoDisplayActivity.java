@@ -63,7 +63,10 @@ public class RegulatoryInfoDisplayActivity extends Activity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        showFpRegulatoryInfo(this, R.drawable.regulatory_info);
+        setContentView(R.layout.regulatory_info);
+        ImageView image = findViewById(R.id.regulatoryInfo);
+        Glide.with(this).load(sRegulatoryUrl).error(R.drawable.regulatory_info).into(image);
+        //showFpRegulatoryInfo(this, R.drawable.regulatory_info);
 
         /*AlertDialog.Builder builder = new AlertDialog.Builder(this)
                 .setTitle(R.string.regulatory_labels)
