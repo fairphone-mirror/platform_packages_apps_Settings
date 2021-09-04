@@ -725,14 +725,16 @@ public class UserPLMNListActivity extends PreferenceActivity
     private String getNetworkModeString(int EFNWMode, String plmn) {
         Log.d(LOG_TAG, "plmn = " + plmn);
         int index = UserPLMNEditorActivity.convertEFMode2Ap(EFNWMode);
-        String[] CuPlmnArray = getResources().getStringArray(R.array.uplmn_cu_mcc_mnc_values);
+/*        String[] CuPlmnArray = getResources().getStringArray(R.array.uplmn_cu_mcc_mnc_values);
         for (String CuPlmn : CuPlmnArray) {
             if (plmn.equals(CuPlmn)) {
                 return getResources().getStringArray
                         (R.array.uplmn_prefer_network_mode_w_choices)[index];
             }
         }
-        return getResources().getStringArray(R.array.uplmn_prefer_network_mode_td_choices)[index];
+        return getResources().getStringArray(R.array.uplmn_prefer_network_mode_td_choices)[index];*/
+        // modify by T2M.zhang renjie for FP4-2757 21-9-4 end
+        return getResources().getStringArray(R.array.uplmn_prefer_network_mode_w_choices)[index];
     }
 
     private void setScreenEnabled() {
