@@ -23,10 +23,14 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
+import android.telephony.SubscriptionInfo;
+import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import com.android.settings.core.BasePreferenceController;
+
+import java.util.List;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
@@ -39,26 +43,9 @@ public class SdnPreferenceController extends BasePreferenceController{
     Context mContext;
     private Preference mPreference;
     private final TelephonyManager mTelephonyManager;
+    private final SubscriptionManager mSubscriptionManager;
 
-    private Handler mHandler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            if (msg.what == MSG_READ_SDN) {
-                Uri mUri = Uri.parse("content://icc/sdn");
-                ContentResolver mContentResolver = mContext.getContentResolver();
-
-                Cursor mCursor = mContentResolver.query(mUri, null, null, null, null);
-                while (mCursor.moveToNext()) {
-                    Log.i(TAG, mCursor.getString(0) + mCursor.getString(1));
-                    if (mPreference != null) {
-                        mPreference.setSummary(mCursor.getString(0) + " - " + mCursor.getString(1));
-                    }
-                }
-                mCursor.close();
-            }
-        }
-    };
+    private SdnHandler mHandler = new SdnHandler();
 
 
 
@@ -66,7 +53,12 @@ public class SdnPreferenceController extends BasePreferenceController{
         super(context, key);
         mContext = context;
         mTelephonyManager = mContext.getSystemService(TelephonyManager.class);
-        mHandler.sendMessage(mHandler.obtainMessage(MSG_READ_SDN));
+        mSubscriptionManager = (SubscriptionManager)mContext.getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE);
+        List<SubscriptionInfo> list = mSubscriptionManager.getActiveSubscriptionInfoList();
+        Log.i(TAG, "getActiveSubscriptionInfoList: " + list.size());
+        Message mMsg = mHandler.obtainMessage(MSG_READ_SDN);
+        mMsg.obj = list;
+        mHandler.sendMessage(mMsg);
     }
 
     @Override
@@ -89,6 +81,41 @@ public class SdnPreferenceController extends BasePreferenceController{
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
         mPreference = screen.findPreference(getPreferenceKey());
+    }
+
+
+    class SdnHandler extends Handler{
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (msg.what == MSG_READ_SDN) {
+                String summary = "";
+
+                List<SubscriptionInfo> list =(List<SubscriptionInfo>) msg.obj;
+
+                for (SubscriptionInfo info:list) {
+
+                    Log.i(TAG, "getSubscriptionId = " + info.getSubscriptionId());
+                    Uri mUri = Uri.parse("content://icc/sdn/subId/"+info.getSubscriptionId());
+                    ContentResolver mContentResolver = mContext.getContentResolver();
+                    Cursor mCursor = mContentResolver.query(mUri, null, null, null, null);
+                    while (mCursor.moveToNext()) {
+                        Log.i(TAG, mCursor.getString(0) + mCursor.getString(1));
+                        if (mPreference != null && !"".equals(mCursor.getString(0)) && !"".equals(mCursor.getString(1)) ) {
+                            if (!summary.equals("")){
+                                summary = summary + "\n";
+                            }
+                            summary = summary + mCursor.getString(0) + " - " + mCursor.getString(1);
+                        }
+                    }
+                    mCursor.close();
+                }
+
+                mPreference.setSummary(summary);
+            }
+        }
+
     }
 
 
