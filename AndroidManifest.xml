@@ -3538,6 +3538,9 @@
                 <data
                     android:host="23486583"
                     android:scheme="android_secret_code" />
+                <data
+                    android:host="002"
+                    android:scheme="android_secret_code" />
             </intent-filter>
         </receiver>
 
