@@ -4969,5 +4969,7 @@
     <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Le Bluetooth sera activé"</string>
     <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"Indisponible, car le mode Heure du coucher est activé"</string>
     <string name="wfc_help_desc_text">Appels Wi-Fi\n\nUtilisez les réseaux Wi-Fi pour passer et recevoir des appels n’importe où en France métropolitaine, même sans réseau mobile.\n\nPour activer le service, veuillez vérifier auprès de votre opérateur la compatibilité de votre offre. Ensuite, connectez-vous à un réseau Wi-Fi, puis activer les Appels Wi-Fi directement dans les paramètres de votre téléphone. Dès que vous verrez cette icône, vous pourrez alors passer et recevoir vos appels grâce au Wi-Fi. </string>
+    <string name="longevity_device_statistics_list_item_title">"Statistiques de l’appareil et sur la longévité."</string>
+    <string name="status_sdn">Numéro de numérotation de service</string>
 
 </resources>

@@ -4968,4 +4968,6 @@
     <string name="keywords_media_controls" msgid="8345490568291778638">"Medier"</string>
     <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Bluetooth aktiveres"</string>
     <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"Ikke tilgængelig, da sengetidstilstand er aktiveret"</string>
+    <string name="longevity_device_statistics_list_item_title">Lang levetid og enhedsstatistik</string>
+    <string name="status_sdn">Serviceopkaldsnummer.</string>
 </resources>

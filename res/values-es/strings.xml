@@ -4971,5 +4971,7 @@
     <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Se activará el Bluetooth"</string>
     <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"No disponible porque el modo Descanso está activado"</string>
     <string name="wfc_help_desc_text">Si selecciona Red móvil preferida se utilizará la red móvil de forma predeterminada para las llamadas. En caso de que no haya cobertura de red móvil o ésta sea muy débil, se utilizará la red Wi-Fi en su lugar.</string>
+    <string name="longevity_device_statistics_list_item_title">Longevidad y estadísticas del dispositivo</string>
+    <string name="status_sdn">Número de marcación de servicio.</string>
 
 </resources>
