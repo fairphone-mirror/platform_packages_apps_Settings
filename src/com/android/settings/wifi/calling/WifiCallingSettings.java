@@ -276,7 +276,7 @@ public class WifiCallingSettings extends InstrumentedFragment implements HelpRes
     public void onCreateOptionsMenu(final Menu menu, final MenuInflater inflater) {
          super.onCreateOptionsMenu(menu, inflater);
         if (orange_freature) {
-            menu.add(0, MENU_HELP, 0, R.string.menu_vowifi_help)
+            menu.add(0, MENU_HELP, 0, R.string.tethering_help_button_text)
                     .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         }
     }
