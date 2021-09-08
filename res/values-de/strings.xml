@@ -4969,6 +4969,6 @@
     <string name="keywords_media_controls" msgid="8345490568291778638">"Medien"</string>
     <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Bluetooth wird aktiviert"</string>
     <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"Nicht verfügbar, weil der Modus „Schlafenszeit“ aktiviert ist"</string>
-    <string name="longevity_device_statistics_list_item_title">Langlebigkeit &amp; Statistiken.</string>
+    <string name="longevity_device_statistics_list_item_title">Gerätestatistiken &amp; Langlebigkeit.</string>    
     <string name="status_sdn">Service Rufnummer</string>
 </resources>

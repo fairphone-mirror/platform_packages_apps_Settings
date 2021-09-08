@@ -4968,6 +4968,6 @@
     <string name="keywords_media_controls" msgid="8345490568291778638">"media"</string>
     <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Bluetooth aktiveras"</string>
     <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"Inte tillgängligt eftersom sovläget är på"</string>
-    <string name="longevity_device_statistics_list_item_title">Longevity &amp; Device Statistics</string>
-    <string name="status_sdn">Serviceuppringningsnummer</string>
+    <string name="longevity_device_statistics_list_item_title">Livslängd och enhetsstatistik</string>
+    <string name="status_sdn">Tjänstens uppringningsnummer</string>
 </resources>

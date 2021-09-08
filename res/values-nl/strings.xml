@@ -4968,6 +4968,6 @@
     <string name="keywords_media_controls" msgid="8345490568291778638">"media"</string>
     <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Bluetooth wordt ingeschakeld"</string>
     <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"Niet beschikbaar omdat de bedtijdstand is ingeschakeld"</string>
-    <string name="longevity_device_statistics_list_item_title">Longeviteit en toestel statistieken</string>
+    <string name="longevity_device_statistics_list_item_title">Levensduur en toestel statistieken</string>
     <string name="status_sdn">Servicedienstnummer</string>
 </resources>
