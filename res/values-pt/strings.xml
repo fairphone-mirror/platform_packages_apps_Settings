@@ -4970,4 +4970,5 @@
     <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"Indisponível durante o Modo noite"</string>
     <string name="longevity_device_statistics_list_item_title">Estatísticas do dispositivo e longevidade</string>
     <string name="status_sdn">Número de ligação ao serviço</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"É o botão de ligar na lateral do seu telemóvel"</string>
 </resources>
