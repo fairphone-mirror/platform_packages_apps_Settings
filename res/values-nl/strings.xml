@@ -413,7 +413,7 @@
     <string name="go_back_button_label" msgid="6139455414099035594">"Terug"</string>
     <string name="skip_lock_screen_dialog_button_label" msgid="641984698150020591">"Overslaan"</string>
     <string name="cancel_lock_screen_dialog_button_label" msgid="1801132985957491690">"Annuleren"</string>
-    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Raak de sensor aan"</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Raak de vingerafdruksensor aan"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"De sensor bevindt zich aan de achterkant van je telefoon. Gebruik je wijsvinger."</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_content_description" msgid="3065850549419750523">"Ilustratie met apparaat en locatie van vingerafdruksensor"</string>
     <string name="security_settings_fingerprint_enroll_dialog_name_label" msgid="7298812463228440333">"Naam"</string>

@@ -413,7 +413,7 @@
     <string name="go_back_button_label" msgid="6139455414099035594">"Zurück"</string>
     <string name="skip_lock_screen_dialog_button_label" msgid="641984698150020591">"Überspringen"</string>
     <string name="cancel_lock_screen_dialog_button_label" msgid="1801132985957491690">"Abbrechen"</string>
-    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Sensor berühren"</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Berühre den Fingerabdrucksensor."</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"Er befindet sich auf der Rückseite des Smartphones. Am besten den Zeigefinger verwenden."</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_content_description" msgid="3065850549419750523">"Abbildung mit Gerät und Position des Fingerabdrucksensors"</string>
     <string name="security_settings_fingerprint_enroll_dialog_name_label" msgid="7298812463228440333">"Name"</string>
