@@ -369,8 +369,15 @@ public class OemUnlockPreferenceController extends DeveloperOptionsPreferenceCon
 
     @VisibleForTesting
     void confirmEnableOemUnlock() {
-        OemLockVerifyDialog.show(mFragment);
-        //EnableOemUnlockSettingWarningDialog.show(mFragment);
+        if (isDebugOsBuild()) {
+            EnableOemUnlockSettingWarningDialog.show(mFragment);
+        }else {
+            OemLockVerifyDialog.show(mFragment);
+        }
+    }
+
+    private boolean isDebugOsBuild() {
+        return "userdebug".equals(Build.TYPE) || "eng".equals(Build.TYPE);
     }
 
     /**
