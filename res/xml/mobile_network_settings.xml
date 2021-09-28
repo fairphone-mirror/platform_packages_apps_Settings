@@ -76,11 +76,6 @@
             settings:controller="com.android.settings.network.telephony.RoamingPreferenceController"/>
 
         <Preference
-            android:key="mno_euicc"
-            android:title="RESET MNO"
-            settings:controller="com.android.settings.datausage.MNOPreferenceController"/>
-
-        <Preference
             android:key="data_usage_summary"
             android:title="@string/mobile_data_usage_title"
             settings:controller="com.android.settings.network.telephony.DataUsagePreferenceController"/>
