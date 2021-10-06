@@ -309,15 +309,6 @@
             settings:controller="com.android.settings.network.telephony.ApnPreferenceController"/>
 
         <Preference
-            android:key="uplmn_settings_key"
-            android:persistent="false"
-            android:title="@string/uplmn_settings_title"
-            android:summary="@string/uplmn_settings_summary"
-            settings:allowDividerAbove="true"
-            settings:controller="com.android.settings.network.telephony.UserPLMNPreferenceController">
-        </Preference>
-
-        <Preference
             android:key="carrier_settings_key"
             android:title="@string/carrier_settings_title"
             settings:controller="com.android.settings.network.telephony.CarrierPreferenceController">

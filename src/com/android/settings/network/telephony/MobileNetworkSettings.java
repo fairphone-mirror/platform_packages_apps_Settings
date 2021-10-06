@@ -518,7 +518,6 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings impleme
             satelliteSettingPreferenceController.init(mSubId);
         }
         use(ApnPreferenceController.class).init(mSubId);
-        use(UserPLMNPreferenceController.class).init(mSubId);
         use(CarrierPreferenceController.class).init(mSubId);
         use(DataUsagePreferenceController.class).init(mSubId);
         use(PreferredNetworkModePreferenceController.class).init(getLifecycle(), mSubId);
