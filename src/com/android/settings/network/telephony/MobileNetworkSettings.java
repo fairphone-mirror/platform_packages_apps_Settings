@@ -198,7 +198,8 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings {
         use(MobileDataPreferenceController.class).init(getFragmentManager(), mSubId);
         use(RoamingPreferenceController.class).init(getFragmentManager(), mSubId);
         use(ApnPreferenceController.class).init(mSubId);
-        use(UserPLMNPreferenceController.class).init(mSubId);
+        // modify by T2M.zhang renjie for FP4-3079 21-10-6 begin
+        //use(UserPLMNPreferenceController.class).init(mSubId); 
         use(CarrierPreferenceController.class).init(mSubId);
         use(DataUsagePreferenceController.class).init(mSubId);
         use(PreferredNetworkModePreferenceController.class).init(getLifecycle(), mSubId);
