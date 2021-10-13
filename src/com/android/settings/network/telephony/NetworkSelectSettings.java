@@ -27,6 +27,11 @@ import android.provider.Settings;
 import android.telephony.AccessNetworkConstants;
 import android.telephony.CarrierConfigManager;
 import android.telephony.CellIdentity;
+import android.telephony.CellIdentityGsm;
+import android.telephony.CellIdentityLte;
+import android.telephony.CellIdentityNr;
+import android.telephony.CellIdentityTdscdma;
+import android.telephony.CellIdentityWcdma;
 import android.telephony.CellInfo;
 import android.telephony.CellInfoCdma;
 import android.telephony.CellInfoGsm;
@@ -55,6 +60,7 @@ import com.android.settingslib.utils.ThreadUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.concurrent.ExecutorService;
@@ -258,6 +264,11 @@ public class NetworkSelectSettings extends DashboardFragment {
                     Log.d(TAG, "CellInfoList size: " +  mCellInfoList.size());
                     Log.d(TAG, "CellInfoList: " + CellInfoUtil.cellInfoListToString(mCellInfoList));
                     if (mCellInfoList != null && mCellInfoList.size() != 0) {
+                        // modify by T2M.zhang renjie for FP4-3074 21-10-13 begin
+                        mCellInfoList = processCellInfoList(mCellInfoList);
+                        mCellInfoList = removeUnusedCellInfo(mCellInfoList);
+                        Log.d(TAG, "new mCellInfoList: " + CellInfoUtil.cellInfoListToString(mCellInfoList));
+                        // modify by T2M.zhang renjie for FP4-3074 21-10-13 end
                         final NetworkOperatorPreference connectedPref =
                                 updateAllPreferenceCategory();
                         if (connectedPref != null) {
@@ -318,6 +329,74 @@ public class NetworkSelectSettings extends DashboardFragment {
             return;
         }
     };
+
+    // modify by T2M.zhang renjie for FP4-3074 21-10-13 begin
+    private List<CellInfo> processCellInfoList(List<CellInfo> cellInfoList){
+        List<CellInfo> mCellInfoList = new ArrayList<>();
+
+        for (int index = 0; index < cellInfoList.size(); index++) {
+            CellInfo cellInfo = cellInfoList.get(index);
+            CellIdentity cid = CellInfoUtil.getCellIdentity(cellInfo);
+            mCellInfoList.add(cellInfo);
+            for (CellInfo mCellInfo:mCellInfoList){
+                    if (mCellInfo.equals(cellInfo)) continue;
+
+                    CellIdentity mCid = CellInfoUtil.getCellIdentity(mCellInfo);
+                    if (mCid.getOperatorAlphaLong().equals(cid.getOperatorAlphaLong())){
+                        if (getAccessNetworkType(cid) < getAccessNetworkType(mCid)){
+                            mCellInfoList.remove(cellInfo);
+                            break;
+                        }else{
+                            mCellInfoList.remove(mCellInfo);
+                            break;
+                        }
+                    }
+            }
+        }
+        return mCellInfoList;
+    }
+
+    private List<CellInfo> removeUnusedCellInfo(List<CellInfo> cellInfoList){
+
+        String imsi = mTelephonyManager.getSubscriberId();
+        if (imsi.startsWith("23457")) {
+            for (int i = cellInfoList.size() - 1; i >= 0; i--) {
+                CellInfo cellInfo = cellInfoList.get(i);
+                CellIdentity cid = CellInfoUtil.getCellIdentity(cellInfo);
+                if (cid.getOperatorAlphaLong().toString().contains("O2") || cid.getOperatorAlphaShort().toString().contains("O2")) {
+                    cellInfoList.remove(cellInfo);
+                }
+                if (cid.getOperatorAlphaLong().toString().contains("Virgin") || cid.getOperatorAlphaShort().toString().contains("Virgin")) {
+                    cellInfoList.remove(cellInfo);
+                }
+
+            }
+        }
+
+        return cellInfoList;
+    }
+
+
+
+    private int getAccessNetworkType(CellIdentity mCellId) {
+        int cellInfoType = mCellId == null ? CellInfo.TYPE_UNKNOWN : mCellId.getType();
+        int ant;
+        switch (cellInfoType) {
+            case CellInfo.TYPE_GSM:     ant = AccessNetworkConstants.AccessNetworkType.GERAN;
+                break;
+            case CellInfo.TYPE_LTE:     ant = AccessNetworkConstants.AccessNetworkType.EUTRAN;
+                break;
+            case CellInfo.TYPE_WCDMA:   // fallthrough
+            case CellInfo.TYPE_TDSCDMA: ant = AccessNetworkConstants.AccessNetworkType.UTRAN;
+                break;
+            case CellInfo.TYPE_NR:      ant = AccessNetworkConstants.AccessNetworkType.NGRAN;
+                break;
+            default:                    ant = AccessNetworkConstants.AccessNetworkType.UNKNOWN;
+        }
+
+        return ant;
+    }
+    // modify by T2M.zhang renjie for FP4-3074 21-10-13 end
 
     private final NetworkScanHelper.NetworkScanCallback mCallback =
             new NetworkScanHelper.NetworkScanCallback() {

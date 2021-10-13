@@ -188,7 +188,8 @@ public class NetworkOperatorPreference extends Preference {
     }
 
     private int getIconIdForCell(CellInfo ci) {
-        if (ci instanceof CellInfoGsm) {
+        // modify by T2M.zhang renjie for FP4-3074 21-10-13 begin
+        /*if (ci instanceof CellInfoGsm) {
             return R.drawable.signal_strength_g;
         }
         if (ci instanceof CellInfoCdma) {
@@ -203,7 +204,8 @@ public class NetworkOperatorPreference extends Preference {
         }
         if (ci instanceof CellInfoNr) {
             return R.drawable.signal_strength_5g;
-        }
+        }*/
+        // modify by T2M.zhang renjie for FP4-3074 21-10-13 end
         return MobileNetworkUtils.NO_CELL_DATA_TYPE_ICON;
     }
 
