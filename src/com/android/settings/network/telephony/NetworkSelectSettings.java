@@ -265,8 +265,8 @@ public class NetworkSelectSettings extends DashboardFragment {
                     Log.d(TAG, "CellInfoList: " + CellInfoUtil.cellInfoListToString(mCellInfoList));
                     if (mCellInfoList != null && mCellInfoList.size() != 0) {
                         // modify by T2M.zhang renjie for FP4-3074 21-10-13 begin
-                        mCellInfoList = processCellInfoList(mCellInfoList);
                         mCellInfoList = removeUnusedCellInfo(mCellInfoList);
+                        Log.d(TAG, "new mCellInfoList size: " +  mCellInfoList.size());
                         Log.d(TAG, "new mCellInfoList: " + CellInfoUtil.cellInfoListToString(mCellInfoList));
                         // modify by T2M.zhang renjie for FP4-3074 21-10-13 end
                         final NetworkOperatorPreference connectedPref =
@@ -329,7 +329,7 @@ public class NetworkSelectSettings extends DashboardFragment {
             return;
         }
     };
-
+    // modify by T2M.zhang renjie for FP4-2987 21-10-22 begin
     // modify by T2M.zhang renjie for FP4-3074 21-10-13 begin
     private List<CellInfo> processCellInfoList(List<CellInfo> cellInfoList){
         List<CellInfo> mCellInfoList = new ArrayList<>();
@@ -359,18 +359,42 @@ public class NetworkSelectSettings extends DashboardFragment {
     private List<CellInfo> removeUnusedCellInfo(List<CellInfo> cellInfoList){
 
         String imsi = mTelephonyManager.getSubscriberId();
+        String operator = mTelephonyManager.getNetworkOperator(mSubId);
+        Log.d(TAG, "imsi = " + imsi +",operator = "+operator);
         if (imsi.startsWith("23457")) {
+            // display one rat for each operator.
+            cellInfoList = processCellInfoList(cellInfoList);
+            //remove some operator.
             for (int i = cellInfoList.size() - 1; i >= 0; i--) {
                 CellInfo cellInfo = cellInfoList.get(i);
                 CellIdentity cid = CellInfoUtil.getCellIdentity(cellInfo);
-                if (cid.getOperatorAlphaLong().toString().contains("O2") || cid.getOperatorAlphaShort().toString().contains("O2")) {
+                if (cid.getOperatorAlphaLong().toString().toLowerCase().contains("o2") || cid.getOperatorAlphaShort().toString().toLowerCase().contains("o2")) {
                     cellInfoList.remove(cellInfo);
                 }
-                if (cid.getOperatorAlphaLong().toString().contains("Virgin") || cid.getOperatorAlphaShort().toString().contains("Virgin")) {
+                if (cid.getOperatorAlphaLong().toString().toLowerCase().contains("virgin") || cid.getOperatorAlphaShort().toString().toLowerCase().contains("virgin")) {
                     cellInfoList.remove(cellInfo);
                 }
 
             }
+        }else if (imsi.startsWith("23438")) {
+            for (int i = cellInfoList.size() - 1; i >= 0; i--) {
+                CellInfo cellInfo = cellInfoList.get(i);
+                CellIdentity cid = CellInfoUtil.getCellIdentity(cellInfo);
+                if (mForbiddenPlmns != null && mForbiddenPlmns.contains(getOperatorNumeric(cid))){
+                    cellInfoList.remove(cellInfo);
+                    continue;
+                }
+                if (operator.startsWith("23415")){
+                    if (cid.getOperatorAlphaLong().toString().toLowerCase().contains("vodafone") || cid.getOperatorAlphaShort().toString().toLowerCase().contains("vodafone")) {
+                        cellInfoList.remove(cellInfo);
+                    }
+                }else if (operator.startsWith("23430") || operator.startsWith("23433")){
+                    if (cid.getOperatorAlphaLong().toString().toLowerCase().contains("ee") || cid.getOperatorAlphaShort().toString().toLowerCase().contains("ee")) {
+                        cellInfoList.remove(cellInfo);
+                    }
+                }
+            }
+
         }
 
         return cellInfoList;
@@ -398,6 +422,35 @@ public class NetworkSelectSettings extends DashboardFragment {
     }
     // modify by T2M.zhang renjie for FP4-3074 21-10-13 end
 
+    /**
+     * Operator numeric of this cell
+     */
+    public String getOperatorNumeric(CellIdentity cellId) {
+        if (cellId == null) {
+            return null;
+        }
+        if (cellId instanceof CellIdentityGsm) {
+            return ((CellIdentityGsm) cellId).getMobileNetworkOperator();
+        }
+        if (cellId instanceof CellIdentityWcdma) {
+            return ((CellIdentityWcdma) cellId).getMobileNetworkOperator();
+        }
+        if (cellId instanceof CellIdentityTdscdma) {
+            return ((CellIdentityTdscdma) cellId).getMobileNetworkOperator();
+        }
+        if (cellId instanceof CellIdentityLte) {
+            return ((CellIdentityLte) cellId).getMobileNetworkOperator();
+        }
+        if (cellId instanceof CellIdentityNr) {
+            final String mcc = ((CellIdentityNr) cellId).getMccString();
+            if (mcc == null) {
+                return null;
+            }
+            return mcc.concat(((CellIdentityNr) cellId).getMncString());
+        }
+        return null;
+    }
+    // modify by T2M.zhang renjie for FP4-2987 21-10-22 end
     private final NetworkScanHelper.NetworkScanCallback mCallback =
             new NetworkScanHelper.NetworkScanCallback() {
                 public void onResults(List<CellInfo> results) {
@@ -461,10 +514,14 @@ public class NetworkSelectSettings extends DashboardFragment {
             }
             if (pref == null) {
                 // add new preference
-                pref = new NetworkOperatorPreference(getPrefContext(),
+
+                // modify by T2M.zhang renjie for FP4-2987 21-10-22 begin
+                pref = new NetworkOperatorPreference(getPrefContext(), mSubId,
                         cellInfo, mForbiddenPlmns, mShow4GForLTE);
+                // modify by T2M.zhang renjie for FP4-2987 21-10-22 end
                 pref.setOrder(index);
                 mPreferenceCategory.addPreference(pref);
+
             }
             pref.setKey(pref.getOperatorName());
 
@@ -478,6 +535,7 @@ public class NetworkSelectSettings extends DashboardFragment {
 
         return connectedPref;
     }
+
 
     /**
      * Config the network operator list when the page was created. When user get
@@ -521,7 +579,7 @@ public class NetworkSelectSettings extends DashboardFragment {
 
             for (CellIdentity cellIdentity : cellIdentitySet) {
                 final NetworkOperatorPreference pref = new NetworkOperatorPreference(
-                        getPrefContext(), cellIdentity, mForbiddenPlmns, mShow4GForLTE);
+                        getPrefContext(), mSubId,cellIdentity, mForbiddenPlmns, mShow4GForLTE);
                 pref.setSummary(R.string.network_connected);
                 // Update the signal strength icon, since the default signalStrength value
                 // would be zero

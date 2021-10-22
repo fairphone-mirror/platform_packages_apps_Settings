@@ -34,6 +34,8 @@ import android.telephony.CellInfoNr;
 import android.telephony.CellInfoTdscdma;
 import android.telephony.CellInfoWcdma;
 import android.telephony.CellSignalStrength;
+import android.telephony.SubscriptionManager;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import androidx.preference.Preference;
@@ -61,27 +63,33 @@ public class NetworkOperatorPreference extends Preference {
     private int mLevel = LEVEL_NONE;
     private boolean mShow4GForLTE;
     private boolean mIsAdvancedScanSupported;
+    private TelephonyManager mTelephonyManager;
+    private int mSubId = SubscriptionManager.INVALID_SUBSCRIPTION_ID;
 
-    public NetworkOperatorPreference(Context context, CellInfo cellinfo,
+    // modify by T2M.zhang renjie for FP4-2987 21-10-22 begin
+    public NetworkOperatorPreference(Context context,int subId, CellInfo cellinfo,
             List<String> forbiddenPlmns, boolean show4GForLTE) {
-        this(context, forbiddenPlmns, show4GForLTE);
+        this(context, subId, forbiddenPlmns, show4GForLTE);
+        mSubId = subId;
         updateCell(cellinfo);
     }
 
-    public NetworkOperatorPreference(Context context, CellIdentity connectedCellId,
+    public NetworkOperatorPreference(Context context,int subId, CellIdentity connectedCellId,
             List<String> forbiddenPlmns, boolean show4GForLTE) {
-        this(context, forbiddenPlmns, show4GForLTE);
+        this(context, subId, forbiddenPlmns, show4GForLTE);
+        mSubId = subId;
         updateCell(null, connectedCellId);
     }
 
     private NetworkOperatorPreference(
-            Context context, List<String> forbiddenPlmns, boolean show4GForLTE) {
+            Context context,int subId, List<String> forbiddenPlmns, boolean show4GForLTE) {
         super(context);
+        mSubId = subId;
         mForbiddenPlmns = forbiddenPlmns;
         mShow4GForLTE = show4GForLTE;
         mIsAdvancedScanSupported = Utils.isAdvancedPlmnScanSupported();
     }
-
+    // modify by T2M.zhang renjie for FP4-2987 21-10-22 end
     /**
      * Change cell information
      */
@@ -189,7 +197,16 @@ public class NetworkOperatorPreference extends Preference {
 
     private int getIconIdForCell(CellInfo ci) {
         // modify by T2M.zhang renjie for FP4-3074 21-10-13 begin
-        /*if (ci instanceof CellInfoGsm) {
+        if (mTelephonyManager == null) {
+            mTelephonyManager = getContext().getSystemService(TelephonyManager.class)
+                    .createForSubscriptionId(mSubId);
+        }
+        String imsi = mTelephonyManager.getSubscriberId();
+        if (imsi.startsWith("23457")) {
+            return MobileNetworkUtils.NO_CELL_DATA_TYPE_ICON;
+        }
+
+        if (ci instanceof CellInfoGsm) {
             return R.drawable.signal_strength_g;
         }
         if (ci instanceof CellInfoCdma) {
@@ -204,9 +221,9 @@ public class NetworkOperatorPreference extends Preference {
         }
         if (ci instanceof CellInfoNr) {
             return R.drawable.signal_strength_5g;
-        }*/
-        // modify by T2M.zhang renjie for FP4-3074 21-10-13 end
+        }
         return MobileNetworkUtils.NO_CELL_DATA_TYPE_ICON;
+        // modify by T2M.zhang renjie for FP4-3074 21-10-13 end
     }
 
     private CellSignalStrength getCellSignalStrength(CellInfo ci) {
