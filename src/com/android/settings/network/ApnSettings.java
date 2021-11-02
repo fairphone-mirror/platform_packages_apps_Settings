@@ -381,6 +381,7 @@ public class ApnSettings extends RestrictedSettingsFragment
                 final int edited = cursor.getInt(EDITED_INDEX);
                 //Add Begin by cheng-he for FP4-2551 on 2021/08/19
                 if(apn == null || apn.trim().equals("")) {
+                    cursor.moveToNext();
                     continue;
                 }
                 //Add End by cheng-he for FP4-2551 on 2021/08/19
