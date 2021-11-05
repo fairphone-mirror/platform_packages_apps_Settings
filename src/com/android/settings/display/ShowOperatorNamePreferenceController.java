@@ -48,7 +48,10 @@ public class ShowOperatorNamePreferenceController extends AbstractPreferenceCont
         TelephonyManager telephonyManager= (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
         String id = "";
         id = telephonyManager.getSubscriberId();
-        boolean isOrangeF = id.startsWith(ID_FOR_ORANGE_F);
+        boolean isOrangeF = false;
+        if(id != null){
+            isOrangeF = id.startsWith(ID_FOR_ORANGE_F);
+        }
         if (isOrangeF) {
             return true;
         } else {
