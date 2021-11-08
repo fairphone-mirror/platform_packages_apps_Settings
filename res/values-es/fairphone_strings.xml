@@ -21,7 +21,7 @@
     <string name="proximity_sensor_summary">"Calibra el sensor de proximidad"</string>
     <string name="hiccup_summary">"Informe de estabilidad"</string>
     <string name="fairphone_settings_title">"Funciones de hardware avanzadas"</string>
-    <string name="fairphone_settings_summary">"Habilita OpenGL ES 3.0 y el giroscopio"</string>
+    <string name="fairphone_settings_summary">"Habilita las funciones adicionales"</string>
     <string name="processor_info">"Procesador"</string>
     <string name="assembly_number">"Número de ensamblaje"</string>
     <string name="receiver_module_info">"Información del módulo superior"</string>

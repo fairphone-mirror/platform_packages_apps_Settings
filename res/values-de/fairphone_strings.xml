@@ -21,7 +21,7 @@
     <string name="proximity_sensor_summary">"Näherungssensor kalibieren"</string>
     <string name="hiccup_summary">"Stabilitätsberichte"</string>
     <string name="fairphone_settings_title">"Erweiterte Hardware-Funktionen"</string>
-    <string name="fairphone_settings_summary">"OpenGL ES 3.0 und Gyroskop aktivieren"</string>
+    <string name="fairphone_settings_summary">"Weitere Funktionen aktivieren"</string>
     <string name="processor_info">"Prozessor"</string>
     <string name="assembly_number">"Fertigungsnummer"</string>
     <string name="receiver_module_info">"Top-Modul Info"</string>
