@@ -21,7 +21,6 @@ import android.telephony.SubscriptionManager;
 
 import androidx.preference.Preference;
 import androidx.preference.SwitchPreference;
-import android.telephony.TelephonyManager;
 
 import com.android.settings.core.PreferenceControllerMixin;
 import com.android.settingslib.core.AbstractPreferenceController;
@@ -30,7 +29,6 @@ public class ShowOperatorNamePreferenceController extends AbstractPreferenceCont
         implements PreferenceControllerMixin, Preference.OnPreferenceChangeListener {
 
     private static final String KEY_SHOW_OPERATOR_NAME = "show_operator_name";
-    private static final String ID_FOR_ORANGE_F = "20801";
 
     public ShowOperatorNamePreferenceController(Context context) {
         super(context);
@@ -45,19 +43,8 @@ public class ShowOperatorNamePreferenceController extends AbstractPreferenceCont
         }
         final PersistableBundle b = configMgr.getConfigForSubId(SubscriptionManager
                 .getDefaultDataSubscriptionId());
-        TelephonyManager telephonyManager= (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
-        String id = "";
-        id = telephonyManager.getSubscriberId();
-        boolean isOrangeF = false;
-        if(id != null){
-            isOrangeF = id.startsWith(ID_FOR_ORANGE_F);
-        }
-        if (isOrangeF) {
-            return true;
-        } else {
-            return b != null && b.getBoolean(CarrierConfigManager
-                    .KEY_SHOW_OPERATOR_NAME_IN_STATUSBAR_BOOL, false);
-        }
+        return b != null && b.getBoolean(CarrierConfigManager
+                .KEY_SHOW_OPERATOR_NAME_IN_STATUSBAR_BOOL, false);
     }
 
     @Override
