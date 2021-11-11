@@ -36,20 +36,7 @@ public class ShowOperatorNamePreferenceController extends AbstractPreferenceCont
 
     @Override
     public boolean isAvailable() {
-        TelephonyManager telephonyManager= (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
-        String id = "";
-        id = telephonyManager.getSubscriberId();
-        boolean isOrangeF = false;
-        if(id != null){
-            isOrangeF = id.startsWith(ID_FOR_ORANGE_F);
-        }
-        boolean isAvailable = false;
-        if (isOrangeF) {
-            isAvailable = true;
-        } else {
-            isAvailable = mContext.getResources().getBoolean(R.bool.config_showOperatorNameInStatusBar);
-        }
-        return isAvailable;
+        return mContext.getResources().getBoolean(R.bool.config_showOperatorNameInStatusBar);
     }
 
     @Override
