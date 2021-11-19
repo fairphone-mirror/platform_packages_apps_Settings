@@ -4973,4 +4973,7 @@
     <string name="longevity_device_statistics_list_item_title">Longevidad y estadísticas del dispositivo</string>
     <string name="status_sdn">Número de marcación de servicio.</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"Es el botón de encendido en el lateral del teléfono."</string>
+    <string name="fingerprint_settings_open_description">"Habilita si prefieres desbloquear con tu huella dactilar, sin encender el teléfono primero."</string>
+    <string name="fingerprint_settings_open_title">Modo de desbloqueo con huella digital</string>
+
 </resources>

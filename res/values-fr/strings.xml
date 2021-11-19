@@ -4972,4 +4972,6 @@
     <string name="status_sdn">Numéro de numérotation de service</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"C'est le bouton d'alimentation sur le côté de votre téléphone"</string>
     <string name="data_preference">Préférence de données</string>
+    <string name="fingerprint_settings_open_description">"Activez si vous préférez déverrouiller le téléphone sans le réveiller au préalable."</string>
+    <string name="fingerprint_settings_open_title">Comportement de déverrouillage par empreinte digitale</string>
 </resources>

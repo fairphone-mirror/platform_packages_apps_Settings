@@ -4972,4 +4972,7 @@
     <string name="status_sdn">Servicedienstnummer</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"Het is de aan-/uitknop aan de zijkant van je telefoon."</string>
     <string name="data_preference">Gegevensvoorkeur</string>
+    <string name="fingerprint_settings_open_description">"Schakel in als je liever de telefoon ontgrendelt zonder hem eerst te activeren."</string>
+    <string name="fingerprint_settings_open_title">Ontgrendelgedrag vingerafdrukscanner</string>
+
 </resources>

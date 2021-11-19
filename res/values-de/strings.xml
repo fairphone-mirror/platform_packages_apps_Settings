@@ -4973,4 +4973,7 @@
     <string name="status_sdn">Service Rufnummer</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"Es ist die Ein/Aus-Taste an der Seite deines Smartphones."</string>
     <string name="data_preference">Datenpräferenz</string>
+    <string name="fingerprint_settings_open_description">"Schalten du ein, wenn Sie lieber freischalten möchten, ohne das Telefon aufzuwachen."</string>
+    <string name="fingerprint_settings_open_title">Fingerabruck Entsperrverhalten</string>
+
 </resources>

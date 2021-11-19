@@ -4971,4 +4971,7 @@
     <string name="longevity_device_statistics_list_item_title">Lang levetid og statistik på enheden</string>
     <string name="status_sdn">Indtast nummer service</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"Det er tænk og sluk knappen på siden af din telefon"</string>
+    <string name="fingerprint_settings_open_description">"Tænd, hvis du foretrækker at låse op uden at vågne telefonen først."</string>
+    <string name="fingerprint_settings_open_title">Fingerprint Lås op adfærd</string>
+
 </resources>

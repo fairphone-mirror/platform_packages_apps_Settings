@@ -4972,4 +4972,7 @@
     <string name="status_sdn">Servizio chiamata (SDN).</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"È il pulsante di accensione sul lato del telefono"</string>
     <string name="data_preference">Preferenza dati</string>
+    <string name="fingerprint_settings_open_description">"Selezionare se si preferisce sbloccare il telefono senza prima accendere lo schermo."</string>
+    <string name="fingerprint_settings_open_title">Controllo dello sblocco con impronte digitali</string>
+
 </resources>
