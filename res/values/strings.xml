@@ -12391,4 +12391,9 @@
 
     <string name="verification_confirm_your_password_header">Input verify code :</string>
 
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="fingerprint_settings_open_title">Fingerprint Unlock Behavior</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="fingerprint_settings_open_description">If you need to touch unlock,turn on switch.The default is press unlock.</string>
+
 </resources>
