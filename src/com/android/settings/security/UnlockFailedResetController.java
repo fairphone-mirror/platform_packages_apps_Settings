@@ -64,15 +64,10 @@ public class UnlockFailedResetController extends BasePreferenceController implem
         if (!preference.getKey().equals(getPreferenceKey())) {
             return false;
         }
-        if (!isChecked()) {
-            //TODO
-            setChecked(true);
-            return true;
-        } else {
-            //TODO
-            setChecked(false);
-            return false;
-        }
+
+        setChecked(!isChecked());
+        return true;
+
     }
 
     @Override
