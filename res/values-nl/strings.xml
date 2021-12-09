@@ -4971,4 +4971,5 @@
     <string name="longevity_device_statistics_list_item_title">Levensduur en toestel statistieken</string>
     <string name="status_sdn">Servicedienstnummer</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"Het is de aan-/uitknop aan de zijkant van je telefoon."</string>
+    <string name="data_preference">Gegevensvoorkeur</string>
 </resources>
