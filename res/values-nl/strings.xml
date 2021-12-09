@@ -5349,4 +5349,5 @@
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"Kan wachtwoord niet bewerken tijdens het delen. Als je het wachtwoord wilt wijzigen, zet je audio delen eerst uit."</string>
     <string name="unlock_failed_reset_title">"Automatische Fabrieksreset"</string>
     <string name="unlock_failed_reset_description">"Als u uw telefoon 15 keer verkeerd probeert te ontgrendelen, wordt hij teruggezet naar de fabrieksinstellingen. Alle gegevens, inclusief bestanden en gedownloade apps, worden gewist."</string>
+    <string name="data_preference">"Gegevens en voorkeuren"</string>
 </resources>

@@ -5349,4 +5349,5 @@
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"Während der Freigabe kann das Passwort nicht geändert werden. Wenn du das Passwort ändern möchtest, deaktiviere zuerst die Audiofreigabe."</string>
     <string name="unlock_failed_reset_title">"Automatisches Zurücksetzen auf Werkseinstellungen."</string>
     <string name="unlock_failed_reset_description">"Wenn Sie 15-mal versuchen, Ihr Telefon falsch zu entsperren, wird es auf die Werkseinstellungen zurückgesetzt. Alle Daten, einschließlich Dateien und heruntergeladene Apps, werden gelöscht."</string>
+    <string name="data_preference">Datenpräferenz</string>
 </resources>

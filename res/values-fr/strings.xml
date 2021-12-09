@@ -5349,4 +5349,5 @@
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"Impossible de modifier le mot de passe lors du partage. Pour modifier le mot de passe, il faut d\'abord désactiver le partage audio."</string>
     <string name="unlock_failed_reset_title">"Réinitialisation automatique d'usine"</string>
     <string name="unlock_failed_reset_description">"Si vous tentez de déverrouiller votre téléphone de manière incorrecte 15 fois, il sera réinitialisé aux paramètres d'usine. Toutes les données, y compris les fichiers et les applications téléchargées, seront supprimées."</string>
+    <string name="data_preference">Préférence de données</string>
 </resources>
