@@ -4989,4 +4989,7 @@
     <string name="bluetooth_connect_access_dialog_negative" msgid="4944672755226375059">"Geen verbinding maken"</string>
     <string name="bluetooth_connect_access_dialog_positive" msgid="3630561675207269710">"Verbinding maken"</string>
     <string name="data_preference">Gegevensvoorkeur</string>
+
+    <string name="unlock_failed_reset_title">"Automatische Fabrieksreset"</string>
+    <string name="unlock_failed_reset_description">"Als u uw telefoon 15 keer verkeerd probeert te ontgrendelen, wordt hij teruggezet naar de fabrieksinstellingen. Alle gegevens, inclusief bestanden en gedownloade apps, worden gewist."</string>
 </resources>

@@ -4990,4 +4990,8 @@
     <string name="bluetooth_connect_access_dialog_negative" msgid="4944672755226375059">"Nicht verbinden"</string>
     <string name="bluetooth_connect_access_dialog_positive" msgid="3630561675207269710">"Verbinden"</string>
     <string name="data_preference">Datenpräferenz</string>
+
+    <string name="unlock_failed_reset_title">"Automatisches Zurücksetzen auf Werkseinstellungen."</string>
+    <string name="unlock_failed_reset_description">"Wenn Sie 15-mal versuchen, Ihr Telefon falsch zu entsperren, wird es auf die Werkseinstellungen zurückgesetzt. Alle Daten, einschließlich Dateien und heruntergeladene Apps, werden gelöscht."</string>
+
 </resources>
