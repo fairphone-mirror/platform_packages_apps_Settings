@@ -5567,4 +5567,8 @@
     <string name="bluetooth_connect_access_dialog_negative" msgid="4944672755226375059">"Refuser la connexion"</string>
     <string name="bluetooth_connect_access_dialog_positive" msgid="3630561675207269710">"Autoriser la connexion"</string>
     <string name="data_preference">Préférence de données</string>
+
+    <string name="unlock_failed_reset_title">"Réinitialisation automatique d'usine"</string>
+    <string name="unlock_failed_reset_description">"Si vous tentez de déverrouiller votre téléphone de manière incorrecte 15 fois, il sera réinitialisé aux paramètres d'usine. Toutes les données, y compris les fichiers et les applications téléchargées, seront supprimées."</string>
+
 </resources>
