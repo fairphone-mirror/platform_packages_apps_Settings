@@ -11447,4 +11447,7 @@
 
     <!-- Label for button to not allow grant the permission for remote devices. [CHAR_LIMIT=50] -->
     <string name="request_manage_bluetooth_permission_dont_allow">Don\u2019t allow</string>
+
+    <!-- Privacy Guard -->
+    <string name="privacy_guard_manager_title">Privacy Guard</string>
 </resources>

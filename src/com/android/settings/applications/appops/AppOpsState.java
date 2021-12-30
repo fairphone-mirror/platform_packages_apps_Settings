@@ -16,6 +16,7 @@
 
 package com.android.settings.applications.appops;
 
+import android.app.Activity;
 import android.app.AppOpsManager;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
@@ -23,6 +24,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -50,12 +52,15 @@ public class AppOpsState {
     final CharSequence[] mOpSummaries;
     final CharSequence[] mOpLabels;
 
+    private SharedPreferences mPreferences;
+
     public AppOpsState(Context context) {
         mContext = context;
         mAppOps = (AppOpsManager)context.getSystemService(Context.APP_OPS_SERVICE);
         mPm = context.getPackageManager();
         mOpSummaries = context.getResources().getTextArray(R.array.app_ops_summaries);
         mOpLabels = context.getResources().getTextArray(R.array.app_ops_labels);
+        mPreferences = context.getSharedPreferences("appops_manager", Activity.MODE_PRIVATE);
     }
 
     public static class OpsTemplate implements Parcelable {
@@ -211,9 +216,15 @@ public class AppOpsState {
             new boolean[] { false }
             );
 
+    public static final OpsTemplate SU_TEMPLATE = new OpsTemplate(
+            new int[] { AppOpsManager.OP_SU },
+            new boolean[] { false }
+            );
+
     public static final OpsTemplate[] ALL_TEMPLATES = new OpsTemplate[] {
             LOCATION_TEMPLATE, PERSONAL_TEMPLATE, MESSAGING_TEMPLATE,
-            MEDIA_TEMPLATE, DEVICE_TEMPLATE, RUN_IN_BACKGROUND_TEMPLATE
+            MEDIA_TEMPLATE, DEVICE_TEMPLATE, RUN_IN_BACKGROUND_TEMPLATE,
+            SU_TEMPLATE
     };
 
     /**
@@ -501,24 +512,47 @@ public class AppOpsState {
     }
 
     private AppEntry getAppEntry(final Context context, final HashMap<String, AppEntry> appEntries,
-            final String packageName, ApplicationInfo appInfo) {
+            final String packageName, ApplicationInfo appInfo, boolean applyFilters) {
+
+        if (appInfo == null) {
+            try {
+                appInfo = mPm.getApplicationInfo(packageName,
+                        PackageManager.GET_DISABLED_COMPONENTS
+                        | PackageManager.GET_UNINSTALLED_PACKAGES);
+            } catch (PackageManager.NameNotFoundException e) {
+                Log.w(TAG, "Unable to find info for package " + packageName);
+                return null;
+            }
+        }
+
+        if (applyFilters) {
+            // Hide user apps if needed
+            if (!shouldShowUserApps() &&
+                    (appInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0) {
+                return null;
+            }
+            // Hide system apps if needed
+            if (!shouldShowSystemApps() &&
+                     (appInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0) {
+                return null;
+            }
+        }
+
         AppEntry appEntry = appEntries.get(packageName);
         if (appEntry == null) {
-            if (appInfo == null) {
-                try {
-                    appInfo = mPm.getApplicationInfo(packageName,
-                            PackageManager.MATCH_DISABLED_COMPONENTS
-                            | PackageManager.MATCH_ANY_USER);
-                } catch (PackageManager.NameNotFoundException e) {
-                    Log.w(TAG, "Unable to find info for package " + packageName);
-                    return null;
-                }
-            }
             appEntry = new AppEntry(this, appInfo);
             appEntry.loadLabel(context);
             appEntries.put(packageName, appEntry);
         }
         return appEntry;
+    }
+
+    private boolean shouldShowUserApps() {
+        return mPreferences.getBoolean("show_user_apps", true);
+    }
+
+    private boolean shouldShowSystemApps() {
+        return mPreferences.getBoolean("show_system_apps", true);
     }
 
     public List<AppOpEntry> buildState(OpsTemplate tpl, int uid, String packageName) {
@@ -546,6 +580,9 @@ public class AppOpsState {
             }
         }
 
+        // Whether to apply hide user / system app filters
+        final boolean applyFilters = (packageName == null);
+
         List<AppOpsManager.PackageOps> pkgs;
         if (packageName != null) {
             pkgs = mAppOps.getOpsForPackage(uid, packageName, tpl.ops);
@@ -556,7 +593,8 @@ public class AppOpsState {
         if (pkgs != null) {
             for (int i=0; i<pkgs.size(); i++) {
                 AppOpsManager.PackageOps pkgOps = pkgs.get(i);
-                AppEntry appEntry = getAppEntry(context, appEntries, pkgOps.getPackageName(), null);
+                AppEntry appEntry = getAppEntry(context, appEntries, pkgOps.getPackageName(), null,
+                        applyFilters);
                 if (appEntry == null) {
                     continue;
                 }
@@ -584,7 +622,7 @@ public class AppOpsState {
         for (int i=0; i<apps.size(); i++) {
             PackageInfo appInfo = apps.get(i);
             AppEntry appEntry = getAppEntry(context, appEntries, appInfo.packageName,
-                    appInfo.applicationInfo);
+                    appInfo.applicationInfo, applyFilters);
             if (appEntry == null) {
                 continue;
             }

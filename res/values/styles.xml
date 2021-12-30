@@ -197,6 +197,8 @@
         <item name="android:textAppearance">@android:style/TextAppearance.DeviceDefault.Small</item>
     </style>
 
+    <style name="TextAppearance.PagerTabs" parent="@android:style/TextAppearance.Material.Widget.TabWidget" />
+
     <style name="TextAppearance" parent="android:TextAppearance.DeviceDefault"/>
 
     <style name="TextAppearance.info_label">

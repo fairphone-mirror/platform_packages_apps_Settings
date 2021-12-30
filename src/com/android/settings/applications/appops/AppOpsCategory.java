@@ -16,9 +16,11 @@
 
 package com.android.settings.applications.appops;
 
+import android.app.AlertDialog;
 import android.app.AppOpsManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
@@ -33,6 +35,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.ListFragment;
 import androidx.loader.app.LoaderManager;
@@ -288,14 +291,21 @@ public class AppOpsCategory extends ListFragment implements
             }
 
             AppOpEntry item = getItem(position);
+
+            AppOpsManager.OpEntry op = item.getOpEntry(0);
+            final int switchOp = AppOpsManager.opToSwitch(op.getOp());
+            final int mode = mState.getAppOpsManager().checkOpNoThrow(switchOp,
+                    item.getAppEntry().getApplicationInfo().uid,
+                    item.getAppEntry().getApplicationInfo().packageName);
+            ((TextView) view.findViewById(R.id.op_name)).setText(
+                    MODE_STRING_RES[modeToPosition(mode)]);
+
             ((ImageView) view.findViewById(R.id.app_icon)).setImageDrawable(
                     item.getAppEntry().getIcon());
             ((TextView) view.findViewById(R.id.app_name)).setText(item.getAppEntry().getLabel());
-            ((TextView) view.findViewById(R.id.op_name)).setText(
+            ((TextView) view.findViewById(R.id.op_time)).setText(
                     item.getTimeText(mResources, false));
-            view.findViewById(R.id.op_time).setVisibility(View.GONE);
-            ((Switch) view.findViewById(R.id.op_switch)).setChecked(
-                    item.getPrimaryOpMode() == AppOpsManager.MODE_ALLOWED);
+            view.findViewById(R.id.op_switch).setVisibility(View.GONE);
 
             return view;
         }
@@ -331,17 +341,45 @@ public class AppOpsCategory extends ListFragment implements
     @Override public void onListItemClick(ListView l, View v, int position, long id) {
         AppOpEntry entry = mAdapter.getItem(position);
         if (entry != null) {
-            // We treat this as tapping on the check box, toggling the app op state.
-            Switch sw = v.findViewById(R.id.op_switch);
-            boolean checked = !sw.isChecked();
-            sw.setChecked(checked);
             AppOpsManager.OpEntry op = entry.getOpEntry(0);
-            int mode = checked ? AppOpsManager.MODE_ALLOWED : AppOpsManager.MODE_IGNORED;
-            mState.getAppOpsManager().setMode(op.getOp(),
+
+            final int switchOp = AppOpsManager.opToSwitch(op.getOp());
+            final int mode = mState.getAppOpsManager().checkOpNoThrow(switchOp,
                     entry.getAppEntry().getApplicationInfo().uid,
-                    entry.getAppEntry().getApplicationInfo().packageName,
-                    mode);
-            entry.overridePrimaryOpMode(mode);
+                    entry.getAppEntry().getApplicationInfo().packageName);
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setTitle(R.string.app_ops_labels_su);
+
+            String[] listItems = {
+                getActivity().getString(MODE_STRING_RES[MODE_ALLOWED]),
+                getActivity().getString(MODE_STRING_RES[MODE_IGNORED]),
+                getActivity().getString(MODE_STRING_RES[MODE_ASK]),
+            };
+
+            builder.setSingleChoiceItems(listItems, modeToPosition(mode), new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    int mode = positionToMode(which);
+                    mState.getAppOpsManager().setMode(op.getOp(),
+                            entry.getAppEntry().getApplicationInfo().uid,
+                            entry.getAppEntry().getApplicationInfo().packageName,
+                            mode);
+                    entry.overridePrimaryOpMode(mode);
+                    mAdapter.notifyDataSetChanged();
+                    dialog.dismiss();
+                }
+            });
+
+            builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
         }
     }
 
@@ -369,5 +407,41 @@ public class AppOpsCategory extends ListFragment implements
     @Override public void onLoaderReset(Loader<List<AppOpEntry>> loader) {
         // Clear the data in the adapter.
         mAdapter.setData(null);
+    }
+
+    private static final int MODE_ALLOWED = 0;
+    private static final int MODE_IGNORED = 1;
+    private static final int MODE_ASK = 2;
+
+    private static final int[] MODE_STRING_RES = {
+        R.string.app_ops_permissions_allowed,
+        R.string.app_ops_permissions_ignored,
+        R.string.app_ops_permissions_always_ask,
+    };
+
+    private static int modeToPosition(int mode) {
+        switch (mode) {
+            case AppOpsManager.MODE_ALLOWED:
+                return MODE_ALLOWED;
+            case AppOpsManager.MODE_IGNORED:
+                return MODE_IGNORED;
+            case AppOpsManager.MODE_ASK:
+                return MODE_ASK;
+            default:
+                return MODE_IGNORED;
+        }
+    }
+
+    private static int positionToMode(int position) {
+        switch (position) {
+            case MODE_ALLOWED:
+                return AppOpsManager.MODE_ALLOWED;
+            case MODE_IGNORED:
+                return AppOpsManager.MODE_IGNORED;
+            case MODE_ASK:
+                return AppOpsManager.MODE_ASK;
+            default:
+                return AppOpsManager.MODE_IGNORED;
+        }
     }
 }
