@@ -57,6 +57,10 @@ import com.android.settings.overlay.FeatureFactory;
 import com.android.settingslib.core.instrumentation.MetricsFeatureProvider;
 import com.android.settingslib.utils.ThreadUtils;
 
+import com.qualcomm.qcrilhook.QcRilHookCallback;
+import com.qualcomm.sysrilcmd.SysRilCmd;
+import com.qualcomm.sysrilcmd.ISysRilCmd;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -129,7 +133,25 @@ public class NetworkSelectSettings extends DashboardFragment {
 
         mMetricsFeatureProvider = FeatureFactory
                 .getFactory(getContext()).getMetricsFeatureProvider();
+
+        // add by T2M.dengxiangyu for FP4-2987 2022-01-05
+        mSysRil = new SysRilCmd(getContext(), mQcrilHookCb);
     }
+
+    // add by T2M.dengxiangyu for FP4-2987 2022-01-05 begin
+    private SysRilCmd mSysRil;
+    private QcRilHookCallback mQcrilHookCb = new QcRilHookCallback() {
+        @Override
+        public void onQcRilHookReady() {
+            Log.d(TAG, "onQcRilHookReady");
+        }
+
+        @Override
+        public void onQcRilHookDisconnected() {
+            Log.d(TAG, "onQcRilHookDisconnected");
+        }
+    };
+    // add by T2M.dengxiangyu for FP4-2987 2022-01-05 end
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -361,6 +383,15 @@ public class NetworkSelectSettings extends DashboardFragment {
         String imsi = mTelephonyManager.getSubscriberId();
         String operator = mTelephonyManager.getNetworkOperator(mSubId);
         Log.d(TAG, "imsi = " + imsi +",operator = "+operator);
+
+        // add by T2M.dengxiangyu for FP4-2987 2022-01-05 begin
+        if (operator == null || operator.isEmpty()) {
+            int phoneid = SubscriptionManager.getSlotIndex(mSubId);
+            operator = mSysRil.getDBStringValByPhoneid(ISysRilCmd.RIL_SUB_CMD_STRING_RPLMN, phoneid);
+            Log.d(TAG, "get rplmn[" + phoneid + "]: " + operator + " by sub: " + mSubId);
+        }
+        // add by T2M.dengxiangyu for FP4-2987 2022-01-05 end
+
         if (imsi.startsWith("23457")) {
             // display one rat for each operator.
             cellInfoList = processCellInfoList(cellInfoList);
