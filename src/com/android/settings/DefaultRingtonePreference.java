@@ -64,6 +64,7 @@ public class DefaultRingtonePreference extends RingtonePreference {
             return;
         }
 
+        Log.e("settings_ringtone"," onSaveRingtone " + ringtoneUri);
         setActualDefaultRingtoneUri(ringtoneUri);
     }
 
@@ -74,6 +75,7 @@ public class DefaultRingtonePreference extends RingtonePreference {
 
     @Override
     protected Uri onRestoreRingtone() {
+        Log.e("settings_ringtone"," onRestoreRingtone " + RingtoneManager.getActualDefaultRingtoneUri(mUserContext, getRingtoneType()));
         return RingtoneManager.getActualDefaultRingtoneUri(mUserContext, getRingtoneType());
     }
 
