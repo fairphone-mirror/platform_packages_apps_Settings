@@ -53,11 +53,14 @@ public abstract class RingtonePreferenceControllerBase extends AbstractPreferenc
     private void updateSummary(Preference preference) {
         final Uri ringtoneUri = RingtoneManager.getActualDefaultRingtoneUri(
                 mContext, getRingtoneType());
+	Log.e("settings_ringtone","updateSummary ringtoneUri " + ringtoneUri);
 
         final CharSequence summary;
         try {
             summary = Ringtone.getTitle(
                     mContext, ringtoneUri, false /* followSettingsUri */, true /* allowRemote */);
+
+	Log.e("settings_ringtone","summary " + summary);
         } catch (IllegalArgumentException e) {
             Log.w(TAG, "Error getting ringtone summary.", e);
             return;
