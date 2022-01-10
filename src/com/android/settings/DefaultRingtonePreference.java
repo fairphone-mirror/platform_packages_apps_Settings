@@ -22,6 +22,7 @@ import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.util.AttributeSet;
+import android.util.Log;
 
 public class DefaultRingtonePreference extends RingtonePreference {
     private static final String TAG = "DefaultRingtonePreference";
@@ -43,11 +44,13 @@ public class DefaultRingtonePreference extends RingtonePreference {
 
     @Override
     protected void onSaveRingtone(Uri ringtoneUri) {
+	Log.e("settings_ringtone"," onSaveRingtone " + ringtoneUri);
         RingtoneManager.setActualDefaultRingtoneUri(mUserContext, getRingtoneType(), ringtoneUri);
     }
 
     @Override
     protected Uri onRestoreRingtone() {
+	Log.e("settings_ringtone"," onRestoreRingtone " + RingtoneManager.getActualDefaultRingtoneUri(mUserContext, getRingtoneType()));
         return RingtoneManager.getActualDefaultRingtoneUri(mUserContext, getRingtoneType());
     }
 
