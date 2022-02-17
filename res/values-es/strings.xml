@@ -4224,7 +4224,10 @@
     <string name="preferred_network_mode_nr_lte_tdscdma_cdma_evdo_gsm_wcdma_summary" msgid="3396717432149544381">"Preferencia de modo de red: NR, LTE, TDSCDMA, CDMA, EvDo, GSM o WCDMA"</string>
     <string name="network_5G_recommended" msgid="4769018972369031538">"5G (recomendado)"</string>
     <string name="network_lte" msgid="2449425437381668780">"LTE (recomendado)"</string>
-    <string name="network_4G" msgid="9018841362928321047">"4G (recomendado)"</string>
+    <string name="network_4G" msgid="9018841362928321047">"Automático (4G/3G/2G)"</string>
+    <string name="network_3G">"Automático (3G/2G)"</string>
+    <string name="network_3G_only">"Sólo 3G"</string>
+    <string name="network_2G">"Sólo 2G"</string>
     <string name="select_automatically" msgid="2419752566747259155">"Seleccionar red automáticamente"</string>
     <string name="carrier_settings_title" msgid="6959295328730560529">"Ajustes del operador"</string>
     <string name="cdma_lte_data_service" msgid="6937443423651347345">"Configurar servicio de datos"</string>
