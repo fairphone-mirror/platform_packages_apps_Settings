@@ -267,6 +267,28 @@ public class EnabledNetworkModePreferenceController extends
                     CarrierConfigManager.KEY_SHOW_4G_FOR_LTE_DATA_ICON_BOOL);
         }
 
+        private boolean isVodafone_UK_SIM() {
+            boolean isVodafone_UK = false;
+            String mccmnc = mTelephonyManager.getSimOperator();
+            if (mccmnc != null) {
+               if ("23191".equals(mccmnc)) {
+                    isVodafone_UK = true;
+               }
+            }
+            return isVodafone_UK;
+        }
+
+       private boolean isVodafone_ES_SIM() {
+            boolean isVodafone_ES = false;
+            String mccmnc = mTelephonyManager.getSimOperator();
+            if (mccmnc != null) {
+               if ("21401".equals(mccmnc)) {
+                    isVodafone_ES = true;
+               }
+            }
+            return isVodafone_ES;
+        }
+
         void setPreferenceEntries() {
             clearAllEntries();
             String[] entryValues;
@@ -367,30 +389,48 @@ public class EnabledNetworkModePreferenceController extends
                     add2gEntry(entryValuesInt[1]);
                     break;
                 case ENABLED_NETWORKS_4G_CHOICES:
-                    entryValues = mContext.getResources().getStringArray(
-                            R.array.enabled_networks_values);
-                    entryValuesInt = Stream.of(entryValues).mapToInt(Integer::parseInt).toArray();
-                    if (entryValuesInt.length < 3) {
-                        throw new IllegalArgumentException(
-                                "ENABLED_NETWORKS_4G_CHOICES index error.");
-                    }
-                    add5gEntry(addNrToLteNetworkType(
-                            entryValuesInt[0]));
-                    add4gEntry(entryValuesInt[0]);
-                    add3gEntry(entryValuesInt[1]);
-                    add2gEntry(entryValuesInt[2]);
-                    break;
                 case ENABLED_NETWORKS_CHOICES:
-                    entryValues = mContext.getResources().getStringArray(
-                            R.array.enabled_networks_values);
-                    entryValuesInt = Stream.of(entryValues).mapToInt(Integer::parseInt).toArray();
-                    if (entryValuesInt.length < 3) {
-                        throw new IllegalArgumentException("ENABLED_NETWORKS_CHOICES index error.");
+                    if (isVodafone_UK_SIM()) {
+                        entryValues = mContext.getResources().getStringArray(
+                            R.array.preferred_network_vf_uk_values);
+                        entryValuesInt = Stream.of(entryValues).mapToInt(Integer::parseInt).toArray();
+                        if (entryValuesInt.length < 1) {
+                            throw new IllegalArgumentException(
+                                    "ENABLED_NETWORKS_CHOICES index error: preferred_network_vf_uk_values");
+                        }
+                        addCustomEntry(mContext.getString(R.string.network_auto_4G_3G_2G),
+                            entryValuesInt[0]);
+                    } else if (isVodafone_ES_SIM()) {
+                        entryValues = mContext.getResources().getStringArray(
+                            R.array.preferred_network_mode_vf_es_values);
+                        entryValuesInt = Stream.of(entryValues).mapToInt(Integer::parseInt).toArray();
+                        if (entryValuesInt.length < 3) {
+                            throw new IllegalArgumentException(
+                                    "ENABLED_NETWORKS_CHOICES index error: preferred_network_mode_vf_es_values");
+                        }
+                        addCustomEntry(mContext.getString(R.string.network_auto_4G_3G_2G),
+                           entryValuesInt[0]);
+                        addCustomEntry(mContext.getString(R.string.network_auto_3G_2G),
+                           entryValuesInt[1]);
+                        addCustomEntry(mContext.getString(R.string.network_3G_only),
+                           entryValuesInt[2]);
+                    } else {
+                        entryValues = mContext.getResources().getStringArray(
+                            R.array.preferred_network_mode_gsm_wcdma_lte_values);
+                        entryValuesInt = Stream.of(entryValues).mapToInt(Integer::parseInt).toArray();
+                        if (entryValuesInt.length < 4) {
+                            throw new IllegalArgumentException(
+                                    "ENABLED_NETWORKS_CHOICES index error: preferred_network_mode_gsm_wcdma_lte_values");
+                        }
+                        addCustomEntry(mContext.getString(R.string.network_auto_4G_3G_2G),
+                           entryValuesInt[0]);
+                        addCustomEntry(mContext.getString(R.string.network_auto_3G_2G),
+                           entryValuesInt[1]);
+                        addCustomEntry(mContext.getString(R.string.network_3G_only),
+                           entryValuesInt[2]);
+                        addCustomEntry(mContext.getString(R.string.network_2G_only),
+                           entryValuesInt[3]);
                     }
-                    add5gLteEntry(addNrToLteNetworkType(entryValuesInt[0]));
-                    addLteEntry(entryValuesInt[0]);
-                    add3gEntry(entryValuesInt[1]);
-                    add2gEntry(entryValuesInt[2]);
                     break;
                 case PREFERRED_NETWORK_MODE_CHOICES_WORLD_MODE:
                     entryValues = mContext.getResources().getStringArray(
@@ -563,11 +603,19 @@ public class EnabledNetworkModePreferenceController extends
             setSelectedEntry(networkMode);
             switch (networkMode) {
                 case TelephonyManagerConstants.NETWORK_MODE_TDSCDMA_WCDMA:
+                    setSelectedEntry(
+                            TelephonyManagerConstants.NETWORK_MODE_TDSCDMA_WCDMA);
+                    setSummary(R.string.network_3G_only);
+                    break;
                 case TelephonyManagerConstants.NETWORK_MODE_TDSCDMA_GSM_WCDMA:
+                    setSelectedEntry(
+                            TelephonyManagerConstants.NETWORK_MODE_TDSCDMA_GSM_WCDMA);
+                    setSummary(R.string.network_auto_3G_2G);
+                    break;
                 case TelephonyManagerConstants.NETWORK_MODE_TDSCDMA_GSM:
                     setSelectedEntry(
                             TelephonyManagerConstants.NETWORK_MODE_TDSCDMA_GSM_WCDMA);
-                    setSummary(R.string.network_3G);
+                    setSummary(R.string.network_auto_3G_2G);
                     break;
                 case TelephonyManagerConstants.NETWORK_MODE_WCDMA_ONLY:
                 case TelephonyManagerConstants.NETWORK_MODE_GSM_UMTS:
@@ -584,7 +632,7 @@ public class EnabledNetworkModePreferenceController extends
                 case TelephonyManagerConstants.NETWORK_MODE_GSM_ONLY:
                     if (!mIsGlobalCdma) {
                         setSelectedEntry(TelephonyManagerConstants.NETWORK_MODE_GSM_ONLY);
-                        setSummary(R.string.network_2G);
+                        setSummary(R.string.network_2G_only);
                     } else {
                         setSelectedEntry(
                                 TelephonyManagerConstants.NETWORK_MODE_LTE_CDMA_EVDO_GSM_WCDMA);
@@ -655,7 +703,7 @@ public class EnabledNetworkModePreferenceController extends
                         setSelectedEntry(TelephonyManagerConstants
                                 .NETWORK_MODE_LTE_TDSCDMA_CDMA_EVDO_GSM_WCDMA);
                         setSummary(is5gEntryDisplayed()
-                                ? R.string.network_lte_pure : R.string.network_lte);
+                                ? R.string.network_lte_pure : R.string.network_auto_4G_3G_2G);
                     } else {
                         setSelectedEntry(
                                 TelephonyManagerConstants.NETWORK_MODE_LTE_CDMA_EVDO_GSM_WCDMA);
@@ -668,8 +716,7 @@ public class EnabledNetworkModePreferenceController extends
                                 setSummary(mShow4gForLTE
                                         ? R.string.network_4G_pure : R.string.network_lte_pure);
                             } else {
-                                setSummary(mShow4gForLTE
-                                        ? R.string.network_4G : R.string.network_lte);
+                                setSummary(R.string.network_auto_4G_3G_2G);
                             }
                         }
                     }

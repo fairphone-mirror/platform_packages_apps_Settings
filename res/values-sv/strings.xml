@@ -4768,6 +4768,10 @@
     <string name="network_recommended" msgid="4665525658003183348">" (rekommenderas)"</string>
     <string name="network_lte" msgid="2449425437381668780">"LTE (rekommenderas)"</string>
     <string name="network_4G" msgid="9018841362928321047">"4G (rekommenderas)"</string>
+    <string name="network_auto_4G_3G_2G">Automatisk (4G/3G/2G)</string>
+    <string name="network_auto_3G_2G" translatable="false">Automatisk (3G/2G)</string>
+    <string name="network_3G_only" translatable="false">Bara 3G</string>
+    <string name="network_2G_only" translatable="false">Bara 2G</string>
     <string name="label_available" msgid="5305726869955838606">"Tillgängliga nätverk"</string>
     <string name="load_networks_progress" msgid="4717874401621250401">"Söker …"</string>
     <string name="register_on_network" msgid="2169662800750709709">"Registrerar på <xliff:g id="NETWORK">%s</xliff:g> …"</string>

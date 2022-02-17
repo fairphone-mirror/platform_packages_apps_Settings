@@ -1303,6 +1303,26 @@
         <item>@string/network_3G</item>
         <item>@string/network_2G</item>
     </string-array>
+	<string-array name="preferred_network_mode_gsm_wcdma_lte_choices">
+        <item>2G/3G/4G auto</item>
+        <item>2G/3G auto</item>
+        <item>3G only</item>
+        <item>2G only</item>
+    </string-array>
+    <string-array name="preferred_network_mode_gsm_wcdma_lte_values"  translatable="false">
+       <item>"20"</item>
+       <item>"18"</item>
+       <item>"14"</item>
+       <item>"1"</item>
+    </string-array>
+    <string-array name="preferred_network_vf_uk_values"  translatable="false">
+        <item>"22"</item>
+    </string-array>
+    <string-array name="preferred_network_mode_vf_es_values"  translatable="false">
+        <item>"20"</item>
+        <item>"18"</item>
+        <item>"14"</item>
+     </string-array>
     <string-array name="enabled_networks_values" translatable="false">
         <item>"9"</item>
         <item>"0"</item>

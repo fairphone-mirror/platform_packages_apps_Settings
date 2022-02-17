@@ -11714,6 +11714,10 @@
     <string name="network_3G_only" translatable="false">3G only</string>
     <!-- Text for Network 2g only [CHAR LIMIT=NONE] -->
     <string name="network_2G_only" translatable="false">2G only</string>
+    <!-- Text for Network auto 4g & 3g & 2g [CHAR LIMIT=NONE] -->
+    <string name="network_auto_4G_3G_2G">Automatic (4G/3G/2G)</string>
+    <!-- Text for Network auto 3g & 2g [CHAR LIMIT=NONE] -->
+    <string name="network_auto_3G_2G" translatable="false">Automatic (3G/2G)</string>
 
     <!-- Available networks screen title/heading [CHAR LIMIT=NONE] -->
     <string name="label_available">Available networks</string>
