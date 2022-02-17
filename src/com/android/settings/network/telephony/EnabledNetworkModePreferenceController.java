@@ -300,6 +300,7 @@ public class EnabledNetworkModePreferenceController extends
                             .setChoices(R.array.enabled_networks_values)
                             .addFormat(UiOptions.PresentFormat.add5gAnd4gEntry)
                             .addFormat(UiOptions.PresentFormat.add3gEntry)
+                            .addFormat(UiOptions.PresentFormat.add3gOnlyEntry)
                             .addFormat(UiOptions.PresentFormat.add2gEntry);
                     break;
                 case ENABLED_NETWORKS_CHOICES:
@@ -307,6 +308,7 @@ public class EnabledNetworkModePreferenceController extends
                             .setChoices(R.array.enabled_networks_values)
                             .addFormat(UiOptions.PresentFormat.add5gAndLteEntry)
                             .addFormat(UiOptions.PresentFormat.add3gEntry)
+                            .addFormat(UiOptions.PresentFormat.add3gOnlyEntry)
                             .addFormat(UiOptions.PresentFormat.add2gEntry);
                     break;
                 case PREFERRED_NETWORK_MODE_CHOICES_WORLD_MODE:
@@ -343,6 +345,9 @@ public class EnabledNetworkModePreferenceController extends
                     break;
                 case add3gEntry:
                     add3gEntry(entryValuesInt[entryIndex]);
+                    break;
+                case add3gOnlyEntry:
+                    add3gOnlyEntry(entryValuesInt[entryIndex]);
                     break;
                 case addGlobalEntry:
                     addGlobalEntry(entryValuesInt[entryIndex]);
@@ -478,6 +483,12 @@ public class EnabledNetworkModePreferenceController extends
                     setSummary(R.string.network_3G);
                     break;
                 case TelephonyManagerConstants.NETWORK_MODE_WCDMA_ONLY:
+                    if (!mIsGlobalCdma) {
+                        setSelectedEntry(TelephonyManagerConstants.NETWORK_MODE_WCDMA_ONLY);
+                        setSummary(R.string.network_3G_only);
+                        break;
+                    }
+                    // fall-through to NETWORK_MODE_WCDMA_PREF
                 case TelephonyManagerConstants.NETWORK_MODE_GSM_UMTS:
                 case TelephonyManagerConstants.NETWORK_MODE_WCDMA_PREF:
                     if (!mIsGlobalCdma) {
@@ -758,6 +769,11 @@ public class EnabledNetworkModePreferenceController extends
 
         private void add3gEntry(int value) {
             mEntries.add(getResourcesForSubId().getString(R.string.network_3G));
+            mEntriesValue.add(value);
+        }
+
+        private void add3gOnlyEntry(int value) {
+            mEntries.add(getResourcesForSubId().getString(R.string.network_3G_only));
             mEntriesValue.add(value);
         }
 

@@ -5415,7 +5415,10 @@
     <string name="preferred_network_mode_nr_lte_tdscdma_cdma_evdo_gsm_wcdma_summary" msgid="3396717432149544381">"Modalità di rete preferita: NR/LTE/TDSCDMA/CDMA/EvDo/GSM/WCDMA"</string>
     <string name="network_5G_recommended" msgid="4769018972369031538">"5G (opzione consigliata)"</string>
     <string name="network_lte" msgid="2449425437381668780">"LTE (opzione consigliata)"</string>
-    <string name="network_4G" msgid="9018841362928321047">"4G (opzione consigliata)"</string>
+    <string name="network_4G" msgid="9018841362928321047">"Automatico (4G/3G/2G)"</string>
+    <string name="network_3G">"Automatico (3G/2G)"</string>
+    <string name="network_3G_only">"Solo 3G"</string>
+    <string name="network_2G">"Solo 2G"</string>
     <string name="label_available" msgid="5305726869955838606">"Reti disponibili"</string>
     <string name="load_networks_progress" msgid="4717874401621250401">"Ricerca in corso…"</string>
     <string name="register_on_network" msgid="2169662800750709709">"Registrazione su <xliff:g id="NETWORK">%s</xliff:g>…"</string>
