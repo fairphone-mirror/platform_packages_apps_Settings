@@ -61,6 +61,7 @@ public class OemUnlockPreferenceController extends DeveloperOptionsPreferenceCon
     private static final int HTTP_OK_RESULT = 0x01;
     private static final int HTTP_CREATED_RESULT = 0x02;
     private static final int HTTP_FAIL_RESULT = 0x03;
+    private static final int HTTP_VERIFY_FAIL_UNKNOWN = 0x04;
     private static final boolean DEBUG = true;
     private OemLockVerifier mVerifier = null;
     private AlertDialog mWaitingDlg = null;
@@ -197,6 +198,9 @@ public class OemUnlockPreferenceController extends DeveloperOptionsPreferenceCon
                         case HTTP_FAIL_RESULT:
                             if (mWaitingDlg.isShowing()) mWaitingDlg.dismiss();
                             break;
+                        case HTTP_VERIFY_FAIL_UNKNOWN:
+                            if (mWaitingDlg.isShowing()) mWaitingDlg.dismiss();
+                            break;
                     }
                 }
             };
@@ -231,6 +235,12 @@ public class OemUnlockPreferenceController extends DeveloperOptionsPreferenceCon
                                 case OemLockVerifier.HTTP_VERIFY_FAIL_NO_SUCH_PHONE:
                                     uiUpdater.obtainMessage(HTTP_FAIL_RESULT).sendToTarget();
                                     message = "No such phone";
+                                    break;
+                                case OemLockVerifier.HTTP_VERIFY_FAIL_UNKNOWN:
+                                    uiUpdater
+                                            .obtainMessage(HTTP_VERIFY_FAIL_UNKNOWN)
+                                            .sendToTarget();
+                                    message = "No internet connection found";
                                     break;
                                 default:
                                     break;
