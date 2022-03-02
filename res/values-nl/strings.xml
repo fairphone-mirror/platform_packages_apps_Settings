@@ -1086,7 +1086,7 @@
     <item msgid="588620799769664461">"Wifi"</item>
     <item msgid="7566603075659706590">"Mobiel"</item>
   </string-array>
-    <string name="wifi_calling_mode_wifi_preferred_summary" msgid="3240387177966098351">"Mobiel netwerk gebruiken als er geef wifi beschikbaar is"</string>
+    <string name="wifi_calling_mode_wifi_preferred_summary" msgid="3240387177966098351">"Mobiel netwerk gebruiken als er geen wifi beschikbaar is"</string>
     <string name="wifi_calling_mode_cellular_preferred_summary" msgid="3746914244902314059">"Gebruik wifi als er geen mobiel netwerk beschikbaar is"</string>
     <string name="wifi_calling_mode_wifi_only_summary" msgid="3155660680014892641">"Bellen via wifi. Zonder wifi-signaal wordt het gesprek beëindigd."</string>
     <string name="wifi_calling_off_explanation" msgid="6295526820826322895">"Wanneer bellen via wifi is ingeschakeld, kan je telefoon gesprekken doorschakelen via wifi-netwerken of het netwerk van je provider, afhankelijk van je voorkeur en welk signaal sterker is. Voordat je deze functie inschakelt, neem je contact met je provider op over de kosten en andere details.<xliff:g id="ADDITIONAL_TEXT">%1$s</xliff:g>"</string>
