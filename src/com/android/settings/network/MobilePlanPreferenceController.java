@@ -34,6 +34,10 @@ import android.os.UserManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
+import android.telephony.CarrierConfigManager;
+import android.telephony.SubscriptionManager;
+import android.telephony.SubscriptionInfo;
+import android.os.PersistableBundle;
 
 import androidx.preference.Preference;
 
@@ -67,6 +71,8 @@ public class MobilePlanPreferenceController extends AbstractPreferenceController
 
     private ConnectivityManager mCm;
     private TelephonyManager mTm;
+    private SubscriptionManager mSm;
+    private CarrierConfigManager mCCm;
 
     private String mMobilePlanDialogMessage;
 
@@ -77,6 +83,8 @@ public class MobilePlanPreferenceController extends AbstractPreferenceController
         mCm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         mTm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         mUserManager = (UserManager) context.getSystemService(Context.USER_SERVICE);
+        mSm = (SubscriptionManager) context.getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE);
+        mCCm = (CarrierConfigManager) context.getSystemService(Context.CARRIER_CONFIG_SERVICE);
         mIsSecondaryUser = !mUserManager.isAdminUser();
     }
 
@@ -120,8 +128,29 @@ public class MobilePlanPreferenceController extends AbstractPreferenceController
         final boolean isPrefAllowedForUser = !mIsSecondaryUser
                 && !Utils.isWifiOnly(mContext)
                 && !hasBaseUserRestriction(mContext, DISALLOW_CONFIG_MOBILE_NETWORKS, myUserId());
-        return isPrefAllowedForUser && isPrefAllowedOnDevice;
+        // modify by T2M.zhang renjie for FP4-3555 22-3-11 begin
+        return isPrefAllowedForUser && isPrefAllowedOnDevice && !hasOrangeCard();
     }
+
+    private boolean hasOrangeCard() {
+        List<SubscriptionInfo> subInfoList = mSm.getActiveSubscriptionInfoList();
+        if (subInfoList != null) {
+            for (SubscriptionInfo subInfo : subInfoList) {
+                int subId = subInfo.getSubscriptionId();
+                PersistableBundle b = mCCm.getConfigForSubId(subId);
+                if (b != null) {
+                    if(b.getBoolean("orange_new_feature_enabled",false)){
+                        Log.i(TAG, "has Orange Card");
+                        return true;
+                    }
+
+                }
+            }
+        }
+        Log.i(TAG, "show mobile plan");
+        return false;
+    }
+    // modify by T2M.zhang renjie for FP4-3555 22-3-11 end
     @Override
     public String getPreferenceKey() {
         return KEY_MANAGE_MOBILE_PLAN;
