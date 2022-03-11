@@ -28,7 +28,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.UserManager;
+import android.os.PersistableBundle;
 import android.provider.Settings;
+import android.telephony.CarrierConfigManager;
 import android.telephony.PhoneStateListener;
 import android.telephony.ServiceState;
 import android.telephony.SubscriptionInfo;
@@ -64,6 +66,7 @@ public class MobileNetworkPreferenceController extends AbstractPreferenceControl
     @VisibleForTesting
     MobileNetworkTelephonyCallback mTelephonyCallback;
     private SubscriptionManager mSubscriptionManager;
+    private CarrierConfigManager mCarrierConfigManager;
 
     private BroadcastReceiver mAirplanModeChangedReceiver;
 
@@ -83,11 +86,31 @@ public class MobileNetworkPreferenceController extends AbstractPreferenceControl
             }
         };
         mSubscriptionManager = SubscriptionManager.from(context);
+        mCarrierConfigManager = (CarrierConfigManager) context.getSystemService(Context.CARRIER_CONFIG_SERVICE);
     }
 
     @Override
     public boolean isAvailable() {
-        return !isUserRestricted() && !Utils.isWifiOnly(mContext);
+        return !isUserRestricted() && !Utils.isWifiOnly(mContext) && !hasOrangeCard();
+    }
+
+    private boolean hasOrangeCard() {
+        List<SubscriptionInfo> subInfoList = mSubscriptionManager.getActiveSubscriptionInfoList();
+
+        if (subInfoList == null) {
+            return false;
+        }
+
+        for (SubscriptionInfo subInfo : subInfoList) {
+            int subId = subInfo.getSubscriptionId();
+            PersistableBundle bundle = mCarrierConfigManager.getConfigForSubId(subId);
+
+            if (bundle != null && bundle.getBoolean("orange_new_feature_enabled", false)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public boolean isUserRestricted() {
