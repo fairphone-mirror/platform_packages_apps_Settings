@@ -28,6 +28,7 @@ import android.os.UserManager;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.telephony.euicc.EuiccManager;
+import android.util.Log;
 
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
@@ -156,6 +157,15 @@ public class Prefer5GNetworkSummaryController extends AbstractPreferenceControll
 
     @Override
     public boolean isAvailable() {
+        final List<SubscriptionInfo> subs = SubscriptionUtil.getAvailableSubscriptions(
+                mContext);
+        for (int i = subs.size() - 1; i >= 0; i--) {
+            String mccmnc = subs.get(i).getMccString()+subs.get(i).getMncString();
+            Log.i(TAG, "Prefer5GNetworkSummaryController->isAvailable: " +mccmnc);
+            if (mccmnc.startsWith("23415")){
+                return false;
+            }
+        }
         return !Utils.isWifiOnly(mContext) && mUserManager.isAdminUser();
     }
 
