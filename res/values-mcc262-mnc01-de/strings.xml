@@ -16,5 +16,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="wifi_calling_off_explanation_2" msgid="5645212744935818562">\n\n"Du kannst von deinem Gerät via \"Wi-Fi Calling\" keine Notrufe tätigen. Wenn du versuchst, den Notruf zu erreichen, nutzt dein Gerät automatisch das Mobilfunknetz. Notrufe sind nur an Orten mit Mobilfunkabdeckung möglich."</string>
+    <string name="wifi_calling_settings_title" msgid="264665264535884440">"WLAN Call"</string>
+    <string name="wifi_calling_off_explanation" msgid="6295526820826322895">"Wenn die Option \"WLAN Call\" aktiviert ist, kann dein Smartphone abhängig von deiner Einstellung und von der Signalstärke Anrufe über WLANs oder über das Netz deines Mobilfunkanbieters übertragen. Bevor du diese Funktion aktivierst, solltest du dich bei deinem Mobilfunkanbieter nach den hierfür anfallenden Gebühren und anderen Voraussetzungen erkundigen.<xliff:g id="ADDITIONAL_TEXT">%1$s</xliff:g>"</string>
+    <string name="wifi_calling_main_switch_title" msgid="4070224008346815634">"WLAN Call verwenden"</string>
 </resources>
