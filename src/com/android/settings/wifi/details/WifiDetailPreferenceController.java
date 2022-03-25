@@ -168,7 +168,6 @@ public class WifiDetailPreferenceController extends AbstractPreferenceController
     private NetworkInfo mNetworkInfo;
     private NetworkCapabilities mNetworkCapabilities;
     private int mRssiSignalLevel = -1;
-    private int mWifiStandard;
     private boolean mIsReady;
     private String[] mSignalStr;
     private WifiConfiguration mWifiConfig;
@@ -693,7 +692,6 @@ public class WifiDetailPreferenceController extends AbstractPreferenceController
 
     private void refreshRssiViews() {
         int signalLevel = mAccessPoint.getLevel();
-        int wifiStandard = mAccessPoint.getWifiStandard();
         boolean isReady = (mAccessPoint.isVhtMax8SpatialStreamsSupported()
                           && mAccessPoint.isHe8ssCapableAp());
 
@@ -705,14 +703,12 @@ public class WifiDetailPreferenceController extends AbstractPreferenceController
         }
 
         if (mRssiSignalLevel == signalLevel
-            && mWifiStandard == wifiStandard
             && mIsReady == isReady) {
             return;
         }
         mRssiSignalLevel = signalLevel;
-        mWifiStandard = wifiStandard;
         mIsReady = isReady;
-        Drawable wifiIcon = mIconInjector.getIcon(mRssiSignalLevel, mWifiStandard, mIsReady);
+        Drawable wifiIcon = mIconInjector.getIcon(mRssiSignalLevel, 0 /* WIFI_STANDARD_UNKNOWN */, mIsReady);
 
         if (mEntityHeaderController != null) {
             mEntityHeaderController
