@@ -399,9 +399,9 @@ public class NetworkSelectSettings extends DashboardFragment {
             for (int i = cellInfoList.size() - 1; i >= 0; i--) {
                 CellInfo cellInfo = cellInfoList.get(i);
                 CellIdentity cid = CellInfoUtil.getCellIdentity(cellInfo);
-                if (cid.getOperatorAlphaLong().toString().toLowerCase().contains("o2") || cid.getOperatorAlphaShort().toString().toLowerCase().contains("o2")) {
+                /*if (cid.getOperatorAlphaLong().toString().toLowerCase().contains("o2") || cid.getOperatorAlphaShort().toString().toLowerCase().contains("o2")) {
                     cellInfoList.remove(cellInfo);
-                }
+                }*/
                 if (cid.getOperatorAlphaLong().toString().toLowerCase().contains("virgin") || cid.getOperatorAlphaShort().toString().toLowerCase().contains("virgin")) {
                     cellInfoList.remove(cellInfo);
                 }
