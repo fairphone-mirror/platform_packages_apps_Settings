@@ -4990,4 +4990,6 @@
     <string name="bluetooth_connect_access_dialog_positive" msgid="3630561675207269710">"Connetti"</string>
     <string name="data_preference">Preferenza dati</string>
     <string name="fingerprint_settings_open_description">"Selezionare se si preferisce sbloccare il telefono senza prima accendere lo schermo."</string>
+    <string name="fingerprint_settings_open_title">Controllo dello sblocco con impronte digitali</string>
+
 </resources>
