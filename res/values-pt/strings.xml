@@ -4989,5 +4989,6 @@
     <string name="bluetooth_connect_access_dialog_negative" msgid="4944672755226375059">"Não conectar"</string>
     <string name="bluetooth_connect_access_dialog_positive" msgid="3630561675207269710">"Conectar"</string>
     <string name="fingerprint_settings_open_description">"Ligue se você preferir desbloquear sem acordar o telefone primeiro."</string>
+    <string name="fingerprint_settings_open_title">Impressão digital desbloquear comportamento</string>
 
 </resources>
