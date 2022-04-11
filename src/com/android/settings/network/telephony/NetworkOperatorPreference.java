@@ -34,6 +34,8 @@ import android.telephony.CellInfoNr;
 import android.telephony.CellInfoTdscdma;
 import android.telephony.CellInfoWcdma;
 import android.telephony.CellSignalStrength;
+import android.telephony.TelephonyManager;
+import android.telephony.AccessNetworkConstants.AccessNetworkType;
 import android.util.Log;
 
 import androidx.preference.Preference;
@@ -172,7 +174,37 @@ public class NetworkOperatorPreference extends Preference {
      * Operator name of this cell
      */
     public String getOperatorName() {
-        return CellInfoUtil.getNetworkTitle(mCellId, getOperatorNumeric());
+        String nwTitle = CellInfoUtil.getNetworkTitle(mCellId, getOperatorNumeric());
+        String opNumeric = getOperatorNumeric();
+
+        TelephonyManager tm = (TelephonyManager)
+            getContext().getSystemService(TelephonyManager.class);
+        String gid1 = tm.getGroupIdLevel1();
+        if((opNumeric == null) || (gid1 == null))
+            return nwTitle;
+
+        if(opNumeric.matches("23430") && gid1.matches("^280+$")) {
+            int nwType = getAccessNetworkType();
+            String opName = "Virgin ";
+            switch(nwType) {
+                case AccessNetworkType.NGRAN:
+                    opName += "5G";
+                    break;
+                case AccessNetworkType.EUTRAN:
+                    opName += "4G";
+                    break;
+                case AccessNetworkType.UTRAN:
+                    opName += "3G";
+                    break;
+                case AccessNetworkType.GERAN:
+                    opName += "2G";
+                    break;
+                default:
+                    break;
+            }
+            return opName;
+        }
+        return nwTitle;
     }
 
     /**
