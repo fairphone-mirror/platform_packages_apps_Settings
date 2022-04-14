@@ -63,6 +63,7 @@ public class SettingsInitialize extends BroadcastReceiver {
         managedProfileSetup(context, pm, broadcast, userInfo);
         webviewSettingSetup(context, pm, userInfo);
         refreshExistingShortcuts(context);
+        ShutdownJobService.startShutdownJob(context);
     }
 
     private void managedProfileSetup(Context context, final PackageManager pm, Intent broadcast,
