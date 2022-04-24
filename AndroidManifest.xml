@@ -3968,5 +3968,13 @@
         <service android:name=".t2mCustomer.CustomerService"
             android:exported="true"/>
 
+        <receiver android:name="BackupImsProfile">
+             <intent-filter>
+                 <action android:name="android.intent.action.SIM_STATE_CHANGED"/>
+                 <action android:name="android.intent.action.BOOT_COMPLETED" />
+                 <category android:name="android.intent.category.DEFAULT" />
+             </intent-filter>
+        </receiver>
+
     </application>
 </manifest>
