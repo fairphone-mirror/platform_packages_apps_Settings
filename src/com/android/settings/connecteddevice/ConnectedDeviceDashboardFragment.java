@@ -71,9 +71,6 @@ import android.util.Log;
 public class ConnectedDeviceDashboardFragment extends DashboardFragment {
 
     private static final String TAG = "ConnectedDeviceFrag";
-    private static final String SETTINGS_PACKAGE_NAME = "com.android.settings";
-    private static final String SYSTEMUI_PACKAGE_NAME = "com.android.systemui";
-    private static final boolean DEBUG = Log.isLoggable(TAG, Log.DEBUG);
     private static final String TAG_GROUP = "Group";
 
     public static final boolean DBG_GROUP = Log.isLoggable(TAG_GROUP, Log.DEBUG);
