@@ -71,7 +71,7 @@ public class RegulatoryInfoDisplayActivity extends Activity implements
         /*AlertDialog.Builder builder = new AlertDialog.Builder(this)
                 .setTitle(R.string.regulatory_labels)
                 .setOnDismissListener(this)
-                .setPositiveButton(android.R.string.ok, null /* onClickListener */);
+                .setPositiveButton(android.R.string.ok, null);
 
         boolean regulatoryInfoDrawableExists = false;
 
