@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"თითის ანაბეჭდის რეგისტრაცია ვერ მოხერხდა. ცადეთ ისევ ან გამოიყენეთ სხვა თითი."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"კიდევ ერთის დამატება"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"შემდეგი"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"თქვენი ტელეფონის განბლოკვასთან ერთად, თქვენი თითის ანაბეჭდი ასევე შეგიძლიათ გამოიყენოთ  შესყიდვებისა და აპების წვდომის დასამოწმებლად. "<annotation id="url">"შეიტყვეთ მეტი"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"თქვენი ტელეფონის განბლოკვასთან ერთად, თქვენი თითის ანაბეჭდი ასევე შეგიძლიათ გამოიყენოთ  შესყიდვებისა და აპების წვდომის დასამოწმებლად. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" ეკრანის დაბლოკვის ვარიანტი გათიშულია. დამატებითი ინფორმაციისთვის დაუკავშირდით თქვენი ორგანიზაციის ადმინისტრატორს. "<annotation id="admin_details">"ვრცლად"</annotation>\n\n"შენაძენებისა და აპებზე წვდომის ავტორიზაცია კვლავ შეგიძლიათ თითის ანაბეჭდის მეშვეობით. "<annotation id="url">"შეიტყვეთ მეტი"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"თითი აიღეთ და შემდეგ ხელახლა შეეხეთ სენსორს"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"შეგიძლიათ დაამატოთ მაქსიმუმ <xliff:g id="COUNT">%d</xliff:g> თითის ანაბეჭდი"</string>
@@ -1930,7 +1930,7 @@
     <string name="internal_storage" msgid="999496851424448809">"შიდა მეხსიერება"</string>
     <string name="recompute_size" msgid="1098091228370999128">"ზომის გადათვლა…"</string>
     <string name="clear_data_dlg_title" msgid="180446967743732410">"წაიშალოს აპის მონაცემები?"</string>
-    <string name="clear_data_dlg_text" msgid="7870723948123690332">"აპის მონაცემები, მათ შორის ყველა ფაილი, პარამეტრი, ანგარიში, მონაცემთა ბაზა და ა.შ. სამუდამოდ წაიშლება."</string>
+    <string name="clear_data_dlg_text" msgid="1107610960337399006">"ამ აპის მონაცემები სამუდამოდ წაიშლება. ეს ეხება ფაილებს, პარამეტრებს, მონაცემთა ბაზებსა და აპის სხვა მონაცემებს."</string>
     <string name="dlg_ok" msgid="1421350367857960997">"კარგი"</string>
     <string name="dlg_cancel" msgid="5164705061530774899">"გაუქმება"</string>
     <string name="app_not_found_dlg_title" msgid="7122106240981109930"></string>

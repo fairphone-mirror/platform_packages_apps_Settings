@@ -136,7 +136,7 @@ public class ToggleAutoclickPreferenceController extends BasePreferenceControlle
     @Override
     public void updateState(Preference preference) {
         super.updateState(preference);
-
+        if(mDelayModePref == null) return;
         final boolean enabled = Settings.Secure.getInt(mContext.getContentResolver(),
                 Settings.Secure.ACCESSIBILITY_AUTOCLICK_ENABLED, 0) == 1;
 

@@ -413,7 +413,7 @@
     <string name="go_back_button_label" msgid="6139455414099035594">"Torna indietro"</string>
     <string name="skip_lock_screen_dialog_button_label" msgid="641984698150020591">"Salta"</string>
     <string name="cancel_lock_screen_dialog_button_label" msgid="1801132985957491690">"Annulla"</string>
-    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Tocca il sensore"</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Tocca il sensore di impronte digitali"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"Si trova sulla parte posteriore del telefono. Utilizza il dito indice."</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_content_description" msgid="3065850549419750523">"Illustrazione con il dispositivo e la posizione del sensore di impronte"</string>
     <string name="security_settings_fingerprint_enroll_dialog_name_label" msgid="7298812463228440333">"Nome"</string>
@@ -446,8 +446,8 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Registrazione dell\'impronta non riuscita. Riprova o utilizza un dito diverso."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Aggiungine un\'altra"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Avanti"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Oltre che per sbloccare il telefono, puoi utilizzare la tua impronta per autorizzare acquisti e accessi alle app. "<annotation id="url">"Scopri di più"</annotation></string>
-    <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" L\'opzione di blocco dello schermo è disattivata. Per ulteriori informazioni, contatta l\'amministratore della tua organizzazione. "<annotation id="admin_details">"Altri dettagli"</annotation>\n\n"Puoi comunque utilizzare la tua impronta per autorizzare acquisti e accessi alle app. "<annotation id="url">"Scopri di più"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Oltre che per sbloccare il telefono, puoi utilizzare la tua impronta per autorizzare acquisti e accessi alle app. "</string>
+    <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" L\'opzione di blocco dello schermo è disattivata. Per ulteriori informazioni, contatta l\'amministratore della tua organizzazione. "<annotation id="admin_details">"Altri dettagli"</annotation>\n\n"Puoi comunque utilizzare la tua impronta per autorizzare acquisti e accessi alle app. "<annotation id="url">"Ulteriori informazioni"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Solleva il dito, quindi tocca di nuovo il sensore"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"Puoi aggiungere fino a <xliff:g id="COUNT">%d</xliff:g> impronte digitali"</string>
     <string name="fingerprint_intro_error_max" msgid="4431784409732135610">"Hai aggiunto il numero massimo di impronte digitali"</string>
@@ -1930,7 +1930,7 @@
     <string name="internal_storage" msgid="999496851424448809">"Memoria interna"</string>
     <string name="recompute_size" msgid="1098091228370999128">"Ricalcolo dimensioni…"</string>
     <string name="clear_data_dlg_title" msgid="180446967743732410">"Eliminare i dati dell\'app?"</string>
-    <string name="clear_data_dlg_text" msgid="7870723948123690332">"Tutti i dati dell\'app verranno eliminati definitivamente, inclusi tutti i file, le impostazioni, gli account, i database e così via."</string>
+    <string name="clear_data_dlg_text" msgid="1107610960337399006">"I dati di questa app verranno eliminati definitivamente, inclusi file, impostazioni, database e altri dati dell'app."</string>
     <string name="dlg_ok" msgid="1421350367857960997">"OK"</string>
     <string name="dlg_cancel" msgid="5164705061530774899">"Annulla"</string>
     <string name="app_not_found_dlg_title" msgid="7122106240981109930"></string>
@@ -4968,6 +4968,9 @@
     <string name="keywords_media_controls" msgid="8345490568291778638">"contenuti multimediali"</string>
     <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Verrà attivato il Bluetooth"</string>
     <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"Non disponibili perché la modalità Riposo è attiva"</string>
+    <string name="longevity_device_statistics_list_item_title">Durata e statistiche del dispositivo</string>
+    <string name="status_sdn">Servizio chiamata (SDN).</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"È il pulsante di accensione sul lato del telefono"</string>
     <string name="bluetooth_message_access_notification_content" msgid="5111712860712823893">"Un dispositivo richiede l\'accesso ai tuoi messaggi. Tocca per conoscere i dettagli."</string>
     <string name="bluetooth_message_access_dialog_title" msgid="9009836130395061579">"Vuoi consentire l\'accesso ai messaggi?"</string>
     <string name="bluetooth_message_access_dialog_content" msgid="7186694737578788487">"Un dispositivo Bluetooth, <xliff:g id="DEVICE_NAME_0">%1$s</xliff:g>, richiede l\'accesso ai tuoi messaggi.\n\nNon hai mai effettuato la connessione a <xliff:g id="DEVICE_NAME_1">%2$s</xliff:g> in passato."</string>
@@ -4985,4 +4988,8 @@
     <string name="bluetooth_connect_access_dialog_content" msgid="4336436466468405850">"<xliff:g id="DEVICE_NAME_0">%1$s</xliff:g> vorrebbe connettersi a questo telefono.\n\nNon hai mai effettuato la connessione al dispositivo <xliff:g id="DEVICE_NAME_1">%2$s</xliff:g>."</string>
     <string name="bluetooth_connect_access_dialog_negative" msgid="4944672755226375059">"Non connettere"</string>
     <string name="bluetooth_connect_access_dialog_positive" msgid="3630561675207269710">"Connetti"</string>
+    <string name="data_preference">Preferenza dati</string>
+    <string name="fingerprint_settings_open_description">"Selezionare se si preferisce sbloccare il telefono senza prima accendere lo schermo."</string>
+    <string name="fingerprint_settings_open_title">Controllo dello sblocco con impronte digitali</string>
+
 </resources>

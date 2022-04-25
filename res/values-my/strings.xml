@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"လက်ဗွေထည့်သွင်းမှု အဆင်မပြေပါ။ အခြားလက်ချောင်းကို သုံးပါ သို့မဟုတ် ထပ်စမ်းကြည့်ပါ။"</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"နောက်တစ်ခု ထည့်ရန်"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"ရှေ့သို့"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ဖုန်းကို လော့ခ်ဖွင့်ရန်သာမက ဝယ်ယူမှုများနှင့် အက်ပ်ခွင့်ပြုရန်အတွက် သင့်လက်ဗွေကို အသုံးပြုနိုင်သည်။ "<annotation id="url">"ပိုမိုလေ့လာရန်"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ဖုန်းကို လော့ခ်ဖွင့်ရန်သာမက ဝယ်ယူမှုများနှင့် အက်ပ်ခွင့်ပြုရန်အတွက် သင့်လက်ဗွေကို အသုံးပြုနိုင်သည်။ "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" မျက်နှာပြင်လော့ခ်ချခြင်းစနစ်များကို ပိတ်ထားသည်။ ပိုမိုလေ့လာရန် သင့်အဖွဲ့အစည်း၏ စီမံခန့်ခွဲသူကို ဆက်သွယ်ပါ။ "<annotation id="admin_details">"နောက်ထပ် အသေးစိတ်များ"</annotation>\n\n"ဝယ်ယူမှုများနှင့် အက်ပ်အသုံးပြုမှုကို ခွင့်ပြုရန် သင့်လက်ဗွေကို အသုံးပြုနိုင်ပါသေးသည်။ "<annotation id="url">"ပိုမိုလေ့လာရန်"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"လက်ချောင်းကို မ ပြီး၊ အာရုံခံနေရာကို ထပ်မံထိပါ"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"လက်ဗွေရာ <xliff:g id="COUNT">%d</xliff:g> ခု အထိ သင်ထည့်နိုင်၏"</string>
@@ -1930,7 +1930,7 @@
     <string name="internal_storage" msgid="999496851424448809">"စက်တွင်း သိုလှောင်ထားမှု"</string>
     <string name="recompute_size" msgid="1098091228370999128">"အရွယ်အစားကို ပြန်လည်တွက်ချက်နေသည်"</string>
     <string name="clear_data_dlg_title" msgid="180446967743732410">"အက်ပ်ဒေတာ ဖျက်မလား။"</string>
-    <string name="clear_data_dlg_text" msgid="7870723948123690332">"ဤအက်ပ်၏ ဒေတာအားလုံးကို အပြီးဖျက်ပါမည်။ ဖိုင်၊ ဆက်တင်၊ အကောင့်၊ ဒေတာဘေ့စ်စသည်တို့ အားလုံးပါဝင်သည်။"</string>
+    <string name="clear_data_dlg_text" msgid="1107610960337399006">"ဤအက်ပ်၏ ဒေတာကို အပြီးဖျက်ပါမည်။ ၎င်းတွင် ဖိုင်၊ ဆက်တင်၊ ဒေတာဘေ့စ်နှင့် အခြားအက်ပ် ဒေတာများ ပါဝင်သည်။"</string>
     <string name="dlg_ok" msgid="1421350367857960997">"OK"</string>
     <string name="dlg_cancel" msgid="5164705061530774899">"မလုပ်တော့"</string>
     <string name="app_not_found_dlg_title" msgid="7122106240981109930"></string>

@@ -346,18 +346,20 @@ public class ApnSettings extends RestrictedSettingsFragment
         Context appContext = getActivity().getApplicationContext();
         boolean isVoLTEEnabled = ImsManager.getInstance(appContext, phoneId)
                 .isEnhanced4gLteModeSettingEnabledByUser();
-        if (mHideImsApn || (Utils.isSupportCTPA(appContext) && !isVoLTEEnabled)) {
+        //Modify Begin by cheng-he for FP4-1772 on 2021/07/23
+        if (mHideImsApn) {
             where.append(" AND NOT (type='ims')");
         }
-
+        //Modify End by cheng-he for FP4-1772 on 2021/07/23
         appendFilter(where);
 
         Log.d(TAG, "where = " + where.toString());
-
+        //Modify Begin by cheng-he for FP4-1772 on 2021/07/23
+	String order = SubscriptionManager.getResourcesForSubId(getContext(), subId).getString(R.string.config_settings_order_apnlist);
         final Cursor cursor = getContentResolver().query(simApnUri,
                 CARRIERS_PROJECTION, where.toString(), null,
-                Telephony.Carriers.DEFAULT_SORT_ORDER);
-
+                order);
+        //Modify End by cheng-he for FP4-1772 on 2021/07/23
         if (cursor != null) {
             final PreferenceGroup apnPrefList = (PreferenceGroup) findPreference("apn_list");
             apnPrefList.removeAll();
@@ -377,6 +379,12 @@ public class ApnSettings extends RestrictedSettingsFragment
                 final String key = cursor.getString(ID_INDEX);
                 final String type = cursor.getString(TYPES_INDEX);
                 final int edited = cursor.getInt(EDITED_INDEX);
+                //Add Begin by cheng-he for FP4-2551 on 2021/08/19
+                if(apn == null || apn.trim().equals("")) {
+                    cursor.moveToNext();
+                    continue;
+                }
+                //Add End by cheng-he for FP4-2551 on 2021/08/19
                 mMvnoType = cursor.getString(MVNO_TYPE_INDEX);
                 mMvnoMatchData = cursor.getString(MVNO_MATCH_DATA_INDEX);
 
@@ -386,7 +394,8 @@ public class ApnSettings extends RestrictedSettingsFragment
                 if (!TextUtils.isEmpty(localizedName)) {
                     name = localizedName;
                 }
-                int bearer = cursor.getInt(BEARER_INDEX);
+                //Delete Begin by cheng-he for FP4-1772 on 2021/07/23
+                /*int bearer = cursor.getInt(BEARER_INDEX);
                 int bearerBitMask = cursor.getInt(BEARER_BITMASK_INDEX);
                 int fullBearer = ServiceState.getBitmaskForTech(bearer) | bearerBitMask;
                 int radioTech = networkTypeToRilRidioTechnology(TelephonyManager.getDefault()
@@ -399,7 +408,8 @@ public class ApnSettings extends RestrictedSettingsFragment
                         cursor.moveToNext();
                         continue;
                     }
-                }
+                }*/
+                //Delete End by cheng-he for FP4-1772 on 2021/07/23
                 final ApnPreference pref = new ApnPreference(getPrefContext());
 
                 pref.setKey(key);
@@ -422,6 +432,12 @@ public class ApnSettings extends RestrictedSettingsFragment
                     if ((mSelectedKey != null) && mSelectedKey.equals(key)) {
                         pref.setChecked();
                     }
+                    /* Add by T2M.feizhang 20210603 for 11190535 FP4-473 start*/
+                    if((mSelectedKey == null) && (type != null && type.contains("default") ))
+                    {
+                        pref.setChecked();
+                    }
+                    /* Add by T2M.feizhang 20210603 for 11190535 FP4-473 end*/
                     apnList.add(pref);
                 } else {
                     mmsApnList.add(pref);
@@ -436,6 +452,9 @@ public class ApnSettings extends RestrictedSettingsFragment
             for (Preference preference : mmsApnList) {
                 apnPrefList.addPreference(preference);
             }
+            //Add Begin by cheng-he for FP4-2439 on 2021/08/19
+            setPreferApnChecked(apnList);
+            //Add End by cheng-he for FP4-2439 on 2021/08/19
         }
     }
 
@@ -761,4 +780,35 @@ public class ApnSettings extends RestrictedSettingsFragment
         }
         return 0;
     }
+
+    //Add Begin by cheng-he for FP4-2439 on 2021/08/19
+    private void setPreferApnChecked(ArrayList<ApnPreference> apnList) {
+        if (apnList == null || apnList.isEmpty()) {
+            return;
+        }
+
+        String selectedKey = null;
+        if (mSelectedKey != null) {
+            for (ApnPreference pref : apnList) {
+                if (mSelectedKey.equals(pref.getKey())) {
+                    pref.setChecked();
+                    selectedKey = mSelectedKey;
+                }
+            }
+        }
+
+        // can't find prefer APN in the list, reset to the first one
+        if (selectedKey == null && apnList.get(0) != null) {
+            apnList.get(0).setChecked();
+            selectedKey = apnList.get(0).getKey();
+        }
+
+        // save the new APN
+        if (selectedKey != null && !selectedKey.equals(mSelectedKey)) {
+            setSelectedApnKey(selectedKey);
+        }
+
+        Log.d(TAG, "setPreferApnChecked, APN = " + mSelectedKey);
+    }
+    //Add End by cheng-he for FP4-2439 on 2021/08/19
 }

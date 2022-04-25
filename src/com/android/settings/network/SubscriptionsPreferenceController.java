@@ -55,6 +55,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import android.os.SystemProperties;
 
 /**
  * This manages a set of Preferences it places into a PreferenceGroup owned by some parent
@@ -66,6 +67,8 @@ public class SubscriptionsPreferenceController extends AbstractPreferenceControl
         MobileDataEnabledListener.Client, DataConnectivityListener.Client,
         SignalStrengthListener.Callback {
     private static final String TAG = "SubscriptionsPrefCntrlr";
+    private static final String SIM_DATA_SWITCH_DEFAULT = "persist.sys.settingswitch.sim";
+    private static final String SIM_DATA_SWITCH_ESIM = "persist.sys.settingswitch.esim";
 
     private UpdateListener mUpdateListener;
     private String mPreferenceGroupKey;
@@ -218,6 +221,16 @@ public class SubscriptionsPreferenceController extends AbstractPreferenceControl
         if (shouldInflateSignalStrength(subId)) {
             level += 1;
             numLevels += 1;
+        }
+        int phoneId = mManager.getSlotIndex(subId);
+        boolean settingsSwitchOn = false;
+        if (phoneId == 0) {
+            settingsSwitchOn = SystemProperties.getBoolean(SIM_DATA_SWITCH_DEFAULT, true);
+        }else{
+            settingsSwitchOn = SystemProperties.getBoolean(SIM_DATA_SWITCH_ESIM, true);
+        }
+        if (!settingsSwitchOn) {
+            level = 0;                
         }
         final boolean showCutOut = !isDefaultForData || !mgr.isDataEnabled();
         pref.setIcon(getIcon(level, numLevels, showCutOut));

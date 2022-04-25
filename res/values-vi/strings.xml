@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Đăng ký dấu vân tay không hoạt động. Hãy thử lại hoặc sử dụng ngón tay khác."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Thêm vân tay khác"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Tiếp theo"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Ngoài việc mở khóa điện thoại, bạn còn có thể dùng vân tay của mình để mua hàng và truy cập ứng dụng. "<annotation id="url">"Tìm hiểu thêm"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Ngoài việc mở khóa điện thoại, bạn còn có thể dùng vân tay của mình để mua hàng và truy cập ứng dụng. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" Tùy chọn khóa màn hình đã bị tắt. Hãy liên hệ với quản trị viên của tổ chức bạn để tìm hiểu thêm. "<annotation id="admin_details">"Thông tin chi tiết khác"</annotation>\n\n"Bạn vẫn có thể sử dụng vân tay của mình để ủy quyền mua hàng và truy cập ứng dụng. "<annotation id="url">"Tìm hiểu thêm"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Nhấc ngón tay, sau đó chạm lại vào cảm biến"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"Bạn có thể thêm tối đa <xliff:g id="COUNT">%d</xliff:g> tệp tham chiếu"</string>
@@ -1930,7 +1930,7 @@
     <string name="internal_storage" msgid="999496851424448809">"Bộ nhớ trong"</string>
     <string name="recompute_size" msgid="1098091228370999128">"Đang tính toán lại kích thước…"</string>
     <string name="clear_data_dlg_title" msgid="180446967743732410">"Xóa dữ liệu ứng dụng?"</string>
-    <string name="clear_data_dlg_text" msgid="7870723948123690332">"Tất cả dữ liệu của ứng dụng này sẽ bị xóa vĩnh viễn, bao gồm tất cả các tệp, các tùy chọn cài đặt, tài khoản, cơ sở dữ liệu, v.v."</string>
+    <string name="clear_data_dlg_text" msgid="1107610960337399006">"Dữ liệu của ứng dụng này sẽ bị xóa vĩnh viễn. Dữ liệu này bao gồm các tệp, chế độ cài đặt, cơ sở dữ liệu và dữ liệu ứng dụng khác."</string>
     <string name="dlg_ok" msgid="1421350367857960997">"OK"</string>
     <string name="dlg_cancel" msgid="5164705061530774899">"Hủy"</string>
     <string name="app_not_found_dlg_title" msgid="7122106240981109930"></string>

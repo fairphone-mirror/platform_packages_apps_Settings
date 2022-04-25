@@ -467,6 +467,11 @@
         <item name="android:paddingBottom">24dp</item>
     </style>
 
+    <style name="device_info_dialog_value_noPaddingBottom">
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textAppearance">@*android:style/TextAppearance.DeviceDefault.Body2</item>
+    </style>
+
     <style name="ContextualCardStyle">
         <item name="android:layout_marginBottom">@dimen/contextual_card_vertical_margin</item>
         <item name="android:layout_marginStart">@dimen/contextual_card_side_margin</item>

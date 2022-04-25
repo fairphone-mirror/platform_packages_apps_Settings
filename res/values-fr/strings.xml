@@ -413,7 +413,7 @@
     <string name="go_back_button_label" msgid="6139455414099035594">"Retour"</string>
     <string name="skip_lock_screen_dialog_button_label" msgid="641984698150020591">"Passer"</string>
     <string name="cancel_lock_screen_dialog_button_label" msgid="1801132985957491690">"Annuler"</string>
-    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Posez le doigt sur le lecteur"</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Touchez le capteur d'empreinte digitale"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"Le lecteur se trouve à l\'arrière du téléphone. Utilisez l\'index."</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_content_description" msgid="3065850549419750523">"Illustration présentant l\'appareil et la position du lecteur d\'empreintes digitales"</string>
     <string name="security_settings_fingerprint_enroll_dialog_name_label" msgid="7298812463228440333">"Nom"</string>
@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"L\'enregistrement de l\'empreinte digitale n\'a pas fonctionné. Veuillez réessayer ou utiliser un autre doigt."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Ajouter une empreinte"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Suivant"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Votre empreinte digitale vous permet non seulement de déverrouiller votre téléphone, mais également d\'autoriser des achats et d\'accéder à des applications. "<annotation id="url">"En savoir plus"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Votre empreinte digitale vous permet non seulement de déverrouiller votre téléphone, mais également d\'autoriser des achats et d\'accéder à des applications. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" L\'option de verrouillage de l\'écran est désactivée. Pour en savoir plus, contactez l\'administrateur de votre entreprise. "<annotation id="admin_details">"Plus d\'informations"</annotation>\n\n"Vous pouvez toujours utiliser votre empreinte digitale pour autoriser des achats et l\'accès aux applications. "<annotation id="url">"En savoir plus"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Relevez le doigt, puis reposez-le sur le lecteur"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"Vous pouvez ajouter jusqu\'à <xliff:g id="COUNT">%d</xliff:g> empreintes digitales."</string>
@@ -1930,7 +1930,7 @@
     <string name="internal_storage" msgid="999496851424448809">"Stockage interne"</string>
     <string name="recompute_size" msgid="1098091228370999128">"Calcul de la taille..."</string>
     <string name="clear_data_dlg_title" msgid="180446967743732410">"Supprimer les données de l\'application ?"</string>
-    <string name="clear_data_dlg_text" msgid="7870723948123690332">"Toutes les données de cette application (fichiers, paramètres, comptes, bases de données, etc.) seront définitivement supprimées."</string>
+    <string name="clear_data_dlg_text" msgid="1107610960337399006">"Les données de cette application (fichiers, paramètres, comptes, bases de données, etc.) seront définitivement supprimées."</string>
     <string name="dlg_ok" msgid="1421350367857960997">"OK"</string>
     <string name="dlg_cancel" msgid="5164705061530774899">"Annuler"</string>
     <string name="app_not_found_dlg_title" msgid="7122106240981109930"></string>
@@ -4892,7 +4892,7 @@
     <string name="wfc_disclaimer_agree_button_text" msgid="4082872292910770344">"CONTINUER"</string>
     <string name="wfc_disclaimer_disagree_text" msgid="8424457394700137703">"NON MERCI"</string>
     <string name="wfc_disclaimer_location_title_text" msgid="7913919887475418423">"Position"</string>
-    <string name="wfc_disclaimer_location_desc_text" msgid="2799241640320172899">"Il se peut que votre fournisseur de services recueille votre position pour vous fournir ce service.\n\nVeuillez consulter les règles de confidentialité de votre fournisseur de services."</string>
+    <string name="wfc_disclaimer_location_desc_text" msgid="2799241640320172899">"Vos informations de localisation peuvent être transmises à Google et à votre opérateur afin d’établir  les appels en  Wi-Fi, que vous ayez activé ou non la fonctionnalité position."</string>
     <string name="forget_passpoint_dialog_message" msgid="2433875063907365760">"Vous risquez de perdre l\'accès au temps ou aux données restants. Contactez votre opérateur avant de procéder au retrait."</string>
     <string name="keywords_content_capture" msgid="7802155522681936956">"capture de contenu, contenu de l\'application"</string>
     <string name="content_capture" msgid="868372905432812238">"Contenu des applications"</string>
@@ -4965,6 +4965,10 @@
     <string name="keywords_media_controls" msgid="8345490568291778638">"Multimédia"</string>
     <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Le Bluetooth sera activé"</string>
     <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"Indisponible, car le mode Heure du coucher est activé"</string>
+    <string name="wfc_help_desc_text">Appels Wi-Fi\n\nUtilisez les réseaux Wi-Fi pour passer et recevoir des appels n’importe où en France métropolitaine, même sans réseau mobile.\n\nPour activer le service, veuillez vérifier auprès de votre opérateur la compatibilité de votre offre. Ensuite, connectez-vous à un réseau Wi-Fi, puis activer les Appels Wi-Fi directement dans les paramètres de votre téléphone. Dès que vous verrez cette icône, vous pourrez alors passer et recevoir vos appels grâce au Wi-Fi. </string>
+    <string name="longevity_device_statistics_list_item_title">"Statistiques de l’appareil et sur la longévité."</string>
+    <string name="status_sdn">Numéro de numérotation de service</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"C'est le bouton d'alimentation sur le côté de votre téléphone"</string>
     <string name="bluetooth_message_access_notification_content" msgid="5111712860712823893">"Un appareil souhaite accéder à vos messages. Appuyez ici pour plus de détails."</string>
     <string name="bluetooth_message_access_dialog_title" msgid="9009836130395061579">"Autoriser l\'accès aux messages ?"</string>
     <string name="bluetooth_message_access_dialog_content" msgid="7186694737578788487">"Un appareil Bluetooth, <xliff:g id="DEVICE_NAME_0">%1$s</xliff:g>, souhaite accéder à vos messages.\n\nVous ne vous êtes jamais connecté à <xliff:g id="DEVICE_NAME_1">%2$s</xliff:g> auparavant."</string>
@@ -4982,4 +4986,10 @@
     <string name="bluetooth_connect_access_dialog_content" msgid="4336436466468405850">"<xliff:g id="DEVICE_NAME_0">%1$s</xliff:g> souhaite se connecter à ce téléphone.\n\nC\'est la première fois que votre téléphone se connecte à <xliff:g id="DEVICE_NAME_1">%2$s</xliff:g>."</string>
     <string name="bluetooth_connect_access_dialog_negative" msgid="4944672755226375059">"Refuser la connexion"</string>
     <string name="bluetooth_connect_access_dialog_positive" msgid="3630561675207269710">"Autoriser la connexion"</string>
+    <string name="data_preference">Préférence de données</string>
+
+    <string name="unlock_failed_reset_title">"Réinitialisation automatique d'usine"</string>
+    <string name="unlock_failed_reset_description">"Si vous tentez de déverrouiller votre téléphone de manière incorrecte 15 fois, il sera réinitialisé aux paramètres d'usine. Toutes les données, y compris les fichiers et les applications téléchargées, seront supprimées."</string>
+    <string name="fingerprint_settings_open_description">"Activez si vous préférez déverrouiller le téléphone sans le réveiller au préalable."</string>
+    <string name="fingerprint_settings_open_title">Comportement de déverrouillage par empreinte digitale</string>
 </resources>

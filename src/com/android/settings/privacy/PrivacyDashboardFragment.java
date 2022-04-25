@@ -76,6 +76,7 @@ public class PrivacyDashboardFragment extends DashboardFragment {
             lifecycle.addObserver(notificationController);
         }
         controllers.add(notificationController);
+        controllers.add(new LongevityDeviceStatisticsPreferenceController(context));
 
         return controllers;
 

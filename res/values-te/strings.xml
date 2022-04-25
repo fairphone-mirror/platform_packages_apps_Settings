@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"వేలిముద్ర నమోదు పని చేయలేదు. మళ్లీ ప్రయత్నించండి లేదా మరొక వేలిని ఉపయోగించండి."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"మరొకటి జోడించు"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"తర్వాత"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"మీ ఫోన్‌ను అన్‌లాక్ చేయడంతో పాటుగా, కొనుగోళ్లు మరియు యాప్ యాక్సెస్‌ను అనుమతించడానికి కూడా మీ వేలిముద్రను ఉపయోగించవచ్చు. "<annotation id="url">"మరింత తెలుసుకోండి"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"మీ ఫోన్‌ను అన్‌లాక్ చేయడంతో పాటుగా, కొనుగోళ్లు మరియు యాప్ యాక్సెస్‌ను అనుమతించడానికి కూడా మీ వేలిముద్రను ఉపయోగించవచ్చు. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" స్క్రీన్ లాక్ ఎంపిక నిలిపివేయబడింది. మరింత తెలుసుకోవాలంటే, మీ సంస్థ యొక్క నిర్వాహకులను సంప్రదించండి. "<annotation id="admin_details">"మరిన్ని వివరాలు"</annotation>\n\n"ఇప్పటికీ మీరు మీ వేలిముద్రను ఉపయోగించి కొనుగోళ్లను ప్రమాణీకరించవచ్చు మరియు యాప్‌ను యాక్సెస్ చేయవచ్చు. "<annotation id="url">"మరింత తెలుసుకోండి"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"వేలిని పైకి ఎత్తి, ఆపై మళ్లీ సెన్సార్‌ను తాకండి"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"మీరు గరిష్టంగా <xliff:g id="COUNT">%d</xliff:g> వేలిముద్రలను జోడించవచ్చు"</string>
@@ -1930,7 +1930,7 @@
     <string name="internal_storage" msgid="999496851424448809">"అంతర్గత నిల్వ"</string>
     <string name="recompute_size" msgid="1098091228370999128">"పరిమాణాన్ని మళ్లీ గణిస్తోంది…"</string>
     <string name="clear_data_dlg_title" msgid="180446967743732410">"యాప్ డేటాను తొలగించాలా?"</string>
-    <string name="clear_data_dlg_text" msgid="7870723948123690332">"ఈ యాప్ డేటా మొత్తం శాశ్వతంగా తొలగించబడుతుంది. ఇందులో అన్ని ఫైల్‌లు, సెట్టింగ్‌లు, ఖాతాలు, డేటాబేస్‌లు మొ. ఉన్నాయి."</string>
+    <string name="clear_data_dlg_text" msgid="1107610960337399006">"ఈ యాప్ డేటా శాశ్వతంగా తొలగించబడుతుంది. ఇందులో ఫైల్స్, సెట్టింగ్‌లు, డేటాబేస్‌లు, ఇతర యాప్ డేటా ఉంటాయి."</string>
     <string name="dlg_ok" msgid="1421350367857960997">"సరే"</string>
     <string name="dlg_cancel" msgid="5164705061530774899">"రద్దు చేయి"</string>
     <string name="app_not_found_dlg_title" msgid="7122106240981109930"></string>
@@ -4974,7 +4974,7 @@
     <string name="bluetooth_message_access_dialog_content" msgid="7186694737578788487">"బ్లూటూత్ పరికరం, <xliff:g id="DEVICE_NAME_0">%1$s</xliff:g>, మీ మెసేజ్‌లను యాక్సెస్ చేయాలనుకుంటోంది.\n\nమీరు ఇంతకు ముందెన్నడూ <xliff:g id="DEVICE_NAME_1">%2$s</xliff:g>కు కనెక్ట్ కాలేదు."</string>
     <string name="bluetooth_phonebook_access_notification_content" msgid="9175220052703433637">"పరికరం మీ కాంటాక్ట్‌లు, కాల్ లాగ్‌ను యాక్సెస్ చేయాలనుకుంటోంది. వివరాల కోసం ట్యాప్ చేయండి."</string>
     <string name="bluetooth_phonebook_access_dialog_title" msgid="7624607995928968721">"కాంటాక్ట్‌లకు, కాల్ లాగ్‌కు యాక్సెస్‌ను అనుమతించాలా?"</string>
-    <string name="bluetooth_phonebook_access_dialog_content" msgid="959658135522249170">"బ్లూటూత్ పరికరం, <xliff:g id="DEVICE_NAME_0">%1$s</xliff:g>, మీ కాంటాక్ట్‌లు, కాల్ లాగ్‌ను యాక్సెస్ చేయాలనుకుంటోంది. ఇది ఇన్‌కమింగ్, అవుట్‌గోయింగ్ కాల్‌ల డేటాతో కూడి ఉంటుంది.\n\nమీరు ఇంతకు ముందెన్నడూ <xliff:g id="DEVICE_NAME_1">%2$s</xliff:g>కు కనెక్ట్ కాలేదు."</string>
+    <string name="bluetooth_phonebook_access_dialog_content" msgid="959658135522249170">"బ్లూటూత్ పరికరం, <xliff:g id="DEVICE_NAME_0">%1$s</xliff:g>, మీ కాంటాక్ట్‌లు, కాల్ లాగ్‌ను యాక్సెస్ చేయాలనుకుంటోంది. ఇది ఇన్‌కమింగ్, అవుట్‌గోయింగ్ కాల్స్‌ల డేటాతో కూడి ఉంటుంది.\n\nమీరు ఇంతకు ముందెన్నడూ <xliff:g id="DEVICE_NAME_1">%2$s</xliff:g>కు కనెక్ట్ కాలేదు."</string>
     <string name="request_manage_bluetooth_permission_dont_allow" msgid="8798061333407581300">"అనుమతించవద్దు"</string>
     <string name="bluetooth_sim_card_access_notification_title" msgid="5217037846900908318">"SIM కార్డ్ యాక్సెస్ రిక్వెస్ట్"</string>
     <string name="bluetooth_sim_card_access_notification_content" msgid="6759306429895300286">"పరికరం మీ SIM కార్డ్‌ను యాక్సెస్ చేయాలనుకుంటోంది. వివరాల కోసం ట్యాప్ చేయండి."</string>

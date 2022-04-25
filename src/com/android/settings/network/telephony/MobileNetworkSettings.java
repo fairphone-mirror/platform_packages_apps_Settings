@@ -23,11 +23,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.UserManager;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -56,6 +58,7 @@ import com.android.settingslib.utils.ThreadUtils;
 
 import org.codeaurora.internal.IExtTelephony;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -195,7 +198,8 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings {
         use(MobileDataPreferenceController.class).init(getFragmentManager(), mSubId);
         use(RoamingPreferenceController.class).init(getFragmentManager(), mSubId);
         use(ApnPreferenceController.class).init(mSubId);
-        use(UserPLMNPreferenceController.class).init(mSubId);
+        // modify by T2M.zhang renjie for FP4-3079 21-10-6 begin
+        //use(UserPLMNPreferenceController.class).init(mSubId); 
         use(CarrierPreferenceController.class).init(mSubId);
         use(DataUsagePreferenceController.class).init(mSubId);
         use(PreferredNetworkModePreferenceController.class).init(getLifecycle(), mSubId);
@@ -386,6 +390,7 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings {
         return super.onOptionsItemSelected(menuItem);
     }
 
+
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.mobile_network_settings) {
                 @Override
@@ -399,5 +404,78 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings {
                 protected boolean isPageSearchEnabled(Context context) {
                     return context.getSystemService(UserManager.class).isAdminUser();
                 }
+
+                // add by T2M.dengxiangyu for FP4-61 2021-06-21 begin
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys;
+
+                    if (isPageSearchEnabled(context)) {
+                        keys = getMobileNonIndexableKeysFromXml(context, false);
+                        CarrierConfigManager mCarrierConfigManager = context.getSystemService(CarrierConfigManager.class);
+                        final PersistableBundle carrierConfig = mCarrierConfigManager.getConfig();
+                        if (carrierConfig != null) {
+                            boolean showVTToggle = carrierConfig.getBoolean(CarrierConfigManager.KEY_VT_TOGGLE_SHOW_BOOL);
+                            boolean showWFCToggle = carrierConfig.getBoolean(CarrierConfigManager.KEY_WFC_TOGGLE_SHOW_BOOL);
+                            // add by T2M.zhangrenjie for FP4-1777 2021-07-16 end
+                            boolean showEnhanced4GToggle = !carrierConfig.getBoolean(CarrierConfigManager.KEY_HIDE_ENHANCED_4G_LTE_BOOL);
+                            int m4gCurrentMode = carrierConfig.getInt(CarrierConfigManager.KEY_ENHANCED_4G_LTE_TITLE_VARIANT_INT);
+                            boolean show4GForLTE = carrierConfig.getBoolean(
+                                    CarrierConfigManager.KEY_SHOW_4G_FOR_LTE_DATA_ICON_BOOL);
+                            Log.d(LOG_TAG, "get vt show: " + showVTToggle);
+                            Log.d(LOG_TAG, "get wfc show: " + showWFCToggle);
+                            Log.d(LOG_TAG, "showEnhanced4GToggle: " + showEnhanced4GToggle);
+                            Log.d(LOG_TAG, "m4gCurrentMode: " + m4gCurrentMode);
+                            Log.d(LOG_TAG, "show4GForLTE: " + show4GForLTE);
+
+                            if (!showVTToggle) {
+                                keys.add("video_calling_key");
+                            }
+
+                            if (!showWFCToggle) {
+                                keys.add("wifi_calling");
+                            }
+
+                            if (m4gCurrentMode != 1 /*MODE_ADVANCED_CALL*/) {
+                                keys.add("advance_call");
+                            }
+
+                            if (!showEnhanced4GToggle){
+                                keys.add("enhanced_4g_lte");
+                                keys.add("4g_calling");
+                            } else if (show4GForLTE){
+                                keys.add("enhanced_4g_lte");
+                            }else {
+                                keys.add("4g_calling");
+                            }
+                        }
+                        // add by T2M.zhangrenjie for FP4-1777 2021-07-16 end
+                    } else {
+                        Log.d(LOG_TAG, "it's not admin user");
+                        keys = getMobileNonIndexableKeysFromXml(context, true);
+                    }
+
+                    Log.d(LOG_TAG, "getNonIndexableKeys: ");
+                    for (String str : keys) {
+                        Log.d(LOG_TAG, str);
+                    }
+
+                    return keys;
+                }
+
+                private List<String> getMobileNonIndexableKeysFromXml(Context context, boolean suppressAllPage) {
+                    final List<SearchIndexableResource> resources = super.getXmlResourcesToIndex(
+                            context, true);
+                    if (resources == null || resources.isEmpty()) {
+                        return new ArrayList<>();
+                    }
+                    final List<String> nonIndexableKeys = new ArrayList<>();
+                    for (SearchIndexableResource res : resources) {
+                        nonIndexableKeys.addAll(
+                                getNonIndexableKeysFromXml(context, res.xmlResId, suppressAllPage));
+                    }
+                    return nonIndexableKeys;
+                }
+                // add by T2M.dengxiangyu for FP4-61 2021-06-21 end
             };
 }

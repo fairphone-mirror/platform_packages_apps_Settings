@@ -96,7 +96,18 @@ public class VideoCallingPreferenceController extends TelephonyTogglePreferenceC
             return;
         }
         final SwitchPreference switchPreference = (SwitchPreference) preference;
-        final boolean videoCallEnabled = isVideoCallEnabled(mSubId);
+
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14 begin
+        Log.d(TAG, "update VT");
+        boolean vtToggleShow = false;
+        final PersistableBundle carrierConfig = mCarrierConfigManager.getConfigForSubId(mSubId);
+        if (carrierConfig != null) {
+            vtToggleShow = carrierConfig.getBoolean(CarrierConfigManager.KEY_VT_TOGGLE_SHOW_BOOL, false);
+            Log.d(TAG, "vt toggle show: " + vtToggleShow);
+        }
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14 end
+
+        final boolean videoCallEnabled = isVideoCallEnabled(mSubId) && vtToggleShow;
         switchPreference.setVisible(videoCallEnabled);
         if (videoCallEnabled) {
             final boolean videoCallEditable = queryVoLteState(mSubId).isEnabledByUser()
@@ -143,7 +154,9 @@ public class VideoCallingPreferenceController extends TelephonyTogglePreferenceC
             return false;
         }
 
-        final PersistableBundle carrierConfig = mCarrierConfigManager.getConfigForSubId(subId);
+        //[Bug]-Modify-begin by shaopan.tang 2021-06-15 [FP4-870]Disable VT
+        return false;
+        /*final PersistableBundle carrierConfig = mCarrierConfigManager.getConfigForSubId(subId);
         if (carrierConfig == null) {
             return false;
         }
@@ -155,7 +168,8 @@ public class VideoCallingPreferenceController extends TelephonyTogglePreferenceC
             return false;
         }
 
-        return queryImsState(subId).isReadyToVideoCall();
+        return queryImsState(subId).isReadyToVideoCall();*/
+        //[Bug]-Modify-end by shaopan.tang
     }
 
     @Override

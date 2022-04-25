@@ -148,6 +148,8 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
         mPreference = screen.findPreference(getPreferenceKey());
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14
+        updateState(mPreference);
     }
 
     @Override
@@ -157,7 +159,8 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
         final int networkMode = getPreferredNetworkMode();
         updatePreferenceEntries(listPreference);
         listPreference.setValue(Integer.toString(networkMode));
-        listPreference.setSummary(getPreferredNetworkModeSummaryResId(networkMode));
+        setNetworkModeSummaryText(listPreference, networkMode);
+        //listPreference.setSummary(getPreferredNetworkModeSummaryResId(networkMode));
         listPreference.setEnabled(isCallStateIdle());
     }
 
@@ -171,12 +174,72 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
                     Settings.Global.PREFERRED_NETWORK_MODE + mSubId,
                     newPreferredNetworkMode);
             final ListPreference listPreference = (ListPreference) preference;
-            listPreference.setSummary(getPreferredNetworkModeSummaryResId(newPreferredNetworkMode));
+            setNetworkModeSummaryText(listPreference, newPreferredNetworkMode);
+            //listPreference.setSummary(getPreferredNetworkModeSummaryResId(newPreferredNetworkMode));
             return true;
         }
 
         return false;
     }
+
+    // add by T2M.dengxiangyu for FP4-1952 2021-07-28 begin
+    private void setNetworkModeSummaryText(ListPreference preference, int networkmode) {
+        final PersistableBundle carrierConfig = mCarrierConfigManager.getConfigForSubId(mSubId);
+        String[] pref_network_mode = null;
+        String[] pref_network_value = null;
+        String summerry = null;
+
+        Log.d(LOG_TAG, "set networkmode(" + networkmode + ") summary");
+        if (carrierConfig != null) {
+            /*
+            check in vendor.xml of carrier config
+            <string-array name="preferred_network_mode_choices" num="4">
+                <item value="5G/4G/3G/2G"/>
+                <item value="4G/3G/2G"/>
+                <item value="3G/2G"/>
+                <item value="2G"/>
+            </string-array>
+            */
+
+            pref_network_mode = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_MODE);
+            pref_network_value = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_VALUE);
+
+        }
+
+        /*if (pref_network_mode != null && pref_network_mode.length == 4) {
+            switch (networkmode) {
+                case TelephonyManagerConstants.NETWORK_MODE_NR_LTE_GSM_WCDMA:
+                    summerry = pref_network_mode[0];
+                    break;
+                case TelephonyManagerConstants.NETWORK_MODE_LTE_GSM_WCDMA:
+                    summerry = pref_network_mode[1];
+                    break;
+                case TelephonyManagerConstants.NETWORK_MODE_WCDMA_PREF:
+                    summerry = pref_network_mode[2];
+                    break;
+                case TelephonyManagerConstants.NETWORK_MODE_GSM_ONLY:
+                    summerry = pref_network_mode[3];
+                    break;
+            }
+        }*/
+        // modify by T2M.zhang renjie for FP4-2652 21-8-28 begin
+        if (pref_network_mode != null && pref_network_value != null){
+            for (int index = 0; index < pref_network_value.length; index++) {
+                if (pref_network_value[index].equals(String.valueOf(networkmode))){
+                    summerry = pref_network_mode[index];
+                    break;
+                }
+            }
+        }
+        // modify by T2M.zhang renjie for FP4-2652 21-8-28 end
+        if (summerry != null) {
+            Log.d(LOG_TAG, "summary: " + summerry);
+            preference.setSummary(summerry);
+        } else {
+            preference.setSummary(getPreferredNetworkModeSummaryResId(networkmode));
+        }
+    }
+    // add by T2M.dengxiangyu for FP4-1952 2021-07-28 end
 
     public void init(Lifecycle lifecycle, int subId) {
         mSubId = subId;
@@ -284,8 +347,29 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
 
     private void updatePreferenceEntries(ListPreference preference) {
         // Default values
-        preference.setEntries(R.array.preferred_network_mode_choices);
-        preference.setEntryValues(R.array.preferred_network_mode_values);
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14 begin
+        final PersistableBundle carrierConfig = mCarrierConfigManager.getConfigForSubId(mSubId);
+        String[] pref_network_mode = null;
+        String[] pref_network_value = null;
+
+        if (carrierConfig != null) {
+            pref_network_mode = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_MODE);
+            pref_network_value = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_VALUE);
+            Log.d(LOG_TAG, "get preferred network mode: " + pref_network_mode);
+        }
+
+        if (pref_network_mode != null && pref_network_value != null) {
+            Log.d(LOG_TAG, "init preferred network from carrier config");
+            preference.setEntries(pref_network_mode);
+            preference.setEntryValues(pref_network_value);
+        } else {
+            Log.d(LOG_TAG, "init preferred network from default config");
+            //[11086878] The preferred network modes defined by T2M begin
+            preference.setEntries(R.array.preferred_network_mode_custom_choices);
+            preference.setEntryValues(R.array.preferred_network_mode_custom_choices_value);
+            //[11086878] The preferred network modes defined by T2M end
+        }
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14 end
 
         // Primary Card Feature
         // If the current SIM is not the primary card

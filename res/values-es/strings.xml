@@ -413,7 +413,7 @@
     <string name="go_back_button_label" msgid="6139455414099035594">"Volver"</string>
     <string name="skip_lock_screen_dialog_button_label" msgid="641984698150020591">"Saltar"</string>
     <string name="cancel_lock_screen_dialog_button_label" msgid="1801132985957491690">"Cancelar"</string>
-    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Toca el sensor"</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Toque el sensor de huellas dactilares"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"Está en la parte trasera del teléfono. Utiliza el dedo índice."</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_content_description" msgid="3065850549419750523">"Ilustración con la ubicación del sensor de huellas digitales y dispositivo"</string>
     <string name="security_settings_fingerprint_enroll_dialog_name_label" msgid="7298812463228440333">"Nombre"</string>
@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"El registro de la huella digital no se ha realizado correctamente. Vuelve a intentarlo o utiliza otro dedo."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Añadir otra"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Siguiente"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Además de desbloquear el teléfono, también puedes usar tu huella digital para autorizar compras y el acceso a aplicaciones. "<annotation id="url">"Más información"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Además de desbloquear el teléfono, también puedes utilizar tu huella digital para autorizar acceso a aplicaciones y compras. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" La opción de bloqueo de pantalla está inhabilitada. Para obtener más información, ponte en contacto con el administrador de la organización. "<annotation id="admin_details">"Más detalles"</annotation>\n\n"Puedes seguir utilizando tu huella digital para autorizar compras y acceder a las aplicaciones. "<annotation id="url">"Más información"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Levanta el dedo y vuelve a tocar el sensor"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"Puedes añadir hasta <xliff:g id="COUNT">%d</xliff:g> huellas digitales"</string>
@@ -1930,7 +1930,7 @@
     <string name="internal_storage" msgid="999496851424448809">"Almacenamiento interno"</string>
     <string name="recompute_size" msgid="1098091228370999128">"Recalculando tamaño…"</string>
     <string name="clear_data_dlg_title" msgid="180446967743732410">"¿Eliminar datos de la aplicación?"</string>
-    <string name="clear_data_dlg_text" msgid="7870723948123690332">"Todos los datos de esta aplicación se eliminarán de forma permanente. Esto incluye todos los archivos, ajustes, cuentas, bases de datos, etc."</string>
+    <string name="clear_data_dlg_text" msgid="1107610960337399006">"Los datos de esta aplicación se eliminarán de forma permanente, incluidos los archivos, ajustes, bases de datos y otros datos relacionados con ella."</string>
     <string name="dlg_ok" msgid="1421350367857960997">"Aceptar"</string>
     <string name="dlg_cancel" msgid="5164705061530774899">"Cancelar"</string>
     <string name="app_not_found_dlg_title" msgid="7122106240981109930"></string>
@@ -4897,7 +4897,7 @@
     <string name="wfc_disclaimer_agree_button_text" msgid="4082872292910770344">"CONTINUAR"</string>
     <string name="wfc_disclaimer_disagree_text" msgid="8424457394700137703">"NO, GRACIAS"</string>
     <string name="wfc_disclaimer_location_title_text" msgid="7913919887475418423">"Ubicación"</string>
-    <string name="wfc_disclaimer_location_desc_text" msgid="2799241640320172899">"Tu proveedor de servicios puede guardar tu ubicación para proporcionar este servicio.\n\nRevisa la política de privacidad de tu proveedor de servicios."</string>
+    <string name="wfc_disclaimer_location_desc_text" msgid="2799241640320172899">"Sabías que tu teléfono puede hacer llamadas por Wi-Fi?\n\nPodrás hablar incluso cuando no tengas cobertura móvil, mientras estés conectado a una red Wi-Fi."</string>
     <string name="forget_passpoint_dialog_message" msgid="2433875063907365760">"Es posible que dejes de tener acceso al tiempo o datos restantes. Antes de eliminarlo, consulta con tu proveedor."</string>
     <string name="keywords_content_capture" msgid="7802155522681936956">"obtención de contenido, contenido de la aplicación"</string>
     <string name="content_capture" msgid="868372905432812238">"Contenido de la aplicación"</string>
@@ -4970,6 +4970,10 @@
     <string name="keywords_media_controls" msgid="8345490568291778638">"multimedia"</string>
     <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Se activará el Bluetooth"</string>
     <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"No disponible porque el modo Descanso está activado"</string>
+    <string name="wfc_help_desc_text">Si selecciona Red móvil preferida se utilizará la red móvil de forma predeterminada para las llamadas. En caso de que no haya cobertura de red móvil o ésta sea muy débil, se utilizará la red Wi-Fi en su lugar.</string>
+    <string name="longevity_device_statistics_list_item_title">Longevidad y estadísticas del dispositivo</string>
+    <string name="status_sdn">Número de marcación de servicio.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"Es el botón de encendido en el lateral del teléfono."</string>
     <string name="bluetooth_message_access_notification_content" msgid="5111712860712823893">"Un dispositivo quiere acceder a tus mensajes. Toca para consultar información detallada."</string>
     <string name="bluetooth_message_access_dialog_title" msgid="9009836130395061579">"¿Permitir acceso a los mensajes?"</string>
     <string name="bluetooth_message_access_dialog_content" msgid="7186694737578788487">"Un dispositivo Bluetooth, <xliff:g id="DEVICE_NAME_0">%1$s</xliff:g>, quiere acceder a tus mensajes.\n\nEs la primera vez que te conectas a <xliff:g id="DEVICE_NAME_1">%2$s</xliff:g>."</string>
@@ -4987,4 +4991,7 @@
     <string name="bluetooth_connect_access_dialog_content" msgid="4336436466468405850">"<xliff:g id="DEVICE_NAME_0">%1$s</xliff:g> quiere conectarse a este teléfono.\n\nEs la primera vez que te conectas a <xliff:g id="DEVICE_NAME_1">%2$s</xliff:g>."</string>
     <string name="bluetooth_connect_access_dialog_negative" msgid="4944672755226375059">"No conectar"</string>
     <string name="bluetooth_connect_access_dialog_positive" msgid="3630561675207269710">"Conectar"</string>
+    <string name="fingerprint_settings_open_description">"Habilita si prefieres desbloquear con tu huella dactilar, sin encender el teléfono primero."</string>
+    <string name="fingerprint_settings_open_title">Modo de desbloqueo con huella digital</string>
+
 </resources>

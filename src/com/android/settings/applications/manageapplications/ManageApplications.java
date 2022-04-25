@@ -133,6 +133,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -257,6 +258,8 @@ public class ManageApplications extends InstrumentedFragment
     private boolean mIsPersonalOnly;
     private View mEmptyView;
     private int mFilterType;
+
+    private String[] mPreinstallApks;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -395,7 +398,7 @@ public class ManageApplications extends InstrumentedFragment
             setHasOptionsMenu(false);
             return mRootView;
         }
-
+        CarrierAppUtils.init(getContext());
         mRootView = inflater.inflate(R.layout.manage_applications_apps, null);
         mLoadingContainer = mRootView.findViewById(R.id.loading_container);
         mListContainer = mRootView.findViewById(R.id.list_container);
@@ -1161,6 +1164,7 @@ public class ManageApplications extends InstrumentedFragment
             }
             mManageApplications.mSortOrder = sort;
             mLastSortMode = sort;
+            Log.d(TAG, "rebuild mLastSortMode #" + mLastSortMode);
             rebuild();
         }
 
@@ -1295,6 +1299,15 @@ public class ManageApplications extends InstrumentedFragment
             if (filterType == FILTER_APPS_POWER_WHITELIST ||
                     filterType == FILTER_APPS_POWER_WHITELIST_ALL) {
                 entries = removeDuplicateIgnoringUser(entries);
+            }
+            Iterator<AppEntry> appEntryIterator = entries.iterator();
+            while (appEntryIterator.hasNext()){
+                AppEntry appEntry = appEntryIterator.next();
+                String apkName = appEntry.apkFile.getName();
+                Log.d(TAG,"isNeedKeep "+apkName+"   "+CarrierAppUtils.isNeedKeep(apkName));
+                if (!CarrierAppUtils.isNeedKeep(apkName)) {
+                    appEntryIterator.remove();
+                }
             }
             mEntries = entries;
             mOriginalEntries = entries;

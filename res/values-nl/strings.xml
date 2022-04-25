@@ -413,7 +413,7 @@
     <string name="go_back_button_label" msgid="6139455414099035594">"Terug"</string>
     <string name="skip_lock_screen_dialog_button_label" msgid="641984698150020591">"Overslaan"</string>
     <string name="cancel_lock_screen_dialog_button_label" msgid="1801132985957491690">"Annuleren"</string>
-    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Raak de sensor aan"</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"Raak de vingerafdruksensor aan"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"De sensor bevindt zich aan de achterkant van je telefoon. Gebruik je wijsvinger."</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_content_description" msgid="3065850549419750523">"Ilustratie met apparaat en locatie van vingerafdruksensor"</string>
     <string name="security_settings_fingerprint_enroll_dialog_name_label" msgid="7298812463228440333">"Naam"</string>
@@ -446,8 +446,8 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Vingerafdrukregistratie is mislukt. Probeer het opnieuw of gebruik een andere vinger."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Nog een toevoegen"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Volgende"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Behalve voor het ontgrendelen van je telefoon kun je je vingerafdruk ook gebruiken voor het autoriseren van aankopen en app-toegang. "<annotation id="url">"Meer informatie"</annotation></string>
-    <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" De optie voor schermvergrendeling staat uit. Neem contact op met de beheerder van je organisatie voor meer informatie. "<annotation id="admin_details">"Meer informatie"</annotation>\n\n"Je kunt je vingerafdruk nog steeds gebruiken voor het autoriseren van aankopen en app-toegang. "<annotation id="url">"Meer informatie"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Behalve voor het ontgrendelen van je telefoon kun je je vingerafdruk ook gebruiken voor het autoriseren van aankopen en app-toegang. "</string>
+    <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" De optie voor schermvergrendeling is uitgeschakeld. Neem contact op met de beheerder van je organisatie voor meer informatie. "<annotation id="admin_details">"Meer informatie"</annotation>\n\n"Je kunt je vingerafdruk nog steeds gebruiken voor het autoriseren van aankopen en app-toegang. "<annotation id="url">"Meer informatie"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Til je vinger op en raak de sensor opnieuw aan"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"Je kunt maximaal <xliff:g id="COUNT">%d</xliff:g> vingerafdrukken toevoegen"</string>
     <string name="fingerprint_intro_error_max" msgid="4431784409732135610">"Je hebt het maximale aantal vingerafdrukken toegevoegd"</string>
@@ -1930,7 +1930,7 @@
     <string name="internal_storage" msgid="999496851424448809">"Interne opslag"</string>
     <string name="recompute_size" msgid="1098091228370999128">"Grootte opnieuw berekenen..."</string>
     <string name="clear_data_dlg_title" msgid="180446967743732410">"Gegevens van app verwijderen?"</string>
-    <string name="clear_data_dlg_text" msgid="7870723948123690332">"Alle gegevens van deze app worden permanent verwijderd. Dit omvat alle bestanden, instellingen, accounts, databases, enzovoort."</string>
+    <string name="clear_data_dlg_text" msgid="1107610960337399006">"De gegevens van deze app worden definitief verwijderd. Dit omvat bestanden, instellingen, databases en andere app-gegevens."</string>
     <string name="dlg_ok" msgid="1421350367857960997">"OK"</string>
     <string name="dlg_cancel" msgid="5164705061530774899">"Annuleren"</string>
     <string name="app_not_found_dlg_title" msgid="7122106240981109930"></string>
@@ -4963,8 +4963,11 @@
     <string name="media_controls_show_player" msgid="8504571042365814021">"Toon speler"</string>
     <string name="media_controls_no_players" msgid="3493023121892175946">"Geen spelers beschikbaar"</string>
     <string name="keywords_media_controls" msgid="8345490568291778638">"media"</string>
-    <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Bluetooth wordt aangezet"</string>
-    <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"Niet beschikbaar omdat de bedtijdstand aanstaat"</string>
+    <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Bluetooth wordt ingeschakeld"</string>
+    <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"Niet beschikbaar omdat de bedtijdstand is ingeschakeld"</string>
+    <string name="longevity_device_statistics_list_item_title">Levensduur en toestel statistieken</string>
+    <string name="status_sdn">Servicedienstnummer</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"Het is de aan-/uitknop aan de zijkant van je telefoon."</string>
     <string name="bluetooth_message_access_notification_content" msgid="5111712860712823893">"Een apparaat wil toegang tot je berichten. Tik voor details."</string>
     <string name="bluetooth_message_access_dialog_title" msgid="9009836130395061579">"Toegang tot berichten toestaan?"</string>
     <string name="bluetooth_message_access_dialog_content" msgid="7186694737578788487">"Een bluetooth-apparaat (<xliff:g id="DEVICE_NAME_0">%1$s</xliff:g>) wil toegang tot je berichten.\n\nJe hebt niet eerder verbinding gemaakt met <xliff:g id="DEVICE_NAME_1">%2$s</xliff:g>."</string>
@@ -4982,4 +4985,11 @@
     <string name="bluetooth_connect_access_dialog_content" msgid="4336436466468405850">"<xliff:g id="DEVICE_NAME_0">%1$s</xliff:g> wil verbinding maken met deze telefoon.\n\nJe hebt nog niet eerder verbinding gemaakt met <xliff:g id="DEVICE_NAME_1">%2$s</xliff:g>."</string>
     <string name="bluetooth_connect_access_dialog_negative" msgid="4944672755226375059">"Geen verbinding maken"</string>
     <string name="bluetooth_connect_access_dialog_positive" msgid="3630561675207269710">"Verbinding maken"</string>
+    <string name="data_preference">Gegevensvoorkeur</string>
+
+    <string name="unlock_failed_reset_title">"Automatische Fabrieksreset"</string>
+    <string name="unlock_failed_reset_description">"Als u uw telefoon 15 keer verkeerd probeert te ontgrendelen, wordt hij teruggezet naar de fabrieksinstellingen. Alle gegevens, inclusief bestanden en gedownloade apps, worden gewist."</string>
+    <string name="fingerprint_settings_open_description">"Schakel in als je liever de telefoon ontgrendelt zonder hem eerst te activeren."</string>
+    <string name="fingerprint_settings_open_title">Ontgrendelgedrag vingerafdrukscanner</string>
+
 </resources>

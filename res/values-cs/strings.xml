@@ -454,7 +454,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Registrace otisku prstu nefungovala. Zkuste to znovu nebo použijte jiný prst."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Přidat další"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Další"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Kromě odemknutí telefonu můžete svůj otisk prstu použít také k autorizaci nákupů a přístupu aplikací. "<annotation id="url">"Další informace"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Kromě odemknutí telefonu můžete svůj otisk prstu použít také k autorizaci nákupů a přístupu aplikací. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" Možnost zámku obrazovky je zakázána. Další informace vám sdělí administrátor vaší organizace. "<annotation id="admin_details">"Další podrobnosti"</annotation>\n\n"Otisk prstu můžete i nadále používat k autorizaci nákupů a přístupu k aplikacím. "<annotation id="url">"Další informace"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Prst opakovaně zvedejte a přikládejte na senzor."</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"Maximální počet otisků prstů, které lze přidat: <xliff:g id="COUNT">%d</xliff:g>"</string>
@@ -1977,8 +1977,8 @@
     <string name="no_applications" msgid="985069304755391640">"Žádné aplikace"</string>
     <string name="internal_storage" msgid="999496851424448809">"Interní úložiště"</string>
     <string name="recompute_size" msgid="1098091228370999128">"Přepočítávání velikosti..."</string>
-    <string name="clear_data_dlg_title" msgid="180446967743732410">"Smazat data aplikace?"</string>
-    <string name="clear_data_dlg_text" msgid="7870723948123690332">"Veškerá data (všechny soubory, nastavení, účty, databáze apod.) této aplikace budou trvale vymazána."</string>
+    <string name="clear_data_dlg_title" msgid="180446967743732410">"Vymazat data aplikace?"</string>
+    <string name="clear_data_dlg_text" msgid="1107610960337399006">"Data této aplikace budou trvale smazána. To zahrnuje soubory, nastavení, databáze a další data aplikace."</string>
     <string name="dlg_ok" msgid="1421350367857960997">"OK"</string>
     <string name="dlg_cancel" msgid="5164705061530774899">"Zrušit"</string>
     <string name="app_not_found_dlg_title" msgid="7122106240981109930"></string>

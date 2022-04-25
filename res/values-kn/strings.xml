@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ನೋಂದಣಿ ಕೆಲಸ ಮಾಡುತ್ತಿಲ್ಲ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ ಅಥವಾ ಬೇರೊಂದು ಬೆರಳನ್ನು ಬಳಸಿ."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"ಇನ್ನೊಂದನ್ನು ಸೇರಿಸಿ"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"ಮುಂದೆ"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ನಿಮ್ಮ ಫೋನ್‌ ಅನ್‌ಲಾಕ್‌ ಮಾಡುವುದಕ್ಕೆ ಹೆಚ್ಚುವರಿಯಾಗಿ, ಖರೀದಿಗಳನ್ನು ದೃಢೀಕರಿಸಲು ಮತ್ತು ಅಪ್ಲಿಕೇಶನ್‌ ಪ್ರವೇಶಿಸಲು ನಿಮ್ಮ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್‌ ಅನ್ನು ಕೂಡಾ ನೀವು ಬಳಸಬಹುದು. "<annotation id="url">"ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ನಿಮ್ಮ ಫೋನ್‌ ಅನ್‌ಲಾಕ್‌ ಮಾಡುವುದಕ್ಕೆ ಹೆಚ್ಚುವರಿಯಾಗಿ, ಖರೀದಿಗಳನ್ನು ದೃಢೀಕರಿಸಲು ಮತ್ತು ಅಪ್ಲಿಕೇಶನ್‌ ಪ್ರವೇಶಿಸಲು ನಿಮ್ಮ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್‌ ಅನ್ನು ಕೂಡಾ ನೀವು ಬಳಸಬಹುದು. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" ಸ್ಕ್ರೀನ್ ಲಾಕ್ ಆಯ್ಕೆಯನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ. ಇನ್ನಷ್ಟು ತಿಳಿಯಲು ನಿಮ್ಮ ಸಂಸ್ಥೆಯ ನಿರ್ವಾಹಕರನ್ನು ಸಂಪರ್ಕಿಸಿ. "<annotation id="admin_details">"ಹೆಚ್ಚಿನ ವಿವರಗಳು"</annotation>\n\n"ನೀವು ಖರೀದಿಗಳನ್ನು ಅನುಮೋದಿಸಲು ಅಥವಾ ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಪ್ರವೇಶಿಸಲು ನಿಮ್ಮ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಅನ್ನು ಇನ್ನೂ ಬಳಸಬಹುದು. "<annotation id="url">"ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"ಬೆರಳನ್ನು ಮೇಲಕ್ಕೆ ಎತ್ತಿರಿ, ನಂತರ ಮತ್ತೊಮ್ಮೆ ಸೆನ್ಸರ್ ಅನ್ನು ಸ್ಪರ್ಶಿಸಿ"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"ನೀವು <xliff:g id="COUNT">%d</xliff:g> ಫಿಂಗರ್‌‌ ಫ್ರಿಂಟ್‌‌ಗಳವರೆಗೂ ಸೇರಿಸಬಹುದು"</string>
@@ -1929,8 +1929,9 @@
     <string name="no_applications" msgid="985069304755391640">"ಯಾವುದೇ ಆ್ಯಪ್‍‍ಗಳಿಲ್ಲ."</string>
     <string name="internal_storage" msgid="999496851424448809">"ಆಂತರಿಕ ಸಂಗ್ರಹಣೆ"</string>
     <string name="recompute_size" msgid="1098091228370999128">"ಗಾತ್ರವನ್ನು ಮರುಗಣನೆ ಮಾಡಲಾಗುತ್ತಿದೆ…"</string>
-    <string name="clear_data_dlg_title" msgid="180446967743732410">"ಆ್ಯಪ್ ಡೇಟಾ ಅಳಿಸಬೇಕೇ?"</string>
-    <string name="clear_data_dlg_text" msgid="7870723948123690332">"ಈ ಆ್ಯಪ್‍‍ನ ಎಲ್ಲಾ ಡೇಟಾವನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಲಾಗುತ್ತದೆ. ಇದರಲ್ಲಿ ಎಲ್ಲಾ ಫೈಲ್‌ಗಳು, ಸೆಟ್ಟಿಂಗ್‌ಗಳು, ಖಾತೆಗಳು, ಡೇಟಾಬೇಸ್‌ಗಳು, ಇತ್ಯಾದಿಗಳು ಸೇರಿರುತ್ತವೆ."</string>
+
+    <string name="clear_data_dlg_title" msgid="180446967743732410">"ಅಪ್ಲಿಕೇಶನ್ ಡೇಟಾ ಅಳಿಸುವುದೇ?"</string>
+    <string name="clear_data_dlg_text" msgid="1107610960337399006">"ಈ ಆ್ಯಪ್‌ನ ಡೇಟಾವನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಲಾಗುವುದು. ಇದು ಫೈಲ್‌ಗಳು, ಸೆಟ್ಟಿಂಗ್‌ಗಳು, ಡೇಟಾಬೇಸ್‌ಗಳು ಮತ್ತು ಇತರ ಆ್ಯಪ್ ಡೇಟಾ ಒಳಗೊಂಡಿದೆ."</string>
     <string name="dlg_ok" msgid="1421350367857960997">"ಸರಿ"</string>
     <string name="dlg_cancel" msgid="5164705061530774899">"ರದ್ದುಮಾಡಿ"</string>
     <string name="app_not_found_dlg_title" msgid="7122106240981109930"></string>

@@ -136,8 +136,8 @@
             android:key="preferred_network_mode_key"
             android:title="@string/preferred_network_mode_title"
             android:summary="@string/preferred_network_mode_summary"
-            android:entries="@array/preferred_network_mode_choices"
-            android:entryValues="@array/preferred_network_mode_values"
+            android:entries="@array/preferred_network_mode_custom_choices"
+            android:entryValues="@array/preferred_network_mode_custom_choices_value"
             android:dialogTitle="@string/preferred_network_mode_dialogtitle"
             settings:controller="com.android.settings.network.telephony.PreferredNetworkModePreferenceController"/>
 
@@ -226,14 +226,14 @@
             settings:allowDividerAbove="true"
             settings:controller="com.android.settings.network.telephony.ApnPreferenceController"/>
 
-        <PreferenceScreen
+        <!--<PreferenceScreen
             android:key="uplmn_settings_key"
             android:persistent="false"
             android:title="@string/uplmn_settings_title"
             android:summary="@string/uplmn_settings_summary"
             settings:allowDividerAbove="true"
             settings:controller="com.android.settings.network.telephony.UserPLMNPreferenceController">
-        </PreferenceScreen>
+        </PreferenceScreen>-->
 
         <Preference
             android:key="carrier_settings_key"

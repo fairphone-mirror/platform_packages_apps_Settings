@@ -415,6 +415,7 @@
     <string name="cancel_lock_screen_dialog_button_label" msgid="1801132985957491690">"取消"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"触摸传感器"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"指纹传感器位于您手机的背面。请用食指触摸传感器。"</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"指纹传感器位于您手机的侧面。请用食指触摸传感器。"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_content_description" msgid="3065850549419750523">"关于设备和指纹传感器位置的图示说明"</string>
     <string name="security_settings_fingerprint_enroll_dialog_name_label" msgid="7298812463228440333">"名称"</string>
     <string name="security_settings_fingerprint_enroll_dialog_ok" msgid="4074335979239208021">"确定"</string>
@@ -446,7 +447,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"无法注册指纹。请重试或使用其他手指。"</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"再添加一个"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"下一步"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"除了将手机解锁，您还可以在购买物品时和登录应用时使用自己的指纹来验证身份。"<annotation id="url">"了解详情"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"除了将手机解锁，您还可以在购买物品时和登录应用时使用自己的指纹来验证身份。"</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" 屏幕锁定选项已停用。要了解详情，请与贵单位的管理员联系。"<annotation id="admin_details">"更多详情"</annotation>\n\n"您仍然可以使用指纹对购买交易进行授权以及登录应用。"<annotation id="url">"了解详情"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"移开手指，然后再次触摸传感器"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"您最多可以添加 <xliff:g id="COUNT">%d</xliff:g> 个指纹"</string>
@@ -1930,7 +1931,7 @@
     <string name="internal_storage" msgid="999496851424448809">"内部存储空间"</string>
     <string name="recompute_size" msgid="1098091228370999128">"正在重新计算大小..."</string>
     <string name="clear_data_dlg_title" msgid="180446967743732410">"要删除应用数据吗？"</string>
-    <string name="clear_data_dlg_text" msgid="7870723948123690332">"系统会永久删除此应用的所有数据。删除的内容包括所有文件、设置、帐号、数据库等。"</string>
+    <string name="clear_data_dlg_text" msgid="1107610960337399006">"系统将永久删除此应用的数据，其中包括文件、设置、数据库和其他应用数据。"</string>
     <string name="dlg_ok" msgid="1421350367857960997">"确定"</string>
     <string name="dlg_cancel" msgid="5164705061530774899">"取消"</string>
     <string name="app_not_found_dlg_title" msgid="7122106240981109930"></string>
@@ -5001,4 +5002,9 @@
     <string name="bluetooth_connect_access_dialog_content" msgid="4336436466468405850">"“<xliff:g id="DEVICE_NAME_0">%1$s</xliff:g>”想连接到此手机。\n\n您之前没有连接过“<xliff:g id="DEVICE_NAME_1">%2$s</xliff:g>”。"</string>
     <string name="bluetooth_connect_access_dialog_negative" msgid="4944672755226375059">"不连接"</string>
     <string name="bluetooth_connect_access_dialog_positive" msgid="3630561675207269710">"连接"</string>
+
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="fingerprint_settings_open_title">指纹解锁方式</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="fingerprint_settings_open_description">默认按键解锁。如果需要触摸解锁则打开开关。</string>
 </resources>

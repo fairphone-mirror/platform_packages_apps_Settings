@@ -18,6 +18,7 @@ import android.provider.Settings;
 
 import androidx.preference.Preference;
 import androidx.preference.SwitchPreference;
+import android.telephony.TelephonyManager;
 
 import com.android.settings.R;
 import com.android.settings.core.PreferenceControllerMixin;
@@ -27,6 +28,7 @@ public class ShowOperatorNamePreferenceController extends AbstractPreferenceCont
         implements PreferenceControllerMixin, Preference.OnPreferenceChangeListener {
 
     private static final String KEY_SHOW_OPERATOR_NAME = "show_operator_name";
+    private static final String ID_FOR_ORANGE_F = "20801";
 
     public ShowOperatorNamePreferenceController(Context context) {
         super(context);

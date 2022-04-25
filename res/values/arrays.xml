@@ -1369,6 +1369,22 @@
         <item>"2"</item>
     </string-array>
 
+    <!-- 11086878 The preferred network modes defined by T2M begin-->
+    <string-array name="preferred_network_mode_custom_choices">
+        <item>@string/network_5G</item>
+        <item>@string/network_4G</item>
+        <item>@string/network_3G</item>
+        <item>@string/network_2G</item>
+    </string-array>
+
+    <string-array name="preferred_network_mode_custom_choices_value">
+        <item>"33"</item>
+        <item>"22"</item>
+        <item>"21"</item>
+        <item>"1"</item>
+    </string-array>
+    <!-- 11086878 The preferred network modes defined by T2M end-->
+
     <!-- The preferred network modes in Mobile network settings -->
     <string-array name="preferred_network_mode_choices">
         <item>GSM/WCDMA preferred</item>

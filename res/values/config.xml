@@ -70,7 +70,7 @@
     <bool name="config_support_enabled">false</bool>
 
     <!-- Whether to enable "show operator name in the status bar" setting -->
-    <bool name="config_showOperatorNameInStatusBar">false</bool>
+    <bool name="config_showOperatorNameInStatusBar">true</bool>
 
     <!-- List containing the component names of pre-installed screen reader services. -->
     <string-array name="config_preinstalled_screen_reader_services" translatable="false">
@@ -212,6 +212,12 @@
     <!-- Whether the confirmation for sim deletion is defaulted to be on or off-->
     <bool name="config_sim_deletion_confirmation_default_on">false</bool>
 
+    <!-- Whether the unlock failed reset is defaulted to be on or off-->
+    <bool name="config_unlock_failed_reset_default_on">false</bool>
+
+    <!-- Whether the fingerpint behavior is defaulted to be on or off-->
+    <bool name="config_fingerprint_settings_behavior_on">false</bool>
+
     <!-- Package Installer package name -->
     <string name="config_package_installer_package_name" translatable="false">
         com.android.packageinstaller
@@ -252,7 +258,7 @@
     <!-- Whether or not the dock settings are to be displayed for this device when docked -->
     <bool name="has_dock_settings">false</bool>
     <!-- Whether there is a boot sounds checkbox -->
-    <bool name="has_boot_sounds">false</bool>
+    <bool name="has_boot_sounds">true</bool>
     <!-- Whether there is a silent mode checkbox  -->
     <bool name="has_silent_mode">true</bool>
 
@@ -269,7 +275,7 @@
     <!-- Whether to show a preference item for the manual in About phone -->
     <bool name="config_show_manual">false</bool>
     <!-- Whether to show a preference item for regulatory information in About phone -->
-    <bool name="config_show_regulatory_info">false</bool>
+    <bool name="config_show_regulatory_info">true</bool>
 
     <!-- Whether to show a preference item for mobile plan -->
     <bool name="config_show_mobile_plan">true</bool>
@@ -472,4 +478,7 @@
     <!-- Playing tone setting -->
     <bool name="config_show_connect_tone_ui">false</bool>
     <integer name="config_default_tone_after_connected">0</integer>
+    <!--Add Begin by cheng-he for FP4-1772 on 2021/07/23-->
+    <string name="config_settings_order_apnlist">_id</string>
+    <!--Add End by cheng-he for FP4-1772 on 2021/07/23-->
 </resources>

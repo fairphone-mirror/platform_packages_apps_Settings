@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"ਫਿੰਗਰਪ੍ਰਿੰਟ ਦਰਜ ਨਹੀਂ ਹੋਇਆ। ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ ਜਾਂ ਕੋਈ ਵੱਖਰੀ ਉਂਗਲ ਵਰਤੋ।"</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"ਇੱਕ ਹੋਰ ਸ਼ਾਮਲ ਕਰੋ"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"ਅੱਗੇ"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ਤੁਹਾਡੇ ਫ਼ੋਨ ਨੂੰ ਅਣਲਾਕ ਕਰਨ ਤੋਂ ਇਲਾਵਾ, ਤੁਸੀਂ ਖਰੀਦਾਰੀਆਂ ਅਤੇ ਐਪ ਪਹੁੰਚ ਨੂੰ ਪ੍ਰਮਾਣਿਤ ਕਰਨ ਲਈ ਆਪਣੇ ਫਿੰਗਰਪ੍ਰਿੰਟ ਦੀ ਵਰਤੋਂ ਵੀ ਕਰ ਸਕਦੇ ਹੋ। "<annotation id="url">"ਹੋਰ ਜਾਣੋ"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ਤੁਹਾਡੇ ਫ਼ੋਨ ਨੂੰ ਅਣਲਾਕ ਕਰਨ ਤੋਂ ਇਲਾਵਾ, ਤੁਸੀਂ ਖਰੀਦਾਰੀਆਂ ਅਤੇ ਐਪ ਪਹੁੰਚ ਨੂੰ ਪ੍ਰਮਾਣਿਤ ਕਰਨ ਲਈ ਆਪਣੇ ਫਿੰਗਰਪ੍ਰਿੰਟ ਦੀ ਵਰਤੋਂ ਵੀ ਕਰ ਸਕਦੇ ਹੋ। "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" ਸਕ੍ਰੀਨ ਲਾਕ ਵਿਕਲਪ ਨੂੰ ਅਯੋਗ ਬਣਾਇਆ ਗਿਆ ਹੈ। ਹੋਰ ਜਾਣਕਾਰੀ ਲਈ, ਆਪਣੀ ਸੰਸਥਾ ਦੇ ਪ੍ਰਸ਼ਾਸਕ ਨਾਲ ਸੰਪਰਕ ਕਰੋ। "<annotation id="admin_details">"ਹੋਰ ਵੇਰਵੇ"</annotation>\n\n"ਤੁਸੀਂ ਖਰੀਦਾਂ ਨੂੰ ਅਧਿਕਾਰਿਤ ਕਰਨ ਅਤੇ ਐਪ \'ਤੇ ਪਹੁੰਚ ਕਰਨ ਲਈ ਹਾਲੇ ਵੀ ਆਪਣੇ ਫਿੰਗਰਪ੍ਰਿੰਟ ਦੀ ਵਰਤੋਂ ਕਰ ਸਕਦੇ ਹੋ। "<annotation id="url">"ਹੋਰ ਜਾਣੋ"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"ਉਂਗਲ ਚੁੱਕੋ, ਫਿਰ ਦੁਬਾਰਾ ਸੈਂਸਰ ਨੂੰ ਸਪਰਸ਼ ਕਰੋ"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"ਤੁਸੀਂ <xliff:g id="COUNT">%d</xliff:g> ਤੱਕ ਫਿੰਗਰਪ੍ਰਿੰਟ ਸ਼ਾਮਲ ਕਰ ਸਕਦੇ ਹੋ"</string>
@@ -1930,8 +1930,8 @@
     <string name="internal_storage" msgid="999496851424448809">"ਅੰਦਰੂਨੀ ਸਟੋਰੇਜ"</string>
     <string name="recompute_size" msgid="1098091228370999128">"ਅਕਾਰ ਰੀਕੰਪਿਊਟ ਕਰ ਰਿਹਾ ਹੈ..."</string>
     <string name="clear_data_dlg_title" msgid="180446967743732410">"ਕੀ ਐਪ ਡਾਟਾ ਮਿਟਾਉਣਾ ਹੈ?"</string>
-    <string name="clear_data_dlg_text" msgid="7870723948123690332">"ਇਸ ਐਪ ਦਾ ਸਾਰਾ ਡਾਟਾ ਸਥਾਈ ਤੌਰ ਤੇ ਮਿਟਾਇਆ ਜਾਏਗਾ। ਇਸ ਵਿੱਚ ਸਾਰੀਆਂ ਫ਼ਾਈਲਾਂ, ਸੈਟਿੰਗਾਂ, ਖਾਤੇ, ਡਾਟਾਬੇਸ ਆਦਿ ਸ਼ਾਮਲ ਹਨ।"</string>
-    <string name="dlg_ok" msgid="1421350367857960997">"ਠੀਕ ਹੈ"</string>
+    <string name="clear_data_dlg_text" msgid="1107610960337399006">"ਇਸ ਐਪ ਦਾ ਡਾਟਾ ਪੱਕੇ ਤੌਰ 'ਤੇ ਮਿਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ। ਇਸ ਵਿੱਚ ਫ਼ਾਈਲਾਂ, ਸੈਟਿੰਗਾਂ, ਡਾਟਾਬੇਸ ਅਤੇ ਹੋਰ ਐਪ ਡਾਟਾ ਸ਼ਾਮਲ ਹੈ।"</string>
+    <string name="dlg_ok" msgid="1421350367857960997">"ਠੀਕ"</string>
     <string name="dlg_cancel" msgid="5164705061530774899">"ਰੱਦ ਕਰੋ"</string>
     <string name="app_not_found_dlg_title" msgid="7122106240981109930"></string>
     <string name="app_not_found_dlg_text" msgid="8634675268730513704">"ਐਪ ਇੰਸਟੌਲ ਕੀਤੇ ਐਪਸ ਦੀ ਸੂਚੀ ਵਿੱਚ ਨਹੀਂ ਮਿਲਿਆ ਸੀ।"</string>

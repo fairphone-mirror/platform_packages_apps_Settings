@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Det gick inte att registrera fingeravtrycket. Försök igen eller använd ett annat finger."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Lägg till ännu ett"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Nästa"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Förutom att låsa upp mobilen kan du använda fingeravtrycket för att godkänna köp och åtkomst för appar. "<annotation id="url">"Läs mer"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Förutom att låsa upp mobilen kan du använda fingeravtrycket för att godkänna köp och åtkomst för appar. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" Alternativet för skärmlås har inaktiverats. Kontakta organisationens administratör om du vill veta mer. "<annotation id="admin_details">"Mer information"</annotation>\n\n"Du kan fortfarande auktorisera köp och appåtkomst med fingeravtrycket. "<annotation id="url">"Läs mer"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Lyft fingret och tryck sedan på sensorn igen"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"Du kan lägga till upp till <xliff:g id="COUNT">%d</xliff:g> fingeravtryck"</string>
@@ -1930,7 +1930,7 @@
     <string name="internal_storage" msgid="999496851424448809">"Intern lagring"</string>
     <string name="recompute_size" msgid="1098091228370999128">"Räknar om storlek…"</string>
     <string name="clear_data_dlg_title" msgid="180446967743732410">"Vill du ta bort appdata?"</string>
-    <string name="clear_data_dlg_text" msgid="7870723948123690332">"Appens samtliga data tas bort permanent. Det inkluderar alla filer, inställningar, konton, databaser och så vidare."</string>
+    <string name="clear_data_dlg_text" msgid="1107610960337399006">"Appens data raderas permanent. Detta omfattar filer, inställningar, databaser och annan appdata."</string>
     <string name="dlg_ok" msgid="1421350367857960997">"OK"</string>
     <string name="dlg_cancel" msgid="5164705061530774899">"Avbryt"</string>
     <string name="app_not_found_dlg_title" msgid="7122106240981109930"></string>
@@ -4968,6 +4968,9 @@
     <string name="keywords_media_controls" msgid="8345490568291778638">"media"</string>
     <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Bluetooth aktiveras"</string>
     <string name="aware_summary_when_bedtime_on" msgid="2063856008597376344">"Inte tillgängligt eftersom sovläget är på"</string>
+    <string name="longevity_device_statistics_list_item_title">Livslängd och enhetsstatistik</string>
+    <string name="status_sdn">Tjänstens uppringningsnummer</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"Det är av/på-knappen på sidan av telefonen"</string>
     <string name="bluetooth_message_access_notification_content" msgid="5111712860712823893">"En enhet vill få åtkomst till dina meddelanden. Tryck här för mer information."</string>
     <string name="bluetooth_message_access_dialog_title" msgid="9009836130395061579">"Vill du tillåta åtkomst till meddelanden?"</string>
     <string name="bluetooth_message_access_dialog_content" msgid="7186694737578788487">"En Bluetooth-enhet, <xliff:g id="DEVICE_NAME_0">%1$s</xliff:g>, vill få åtkomst till dina meddelanden.\n\nDu har inte anslutit till <xliff:g id="DEVICE_NAME_1">%2$s</xliff:g> tidigare."</string>
@@ -4985,4 +4988,7 @@
     <string name="bluetooth_connect_access_dialog_content" msgid="4336436466468405850">"<xliff:g id="DEVICE_NAME_0">%1$s</xliff:g> vill ansluta till den här telefonen.\n\nDu har inte anslutit till <xliff:g id="DEVICE_NAME_1">%2$s</xliff:g> tidigare."</string>
     <string name="bluetooth_connect_access_dialog_negative" msgid="4944672755226375059">"Anslut inte"</string>
     <string name="bluetooth_connect_access_dialog_positive" msgid="3630561675207269710">"Anslut"</string>
+    <string name="fingerprint_settings_open_description">"Slå på om du föredrar att låsa upp utan att väcka telefonen först."</string>
+    <string name="fingerprint_settings_open_title">Finger Print Lås upp beteende</string>
+    
 </resources>

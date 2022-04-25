@@ -120,7 +120,21 @@
             android:appComponentFactory="androidx.core.app.CoreComponentFactory">
 
         <uses-library android:name="org.apache.http.legacy" />
+        <uses-library android:name="com.qualcomm.sysrilcmd"/>
+        <uses-library android:name="com.qualcomm.qcrilhook"/>
         <!-- Settings -->
+
+        <!-- Launch T-Mobile OOBE in SetupWizard FINISH page II. -->
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenSize" 
+                  android:excludeFromRecents="true" 
+                  android:label="@string/summary_empty" 
+                  android:name="LaunchMyFairphoneActivity" 
+                  android:theme="@android:style/Theme.DeviceDefault.Wallpaper.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.settings.LAUNCH_MY_FAIRPHONE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <activity android:name=".homepage.SettingsHomepageActivity"
                   android:label="@string/settings_label_launcher"
@@ -146,6 +160,7 @@
                 <action android:name="android.settings.NETWORK_OPERATOR_SETTINGS" />
                 <action android:name="android.settings.DATA_ROAMING_SETTINGS" />
                 <action android:name="android.settings.MMS_MESSAGE_SETTING" />
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -1953,7 +1968,6 @@
             <intent-filter android:priority="1">
                 <action android:name="android.settings.APPLICATION_DEVELOPMENT_SETTINGS" />
                 <action android:name="com.android.settings.APPLICATION_DEVELOPMENT_SETTINGS" />
-                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES"/>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
@@ -3107,6 +3121,16 @@
             android:exported="true"
             android:permission="android.permission.DUMP" />
 
+        <service
+            android:name=".qs.VoWifiTile"
+            android:label="@string/wifi_calling_settings_title"
+            android:icon="@drawable/ic_vowifi_calling"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
         <!-- Quick Settings tiles for Developer Options -->
         <service
             android:name=".development.qstile.DevelopmentTiles$ShowLayout"
@@ -3482,8 +3506,49 @@
            android:configChanges="orientation|screenSize|keyboardHidden">
            <intent-filter>
                <action android:name="android.intent.action.MAIN" />
-           </intent-filter>
-       </activity>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="Settings$WifiCallingHelpFragmentActivity"
+            android:label="@string/wifi_calling_settings_title"
+            android:taskAffinity="com.android.settings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.wifi.calling.WifiCallingHelpActivity" />
+        </activity>
+
+        <receiver
+            android:name="com.android.settings.PhoneCodeReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data
+                    android:host="666"
+                    android:scheme="android_secret_code" />
+                <data
+                    android:host="3228"
+                    android:scheme="android_secret_code" />
+                <data
+                    android:host="02"
+                    android:scheme="android_secret_code" />
+                <data
+                    android:host="3522"
+                    android:scheme="android_secret_code" />
+                <data
+                    android:host="001"
+                    android:scheme="android_secret_code" />
+                <data
+                    android:host="23486583"
+                    android:scheme="android_secret_code" />
+                <data
+                    android:host="002"
+                    android:scheme="android_secret_code" />
+            </intent-filter>
+        </receiver>
 
         <activity android:name=".network.telephony.UserPLMNEditorActivity"
             android:exported="true"
@@ -3493,7 +3558,31 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-
         <!-- This is the longest AndroidManifest.xml ever. -->
+
+        <activity android:name="com.android.settings.PhoneDeviceInfo"
+            android:label="@string/hidden_activity_deivce_info"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.android.settings.ModuleDeviceInfo"
+            android:label="@string/hidden_activity_module_info"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".t2mCustomer.CustomerService"
+            android:exported="true"/>
+
+        <!--Add by T2M yingyubin FP4-3639 20220414-->
+        <service android:name=".ShutdownJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <!--Add by T2M yingyubin FP4-3639 20220414-->
+
     </application>
 </manifest>

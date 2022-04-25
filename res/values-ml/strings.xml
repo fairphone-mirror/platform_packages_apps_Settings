@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"ഫിംഗർപ്രിന്റ് എൻറോൾമെന്റ് പ്രവർത്തിച്ചില്ല. വീണ്ടും ശ്രമിക്കുകയോ മറ്റൊരു വിരൽ ഉപയോഗിക്കുകയോ ചെയ്യുക."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"മറ്റൊന്ന് ചേർക്കുക"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"അടുത്തത്"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"നിങ്ങളുടെ ഫോൺ അൺലോക്കുചെയ്യുന്നതുകൂടാതെ, വാങ്ങലുകളും ആപ്പ് ആക്‌സസ്സും അംഗീകരിക്കാൻ നിങ്ങൾക്ക് ഫിംഗർപ്രിന്റ് ഉപയോഗിക്കാനാകും. "<annotation id="url">"കൂടുതലറിയുക"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"നിങ്ങളുടെ ഫോൺ അൺലോക്കുചെയ്യുന്നതുകൂടാതെ, വാങ്ങലുകളും ആപ്പ് ആക്‌സസ്സും അംഗീകരിക്കാൻ നിങ്ങൾക്ക് ഫിംഗർപ്രിന്റ് ഉപയോഗിക്കാനാകും. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" സ്‌ക്രീൻ ലോക്ക് ഓപ്ഷൻ പ്രവർത്തനരഹിതമാക്കി. കൂടുതലറിയാൻ, നിങ്ങളുടെ സ്ഥാപനത്തിന്റെ അഡ്‌മിനെ ബന്ധപ്പെടുക. "<annotation id="admin_details">"കൂടുതൽ വിശദാംശങ്ങൾ"</annotation>\n\n"നിങ്ങൾക്ക് ഇപ്പോഴും ഫിംഗർപ്രിന്റ് ഉപയോഗിച്ച് വാങ്ങലുകളും ആപ്പ് ആക്‌സസ്സും അംഗീകരിക്കാൻ കഴിയും. "<annotation id="url">"കൂടുതലറിയുക"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"വിരൽ ഉയർത്തുക, തുടർന്ന് സെൻസർ വീണ്ടും തൊടുക"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"നിങ്ങൾക്ക് <xliff:g id="COUNT">%d</xliff:g> വരെ ഫിംഗർപ്രിൻറുകൾ ചേർക്കാനാകും"</string>
@@ -1930,7 +1930,7 @@
     <string name="internal_storage" msgid="999496851424448809">"ആന്തരിക സ്റ്റോറേജ്"</string>
     <string name="recompute_size" msgid="1098091228370999128">"വലുപ്പം വീണ്ടും കണക്കാക്കുന്നു..."</string>
     <string name="clear_data_dlg_title" msgid="180446967743732410">"ആപ്പ് ഡാറ്റ ഇല്ലാതാക്കണോ?"</string>
-    <string name="clear_data_dlg_text" msgid="7870723948123690332">"ഈ ആപ്പിന്‍റെ എല്ലാ ഡാറ്റയും ശാശ്വതമായി ഇല്ലാതാക്കും. ഫയലുകൾ, ക്രമീകരണങ്ങൾ, അക്കൗണ്ടുകൾ, ഡാറ്റാബേസുകൾ തുടങ്ങിയവയെല്ലാം ഇതിൽ ഉൾപ്പെടും."</string>
+    <string name="clear_data_dlg_text" msgid="1107610960337399006">"ഈ ആപ്പിന്റെ ഡാറ്റ ശാശ്വതമായി ഇല്ലാതാക്കും. ഇതിൽ ഫയലുകളും ക്രമീകരണവും ഡാറ്റാബേസുകളും മറ്റ് ആപ്പ് ഡാറ്റയും ഉൾപ്പെടുന്നു."</string>
     <string name="dlg_ok" msgid="1421350367857960997">"ശരി"</string>
     <string name="dlg_cancel" msgid="5164705061530774899">"റദ്ദാക്കുക"</string>
     <string name="app_not_found_dlg_title" msgid="7122106240981109930"></string>

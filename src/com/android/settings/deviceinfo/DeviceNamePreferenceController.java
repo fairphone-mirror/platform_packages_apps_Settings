@@ -80,7 +80,7 @@ public class DeviceNamePreferenceController extends BasePreferenceController
             mDeviceName = Utils.getString(mContext, Utils.KEY_DEVICE_NAME);
         }
         if (mDeviceName == null) {
-            mDeviceName = Build.MODEL;
+            mDeviceName = "Fairphone 4 5G";
         }
     }
 

@@ -111,7 +111,11 @@ public class SimStatusPreferenceController extends
         if (subscriptionInfoList != null) {
             for (SubscriptionInfo info : subscriptionInfoList) {
                 if (info.getSimSlotIndex() == simSlot) {
-                    return info.getCarrierName();
+                    CharSequence carrierName = info.getCarrierName();
+                    if (carrierName == null) {
+                       carrierName = mContext.getText(R.string.device_info_default);
+                    }
+                    return carrierName;
                 }
             }
         }

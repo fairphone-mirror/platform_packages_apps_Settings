@@ -51,7 +51,9 @@ public class ZenModeConversationsImagePreferenceController
     private final int mIconOffsetPx;
     private final ArrayList<Drawable> mConversationDrawables = new ArrayList<>();
     private final NotificationBackend mNotificationBackend;
+    private final Object mLock = new Object();
 
+    private boolean mDisplayed = false;
     private ViewGroup mViewGroup;
     private LayoutPreference mPreference;
 
@@ -82,6 +84,22 @@ public class ZenModeConversationsImagePreferenceController
     @Override
     public String getPreferenceKey() {
         return KEY;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        synchronized (mLock) {
+            mDisplayed = true;
+        }
+    }
+
+    @Override
+    public void onPause() {
+        synchronized (mLock) {
+            mDisplayed = false;
+        }
+        super.onPause();
     }
 
     @Override
@@ -155,7 +173,7 @@ public class ZenModeConversationsImagePreferenceController
 
             @Override
             protected void onPostExecute(Void unused) {
-                if (mContext == null) {
+                if (mContext == null || !mDisplayed) {
                     return;
                 }
                 mConversationDrawables.clear();

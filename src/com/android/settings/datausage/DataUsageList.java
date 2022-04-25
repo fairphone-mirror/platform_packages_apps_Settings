@@ -500,7 +500,9 @@ public class DataUsageList extends DataUsageBaseFragment
 
             // update chart to show selected cycle, and update detail data
             // to match updated sweep bounds.
-            mChart.setNetworkCycleData(mCycleData.get(position));
+            if (mCycleData != null) {
+            	mChart.setNetworkCycleData(mCycleData.get(position));
+            }
 
             updateDetailData();
         }

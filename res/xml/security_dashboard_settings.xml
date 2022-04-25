@@ -50,6 +50,11 @@
             android:summary="@string/summary_placeholder"
             settings:keywords="@string/keywords_fingerprint_settings" />
 
+        <SwitchPreference
+            android:key="fingerprint_settings_behavior"
+            android:title="@string/fingerprint_settings_open_title"
+            android:summary="@string/fingerprint_settings_open_description"
+            settings:controller="com.android.settings.security.FingerPrintBehaviorController" />
         <Preference
             android:key="face_settings"
             android:title="@string/security_settings_face_preference_title"
@@ -154,5 +159,13 @@
         android:title="@string/confirm_sim_deletion_title"
         android:summary="@string/confirm_sim_deletion_description"
         settings:controller="com.android.settings.security.ConfirmSimDeletionPreferenceController"/>
+
+    <SwitchPreference
+        android:order="100"
+        android:key="unlock_failed_reset"
+        android:title="@string/unlock_failed_reset_title"
+        android:summary="@string/unlock_failed_reset_description"
+        settings:controller="com.android.settings.security.UnlockFailedResetController"/>
+
 
 </PreferenceScreen>

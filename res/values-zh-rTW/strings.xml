@@ -415,6 +415,7 @@
     <string name="cancel_lock_screen_dialog_button_label" msgid="1801132985957491690">"取消"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_title" msgid="886085239313346000">"輕觸感應器"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"指紋感應器位於手機背面。請用食指輕觸感應器。"</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"指紋感應器位於手機側面。請用食指輕觸感應器。"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_content_description" msgid="3065850549419750523">"裝置指紋感應器位置插圖"</string>
     <string name="security_settings_fingerprint_enroll_dialog_name_label" msgid="7298812463228440333">"名稱"</string>
     <string name="security_settings_fingerprint_enroll_dialog_ok" msgid="4074335979239208021">"確定"</string>
@@ -446,7 +447,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"無法註冊指紋。請再試一次或使用不同的手指。"</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"新增另一個"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"下一步"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"除了將手機解鎖，你也可以使用指紋授權購物交易及存取應用程式。"<annotation id="url">"瞭解詳情"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"除了將手機解鎖，你也可以使用指紋授權購物交易及存取應用程式。"</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" 螢幕鎖定選項已停用。如要瞭解詳情，請與你的機構管理員聯絡。"<annotation id="admin_details">"詳細資訊"</annotation>\n\n"你依然可以使用指紋來授權購物交易及存取應用程式。"<annotation id="url">"瞭解詳情"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"移開手指，然後再次輕觸感應器"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"你最多可以新增 <xliff:g id="COUNT">%d</xliff:g> 個指紋"</string>
@@ -1930,7 +1931,7 @@
     <string name="internal_storage" msgid="999496851424448809">"內部儲存空間"</string>
     <string name="recompute_size" msgid="1098091228370999128">"重新計算大小…"</string>
     <string name="clear_data_dlg_title" msgid="180446967743732410">"你要刪除應用程式資料嗎？"</string>
-    <string name="clear_data_dlg_text" msgid="7870723948123690332">"系統會永久刪除這個應用程式的所有資料，包含所有檔案、設定、帳戶、資料庫等。"</string>
+    <string name="clear_data_dlg_text" msgid="1107610960337399006">"系統將永久刪除這個應用程式的資料，包括檔案、設定、資料庫和應用程式的其他資料。"</string>
     <string name="dlg_ok" msgid="1421350367857960997">"確定"</string>
     <string name="dlg_cancel" msgid="5164705061530774899">"取消"</string>
     <string name="app_not_found_dlg_title" msgid="7122106240981109930"></string>

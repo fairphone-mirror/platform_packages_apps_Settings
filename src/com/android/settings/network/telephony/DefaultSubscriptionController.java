@@ -75,6 +75,8 @@ public abstract class DefaultSubscriptionController extends TelephonyBasePrefere
     //String keys for data preference lookup
     private static final String LIST_DATA_PREFERENCE_KEY = "data_preference";
 
+    private static final String LIST_SMS_PREFERENCE_KEY = "sms_preference";
+
     private int mPhoneCount;
     private PhoneStateListener[] mPhoneStateListener;
     private int[] mCallState;
@@ -201,9 +203,11 @@ public abstract class DefaultSubscriptionController extends TelephonyBasePrefere
             boolean isEcbmEnabled = TelephonyProperties.in_ecm_mode().orElse(false);
             mPreference.setEnabled(isCallStateIdle() && !isEcbmEnabled);
         } else {
-            // Add the extra "Ask every time" value at the end.
-            displayNames.add(mContext.getString(R.string.calls_and_sms_ask_every_time));
-            subscriptionIds.add(Integer.toString(SubscriptionManager.INVALID_SUBSCRIPTION_ID));
+           if (!TextUtils.equals(getPreferenceKey(), LIST_SMS_PREFERENCE_KEY)) {
+                // Add the extra "Ask every time" value at the end.
+                displayNames.add(mContext.getString(R.string.calls_and_sms_ask_every_time)); 
+                subscriptionIds.add(Integer.toString(SubscriptionManager.INVALID_SUBSCRIPTION_ID));               
+            }
         }
 
         mPreference.setEntries(displayNames.toArray(new CharSequence[0]));

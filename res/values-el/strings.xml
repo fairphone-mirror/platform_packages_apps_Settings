@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Αποτυχία εγγραφής δακτυλικού αποτυπώματος. Δοκιμάστε ξανά ή χρησιμοποιήστε ένα άλλο δάκτυλο."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Προσθήκη άλλου"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Επόμενο"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Εκτός από τη δυνατότητα ξεκλειδώματος του τηλεφώνου σας, μπορείτε επίσης να χρησιμοποιήσετε το δακτυλικό αποτύπωμά σας, για να εξουσιοδοτήσετε αγορές και πρόσβαση σε εφαρμογές. "<annotation id="url">"Μάθετε περισσότερα"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Εκτός από τη δυνατότητα ξεκλειδώματος του τηλεφώνου σας, μπορείτε επίσης να χρησιμοποιήσετε το δακτυλικό αποτύπωμά σας, για να εξουσιοδοτήσετε αγορές και πρόσβαση σε εφαρμογές. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" Η επιλογή κλειδώματος οθόνης είναι απενεργοποιημένη. Για να μάθετε περισσότερα, επικοινωνήστε με τον διαχειριστή της εφαρμογής σας. "<annotation id="admin_details">"Περισσότερες λεπτομέρειες"</annotation>\n\n"Μπορείτε να εξακολουθήσετε να χρησιμοποιείτε το δακτυλικό αποτύπωμα για την εξουσιοδότηση αγορών και την πρόσβαση εφαρμογών. "<annotation id="url">"Μάθετε περισσότερα"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Σηκώστε το δάχτυλο και, στη συνέχεια, αγγίξτε ξανά τον αισθητήρα"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"Μπορείτε να προσθέσετε έως <xliff:g id="COUNT">%d</xliff:g> μοναδικά χαρακτηριστικά"</string>
@@ -1930,7 +1930,7 @@
     <string name="internal_storage" msgid="999496851424448809">"Εσ. αποθ. χώρος"</string>
     <string name="recompute_size" msgid="1098091228370999128">"Εκ νέου υπολογισμός μεγέθους..."</string>
     <string name="clear_data_dlg_title" msgid="180446967743732410">"Διαγραφή δεδομένων εφαρμογής;"</string>
-    <string name="clear_data_dlg_text" msgid="7870723948123690332">"Όλα τα δεδομένα της εφαρμογής θα διαγραφούν μόνιμα. Αυτό περιλαμβάνει όλα τα αρχεία, τις ρυθμίσεις, τους λογαριασμούς, τις βάσεις δεδομένων κ.λπ."</string>
+    <string name="clear_data_dlg_text" msgid="1107610960337399006">"Τα δεδομένα αυτής της εφαρμογής θα διαγραφούν οριστικά. Σε αυτά περιλαμβάνονται αρχεία, ρυθμίσεις, βάσεις δεδομένων και άλλα δεδομένα εφαρμογών."</string>
     <string name="dlg_ok" msgid="1421350367857960997">"OK"</string>
     <string name="dlg_cancel" msgid="5164705061530774899">"Ακύρωση"</string>
     <string name="app_not_found_dlg_title" msgid="7122106240981109930"></string>

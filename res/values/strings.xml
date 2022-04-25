@@ -909,9 +909,11 @@
     <!-- Button text to cancel lock screen skip dialog [CHAR LIMIT=20] -->
     <string name="cancel_lock_screen_dialog_button_label">Cancel</string>
     <!-- Introduction title shown in fingerprint enrollment dialog to locate the sensor [CHAR LIMIT=29] -->
-    <string name="security_settings_fingerprint_enroll_find_sensor_title">Touch the sensor</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_title">Touch the Fingerprint Sensor</string>
     <!-- Message shown in fingerprint enrollment dialog to locate the sensor -->
     <string name="security_settings_fingerprint_enroll_find_sensor_message">It\u2019s on the back of your phone. Use your index finger.</string>
+
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">It is the power button on the side of your phone</string>
     <!-- Content description of graphic that shows where the fingerprint of the device is [CHAR LIMIT=NONE] -->
     <string name="security_settings_fingerprint_enroll_find_sensor_content_description">Illustration with device and fingerprint sensor location</string>
     <!-- Label text shown in fingerprint dialog for renaming a fingerprint template [CHAR LIMIT=22] -->
@@ -976,7 +978,7 @@
     <!-- Button text shown at the end of enrollment that allows the user to move to the next step -->
     <string name="fingerprint_enroll_button_next">Next</string>
     <!-- Text shown in fingerprint settings explaining what the fingerprint can be used for. [CHAR LIMIT=NONE] -->
-    <string name="security_settings_fingerprint_enroll_disclaimer">In addition to unlocking your phone, you can also use your fingerprint to authorize purchases and app access. <annotation id="url">Learn more</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer">In addition to unlocking your phone, you can also use your fingerprint to authorize purchases and app access.</string>
     <!-- Text shown in fingerprint settings explaining what the fingerprint can be used for in the case unlocking is disabled [CHAR LIMIT=NONE] -->
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled">
         The screen lock option is disabled. To learn more, contact your organization\'s admin.
@@ -2162,6 +2164,8 @@
     <string name="wifi_do_not_provide_eap_user_cert">Do not provide</string>
     <!-- Menu option for not validating the EAP server -->
     <string name="wifi_do_not_validate_eap_server">Do not validate</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">No certificate specified. Your connection will not be private.</string>
     <!-- Warning message displayed if network name (ssid) is too long -->
     <string name="wifi_ssid_too_long">Network name is too long.</string>
     <!-- Warning message displayed if user does not specify a domain for the CA certificate.
@@ -2530,15 +2534,15 @@
         <item>@*android:string/wfc_mode_wifi_only_summary</item>
     </string-array>
     <string-array name="wifi_calling_mode_choices_v2">
-        <item>Wi-Fi</item>
-        <item>Mobile</item>
-        <item>Wi-Fi only</item>
+        <item>@*android:string/wfc_mode_wifi_preferred_summary</item>
+        <item>@*android:string/wfc_mode_cellular_preferred_summary</item>
+        <item>@*android:string/wfc_mode_wifi_only_summary</item>
     </string-array>
     <string-array name="wifi_calling_mode_choices_v2_with_ims_preferred">
-        <item>Ims Preferred</item>
-        <item>Wi-Fi</item>
-        <item>Mobile</item>
-        <item>Wi-Fi only</item>
+        <item>@*android:string/wfc_mode_ims_preferred_summary</item>
+        <item>@*android:string/wfc_mode_wifi_preferred_summary</item>
+        <item>@*android:string/wfc_mode_cellular_preferred_summary</item>
+        <item>@*android:string/wfc_mode_wifi_only_summary</item>
     </string-array>
     <string-array name="wifi_calling_mode_values" translatable="false">
         <item>"2"</item>
@@ -4535,7 +4539,7 @@
     <!-- Manage applications, individual application screen, confirmation dialog title. Displays when user selects to "Clear data". -->
     <string name="clear_data_dlg_title">Delete app data?</string>
     <!-- Manage applications, individual application screen, confirmation dialog message. Displays when user selects to "Clear data". It warns the user of the consequences of clearing the data for an app. -->
-    <string name="clear_data_dlg_text">All this app\u2019s data will be deleted permanently. This includes all files, settings, accounts, databases, etc.</string>
+    <string name="clear_data_dlg_text">This app\u2019s data will be permanently deleted. This includes files, settings, databases, and other app data.</string>
     <!-- Manage applications, individual application screen, confirmation dialog button. Displays when user selects to "Clear data". Goes through with the clearing of the data. -->
     <string name="dlg_ok">OK</string>
     <!-- Manage applications, individual application screen, confirmation dialog button. Displays when user selects to "Clear data". -->
@@ -9431,6 +9435,11 @@
     <!-- [CHAR LIMIT=NONE] eSim deletion confirmation description  -->
     <string name="confirm_sim_deletion_description">Verify it\u0027s you before erasing a downloaded SIM</string>
 
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="unlock_failed_reset_title">Auto factory reset</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="unlock_failed_reset_description">If you attempt to unlock your phone incorrectly 15 times it will be reset to factory settings.All data,including files and downloaded apps,will be deleted.</string>
+
     <!-- Opening string on the dialog that prompts the user to confirm that they really want to delete their existing work profile. The administration app icon and name appear after the final colon. [CHAR LIMIT=NONE] -->
     <string name="opening_paragraph_delete_profile_unknown_company">This work profile is managed by:</string>
     <!-- Summary for work profile accounts group. [CHAR LIMIT=25] -->
@@ -12086,7 +12095,7 @@
     <string name="wfc_disclaimer_location_title_text">Location</string>
 
     <!-- Warn the user that the phone may share its location with the service provider. [CHAR LIMIT=NONE] -->
-    <string name="wfc_disclaimer_location_desc_text">Your service provider may collect your location in order to provide this service.\n\nPlease review your service provider\u2019s privacy policy.</string>
+    <string name="wfc_disclaimer_location_desc_text">Your location-related information can be sent to Google and your operator in order to establish Wi-Fi calls.</string>
 
     <!-- String for about phone -->
     <string name="ram_total_size">RAM total size</string>
@@ -12352,4 +12361,39 @@
     <string name="bluetooth_connect_access_dialog_negative">Don\u2019t connect</string>
     <!-- Strings for Dialog connect button -->
     <string name="bluetooth_connect_access_dialog_positive">Connect</string>
+
+    <!--add by renjie-->
+    <string name="ims_unlock_enable">"IMS settings display"</string>
+    <string name="ims_unlock_enable_summary">"Debug mode when IMS enable"</string>
+
+    <string name="ims_settings_title">"IMS Settings"</string>
+    <string name="ims_settings_summary">"Debug mode for IMS Settings"</string>
+
+    <string name="ims_settings_summary_on">"Debug mode for IMS Settings is ON."</string>
+    <string name="ims_settings_summary_off">"Debug mode for IMS Settings is OFF"</string>
+
+
+    <string name="status_sdn">"Service Dialing Number"</string>
+    
+    <string name="dialog_title_image_mapping">"Image Mapping"</string>
+    <string name="hidden_activity_deivce_info">"Device information"</string>
+
+
+    <string name="settings_elabel_activity_unavailable">There is a problem loading the elaebl file.</string>
+    <string name="hidden_activity_module_info">"Module information"</string>
+
+        <!-- Title for the Longevity & device statistics -->
+    <string name="longevity_device_statistics_list_item_title">Longevity &amp; device statistics</string>
+    <string name="main_copy_to_clipboard">"Copied to clipboard"</string>
+
+    <string name="menu_vowifi_help">"HELP"</string>
+    <string name="wfc_help_desc_text">Wi-Fi calling\n\nUse Wi-Fi networks to make and receive calls anywhere in metropolitan France, without connecting to a mobile network.\n\nTo use the service, check that it is offered by your service provider, enable it in Call settings, then connect to a Wi-Fi network. The icon below will be shown whenever this function is available.</string>
+
+    <string name="verification_confirm_your_password_header">Input verify code :</string>
+
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="fingerprint_settings_open_title">Fingerprint Unlock Behavior</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="fingerprint_settings_open_description">"Switch on if you prefer to unlock without waking up the phone first."</string>
+
 </resources>

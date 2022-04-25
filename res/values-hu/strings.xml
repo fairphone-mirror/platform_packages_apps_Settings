@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Az ujjlenyomat regisztrációja nem sikerült. Próbálja újra, vagy próbálkozzon egy másik ujjával."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Még egy hozzáadása"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Következő"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"A telefon feloldásán kívül az ujjlenyomattal a vásárlásokat és az alkalmazások hozzáféréseit is engedélyezheti. "<annotation id="url">"További információ"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"A telefon feloldásán kívül az ujjlenyomattal a vásárlásokat és az alkalmazások hozzáféréseit is engedélyezheti. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" A képernyőzár lehetőség le van tiltva. Ha további információra van szüksége, lépjen kapcsolatba a szervezet rendszergazdájával. "<annotation id="admin_details">"Részletek"</annotation>\n\n"Ujjlenyomatát továbbra is használhatja vásárlások jóváhagyásához alkalmazásokhoz való hozzáféréshez. "<annotation id="url">"További információ."</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Emelje fel ujját, majd érintse meg újra az érzékelőt"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"Legfeljebb <xliff:g id="COUNT">%d</xliff:g> ujjlenyomatot adhat hozzá"</string>
@@ -1930,7 +1930,7 @@
     <string name="internal_storage" msgid="999496851424448809">"Belső tárhely"</string>
     <string name="recompute_size" msgid="1098091228370999128">"Méret újraszámítása..."</string>
     <string name="clear_data_dlg_title" msgid="180446967743732410">"Törli az alkalmazás adatait?"</string>
-    <string name="clear_data_dlg_text" msgid="7870723948123690332">"Az alkalmazás minden adatát véglegesen törölni fogja. Ez magában foglalja az összes fájlt, beállítást, fiókot, adatbázist stb."</string>
+    <string name="clear_data_dlg_text" msgid="1107610960337399006">"Az alkalmazás adatai véglegesen törlődnek. Így törlődni fognak a fájlok, a beállítások, az adatbázisok és az egyéb alkalmazásadatok is."</string>
     <string name="dlg_ok" msgid="1421350367857960997">"OK"</string>
     <string name="dlg_cancel" msgid="5164705061530774899">"Mégse"</string>
     <string name="app_not_found_dlg_title" msgid="7122106240981109930"></string>

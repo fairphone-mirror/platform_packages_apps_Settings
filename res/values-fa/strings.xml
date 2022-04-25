@@ -446,7 +446,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"ثبت اثر انگشت کار نمی‌کند. دوباره امتحان کنید یا از انگشت دیگری استفاده کنید."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"افزودن یک انگشت دیگر"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"بعدی"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"علاوه بر باز کردن قفل تلفنتان، همچنین می‌توانید از اثر انگشتتان برای اجازه دادن به خریدها و دسترسی برنامه استفاده کنید."<annotation id="url">"بیشتر بدانید"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"علاوه بر باز کردن قفل تلفنتان، همچنین می‌توانید از اثر انگشتتان برای اجازه دادن به خریدها و دسترسی برنامه استفاده کنید."</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" گزینه قفل صفحه غیرفعال است. با سرپرست دستگاه تماس بگیرید تا بیشتر بدانید. "<annotation id="admin_details">"جزئیات بیشتر"</annotation>\n\n"برای تأیید خریدها و دسترسی به برنامه، همچنان می‌توانید از اثر انگشتتان استفاده کنید. "<annotation id="url">" بیشتر بدانید"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"انگشت را بلند کنید، سپس دوباره حسگر را لمس کنید"</string>
     <string name="fingerprint_add_max" msgid="8639321019299347447">"می‌توانید حداکثر <xliff:g id="COUNT">%d</xliff:g> اثرانگشت اضافه کنید"</string>
@@ -1930,7 +1930,7 @@
     <string name="internal_storage" msgid="999496851424448809">"فضای ذخیره‌سازی داخلی"</string>
     <string name="recompute_size" msgid="1098091228370999128">"محاسبه مجدد اندازه…"</string>
     <string name="clear_data_dlg_title" msgid="180446967743732410">"داده‌های برنامه حذف شود؟"</string>
-    <string name="clear_data_dlg_text" msgid="7870723948123690332">"همه داده‌های این برنامه به صورت دائمی حذف می‌شود. این شامل تمام فایل‌ها، تنظیمات، حساب‌ها، پایگاه‌های داده و دیگر موارد می‌شود."</string>
+    <string name="clear_data_dlg_text" msgid="1107610960337399006">"داده‌های این برنامه به‌طور دائم حذف خواهد شد. این شامل فایل‌ها، تنظیمات، پایگاه‌های داده، و دیگر داده‌های برنامه می‌شود."</string>
     <string name="dlg_ok" msgid="1421350367857960997">"تأیید"</string>
     <string name="dlg_cancel" msgid="5164705061530774899">"لغو"</string>
     <string name="app_not_found_dlg_title" msgid="7122106240981109930"></string>

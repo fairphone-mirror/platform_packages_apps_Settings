@@ -26,6 +26,8 @@ import android.os.UserHandle;
 import android.provider.Settings.System;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Log;
+
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
@@ -61,6 +63,8 @@ public class RingtonePreference extends Preference {
 
     public RingtonePreference(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+	Log.e("settings_ringtone"," RingtonePreference onRestoreRingtone() " + onRestoreRingtone());
 
         final TypedArray a = context.obtainStyledAttributes(attrs,
                 com.android.internal.R.styleable.RingtonePreference, 0, 0);
@@ -165,6 +169,8 @@ public class RingtonePreference extends Preference {
                     RingtoneManager.getDefaultUri(getRingtoneType()));
         }
 
+Log.e("settings_ringtone"," onPrepareRingtonePickerIntent getTitle() " + getTitle());
+
         ringtonePickerIntent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, mShowSilent);
         ringtonePickerIntent.putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE, mRingtoneType);
         ringtonePickerIntent.putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE, getTitle());
@@ -228,10 +234,14 @@ public class RingtonePreference extends Preference {
     }
 
     public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (data != null) {
-            Uri uri = data.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
+	Log.e("settings_ringtone"," onActivityResult ");
 
+        if (data != null) {
+	Log.e("settings_ringtone"," data != null ");
+            Uri uri = data.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
+	Log.e("settings_ringtone"," PICKED_URI uri " + uri);
             if (callChangeListener(uri != null ? uri.toString() : "")) {
+	Log.e("settings_ringtone"," callChangeListener uri " + uri);
                 onSaveRingtone(uri);
             }
         }
