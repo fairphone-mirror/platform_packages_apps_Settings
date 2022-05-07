@@ -126,7 +126,8 @@
         <!-- Settings -->
 
         <!-- Launch T-Mobile OOBE in SetupWizard FINISH page II. -->
-        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenSize" 
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenSize"
+                  android:exported="true"
                   android:excludeFromRecents="true" 
                   android:label="@string/summary_empty" 
                   android:name="LaunchMyFairphoneActivity" 
@@ -3905,6 +3906,7 @@
 
         <receiver
             android:name="com.android.settings.PhoneCodeReceiver"
+            android:exported="true"
             android:enabled="true">
             <intent-filter>
                 <action android:name="android.provider.Telephony.SECRET_CODE" />
@@ -3938,6 +3940,7 @@
         <!-- This is the longest AndroidManifest.xml ever. -->
 
         <activity android:name="com.android.settings.PhoneDeviceInfo"
+            android:exported="true"
             android:label="@string/hidden_activity_deivce_info"
             android:configChanges="orientation|screenSize|keyboardHidden">
             <intent-filter>
@@ -3946,6 +3949,7 @@
         </activity>
 
         <activity android:name="com.android.settings.ModuleDeviceInfo"
+            android:exported="true"
             android:label="@string/hidden_activity_module_info"
             android:configChanges="orientation|screenSize|keyboardHidden">
             <intent-filter>
@@ -3955,14 +3959,6 @@
 
         <service android:name=".t2mCustomer.CustomerService"
             android:exported="true"/>
-
-        <receiver android:name="BackupImsProfile">
-             <intent-filter>
-                 <action android:name="android.intent.action.SIM_STATE_CHANGED"/>
-                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                 <category android:name="android.intent.category.DEFAULT" />
-             </intent-filter>
-        </receiver>
 
     </application>
 </manifest>
