@@ -7,19 +7,25 @@ package com.arima.settings;
 import android.content.Context;
 import android.os.PowerManager;
 import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.InputStream;
+
 import javax.net.ssl.HttpsURLConnection;
+
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.io.IOException;
+
 import javax.net.ssl.*;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.HostnameVerifier;
+
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
+
 import android.os.Build;
 
 //<2020/09/23,lucygao,OEM unlock flow change.
@@ -37,10 +43,12 @@ public class OemLockVerifier {
     public static final int HTTP_VERIFY_FAIL_UNKNOWN = 900;
 
     private static final String SVR_URL = "https://factory.fairphone.com/api/unlock-codes";
-    private static final String DEBUG_SVR_URL = "https://app-26f9cbc0-2444-4200-a713-6575e61635b4.cleverapps.io/api/unlock-codes";
+    //private static final String DEBUG_SVR_URL = "https://app-26f9cbc0-2444-4200-a713-6575e61635b4.cleverapps.io/api/unlock-codes";
 
-    private static final String DEBOUG_X_API_KEY = "E/xUciBHocHSzETALqTk9Q==";
-    private static final String X_API_KEY = "p0C44XA4efzIqbchuzGpYw==";
+    //private static final String DEBOUG_X_API_KEY = "E/xUciBHocHSzETALqTk9Q==";
+    //private static final String X_API_KEY = "p0C44XA4efzIqbchuzGpYw==";
+
+    private static final String FP4_RELEASE_API_KEY = "nYhYMjXvVRd8SCNwPOTNuQ==";//warning !!!  Do not in code now !!!!!!
 
     private String mTargetUrl;
 
@@ -65,15 +73,17 @@ public class OemLockVerifier {
         // if (isDebugOsBuild()) {
         //     mTargetUrlTest = DEBUG_SVR_URL + "/" + imei + "/" + sn;
         // }
-        Log.d(TAG,"targetUrl="+mTargetUrlTest);
+        Log.d(TAG, "targetUrl=" + mTargetUrlTest);
         if (imei == null || sn == null) {
-            if (mResponseListener!=null) mResponseListener.onFinish(HTTP_VERIFY_FAIL_UNKNOWN, "Invalid parameters");
+            if (mResponseListener != null)
+                mResponseListener.onFinish(HTTP_VERIFY_FAIL_UNKNOWN, "Invalid parameters");
             return;
         }
 
         //If not available network, direct return
         if (false) {
-            if (mResponseListener!=null) mResponseListener.onFinish(HTTP_VERIFY_FAIL_UNKNOWN, "No network connection");
+            if (mResponseListener != null)
+                mResponseListener.onFinish(HTTP_VERIFY_FAIL_UNKNOWN, "No network connection");
             return;
         }
 
@@ -81,29 +91,22 @@ public class OemLockVerifier {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Log.d(TAG,"oem Lock verifier Start");
+                Log.d(TAG, "oem Lock verifier Start");
                 acquireWakeLock();
                 try {
-                    String token;
-                    // if (isDebugOsBuild()) {
-                    //     token=DEBOUG_X_API_KEY;
-                    // }else{
-                    //     token=X_API_KEY;
-                    // }
-                    token=X_API_KEY;  
                     SSLContext sslcontext = SSLContext.getInstance("SSL");
                     sslcontext.init(null, new TrustManager[]{new MyX509TrustManager()}, new java.security.SecureRandom());
-                
+
                     HostnameVerifier ignoreHostnameVerifier = new HostnameVerifier() {
                         public boolean verify(String s, SSLSession sslsession) {
-                            Log.d(TAG,"WARNING: Hostname is not matched for cert.");
+                            Log.d(TAG, "WARNING: Hostname is not matched for cert.");
                             return true;
                         }
                     };
-                                      
+
                     URL url = new URL(mTargetUrlTest);
-                    HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
-                    try {         
+                    HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+                    try {
                         conn.setDefaultHostnameVerifier(ignoreHostnameVerifier);
                         conn.setDefaultSSLSocketFactory(sslcontext.getSocketFactory());
                         conn.setRequestProperty("Content-Type", "application/json");
@@ -111,42 +114,46 @@ public class OemLockVerifier {
                         conn.setRequestProperty("Accept", "application/json");
                         conn.setDoOutput(true);
                         conn.setDoInput(true);
-                        conn.setUseCaches(false);                        
+                        conn.setUseCaches(false);
                         conn.setConnectTimeout(CONNECT_TIMEOUT);
-                        conn.connect();                     
+                        conn.connect();
 
                         int resp_code = conn.getResponseCode();
-                        Log.d(TAG,"queryVerifyResult()--resp_code=" + resp_code);
+                        Log.d(TAG, "queryVerifyResult()--resp_code=" + resp_code);
                         String verify_code = "";
-                        if(resp_code == HTTP_CREATED){
+                        if (resp_code == HTTP_CREATED) {
                             BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                             String output;
                             while ((output = br.readLine()) != null) {
-                                verify_code +=output;
+                                verify_code += output;
                             }
-                            int begin=verify_code.indexOf(":");
-                            int last=verify_code.length();
-                            verify_code = verify_code.substring(begin+2,last-2);
+                            int begin = verify_code.indexOf(":");
+                            int last = verify_code.length();
+                            verify_code = verify_code.substring(begin + 2, last - 2);
                         }
-                        Log.d(TAG,"queryVerifyResult()--verify_code=" + verify_code);
+                        Log.d(TAG, "queryVerifyResult()--verify_code=" + verify_code);
 
                         if (resp_code == HttpsURLConnection.HTTP_NOT_FOUND) {
-                            if (mResponseListener!=null) mResponseListener.onFinish(resp_code, "URL not found");
+                            if (mResponseListener != null)
+                                mResponseListener.onFinish(resp_code, "URL not found");
                         } else {
-                            if (mResponseListener!=null) mResponseListener.onFinish(resp_code, verify_code);
+                            if (mResponseListener != null)
+                                mResponseListener.onFinish(resp_code, verify_code);
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
-                        if (mResponseListener!=null) mResponseListener.onFinish(HTTP_VERIFY_FAIL_UNKNOWN, "inner Unknown failure");
-                    }finally{
+                        if (mResponseListener != null)
+                            mResponseListener.onFinish(HTTP_VERIFY_FAIL_UNKNOWN, "inner Unknown failure");
+                    } finally {
                         conn.disconnect();
-                    }			
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    if (mResponseListener!=null) mResponseListener.onFinish(HTTP_VERIFY_FAIL_UNKNOWN, "outer Unknown failure");
+                    if (mResponseListener != null)
+                        mResponseListener.onFinish(HTTP_VERIFY_FAIL_UNKNOWN, "outer Unknown failure");
                 }
                 releaseWakeLock();
-                Log.d(TAG,"oem Lock verifier - Thread end");
+                Log.d(TAG, "oem Lock verifier - Thread end");
             }
         }).start();
     }
@@ -157,15 +164,17 @@ public class OemLockVerifier {
         // if (isDebugOsBuild()) {
         //     mTargetUrl = DEBUG_SVR_URL + "/" + imei + "/" + sn + "/" + user_pass;
         // }
-        Log.d(TAG,"queryVerifyResultGet--targetUrl="+mTargetUrl);
+        Log.d(TAG, "queryVerifyResultGet--targetUrl=" + mTargetUrl);
         if (imei == null || sn == null || user_pass == null) {
-            if (mResponseListener!=null) mResponseListener.onFinish(HTTP_VERIFY_FAIL_UNKNOWN, "Invalid parameters");
+            if (mResponseListener != null)
+                mResponseListener.onFinish(HTTP_VERIFY_FAIL_UNKNOWN, "Invalid parameters");
             return;
         }
 
         //If not available network, direct return
         if (false) {
-            if (mResponseListener!=null) mResponseListener.onFinish(HTTP_VERIFY_FAIL_UNKNOWN, "No network connection");
+            if (mResponseListener != null)
+                mResponseListener.onFinish(HTTP_VERIFY_FAIL_UNKNOWN, "No network connection");
             return;
         }
 
@@ -173,29 +182,29 @@ public class OemLockVerifier {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Log.d(TAG,"queryVerifyResultGet--oem Lock verifier Start");
+                Log.d(TAG, "queryVerifyResultGet--oem Lock verifier Start");
                 acquireWakeLock();
-                try {  
+                try {
                     String token;
                     // if (isDebugOsBuild()) {
                     //     token=DEBOUG_X_API_KEY;
                     // }else{
                     //     token=X_API_KEY;
                     // }
-                    token=X_API_KEY;  
+                    token = FP4_RELEASE_API_KEY;
                     SSLContext sslcontext = SSLContext.getInstance("SSL");
                     sslcontext.init(null, new TrustManager[]{new MyX509TrustManager()}, new java.security.SecureRandom());
-                
+
                     HostnameVerifier ignoreHostnameVerifier = new HostnameVerifier() {
                         public boolean verify(String s, SSLSession sslsession) {
-                            Log.d(TAG,"WARNING: Hostname is not matched for cert.");
+                            Log.d(TAG, "WARNING: Hostname is not matched for cert.");
                             return true;
                         }
                     };
-                                      
+
                     URL url = new URL(mTargetUrl);
-                    HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
-                    try {         
+                    HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+                    try {
                         conn.setDefaultHostnameVerifier(ignoreHostnameVerifier);
                         conn.setDefaultSSLSocketFactory(sslcontext.getSocketFactory());
                         conn.setRequestProperty("Content-Type", "application/json");
@@ -203,75 +212,79 @@ public class OemLockVerifier {
                         conn.setRequestMethod("GET");
                         conn.setRequestProperty("Accept", "application/json");
                         conn.setDoInput(true);
-                        conn.setUseCaches(false);                        
+                        conn.setUseCaches(false);
                         conn.setConnectTimeout(CONNECT_TIMEOUT);
-                        conn.connect();                      
+                        conn.connect();
 
                         int resp_code1 = conn.getResponseCode();
-                        Log.d(TAG,"queryVerifyResultGet()--resp_code1=" + resp_code1);
+                        Log.d(TAG, "queryVerifyResultGet()--resp_code1=" + resp_code1);
                         String verify_code1 = "";
-                        if(resp_code1 == HTTP_OK){
+                        if (resp_code1 == HTTP_OK) {
                             BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                             String output;
                             while ((output = br.readLine()) != null) {
-                                verify_code1 +=output;
+                                verify_code1 += output;
                             }
                         }
-                        Log.d(TAG,"queryVerifyResultGet()--verify_code1=" + verify_code1);
+                        Log.d(TAG, "queryVerifyResultGet()--verify_code1=" + verify_code1);
                         if (resp_code1 == HttpsURLConnection.HTTP_NOT_FOUND) {
-                            if (mResponseListener!=null) mResponseListener.onFinish(resp_code1, "URL not found");
+                            if (mResponseListener != null)
+                                mResponseListener.onFinish(resp_code1, "URL not found");
                         } else {
-                            if (mResponseListener!=null) mResponseListener.onFinish(resp_code1, verify_code1);
+                            if (mResponseListener != null)
+                                mResponseListener.onFinish(resp_code1, verify_code1);
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
-                        if (mResponseListener!=null) mResponseListener.onFinish(HTTP_VERIFY_FAIL_UNKNOWN, "inner Unknown failure");
-                    }finally{
+                        if (mResponseListener != null)
+                            mResponseListener.onFinish(HTTP_VERIFY_FAIL_UNKNOWN, "inner Unknown failure");
+                    } finally {
                         conn.disconnect();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    if (mResponseListener!=null) mResponseListener.onFinish(HTTP_VERIFY_FAIL_UNKNOWN, "outer Unknown failure");
+                    if (mResponseListener != null)
+                        mResponseListener.onFinish(HTTP_VERIFY_FAIL_UNKNOWN, "outer Unknown failure");
                 }
                 releaseWakeLock();
-                Log.d(TAG,"queryVerifyResultGet--oem Lock verifier - Thread end");
+                Log.d(TAG, "queryVerifyResultGet--oem Lock verifier - Thread end");
             }
         }).start();
     }
 
     private void acquireWakeLock() {
-        Log.d(TAG,"acquireWakeLock");
+        Log.d(TAG, "acquireWakeLock");
 
         if (null == wakeLock) {
-            PowerManager pm = (PowerManager)mContext.getSystemService(Context.POWER_SERVICE);
-            wakeLock= pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK ,"OEM_UNLOCK");
+            PowerManager pm = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+            wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "OEM_UNLOCK");
             if (null != wakeLock) {
-                Log.d(TAG,"wakeLock acquire.");
+                Log.d(TAG, "wakeLock acquire.");
                 wakeLock.acquire();
             }
         }
     }
 
     private void releaseWakeLock() {
-        Log.d(TAG,"releaseWakeLock");
+        Log.d(TAG, "releaseWakeLock");
         if (null != wakeLock) {
-            Log.d(TAG,"wakeLock release.");
+            Log.d(TAG, "wakeLock release.");
             wakeLock.release();
             wakeLock = null;
         }
     }
 
     private boolean isDebugOsBuild() {
-          return "userdebug".equals(Build.TYPE) || "eng".equals(Build.TYPE);
+        return "userdebug".equals(Build.TYPE) || "eng".equals(Build.TYPE);
     }
 
     public static class MyX509TrustManager implements X509TrustManager {
         @Override
-        public void checkClientTrusted(X509Certificate certificates[],String authType) throws CertificateException {
+        public void checkClientTrusted(X509Certificate certificates[], String authType) throws CertificateException {
         }
 
         @Override
-        public void checkServerTrusted(X509Certificate[] ax509certificate,String s) throws CertificateException {
+        public void checkServerTrusted(X509Certificate[] ax509certificate, String s) throws CertificateException {
         }
 
         @Override
