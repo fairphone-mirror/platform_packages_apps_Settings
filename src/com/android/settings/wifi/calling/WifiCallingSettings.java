@@ -276,6 +276,9 @@ public class WifiCallingSettings extends SettingsPreferenceFragment
         if (subInfoList == null) {
             return Collections.emptyList();
         }
+
+        boolean ims_enabled = Settings.Global.getInt(getContext().getContentResolver(), "ims_enable_settings",0) == 1;
+
         List<SubscriptionInfo> selectedList = new ArrayList<SubscriptionInfo>();
         for (SubscriptionInfo subInfo : subInfoList) {
             int subId = subInfo.getSubscriptionId();
@@ -283,7 +286,7 @@ public class WifiCallingSettings extends SettingsPreferenceFragment
                 if (MobileNetworkUtils.isWifiCallingEnabled(
                         getContext(),
                         subId,
-                        queryImsState(subId))) {
+                        queryImsState(subId)) || ims_enabled ) {
                     selectedList.add(subInfo);
                 }
             } catch (Exception exception) {}

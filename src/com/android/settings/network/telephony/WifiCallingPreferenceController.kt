@@ -72,11 +72,18 @@ open class WifiCallingPreferenceController @JvmOverloads constructor(
     /**
      * Note: Visibility also controlled by [onViewCreated].
      */
-    override fun getAvailabilityStatus(subId: Int) =
+    override fun getAvailabilityStatus(subId: Int): Int {
+        val imsEnabled = Settings.Global.getInt(mContext.contentResolver, "ims_enable_settings", 0) == 1
+        if (imsEnabled)
+            return AVAILABLE
+
         if (SubscriptionManager.isValidSubscriptionId(subId)
                 && MobileNetworkUtils.isWifiCallingEnabled(mContext, subId, null)
-                && isWfcEnabledByCarrierConfig(subId)) AVAILABLE
-        else CONDITIONALLY_UNAVAILABLE
+                && isWfcEnabledByCarrierConfig(subId))
+            return AVAILABLE
+        else
+            return CONDITIONALLY_UNAVAILABLE
+    }
 
     override fun displayPreference(screen: PreferenceScreen) {
         // Not call super here, to avoid preference.isVisible changed unexpectedly

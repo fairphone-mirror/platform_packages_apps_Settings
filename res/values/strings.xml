@@ -13857,4 +13857,11 @@
     <string name="reboot_required_title">Reboot Required</string>
     <string name="reboot_required_message">Change the search bar visibility requires a reboot. Reboot now?</string>
     <string name="settings_elabel_activity_unavailable">There is a problem loading the elabel file.</string>
+
+    <string name="ims_settings_summary_on">"Debug mode for IMS Settings is ON."</string>
+    <string name="ims_settings_summary_off">"Debug mode for IMS Settings is OFF"</string>
+    <string name="ims_unlock_enable">"IMS settings display"</string>
+    <string name="ims_unlock_enable_summary">"Debug mode when IMS enable"</string>
+    <string name="ims_settings_title">"IMS Settings"</string>
+    <string name="ims_settings_summary">"Debug mode for IMS Settings"</string>
 </resources>

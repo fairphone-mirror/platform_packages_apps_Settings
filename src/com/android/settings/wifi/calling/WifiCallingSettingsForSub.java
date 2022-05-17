@@ -30,6 +30,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.PersistableBundle;
+import android.provider.Settings;
 import android.telephony.CarrierConfigManager;
 import android.telephony.ServiceState;
 import android.telephony.SubscriptionManager;
@@ -364,7 +365,9 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
 
     @VisibleForTesting
     boolean isWfcProvisionedOnDevice() {
-        return queryImsState(mSubId).isWifiCallingProvisioned();
+        boolean ims_enabled = Settings.Global.getInt(getActivity().getContentResolver(), "ims_enable_settings",0) == 1;
+        Log.d(TAG, "debug ims_enabled = " + ims_enabled);
+        return ims_enabled || queryImsState(mSubId).isWifiCallingProvisioned();
     }
 
     private void updateBody() {

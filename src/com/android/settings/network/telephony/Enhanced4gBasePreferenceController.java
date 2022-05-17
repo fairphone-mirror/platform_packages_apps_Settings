@@ -21,6 +21,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.PersistableBundle;
+import android.provider.Settings;
 import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyCallback;
@@ -102,10 +103,18 @@ public class Enhanced4gBasePreferenceController extends TelephonyTogglePreferenc
 
     @Override
     public int getAvailabilityStatus(int subId) {
+        Log.d(TAG, "getAvailabilityStatus " + subId);
         init(subId);
         if (!isModeMatched()) {
             return CONDITIONALLY_UNAVAILABLE;
         }
+
+        boolean ims_enabled = Settings.Global.getInt(mContext.getContentResolver(), "ims_enable_settings",0) == 1;
+        if (ims_enabled){
+            Log.d(TAG, "volte toggle show because of ims_enabled =" + ims_enabled);
+            return AVAILABLE;
+        }
+
         final VolteQueryImsState queryState = queryImsState(subId);
         // Show VoLTE settings if VoIMS opt-in has been enabled irrespective of other VoLTE settings
         if (queryState.isVoImsOptInEnabled()) {
@@ -128,6 +137,9 @@ public class Enhanced4gBasePreferenceController extends TelephonyTogglePreferenc
         if (!queryState.isReadyToVoLte()) {
             return CONDITIONALLY_UNAVAILABLE;
         }
+        Log.d(TAG, "isReadyToVoLte: " + queryState.isReadyToVoLte());
+        Log.d(TAG, "isAllowUserControl: " + queryState.isAllowUserControl());
+        Log.d(TAG, "isUserControlAllowed: " + isUserControlAllowed(carrierConfig));
         return (isUserControlAllowed(carrierConfig) && queryState.isAllowUserControl())
                 ? AVAILABLE : AVAILABLE_UNSEARCHABLE;
     }
