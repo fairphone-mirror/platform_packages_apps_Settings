@@ -244,14 +244,20 @@ public class WifiCallingSettings extends InstrumentedFragment implements HelpRes
         if (subInfoList == null) {
             return Collections.emptyList();
         }
+        // add by T2M.zhangrenjie for FP4-847 2021-07-22 begin
+        boolean ims_enabled = Settings.Global.getInt(getContext().getContentResolver(), "ims_enable_settings",0) == 1;
+
+
         List<SubscriptionInfo> selectedList = new ArrayList<SubscriptionInfo>();
         for (SubscriptionInfo subInfo : subInfoList) {
             int subId = subInfo.getSubscriptionId();
             try {
-                if (queryImsState(subId).isWifiCallingProvisioned()) {
+                if (queryImsState(subId).isWifiCallingProvisioned() || ims_enabled) {
                     selectedList.add(subInfo);
                 }
             } catch (Exception exception) {}
+       // add by T2M.zhangrenjie for FP4-847 2021-07-22 end
+
         }
         return selectedList;
     }
