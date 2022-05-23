@@ -224,7 +224,7 @@ public class Enhanced4gBasePreferenceController extends TelephonyTogglePreferenc
 
     @VisibleForTesting
     protected boolean isCallStateIdle() {
-        return (mCallState != null) && (mCallState == TelephonyManager.CALL_STATE_IDLE);
+        return ((mCallState != null) && (mCallState == TelephonyManager.CALL_STATE_IDLE) || (mCallState == null));
     }
 
     private boolean isUserControlAllowed(final PersistableBundle carrierConfig) {
