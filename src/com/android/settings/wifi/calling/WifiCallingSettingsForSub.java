@@ -59,6 +59,12 @@ import com.android.settings.core.SubSettingLauncher;
 import com.android.settings.network.ims.WifiCallingQueryImsState;
 import com.android.settings.widget.SettingsMainSwitchBar;
 import com.android.settingslib.widget.OnMainSwitchChangeListener;
+import com.android.settings.widget.SwitchBar;
+import android.net.Uri;
+import android.content.ContentResolver;
+import android.database.ContentObserver;
+import android.os.Handler;
+import android.os.Looper;
 
 /**
  * This is the inner class of {@link WifiCallingSettings} fragment.
@@ -105,6 +111,9 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
     private TelephonyManager mTelephonyManager;
 
     private final PhoneTelephonyCallback mTelephonyCallback = new PhoneTelephonyCallback();
+    private ContentResolver mContentResolver;
+    private static final Uri WFC_URI = Uri.parse("content://telephony/siminfo");
+    private ContentObserver mWfcObserver;
 
     private class PhoneTelephonyCallback extends TelephonyCallback implements
             TelephonyCallback.CallStateListener {
@@ -308,6 +317,8 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
 
         mIntentFilter = new IntentFilter();
         mIntentFilter.addAction(ImsManager.ACTION_WFC_IMS_REGISTRATION_ERROR);
+
+        mContentResolver = getContext().getContentResolver();
     }
 
     @Override
@@ -482,6 +493,16 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
 
         // Register callback for provisioning changes.
         registerProvisioningChangedCallback();
+        if (mWfcObserver == null) {
+
+            mWfcObserver = new ContentObserver(new Handler(Looper.getMainLooper())) {
+                @Override
+                public void onChange(boolean selfChange) {
+                    updateBody();
+                }
+            };
+        }
+        mContentResolver.registerContentObserver(WFC_URI, false, mWfcObserver);
     }
 
     @Override
@@ -502,6 +523,8 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
 
         // Remove callback for provisioning changes.
         unregisterProvisioningChangedCallback();
+
+        mContentResolver.unregisterContentObserver(mWfcObserver);
     }
 
     /**
