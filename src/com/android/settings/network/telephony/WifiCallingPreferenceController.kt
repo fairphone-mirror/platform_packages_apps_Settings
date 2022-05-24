@@ -19,6 +19,7 @@ package com.android.settings.network.telephony
 import android.content.Context
 import android.provider.Settings
 import android.telecom.TelecomManager
+import android.telephony.CarrierConfigManager
 import android.telephony.SubscriptionManager
 import android.telephony.TelephonyManager
 import android.telephony.ims.ImsMmTelManager
@@ -28,6 +29,7 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceScreen
 import com.android.ims.ImsConfig
 import com.android.settings.R
+import com.android.settings.network.ims.WifiCallingQueryImsState;
 import com.android.settings.network.telephony.wificalling.WifiCallingRepository
 import com.android.settingslib.spa.framework.util.collectLatestWithLifecycle
 import kotlinx.coroutines.Dispatchers
@@ -47,8 +49,11 @@ open class WifiCallingPreferenceController @JvmOverloads constructor(
     },
 ) : TelephonyBasePreferenceController(context, key) {
 
+    private val TAG = "WifiCallingPreference"
+
     private lateinit var preference: Preference
     private lateinit var callingPreferenceCategoryController: CallingPreferenceCategoryController
+    private lateinit var carrierConfigManager: CarrierConfigManager
 
     private val resourcesForSub by lazy {
         SubscriptionManager.getResourcesForSubId(mContext, mSubId)
@@ -60,6 +65,7 @@ open class WifiCallingPreferenceController @JvmOverloads constructor(
     ): WifiCallingPreferenceController {
         mSubId = subId
         this.callingPreferenceCategoryController = callingPreferenceCategoryController
+        this.carrierConfigManager = mContext.getSystemService(Context.CARRIER_CONFIG_SERVICE) as CarrierConfigManager
         return this
     }
 
@@ -67,7 +73,9 @@ open class WifiCallingPreferenceController @JvmOverloads constructor(
      * Note: Visibility also controlled by [onViewCreated].
      */
     override fun getAvailabilityStatus(subId: Int) =
-        if (SubscriptionManager.isValidSubscriptionId(subId)) AVAILABLE
+        if (SubscriptionManager.isValidSubscriptionId(subId)
+                && isWifiCallingEnabled(mContext, subId)
+                && isWfcEnabledByCarrierConfig(subId)) AVAILABLE
         else CONDITIONALLY_UNAVAILABLE
 
     override fun displayPreference(screen: PreferenceScreen) {
@@ -96,22 +104,65 @@ open class WifiCallingPreferenceController @JvmOverloads constructor(
         }
     }
 
+    fun queryImsState(subId: Int): WifiCallingQueryImsState {
+        return WifiCallingQueryImsState(mContext, subId)
+    }
+
+    private fun isWfcEnabledByCarrierConfig(mSubId: Int): Boolean {
+        Log.d(TAG, "update wfc")
+        if (carrierConfigManager != null) {
+            val b = carrierConfigManager.getConfigForSubId(mSubId)
+            if (b != null) {
+                val isWFCEnabled = b.getBoolean(CarrierConfigManager.KEY_WFC_TOGGLE_SHOW_BOOL, false)
+                Log.d(TAG, "wfc toggle show: $isWFCEnabled");
+                return isWFCEnabled
+            }
+        }
+        return false
+    }
+
+    private fun isWifiCallingEnabled(context: Context, subId: Int): Boolean {
+        Log.d(TAG, "isWifiCallingEnabled: $subId")
+        val simCallManager = context.getSystemService(TelecomManager::class.java)
+            ?.getSimCallManagerForSubscription(subId)
+        val phoneId = SubscriptionManager.getSlotIndex(subId)
+
+        val isWifiCallingEnabled: Boolean
+        if (simCallManager != null) {
+            val intent = MobileNetworkUtils.buildPhoneAccountConfigureIntent(context, simCallManager)
+            isWifiCallingEnabled = intent != null
+            Log.d(TAG, "simCallManager")
+        } else {
+            isWifiCallingEnabled = queryImsState(subId).isReadyToWifiCalling()
+            Log.d(TAG, "queryImsState")
+        }
+        Log.d(TAG, "isWifiCallingEnabled: $isWifiCallingEnabled")
+        return isWifiCallingEnabled
+    }
+
     private suspend fun update() {
+        val title = SubscriptionManager.getResourcesForSubId(mContext, mSubId)
+            .getString(R.string.wifi_calling_settings_title)
+
+        carrierConfigManager = mContext.getSystemService(Context.CARRIER_CONFIG_SERVICE) as CarrierConfigManager
+        if (carrierConfigManager != null) {
+            val b = carrierConfigManager.getConfigForSubId(mSubId)
+            if (b != null) {
+                preference.title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE)
+            }
+        }
+
         val simCallManager = mContext.getSystemService(TelecomManager::class.java)
             ?.getSimCallManagerForSubscription(mSubId)
         if (simCallManager != null) {
             val intent = withContext(Dispatchers.Default) {
                 MobileNetworkUtils.buildPhoneAccountConfigureIntent(mContext, simCallManager)
             } ?: return // Do nothing in this case since preference is invisible
-            val title = withContext(Dispatchers.Default) {
-                mContext.packageManager.resolveActivity(intent, 0)
-                    ?.loadLabel(mContext.packageManager)
-            } ?: return
             preference.intent = intent
             preference.title = title
             preference.summary = null
         } else {
-            preference.title = resourcesForSub.getString(R.string.wifi_calling_settings_title)
+            preference.title = title
             preference.summary = withContext(Dispatchers.Default) { getSummaryForWfcMode() }
         }
     }

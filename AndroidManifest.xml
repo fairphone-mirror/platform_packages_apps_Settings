@@ -4169,6 +4169,7 @@ SPDX-License-Identifier: BSD-3-Clause-Clear -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.settings.WIFI_CALLING_SETTINGS" />
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.VOICE_LAUNCH" />
             </intent-filter>
@@ -4625,6 +4626,17 @@ SPDX-License-Identifier: BSD-3-Clause-Clear -->
             android:name=".SettingsDumpService"
             android:exported="true"
             android:permission="android.permission.DUMP" />
+
+        <service
+            android:name=".qs.VoWifiTile"
+            android:label="@string/wifi_calling_settings_title"
+            android:icon="@drawable/ic_vowifi_calling"
+            android:exported="true"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
 
         <!-- Quick Settings tiles for Developer Options -->
         <service

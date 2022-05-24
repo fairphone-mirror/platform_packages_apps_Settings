@@ -20,11 +20,15 @@ import android.app.Activity;
 import android.app.settings.SettingsEnums;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.PersistableBundle;
 import android.telephony.CarrierConfigManager;
 import android.telephony.ServiceState;
@@ -41,6 +45,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.database.ContentObserver;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.Preference;
@@ -107,6 +112,9 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
     private TelephonyManager mTelephonyManager;
 
     private PhoneTelephonyCallback mTelephonyCallback;
+    private ContentResolver mContentResolver;
+    private static final Uri WFC_URI = Uri.parse("content://telephony/siminfo");
+    private ContentObserver mWfcObserver;
 
     private class PhoneTelephonyCallback extends TelephonyCallback implements
             TelephonyCallback.CallStateListener {
@@ -310,6 +318,8 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
         mIntentFilter = new IntentFilter();
         mIntentFilter.addAction(ImsManager.ACTION_WFC_IMS_REGISTRATION_ERROR);
 
+        mContentResolver = getContext().getContentResolver();
+
         updateDescriptionForOptions(
                 List.of(mButtonWfcMode, mButtonWfcRoamingMode, mUpdateAddress));
     }
@@ -487,6 +497,15 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
         }
         // Register callback for provisioning changes.
         registerProvisioningChangedCallback();
+        if (mWfcObserver == null) {
+            mWfcObserver = new ContentObserver(new Handler(Looper.getMainLooper())) {
+                @Override
+                public void onChange(boolean selfChange) {
+                    updateBody();
+                }
+            };
+        }
+        mContentResolver.registerContentObserver(WFC_URI, false, mWfcObserver);
     }
 
     @Override
@@ -501,6 +520,8 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
         context.unregisterReceiver(mIntentReceiver);
         // Remove callback for provisioning changes.
         unregisterProvisioningChangedCallback();
+
+        mContentResolver.unregisterContentObserver(mWfcObserver);
     }
 
     /**

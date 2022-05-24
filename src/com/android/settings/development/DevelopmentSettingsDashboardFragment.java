@@ -76,9 +76,11 @@ import com.android.settings.development.graphicsdriver.GraphicsDriverEnableAngle
 import com.android.settings.development.qstile.DevelopmentTiles;
 import com.android.settings.development.storage.SharedDataPreferenceController;
 import com.android.settings.overlay.FeatureFactory;
+import com.android.settings.qs.VoWifiTile;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.actionbar.SearchMenuController;
 import com.android.settings.widget.SettingsMainSwitchBar;
+import com.android.settings.wifi.calling.WifiCallingSettings;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.development.DeveloperOptionsPreferenceController;
@@ -316,6 +318,16 @@ public class DevelopmentSettingsDashboardFragment extends RestrictedDashboardFra
                     .launch();
         }
         // Add other qstiles here
+        if (VoWifiTile.class.getName().equals(componentName.getClassName())) {
+            Log.d(TAG, "Long press from Wi-Fi Calling qstile");
+            new SubSettingLauncher(getContext())
+                    .setDestination(WifiCallingSettings.class.getName())
+                    .setSourceMetricsCategory(SettingsEnums.WIFI_CALLING)
+                    .launch();
+            if (getActivity() != null) {
+                getActivity().finish();
+            }
+        }
     }
 
     @Override
