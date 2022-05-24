@@ -147,8 +147,9 @@ public class VideoCallingPreferenceController extends TelephonyTogglePreferenceC
         if (!SubscriptionManager.isValidSubscriptionId(subId)) {
             return false;
         }
-
-        final PersistableBundle carrierConfig =
+        //[Bug]-Modify-begin by shaopan.tang 2021-06-15 [FP4-870]Disable VT
+        return false;
+        /*final PersistableBundle carrierConfig =
                 CarrierConfigCache.getInstance(mContext).getConfigForSubId(subId);
         if (carrierConfig == null) {
             return false;
@@ -161,7 +162,8 @@ public class VideoCallingPreferenceController extends TelephonyTogglePreferenceC
             return false;
         }
 
-        return isImsSupported() && queryImsState(subId).isReadyToVideoCall();
+        return isImsSupported() && queryImsState(subId).isReadyToVideoCall();*/
+        //[Bug]-Modify-end by shaopan.tang
     }
 
     @Override

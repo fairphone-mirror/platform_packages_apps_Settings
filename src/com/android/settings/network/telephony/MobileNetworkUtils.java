@@ -373,7 +373,9 @@ public class MobileNetworkUtils {
         if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
             return false;
         }
-        final PersistableBundle carrierConfig =
+        //[Bug]-Modify-begin by shaopan.tang 2021-06-15 [FP4-870]Remove unused settings options
+        return false;
+        /*final PersistableBundle carrierConfig =
                 CarrierConfigCache.getInstance(context).getConfigForSubId(subId);
         if (carrierConfig != null
                 && !carrierConfig.getBoolean(
@@ -405,7 +407,8 @@ public class MobileNetworkUtils {
             }
         }
 
-        return false;
+        return false;*/
+        //[Bug]-Modify-end by shaopan.tang
     }
 
     /**
