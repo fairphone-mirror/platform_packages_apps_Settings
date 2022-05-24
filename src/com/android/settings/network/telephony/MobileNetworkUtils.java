@@ -406,41 +406,6 @@ public class MobileNetworkUtils {
      * Return {@code true} if show CDMA category
      */
     public static boolean isCdmaOptions(Context context, int subId) {
-        if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
-            return false;
-        }
-        final PersistableBundle carrierConfig =
-                CarrierConfigCache.getInstance(context).getConfigForSubId(subId);
-        if (carrierConfig != null
-                && !carrierConfig.getBoolean(
-                CarrierConfigManager.KEY_HIDE_CARRIER_NETWORK_SETTINGS_BOOL)
-                && carrierConfig.getBoolean(CarrierConfigManager.KEY_WORLD_PHONE_BOOL)) {
-            return true;
-        }
-
-        final TelephonyManager telephonyManager = context.getSystemService(TelephonyManager.class)
-                .createForSubscriptionId(subId);
-        if (telephonyManager.getPhoneType() == TelephonyManager.PHONE_TYPE_CDMA) {
-            return true;
-        }
-
-        if (isWorldMode(context, subId)) {
-            final int settingsNetworkMode = getNetworkTypeFromRaf(
-                    (int) telephonyManager.getAllowedNetworkTypesForReason(
-                            TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER));
-
-            if (settingsNetworkMode == NETWORK_MODE_LTE_GSM_WCDMA
-                    || settingsNetworkMode == NETWORK_MODE_LTE_CDMA_EVDO
-                    || settingsNetworkMode == NETWORK_MODE_NR_LTE_GSM_WCDMA
-                    || settingsNetworkMode == NETWORK_MODE_NR_LTE_CDMA_EVDO) {
-                return true;
-            }
-
-            if (shouldSpeciallyUpdateGsmCdma(context, subId)) {
-                return true;
-            }
-        }
-
         return false;
     }
 
