@@ -141,9 +141,10 @@ public class VideoCallingPreferenceController extends TelephonyTogglePreferenceC
         if (!SubscriptionManager.isValidSubscriptionId(subId)) {
             return false;
         }
-
+        //[Bug]-Modify-begin by shaopan.tang 2021-06-15 [FP4-870]Disable VT
+        return false;
         // When called within Settings Search, this variable may still be null.
-        if (mCarrierConfigManager == null) {
+        /*if (mCarrierConfigManager == null) {
             Log.e(TAG, "CarrierConfigManager set to null.");
             mCarrierConfigManager = mContext.getSystemService(CarrierConfigManager.class);
             if (mCarrierConfigManager == null) {
@@ -164,7 +165,8 @@ public class VideoCallingPreferenceController extends TelephonyTogglePreferenceC
             return false;
         }
 
-        return queryImsState(subId).isReadyToVideoCall();
+        return queryImsState(subId).isReadyToVideoCall();*/
+        //[Bug]-Modify-end by shaopan.tang
     }
 
     @Override
