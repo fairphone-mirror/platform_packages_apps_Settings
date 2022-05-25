@@ -112,6 +112,8 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
         mPreference = screen.findPreference(getPreferenceKey());
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14
+        updateState(mPreference);
     }
 
     @Override
@@ -119,10 +121,39 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
         super.updateState(preference);
         final ListPreference listPreference = (ListPreference) preference;
         final int networkMode = getPreferredNetworkMode();
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14
+        updatePreferenceEntries(listPreference);
         listPreference.setValue(Integer.toString(networkMode));
         listPreference.setSummary(getPreferredNetworkModeSummaryResId(networkMode));
         listPreference.setEnabled(isCallStateIdle());
     }
+
+    // add by T2M.dengxiangyu for FP4-61 2021-04-14 begin
+    private void updatePreferenceEntries(ListPreference preference) {
+        // Default values
+        final PersistableBundle carrierConfig = mCarrierConfigManager.getConfigForSubId(mSubId);
+        String[] pref_network_mode = null;
+        String[] pref_network_value = null;
+
+        if (carrierConfig != null) {
+            pref_network_mode = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_MODE);
+            pref_network_value = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_VALUE);
+            Log.d(LOG_TAG, "get preferred network mode: " + pref_network_mode);
+        }
+
+        if (pref_network_mode != null && pref_network_value != null) {
+            Log.d(LOG_TAG, "init preferred network from carrier config");
+            preference.setEntries(pref_network_mode);
+            preference.setEntryValues(pref_network_value);
+        } else {
+            Log.d(LOG_TAG, "init preferred network from default config");
+            //[11086878] The preferred network modes defined by T2M begin
+            preference.setEntries(R.array.preferred_network_mode_custom_choices);
+            preference.setEntryValues(R.array.preferred_network_mode_custom_choices_value);
+            //[11086878] The preferred network modes defined by T2M end
+        }
+    }
+    // add by T2M.dengxiangyu for FP4-61 2021-04-14 end
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object object) {
