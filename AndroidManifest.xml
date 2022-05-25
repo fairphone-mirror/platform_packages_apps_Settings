@@ -4615,5 +4615,11 @@
         <service android:name=".t2mCustomer.CustomerService"
             android:exported="true"/>
 
+        <!--Add by T2M yingyubin FP4-3639 20220414-->
+        <service android:name=".ShutdownJobService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <!--Add by T2M yingyubin FP4-3639 20220414-->
+
     </application>
 </manifest>
