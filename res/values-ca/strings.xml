@@ -586,7 +586,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"El registre de l\'empremta digital no ha funcionat. Torna-ho a provar o fes servir un altre dit."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Afegeix-ne una altra"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Següent"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"A més de fer servir l\'empremta digital per desbloquejar el telèfon, també la pots fer servir per autoritzar compres i permetre l\'accés a determinades aplicacions. "<annotation id="url">"Més informació"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"A més de fer servir l\'empremta digital per desbloquejar el telèfon, també la pots fer servir per autoritzar compres i permetre l\'accés a determinades aplicacions. "</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_1" msgid="294529888220959309">"L\'opció de bloqueig de pantalla està desactivada. Per obtenir més informació, contacta amb l\'administrador de la teva organització."</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_2" msgid="8070829069640846543">"Pots continuar fent servir l\'empremta digital per autoritzar compres i l\'accés a aplicacions."</string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Aixeca el dit i, a continuació, torna a tocar el sensor"</string>

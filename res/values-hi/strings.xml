@@ -586,7 +586,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"फ़िंगरप्रिंट नामांकन ने काम नहीं किया. फिर से प्रयास करें या किसी दूसरी उंगली का उपयोग करें."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"दूसरा फ़िंगरप्रिंट जोड़ें"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"आगे बढ़ें"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"अपना फ़ोन अनलॉक करने के साथ-साथ, खरीदारी और ऐप ऐक्‍सेस को अधिकृत करने के लिए आप अपनी फ़िंगरप्रिंट का भी उपयोग कर सकते हैं. "<annotation id="url">"ज़्यादा जानें"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"अपना फ़ोन अनलॉक करने के साथ-साथ, खरीदारी और ऐप ऐक्‍सेस को अधिकृत करने के लिए आप अपनी फ़िंगरप्रिंट का भी उपयोग कर सकते हैं. "</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_1" msgid="294529888220959309">"फ़िंगरप्रिंट के ज़रिए स्क्रीन लॉक खोलने का विकल्प बंद है. ज़्यादा जानने के लिए, अपने संगठन के एडमिन से संपर्क करें."</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_2" msgid="8070829069640846543">"फ़िंगरप्रिंट का इस्तेमाल, खरीदारी को मंज़ूरी देने और ऐप्लिकेशन को ऐक्सेस करने के लिए अब भी किया जा सकता है."</string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"उंगली हटाएं और सेंसर को फिर से छूएं"</string>

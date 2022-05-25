@@ -586,7 +586,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"ଟିପଚିହ୍ନ ଏନରୋଲମ୍ୟାଣ୍ଟ କାମ କଲା ନାହିଁ। ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ କିମ୍ବା ଭିନ୍ନ ଏକ ଆଙ୍ଗୁଠି ବ୍ୟବହାର କରନ୍ତୁ।"</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"ଆଉ ଗୋଟିଏ ଯୋଗ କରନ୍ତୁ"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"ପରବର୍ତ୍ତୀ"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ଆପଣଙ୍କ ଫୋନ୍‌ ଅନଲକ୍‌ କରିବା ସହ, କ୍ରୟ କରିବାକୁ ଏବଂ ଆପ୍‌ ଆକ୍ସେସ୍‌ ସ୍ୱୀକୃତି ଦେବାକୁ ଆପଣଙ୍କ ଟିପଚିହ୍ନ ମଧ୍ୟ ବ୍ୟବହାର କରିପାରିବେ। "<annotation id="url">"ଅଧିକ ଜାଣନ୍ତୁ"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ଆପଣଙ୍କ ଫୋନ୍‌ ଅନଲକ୍‌ କରିବା ସହ, କ୍ରୟ କରିବାକୁ ଏବଂ ଆପ୍‌ ଆକ୍ସେସ୍‌ ସ୍ୱୀକୃତି ଦେବାକୁ ଆପଣଙ୍କ ଟିପଚିହ୍ନ ମଧ୍ୟ ବ୍ୟବହାର କରିପାରିବେ। "</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_1" msgid="294529888220959309">"ସ୍କ୍ରିନ ଲକ ବିକଳ୍ପକୁ ଅକ୍ଷମ କରାଯାଇଛି। ଅଧିକ ଜାଣିବା ପାଇଁ, ଆପଣଙ୍କ ସଂସ୍ଥାର ଆଡମିନଙ୍କ ସହ ଯୋଗାଯୋଗ କରନ୍ତୁ।"</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_2" msgid="8070829069640846543">"କ୍ରୟ ଏବଂ ଆପ ଆକ୍ସେସକୁ ଅଧିକାର ଦେବା ପାଇଁ ଆପଣ ଏବେ ବି ଆପଣଙ୍କ ଟିପଚିହ୍ନକୁ ବ୍ୟବହାର କରିପାରିବେ।"</string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"ଆଙ୍ଗୁଠିକୁ ଉଠାନ୍ତୁ ଓ ତା’ପରେ ସେନ୍ସରକୁ ପୁଣିଥରେ ଛୁଅଁନ୍ତୁ"</string>

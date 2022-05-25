@@ -586,7 +586,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"వేలిముద్ర నమోదు పని చేయలేదు. మళ్లీ ప్రయత్నించండి లేదా మరొక వేలిని ఉపయోగించండి."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"మరొకటి జోడించు"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"తర్వాత"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"మీ ఫోన్‌ను అన్‌లాక్ చేయడంతో పాటుగా, కొనుగోళ్లు మరియు యాప్ యాక్సెస్‌ను అనుమతించడానికి కూడా మీ వేలిముద్రను ఉపయోగించవచ్చు. "<annotation id="url">"మరింత తెలుసుకోండి"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"మీ ఫోన్‌ను అన్‌లాక్ చేయడంతో పాటుగా, కొనుగోళ్లు మరియు యాప్ యాక్సెస్‌ను అనుమతించడానికి కూడా మీ వేలిముద్రను ఉపయోగించవచ్చు. "</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_1" msgid="294529888220959309">"స్క్రీన్ లాక్ ఆప్షన్ డిజేబుల్‌ చేయబడింది. మరింత తెలుసుకోవడానికి, మీ సంస్థ అడ్మిన్‌ను సంప్రదించండి."</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_2" msgid="8070829069640846543">"కొనుగోళ్లను ప్రామాణీకరించడానికి, యాప్ యాక్సెస్ కోసం మీరు ఇప్పటికీ మీ వేలిముద్రను ఉపయోగించవచ్చు."</string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"వేలిని పైకి ఎత్తి, ఆపై మళ్లీ సెన్సార్‌ను తాకండి"</string>
