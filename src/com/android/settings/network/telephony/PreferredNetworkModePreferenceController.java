@@ -124,7 +124,8 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
         // add by T2M.dengxiangyu for FP4-61 2021-04-14
         updatePreferenceEntries(listPreference);
         listPreference.setValue(Integer.toString(networkMode));
-        listPreference.setSummary(getPreferredNetworkModeSummaryResId(networkMode));
+        //listPreference.setSummary(getPreferredNetworkModeSummaryResId(networkMode));
+        setNetworkModeSummaryText(listPreference, networkMode);
         listPreference.setEnabled(isCallStateIdle());
     }
 
@@ -164,7 +165,8 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
                 MobileNetworkUtils.getRafFromNetworkType(newPreferredNetworkMode));
 
         final ListPreference listPreference = (ListPreference) preference;
-        listPreference.setSummary(getPreferredNetworkModeSummaryResId(newPreferredNetworkMode));
+        //listPreference.setSummary(getPreferredNetworkModeSummaryResId(newPreferredNetworkMode));
+        setNetworkModeSummaryText(listPreference, newPreferredNetworkMode);
         return true;
     }
 
@@ -201,6 +203,65 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
                 (int) mTelephonyManager.getAllowedNetworkTypesForReason(
                         TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER));
     }
+
+    // add by T2M.dengxiangyu for FP4-1952 2021-07-28 begin
+    private void setNetworkModeSummaryText(ListPreference preference, int networkmode) {
+        final PersistableBundle carrierConfig = mCarrierConfigManager.getConfigForSubId(mSubId);
+        String[] pref_network_mode = null;
+        String[] pref_network_value = null;
+        String summerry = null;
+
+        Log.d(LOG_TAG, "set networkmode(" + networkmode + ") summary");
+        if (carrierConfig != null) {
+            /*
+            check in vendor.xml of carrier config
+            <string-array name="preferred_network_mode_choices" num="4">
+                <item value="5G/4G/3G/2G"/>
+                <item value="4G/3G/2G"/>
+                <item value="3G/2G"/>
+                <item value="2G"/>
+            </string-array>
+            */
+
+            pref_network_mode = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_MODE);
+            pref_network_value = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_VALUE);
+
+        }
+
+        /*if (pref_network_mode != null && pref_network_mode.length == 4) {
+            switch (networkmode) {
+                case TelephonyManagerConstants.NETWORK_MODE_NR_LTE_GSM_WCDMA:
+                    summerry = pref_network_mode[0];
+                    break;
+                case TelephonyManagerConstants.NETWORK_MODE_LTE_GSM_WCDMA:
+                    summerry = pref_network_mode[1];
+                    break;
+                case TelephonyManagerConstants.NETWORK_MODE_WCDMA_PREF:
+                    summerry = pref_network_mode[2];
+                    break;
+                case TelephonyManagerConstants.NETWORK_MODE_GSM_ONLY:
+                    summerry = pref_network_mode[3];
+                    break;
+            }
+        }*/
+        // modify by T2M.zhang renjie for FP4-2652 21-8-28 begin
+        if (pref_network_mode != null && pref_network_value != null){
+            for (int index = 0; index < pref_network_value.length; index++) {
+                if (pref_network_value[index].equals(String.valueOf(networkmode))){
+                    summerry = pref_network_mode[index];
+                    break;
+                }
+            }
+        }
+        // modify by T2M.zhang renjie for FP4-2652 21-8-28 end
+        if (summerry != null) {
+            Log.d(LOG_TAG, "summary: " + summerry);
+            preference.setSummary(summerry);
+        } else {
+            preference.setSummary(getPreferredNetworkModeSummaryResId(networkmode));
+        }
+    }
+    // add by T2M.dengxiangyu for FP4-1952 2021-07-28 end
 
     private int getPreferredNetworkModeSummaryResId(int NetworkMode) {
         switch (NetworkMode) {

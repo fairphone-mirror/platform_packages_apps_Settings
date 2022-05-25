@@ -3463,6 +3463,7 @@
             android:name=".qs.VoWifiTile"
             android:label="@string/wifi_calling_settings_title"
             android:icon="@drawable/ic_vowifi_calling"
+            android:exported="true"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
