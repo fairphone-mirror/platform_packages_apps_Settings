@@ -20,7 +20,9 @@ import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.provider.Settings;
+import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.util.Log;
@@ -271,8 +273,20 @@ public class WifiCallingSettings extends SettingsPreferenceFragment
     private void updateTitleForCurrentSub() {
         if (CollectionUtils.size(mSil) > 1) {
             final int subId = mSil.get(mViewPager.getCurrentItem()).getSubscriptionId();
-            final String title = SubscriptionManager.getResourcesForSubId(getContext(), subId)
+            String title = SubscriptionManager.getResourcesForSubId(getContext(), subId)
                     .getString(R.string.wifi_calling_settings_title);
+
+            CarrierConfigManager configManager = (CarrierConfigManager) getContext().getSystemService(
+                    Context.CARRIER_CONFIG_SERVICE);
+            if (configManager != null) {
+                Log.d(TAG, "get title from carrierconfig");
+                PersistableBundle b = configManager.getConfigForSubId(subId);
+                if (b != null) {
+                    title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+                    Log.d(TAG, "title: " + title);
+                }
+            }
+
             getActivity().getActionBar().setTitle(title);
         }
     }

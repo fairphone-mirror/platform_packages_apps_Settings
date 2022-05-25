@@ -124,6 +124,7 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
         mPreference = screen.findPreference(getPreferenceKey());
+        updateState(mPreference);
     }
 
     @Override
@@ -134,9 +135,33 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
         super.updateState(preference);
         final ListPreference listPreference = (ListPreference) preference;
         final int networkMode = getPreferredNetworkMode();
+        updatePreferenceEntries(listPreference);
         listPreference.setValue(Integer.toString(networkMode));
         listPreference.setSummary(getPreferredNetworkModeSummaryResId(networkMode));
         listPreference.setEnabled(isCallStateIdle());
+    }
+
+    private void updatePreferenceEntries(ListPreference preference) {
+        // Default values
+        final PersistableBundle carrierConfig = mCarrierConfigCache.getConfigForSubId(mSubId);
+        String[] pref_network_mode = null;
+        String[] pref_network_value = null;
+
+        if (carrierConfig != null) {
+            pref_network_mode = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_MODE);
+            pref_network_value = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_VALUE);
+            Log.d(TAG, "get preferred network mode: " + pref_network_mode);
+        }
+
+        if (pref_network_mode != null && pref_network_value != null) {
+            Log.d(TAG, "init preferred network from carrier config");
+            preference.setEntries(pref_network_mode);
+            preference.setEntryValues(pref_network_value);
+        } else {
+            Log.d(TAG, "init preferred network from default config");
+            preference.setEntries(R.array.preferred_network_mode_custom_choices);
+            preference.setEntryValues(R.array.preferred_network_mode_custom_choices_value);
+        }
     }
 
     @Override

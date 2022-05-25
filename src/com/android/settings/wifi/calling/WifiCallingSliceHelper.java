@@ -147,8 +147,20 @@ public class WifiCallingSliceHelper {
             // Activation needed for the next action of the user
             // Give instructions to go to settings app
             final Resources res = getResourcesForSubId(subId);
+
+            String title = res.getText(R.string.wifi_calling_settings_title).toString();
+            final CarrierConfigManager configManager = getCarrierConfigManager(mContext);
+            if (configManager != null) {
+                Log.d(TAG, "get title from carrierconfig");
+                PersistableBundle b = configManager.getConfigForSubId(subId);
+                if (b != null) {
+                    title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+                    Log.d(TAG, "title: " + title);
+                }
+            }
+
             return getNonActionableWifiCallingSlice(
-                    res.getText(R.string.wifi_calling_settings_title),
+                    title,
                     res.getText(R.string.wifi_calling_settings_activation_instructions),
                     sliceUri, getActivityIntent(ACTION_WIFI_CALLING_SETTINGS_ACTIVITY));
         }
@@ -168,10 +180,21 @@ public class WifiCallingSliceHelper {
         final IconCompat icon = IconCompat.createWithResource(mContext, R.drawable.wifi_signal);
         final Resources res = getResourcesForSubId(subId);
 
+        String title = res.getText(R.string.wifi_calling_settings_title).toString();
+        final CarrierConfigManager configManager = getCarrierConfigManager(mContext);
+        if (configManager != null) {
+            Log.d(TAG, "get title from carrierconfig");
+            PersistableBundle b = configManager.getConfigForSubId(subId);
+            if (b != null) {
+                title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+                Log.d(TAG, "title: " + title);
+            }
+        }
+
         return new ListBuilder(mContext, sliceUri, ListBuilder.INFINITY)
                 .setAccentColor(Utils.getColorAccentDefaultColor(mContext))
                 .addRow(new RowBuilder()
-                        .setTitle(res.getText(R.string.wifi_calling_settings_title))
+                        .setTitle(title)
                         .addEndItem(
                                 SliceAction.createToggle(
                                         getBroadcastIntent(ACTION_WIFI_CALLING_CHANGED,
@@ -181,7 +204,7 @@ public class WifiCallingSliceHelper {
                                 getActivityIntent(ACTION_WIFI_CALLING_SETTINGS_ACTIVITY),
                                 icon,
                                 ListBuilder.ICON_IMAGE,
-                                res.getText(R.string.wifi_calling_settings_title))))
+                                title)))
                 .build();
     }
 

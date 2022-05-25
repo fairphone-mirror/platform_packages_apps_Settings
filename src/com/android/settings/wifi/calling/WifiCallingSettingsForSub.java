@@ -516,6 +516,18 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
             return;
         }
 
+        String title = getResourcesForSubId().getString(R.string.wifi_calling_settings_title);
+        final CarrierConfigManager configManager =
+                getActivity().getSystemService(CarrierConfigManager.class);
+        if (configManager != null) {
+            Log.d(TAG, "get title from carrierconfig");
+            PersistableBundle b = configManager.getConfigForSubId(mSubId);
+            if (b != null) {
+                title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+                Log.d(TAG, "title: " + title);
+            }
+        }
+
         // Launch disclaimer fragment before turning on WFC
         final Context context = getActivity();
         final Bundle args = new Bundle();
@@ -523,7 +535,7 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
         new SubSettingLauncher(context)
                 .setDestination(WifiCallingDisclaimerFragment.class.getName())
                 .setArguments(args)
-                .setTitleRes(R.string.wifi_calling_settings_title)
+                .setTitleText(title)
                 .setSourceMetricsCategory(getMetricsCategory())
                 .setResultListener(this, REQUEST_CHECK_WFC_DISCLAIMER)
                 .launch();
