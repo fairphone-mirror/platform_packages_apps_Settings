@@ -557,7 +557,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Регистрација отиска прста није успела. Пробајте поново или користите други прст."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Додајте још један"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Даље"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Осим за откључавање телефона, отисак прста можете да користите и да бисте дали овлашћење за куповине и приступ апликацијама. "<annotation id="url">"Сазнајте више"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Осим за откључавање телефона, отисак прста можете да користите и да бисте дали овлашћење за куповине и приступ апликацијама. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" Опција закључавања екрана је онемогућена. Да бисте сазнали више, обратите се администратору организације. "<annotation id="admin_details">"Више детаља"</annotation>\n\n"И даље можете да користите отисак прста за одобравање куповине и приступа апликацијама. "<annotation id="url">"Сазнајте више"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Подигните прст, па поново додирните сензор"</string>
     <string name="security_settings_fingerprint_bad_calibration" msgid="598502302101068608">"Не можете да користите сензор за отисак прста. Посетите добављача за поправке"</string>

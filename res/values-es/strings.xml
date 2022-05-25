@@ -553,7 +553,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"El registro de la huella digital no se ha realizado correctamente. Vuelve a intentarlo o utiliza otro dedo."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Añadir otra"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Siguiente"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Además de desbloquear el teléfono, también puedes usar tu huella digital para autorizar compras y el acceso a aplicaciones. "<annotation id="url">"Más información"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Además de desbloquear el teléfono, también puedes usar tu huella digital para autorizar compras y el acceso a aplicaciones. "</string>
     <string name="security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled" msgid="4260983700868889294">" La opción de bloqueo de pantalla está inhabilitada. Para obtener más información, ponte en contacto con el administrador de la organización. "<annotation id="admin_details">"Más detalles"</annotation>\n\n"Puedes seguir utilizando tu huella digital para autorizar compras y acceder a las aplicaciones. "<annotation id="url">"Más información"</annotation></string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Levanta el dedo y vuelve a tocar el sensor"</string>
     <string name="security_settings_fingerprint_bad_calibration" msgid="598502302101068608">"No se puede usar el sensor de huellas digitales. Visita un proveedor de reparaciones."</string>
