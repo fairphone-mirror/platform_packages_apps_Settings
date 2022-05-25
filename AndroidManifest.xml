@@ -5366,5 +5366,8 @@ SPDX-License-Identifier: BSD-3-Clause-Clear -->
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        <service android:name=".ShutdownJobService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 </manifest>
