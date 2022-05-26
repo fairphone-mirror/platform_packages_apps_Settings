@@ -13461,7 +13461,7 @@
     <string name="wfc_disclaimer_location_title_text">Location</string>
 
     <!-- Warn the user that the phone may share its location with the carrier. [CHAR LIMIT=NONE] -->
-    <string name="wfc_disclaimer_location_desc_text">Your carrier may collect your location when you use this service for emergency calls.\n\nVisit your carrier\u2019s privacy policy for details.</string>
+    <string name="wfc_disclaimer_location_desc_text">Your location-related information can be sent to Google and your operator in order to establish Wi-Fi calls.</string>
 
     <!-- String for about phone -->
     <string name="ram_total_size">RAM total size</string>
@@ -14357,4 +14357,8 @@
     <string name="fingerprint_settings_open_title">Fingerprint Unlock Behavior</string>
     <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
     <string name="fingerprint_settings_open_description">"Switch on if you prefer to unlock without waking up the phone first."</string>
+    <string name="menu_vowifi_help">"HELP"</string>
+    <string name="wfc_help_desc_text">Wi-Fi calling\n\nUse Wi-Fi networks to make and receive calls anywhere in metropolitan France, without connecting to a mobile network.\n\nTo use the service, check that it is offered by your service provider, enable it in Call settings, then connect to a Wi-Fi network. The icon below will be shown whenever this function is available.</string>
+
+
 </resources>

@@ -51,6 +51,13 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+
+import com.android.settings.core.SubSettingLauncher;
+import android.app.settings.SettingsEnums;
+
 /**
  * "Wi-Fi Calling settings" screen. This is the container fragment which holds
  * {@link WifiCallingSettingsForSub} fragments.
@@ -67,6 +74,13 @@ public class WifiCallingSettings extends SettingsPreferenceFragment
     private RtlCompatibleViewPager mViewPager;
     private WifiCallingViewPagerAdapter mPagerAdapter;
     private SlidingTabLayout mTabLayout;
+
+    private CarrierConfigManager configManager;
+
+
+    private static final int MENU_HELP = Menu.FIRST;
+
+    private boolean orange_freature = false;
 
     private final class InternalViewPagerListener implements
             RtlCompatibleViewPager.OnPageChangeListener {
@@ -102,6 +116,17 @@ public class WifiCallingSettings extends SettingsPreferenceFragment
         mPagerAdapter = new WifiCallingViewPagerAdapter(getChildFragmentManager(), mViewPager);
         mViewPager.setAdapter(mPagerAdapter);
         mViewPager.addOnPageChangeListener(new InternalViewPagerListener());
+        configManager = (CarrierConfigManager) getContext().getSystemService(
+                Context.CARRIER_CONFIG_SERVICE);
+        final int subId = mSil.get(mViewPager.getCurrentItem()).getSubscriptionId();
+        if (configManager != null) {
+            PersistableBundle b = configManager.getConfigForSubId(subId);
+            if (b != null) {
+                if (b.getBoolean("orange_new_feature_enabled",false)){
+                    orange_freature = true;
+                }
+            }
+        }
         maybeSetViewForSubId();
         return view;
     }
@@ -271,8 +296,6 @@ public class WifiCallingSettings extends SettingsPreferenceFragment
                     .getString(R.string.wifi_calling_settings_title);
 
             // add by T2M.dengxiangyu for FP4-61 2021-04-14 begin
-            CarrierConfigManager configManager = (CarrierConfigManager) getContext().getSystemService(
-                    Context.CARRIER_CONFIG_SERVICE);
             if (configManager != null) {
                 Log.d(TAG, "get title from carrierconfig");
                 PersistableBundle b = configManager.getConfigForSubId(subId);
@@ -351,5 +374,32 @@ public class WifiCallingSettings extends SettingsPreferenceFragment
 
     protected boolean containsSubId(int [] subIdArray, int subIdLookUp) {
         return Arrays.stream(subIdArray).anyMatch(subId -> (subId == subIdLookUp));
+    }
+
+    @Override
+    public void onCreateOptionsMenu(final Menu menu, final MenuInflater inflater) {
+         super.onCreateOptionsMenu(menu, inflater);
+        if (orange_freature) {
+            menu.add(0, MENU_HELP, 0, R.string.menu_vowifi_help)
+                    .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        }
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case MENU_HELP:
+                startHelpActivity();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void startHelpActivity(){
+        new SubSettingLauncher(getContext())
+                .setSourceMetricsCategory(SettingsEnums.WIFI_CALLING_FOR_SUB)
+                .setDestination(WifiCallingHelpActivity.class.getName())
+                .launch();
     }
 }
