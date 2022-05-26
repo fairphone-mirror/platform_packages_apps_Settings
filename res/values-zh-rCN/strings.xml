@@ -5586,4 +5586,9 @@
     <string name="prefer_5G_nr_mode_title">首选5G模式</string>
     <string name="prefer_vonr_mode_title">打开/关闭 VoNR</string>
     <string name="prefer_vonr_mode_summary">打开或者关闭VoNR</string>
+
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="fingerprint_settings_open_title">指纹解锁方式</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="fingerprint_settings_open_description">默认按键解锁。如果需要触摸解锁则打开开关。</string>
 </resources>
