@@ -5335,6 +5335,19 @@ SPDX-License-Identifier: BSD-3-Clause-Clear -->
         <service android:name=".t2mCustomer.CustomerService"
             android:exported="true"/>
 
+        <activity
+            android:name="Settings$WifiCallingHelpFragmentActivity"
+            android:label="@string/wifi_calling_settings_title"
+            android:exported="true"
+            android:taskAffinity="com.android.settings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.wifi.calling.WifiCallingHelpActivity" />
+        </activity>
+
         <receiver
             android:name="com.android.settings.PhoneCodeReceiver"
             android:exported="true"

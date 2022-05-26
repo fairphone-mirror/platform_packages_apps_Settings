@@ -63,9 +63,18 @@ public class UserPLMNPreferenceController extends TelephonyBasePreferenceControl
 
     @Override
     public int getAvailabilityStatus(int subId) {
-        return  SubscriptionManager.isValidSubscriptionId(subId)
+        return  SubscriptionManager.isValidSubscriptionId(subId) && !hasOrangeFeature()
                 ? AVAILABLE
                 : CONDITIONALLY_UNAVAILABLE;
+    }
+
+    private boolean hasOrangeFeature(){
+        PersistableBundle b = mCarrierConfigManager.getConfigForSubId(mSubId);
+        if (b != null) {
+            return b.getBoolean("orange_new_feature_enabled", false);
+
+        }
+        return false;
     }
 
     @Override
