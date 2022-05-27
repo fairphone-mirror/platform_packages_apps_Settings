@@ -4520,6 +4520,7 @@
         <activity
             android:name="Settings$WifiCallingHelpFragmentActivity"
             android:label="@string/wifi_calling_settings_title"
+            android:exported="true"
             android:taskAffinity="com.android.settings">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
