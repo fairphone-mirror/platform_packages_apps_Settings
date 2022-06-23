@@ -200,10 +200,10 @@
         android:order="-20"/>
 
     <!-- Boot sounds -->
-    <SwitchPreference
+    <!--<SwitchPreference
         android:key="boot_sounds"
         android:title="@string/boot_sounds_title"
-        android:order="-15"/>
+        android:order="-15"/>-->
 
     <!-- Emergency tone -->
     <DropDownPreference
