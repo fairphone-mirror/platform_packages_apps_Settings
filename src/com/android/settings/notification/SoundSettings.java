@@ -265,8 +265,8 @@ public class SoundSettings extends DashboardFragment implements OnActivityResult
                 new TouchSoundPreferenceController(context, fragment, lifecycle);
         final DockAudioMediaPreferenceController dockAudioMediaPreferenceController =
                 new DockAudioMediaPreferenceController(context, fragment, lifecycle);
-        final BootSoundPreferenceController bootSoundPreferenceController =
-                new BootSoundPreferenceController(context);
+        //final BootSoundPreferenceController bootSoundPreferenceController =
+          //      new BootSoundPreferenceController(context);
         final EmergencyTonePreferenceController emergencyTonePreferenceController =
                 new EmergencyTonePreferenceController(context, fragment, lifecycle);
         final VibrateIconPreferenceController vibrateIconPreferenceController =
@@ -280,7 +280,7 @@ public class SoundSettings extends DashboardFragment implements OnActivityResult
         controllers.add(touchSoundPreferenceController);
         controllers.add(vibrateIconPreferenceController);
         controllers.add(dockAudioMediaPreferenceController);
-        controllers.add(bootSoundPreferenceController);
+        //controllers.add(bootSoundPreferenceController);
         controllers.add(emergencyTonePreferenceController);
         controllers.add(new PreferenceCategoryController(context,
                 "other_sounds_and_vibrations_category").setChildren(
@@ -292,7 +292,7 @@ public class SoundSettings extends DashboardFragment implements OnActivityResult
                         touchSoundPreferenceController,
                         vibrateIconPreferenceController,
                         dockAudioMediaPreferenceController,
-                        bootSoundPreferenceController,
+                        //bootSoundPreferenceController,
                         emergencyTonePreferenceController)));
 
         return controllers;
