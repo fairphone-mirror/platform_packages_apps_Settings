@@ -42,7 +42,7 @@ public class WifiTetherSSIDPreferenceController extends WifiTetherBasePreference
     private static final String TAG = "WifiTetherSsidPref";
     private static final String PREF_KEY = "wifi_tether_network_name";
     @VisibleForTesting
-    static final String DEFAULT_SSID = "AndroidAP";
+    static final String DEFAULT_SSID = "Fairphone 4 5G";
 
     private String mSSID;
     private WifiDeviceNameTextValidator mWifiDeviceNameTextValidator;
