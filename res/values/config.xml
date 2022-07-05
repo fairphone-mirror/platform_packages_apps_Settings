@@ -535,8 +535,9 @@
     <!-- whether use partner overlay theme for outside setupwizard flow -->
     <bool name="config_suc_use_partner_resource">false</bool>
 
+    <!--modify by T2M yubin.ying for FP4S-271 20220704-->
     <!-- Cell broacast receiver package name -->
-    <string name="config_cell_broadcast_receiver_package" translatable="false">com.android.cellbroadcastreceiver.module</string>
+    <string name="config_cell_broadcast_receiver_package" translatable="false">com.google.android.cellbroadcastreceiver</string>
 
     <!-- TODO(b/174964885): These media Uri are not defined in framework yet. Replace with framework defined variables once it's available. -->
     <!-- Media Uri to view images storage category. -->
