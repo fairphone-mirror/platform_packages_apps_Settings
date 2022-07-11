@@ -35,7 +35,7 @@ public class LaunchMyFairphoneActivity extends Activity {
     private static final int NEXT_REQUEST_CODE = 1;
     private static final int RESULT_SKIP = ResultCodes.RESULT_SKIP;
     private static final String MY_FAIRPHONE_PACKAGE_NAME = "com.fairphone.myfairphone";
-    private static final String MY_FAIRPHONE_CLASS_NAME = "com.fairphone.myfairphone.MainActivity";
+    private static final String MY_FAIRPHONE_CLASS_NAME = "com.fairphone.presentation.ui.activity.onboarding.fp3.FP3OnboardingActivity";
     private boolean mIsResumed = false;
 
     @Override
