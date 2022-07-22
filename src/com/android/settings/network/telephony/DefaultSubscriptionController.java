@@ -85,6 +85,10 @@ public abstract class DefaultSubscriptionController extends TelephonyBasePrefere
     private int[] mCallState;
     private ArrayList<SubscriptionInfo> mSelectableSubs;
 
+    //set the SMS preference default value
+    private static SubscriptionInfo dataSubscriptionInfo = null;
+    private static int dataServiceDefaultSubId = -1;
+
     public DefaultSubscriptionController(Context context, String preferenceKey) {
         super(context, preferenceKey);
         mManager = context.getSystemService(SubscriptionManager.class);
@@ -160,9 +164,15 @@ public abstract class DefaultSubscriptionController extends TelephonyBasePrefere
         final SubscriptionInfo info = getDefaultSubscriptionInfo();
         if (info != null) {
             // display subscription based account
+            if (TextUtils.equals(getPreferenceKey(), LIST_DATA_PREFERENCE_KEY) && dataSubscriptionInfo == null) {
+                dataSubscriptionInfo = info;
+            }
             return SubscriptionUtil.getUniqueSubscriptionDisplayName(info, mContext);
         } else {
             if (isAskEverytimeSupported()) {
+                if (TextUtils.equals(getPreferenceKey(), LIST_SMS_PREFERENCE_KEY) && dataSubscriptionInfo != null) {
+                    return SubscriptionUtil.getUniqueSubscriptionDisplayName(dataSubscriptionInfo, mContext);
+                }
                 return mContext.getString(R.string.calls_and_sms_ask_every_time);
             } else {
                 return "";
@@ -214,11 +224,16 @@ public abstract class DefaultSubscriptionController extends TelephonyBasePrefere
             displayNames.add(SubscriptionUtil.getUniqueSubscriptionDisplayName(sub, mContext));
             final int subId = sub.getSubscriptionId();
             subscriptionIds.add(Integer.toString(subId));
+
             if (subId == serviceDefaultSubId) {
                 subIsAvailable = true;
             }
         }
         if (TextUtils.equals(getPreferenceKey(), LIST_DATA_PREFERENCE_KEY)) {
+            if (dataServiceDefaultSubId == -1) {
+                dataServiceDefaultSubId = serviceDefaultSubId;
+            }
+
             boolean isEcbmEnabled = mTelephonyManager.getEmergencyCallbackMode();
             boolean isScbmEnabled = TelephonyProperties.in_scbm().orElse(false);
 
@@ -250,7 +265,11 @@ public abstract class DefaultSubscriptionController extends TelephonyBasePrefere
         if (subIsAvailable) {
             mPreference.setValue(Integer.toString(serviceDefaultSubId));
         } else {
-            mPreference.setValue(Integer.toString(SubscriptionManager.INVALID_SUBSCRIPTION_ID));
+            if (TextUtils.equals(getPreferenceKey(), LIST_SMS_PREFERENCE_KEY) && serviceDefaultSubId == -1) {
+                mPreference.setValue(Integer.toString(dataServiceDefaultSubId));
+            } else {
+                mPreference.setValue(Integer.toString(SubscriptionManager.INVALID_SUBSCRIPTION_ID));
+            }
         }
     }
 
