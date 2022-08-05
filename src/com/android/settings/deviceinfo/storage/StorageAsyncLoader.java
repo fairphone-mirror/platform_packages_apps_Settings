@@ -140,6 +140,10 @@ public class StorageAsyncLoader
             return 0L;
         }
 
+        if (!Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
+            Log.i(TAG,"External storage is not MOUNTED return 0L");
+            return 0L;
+        }
         try (Cursor cursor = perUserContext.getContentResolver().query(
                 uri,
                 new String[] {"sum(" + MediaColumns.SIZE + ")"},
