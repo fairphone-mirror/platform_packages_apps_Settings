@@ -38,6 +38,7 @@ import android.provider.MediaStore.MediaColumns;
 import android.util.ArraySet;
 import android.util.Log;
 import android.util.SparseArray;
+import android.os.Environment;
 
 import com.android.settingslib.applications.StorageStatsSource;
 import com.android.settingslib.utils.AsyncLoaderCompat;
@@ -125,6 +126,10 @@ public class StorageAsyncLoader
             return 0L;
         }
 
+        if (!Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
+            Log.i(TAG,"External storage is not MOUNTED return 0L");
+            return 0L;
+        }
         try (Cursor cursor = perUserContext.getContentResolver().query(
                 uri,
                 new String[] {"sum(" + MediaColumns.SIZE + ")"},
