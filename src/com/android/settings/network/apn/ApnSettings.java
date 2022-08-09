@@ -444,7 +444,7 @@ public class ApnSettings extends RestrictedSettingsFragment
                 }
 
                 boolean selectable =
-                        ((type == null) || type.contains(ApnSetting.TYPE_DEFAULT_STRING));
+                        ((type == null)  || !type.equals("mms"));//Modify Begin by renjie.zhang
                 if (isVoLTEEnabled && selectable && Utils.isSupportCTPA(appContext)) {
                     selectable = ((type == null) || !type.equals("ims"));
                 }
