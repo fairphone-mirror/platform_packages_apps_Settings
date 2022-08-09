@@ -35,6 +35,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.os.UserManager;
+import android.os.SystemProperties;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -147,6 +148,8 @@ public class SettingsActivity extends SettingsBaseActivity
             "com.android.settings.FRAGMENT_CLASS";
 
     private static final String EXTRA_UI_OPTIONS = "settings:ui_options";
+
+    private static final String FIRST_BOOT_KEY = "persist.sys.firstboot";
 
     private String mFragmentClass;
 
@@ -346,6 +349,14 @@ public class SettingsActivity extends SettingsBaseActivity
 
         if (DEBUG_TIMING) {
             Log.d(LOG_TAG, "onCreate took " + (System.currentTimeMillis() - startTime) + " ms");
+        }
+        checkLauncherSysProperty();
+    }
+
+    private void checkLauncherSysProperty(){
+        String firstBootToLauncher = SystemProperties.get(FIRST_BOOT_KEY, "true");
+        if ("true".equals(firstBootToLauncher)) {
+            SystemProperties.set(FIRST_BOOT_KEY, "false");
         }
     }
 
