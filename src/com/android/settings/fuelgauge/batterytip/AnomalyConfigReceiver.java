@@ -21,6 +21,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.content.pm.PackageManager;
+import android.content.ComponentName;
 
 /**
  * Receive broadcast when {@link StatsManager} restart, then check the anomaly config and
@@ -37,6 +39,17 @@ public class AnomalyConfigReceiver extends BroadcastReceiver {
 
             // Check whether to update the config
             AnomalyConfigJobService.scheduleConfigUpdate(context);
+
+            if(Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())){
+                final PackageManager pm = context.getPackageManager();
+                final String LAUNCHER_TARGET_CLASS = "com.android.documentsui.LauncherActivity";
+                final ComponentName component = new ComponentName("com.google.android.documentsui", LAUNCHER_TARGET_CLASS);
+                if (pm != null) {
+                   pm.setComponentEnabledSetting(component, PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                          PackageManager.DONT_KILL_APP);
+                }
+
+            }
 
             try {
                 BatteryTipUtils.uploadAnomalyPendingIntent(context, statsManager);
