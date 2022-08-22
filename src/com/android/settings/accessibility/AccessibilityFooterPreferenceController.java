@@ -73,7 +73,9 @@ public abstract class AccessibilityFooterPreferenceController extends BasePrefer
                 final Intent helpIntent = HelpUtils.getHelpIntent(
                         mContext, mContext.getString(getHelpResource()),
                         mContext.getClass().getName());
-                view.startActivityForResult(helpIntent, 0);
+                if (helpIntent != null) {
+                    view.startActivityForResult(helpIntent, 0);
+                }
             });
 
             final String learnMoreContentDescription = mContext.getString(
