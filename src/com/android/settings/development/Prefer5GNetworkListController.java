@@ -51,6 +51,13 @@ import com.android.settings.network.SubscriptionUtil;
 import com.android.settings.network.SubscriptionsChangeListener;
 import com.android.settings.network.telephony.MobileNetworkUtils;
 import com.android.settingslib.core.AbstractPreferenceController;
+//[BUG]-Modify-Begin by shaopan.tang 2022-05-19 [FP4-3577]5g NR mode set failed
+import com.qualcomm.sysrilcmd.ISysRilCmd;
+import com.qualcomm.sysrilcmd.SysRilCmd;
+import com.qualcomm.qcrilhook.QcRilHookCallback;
+//[BUG]-Modify-End by shaopan.tang
+
+import java.io.IOException;
 
 import com.qti.extphone.Client;
 import com.qti.extphone.ExtTelephonyManager;
@@ -99,6 +106,9 @@ public class Prefer5GNetworkListController extends AbstractPreferenceController 
     private ExtTelephonyManager mExtTelephonyManager;
     private boolean mServiceConnected;
     private boolean mRetry;
+
+    private SysRilCmd mCm;
+    private static boolean mIsQcRilHookReady = false;
 
     private ExtPhoneCallbackBase mCallback = new ExtPhoneCallbackBase() {
         @Override
@@ -168,8 +178,59 @@ public class Prefer5GNetworkListController extends AbstractPreferenceController 
         Log.d(TAG, "Connect to ExtTelephony bound service...");
         mExtTelephonyManager.connectService(mServiceCallback);
 
+        mCm = new SysRilCmd(context, mQcrilHookCb);//[BUG]-Modify by shaopan.tang 2022-05-19 [FP4-3577]5g NR mode set failed
+
         lifecycle.addObserver(this);
     }
+
+    //[BUG]-Modify-Begin by shaopan.tang 2022-05-19 [FP4-3577]5g NR mode set failed
+    private QcRilHookCallback mQcrilHookCb = new QcRilHookCallback() {
+        public void onQcRilHookReady() {
+            Log.d(TAG, "onQcRilHookConnected");
+            mIsQcRilHookReady = true;
+            for (int slotId = 0; slotId < mTelephonyManager.getPhoneCount();
+                 slotId++) {
+                getValue(slotId);
+            }
+        }
+
+        @Override
+        public void onQcRilHookDisconnected() {
+            Log.d(TAG, "onQcRilHookDisconnected");
+            mIsQcRilHookReady = false;
+        }
+    };
+
+    private void getValue(int slotId) {
+        if (mIsQcRilHookReady) {
+            try {
+                int nrconfig = (int) mCm.getInt8ValByPhone(ISysRilCmd.RIL_SUB_CMD_INT8_NR_CONFIG_BY_USIM, slotId);
+                Log.d(TAG, "getValue nrconfig: " + nrconfig);
+
+                updateSharedPreference(slotId, nrconfig);
+                mMainThreadHandler.sendMessage(mMainThreadHandler
+                        .obtainMessage(EVENT_GET_NR_CONFIG_STATUS, slotId, -1));
+            } catch (IOException e) {
+                Log.e(TAG, "getValue IOException : " + e);
+            }
+        }
+    }
+
+    private void setValue(int nrConfig, int slotId) {
+        if (mIsQcRilHookReady) {
+            try {
+                mCm.setInt8ValByPhone(ISysRilCmd.RIL_SUB_CMD_INT8_NR_CONFIG_BY_USIM, (byte)nrConfig, slotId);
+                Log.d(TAG, "setValue nrconfig: " + nrConfig);
+
+                updateSharedPreference(slotId, userPrefNrConfig);
+                mMainThreadHandler.sendMessage(mMainThreadHandler
+                        .obtainMessage(EVENT_SET_NR_CONFIG_STATUS, slotId, -1));
+            } catch (IOException e) {
+                Log.e(TAG, "getValue IOException : " + e);
+            }
+        }
+    }
+    //[BUG]-Modify-End by shaopan.tang
 
     private ServiceCallback mServiceCallback = new ServiceCallback() {
         @Override
@@ -215,6 +276,11 @@ public class Prefer5GNetworkListController extends AbstractPreferenceController 
         Log.d(TAG, "onDestroy");
         mExtTelephonyManager.unRegisterCallback(mCallback);
         mExtTelephonyManager.disconnectService();
+        //[BUG]-Modify-Begin by shaopan.tang 2022-05-19 [FP4-3577]5g NR mode set failed
+        if (mCm != null) {
+            mCm.SysRilDispose();
+        }
+        //[BUG]-Modify-End by shaopan.tang
     }
 
     @Override
@@ -257,8 +323,13 @@ public class Prefer5GNetworkListController extends AbstractPreferenceController 
                 pref.setEntryValues(R.array.preferred_5g_network_mode_values);
                 if (mServiceConnected && mClient != null) {
                     mRetry = false;
+                   //[BUG]-Modify-Begin by shaopan.tang 2022-05-19 [FP4-3577]5g NR mode set failed
+                   /*
                     Token token = mExtTelephonyManager.queryNrConfig(slotId, mClient);
-                    Log.d(TAG, "queryNrConfig: " + token);
+                    Log.d(TAG, "queryNrConfig: " + token);*/
+                    getValue(slotId);
+                    //[BUG]-Modify-End by shaopan.tang
+
                 } else {
                     mRetry = true;
                 }
@@ -295,9 +366,14 @@ public class Prefer5GNetworkListController extends AbstractPreferenceController 
         Log.i(TAG, "onPreferenceChange for slot: " + slotId + ", setNrConfig: " + newNrMode);
         userPrefNrConfig = newNrMode;
         if (mServiceConnected && mClient != null) {
+
+            //[BUG]-Modify-Begin by shaopan.tang 2022-05-19 [FP4-3577]5g NR mode set failed
+            /*
             Token token = mExtTelephonyManager.setNrConfig(
                     slotId, new NrConfig(newNrMode), mClient);
-            Log.d(TAG, "setNrConfig: " + token);
+            Log.d(TAG, "setNrConfig: " + token);*/
+            setValue(newNrMode, slotId);
+            //[BUG]-Modify-End by shaopan.tang
         }
         final ListPreference listPreference = (ListPreference) preference;
         String summary = mContext.getString(getSummaryResId(newNrMode));
