@@ -115,7 +115,9 @@ public class AccessibilityFooterPreferenceController extends BasePreferenceContr
 
         if (helpIntent != null) {
             footerPreference.setLearnMoreAction(view -> {
-                view.startActivityForResult(helpIntent, 0);
+                if (helpIntent != null) {
+                    view.startActivityForResult(helpIntent, 0);
+                }
             });
             footerPreference.setLearnMoreText(getLearnMoreText());
             footerPreference.setLinkEnabled(true);
