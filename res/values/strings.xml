@@ -429,6 +429,11 @@
     <!-- Toast text for hint user bluetooth is turned on [CHAR LIMIT=none]-->
     <string name="connected_device_bluetooth_turned_on_toast">Bluetooth turned on</string>
 
+    <!-- Title for preference to remind user about Bluetooth LE toggle -->
+    <string name="bluetooth_le_toggle_reminder_title">Enable Bluetooth Low Energy</string>
+    <!-- Summary for preference to remind user about Bluetooth LE toggle -->
+    <string name="bluetooth_le_toggle_reminder_summary">Bluetooth Low Energy (LE) is used by peripherals like wearables and other smart gadgets and apps like COVID-19 contact tracing apps.</string>
+
     <!-- Title to see all the previous connected devices [CHAR LIMIT=50] -->
     <string name="previous_connected_see_all">See all</string>
 

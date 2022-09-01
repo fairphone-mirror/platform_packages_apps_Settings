@@ -183,6 +183,8 @@
     <string name="connected_device_previously_connected_title" msgid="605808252622814415">"Dispositivos conectados anteriormente"</string>
     <string name="connected_device_previously_connected_screen_title" msgid="8823331744788100605">"Conectados anteriormente"</string>
     <string name="connected_device_bluetooth_turned_on_toast" msgid="144664089794199928">"Bluetooth activado"</string>
+    <string name="bluetooth_le_toggle_reminder_title">Activar Bluetooth de Baja Energía</string>
+    <string name="bluetooth_le_toggle_reminder_summary">Bluetooth de Baja Energía (BE) se usa en algunos periféricos, como wearables y otros Smart Gadgets, y applicaciones de rastreo de contactos de COVID-19.</string>
     <string name="previous_connected_see_all" msgid="7759413145713251328">"Ver todos"</string>
     <string name="date_and_time" msgid="1788358029823431692">"Fecha y hora"</string>
     <string name="choose_timezone" msgid="1450780665958642147">"Elige una zona horaria"</string>

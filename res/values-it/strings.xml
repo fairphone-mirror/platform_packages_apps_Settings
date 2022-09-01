@@ -183,6 +183,8 @@
     <string name="connected_device_previously_connected_title" msgid="605808252622814415">"Dispositivi connessi in precedenza"</string>
     <string name="connected_device_previously_connected_screen_title" msgid="8823331744788100605">"Connessi in precedenza"</string>
     <string name="connected_device_bluetooth_turned_on_toast" msgid="144664089794199928">"Bluetooth attivato"</string>
+    <string name="bluetooth_le_toggle_reminder_title">Attiva Bluetooth Low Energy</string>
+    <string name="bluetooth_le_toggle_reminder_summary">La tecnologia Bluetooth Low Energy è utilizzata da alcuni dispositivi portatili, come gli orologi ed altri accessori digitali, e applicazioni per il tracciamento dei contatti dei casi COVID-19.</string>
     <string name="previous_connected_see_all" msgid="7759413145713251328">"Mostra tutti"</string>
     <string name="date_and_time" msgid="1788358029823431692">"Data e ora"</string>
     <string name="choose_timezone" msgid="1450780665958642147">"Scegli il fuso orario"</string>
