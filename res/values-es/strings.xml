@@ -5795,5 +5795,7 @@
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"Para empezar a escuchar, centra el código QR aquí abajo"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"El código QR no tiene un formato válido"</string>
     <string name="wfc_help_desc_text">Si selecciona Red móvil preferida se utilizará la red móvil de forma predeterminada para las llamadas. En caso de que no haya cobertura de red móvil o ésta sea muy débil, se utilizará la red Wi-Fi en su lugar.</string>
+    <string name="fingerprint_settings_open_description">"Habilita si prefieres desbloquear con tu huella dactilar, sin encender el teléfono primero."</string>
+    <string name="fingerprint_settings_open_title">Modo de desbloqueo con huella digital</string>
 
 </resources>
