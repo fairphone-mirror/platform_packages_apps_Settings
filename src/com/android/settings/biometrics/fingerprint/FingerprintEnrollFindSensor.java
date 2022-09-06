@@ -128,7 +128,7 @@ public class FingerprintEnrollFindSensor extends BiometricEnrollBase implements
             }
         } else {
             setHeaderText(R.string.security_settings_fingerprint_enroll_find_sensor_title);
-            setDescriptionText(R.string.security_settings_fingerprint_enroll_find_sensor_message);
+            setDescriptionText(R.string.security_settings_fingerprint_enroll_find_sensor_message_temporary);
         }
 
         // This is an entry point for SetNewPasswordController, e.g.
