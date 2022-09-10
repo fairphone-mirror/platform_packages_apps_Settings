@@ -2469,7 +2469,6 @@
     <string name="smart_battery_manager_title" msgid="3677620516657920364">"Battery Manager"</string>
     <string name="smart_battery_title" msgid="9095903608520254254">"Қолданбаларды автоматты түрде реттеу"</string>
     <string name="smart_battery_summary" product="default" msgid="1492277404000064998">"Сирек пайдаланылатын қолданбалар үшін батареяның пайдаланылуын шектеу"</string>
-    <string name="smart_battery_footer" msgid="8407121907452993645">"Battery Manager функциясы батарея зарядын жылдам тауысатын қолданбаларды анықтайтын кезде, осы қолданбаларды шектейтін опция болады. Шектелген қолданбалар дұрыс жұмыс істемеуі және хабарландырулар кешігіп келуі мүмкін."</string>
     <string name="restricted_app_title" msgid="6585080822121007436">"Шектелген қолданбалар"</string>
     <plurals name="restricted_app_summary" formatted="false" msgid="6059772951505411003">
       <item quantity="other">Батарея %1$d қолданба үшін ғана қолданылады</item>

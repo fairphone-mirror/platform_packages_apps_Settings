@@ -2469,7 +2469,6 @@
     <string name="smart_battery_manager_title" msgid="3677620516657920364">"Menaxheri i baterisë"</string>
     <string name="smart_battery_title" msgid="9095903608520254254">"Menaxho automatikisht aplikacionet"</string>
     <string name="smart_battery_summary" product="default" msgid="1492277404000064998">"Kufizo baterinë për aplikacionet që nuk i përdor shpesh"</string>
-    <string name="smart_battery_footer" msgid="8407121907452993645">"Kur \"Menaxheri i baterisë\" të zbulojë se këto aplikacione po shkarkojnë baterinë, do të kesh opsionin që t\'i kufizosh këto aplikacione. Aplikacionet e kufizuara mund të mos funksionojnë si duhet dhe njoftimet mund të vonohen."</string>
     <string name="restricted_app_title" msgid="6585080822121007436">"Aplikacionet e kufizuara"</string>
     <plurals name="restricted_app_summary" formatted="false" msgid="6059772951505411003">
       <item quantity="other">Përdorimi i baterisë po kufizohet për %1$d aplikacione</item>

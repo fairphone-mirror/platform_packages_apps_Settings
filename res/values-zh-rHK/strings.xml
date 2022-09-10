@@ -2470,7 +2470,6 @@
     <string name="smart_battery_manager_title" msgid="3677620516657920364">"電池管理工具"</string>
     <string name="smart_battery_title" msgid="9095903608520254254">"自動管理應用程式"</string>
     <string name="smart_battery_summary" product="default" msgid="1492277404000064998">"限制不常用應用程式的耗電量"</string>
-    <string name="smart_battery_footer" msgid="8407121907452993645">"當「電池管理工具」偵測到應用程式正在耗電時，您可選擇限制這些應用程式。受限制的應用程式可能會因此無法正常運作，且相關通知可能會延遲。"</string>
     <string name="restricted_app_title" msgid="6585080822121007436">"受限制的應用程式"</string>
     <plurals name="restricted_app_summary" formatted="false" msgid="6059772951505411003">
       <item quantity="other">限制 %1$d 個應用程式的用電量</item>

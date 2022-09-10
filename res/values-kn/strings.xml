@@ -2469,7 +2469,6 @@
     <string name="smart_battery_manager_title" msgid="3677620516657920364">"ಬ್ಯಾಟರಿ ನಿರ್ವಾಹಕ"</string>
     <string name="smart_battery_title" msgid="9095903608520254254">"ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅಪ್ಲಿಕೇಶನ್‌ಗಳನ್ನು ನಿರ್ವಹಿಸಿ"</string>
     <string name="smart_battery_summary" product="default" msgid="1492277404000064998">"ನೀವು ಪದೇ ಪದೇ ಉಪಯೋಗಿಸದ ಅಪ್ಲಿಕೇಶನ್‌ಗಳ ಬ್ಯಾಟರಿಯನ್ನು ಸೀಮಿತಗೊಳಿಸಿ"</string>
-    <string name="smart_battery_footer" msgid="8407121907452993645">"ಯಾವಾಗ ಬ್ಯಾಟರಿ ಮ್ಯಾನೇಜರ್ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಬ್ಯಾಟರಿಯನ್ನು ಬರಿದಾಗಿಸುತ್ತಿದೆ ಎಂದು ಪತ್ತೆ ಹಚ್ಚುತ್ತದೆಯೊ, ಈ ಅಪ್ಲಿಕೇಶನ್‌ಗಳನ್ನು ನಿರ್ಬಂಧಿಸುವ ಆಯ್ಕೆಯನ್ನು ನೀವು ಹೊಂದಿರುತ್ತೀರಿ. ನಿರ್ಬಂಧಿತ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಸರಿಯಾಗಿ ಕೆಲಸ ಮಾಡದಿರಬಹುದು ಮತ್ತು ಅಧಿಸೂಚನೆಗಳು ವಿಳಂಬವಾಗಬಹುದು."</string>
     <string name="restricted_app_title" msgid="6585080822121007436">"ನಿರ್ಬಂಧಿತ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು"</string>
     <plurals name="restricted_app_summary" formatted="false" msgid="6059772951505411003">
       <item quantity="one">%1$d ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಬ್ಯಾಟರಿ ಬಳಕೆಯನ್ನು ಸೀಮಿತಗೊಳಿಸಲಾಗಿದೆ</item>

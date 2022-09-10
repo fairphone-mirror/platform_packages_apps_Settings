@@ -2469,7 +2469,6 @@
     <string name="smart_battery_manager_title" msgid="3677620516657920364">"ຕົວຈັດການແບັດເຕີຣີ"</string>
     <string name="smart_battery_title" msgid="9095903608520254254">"ຈັດການແອັບໂດຍອັດຕະໂນມັດ"</string>
     <string name="smart_battery_summary" product="default" msgid="1492277404000064998">"ຈຳກັດແບັດເຕີຣີສຳລັບແອັບທີ່ທ່ານບໍ່ໄດ້ໃຊ້ເລື້ອຍໆ"</string>
-    <string name="smart_battery_footer" msgid="8407121907452993645">"ເມື່ອຕົວປະຢັດແບັດເຕີຣີກວດພົບວ່າມີແອັບທີ່ກຳລັງໃຊ້ແບັດເຕີຣີຫຼາຍເກີນໄປຢູ່, ທ່ານຈະມີຕົວເລືອກໃນການຈຳກັດແອັບເຫຼົ່ານີ້ໄວ້. ແອັບທີ່ຖືກຈຳກັດອາດເຮັດວຽກບໍ່ຖືກຕ້ອງ ແລະ ການແຈ້ງເຕືອນອາດຊັກຊ້າ."</string>
     <string name="restricted_app_title" msgid="6585080822121007436">"ແອັບທີ່ຈຳກັດໄວ້"</string>
     <plurals name="restricted_app_summary" formatted="false" msgid="6059772951505411003">
       <item quantity="other">ກຳລັງຈຳກັດການໃຊ້ແບັດເຕີຣີສຳລັບ %1$d ແອັບ</item>

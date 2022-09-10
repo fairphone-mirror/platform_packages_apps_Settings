@@ -2469,7 +2469,6 @@
     <string name="smart_battery_manager_title" msgid="3677620516657920364">"Batareya Meneceri"</string>
     <string name="smart_battery_title" msgid="9095903608520254254">"Tətbiqləri avtomatik idarə edin"</string>
     <string name="smart_battery_summary" product="default" msgid="1492277404000064998">"Daima istifadə etmədiyiniz tətbiqlərin batareyadan istifadəsini məhdudlaşdırın"</string>
-    <string name="smart_battery_footer" msgid="8407121907452993645">"Batareya Meneceri batareyadan çox istifadə edən tətbiqləri aşkarladıqda həmin tətbiqləri məhdudlaşdıra biləcəksiniz. Məhdudlaşdırılmış tətbiqlər düzgün işləməyə və bildirişlər gecikə bilər."</string>
     <string name="restricted_app_title" msgid="6585080822121007436">"Məhdudlaşdırılmış tətbiqlər"</string>
     <plurals name="restricted_app_summary" formatted="false" msgid="6059772951505411003">
       <item quantity="other">%1$d tətbiq üçün batareya istifadəsinin məhdudlaşdırılması</item>

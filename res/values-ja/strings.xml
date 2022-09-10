@@ -2469,7 +2469,6 @@
     <string name="smart_battery_manager_title" msgid="3677620516657920364">"バッテリー マネージャ"</string>
     <string name="smart_battery_title" msgid="9095903608520254254">"アプリを自動的に管理"</string>
     <string name="smart_battery_summary" product="default" msgid="1492277404000064998">"使用頻度の低いアプリによる電池の使用を制限します"</string>
-    <string name="smart_battery_footer" msgid="8407121907452993645">"バッテリー マネージャによってアプリの電池使用量が多いことが検出された場合は、該当するアプリを制限できます。制限したアプリは正常に動作しないことがあります。また、通知が遅れる可能性もあります。"</string>
     <string name="restricted_app_title" msgid="6585080822121007436">"制限されたアプリ"</string>
     <plurals name="restricted_app_summary" formatted="false" msgid="6059772951505411003">
       <item quantity="other">%1$d 個のアプリの電池使用を制限しています</item>

@@ -2469,7 +2469,6 @@
     <string name="smart_battery_manager_title" msgid="3677620516657920364">"බැටරි කළමනාකරු"</string>
     <string name="smart_battery_title" msgid="9095903608520254254">"යෙදුම් ස්වයංක්‍රියව කළමනාකරණය කරන්න"</string>
     <string name="smart_battery_summary" product="default" msgid="1492277404000064998">"ඔබ නිතර භාවිත නොකරන යෙදුම් සඳහා බැටරිය සීමා කරන්න"</string>
-    <string name="smart_battery_footer" msgid="8407121907452993645">"බැටරි කළමනාකරු යෙදුම් බැටරිය අඩු කරන බව හඳුනා ගන්නා විට, මෙම යෙදුම් සීමා කිරීමට ඔබට විකල්පයක් ඇත. සීමා කළ යෙදුම් නිසියාකාරව ක්‍රියා නොකළ හැකි අතර දැනුම්දීම් ප්‍රමාද විය හැකිය."</string>
     <string name="restricted_app_title" msgid="6585080822121007436">"සීමා කළ යෙදුම්"</string>
     <plurals name="restricted_app_summary" formatted="false" msgid="6059772951505411003">
       <item quantity="one">යෙදුම් %1$dක් සඳහා බැටරි භාවිතය සීමා කරමින්</item>
