@@ -277,7 +277,8 @@ public class SubscriptionUtil {
         // If a display name is duplicate, append the final 4 digits of the phone number.
         // Creates a mapping of Subscription id to original display name + phone number display name
         final Supplier<Stream<DisplayInfo>> uniqueInfos = () -> originalInfos.get().map(info -> {
-            if (duplicateOriginalNames.contains(info.originalName)) {
+          //remove last four numbers display in FP4s-508
+            /*if (duplicateOriginalNames.contains(info.originalName)) {
                 // This may return null, if the user cannot view the phone number itself.
                 final String phoneNumber = DeviceInfoUtils.getBidiFormattedPhoneNumber(context,
                         info.subscriptionInfo);
@@ -293,9 +294,9 @@ public class SubscriptionUtil {
                     info.uniqueName = info.originalName + " " + lastFourDigits;
                 }
 
-            } else {
+            } else {*/
                 info.uniqueName = info.originalName;
-            }
+            /*}*/
             return info;
         });
 
