@@ -12358,7 +12358,7 @@
     <!-- apn names for carriers -->
     <string name="APN_NAME_CMNET">CMNET</string>
     <string name="APN_NAME_CMWAP">CMWAP</string>
-    <string name="APN_NAME_CMMMS">CMMMS</string>
+    <string name="APN_NAME_China_Mobile_MMS">CMMMS</string>
     <string name="APN_NAME_CUWAP">China Unicom WAP</string>
     <string name="APN_NAME_CUNET">China Unicom NET</string>
     <string name="APN_NAME_CUMMS">China Unicom MMS</string>
@@ -12367,6 +12367,9 @@
     <string name="APN_NAME_CTWAP">CTWAP</string>
     <string name="APN_NAME_CTLTE">ctlte</string>
     <string name="APN_NAME_CTMMS">CTWAP</string>
+    <string name="APN_NAME_FarEasTone_Internet">FarEasTone Internet</string>
+    <string name="APN_NAME_FarEasTone_MMS">FarEasTone MMS</string>
+    <string name="APN_NAME_FarEasTone_IMS">FarEasTone IMS</string>
 
     <!-- UI debug setting: preference title - show all crash dialogs [CHAR LIMIT=60] -->
     <string name="show_first_crash_dialog">Always show crash dialog</string>
