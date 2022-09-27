@@ -5795,4 +5795,7 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"密碼錯誤"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"如要開始收聽，請將掃描器對準下方的 QR 圖碼"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"QR 圖碼格式無效"</string>
+    <string name="APN_NAME_FarEasTone_Internet">遠傳網際網路</string>
+    <string name="APN_NAME_FarEasTone_MMS">遠傳影音訊息</string>
+    <string name="APN_NAME_FarEasTone_IMS">遠傳IMS</string>
 </resources>
