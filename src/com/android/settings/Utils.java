@@ -1193,7 +1193,8 @@ public final class Utils extends com.android.settingslib.Utils {
         // If can find a localized name, replace the APN name with it
         String localizedName = null;
         if (resName != null && !resName.isEmpty()) {
-            int resId = context.getResources().getIdentifier(resName, "string",
+            resName = resName.replace(" ","_");
+            int resId = context.getResources().getIdentifier("APN_NAME_" + resName, "string",
                     context.getPackageName());
             if(resId > 0){
                 try {

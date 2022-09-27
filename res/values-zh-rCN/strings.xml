@@ -4539,7 +4539,7 @@
     <!-- apn names for carriers -->
     <string name="APN_NAME_CMNET">中国移动NET</string>
     <string name="APN_NAME_CMWAP">中国移动WAP</string>
-    <string name="APN_NAME_CMMMS">中国移动彩信设置</string>
+    <string name="APN_NAME_China_Mobile_MMS">中国移动彩信设置</string>
     <string name="APN_NAME_CUWAP">沃宽带用户手机上网</string>
     <string name="APN_NAME_CUNET">沃宽带用户连接互联网</string>
     <string name="APN_NAME_CUMMS">联通彩信</string>
@@ -4549,6 +4549,9 @@
     <string name="APN_NAME_CTLTE">中国电信互联网设置 ctlte</string>
     <string name="APN_NAME_CTMMS">中国电信彩信设置 CTWAP</string>
     <string name="APN_NAME_CBNET">中国广电NET</string>
+    <string name="APN_NAME_FarEasTone_Internet">远传互联网</string>
+    <string name="APN_NAME_FarEasTone_MMS">远传影音讯息</string>
+    <string name="APN_NAME_FarEasTone_IMS">远传IMS</string>
     <string name="disabled_dependent_setting_summary" msgid="4508635725315852504">"必须一并更改其他设置"</string>
     <string name="my_device_info_account_preference_title" msgid="9197139254007133175">"账号"</string>
     <string name="my_device_info_account_preference_summary" msgid="3510582677937510545">"%d 个账号"</string>
