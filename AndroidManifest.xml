@@ -4127,6 +4127,17 @@ SPDX-License-Identifier: BSD-3-Clause-Clear -->
             android:name=".wifi.slice.ConnectToWifiHandler"
             android:exported="false" />
 
+        <receiver android:name=".wifi.SSIDPreloadReceiver"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.android.settings.wifi.NETWORK_FACTORY_RESET_ACTION" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".wifi.SSIDPreloadService"
+                 android:exported="true" />
+
         <activity
             android:name=".sim.SimDialogActivity"
             android:theme="@style/Theme.AlertDialog.SimConfirmDialog"

@@ -29,6 +29,7 @@ import android.app.settings.SettingsEnums;
 import android.content.AsyncQueryHandler;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -48,6 +49,7 @@ import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Handler;
+import android.os.SystemProperties;
 import android.provider.Telephony.CarrierId;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
@@ -150,6 +152,10 @@ public class WifiDetailPreferenceController2 extends AbstractPreferenceControlle
     static final String KEY_IPV6_CATEGORY = "ipv6_category";
     @VisibleForTesting
     static final String KEY_IPV6_ADDRESSES_PREF = "ipv6_addresses";
+
+    private static final String SHARE_PREFERENCE_FILE_NAME = "wifi_ssid_preload";
+    private static final String SHARE_PREFERENCE_PRELOAD_FLAG_KEY = "wifi_ssid_preload_flag";
+
     @VisibleForTesting
     static final String KEY_WIFI_TYPE_PREF = "type";
 
@@ -917,8 +923,20 @@ public class WifiDetailPreferenceController2 extends AbstractPreferenceControlle
             // Post a dialog to confirm if user really want to forget the passpoint network.
             showConfirmForgetDialog();
             return;
-        } else {
+        } else if (mWifiEntry != null) {
             mWifiEntry.forget(this);
+
+            String default_ssid = "FreeWifi_secure";
+            Log.d(TAG, "forgetNetwork() default_ssid: " + default_ssid + ", mWifiEntry.getSsid(): " + mWifiEntry.getSsid());
+            if (default_ssid.trim().equals(mWifiEntry.getSsid())){
+                Log.d(TAG, "forgetNetwork() SET PRELOAD STATUS to false");
+                SharedPreferences sharedPreferences = mContext.getSharedPreferences(
+                                                                  SHARE_PREFERENCE_FILE_NAME,
+                                                                  Activity.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean(SHARE_PREFERENCE_PRELOAD_FLAG_KEY, false);
+                editor.commit();
+            }
         }
 
         final Activity activity = mFragment.getActivity();

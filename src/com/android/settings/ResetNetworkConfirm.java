@@ -21,9 +21,12 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.app.settings.SettingsEnums;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Looper;
+import android.os.UserHandle;
 import android.telephony.SubscriptionManager;
 import android.telephony.SubscriptionManager.OnSubscriptionsChangedListener;
 import android.util.Log;
@@ -66,6 +69,10 @@ public class ResetNetworkConfirm extends InstrumentedFragment {
     @VisibleForTesting ResetSubscriptionContract mResetSubscriptionContract;
     private OnSubscriptionsChangedListener mSubscriptionsChangedListener;
 
+    private static final String SHARE_PREFERENCE_FILE_NAME = "wifi_ssid_preload";
+    private static final String SHARE_PREFERENCE_PRELOAD_FLAG_KEY = "wifi_ssid_preload_flag";
+    private static final String NETWORK_FACTORY_RESET_ACTION = "com.android.settings.wifi.NETWORK_FACTORY_RESET_ACTION";
+
     /**
      * Async task used to do all reset task. If error happens during
      * erasing eSIM profiles or timeout, an error msg is shown.
@@ -97,7 +104,21 @@ public class ResetNetworkConfirm extends InstrumentedFragment {
             boolean isResetSucceed = resetEsimSuccess.get();
             Log.d(TAG, "network factoryReset complete. succeeded: "
                     + String.valueOf(isResetSucceed));
+            restoreSSIDPreloadStatus();
             return isResetSucceed;
+        }
+
+        private void restoreSSIDPreloadStatus() {
+            SharedPreferences sharedPreferences = getActivity().getSharedPreferences(
+                SHARE_PREFERENCE_FILE_NAME,
+                Activity.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean(SHARE_PREFERENCE_PRELOAD_FLAG_KEY, false);
+            editor.commit();
+
+            Intent intent = new Intent(NETWORK_FACTORY_RESET_ACTION);
+            intent.addFlags(Intent.FLAG_RECEIVER_INCLUDE_BACKGROUND);
+            getActivity().sendBroadcastAsUser(intent, UserHandle.CURRENT);
         }
 
         @Override
