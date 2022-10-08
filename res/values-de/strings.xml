@@ -1171,7 +1171,7 @@
     <string name="accessibility_work_account_title" msgid="7622485151217943839">"Arbeitskonto – <xliff:g id="MANAGED_BY">%s</xliff:g>"</string>
     <string name="accessibility_personal_account_title" msgid="8535265881509557013">"Privates Konto – <xliff:g id="MANAGED_BY">%s</xliff:g>"</string>
     <string name="search_settings" msgid="7573686516434589771">"Suche"</string>
-    <string name="display_settings" msgid="7197750639709493852">"Display"</string>
+    <string name="display_settings" msgid="7197750639709493852">"Bildschirm"</string>
     <string name="accelerometer_title" msgid="7745991950833748909">"Bildschirm automatisch drehen"</string>
     <string name="auto_rotate_option_off" msgid="2788096269396290731">"Aus"</string>
     <string name="auto_rotate_option_on" msgid="5776678230808498171">"An"</string>
@@ -3131,7 +3131,7 @@
     <string name="color_orange" msgid="216547825489739010">"Orange"</string>
     <string name="color_purple" msgid="6603701972079904843">"Lila"</string>
     <string name="sim_status_title" msgid="6188770698037109774">"Status der SIM-Karte"</string>
-    <string name="sim_status_title_sim_slot" msgid="4932996839194493313">"SIM-Status (SIM-Steckplatz %1$d)"</string>
+    <string name="sim_status_title_sim_slot" msgid="4932996839194493313">"Sim-Karten-Status (SIM-Steckplatz %1$d)"</string>
     <string name="sim_signal_strength" msgid="6351052821700294501">"<xliff:g id="DBM">%1$d</xliff:g> dBm <xliff:g id="ASU">%2$d</xliff:g> asu"</string>
     <string name="sim_notification_title" msgid="6839556577405929262">"Deine SIMs wurden gewechselt"</string>
     <string name="sim_notification_summary" msgid="5593339846307029991">"Zum Einrichten tippen"</string>
@@ -5350,4 +5350,5 @@
     <string name="unlock_failed_reset_title">"Automatisches Zurücksetzen auf Werkseinstellungen."</string>
     <string name="unlock_failed_reset_description">"Wenn Sie 15-mal versuchen, Ihr Telefon falsch zu entsperren, wird es auf die Werkseinstellungen zurückgesetzt. Alle Daten, einschließlich Dateien und heruntergeladene Apps, werden gelöscht."</string>
     <string name="data_preference">Datenpräferenz</string>
+    <string name="status_sdn">"Servicenummern"</string>
 </resources>
