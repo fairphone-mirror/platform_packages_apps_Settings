@@ -315,10 +315,11 @@ public class SubscriptionUtil {
                 .collect(Collectors.toSet());
 
         return uniqueInfos.get().map(info -> {
-            if (duplicatePhoneNames.contains(info.uniqueName)) {
+            //remove last four numbers display in FP4s-508
+            /*if (duplicatePhoneNames.contains(info.uniqueName)) {
                 info.uniqueName = info.originalName + " "
                         + info.subscriptionInfo.getSubscriptionId();
-            }
+            }*/
             return info;
         }).collect(Collectors.toMap(
                 info -> info.subscriptionInfo.getSubscriptionId(),
