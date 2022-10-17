@@ -141,11 +141,34 @@ public class OpenNetworkSelectPagePreferenceController extends
                     return registeredOperatorName;
                 }
             }
-            return MobileNetworkUtils.getCurrentCarrierNameForDisplay(mContext, mSubId);
+            //Modify by T2M yingyubin for FP4S-619 20221017
+            CharSequence displayName = MobileNetworkUtils.getCurrentCarrierNameForDisplay(mContext, mSubId);
+            boolean showCustomizeName = mContext.getResources().getBoolean(
+                    R.bool.config_show_customize_carrier_name);
+            if(showCustomizeName && displayName != null) {
+                displayName = getLocalString(displayName.toString(),
+                        R.array.origin_carrier_names, R.array.locale_carrier_names);
+            }
+            return displayName;
+            //Modify by T2M yingyubin for FP4S-619 20221017
         } else {
             return mContext.getString(R.string.network_disconnected);
         }
     }
+
+    //Modify by T2M yingyubin for FP4S-619 20221017
+    private String getLocalString(String originalString,
+            int originNamesId, int localNamesId) {
+        String[] origNames = mContext.getResources().getStringArray(originNamesId);
+        String[] localNames = mContext.getResources().getStringArray(localNamesId);
+        for (int i = 0; i < origNames.length; i++) {
+            if (origNames[i].equalsIgnoreCase(originalString)) {
+                  return localNames[i];
+            }
+        }
+        return originalString;
+    }
+    //Modify by T2M yingyubin for FP4S-619 20221017
 
     private boolean isSnpnInService(ServiceState ss) {
         return ((MobileNetworkUtils.getAccessMode(mContext, mTelephonyManager.getSlotIndex())

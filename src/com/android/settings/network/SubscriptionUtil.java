@@ -341,8 +341,31 @@ public class SubscriptionUtil {
     public static CharSequence getUniqueSubscriptionDisplayName(
             Integer subscriptionId, Context context) {
         final Map<Integer, CharSequence> displayNames = getUniqueSubscriptionDisplayNames(context);
-        return displayNames.getOrDefault(subscriptionId, "");
+        //Modify by T2M yingyubin for FP4S-619 20221017
+        CharSequence displayName = displayNames.getOrDefault(subscriptionId, "");
+        boolean showCustomizeName = context.getResources().getBoolean(
+                R.bool.config_show_customize_carrier_name);
+        if(showCustomizeName && displayName != null){
+            displayName = getLocalString(displayName.toString(),
+                    R.array.origin_carrier_names, R.array.locale_carrier_names,context);
+        }
+        return displayName;
+        //Modify by T2M yingyubin for FP4S-619 20221017
     }
+
+    //Modify by T2M yingyubin for FP4S-619 20221017
+    private static String getLocalString(String originalString,
+            int originNamesId, int localNamesId, Context context) {
+        String[] origNames = context.getResources().getStringArray(originNamesId);
+        String[] localNames = context.getResources().getStringArray(localNamesId);
+        for (int i = 0; i < origNames.length; i++) {
+            if (origNames[i].equalsIgnoreCase(originalString)) {
+                  return localNames[i];
+            }
+        }
+        return originalString;
+    }
+    //Modify by T2M yingyubin for FP4S-619 20221017
 
     /**
      * Return the display name for a subscription, which is guaranteed to be unique.
