@@ -179,9 +179,37 @@ public class SimStatusPreferenceController extends BasePreferenceController {
             if (DomesticRoamUtils.EMPTY_OPERATOR_NAME != operatorName) {
                 return operatorName;
             }
+
+            CharSequence carrierName = subInfo.getCarrierName();
+            boolean showCustomizeName =
+                    mContext.getResources().getBoolean(com.android.settingslib.R.bool.config_show_customize_carrier_name);
+            if (showCustomizeName && carrierName != null) {
+                carrierName =
+                        getLocalString(
+                                carrierName.toString(),
+                                com.android.settingslib.R.array.origin_carrier_names,
+                                com.android.settingslib.R.array.locale_carrier_names,
+                                mContext);
+            }
+            if (carrierName == null) {
+                carrierName = mContext.getText(R.string.device_info_default);
+            }
+            return carrierName;
         }
         return (subInfo != null) ? subInfo.getCarrierName() :
                 mContext.getText(R.string.device_info_not_available);
+    }
+
+    private String getLocalString(
+            String originalString, int originNamesId, int localNamesId, Context context) {
+        String[] origNames = context.getResources().getStringArray(originNamesId);
+        String[] localNames = context.getResources().getStringArray(localNamesId);
+        for (int i = 0; i < origNames.length; i++) {
+            if (origNames[i].equalsIgnoreCase(originalString)) {
+                return localNames[i];
+            }
+        }
+        return originalString;
     }
 
     @VisibleForTesting

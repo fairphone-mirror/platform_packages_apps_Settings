@@ -127,6 +127,15 @@ public class MobileNetworkSummaryController extends AbstractPreferenceController
         } else if (mSubInfoEntityList.size() == 1) {
             SubscriptionInfoEntity info = mSubInfoEntityList.get(0);
             CharSequence displayName = info.uniqueName;
+            boolean showCustomizeName =
+                    mContext.getResources().getBoolean(com.android.settingslib.R.bool.config_show_customize_carrier_name);
+            if (showCustomizeName && displayName != null) {
+                displayName =
+                        getLocalString(
+                                displayName.toString(),
+                                com.android.settingslib.R.array.origin_carrier_names,
+                                com.android.settingslib.R.array.locale_carrier_names);
+            }
             if (info.isEmbedded || mUiccInfoEntityList.get(0).isActive
                     || mMobileNetworkInfoEntityList.get(0).showToggleForPhysicalSim) {
                 return displayName;
@@ -137,6 +146,17 @@ public class MobileNetworkSummaryController extends AbstractPreferenceController
                     .map(SubscriptionInfoEntity::getUniqueDisplayName)
                     .collect(Collectors.joining(", "));
         }
+    }
+
+    private String getLocalString(String originalString, int originNamesId, int localNamesId) {
+        String[] origNames = mContext.getResources().getStringArray(originNamesId);
+        String[] localNames = mContext.getResources().getStringArray(localNamesId);
+        for (int i = 0; i < origNames.length; i++) {
+            if (origNames[i].equalsIgnoreCase(originalString)) {
+                return localNames[i];
+            }
+        }
+        return originalString;
     }
 
     private void logPreferenceClick(Preference preference) {

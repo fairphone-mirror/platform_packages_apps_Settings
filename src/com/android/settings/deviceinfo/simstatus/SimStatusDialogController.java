@@ -298,8 +298,18 @@ public class SimStatusDialogController implements DefaultLifecycleObserver {
     }
 
     private void updateNetworkProvider() {
-        final CharSequence carrierName =
+        CharSequence carrierName =
                 mSubscriptionInfo != null ? mSubscriptionInfo.getCarrierName() : null;
+        boolean showCustomizeName =
+                mContext.getResources().getBoolean(com.android.settingslib.R.bool.config_show_customize_carrier_name);
+        if (showCustomizeName && carrierName != null) {
+            carrierName =
+                    getLocalString(
+                            carrierName.toString(),
+                            com.android.settingslib.R.array.origin_carrier_names,
+                            com.android.settingslib.R.array.locale_carrier_names,
+                            mContext);
+        }
         if (DomesticRoamUtils.isFeatureEnabled(mContext)) {
             if (mSubscriptionInfo != null) {
                 String operatorName = DomesticRoamUtils.getRegisteredOperatorName(
@@ -311,6 +321,18 @@ public class SimStatusDialogController implements DefaultLifecycleObserver {
             }
         }
         mDialog.setText(NETWORK_PROVIDER_VALUE_ID, carrierName);
+    }
+
+    private String getLocalString(
+            String originalString, int originNamesId, int localNamesId, Context context) {
+        String[] origNames = context.getResources().getStringArray(originNamesId);
+        String[] localNames = context.getResources().getStringArray(localNamesId);
+        for (int i = 0; i < origNames.length; i++) {
+            if (origNames[i].equalsIgnoreCase(originalString)) {
+                return localNames[i];
+            }
+        }
+        return originalString;
     }
 
     @VisibleForTesting

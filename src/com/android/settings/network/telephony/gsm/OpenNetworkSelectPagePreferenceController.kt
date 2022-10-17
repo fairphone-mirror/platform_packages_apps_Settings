@@ -102,16 +102,44 @@ class OpenNetworkSelectPagePreferenceController @JvmOverloads constructor(
                             if (DomesticRoamUtils.EMPTY_OPERATOR_NAME != registeredOperatorName) {
                                 registeredOperatorName
                             } else {
-                                MobileNetworkUtils.getCurrentCarrierNameForDisplay(mContext, mSubId)
+                                getDisplayName()
                             }
                         } else {
-                            MobileNetworkUtils.getCurrentCarrierNameForDisplay(mContext, mSubId)
+                            getDisplayName()
                         }
                     }
                 } else {
                     mContext.getString(R.string.network_disconnected)
                 }
             }
+    }
+
+    // Separate function for getDisplayName
+    private fun getDisplayName(): CharSequence? {
+        var displayName: CharSequence? =
+            MobileNetworkUtils.getCurrentCarrierNameForDisplay(mContext, mSubId)
+        val showCustomizeName =
+            mContext.resources.getBoolean(com.android.settingslib.R.bool.config_show_customize_carrier_name)
+        if (showCustomizeName && displayName != null) {
+            displayName = getLocalString(
+                displayName.toString(),
+                com.android.settingslib.R.array.origin_carrier_names,
+                com.android.settingslib.R.array.locale_carrier_names
+            )
+        }
+        return displayName
+    }
+
+    private fun getLocalString(originalString: String, originNamesId: Int, localNamesId: Int): String {
+        val origNames = mContext.resources.getStringArray(originNamesId)
+        val localNames = mContext.resources.getStringArray(localNamesId)
+
+        origNames.forEachIndexed { index, origName ->
+            if (origName.equals(originalString, ignoreCase = true)) {
+                return localNames[index]
+            }
+        }
+        return originalString
     }
 
     private fun isSnpnInService(ss: ServiceState): Boolean {
