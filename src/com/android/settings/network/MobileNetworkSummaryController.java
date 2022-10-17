@@ -121,6 +121,14 @@ public class MobileNetworkSummaryController extends AbstractPreferenceController
         } else if (subs.size() == 1) {
             SubscriptionAnnotation info = subs.get(0);
             CharSequence displayName = mStatusCache.getDisplayName(info.getSubscriptionId());
+            //Modify by T2M yingyubin for FP4S-619 20221017
+            boolean showCustomizeName = mContext.getResources().getBoolean(
+                    R.bool.config_show_customize_carrier_name);
+            if(showCustomizeName && displayName != null) {
+                displayName = getLocalString(displayName.toString(),
+                        R.array.origin_carrier_names, R.array.locale_carrier_names);
+            }
+            //Modify by T2M yingyubin for FP4S-619 20221017
             if (info.getSubInfo().isEmbedded() || info.isActive()
                     || mStatusCache.isPhysicalSimDisableSupport()) {
                 return displayName;
@@ -135,6 +143,20 @@ public class MobileNetworkSummaryController extends AbstractPreferenceController
                     count, count);
         }
     }
+
+    //Modify by T2M yingyubin for FP4S-619 20221017
+    private String getLocalString(String originalString,
+            int originNamesId, int localNamesId) {
+        String[] origNames = mContext.getResources().getStringArray(originNamesId);
+        String[] localNames = mContext.getResources().getStringArray(localNamesId);
+        for (int i = 0; i < origNames.length; i++) {
+            if (origNames[i].equalsIgnoreCase(originalString)) {
+                  return localNames[i];
+            }
+        }
+        return originalString;
+    }
+    //Modify by T2M yingyubin for FP4S-619 20221017
 
     private CharSequence getSummaryForProviderModel(List<SubscriptionAnnotation> subs) {
         return subs.stream()
