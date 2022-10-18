@@ -5798,4 +5798,12 @@
     <string name="APN_NAME_FarEasTone_Internet">遠傳網際網路</string>
     <string name="APN_NAME_FarEasTone_MMS">遠傳影音訊息</string>
     <string name="APN_NAME_FarEasTone_IMS">遠傳IMS</string>
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="fingerprint_settings_open_title">"指紋解鎖方式"</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="fingerprint_settings_open_description">"默認按鍵後觸摸指紋鍵解鎖。若需要觸摸指紋鍵直接解鎖則打開開關"</string>
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="unlock_failed_reset_title">"自動恢復原廠設定"</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="unlock_failed_reset_description">"若連續15次未正確解鎖您的手機, 手機會被重置回原廠設定。所有的資料, 包含您新增的檔案及下載的應用程式都將會被刪除"</string> 
 </resources>
