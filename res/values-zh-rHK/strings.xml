@@ -5157,6 +5157,10 @@
     <string name="find_broadcast_join_broadcast_error" msgid="5486980388774711346">"無法加入廣播"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"如要開始收聽，請將掃瞄器對準下方的 QR 碼"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"QR 碼格式無效"</string>
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="unlock_failed_reset_title">"自動恢復原廠設定"</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="unlock_failed_reset_description">"若連續15次未正確解鎖您的手機, 手機會被重置回原廠設定。所有的資料, 包含您新增的檔案及下載的應用程式都將會被刪除"</string>
     <string name="convert_to_esim_title" msgid="71037864129009206">"轉換成 eSIM 卡"</string>
     <string name="transfer_esim_to_another_device_title" msgid="5286117866086383192">"將 eSIM 卡轉移到其他裝置"</string>
     <string name="background_install_preference_summary" msgid="3065219346519340364">"{count,plural, =1{# 個應用程式}other{# 個應用程式}}"</string>
