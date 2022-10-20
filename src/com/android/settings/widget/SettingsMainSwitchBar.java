@@ -85,7 +85,7 @@ public class SettingsMainSwitchBar extends MainSwitchBar {
         } else {
             mDisabledByAdmin = false;
             mSwitch.setVisibility(View.VISIBLE);
-            setEnabled(isEnabled());
+            setEnabled(true);
         }
     }
 
