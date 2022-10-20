@@ -21,6 +21,7 @@ import static com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
 import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;//[BUG]-Modify-1 line by shaopan.tang 2022-10-20 [FP4S-656]eSIM profile can not re-enable
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Switch;
@@ -102,7 +103,11 @@ public class SettingsMainSwitchBar extends MainSwitchBar {
             mDisabledByAdmin = false;
             mSwitch.setVisibility(View.VISIBLE);
             mRestrictedIcon.setVisibility(View.GONE);
-            setEnabled(isEnabled());
+            //[BUG]-Modify-Begin by shaopan.tang 2022-10-20 [FP4S-656]eSIM profile can not re-enabled
+            Log.i("SettingsMainSwitchBar", "setDisabledByAdmin setenabled to true instead of getting value from isEnabled(): " + isEnabled());
+            //setEnabled(isEnabled());
+            setEnabled(true);
+            //[BUG]-Modify-ENd by shaopan.tang
         }
     }
 
