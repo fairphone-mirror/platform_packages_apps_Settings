@@ -5798,6 +5798,7 @@
     <string name="APN_NAME_FarEasTone_Internet">遠傳網際網路</string>
     <string name="APN_NAME_FarEasTone_MMS">遠傳影音訊息</string>
     <string name="APN_NAME_FarEasTone_IMS">遠傳IMS</string>
+    <string name="data_preference">"數據偏好設定"</string>
     <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
     <string name="fingerprint_settings_open_title">"指紋解鎖方式"</string>
     <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
