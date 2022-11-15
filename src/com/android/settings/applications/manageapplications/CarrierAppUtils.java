@@ -19,11 +19,11 @@ import java.util.Arrays;
 public class CarrierAppUtils {
 
     public static final ArrayList<String> sPreInstall =
-            new ArrayList<String>(Arrays.asList("AppEnabler.apk", "orange_appcenter.apk", "Orange_Manual_Selector.apk","fetself.apk","friday_vod.apk","friday_wallet.apk","go_happy.apk","Omusic.apk"));
+            new ArrayList<String>(Arrays.asList("AppEnabler.apk", "orange_appcenter.apk", "Orange_Manual_Selector.apk","fetself.apk","friday_vod.apk","friday_wallet.apk","go_happy.apk","Omusic.apk","AppSelector.apk"));
 
     private static final String KEY_CARRIER_PREINSTALL = "carrier_preinstall";
 
-    private static final String CARRIER_PREINSTALL_ARRAY[] = {"de.telekom.tsc", "com.orange.update", "com.orange.aura.oobe","com.fetself","net.fetnet.fetvod","com.fet.fridaywallet","com.gohappy.mobileapp","com.omusic.gPhone"};
+    private static final String CARRIER_PREINSTALL_ARRAY[] = {"de.telekom.tsc", "com.orange.update", "com.orange.aura.oobe","com.fetself","net.fetnet.fetvod","com.fet.fridaywallet","com.gohappy.mobileapp","com.omusic.gPhone","com.aura.oobe.deutsche"};
 
     private static String[] sPreinstallList;
 
