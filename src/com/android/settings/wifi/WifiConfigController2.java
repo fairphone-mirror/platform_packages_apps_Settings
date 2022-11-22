@@ -1079,7 +1079,7 @@ public class WifiConfigController2 implements TextWatcher,
                 // WAP3-Enterprise 192-bit only allows EAP method TLS
                 mEapMethodSpinner.setSelection(Eap.TLS);
                 mEapMethodSpinner.setEnabled(false);
-            } else if ("FET Wi-Fi Auto".equals(mWifiEntry.getTitle())) {
+            } else if (mWifiEntry != null && "FET Wi-Fi Auto".equals(mWifiEntry.getTitle())) {
                 eapMethodSpinnerAdapter = getSpinnerAdapter(R.array.wifi_eap_method);
                 mEapMethodSpinner.setAdapter(eapMethodSpinnerAdapter);
                 mEapMethodSpinner.setSelection(Eap.SIM);
