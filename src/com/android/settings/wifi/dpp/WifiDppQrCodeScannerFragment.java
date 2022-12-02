@@ -49,7 +49,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.TextView;
-
 import androidx.annotation.StringRes;
 import androidx.annotation.UiThread;
 import androidx.annotation.VisibleForTesting;
@@ -253,7 +252,9 @@ public class WifiDppQrCodeScannerFragment extends WifiDppQrCodeBaseFragment impl
         }
 
         for (WifiEntry wifiEntry : wifiEntries) {
-            if (!TextUtils.equals(wifiEntry.getSsid(), sanitizeSsid(wifiConfiguration.SSID))) {
+            //modify by qiqing.zhang for X1-992  Fix problems that QR has been scanning
+            if (!TextUtils.equals(sanitizeSsid(wifiEntry.getSsid()), sanitizeSsid(wifiConfiguration.SSID))) {
+                Log.e(TAG, "isReachableWifiNetwork  continue");
                 continue;
             }
             final int security =
