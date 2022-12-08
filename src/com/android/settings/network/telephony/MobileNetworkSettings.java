@@ -99,7 +99,15 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings {
             if (TelephonyIntents.ACTION_SIM_STATE_CHANGED.equals(action)) {
                 String state =  intent.getStringExtra(IccCardConstants.INTENT_KEY_ICC_STATE);
                 Log.d(LOG_TAG, "Received ACTION_SIM_STATE_CHANGED: " + state);
-                setScreenState();
+                //[BUG]-Modify-Begin by shaopan.tang 2022-12-08 [FP4S-789]erase sim option show as disabled
+                //We treat NOT READY state as esim only
+                if (TextUtils.equals(state, IccCardConstants.INTENT_VALUE_ICC_NOT_READY)){
+                    Log.d(LOG_TAG, "ESim not ready state");
+                    getPreferenceScreen().setEnabled(true);
+                } else {
+                    setScreenState();
+                }
+                //[BUG]-Modify-End by shaopan.tang
             }
         }
     };
