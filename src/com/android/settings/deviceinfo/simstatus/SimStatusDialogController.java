@@ -325,10 +325,32 @@ public class SimStatusDialogController implements LifecycleObserver {
     }
 
     private void updateNetworkProvider() {
-        final CharSequence carrierName =
+        CharSequence carrierName =
                 mSubscriptionInfo != null ? mSubscriptionInfo.getCarrierName() : null;
+        //Modify by T2M yingyubin for FP4S-619 20221209
+        boolean showCustomizeName = mContext.getResources().getBoolean(
+            R.bool.config_show_customize_carrier_name);
+        if(showCustomizeName && carrierName != null){
+            carrierName = getLocalString(carrierName.toString(),
+                    R.array.origin_carrier_names, R.array.locale_carrier_names,mContext);
+        }
+        //Modify by T2M yingyubin for FP4S-619 20221209
         mDialog.setText(NETWORK_PROVIDER_VALUE_ID, carrierName);
     }
+
+    //Modify by T2M yingyubin for FP4S-619 20221209
+    private String getLocalString(String originalString,
+            int originNamesId, int localNamesId, Context context) {
+        String[] origNames = context.getResources().getStringArray(originNamesId);
+        String[] localNames = context.getResources().getStringArray(localNamesId);
+        for (int i = 0; i < origNames.length; i++) {
+            if (origNames[i].equalsIgnoreCase(originalString)) {
+                return localNames[i];
+            }
+        }
+        return originalString;
+    }
+    //Modify by T2M yingyubin for FP4S-619 20221209
 
     @VisibleForTesting
     protected void updatePhoneNumber() {
