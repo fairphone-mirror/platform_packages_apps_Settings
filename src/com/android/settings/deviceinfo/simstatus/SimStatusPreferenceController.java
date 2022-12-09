@@ -123,6 +123,14 @@ public class SimStatusPreferenceController extends
                         }
                     }
                     CharSequence carrierName = info.getCarrierName();
+                    //Modify by T2M yingyubin for FP4S-619 20221209
+                    boolean showCustomizeName = mContext.getResources().getBoolean(
+                        R.bool.config_show_customize_carrier_name);
+                    if(showCustomizeName && carrierName != null){
+                        carrierName = getLocalString(carrierName.toString(),
+                                R.array.origin_carrier_names, R.array.locale_carrier_names,mContext);
+                    }
+                    //Modify by T2M yingyubin for FP4S-619 20221209
                     if (carrierName == null) {
                        carrierName = mContext.getText(R.string.device_info_default);
                     }
@@ -132,6 +140,20 @@ public class SimStatusPreferenceController extends
         }
         return mContext.getText(R.string.device_info_not_available);
     }
+
+    //Modify by T2M yingyubin for FP4S-619 20221209
+    private String getLocalString(String originalString,
+            int originNamesId, int localNamesId, Context context) {
+        String[] origNames = context.getResources().getStringArray(originNamesId);
+        String[] localNames = context.getResources().getStringArray(localNamesId);
+        for (int i = 0; i < origNames.length; i++) {
+            if (origNames[i].equalsIgnoreCase(originalString)) {
+                return localNames[i];
+            }
+        }
+        return originalString;
+    }
+    //Modify by T2M yingyubin for FP4S-619 20221209
 
     @VisibleForTesting
     Preference createNewPreference(Context context) {
