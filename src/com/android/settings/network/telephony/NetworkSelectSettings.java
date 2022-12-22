@@ -497,6 +497,15 @@ public class NetworkSelectSettings extends DashboardFragment implements
                         cellInfoList.remove(cellInfo);
                     }
                 }
+                //[BUG]-Modify-Begin by shaopan.tang 2022-12-22 [FP4S-686]Wrong behaivor for manual network selection
+                else if (operator.startsWith("23410")){
+                    if (cid.getOperatorAlphaLong().toString().toLowerCase().contains("o2") || cid.getOperatorAlphaShort().toString().toLowerCase().contains("o2")) {
+                        cellInfoList.remove(cellInfo);
+                    }else if (cid.getOperatorAlphaLong().toString().toLowerCase().contains("vodafone") || cid.getOperatorAlphaShort().toString().toLowerCase().contains("voda")) {
+                        cellInfoList.remove(cellInfo);
+                    }
+                }
+                //[BUG]-Modify-End by shaopan.tang
             }
 
         }
