@@ -124,17 +124,14 @@ public class SelectableSubscriptions implements Callable<List<SubscriptionAnnota
             List<Integer> simSlotIndexList = atomicToList(simSlotIndex.get());
             List<Integer> activeSimSlotIndexList = atomicToList(activeSimSlotIndex.get());
 
-			if(subInfoList != null){
-		   		// build a list of SubscriptionAnnotation
-		        return IntStream.range(0, subInfoList.size())
-		                .mapToObj(subInfoIndex ->
-		                        new SubscriptionAnnotation.Builder(subInfoList, subInfoIndex))
-		                .map(annoBdr -> annoBdr.build(mContext,
-		                        eSimCardIdList, simSlotIndexList, activeSimSlotIndexList))
-		                .filter(mFilter)
-		                .collect(Collectors.collectingAndThen(Collectors.toList(), mFinisher));
-			} 
-     
+            // build a list of SubscriptionAnnotation
+            return IntStream.range(0, subInfoList.size())
+                    .mapToObj(subInfoIndex ->
+                            new SubscriptionAnnotation.Builder(subInfoList, subInfoIndex))
+                    .map(annoBdr -> annoBdr.build(mContext,
+                            eSimCardIdList, simSlotIndexList, activeSimSlotIndexList))
+                    .filter(mFilter)
+                    .collect(Collectors.collectingAndThen(Collectors.toList(), mFinisher));
         } catch (Exception exception) {
             Log.w(TAG, "Fail to request subIdList", exception);
         }
