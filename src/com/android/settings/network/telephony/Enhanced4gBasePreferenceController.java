@@ -116,20 +116,18 @@ public class Enhanced4gBasePreferenceController extends TelephonyTogglePreferenc
             return AVAILABLE;
         }
         // add by T2M.zhangrenjie for FP4-847 2021-07-22 end
-
-        //[BUG]-Modify-Begin by shaopan.tang 2022-12-27 [FP4S-808]Hide 4g call option for orange
-        final PersistableBundle carrierConfig = getCarrierConfigForSubId(subId);
-        if ((carrierConfig == null)
-                || carrierConfig.getBoolean(CarrierConfigManager.KEY_HIDE_ENHANCED_4G_LTE_BOOL)) {
-            return CONDITIONALLY_UNAVAILABLE;
-        }
-
+		
         final VolteQueryImsState queryState = queryImsState(subId);
         // Show VoLTE settings if VoIMS opt-in has been enabled irrespective of other VoLTE settings
         if (queryState.isVoImsOptInEnabled()) {
             return AVAILABLE;
         }
-        //[BUG]-Modify-End by shaopan.tang
+
+        final PersistableBundle carrierConfig = getCarrierConfigForSubId(subId);
+        if ((carrierConfig == null)
+                || carrierConfig.getBoolean(CarrierConfigManager.KEY_HIDE_ENHANCED_4G_LTE_BOOL)) {
+            return CONDITIONALLY_UNAVAILABLE;
+        }
 
         if (!queryState.isReadyToVoLte()) {
             return CONDITIONALLY_UNAVAILABLE;
