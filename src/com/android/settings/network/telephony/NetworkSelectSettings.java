@@ -432,7 +432,10 @@ public class NetworkSelectSettings extends DashboardFragment implements
                     if (mCellInfo.equals(cellInfo)) continue;
 
                     CellIdentity mCid = CellInfoUtil.getCellIdentity(mCellInfo);
-                    if (mCid.getOperatorAlphaLong().equals(cid.getOperatorAlphaLong())){
+                    //[BUG]-Modify-Begin by shaopan.tang 2022-12-27 [FP4S-797]Manual NW shows unobnormal
+                    if (mCid.getOperatorAlphaLong().equals(cid.getOperatorAlphaLong())
+                            && !TextUtils.isEmpty(mCid.getPlmn())
+                            && mCid.getPlmn().equals(cid.getPlmn())){
                         if (getAccessNetworkType(cid) < getAccessNetworkType(mCid)){
                             mCellInfoList.remove(cellInfo);
                             break;
@@ -441,6 +444,7 @@ public class NetworkSelectSettings extends DashboardFragment implements
                             break;
                         }
                     }
+                    //[BUG]-Modify-End by shaopan.tang
             }
         }
         return mCellInfoList;
