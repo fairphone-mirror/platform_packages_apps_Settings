@@ -71,6 +71,7 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import android.text.TextUtils;
 
 /**
  * "Choose network" settings UI for the Settings app.
@@ -447,7 +448,7 @@ public class NetworkSelectSettings extends DashboardFragment implements
                     //[BUG]-Modify-End by shaopan.tang
             }
         }
-        return mCellInfoList;
+              return mCellInfoList;
     }
 
     private List<CellInfo> removeUnusedCellInfo(List<CellInfo> cellInfoList){
