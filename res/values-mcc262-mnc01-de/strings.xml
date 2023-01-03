@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2017 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="wifi_calling_settings_title" msgid="264665264535884440">"WLAN Call"</string>
+    <string name="wifi_calling_off_explanation" msgid="6295526820826322895">"Wenn die Option \"WLAN Call\" aktiviert ist, kann dein Smartphone abhängig von deiner Einstellung und von der Signalstärke Anrufe über WLANs oder über das Netz deines Mobilfunkanbieters übertragen. Bevor du diese Funktion aktivierst, solltest du dich bei deinem Mobilfunkanbieter nach den hierfür anfallenden Gebühren und anderen Voraussetzungen erkundigen.<xliff:g id="ADDITIONAL_TEXT">%1$s</xliff:g>"</string>
+    <string name="wifi_calling_main_switch_title" msgid="4070224008346815634">"WLAN Call verwenden"</string>
+    <string name="wifi_calling_off_explanation_2" msgid="5645212744935818562">\n\n"Du kannst von deinem Gerät via \"WLAN Call\" keine Notrufe tätigen. Wenn du versuchst, den Notruf zu erreichen, nutzt dein Gerät automatisch das Mobilfunknetz. Notrufe sind nur an Orten mit Mobilfunkabdeckung möglich."</string>
+</resources>
