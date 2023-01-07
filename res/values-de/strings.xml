@@ -4720,4 +4720,6 @@
     <string name="contrast_medium" msgid="384414510709285811">"Mittel"</string>
     <string name="contrast_high" msgid="3988567609694797696">"Hoch"</string>
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"Diese App kann nur in einem einzigen Fenster geöffnet werden"</string>
+
+    <string name="status_sdn">Service Rufnummer</string>
 </resources>

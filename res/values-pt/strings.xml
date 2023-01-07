@@ -4717,4 +4717,6 @@
     <string name="contrast_medium" msgid="384414510709285811">"Médio"</string>
     <string name="contrast_high" msgid="3988567609694797696">"Alto"</string>
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"Esse app só pode ser aberto em uma única janela"</string>
+
+    <string name="status_sdn">Número de ligação ao serviço</string>
 </resources>

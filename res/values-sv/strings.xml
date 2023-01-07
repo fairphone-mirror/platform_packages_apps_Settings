@@ -4720,4 +4720,6 @@
     <string name="contrast_medium" msgid="384414510709285811">"Medelhög"</string>
     <string name="contrast_high" msgid="3988567609694797696">"Hög"</string>
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"Denna app kan bara vara öppen i ett fönster"</string>
+
+    <string name="status_sdn">Tjänstens uppringningsnummer</string>
 </resources>
