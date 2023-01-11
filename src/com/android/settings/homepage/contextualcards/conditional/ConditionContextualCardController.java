@@ -33,7 +33,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.lang.ref.WeakReference;
 
 /**
  * This controller triggers the loading of conditional cards and monitors state changes to
@@ -48,14 +47,14 @@ public class ConditionContextualCardController implements ContextualCardControll
     private static final String CONDITION_FOOTER = "condition_footer";
     private static final String CONDITION_HEADER = "condition_header";
 
-    private final WeakReference<Context> mContext;
+    private final Context mContext;
     private final ConditionManager mConditionManager;
 
     private ContextualCardUpdateListener mListener;
     private boolean mIsExpanded;
 
     public ConditionContextualCardController(Context context) {
-        mContext = new WeakReference<Context>(context);
+        mContext = context.getApplicationContext();
         mConditionManager = new ConditionManager(mContext, this);
         mConditionManager.startMonitoringStateChange();
     }
@@ -87,7 +86,7 @@ public class ConditionContextualCardController implements ContextualCardControll
     @Override
     public void onPrimaryClick(ContextualCard contextualCard) {
         final ConditionalContextualCard card = (ConditionalContextualCard) contextualCard;
-        mConditionManager.onPrimaryClick(mContext.get(), card.getConditionId());
+        mConditionManager.onPrimaryClick(mContext, card.getConditionId());
     }
 
     @Override

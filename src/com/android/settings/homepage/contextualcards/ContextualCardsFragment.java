@@ -67,7 +67,7 @@ public class ContextualCardsFragment extends InstrumentedFragment implements
         final Context context = getContext();
         if (savedInstanceState == null) {
             FeatureFactory.getFactory(context).getSlicesFeatureProvider().newUiSession();
-            BluetoothUpdateWorker.initLocalBtManager(getContext().getApplicationContext());
+            BluetoothUpdateWorker.initLocalBtManager(getContext());
         }
         mContextualCardManager = new ContextualCardManager(context, getSettingsLifecycle(),
                 savedInstanceState);
