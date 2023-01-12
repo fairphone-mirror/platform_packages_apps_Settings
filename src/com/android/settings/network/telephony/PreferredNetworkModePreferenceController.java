@@ -135,7 +135,7 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
     // add by T2M.dengxiangyu for FP4-61 2021-04-14 begin
     private void updatePreferenceEntries(ListPreference preference) {
         // Default values
-        final PersistableBundle carrierConfig = mCarrierConfigManager.getConfigForSubId(mSubId);
+        final PersistableBundle carrierConfig = mCarrierConfigCache.getConfigForSubId(mSubId);
         String[] pref_network_mode = null;
         String[] pref_network_value = null;
 
@@ -209,7 +209,7 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
 
     // add by T2M.dengxiangyu for FP4-1952 2021-07-28 begin
     private void setNetworkModeSummaryText(ListPreference preference, int networkmode) {
-        final PersistableBundle carrierConfig = mCarrierConfigManager.getConfigForSubId(mSubId);
+        final PersistableBundle carrierConfig = mCarrierConfigCache.getConfigForSubId(mSubId);
         String[] pref_network_mode = null;
         String[] pref_network_value = null;
         String summerry = null;

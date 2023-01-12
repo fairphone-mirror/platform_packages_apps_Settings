@@ -75,7 +75,6 @@ public class NetworkOperatorPreference extends Preference {
     private boolean mIsAdvancedScanSupported;
     private int mAccessMode;
     private ExtTelephonyManager mExtTelephonyManager;
-    private int mSubId = SubscriptionManager.INVALID_SUBSCRIPTION_ID;
     private TelephonyManager mTelephonyManager;
     private int mSubId = SubscriptionManager.INVALID_SUBSCRIPTION_ID;
 

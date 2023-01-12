@@ -99,7 +99,7 @@ public class VideoCallingPreferenceController extends TelephonyTogglePreferenceC
         // add by T2M.dengxiangyu for FP4-61 2021-04-14 begin
         Log.d(TAG, "update VT");
         boolean vtToggleShow = false;
-        final PersistableBundle carrierConfig = mCarrierConfigManager.getConfigForSubId(mSubId);
+        final PersistableBundle carrierConfig = CarrierConfigCache.getInstance(mContext).getConfigForSubId(mSubId);
         if (carrierConfig != null) {
             vtToggleShow = carrierConfig.getBoolean(CarrierConfigManager.KEY_VT_TOGGLE_SHOW_BOOL, false);
             Log.d(TAG, "vt toggle show: " + vtToggleShow);
