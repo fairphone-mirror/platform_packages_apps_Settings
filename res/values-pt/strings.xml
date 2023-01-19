@@ -5347,4 +5347,7 @@
     <string name="pocket_mode">Modo de bolso</string>
     <string name="fingerprint_settings_open_description">"Ligue se você preferir desbloquear sem acordar o telefone primeiro."</string>
     <string name="fingerprint_settings_open_title">Impressão digital desbloquear comportamento</string>
+
+    <string name="swap_back_recents_title">Troque a ordem de Anterior e Vista geral de apps</string>
+    <string name="swap_back_recents_summary">Troque a ordem dos botões Anterior e Vista geral de apps na barra de navegação</string>
 </resources>

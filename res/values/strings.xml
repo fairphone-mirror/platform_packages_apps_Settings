@@ -13849,4 +13849,9 @@
 
     <!--Add search bar toggle-->
     <string name="qsb_search_bar_title">Search bar on homescreen</string>
+
+    <!-- Title text for swapping the back and recents buttons in the navigation bar. [CHAR LIMIT=60] -->
+    <string name="swap_back_recents_title">Swap Back/Recents Navigation</string>
+    <!-- Summary text for swapping the back and recents buttons in the navigation bar. [CHAR LIMIT=NONE] -->
+    <string name="swap_back_recents_summary">Swap the back and recents button in the navigation bar.</string>
 </resources>
