@@ -5964,4 +5964,6 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"Falsches Passwort"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"Scanne zum Anhören den QR-Code unten"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"Das Format des QR-Codes ist ungültig"</string>
+    <string name="swap_back_recents_title">Zurück/Zuletzt verwendet wechseln</string>
+    <string name="swap_back_recents_summary">Die Schaltflächen "Zurück" und "Zuletzt verwendet" in der Navigationsleiste austauschen</string>
 </resources>

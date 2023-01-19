@@ -5960,4 +5960,6 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"Senha incorreta"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"Para começar a ouvir, centralize o código QR abaixo"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"O código QR não está em um formato válido"</string>
+    <string name="swap_back_recents_title">Troque a ordem de Anterior e Vista geral de apps</string>
+    <string name="swap_back_recents_summary">Troque a ordem dos botões Anterior e Vista geral de apps na barra de navegação</string>
 </resources>
