@@ -75,7 +75,8 @@ public class WifiUtils extends com.android.settingslib.wifi.WifiUtils {
         final SoftApConfiguration.Builder configBuilder = new SoftApConfiguration.Builder();
         try {
             if (securityType == SoftApConfiguration.SECURITY_TYPE_WPA2_PSK
-                    || securityType == SoftApConfiguration.SECURITY_TYPE_WPA3_SAE_TRANSITION) {
+                    || securityType == SoftApConfiguration.SECURITY_TYPE_WPA3_SAE_TRANSITION
+                    || securityType == SoftApConfiguration.SECURITY_TYPE_WPA3_SAE) {
                 if (password.length() < PSK_PASSPHRASE_ASCII_MIN_LENGTH
                         || password.length() > PSK_PASSPHRASE_ASCII_MAX_LENGTH) {
                     return false;
