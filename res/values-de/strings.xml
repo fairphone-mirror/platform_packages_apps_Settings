@@ -5350,7 +5350,7 @@
     <string name="unlock_failed_reset_title">"Automatisches Zurücksetzen auf Werkseinstellungen."</string>
     <string name="unlock_failed_reset_description">"Wenn Sie 15-mal versuchen, Ihr Telefon falsch zu entsperren, wird es auf die Werkseinstellungen zurückgesetzt. Alle Daten, einschließlich Dateien und heruntergeladene Apps, werden gelöscht."</string>
     <string name="data_preference">Datenpräferenz</string>
-    <string name="status_sdn">"Servicenummern"</string>
+    <string name="status_sdn">Servicenummern</string>
     <string name="pocket_mode">Taschenmodus</string>
     <string name="fingerprint_settings_open_description">"Einschalten, um das Telefon ohne vorherige Aktivierung zu entsperren"</string>
     <string name="fingerprint_settings_open_title">Fingerabruck Entsperrverhalten</string>
