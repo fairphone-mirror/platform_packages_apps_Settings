@@ -5799,4 +5799,5 @@
     <string name="unlock_failed_reset_description">"Als u uw telefoon 15 keer verkeerd probeert te ontgrendelen, wordt hij teruggezet naar de fabrieksinstellingen. Alle gegevens, inclusief bestanden en gedownloade apps, worden gewist."</string>
     <string name="fingerprint_settings_open_description">"Schakel in als je liever de telefoon ontgrendelt zonder hem eerst te activeren."</string>
     <string name="fingerprint_settings_open_title">Ontgrendelgedrag vingerafdrukscanner</string>
+    <string name="status_sdn">Servicedienstnummer</string>
 </resources>
