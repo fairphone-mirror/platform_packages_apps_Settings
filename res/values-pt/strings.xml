@@ -5794,4 +5794,5 @@
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"O código QR não está em um formato válido"</string>
     <string name="fingerprint_settings_open_description">"Ligue se você preferir desbloquear sem acordar o telefone primeiro."</string>
     <string name="fingerprint_settings_open_title">Impressão digital desbloquear comportamento</string>
+    <string name="status_sdn">Número de ligação ao serviço</string>
 </resources>

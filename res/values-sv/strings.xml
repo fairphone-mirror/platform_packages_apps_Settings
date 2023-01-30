@@ -5795,4 +5795,5 @@
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"QR-kodens format är ogiltigt"</string>
     <string name="fingerprint_settings_open_description">"Slå på om du föredrar att låsa upp utan att väcka telefonen först."</string>
     <string name="fingerprint_settings_open_title">Finger Print Lås upp beteende</string>
+    <string name="status_sdn">Tjänstens uppringningsnummer</string>
 </resources>

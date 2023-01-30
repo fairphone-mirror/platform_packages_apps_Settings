@@ -5795,4 +5795,5 @@
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"QR-koden har ikke et gyldigt format"</string>
     <string name="fingerprint_settings_open_description">"Tænd, hvis du foretrækker at låse op uden at vågne telefonen først."</string>
     <string name="fingerprint_settings_open_title">Fingerprint Lås op adfærd</string>
+    <string name="status_sdn">Indtast nummer service</string>
 </resources>
