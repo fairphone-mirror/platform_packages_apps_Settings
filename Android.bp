@@ -107,6 +107,8 @@ android_library {
         "WifiTrackerLib",
         "SettingsLibActivityEmbedding",
         "glide-prebuilt",
+        "glide-gifdecoder-prebuilt",
+        "glide-disklrucache-prebuilt",
         "aidl_support",
     ],
 
