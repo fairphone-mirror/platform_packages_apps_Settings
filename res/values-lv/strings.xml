@@ -590,7 +590,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Neizdevās reģistrēt pirksta nospiedumu. Mēģiniet vēlreiz vai izmantojiet citu pirkstu."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Pievienot citu"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Tālāk"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Papildus tālruņa atbloķēšanai varat izmantot arī pirksta nospiedumu, lai autorizētu pirkumus un lietotņu piekļuvi. "<annotation id="url">"Uzziniet vairāk"</annotation>"."</string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Papildus tālruņa atbloķēšanai varat izmantot arī pirksta nospiedumu, lai autorizētu pirkumus un lietotņu piekļuvi. "</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_1" msgid="294529888220959309">"Ekrāna bloķēšanas opcija ir atspējota. Lai uzzinātu vairāk, sazinieties ar organizācijas administratoru."</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_2" msgid="8070829069640846543">"Jūs joprojām varat izmantot pirksta nospiedumu, lai apstiprinātu pirkumus un lietotņu piekļuvi."</string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Paceliet pirkstu un pēc tam vēlreiz pieskarieties sensoram."</string>

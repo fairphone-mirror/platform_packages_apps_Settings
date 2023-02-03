@@ -586,7 +586,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Az ujjlenyomat regisztrációja nem sikerült. Próbálja újra, vagy próbálkozzon egy másik ujjával."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Még egy hozzáadása"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Következő"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"A telefon feloldásán kívül az ujjlenyomattal a vásárlásokat és az alkalmazások hozzáféréseit is engedélyezheti. "<annotation id="url">"További információ"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"A telefon feloldásán kívül az ujjlenyomattal a vásárlásokat és az alkalmazások hozzáféréseit is engedélyezheti. "</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_1" msgid="294529888220959309">"A képernyőzár lehetőség le van tiltva. További információért forduljon szervezete rendszergazdájához."</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_2" msgid="8070829069640846543">"Továbbra is használhatja ujjlenyomatát vásárlások és alkalmazás-hozzáférések engedélyezésére."</string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Emelje fel ujját, majd érintse meg újra az érzékelőt"</string>

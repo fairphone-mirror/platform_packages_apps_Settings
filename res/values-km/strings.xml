@@ -586,7 +586,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"ការបញ្ចូលស្នាមម្រាមដៃមិនដំណើរការទេ សូមព្យាយាមម្តងទៀត ឬប្រើម្រាមដៃផ្សេងពីនេះ។"</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"បញ្ចូលមួយទៀត"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"បន្ទាប់"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ក្រៅពីការដោះសោទូរសព្ទរបស់អ្នក អ្នកក៏អាចប្រើស្នាមម្រាមដៃរបស់អ្នក ដើម្បីផ្តល់សិទ្ធិលើការចូលប្រើកម្មវិធី និងការទិញផងដែរ។ "<annotation id="url">"ស្វែងយល់បន្ថែម"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ក្រៅពីការដោះសោទូរសព្ទរបស់អ្នក អ្នកក៏អាចប្រើស្នាមម្រាមដៃរបស់អ្នក ដើម្បីផ្តល់សិទ្ធិលើការចូលប្រើកម្មវិធី និងការទិញផងដែរ។ "</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_1" msgid="294529888220959309">"ជម្រើសចាក់សោអេក្រង់ត្រូវបានបិទ។ ដើម្បី​ស្វែងយល់​បន្ថែម សូម​ទាក់ទង​អ្នកគ្រប់គ្រងស្ថាប័នរបស់អ្នក។"</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_2" msgid="8070829069640846543">"អ្នកនៅតែអាចប្រើស្នាមម្រាមដៃរបស់អ្នក ដើម្បីផ្តល់សិទ្ធិលើការចូលប្រើកម្មវិធី និងការទិញផងដែរ។"</string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"លើកម្រាមដៃ ហើយបន្ទាប់មកប៉ះឧបករណ៍ចាប់សញ្ញាម្តងទៀត"</string>

@@ -586,7 +586,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"თითის ანაბეჭდის რეგისტრაცია ვერ მოხერხდა. ცადეთ ისევ ან გამოიყენეთ სხვა თითი."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"კიდევ ერთის დამატება"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"შემდეგი"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"თქვენი ტელეფონის განბლოკვასთან ერთად, თქვენი თითის ანაბეჭდი ასევე შეგიძლიათ გამოიყენოთ  შესყიდვებისა და აპების წვდომის დასამოწმებლად. "<annotation id="url">"შეიტყვეთ მეტი"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"თქვენი ტელეფონის განბლოკვასთან ერთად, თქვენი თითის ანაბეჭდი ასევე შეგიძლიათ გამოიყენოთ  შესყიდვებისა და აპების წვდომის დასამოწმებლად. "</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_1" msgid="294529888220959309">"ეკრანის დაბლოკვის ფუნქცია გამორთულია. დამატებითი ინფორმაციისთვის დაუკავშირდით თქვენი ორგანიზაციის ადმინისტრატორს."</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_2" msgid="8070829069640846543">"გადახდებისა და აპზე წვდომის ავტორიზებისთვის კვლავ შეგიძლიათ თითის ანაბეჭდის გამოყენება."</string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"თითი აიღეთ და შემდეგ ხელახლა შეეხეთ სენსორს"</string>

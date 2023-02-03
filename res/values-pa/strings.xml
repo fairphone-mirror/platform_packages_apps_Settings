@@ -586,7 +586,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"ਫਿੰਗਰਪ੍ਰਿੰਟ ਦਰਜ ਨਹੀਂ ਹੋਇਆ। ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ ਜਾਂ ਕੋਈ ਵੱਖਰੀ ਉਂਗਲ ਵਰਤੋ।"</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"ਇੱਕ ਹੋਰ ਸ਼ਾਮਲ ਕਰੋ"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"ਅੱਗੇ"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ਤੁਹਾਡੇ ਫ਼ੋਨ ਨੂੰ ਅਣਲਾਕ ਕਰਨ ਤੋਂ ਇਲਾਵਾ, ਤੁਸੀਂ ਖਰੀਦਾਰੀਆਂ ਅਤੇ ਐਪ ਪਹੁੰਚ ਨੂੰ ਪ੍ਰਮਾਣਿਤ ਕਰਨ ਲਈ ਆਪਣੇ ਫਿੰਗਰਪ੍ਰਿੰਟ ਦੀ ਵਰਤੋਂ ਵੀ ਕਰ ਸਕਦੇ ਹੋ। "<annotation id="url">"ਹੋਰ ਜਾਣੋ"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ਤੁਹਾਡੇ ਫ਼ੋਨ ਨੂੰ ਅਣਲਾਕ ਕਰਨ ਤੋਂ ਇਲਾਵਾ, ਤੁਸੀਂ ਖਰੀਦਾਰੀਆਂ ਅਤੇ ਐਪ ਪਹੁੰਚ ਨੂੰ ਪ੍ਰਮਾਣਿਤ ਕਰਨ ਲਈ ਆਪਣੇ ਫਿੰਗਰਪ੍ਰਿੰਟ ਦੀ ਵਰਤੋਂ ਵੀ ਕਰ ਸਕਦੇ ਹੋ। "</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_1" msgid="294529888220959309">"ਸਕ੍ਰੀਨ ਲਾਕ ਦਾ ਵਿਕਲਪ ਬੰਦ ਹੈ। ਹੋਰ ਜਾਣਨ ਲਈ, ਆਪਣੀ ਸੰਸਥਾ ਦੇ ਪ੍ਰਸ਼ਾਸਕ ਨੂੰ ਸੰਪਰਕ ਕਰੋ।"</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_2" msgid="8070829069640846543">"ਤੁਸੀਂ ਹਾਲੇ ਵੀ ਖਰੀਦਾਂ ਅਤੇ ਐਪ ਤੱਕ ਪਹੁੰਚ ਦਾ ਅਧਿਕਾਰ ਦੇਣ ਲਈ ਆਪਣੇ ਫਿੰਗਰਪ੍ਰਿੰਟ ਦੀ ਵਰਤੋਂ ਕਰ ਸਕਦੇ ਹੋ।"</string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"ਉਂਗਲ ਚੁੱਕੋ, ਫਿਰ ਦੁਬਾਰਾ ਸੈਂਸਰ ਨੂੰ ਸਪਰਸ਼ ਕਰੋ"</string>

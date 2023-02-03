@@ -586,7 +586,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Саусақ ізін тіркеу нәтиже бермеді. Әрекетті қайталаңыз немесе басқа саусақты пайдаланыңыз."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Тағы біреуін енгізу"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Келесі"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Саусақ ізімен телефон бекітпесін ашып қана қоймай, сонымен қатар тауар сатып алғаныңызды және қолданбаны пайдалануға рұқсатыңыз бар екенін растау үшін пайдалануға болады. "<annotation id="url">"Толығырақ"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Саусақ ізімен телефон бекітпесін ашып қана қоймай, сонымен қатар тауар сатып алғаныңызды және қолданбаны пайдалануға рұқсатыңыз бар екенін растау үшін пайдалануға болады. "</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_1" msgid="294529888220959309">"Экранды құлыптау мүмкіндігі өшірілген. Толық ақпарат алу үшін ұйым әкімшісіне хабарласыңыз."</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_2" msgid="8070829069640846543">"Сатып алу транзакциялары мен қолданбаны пайдалану рұқсатын растау үшін саусақ ізін пайдалана бересіз."</string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Саусақты көтеріп, содан кейін сканерді қайтадан түртіңіз."</string>

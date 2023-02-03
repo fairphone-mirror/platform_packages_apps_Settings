@@ -586,7 +586,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Ukubhaliswa kwezigxivizo zeminwe akuzange kusebenze. Zama futhi noma sebenzisa umunwe ohlukile."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Engeza enye"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Okulandelayo"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Ngokungeziwe ekuvuleni ifoni yakho, ungaphinda usebenzise izigxivizo zeminwe zakho ukuze ugunyaze ukuthenga kanye nokufinyelela kokuhlelo lokusebenza. "<annotation id="url">"Funda kabanzi"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Ngokungeziwe ekuvuleni ifoni yakho, ungaphinda usebenzise izigxivizo zeminwe zakho ukuze ugunyaze ukuthenga kanye nokufinyelela kokuhlelo lokusebenza. " </string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_1" msgid="294529888220959309">"Inketho yokukhiya isikrini ikhutshaziwe. Ukuze ufunde kabanzi, xhumana nomphathi wenhlangano yakho."</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_2" msgid="8070829069640846543">"Usengakwazi nokusebenzisa isigxivizo somunwe wakho ukugunyaza okuthengwayo nokufinyelela ku-app."</string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Phakamisa umunwe, bese uphinda uthinta inzwa"</string>

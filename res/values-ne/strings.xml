@@ -586,7 +586,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"फिंगरप्रिन्ट दर्ता गर्न सकिएन। पुन: प्रयास गर्नुहोस् वा अरू औँलाको प्रयोग गर्नुहोस्।"</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"अर्को हाल्नुहोस्"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"अर्को"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"तपाईँले आफ्नो फोन खोल्नका अतिरिक्त खरिद र एप पहुँच प्राधिकरण गर्नाका लागि पनि आफ्नो फिंगरप्रिन्ट प्रयोग गर्न सक्नुहुन्छ। "<annotation id="url">"थप जान्नुहोस्"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"तपाईँले आफ्नो फोन खोल्नका अतिरिक्त खरिद र एप पहुँच प्राधिकरण गर्नाका लागि पनि आफ्नो फिंगरप्रिन्ट प्रयोग गर्न सक्नुहुन्छ। "</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_1" msgid="294529888220959309">"स्क्रिन लक गर्ने सुविधा अफ गरिएको छ। यस सम्बन्धमा थप जान्न आफ्ना सङ्गठनका एड्मिनलाई सम्पर्क गर्नुहोस्।"</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_2" msgid="8070829069640846543">"तपाईं अझै पनि खरिद गर्ने र एप प्रयोग गर्ने अनुमति दिन आफ्नो फिंगरप्रिन्ट प्रयोग गर्न सक्नुहुन्छ।"</string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"औँला उठाएर फेरि सेंसर छुनुहोस्"</string>

@@ -586,7 +586,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Fingerprint enrolment didn\'t work. Try again or use a different finger."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Add another"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Next"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"In addition to unlocking your phone, you can also use your fingerprint to authorise purchases and app access. "<annotation id="url">"Learn more"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"In addition to unlocking your phone, you can also use your fingerprint to authorise purchases and app access. "</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_1" msgid="294529888220959309">"The screen lock option is disabled. To find out more, contact your organisation’s admin."</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_2" msgid="8070829069640846543">"You can still use your fingerprint to authorise purchases and app access."</string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Lift finger, then touch sensor again"</string>

@@ -586,7 +586,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Хурууны хээг оруулж чадсангүй. Дахин оролдох, эсвэл өөр хуруу ашиглана уу."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Өөрийг нэмэх"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Дараах"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Хурууны хээгээ ашиглан утасны түгжээг нээхээс гадна, худалдан авалт хийж, апп-д нэвтэрч болно. "<annotation id="url">"Дэлгэрэнгүй мэдээлэл"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Хурууны хээгээ ашиглан утасны түгжээг нээхээс гадна, худалдан авалт хийж, апп-д нэвтэрч болно. "</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_1" msgid="294529888220959309">"Дэлгэцийн түгжээний сонголтыг идэвхгүй болгосон. Нэмэлт мэдээлэл авахын тулд байгууллагынхаа админтай холбоо барина уу."</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_2" msgid="8070829069640846543">"Та худалдан авалтын зөвшөөрөл олгох болон аппад хандахдаа хурууны хээгээ ашиглах боломжтой хэвээр байна."</string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Хуруугаа өргөөд мэдрэгч дээр дахин хүрнэ үү."</string>

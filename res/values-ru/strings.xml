@@ -594,7 +594,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"Не удалось добавить отпечаток. Повторите попытку или попробуйте сохранить отпечаток другого пальца."</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"Добавить ещё"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"Далее"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Добавьте отпечаток пальца, чтобы только вы смогли разблокировать телефон, совершать покупки и открывать приложения. "<annotation id="url">"Подробнее…"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"Добавьте отпечаток пальца, чтобы только вы смогли разблокировать телефон, совершать покупки и открывать приложения. "</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_1" msgid="294529888220959309">"Разблокировка экрана с помощью отпечатка пальца запрещена. За дополнительной информацией обратитесь к администратору вашей организации."</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_2" msgid="8070829069640846543">"Вы по-прежнему можете использовать отпечаток пальца для подтверждения покупок и доступа к приложениям."</string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"Поднимите палец и снова приложите его к сканеру."</string>

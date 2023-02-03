@@ -586,7 +586,7 @@
     <string name="security_settings_fingerprint_enroll_error_generic_dialog_message" msgid="6068935528640241271">"လက်ဗွေထည့်သွင်းမှု အဆင်မပြေပါ။ အခြားလက်ချောင်းကို သုံးပါ သို့မဟုတ် ထပ်စမ်းကြည့်ပါ။"</string>
     <string name="fingerprint_enroll_button_add" msgid="6652490687672815760">"နောက်တစ်ခု ထည့်ရန်"</string>
     <string name="fingerprint_enroll_button_next" msgid="1034110123277869532">"ရှေ့သို့"</string>
-    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ဖုန်းကို လော့ခ်ဖွင့်ရန်သာမက ဝယ်ယူမှုများနှင့် အက်ပ်ခွင့်ပြုရန်အတွက် သင့်လက်ဗွေကို အသုံးပြုနိုင်သည်။ "<annotation id="url">"ပိုမိုလေ့လာရန်"</annotation></string>
+    <string name="security_settings_fingerprint_enroll_disclaimer" msgid="7875826823637114097">"ဖုန်းကို လော့ခ်ဖွင့်ရန်သာမက ဝယ်ယူမှုများနှင့် အက်ပ်ခွင့်ပြုရန်အတွက် သင့်လက်ဗွေကို အသုံးပြုနိုင်သည်။ "</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_1" msgid="294529888220959309">"ဖန်သားပြင်လော့ခ် ရွေးချယ်မှုကို ပိတ်ထားသည်။ ပိုမိုလေ့လာရန် သင့်အဖွဲ့အစည်း၏ စီမံခန့်ခွဲသူကို ဆက်သွယ်ပါ။"</string>
     <string name="security_fingerprint_disclaimer_lockscreen_disabled_2" msgid="8070829069640846543">"ဝယ်ယူမှုများ ခွင့်ပြုရန်နှင့် အက်ပ်အသုံးပြုရန် သင့်လက်ဗွေကို သုံးနိုင်ပါသေးသည်။"</string>
     <string name="security_settings_fingerprint_enroll_lift_touch_again" msgid="2590665137265458789">"လက်ချောင်းကို မ ပြီး၊ အာရုံခံနေရာကို ထပ်မံထိပါ"</string>
