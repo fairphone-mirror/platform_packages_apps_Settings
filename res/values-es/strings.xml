@@ -5499,7 +5499,7 @@
     <string name="wfc_disclaimer_agree_button_text" msgid="4082872292910770344">"CONTINUAR"</string>
     <string name="wfc_disclaimer_disagree_text" msgid="8424457394700137703">"NO, GRACIAS"</string>
     <string name="wfc_disclaimer_location_title_text" msgid="7913919887475418423">"Ubicación"</string>
-    <string name="wfc_disclaimer_location_desc_text" msgid="1417004513415772582">"Puede que tu operador recoja tu ubicación cuando llamas a emergencias con este servicio.\n\nPara obtener más información, consulta la política de privacidad de tu operador."</string>
+    <string name="wfc_disclaimer_location_desc_text" msgid="1417004513415772582">"Sabías que tu teléfono puede hacer llamadas por Wi-Fi?\n\nPodrás hablar incluso cuando no tengas cobertura móvil, mientras estés conectado a una red Wi-Fi."</string>
     <string name="forget_passpoint_dialog_message" msgid="2433875063907365760">"Es posible que dejes de tener acceso al tiempo o datos restantes. Antes de eliminarlo, consulta con tu proveedor."</string>
     <string name="keywords_content_capture" msgid="7802155522681936956">"obtención de contenido, contenido de la aplicación"</string>
     <string name="content_capture" msgid="868372905432812238">"Contenido de la aplicación"</string>
@@ -5797,4 +5797,6 @@
 
 
     <string name="status_sdn">Número de marcación de servicio.</string>
+    <string name="wfc_help_desc_text">Si selecciona Red móvil preferida se utilizará la red móvil de forma predeterminada para las llamadas. En caso de que no haya cobertura de red móvil o ésta sea muy débil, se utilizará la red Wi-Fi en su lugar.</string>
+
 </resources>
