@@ -19,8 +19,10 @@ package com.android.settings.network.telephony;
 import android.content.Context;
 import android.os.PersistableBundle;
 import android.telephony.CarrierConfigManager;
+import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.android.settings.core.BasePreferenceController;
 import com.android.settings.network.CarrierConfigCache;
@@ -29,10 +31,13 @@ public class CarrierSettingsVersionPreferenceController extends BasePreferenceCo
 
     private int mSubscriptionId;
     private CarrierConfigCache mCarrierConfigCache;
+    private SubscriptionManager mSubscriptionManager;
+    private String TAG = "CarrierSettingsVersion";
 
     public CarrierSettingsVersionPreferenceController(Context context, String preferenceKey) {
         super(context, preferenceKey);
         mCarrierConfigCache = CarrierConfigCache.getInstance(context);
+        mSubscriptionManager = SubscriptionManager.from(context);
         mSubscriptionId = SubscriptionManager.INVALID_SUBSCRIPTION_ID;
     }
 
@@ -46,7 +51,19 @@ public class CarrierSettingsVersionPreferenceController extends BasePreferenceCo
         if (config == null) {
             return null;
         }
-        return config.getString(CarrierConfigManager.KEY_CARRIER_CONFIG_VERSION_STRING);
+
+	//return config.getString(CarrierConfigManager.KEY_CARRIER_CONFIG_VERSION_STRING);
+	// add for BSPA-232134 2023-1-16 begin
+        String version = config.getString(CarrierConfigManager.KEY_CARRIER_CONFIG_VERSION_STRING);
+        SubscriptionInfo subInfo = mSubscriptionManager.getActiveSubscriptionInfo(mSubscriptionId);
+        String mccmnc = "";
+        if (subInfo != null) {
+            mccmnc = subInfo.getMccString() + subInfo.getMncString();
+        }
+        String summary = mccmnc + " " + version;
+
+        return summary;
+	// add for BSPA-232134 2023-1-16 end
     }
 
     @Override
