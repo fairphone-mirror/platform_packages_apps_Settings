@@ -16,10 +16,15 @@
 
 package com.android.settings.network.telephony;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.database.ContentObserver;
+import android.net.Uri;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.PersistableBundle;
 import android.provider.Settings;
 import android.telecom.PhoneAccountHandle;
@@ -41,6 +46,7 @@ import com.android.settings.network.ims.WifiCallingQueryImsState;
 import com.android.settingslib.core.lifecycle.LifecycleObserver;
 import com.android.settingslib.core.lifecycle.events.OnStart;
 import com.android.settingslib.core.lifecycle.events.OnStop;
+import com.android.ims.ImsConfig;
 
 import java.util.List;
 
@@ -62,17 +68,37 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
     PhoneAccountHandle mSimCallManager;
     private PhoneTelephonyCallback mTelephonyCallback;
     private Preference mPreference;
+    private Context mContext;
+
+    private ContentResolver mContentResolver;
+    private static final Uri WFC_URI = Uri.parse("content://telephony/siminfo");
+    private ContentObserver mWfcObserver;
+
 
     public WifiCallingPreferenceController(Context context, String key) {
         super(context, key);
         mCarrierConfigManager = context.getSystemService(CarrierConfigManager.class);
         mTelephonyCallback = new PhoneTelephonyCallback();
+		mContext = context;
+
+        mContentResolver = context.getContentResolver();
+
     }
 
     @Override
     public int getAvailabilityStatus(int subId) {
+        Log.d(TAG, "getAvailabilityStatus " + subId);
+        // add by T2M.zhangrenjie for FP4-847 2021-07-22 begin
+        boolean ims_enabled = Settings.Global.getInt(mContext.getContentResolver(), "ims_enable_settings",0) == 1;
+        if (ims_enabled){
+            Log.d(TAG, "wfc toggle show because of ims_enabled =" + ims_enabled);
+            return AVAILABLE;
+        }
+
+        // add by T2M.zhangrenjie for FP4-847 2021-07-22 end
         return SubscriptionManager.isValidSubscriptionId(subId)
                 && MobileNetworkUtils.isWifiCallingEnabled(mContext, subId, null)
+                && isWfcEnabledByCarrierConfig(subId)
                 ? AVAILABLE
                 : UNSUPPORTED_ON_DEVICE;
     }
@@ -80,11 +106,22 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
     @Override
     public void onStart() {
         mTelephonyCallback.register(mContext, mSubId);
+        if (mWfcObserver == null) {
+            mWfcObserver = new ContentObserver(new Handler(Looper.getMainLooper())) {
+                @Override
+                public void onChange(boolean selfChange) {
+                    updateState(mPreference);
+                }
+            };
+        }
+        mContentResolver.registerContentObserver(WFC_URI, false, mWfcObserver);
+
     }
 
     @Override
     public void onStop() {
         mTelephonyCallback.unregister();
+        mContentResolver.unregisterContentObserver(mWfcObserver);
     }
 
     @Override
@@ -97,6 +134,22 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
         }
     }
 
+    private boolean isWfcEnabledByCarrierConfig(int mSubId){
+        Log.d(TAG, "update wfc");
+        String title = SubscriptionManager.getResourcesForSubId(mContext, mSubId)
+                .getString(R.string.wifi_calling_settings_title);
+        if (mCarrierConfigManager != null) {
+            PersistableBundle b = mCarrierConfigManager.getConfigForSubId(mSubId);
+            if (b != null) {
+                boolean isWFCEnabled = b.getBoolean(CarrierConfigManager.KEY_WFC_TOGGLE_SHOW_BOOL
+                        , false);
+                Log.d(TAG, "wfc toggle show: " + isWFCEnabled);
+                return isWFCEnabled;
+            }
+        }
+        return false;
+    }
+
     @Override
     public void updateState(Preference preference) {
         super.updateState(preference);
@@ -104,6 +157,20 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
             Log.d(TAG, "Skip update under mCallState=" + mCallState);
             return;
         }
+
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14 begin
+        Log.d(TAG, "update WFC");
+        String title = SubscriptionManager.getResourcesForSubId(mContext, mSubId)
+                .getString(R.string.wifi_calling_settings_title);
+        if (mCarrierConfigManager != null) {
+            PersistableBundle b = mCarrierConfigManager.getConfigForSubId(mSubId);
+            if (b != null) {
+                title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+
+            }
+        }
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14 end
+
         CharSequence summaryText = null;
         if (mSimCallManager != null) {
             final Intent intent = MobileNetworkUtils.buildPhoneAccountConfigureIntent(mContext,
@@ -114,11 +181,10 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
             }
             final PackageManager pm = mContext.getPackageManager();
             final List<ResolveInfo> resolutions = pm.queryIntentActivities(intent, 0);
-            preference.setTitle(resolutions.get(0).loadLabel(pm));
+            //preference.setTitle(resolutions.get(0).loadLabel(pm));
+            preference.setTitle(title);
             preference.setIntent(intent);
         } else {
-            final String title = SubscriptionManager.getResourcesForSubId(mContext, mSubId)
-                    .getString(R.string.wifi_calling_settings_title);
             preference.setTitle(title);
             summaryText = getResourceIdForWfcMode(mSubId);
         }
@@ -128,6 +194,8 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
 
     private CharSequence getResourceIdForWfcMode(int subId) {
         int resId = com.android.internal.R.string.wifi_calling_off_summary;
+        /* add by T2M.zhangrenjie for FP4-3549 begin */
+        boolean showSummary = true;
         if (queryImsState(subId).isEnabledByUser()) {
             boolean useWfcHomeModeForRoaming = false;
             if (mCarrierConfigManager != null) {
@@ -137,6 +205,7 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
                     useWfcHomeModeForRoaming = carrierConfig.getBoolean(
                             CarrierConfigManager
                                     .KEY_USE_WFC_HOME_NETWORK_MODE_IN_ROAMING_NETWORK_BOOL);
+                    showSummary = carrierConfig.getBoolean("show_wifi_calling_summary_bool",true);
                 }
             }
             final boolean isRoaming = getTelephonyManager(mContext, subId)
@@ -144,6 +213,8 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
             final int wfcMode = (isRoaming && !useWfcHomeModeForRoaming)
                     ? mImsMmTelManager.getVoWiFiRoamingModeSetting() :
                     mImsMmTelManager.getVoWiFiModeSetting();
+
+            Log.i(TAG, "getWfcModeSummary: wfcMode =" + wfcMode);
             switch (wfcMode) {
                 case ImsMmTelManager.WIFI_MODE_WIFI_ONLY:
                     resId = com.android.internal.R.string.wfc_mode_wifi_only_summary;
@@ -155,14 +226,21 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
                 case ImsMmTelManager.WIFI_MODE_WIFI_PREFERRED:
                     resId = com.android.internal.R.string.wfc_mode_wifi_preferred_summary;
                     break;
+                /* add by T2M.zhangrenjie for FP4-2045 begin */
                 case ImsConfig.WfcModeFeatureValueConstants.IMS_PREFERRED:
                     resId = com.android.internal.R.string.wfc_mode_ims_preferred_summary;
                     break;
+                /* add by T2M.zhangrenjie for FP4-2045 begin */
                 default:
                     break;
             }
         }
-        return SubscriptionManager.getResourcesForSubId(mContext, subId).getText(resId);
+        if (showSummary){
+            return SubscriptionManager.getResourcesForSubId(mContext, subId).getText(resId);
+        }else{
+            return "";
+        }
+        /* add by T2M.zhangrenjie for FP4-3549 begin */
     }
 
     public WifiCallingPreferenceController init(int subId) {
@@ -221,5 +299,29 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
             mCallState = null;
             mTelephonyManager.unregisterTelephonyCallback(this);
         }
+    }
+
+    private boolean isWifiCallingEnabled(Context context, int subId) {
+        Log.d(TAG, "isWifiCallingEnabled " + subId);
+        final PhoneAccountHandle simCallManager =
+                context.getSystemService(TelecomManager.class)
+                       .getSimCallManagerForSubscription(subId);
+        final int phoneId = SubscriptionManager.getSlotIndex(subId);
+
+        boolean isWifiCallingEnabled;
+        if (simCallManager != null) {
+            final Intent intent = MobileNetworkUtils.buildPhoneAccountConfigureIntent(
+                    context, simCallManager);
+
+            isWifiCallingEnabled = intent != null;
+            Log.d(TAG, "simCallManager");
+        } else {
+            isWifiCallingEnabled = queryImsState(subId).isReadyToWifiCalling();
+            Log.d(TAG, "queryImsState");
+        }
+
+        Log.d(TAG, "isWifiCallingEnabled: " + isWifiCallingEnabled);
+
+        return isWifiCallingEnabled;
     }
 }
