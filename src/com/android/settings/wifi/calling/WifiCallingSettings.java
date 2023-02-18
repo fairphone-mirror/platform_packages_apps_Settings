@@ -20,7 +20,9 @@ import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.provider.Settings;
+import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.util.Log;
@@ -271,14 +273,20 @@ public class WifiCallingSettings extends SettingsPreferenceFragment
         if (subInfoList == null) {
             return Collections.emptyList();
         }
+        // add by T2M.zhangrenjie for FP4-847 2021-07-22 begin
+        boolean ims_enabled = Settings.Global.getInt(getContext().getContentResolver(), "ims_enable_settings",0) == 1;
+
+
         List<SubscriptionInfo> selectedList = new ArrayList<SubscriptionInfo>();
         for (SubscriptionInfo subInfo : subInfoList) {
             int subId = subInfo.getSubscriptionId();
             try {
-                if (queryImsState(subId).isWifiCallingProvisioned()) {
+                if (queryImsState(subId).isWifiCallingProvisioned() || ims_enabled) {
                     selectedList.add(subInfo);
                 }
             } catch (Exception exception) {}
+       // add by T2M.zhangrenjie for FP4-847 2021-07-22 end
+
         }
         return selectedList;
     }
@@ -286,9 +294,21 @@ public class WifiCallingSettings extends SettingsPreferenceFragment
     private void updateTitleForCurrentSub() {
         if (CollectionUtils.size(mSil) > 1) {
             final int subId = mSil.get(mViewPager.getCurrentItem()).getSubscriptionId();
-            final String title = SubscriptionManager.getResourcesForSubId(getContext(), subId)
+            String title = SubscriptionManager.getResourcesForSubId(getContext(), subId)
                     .getString(R.string.wifi_calling_settings_title);
+
+            // add by T2M.dengxiangyu for FP4-61 2021-04-14 begin
+            if (configManager != null) {
+                Log.d(TAG, "get title from carrierconfig");
+                PersistableBundle b = configManager.getConfigForSubId(subId);
+                if (b != null) {
+                    title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+                    Log.d(TAG, "title: " + title);
+                }
+            }
+
             getActivity().getActionBar().setTitle(title);
+            // add by T2M.dengxiangyu for FP4-61 2021-04-14 end
         }
     }
 

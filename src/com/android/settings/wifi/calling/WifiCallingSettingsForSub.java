@@ -26,6 +26,7 @@ import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.provider.Settings;
 import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyCallback;
@@ -58,6 +59,11 @@ import com.android.settings.widget.SettingsMainSwitchPreference;
 import com.android.settingslib.widget.OnMainSwitchChangeListener;
 
 import java.util.List;
+import android.net.Uri;
+import android.content.ContentResolver;
+import android.database.ContentObserver;
+import android.os.Handler;
+import android.os.Looper;
 
 /**
  * This is the inner class of {@link WifiCallingSettings} fragment.
@@ -333,7 +339,11 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
 
     @VisibleForTesting
     boolean isWfcProvisionedOnDevice() {
-        return queryImsState(mSubId).isWifiCallingProvisioned();
+        // add by T2M.zhangrenjie for FP4-847 2021-07-22 begin
+        boolean ims_enabled = Settings.Global.getInt(getActivity().getContentResolver(), "ims_enable_settings",0) == 1;
+        Log.d(TAG, "debug ims_enabled = "+ims_enabled);
+        return ims_enabled || queryImsState(mSubId).isWifiCallingProvisioned();
+        // add by T2M.zhangrenjie for FP4-847 2021-07-22 end
     }
 
     private void updateBody() {
