@@ -26,4 +26,7 @@
     <integer name="suw_max_faces_enrollable">1</integer>
     <!-- Controls the maximum number of fingerprints enrollable during SUW -->
     <integer name="suw_max_fingerprints_enrollable">1</integer>
+
+    <!--Add by T2M yingyubin FP4-3639 20220414-->
+    <integer name="job_shut_down">120</integer>
 </resources>
