@@ -116,7 +116,7 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
     }
 
     private void openAlertDialog(String message) {
-       /* AlertDialog alert = new AlertDialog.Builder(mContext.getApplicationContext())
+        AlertDialog alert = new AlertDialog.Builder(mContext.getApplicationContext())
                     .setTitle(R.string.dialog_title_image_mapping)
                     .setMessage(message)
                     .setPositiveButton(android.R.string.ok, null)
@@ -124,7 +124,7 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                     .create();
 
             alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
-            alert.show();*/
+            alert.show();
     }
 
     private String getIMEI() {

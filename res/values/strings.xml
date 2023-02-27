@@ -14333,4 +14333,6 @@
 
     <string name="ims_settings_title">"IMS Settings"</string>
     <string name="ims_settings_summary">"Debug mode for IMS Settings"</string>
+
+    <string name="dialog_title_image_mapping">"Image Mapping"</string>
 </resources>
