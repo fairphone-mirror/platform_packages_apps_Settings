@@ -4965,6 +4965,15 @@
             </intent-filter>
         </receiver>
 
+        <activity android:name="com.android.settings.PhoneDeviceInfo"
+            android:exported="true"
+            android:label="@string/hidden_activity_deivce_info"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name="com.android.settings.bluetooth.QrCodeScanModeActivity"
             android:permission="android.permission.BLUETOOTH_CONNECT"
