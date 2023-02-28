@@ -79,11 +79,11 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                 result += SystemProperties.get("ro.tct.modem.ver", READ_ERROR_STR) + "\n";
                 result += SystemProperties.get("ro.tct.study.ver", READ_ERROR_STR);
                 openAlertDialog(result);
-            }/*else if(HOST_CODE_DEVICEINFO.equals(host)){
+            }else if(HOST_CODE_DEVICEINFO.equals(host)){
                 Intent i = new Intent(context, PhoneDeviceInfo.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(i);
-            } else if (HOST_CODE_REGULATORY_INFO.equals(host)) {
+            }/*else if (HOST_CODE_REGULATORY_INFO.equals(host)) {
                 Intent intent2 = new Intent("android.settings.SHOW_REGULATORY_INFO");
                 intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent2);

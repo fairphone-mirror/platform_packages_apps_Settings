@@ -14335,4 +14335,5 @@
     <string name="ims_settings_summary">"Debug mode for IMS Settings"</string>
 
     <string name="dialog_title_image_mapping">"Image Mapping"</string>
+    <string name="hidden_activity_deivce_info">"Device information"</string>
 </resources>
