@@ -14338,4 +14338,5 @@
     <string name="hidden_activity_deivce_info">"Device information"</string>
 
     <string name="verification_confirm_your_password_header">Input verify code :</string>
+    <string name="settings_elabel_activity_unavailable">There is a problem loading the elaebl file.</string>
 </resources>

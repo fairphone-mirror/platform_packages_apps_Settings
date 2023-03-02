@@ -100,6 +100,9 @@ android_library {
         "lottie",
         "WifiTrackerLib",
         "SettingsLibActivityEmbedding",
+        "glide-prebuilt",
+        "glide-gifdecoder-prebuilt",
+        "glide-disklrucache-prebuilt",
     ],
 
     libs: [
