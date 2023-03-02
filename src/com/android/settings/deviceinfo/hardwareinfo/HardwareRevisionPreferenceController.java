@@ -49,6 +49,6 @@ public class HardwareRevisionPreferenceController extends BasePreferenceControll
                 return hardwareVersion;
             }
         }
-        return SystemProperties.get("ro.boot.hardware.revision");
+        return SystemProperties.get("ro.vendor.hw_version");
     }
 }
