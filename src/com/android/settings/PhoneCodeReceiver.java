@@ -16,6 +16,7 @@ import android.app.AlertDialog;
 import android.view.WindowManager;
 
 import com.android.internal.telephony.PhoneConstants;
+import com.arima.settings.OemLockVerifier;
 
 public class PhoneCodeReceiver extends BroadcastReceiver {
 
@@ -110,6 +111,9 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                         .create();
                 alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
                 alert.show();
+            } else if (HOST_CODE_TEST_OEM_UNLOCK.equals(host)) {
+                OemLockVerifier oemLockVerifier = new OemLockVerifier(context, (check_code, msg) -> Log.e(TAG, "oemLockVerifier queryVerifyResult msg > " + msg));
+                oemLockVerifier.queryVerifyResult(getIMEI(), Build.getSerial());
             }
         }
 
