@@ -146,7 +146,7 @@ public class PhoneDeviceInfo extends Activity {
     }
 
     private String readHWStage(){
-        String version = null;
+        /*String version = null;
         try {
             InputStream is = new FileInputStream("/sys/class/board_id/version");
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
@@ -156,9 +156,10 @@ public class PhoneDeviceInfo extends Activity {
         } catch (IOException e) {
             e.printStackTrace();
             Log.e(TAG, "getVersion fail" + e);
-        }
-        return version;
+        }*/
+        return SystemProperties.get("ro.vendor.hw_version");
     }
+
 
     private String readEMCP(){
         String emcpinfo = null;
