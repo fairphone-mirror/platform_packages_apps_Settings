@@ -56,8 +56,6 @@ import java.util.List;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.telephony.CarrierConfigManager;
-import android.os.PersistableBundle;
 
 import com.android.settings.core.SubSettingLauncher;
 import android.app.settings.SettingsEnums;
