@@ -4743,4 +4743,8 @@
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"此应用只能在 1 个窗口中打开"</string>
     <string name="dds_preference_smart_dds_switch_is_on">智能数据卡切换已开启</string>
     <string name="mobile_data_settings_summary_on_smart_dds_unavailable">智能数据卡切换已开启时，在通话中此功能不可用</string>
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="unlock_failed_reset_title">自动出厂重置</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="unlock_failed_reset_description">如果您尝试错误解锁手机15次，它将重置为出厂设置。所有数据，包括文件和下载的应用程序，都将被删除。</string>
 </resources>

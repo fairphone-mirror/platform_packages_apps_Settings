@@ -12332,4 +12332,9 @@
 
     <string name="verification_confirm_your_password_header">Input verify code :</string>
     <string name="settings_elabel_activity_unavailable">There is a problem loading the elaebl file.</string>
+
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="unlock_failed_reset_title">Auto factory reset</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="unlock_failed_reset_description">If you attempt to unlock your phone incorrectly 15times it will be reset to factory settings.All data,including files and downloaded apps,will be deleted.</string>
 </resources>
