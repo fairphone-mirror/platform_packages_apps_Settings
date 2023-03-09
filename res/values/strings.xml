@@ -5165,7 +5165,7 @@
     <skip />
 
     <!-- Activity title for App Fuel Gauge summary -->
-    <string name="power_usage_summary_title">Battery</string>
+    <string name="power_usage_summary_title">Battery &amp; Charging</string>
     <!-- Activity title summary for App Fuel Gauge summary -->
     <string name="power_usage_summary">What has been using the battery</string>
     <!-- Display the battery level and status [CHAR_LIMIT=60] -->
