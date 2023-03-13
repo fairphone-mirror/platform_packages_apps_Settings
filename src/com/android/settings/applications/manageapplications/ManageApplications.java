@@ -1517,10 +1517,16 @@ public class ManageApplications extends InstrumentedFragment
         private void updateSwitch(ApplicationViewHolder holder, AppEntry entry) {
             switch (mManageApplications.mListType) {
                 case LIST_TYPE_NOTIFICATION:
-                    holder.updateSwitch(((AppStateNotificationBridge) mExtraInfoBridge)
-                                    .getSwitchOnCheckedListener(entry),
-                            AppStateNotificationBridge.enableSwitch(entry),
-                            AppStateNotificationBridge.checkSwitch(entry));
+                    //modify by t2m yingyubin for FP4S-900 20230313
+                    if(entry != null && "My Fairphone".equals(entry.label) && entry.extraInfo == null) {
+                        //not to update My Fairphone when don't get extraInfo
+                    } else {
+                        holder.updateSwitch(((AppStateNotificationBridge) mExtraInfoBridge)
+                                        .getSwitchOnCheckedListener(entry),
+                                AppStateNotificationBridge.enableSwitch(entry),
+                                AppStateNotificationBridge.checkSwitch(entry));
+                    }
+                    //modify by t2m yingyubin for FP4S-900 20230313
                     if (entry.extraInfo != null
                             && entry.extraInfo instanceof NotificationsSentState) {
                         holder.setSummary(AppStateNotificationBridge.getSummary(mContext,
