@@ -88,6 +88,7 @@ android_library {
         "WifiTrackerLib",
         "SettingsLibActivityEmbedding",
         "Settings-change-ids",
+        "SystemUIUnfoldLib",
         "setup-wizard-lib",
         "setup-wizard-lib-gingerbread-compat",
     ],

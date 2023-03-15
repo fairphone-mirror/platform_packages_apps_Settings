@@ -16,6 +16,8 @@
 
 package com.android.settings.wifi.tether;
 
+import static com.android.settings.wifi.WifiUtils.canShowWifiHotspot;
+
 import android.annotation.NonNull;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
@@ -23,7 +25,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
-import android.net.TetheringManager;
 import android.net.wifi.SoftApConfiguration;
 import android.net.wifi.WifiClient;
 import android.net.wifi.WifiManager;
@@ -52,7 +53,6 @@ public class WifiTetherPreferenceController extends AbstractPreferenceController
 
     private static final String WIFI_TETHER_SETTINGS = "wifi_tether";
 
-    private boolean mIsWifiTetherable;
     private static final IntentFilter AIRPLANE_INTENT_FILTER =
             new IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED);
     private static final int ID_NULL = -1;
@@ -67,8 +67,7 @@ public class WifiTetherPreferenceController extends AbstractPreferenceController
 
     public WifiTetherPreferenceController(Context context, Lifecycle lifecycle) {
         this(context, lifecycle,
-                context.getSystemService(WifiManager.class),
-                context.getSystemService(TetheringManager.class),
+                context.getApplicationContext().getSystemService(WifiManager.class),
                 true /* initSoftApManager */,
                 WifiEnterpriseRestrictionUtils.isWifiTetheringAllowed(context));
     }
@@ -78,17 +77,11 @@ public class WifiTetherPreferenceController extends AbstractPreferenceController
             Context context,
             Lifecycle lifecycle,
             WifiManager wifiManager,
-            TetheringManager tetheringManager,
             boolean initSoftApManager,
             boolean isWifiTetheringAllow) {
         super(context);
         mConnectivityManager =
                 (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        final String[] wifiRegexs = tetheringManager.getTetherableWifiRegexs();
-        if (wifiRegexs != null && wifiRegexs.length != 0) {
-            mIsWifiTetherable = true;
-        }
-
         mIsWifiTetheringAllow = isWifiTetheringAllow;
         if (!isWifiTetheringAllow) return;
 
@@ -104,7 +97,7 @@ public class WifiTetherPreferenceController extends AbstractPreferenceController
 
     @Override
     public boolean isAvailable() {
-        return mIsWifiTetherable && !Utils.isMonkeyRunning();
+        return canShowWifiHotspot(mContext) && !Utils.isMonkeyRunning();
     }
 
     @Override
