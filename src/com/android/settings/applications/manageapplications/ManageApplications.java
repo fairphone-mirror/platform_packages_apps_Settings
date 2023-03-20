@@ -145,6 +145,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Set;
+import java.util.Iterator;
 
 /**
  * Activity to pick an application that will be used to display installation information and
@@ -402,7 +403,7 @@ public class ManageApplications extends InstrumentedFragment
             setHasOptionsMenu(false);
             return mRootView;
         }
-
+        CarrierAppUtils.init(getContext());
         mRootView = inflater.inflate(R.layout.manage_applications_apps, null);
         mLoadingContainer = mRootView.findViewById(R.id.loading_container);
         mEmptyView = mRootView.findViewById(android.R.id.empty);
@@ -1361,6 +1362,17 @@ public class ManageApplications extends InstrumentedFragment
                     || filterType == FILTER_APPS_POWER_ALLOWLIST_ALL) {
                 entries = removeDuplicateIgnoringUser(entries);
             }
+
+            Iterator<AppEntry> appEntryIterator = entries.iterator();
+            while (appEntryIterator.hasNext()){
+                AppEntry appEntry = appEntryIterator.next();
+                String apkName = appEntry.apkFile.getName();
+                Log.d(TAG,"isNeedKeep "+apkName+"   "+CarrierAppUtils.isNeedKeep(apkName));
+                if (!CarrierAppUtils.isNeedKeep(apkName)) {
+                    appEntryIterator.remove();
+                }
+            }
+
             mEntries = entries;
             mOriginalEntries = entries;
             notifyDataSetChanged();
