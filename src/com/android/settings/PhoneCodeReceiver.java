@@ -17,6 +17,7 @@ import android.view.WindowManager;
 
 import com.android.internal.telephony.PhoneConstants;
 import com.arima.settings.OemLockVerifier;
+import android.content.DialogInterface;
 
 public class PhoneCodeReceiver extends BroadcastReceiver {
 
@@ -30,6 +31,8 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
     private static final String HOST_CODE_MODULEINFO = "001";
     private static final String HOST_CODE_IMS = "23486583";
     private static final String HOST_CODE_TEST_OEM_UNLOCK = "002";
+    private static final String HOST_CODE_BATTERY_HEALTY = "2288379";
+    private static final String BATTERY_HEALTY_ENABLE = "persist.sys.battery.healty.enable";
     private Context mContext;
     private String READ_ERROR_STR = "????????";
 
@@ -114,6 +117,28 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
             } else if (HOST_CODE_TEST_OEM_UNLOCK.equals(host)) {
                 OemLockVerifier oemLockVerifier = new OemLockVerifier(context, (check_code, msg) -> Log.e(TAG, "oemLockVerifier queryVerifyResult msg > " + msg));
                 oemLockVerifier.queryVerifyResult(getIMEI(), Build.getSerial());
+            } else if (HOST_CODE_BATTERY_HEALTY.equals(host)){
+                String status = SystemProperties.get(BATTERY_HEALTY_ENABLE, "Close");
+                AlertDialog alert = new AlertDialog.Builder(context.getApplicationContext())
+                        .setTitle(R.string.dialog_title_battery_healty)
+                        .setMessage(status)
+                        .setPositiveButton(R.string.launch_instant_app, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                SystemProperties.set(BATTERY_HEALTY_ENABLE, "Open");
+                            }
+                        })
+                        .setNegativeButton(R.string.suggestion_button_close, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                SystemProperties.set(BATTERY_HEALTY_ENABLE, "Close");
+                                //TODO:charge enable
+                            }
+                        })
+                        .setCancelable(false)
+                        .create();
+                alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+                alert.show();
             }
         }
 
