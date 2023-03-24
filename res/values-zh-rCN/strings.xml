@@ -5816,4 +5816,5 @@
     <string name="unlock_failed_reset_title">自动出厂重置</string>
     <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
     <string name="unlock_failed_reset_description">如果您尝试错误解锁手机15次，它将重置为出厂设置。所有数据，包括文件和下载的应用程序，都将被删除。</string>
+    <string name="pick_up_to_wake_title">抬起唤醒</string>
 </resources>
