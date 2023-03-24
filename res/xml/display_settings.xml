@@ -172,5 +172,9 @@
             android:key="vr_display_pref"
             android:title="@string/display_vr_pref_title"
             android:fragment="com.android.settings.display.VrDisplayPreferencePicker"/>
+
+        <SwitchPreference
+            android:key="pick_up_to_wake"
+            android:title="@string/pick_up_to_wake_title"/>
     </PreferenceCategory>
 </PreferenceScreen>
