@@ -41,6 +41,7 @@ import android.app.admin.DevicePolicyManager.PasswordComplexity;
 import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ComponentName;
 import android.hardware.face.FaceManager;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
@@ -521,7 +522,20 @@ public class ChooseLockGeneric extends SettingsActivity {
             } else if (requestCode == CHOOSE_LOCK_REQUEST
                     || requestCode == ENABLE_ENCRYPTION_REQUEST) {
                 if (resultCode != RESULT_CANCELED || mForChangeCredRequiredForBoot) {
-                    getActivity().setResult(resultCode, data);
+                    //add by t2m yingyubin for FP5-186 20230325
+                    if(mForFace) {
+                        try{
+                            Intent faceIntent = new Intent()
+                                    .setComponent(new ComponentName("com.fp.faceunlock","com.fp.faceunlock.anc.enroll.EnrollActivity"))
+                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(faceIntent);
+                        }catch(Exception e) {
+
+                        }
+                    } else {
+                        getActivity().setResult(resultCode, data);
+                    }
+                    //add by t2m yingyubin for FP5-186 20230325
                     finish();
                 } else {
                     // If PASSWORD_TYPE_KEY is set, this activity is used as a trampoline to start

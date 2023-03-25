@@ -18,6 +18,8 @@ package com.android.settings.biometrics;
 
 import android.app.admin.DevicePolicyManager;
 import android.content.Intent;
+import android.content.ComponentName;
+import android.provider.Settings;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.hardware.biometrics.BiometricAuthenticator;
@@ -346,6 +348,23 @@ public abstract class BiometricEnrollIntroduction extends BiometricEnrollBase
                         BiometricUtils.removeGatekeeperPasswordHandle(this, data);
                         getNextButton().setEnabled(true);
                     }));
+                    //add by t2m yingyubin for FP5-186 20230325
+                    if(mToken != null){
+                        try{
+                            Intent faceIntent = new Intent()
+                                    .setComponent(new ComponentName("com.fp.faceunlock","com.fp.faceunlock.anc.enroll.EnrollActivity"))
+                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            Intent settingsIntent = new Intent()
+                                    .setComponent(new ComponentName("com.fp.faceunlock","com.fp.faceunlock.anc.SettingsActivity"))
+                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            boolean hasFaceEnrolled = android.provider.Settings.System.getInt(getContentResolver(),"enroll_main_face_id", 0) > 0
+                                    || android.provider.Settings.System.getInt(getContentResolver(), "enroll_second_face_id", 0) > 0;
+                            startActivity(hasFaceEnrolled ? settingsIntent : faceIntent);
+                            finish();
+                        }catch(Exception e) {
+                        }
+                    }
+                    //add by t2m yingyubin for FP5-186 20230325
                 }
             } else {
                 setResult(resultCode, data);
