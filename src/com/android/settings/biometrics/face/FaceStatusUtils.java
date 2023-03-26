@@ -25,6 +25,8 @@ import com.android.settings.Settings;
 import com.android.settings.Utils;
 import com.android.settings.biometrics.ParentalControlsUtils;
 import com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 
 /**
  * Utilities for face details shared between Security Settings and Safety Center.
@@ -45,7 +47,9 @@ public class FaceStatusUtils {
      * Returns whether the face settings entity should be shown.
      */
     public boolean isAvailable() {
-        return !Utils.isMultipleBiometricsSupported(mContext) && Utils.hasFaceHardware(mContext);
+        //add by t2m yingyubin for FP5-186 20230325
+        return isFaceUnlockSupported() ||
+                (!Utils.isMultipleBiometricsSupported(mContext) && Utils.hasFaceHardware(mContext));
     }
 
     /**
@@ -71,6 +75,11 @@ public class FaceStatusUtils {
      * Returns the class name of the Settings page corresponding to face settings.
      */
     public String getSettingsClassName() {
+        //add by t2m yingyubin for FP5-186 20230325
+        if(isFaceUnlockSupported()){
+            return FaceEnrollIntroductionInternal.class.getName();
+        }
+        //add by t2m yingyubin for FP5-186 20230325
         return hasEnrolled() ? Settings.FaceSettingsInternalActivity.class.getName()
                 : FaceEnrollIntroductionInternal.class.getName();
     }
@@ -79,6 +88,25 @@ public class FaceStatusUtils {
      * Returns whether at least one face template has been enrolled.
      */
     public boolean hasEnrolled() {
+        //add by t2m yingyubin for FP5-186 20230325
+        if(isFaceUnlockSupported()){
+            boolean hasFaceEnrolled = android.provider.Settings.System.getInt(mContext.getContentResolver(),"enroll_main_face_id", 0) > 0
+                    || android.provider.Settings.System.getInt(mContext.getContentResolver(), "enroll_second_face_id", 0) > 0;
+            return hasFaceEnrolled;
+        }
+        //add by t2m yingyubin for FP5-186 20230325
         return mFaceManager.hasEnrolledTemplates(mUserId);
     }
+
+    //add by t2m yingyubin for FP5-186 20230325
+    private boolean isFaceUnlockSupported(){
+        PackageManager packageManager =  mContext.getPackageManager();
+        try{
+            packageManager.getPackageInfo("com.fp.faceunlock",PackageManager.GET_ACTIVITIES);
+            return true;
+        }catch(NameNotFoundException e){
+            return false;
+        }
+    }
+    //add by t2m yingyubin for FP5-186 20230325
 }
