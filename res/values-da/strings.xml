@@ -5569,4 +5569,5 @@
     <string name="bluetooth_connect_access_dialog_positive" msgid="3630561675207269710">"Opret forbindelse"</string>
     <string name="fingerprint_settings_open_description">"Tænd, hvis du foretrækker at låse op uden at vågne telefonen først."</string>
     <string name="fingerprint_settings_open_title">Fingerprint Lås op adfærd</string>
+    <string name="status_sdn">Indtast nummer service</string>
 </resources>

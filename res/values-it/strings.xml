@@ -5570,4 +5570,5 @@
     <string name="data_preference">Preferenza dati</string>
     <string name="fingerprint_settings_open_description">"Selezionare se si preferisce sbloccare il telefono senza prima accendere lo schermo."</string>
     <string name="fingerprint_settings_open_title">Controllo dello sblocco con impronte digitali</string>
+    <string name="status_sdn">Servizio chiamata (SDN).</string>
 </resources>
