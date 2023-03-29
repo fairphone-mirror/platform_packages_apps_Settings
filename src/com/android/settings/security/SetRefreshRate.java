@@ -22,35 +22,32 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.os.UserHandle;
-import android.text.TextUtils;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.EditText;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import android.util.Log;
-import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.R;
 import com.android.settings.core.instrumentation.InstrumentedDialogFragment;
-import com.android.settings.security.OwnerInfoPreferenceController.OwnerInfoCallback;
-import android.hardware.display.DisplayManagerGlobal;
 import android.view.Display;
+import android.hardware.display.DisplayManager;
+import android.provider.Settings;
 
 public class SetRefreshRate extends InstrumentedDialogFragment implements OnClickListener {
 
     private static final String TAG = "setrefreshrate";
-    private Display display;
+    private DisplayManager mDisplayManager;
+    private Display mDefaultDisplay;
 
     private int mUserId;
-    final String[] rate = {"30","60","120"};
+    final String[] rate = {"30","60","90"};
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mUserId = UserHandle.myUserId();
-        display = getActivity().getWindowManager().getDefaultDisplay();
+        mDisplayManager = getActivity().getSystemService(DisplayManager.class);
+        mDefaultDisplay = mDisplayManager.getDisplay(Display.DEFAULT_DISPLAY);
     }
 
     @Override
@@ -60,10 +57,21 @@ public class SetRefreshRate extends InstrumentedDialogFragment implements OnClic
                 .setSingleChoiceItems(rate, 0, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        float refresh_Rate = display.getRefreshRate();
-                        Log.i("sth_","         which:" + which + "refreshRate:" + refresh_Rate);
-                        Display.Mode.Builder modeBuilder = new Display.Mode.Builder();
-                        modeBuilder.setRefreshRate(30f);
+                        float refresh_Rate = mDefaultDisplay.getRefreshRate();
+                        Log.i("sth_","   which:" + which + "____refreshRate:" + refresh_Rate);
+                        if(which == 0){
+                            Settings.System.putFloatForUser(getActivity().getContentResolver(),
+                                    Settings.System.MIN_REFRESH_RATE, 30f,
+                                    mUserId);
+                        }else if (which == 1){
+                            Settings.System.putFloatForUser(getActivity().getContentResolver(),
+                                    Settings.System.MIN_REFRESH_RATE, 60f,
+                                    mUserId);
+                        }else if (which ==2){
+                            Settings.System.putFloatForUser(getActivity().getContentResolver(),
+                                    Settings.System.MIN_REFRESH_RATE, 90f,
+                                    mUserId);
+                        }
                     }
                 })
                 .setPositiveButton(R.string.save, this)
