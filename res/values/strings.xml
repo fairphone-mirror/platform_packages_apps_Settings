@@ -12342,4 +12342,6 @@
 
     <string name="dialog_title_battery_healty">Battery healty</string>
     <string name="pick_up_to_wake_title">Pick up to wake</string>
+
+    <string name="hidden_activity_module_info">"Module information"</string>
 </resources>

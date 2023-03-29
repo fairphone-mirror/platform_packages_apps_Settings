@@ -5026,6 +5026,15 @@
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
         <!--Add by T2M yingyubin FP4-3639 20220414-->
+
+        <activity android:name="com.android.settings.ModuleDeviceInfo"
+            android:exported="true"
+            android:label="@string/hidden_activity_module_info"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
         <!-- This is the longest AndroidManifest.xml ever. -->
     </application>
 </manifest>
