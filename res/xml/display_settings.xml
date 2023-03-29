@@ -86,6 +86,15 @@
             settings:controller="com.android.settings.display.NightDisplayPreferenceController"
             settings:keywords="@string/keywords_display_night_display"/>
 
+        <com.android.settingslib.PrimarySwitchPreference
+            android:fragment="com.android.settings.accessibility.ToggleReduceBrightColorsPreferenceFragment"
+            android:key="reduce_bright_colors_preference"
+            android:icon="@drawable/ic_reduce_bright_colors"
+            android:persistent="false"
+            android:title="@string/reduce_bright_colors_preference_title"
+            settings:keywords="@string/keywords_reduce_bright_colors"
+            settings:controller="com.android.settings.accessibility.ReduceBrightColorsPreferenceController"/>
+
         <!--<Preference
             android:key="color_mode"
             android:title="@string/color_mode_title"
