@@ -14357,4 +14357,8 @@
     <string name="orientation_timing_spead_2_title">Normal</string>
     <string name="orientation_timing_spead_3_title">Accelerate for 0.5 seconds</string>
     <string name="orientation_timing_spead_4_title">Accelerate for 1 seconds</string>
+    <!--ADD by T2M yingyubin for Desktop mode-->
+    <string name="desktop_mode_title">Desktop mode</string>
+    <string name="desktop_mode_summary">Use desktop mode on secondary displays</string>
+    <!--ADD by T2M yingyubin for Desktop mode-->
 </resources>

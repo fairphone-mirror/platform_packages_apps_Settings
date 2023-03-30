@@ -189,5 +189,12 @@
         <SwitchPreference
             android:key="pick_up_to_wake"
             android:title="@string/pick_up_to_wake_title"/>
+
+        <!--ADD by T2M yingyubin for Desktop mode-->
+        <SwitchPreference
+            android:key="desktop_mode"
+            android:title="@string/desktop_mode_title"
+            android:summary="@string/desktop_mode_summary"/>
+        <!--ADD by T2M yingyubin for Desktop mode-->
     </PreferenceCategory>
 </PreferenceScreen>
