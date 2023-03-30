@@ -12344,4 +12344,10 @@
     <string name="pick_up_to_wake_title">Pick up to wake</string>
 
     <string name="hidden_activity_module_info">"Module information"</string>
+    <string name="orientation_timing_title">Orientation timing</string>
+    <string name="orientation_timing_spead_0_title">Slow down by 1 seconds</string>
+    <string name="orientation_timing_spead_1_title">Slow down by 0.5 seconds</string>
+    <string name="orientation_timing_spead_2_title">Normal</string>
+    <string name="orientation_timing_spead_3_title">Accelerate for 0.5 seconds</string>
+    <string name="orientation_timing_spead_4_title">Accelerate for 1 seconds</string>
 </resources>

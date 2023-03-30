@@ -129,6 +129,11 @@
             settings:controller="com.android.settings.display.DeviceStateAutoRotateOverviewController"/>
 
         <Preference
+            android:key="orientation_timing_pref"
+            android:title="@string/orientation_timing_title"
+            android:fragment="com.android.settings.display.OrientationTimingFragment"/>
+
+        <Preference
             android:key="screen_resolution"
             android:title="@string/screen_resolution_title"
             android:fragment="com.android.settings.display.ScreenResolutionFragment"
