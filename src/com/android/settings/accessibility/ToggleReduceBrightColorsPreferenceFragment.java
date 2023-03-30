@@ -173,7 +173,6 @@ public class ToggleReduceBrightColorsPreferenceFragment extends ToggleFeaturePre
     public void onPause() {
         super.onPause();
         mSensorManager.unregisterListener(mLightSensorListener);
-        Log.i("luhaikong","onPause");
     }
 
     @Override
