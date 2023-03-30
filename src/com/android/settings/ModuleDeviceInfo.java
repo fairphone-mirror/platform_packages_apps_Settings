@@ -129,7 +129,7 @@ public class ModuleDeviceInfo extends Activity {
 
     private String readSmartPaInfo() {
         if (new File("/sys/bus/i2c/drivers/aw882xx_smartpa").isDirectory()) {
-            return "AW88264A";
+            return "AW88261FCR";
         } else {
             return ERROR_READ_STATE;
         }
