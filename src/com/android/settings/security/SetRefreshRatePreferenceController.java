@@ -36,6 +36,7 @@ import com.android.settingslib.core.lifecycle.events.OnResume;
 import android.util.Log;
 import android.content.Context;
 import android.provider.Settings;
+import android.os.SystemProperties;
 
 public class SetRefreshRatePreferenceController extends AbstractPreferenceController
         implements PreferenceControllerMixin, LifecycleObserver, OnResume {
@@ -104,9 +105,12 @@ public class SetRefreshRatePreferenceController extends AbstractPreferenceContro
 
     public void updateSummary() {
         Log.i("sth_","    updateSummary");
-        if (mSetRefreshRatePref != null) {
-//                mSetRefreshRatePref.setSummary("60Hz");
-        }
+//        if (mSetRefreshRatePref != null) {
+//            String doze_rate = SystemProperties.get("persist.sys.doze_rate","0");
+//            if (!"0".equals(doze_rate)) {
+//                mSetRefreshRatePref.setSummary(doze_rate + "Hz");
+//            }
+//        }
     }
 
 }
