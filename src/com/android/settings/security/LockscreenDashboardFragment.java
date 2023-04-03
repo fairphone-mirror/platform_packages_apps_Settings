@@ -73,7 +73,6 @@ public class LockscreenDashboardFragment extends DashboardFragment
 
     private AmbientDisplayConfiguration mConfig;
     private OwnerInfoPreferenceController mOwnerInfoPreferenceController;
-    private SetRefreshRatePreferenceController mSetRefreshRatePreferenceController;
     @VisibleForTesting
     ContentObserver mControlsContentObserver;
 
@@ -149,9 +148,7 @@ public class LockscreenDashboardFragment extends DashboardFragment
         lifecycle.addObserver(notificationController);
         controllers.add(notificationController);
         mOwnerInfoPreferenceController = new OwnerInfoPreferenceController(context, this);
-        mSetRefreshRatePreferenceController = new SetRefreshRatePreferenceController(context,this);
         controllers.add(mOwnerInfoPreferenceController);
-        controllers.add(mSetRefreshRatePreferenceController);
 
         return controllers;
     }

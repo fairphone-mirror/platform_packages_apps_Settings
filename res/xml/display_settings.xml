@@ -163,6 +163,11 @@
             android:fragment="com.android.settings.dream.DreamSettings"
             settings:keywords="@string/keywords_screensaver"/>
 
+
+        <Preference
+            android:key="refresh_rate"
+            android:title="setRefreshRate"/>
+
         <SwitchPreference
             android:key="camera_gesture"
             android:title="@string/camera_gesture_title"
