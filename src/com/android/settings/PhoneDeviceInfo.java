@@ -166,7 +166,7 @@ public class PhoneDeviceInfo extends Activity {
         String vendor = null;
         String model = null;
         try {
-            InputStream is = new FileInputStream("/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/vendor");
+            InputStream is = new FileInputStream("sys/emkit/info/emkit_memory_vendor");
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
             vendor = reader.readLine();
             reader.close();
@@ -177,7 +177,7 @@ public class PhoneDeviceInfo extends Activity {
         }
 
         try {
-            InputStream is = new FileInputStream("/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/model");
+            InputStream is = new FileInputStream("sys/emkit/info/emkit_memory");
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
             model = reader.readLine();
             reader.close();
