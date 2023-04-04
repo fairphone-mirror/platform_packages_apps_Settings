@@ -73,6 +73,7 @@ public class PhoneDeviceInfo extends Activity {
     private TextView mMFGDate;
     private TextView mTFT;
     private TextView mUpdateTime;
+    private TextView mGMSversion;
     static final String BASEBAND_PROPERTY = "gsm.version.baseband";
     static final String FACTORY_SN_PROPERTY = "ro.vendor.tct.trace.bsn";
     static final String MFG_DATE_PROPERTY = "ro.vendor.tct.mfg.date";
@@ -102,6 +103,7 @@ public class PhoneDeviceInfo extends Activity {
         mMFGDate = (TextView)view.findViewById(R.id.mfgdate);
         mTFT = (TextView)view.findViewById(R.id.tft);
         mUpdateTime = (TextView)view.findViewById(R.id.updatetime);
+        mGMSversion = (TextView)view.findViewById(R.id.gmsversion);
         setContentView(view);
     }
 
@@ -143,6 +145,11 @@ public class PhoneDeviceInfo extends Activity {
         mMFGDate.setText("MFG date : " + readMFGdate());
         mTFT.setText("TFT : \n" + readTFT());
         mUpdateTime.setText("Up time \n" + DateUtils.formatElapsedTime(SystemClock.elapsedRealtime() / 1000));
+        mGMSversion.setText("GMS version : \n" + readGMSversion());
+    }
+
+    private String readGMSversion(){
+        return SystemProperties.get("ro.com.google.gmsversion");
     }
 
     private String readHWStage(){
