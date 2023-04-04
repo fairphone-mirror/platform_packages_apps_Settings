@@ -82,7 +82,7 @@ public class ModuleDeviceInfo extends Activity {
         mTvCpu.setText("CPU : \n" + readCpuStage());
         mTvRam.setText("RAM : \n" + readRam());
         mTvCamera.setText("Camera sensor : \n" + readCamera());
-        mTvBattery.setText("Battary module info : \n" + readBattaryInfo());
+        mTvBattery.setText("Battery module info : \n" + readBattaryInfo());
         mTvDisplay.setText("Display info : \n" + readDisplayInfo());
         mTvSmartPa.setText("SmartPa info : \n" + readSmartPaInfo());
         mTvFinger.setText("fingler print info : \n" + readFinglerInfo());
@@ -136,16 +136,16 @@ public class ModuleDeviceInfo extends Activity {
     }
 
     private String readRam() {
-        String model = readHwInfo("sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:49476/model");
-        String brand = readHwInfo("sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:49476/vendor");
+        String model = readHwInfo("sys/emkit/info/emkit_memory");
+        String brand = readHwInfo("sys/emkit/info/emkit_memory_vendor");
         String ramInfo = "model : " + model + "\n" + "brand : " + brand;
         return ramInfo;
     }
 
     private String readCamera() {
-        String frontInfo = "front camera info = " + readHwInfo("/sys/sensor_module/camera_front");
-        String auxInfo = "aux camera info = " + readHwInfo("/sys/sensor_module/camera_aux");
-        String mainInfo = "main camera info = " + readHwInfo("/sys/sensor_module/camera_main");
+        String frontInfo = "front camera info = " + readHwInfo("/sys/devices/virtual/deviceinfo/device_info/CamNameF");
+        String auxInfo = "aux camera info = " + readHwInfo("/sys/devices/virtual/deviceinfo/device_info/CamNameB2");
+        String mainInfo = "main camera info = " + readHwInfo("/sys/devices/virtual/deviceinfo/device_info/CamNameB");
         String cameraInfo = frontInfo + "\n" + auxInfo + "\n" + mainInfo;
         return cameraInfo;
     }
