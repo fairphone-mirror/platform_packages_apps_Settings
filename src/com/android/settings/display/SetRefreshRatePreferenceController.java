@@ -78,20 +78,19 @@ public class SetRefreshRatePreferenceController extends AbstractPreferenceContro
                                 Settings.System.putFloatForUser(mContext.getContentResolver(),
                                         Settings.System.MIN_REFRESH_RATE, 60f,
                                         mUserId);
-//                                updateState(preference);
                             }else if (which == 1){
                                 Settings.System.putFloatForUser(mContext.getContentResolver(),
                                         Settings.System.MIN_REFRESH_RATE, 90f,
                                         mUserId);
-//                                updateState(preference);
                             }
                         }
                     })
 //                .setPositiveButton(R.string.save, this)
 //                .setNegativeButton(R.string.cancel, this)
                     .show();
+            return true;
         }
-        return true;
+        return false;
     }
 
     private int getRateWhich(){
