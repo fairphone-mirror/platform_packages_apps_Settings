@@ -166,7 +166,8 @@
 
         <Preference
             android:key="refresh_rate"
-            android:title="setRefreshRate"/>
+            android:title="Set Refresh Rate"/>
+
 
         <SwitchPreference
             android:key="camera_gesture"
