@@ -880,6 +880,18 @@ public class ChooseLockGeneric extends SettingsActivity {
             }
 
             if (quality == DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED) {
+                //add by t2m yingyubin for FP5-186 20230406
+                boolean hasFaceEnrolled = android.provider.Settings.System.getInt(getContentResolver(),"enroll_main_face_id", 0) > 0
+                        || android.provider.Settings.System.getInt(getContentResolver(), "enroll_second_face_id", 0) > 0;
+                if(hasFaceEnrolled) {
+                    try{
+                        Intent deleteFace = new Intent()
+                                .setComponent(new ComponentName("com.fp.faceunlock","com.fp.faceunlock.anc.service.DeleteService"));
+                        getActivity().startService(deleteFace);
+                    }catch(Exception e) {
+                    }
+                }
+                //add by t2m yingyubin for FP5-186 20230406
                 // Clearing of user biometrics when screen lock is cleared is done at
                 // LockSettingsService.removeBiometricsForUser().
                 if (mUserPassword != null) {
@@ -940,8 +952,13 @@ public class ChooseLockGeneric extends SettingsActivity {
                 hasFingerprints = false;
             }
 
+            //add by t2m yingyubin for FP5-186 20230406
+            boolean hasFaceEnrolled = android.provider.Settings.System.getInt(getContentResolver(),"enroll_main_face_id", 0) > 0
+                    || android.provider.Settings.System.getInt(getContentResolver(), "enroll_second_face_id", 0) > 0;
             if (mFaceManager != null && mFaceManager.isHardwareDetected()) {
                 hasFace = mFaceManager.hasEnrolledTemplates(mUserId);
+            } else if (hasFaceEnrolled) {
+                hasFace = true;
             } else {
                 hasFace = false;
             }
