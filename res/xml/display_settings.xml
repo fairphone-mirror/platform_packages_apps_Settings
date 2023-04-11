@@ -166,7 +166,7 @@
 
         <Preference
             android:key="refresh_rate"
-            android:title="Set Refresh Rate"/>
+            android:title="@string/set_refresh_rate"/>
 
 
         <SwitchPreference
