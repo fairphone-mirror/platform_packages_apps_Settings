@@ -24,6 +24,7 @@ import android.os.UserHandle;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 
+import com.android.settings.R;
 import com.android.settings.core.PreferenceControllerMixin;
 import com.android.settingslib.core.AbstractPreferenceController;
 
@@ -70,7 +71,7 @@ public class SetRefreshRatePreferenceController extends AbstractPreferenceContro
     public boolean handlePreferenceTreeClick(Preference preference) {
         if ("refresh_rate".equals(preference.getKey())){
             new AlertDialog.Builder(mContext)
-                    .setTitle("Set Refresh Rate")
+                    .setTitle(R.string.set_refresh_rate)
                     .setSingleChoiceItems(rate, getRateWhich(), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
