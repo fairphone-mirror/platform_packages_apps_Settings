@@ -114,6 +114,12 @@ public class ReduceBrightColorsPreferenceController
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
         mPreference = screen.findPreference(getPreferenceKey());
+        boolean isEnableExtraDim = Secure.getInt(mContext.getContentResolver(),Secure.ENABLE_REDUCE_BRIGHT_COLORS,0) == 1;
+        if(isEnableExtraDim){
+            mPreference.setSwitchEnabled(true);
+        } else {
+            mPreference.setSwitchEnabled(false);
+        }
     }
 
     @Override
