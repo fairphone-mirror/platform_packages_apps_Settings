@@ -12357,4 +12357,5 @@
     <string name="desktop_mode_title">Desktop mode</string>
     <string name="desktop_mode_summary">Use desktop mode on secondary displays</string>
     <!--ADD by T2M yingyubin for Desktop mode-->
+    <string name="sunlight_mode_title">Sunlight mode</string>
 </resources>
