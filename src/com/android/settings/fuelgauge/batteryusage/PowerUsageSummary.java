@@ -48,6 +48,10 @@ import com.android.settingslib.search.SearchIndexable;
 import com.android.settingslib.widget.LayoutPreference;
 
 import java.util.List;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import android.util.Log;
 
 /**
  * Displays a list of apps and subsystems that consume power, ordered by how much power was consumed
@@ -63,6 +67,8 @@ public class PowerUsageSummary extends PowerUsageBase implements
     static final String KEY_BATTERY_ERROR = "battery_help_message";
     @VisibleForTesting
     static final String KEY_BATTERY_USAGE = "battery_usage_summary";
+
+    static final String KEY_BATTERY_HEALTH = "battery_health";
 
     @VisibleForTesting
     static final int BATTERY_INFO_LOADER = 1;
@@ -88,6 +94,8 @@ public class PowerUsageSummary extends PowerUsageBase implements
     Preference mHelpPreference;
     @VisibleForTesting
     Preference mBatteryUsagePreference;
+
+    Preference mBatteryHealthPreference;
 
     @VisibleForTesting
     final ContentObserver mSettingsObserver = new ContentObserver(new Handler()) {
@@ -263,6 +271,9 @@ public class PowerUsageSummary extends PowerUsageBase implements
 
         mHelpPreference = findPreference(KEY_BATTERY_ERROR);
         mHelpPreference.setVisible(false);
+
+        mBatteryHealthPreference = findPreference(KEY_BATTERY_HEALTH);
+        mBatteryHealthPreference.setSummary(getBatHealth());
     }
 
     @VisibleForTesting
@@ -305,4 +316,29 @@ public class PowerUsageSummary extends PowerUsageBase implements
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.power_usage_summary);
+
+    private String getBatHealth(){
+        String batHealth = null;
+        String soh = readLine("/sys/class/qcom-battery/soh");
+        String cycle_count = readLine("/sys/class/power_supply/battery/cycle_count");
+        String charge_full_design = readLine("/sys/class/power_supply/battery/charge_full_design");
+        batHealth = getString(R.string.batteryh_soh) + soh + "\n" +
+                getString(R.string.batteryh_soc) + cycle_count + "\n" +
+                getString(R.string.batteryh_cfd) + charge_full_design ;
+        return batHealth;
+    }
+
+    private String readLine(String filename) {
+        String value = "0";
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            value = reader.readLine();
+        } catch (IOException exception) {
+            Log.e(TAG, "writeLine, failed for: " + exception.getMessage());
+            exception.printStackTrace();
+        }
+        Log.i(TAG, "filename = " + filename + ", value = " + value);
+
+        return value;
+    }
 }

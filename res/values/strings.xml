@@ -14588,4 +14588,11 @@
     <string name="desktop_mode_summary">Use desktop mode on secondary displays</string>
     <!--ADD by T2M yingyubin for Desktop mode-->
     <string name="sunlight_mode_title">Sunlight mode</string>
+
+    <!--state of health-->
+    <string name="batteryh_soh">state of health:</string>
+    <!--state of count-->
+    <string name="batteryh_soc">charge/discharge cycle count:</string>
+    <!--charge full design-->
+    <string name="batteryh_cfd">charge full design:</string>
 </resources>

@@ -5936,4 +5936,11 @@
     <string name="dialog_title_battery_healty">电池健康</string>
     <string name="set_refresh_rate">设置刷新帧率</string>
     <string name="sunlight_mode_title">阳光模式</string>
+
+    <!--state of health-->
+    <string name="batteryh_soh">健康状态:</string>
+    <!--state of count-->
+    <string name="batteryh_soc">充放电循环次数:</string>
+    <!--charge full design-->
+    <string name="batteryh_cfd">满充次数:</string>
 </resources>
