@@ -12365,4 +12365,6 @@
     <string name="batteryh_soc">charge/discharge cycle count:</string>
     <!--charge full design-->
     <string name="batteryh_cfd">charge full design:</string>
+
+    <string name="dcdimming_title">DC dimming</string>
 </resources>
