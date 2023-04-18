@@ -12342,7 +12342,7 @@
     <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
     <string name="unlock_failed_reset_description">If you attempt to unlock your phone incorrectly 15times it will be reset to factory settings.All data,including files and downloaded apps,will be deleted.</string>
 
-    <string name="dialog_title_battery_healty">Battery healty</string>
+    <string name="dialog_title_battery_healty">Battery health</string>
     <string name="set_refresh_rate">Set Refresh Rate</string>
     <string name="pick_up_to_wake_title">Pick up to wake</string>
 
