@@ -165,7 +165,7 @@ public class ToggleReduceBrightColorsPreferenceFragment extends ToggleFeaturePre
     public void onResume() {
         super.onResume();
         updateSwitchBarToggleSwitch();
-        mSensorManager.registerListener(mLightSensorListener,mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT),
+        mSensorManager.registerListener(mLightSensorListener,mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT_BACK),
                   SensorManager.SENSOR_DELAY_NORMAL);
     }
 

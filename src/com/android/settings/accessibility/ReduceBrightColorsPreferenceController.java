@@ -135,7 +135,7 @@ public class ReduceBrightColorsPreferenceController
         mContext.getContentResolver().registerContentObserver(Settings.Secure.getUriFor(
                 Settings.Secure.ENABLE_REDUCE_BRIGHT_COLORS),
                 false, mSettingsContentObserver, UserHandle.USER_CURRENT);
-        mSensorManager.registerListener(mLightSensorListener,mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT),
+        mSensorManager.registerListener(mLightSensorListener,mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT_BACK),
                   SensorManager.SENSOR_DELAY_NORMAL);
     }
 
