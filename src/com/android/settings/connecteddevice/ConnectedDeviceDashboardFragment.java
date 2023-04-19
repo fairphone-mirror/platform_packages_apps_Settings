@@ -71,9 +71,7 @@ public class ConnectedDeviceDashboardFragment extends DashboardFragment {
     private static final String TAG_GROUP = "Group";
 
     public static final boolean DBG_GROUP = Log.isLoggable(TAG_GROUP, Log.DEBUG);
-    private static final String SETTINGS_PACKAGE_NAME = "com.android.settings";
-    private static final String SYSTEMUI_PACKAGE_NAME = "com.android.systemui";
-    private static final boolean DEBUG = Log.isLoggable(TAG, Log.DEBUG);
+    private static final String SLICE_ACTION = "com.android.settings.SEARCH_RESULT_TRAMPOLINE";
 
     @VisibleForTesting
     static final String KEY_CONNECTED_DEVICES = "connected_device_list";
@@ -110,6 +108,7 @@ public class ConnectedDeviceDashboardFragment extends DashboardFragment {
         super.onAttach(context);
         final boolean nearbyEnabled = DeviceConfig.getBoolean(DeviceConfig.NAMESPACE_SETTINGS_UI,
                 SettingsUIDeviceConfig.BT_NEAR_BY_SUGGESTION_ENABLED, true);
+
         use(AvailableMediaDeviceGroupController.class).init(this);
         use(ConnectedDeviceGroupController.class).init(this);
         use(SavedTwsDeviceGroupController.class).init(this);
