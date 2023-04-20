@@ -1082,7 +1082,7 @@ public class WifiConfigController implements TextWatcher,
             loadCertificates(
                     mEapCaCertSpinner,
                     androidKeystoreAliasLoader.getCaCertAliases(),
-                    null /* noCertificateString */,
+                    mDoNotValidateEapServerString,
                     false /* showMultipleCerts */,
                     true /* showUsePreinstalledCertOption */);
             loadCertificates(
@@ -1177,7 +1177,7 @@ public class WifiConfigController implements TextWatcher,
                     loadCertificates(
                             mEapCaCertSpinner,
                             androidKeystoreAliasLoader.getCaCertAliases(),
-                            null /* noCertificateString */,
+                            mDoNotValidateEapServerString,
                             true /* showMultipleCerts */,
                             true /* showUsePreinstalledCertOption */);
                     setSelection(mEapCaCertSpinner, mMultipleCertSetString);
