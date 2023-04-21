@@ -48,6 +48,7 @@ public class DCDimmingPreferenceController extends TogglePreferenceController
     private static final String TAG = "DCDimmingPreferenceController";
     private static final String DCDIMMING_ENABLED = "def_dcdimming_enabled";
     private static final String SCREEN_BRIGHTNESS = Settings.System.SCREEN_BRIGHTNESS;
+    private static final String SCREEN_BRIGHTNESS_MODE = Settings.System.SCREEN_BRIGHTNESS_MODE;
     private static final int TRANSITION_POINT = 1475;
 
     private Context mContext;
@@ -64,40 +65,19 @@ public class DCDimmingPreferenceController extends TogglePreferenceController
             public void onChange(boolean selfChange, Uri uri) {
                 final String path = uri == null ? null : uri.getLastPathSegment();
                 if (TextUtils.equals(path, DCDIMMING_ENABLED)) {
-                    // try {
+                    try {
                         int isEnableDCDimming = Settings.Secure.getInt(mContext.getContentResolver(), DCDIMMING_ENABLED,0);
-                        // currentBrightness = Settings.System.getInt(mContext.getContentResolver(), SCREEN_BRIGHTNESS);
-                        // if (currentBrightness > TRANSITION_POINT) {
-                        //     if (0 == isEnableDCDimming) {
-                        //         android.util.Log.d(TAG, "iris :DCDIMMING_ENABLED-lower to high-close DCDimming button-currentBrightness:" + currentBrightness +"    oldBrightness:" +oldBrightness);
-                        //         setChecked(false);
-                        //         updateState(mPreference);
-                        //     }
-                        // }
-                        android.util.Log.d(TAG, "iris :DCDIMMING_ENABLED-click DCDimming button-isEnableDCDimming:"+isEnableDCDimming);
+                        currentBrightness = Settings.System.getInt(mContext.getContentResolver(), SCREEN_BRIGHTNESS);
+                        int currentBrightnessMode = Settings.System.getInt(mContext.getContentResolver(), SCREEN_BRIGHTNESS_MODE);
+                        android.util.Log.d(TAG, "iris :DCDIMMING_ENABLED-click DCDimming button-isEnableDCDimming:"+isEnableDCDimming+"    currentBrightness:"+currentBrightness+"    currentBrightnessMode:"+currentBrightnessMode);
                         mPreference.setEnabled(false);
                         Message message = Message.obtain();
-                        dcdimmingHandler.sendMessageDelayed(message,2000);
-                    // } catch (Settings.SettingNotFoundException e) {
-                    //     e.printStackTrace();
-                    // }
+                        //Delay for 7.2 seconds and wait for all brightness changes to end before clicking
+                        dcdimmingHandler.sendMessageDelayed(message,7200);
+                    } catch (Settings.SettingNotFoundException e) {
+                        e.printStackTrace();
+                    }
                 }
-                //else if (TextUtils.equals(path, SCREEN_BRIGHTNESS)){
-                //     try {
-                //         int isEnableDCDimming = Settings.Secure.getInt(mContext.getContentResolver(), DCDIMMING_ENABLED,0);
-                //         currentBrightness = Settings.System.getInt(mContext.getContentResolver(), SCREEN_BRIGHTNESS);
-                //             if (oldBrightness <= TRANSITION_POINT && currentBrightness > TRANSITION_POINT) {
-                //                 if (0 == isEnableDCDimming) {
-                //                     android.util.Log.d(TAG, "iris :SCREEN_BRIGHTNESS-lower to high-close DCDimming button-currentBrightness:" + currentBrightness +"    oldBrightness:" +oldBrightness);
-                //                     setChecked(false);
-                //                     updateState(mPreference);
-                //                 }
-                //             }
-                //     } catch (Settings.SettingNotFoundException e) {
-                //         e.printStackTrace();
-                //     }
-                //     oldBrightness = currentBrightness;
-                // }
             }
         };
     }
@@ -157,6 +137,7 @@ public class DCDimmingPreferenceController extends TogglePreferenceController
     private Handler dcdimmingHandler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(@NonNull Message msg) {
+            android.util.Log.d(TAG, "iris :DCDIMMING_ENABLED-click DCDimming button-Brightness change completed, button can be clicked again.");
             mPreference.setEnabled(true);
             return false;
         }
