@@ -90,7 +90,7 @@ import java.util.List;
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class DevelopmentSettingsDashboardFragment extends RestrictedDashboardFragment
         implements OnMainSwitchChangeListener, OemUnlockDialogHost, AdbDialogHost,
-        AdbClearKeysDialogHost, LogPersistDialogHost,
+        AdbClearKeysDialogHost, LogPersistDialogHost, OemUnlockVerifyDialogHost,
         BluetoothRebootDialog.OnRebootDialogListener,
         AbstractBluetoothPreferenceController.Callback,
         NfcRebootDialog.OnNfcRebootDialogConfirmedListener, BluetoothSnoopLogHost {
@@ -375,6 +375,22 @@ public class DevelopmentSettingsDashboardFragment extends RestrictedDashboardFra
                     getContext()).getSearchFeatureProvider().sendPreIndexIntent(getContext());
         }
     }
+
+    //<2019/08/06-kanewang, [8901][FEATURE][COMMON][SETTINGS][][]Add oem_lock password protection feature.
+    @Override
+    public void onOemUnlockVerifyDialogConfirmed(String password) {
+        final OemUnlockPreferenceController controller = getDevelopmentOptionsController(
+                OemUnlockPreferenceController.class);
+        controller.onOemUnlockVerifyDialogConfirmed(password);
+    }
+
+    @Override
+    public void onOemUnlockVerifyDialogDismissed() {
+        final OemUnlockPreferenceController controller = getDevelopmentOptionsController(
+                OemUnlockPreferenceController.class);
+        controller.onOemUnlockVerifyDialogDismissed();
+    }
+    //>2019/08/06-kanewang
 
     @Override
     public void onOemUnlockDialogConfirmed() {
