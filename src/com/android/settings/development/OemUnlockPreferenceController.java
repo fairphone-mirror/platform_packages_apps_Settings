@@ -19,10 +19,14 @@ package com.android.settings.development;
 import static com.android.settings.development.DevelopmentOptionsActivityRequestCodes.REQUEST_CODE_ENABLE_OEM_UNLOCK;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.UserManager;
@@ -34,6 +38,22 @@ import android.util.Log;
 import androidx.annotation.VisibleForTesting;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
+//<2019/08/06-kanewang, [8901][FEATURE][COMMON][SETTINGS][][]Add oem_lock password protection feature.
+import com.android.internal.telephony.Phone;
+import com.android.internal.telephony.PhoneConstants;
+import com.android.internal.telephony.PhoneFactory;
+import android.widget.Toast;
+import android.util.Log;
+//>2019/08/06-kanewang
+
+//<2019/10/31-kanewang, [8901][FEATURE][COMMON][SETTINGS][][]Change oem_lock password protection algorithm with IMEI+SN.
+import android.os.Build;
+//>2019/10/31-kanewang
+//<2020/09/23,lucygao,OEM unlock flow change.
+import com.arima.settings.OemLockVerifier;
+import java.util.Timer;
+import java.util.TimerTask;
+//>2020/09/23,lucygao.
 
 import com.android.settings.R;
 import com.android.settings.core.PreferenceControllerMixin;
@@ -49,13 +69,24 @@ public class OemUnlockPreferenceController extends DeveloperOptionsPreferenceCon
     private static final String OEM_UNLOCK_SUPPORTED_KEY = "ro.oem_unlock_supported";
     private static final String UNSUPPORTED = "-9999";
     private static final String SUPPORTED = "1";
-
+    private static final int HTTP_OK_RESULT = 0x01;
+    private static final int HTTP_CREATED_RESULT = 0x02;
+    private static final int HTTP_FAIL_RESULT = 0x03;
+    private static final int HTTP_VERIFY_FAIL_UNKNOWN = 0x04;
+    private static final boolean DEBUG = true;
+    private OemLockVerifier mVerifier = null;
+    private AlertDialog mWaitingDlg = null;
     private final OemLockManager mOemLockManager;
     private final UserManager mUserManager;
     private final TelephonyManager mTelephonyManager;
     private final Activity mActivity;
     private final DevelopmentSettingsDashboardFragment mFragment;
     private RestrictedSwitchPreference mPreference;
+
+    //<2019/08/06-kanewang, [8901][FEATURE][COMMON][SETTINGS][][]Add oem_lock password protection feature.
+    private fp_password password_ckecker = new fp_password();
+    private Toast toast_msg = null;
+    //>2019/08/06-kanewang
 
     public OemUnlockPreferenceController(Context context, Activity activity,
             DevelopmentSettingsDashboardFragment fragment) {
@@ -150,6 +181,141 @@ public class OemUnlockPreferenceController extends DeveloperOptionsPreferenceCon
         }
         updateState(mPreference);
     }
+
+    //<2019/10/31-kanewang, [8901][FEATURE][COMMON][SETTINGS][][]Change oem_lock password protection algorithm with IMEI+SN.
+    private String getKey() {
+        String imei = getIMEI();
+        String sn = Build.getSerial();
+
+        //Log.e(TAG, "getKey input: imei=" + imei + ",sn=" + sn);
+
+        return imei + sn;
+    }
+    //>2019/10/31-kanewang
+
+    //<2019/08/06-kanewang, [8901][FEATURE][COMMON][SETTINGS][][]Add oem_lock password protection feature.
+    private String getIMEI() {
+        TelephonyManager telephonyManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
+        return telephonyManager.getImei(PhoneConstants.SIM_ID_1);
+    }
+
+    //<2020/09/23,lucygao,OEM unlock flow change.
+    Handler uiUpdater = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what)
+            {
+                case HTTP_OK_RESULT:
+                    if (mWaitingDlg.isShowing()) mWaitingDlg.dismiss();
+                    EnableOemUnlockSettingWarningDialog.show(mFragment);
+                    break;
+                case HTTP_CREATED_RESULT:
+                    if (mWaitingDlg.isShowing()) mWaitingDlg.dismiss();
+                    OemLockVerifyDialog.show(mFragment);
+                    break;
+                case HTTP_FAIL_RESULT:
+                    if (mWaitingDlg.isShowing()) mWaitingDlg.dismiss();
+                    break;
+                case HTTP_VERIFY_FAIL_UNKNOWN:
+                    if (mWaitingDlg.isShowing()) mWaitingDlg.dismiss();
+                    break;
+            }
+        }
+    };
+    public void onOemUnlockVerifyDialogConfirmed(String password) {
+        //verify entered password with IMEI>MD5
+        boolean verified = true;
+        String md5_out = "";
+
+        //<2019/10/31-kanewang, [8901][FEATURE][COMMON][SETTINGS][][]Change oem_lock password protection algorithm with IMEI+SN.
+        int checksum = 0;
+        int checksum_from_user = 0;
+        String s_checksum_from_user = "";
+        String key = getKey();
+
+        if (("".equals(key)) || ("".equals(password))) {
+            verified = false;
+        }
+
+       // checksum_from_user = Integer.parseUnsignedInt(password, 16);
+        //s_checksum_from_user = Integer.toHexString(checksum_from_user);
+
+        if (verified) {
+            Log.i(TAG, "mVerifier == null ? " + (mVerifier == null));
+            if (mVerifier == null) {
+                mVerifier = new OemLockVerifier(mContext, new OemLockVerifier.onResponseListener() {
+                    @Override
+                    public void onFinish(final int check_code, final String msg) {
+                        Log.i(TAG, "Verify oem lock Result : " + check_code + ",msg: " + msg);
+                        String message = msg;
+
+                        //process result
+                        //200 for pass, 400 for code incorrect, 404 for no such phone
+                        switch (check_code) {
+                            case OemLockVerifier.HTTP_OK:
+                                uiUpdater.obtainMessage(HTTP_OK_RESULT).sendToTarget();
+                                message = "Correct code";
+                                break;
+                            case OemLockVerifier.HTTP_VERIFY_FAIL_WRONG_CODE:
+                                uiUpdater.obtainMessage(HTTP_FAIL_RESULT).sendToTarget();
+                                message = "Incorrect code";
+                                break;
+                            case OemLockVerifier.HTTP_VERIFY_FAIL_NO_SUCH_PHONE:
+                                uiUpdater.obtainMessage(HTTP_FAIL_RESULT).sendToTarget();
+                                message = "No such phone";
+                                break;
+                            case OemLockVerifier.HTTP_VERIFY_FAIL_UNKNOWN:
+                                uiUpdater.obtainMessage(HTTP_VERIFY_FAIL_UNKNOWN).sendToTarget();
+                                message = "No internet connection found";
+                                break;
+                            default:
+                                //prmpt fail message
+                                break;
+                        }
+                        if (DEBUG) {
+                            Looper.prepare();
+                            Toast.makeText(mContext, message, Toast.LENGTH_LONG).show();
+                            Looper.loop();
+                        }
+                    }
+                });
+            }
+            Log.i(TAG, "invoke mVerifier.queryVerifyResult()----password="+password);
+            mVerifier.queryVerifyResultGet(password, getIMEI(), Build.getSerial());
+            //mVerifier.queryVerifyResultGet(password, "357811090354522", "A209FNJY0201");
+            //Show waiting dialog
+            showWaitingLockQueryDialog();
+
+        } else {
+            Toast.makeText(mContext, "Password verification failed.", Toast.LENGTH_LONG).show();
+        }
+
+        /*
+        if (verified) {
+            EnableOemUnlockSettingWarningDialog.show(mFragment);
+        } else {
+            Toast.makeText(mContext, "Password verification failed.", Toast.LENGTH_LONG).show();
+        }*/
+        //>2019/10/31-kanewang
+    }
+
+    private void showWaitingLockQueryDialog() {
+        if (mContext == null) return;
+
+        mWaitingDlg = new AlertDialog.Builder(mContext)
+                //.setTitle("Waiting")
+                .setMessage("Processing...")
+                .create();
+        mWaitingDlg.show();
+    }
+    //>2020/09/23,lucygao.
+    public void onOemUnlockVerifyDialogDismissed() {
+        if (mPreference == null) {
+            return;
+        }
+        updateState(mPreference);
+    }
+    //>2019/08/06-kanewang
 
     private void handleDeveloperOptionsToggled() {
         mPreference.setEnabled(enableOemUnlockPreference());
