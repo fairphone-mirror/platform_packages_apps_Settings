@@ -59,6 +59,10 @@
         settings:keywords="@string/keywords_battery_adaptive_preferences" />
 
     <Preference
+        android:key="battery_charging_mode"
+        android:title="@string/charging_state"/>
+
+    <Preference
         android:key="battery_health"
         android:title="@string/dialog_title_battery_healty"
         android:summary="@string/dialog_title_battery_healty"/>

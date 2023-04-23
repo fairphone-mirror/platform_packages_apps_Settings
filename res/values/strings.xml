@@ -14595,6 +14595,9 @@
     <string name="batteryh_soc">charge/discharge cycle count:</string>
     <!--charge full design-->
     <string name="batteryh_cfd">charge full design:</string>
+    <string name="charging_state">Charging mode</string>
+    <string name="charging_slow">Slow mode</string>
+    <string name="charging_normal">Normal mode</string>
 
     <string name="dcdimming_title">DC dimming</string>
 </resources>
