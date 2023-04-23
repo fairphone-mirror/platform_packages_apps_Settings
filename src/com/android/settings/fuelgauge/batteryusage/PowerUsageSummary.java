@@ -52,6 +52,8 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import android.util.Log;
+import android.os.UserHandle;
+import android.provider.Settings;
 
 /**
  * Displays a list of apps and subsystems that consume power, ordered by how much power was consumed
@@ -68,6 +70,7 @@ public class PowerUsageSummary extends PowerUsageBase implements
     @VisibleForTesting
     static final String KEY_BATTERY_USAGE = "battery_usage_summary";
 
+    static final String KEY_BATTERY_CHARGING_MODE = "battery_charging_mode";
     static final String KEY_BATTERY_HEALTH = "battery_health";
 
     @VisibleForTesting
@@ -90,6 +93,7 @@ public class PowerUsageSummary extends PowerUsageBase implements
     @VisibleForTesting
     Preference mBatteryUsagePreference;
 
+    Preference mBatteryChargingModePreference;
     Preference mBatteryHealthPreference;
 
     @VisibleForTesting
@@ -269,8 +273,27 @@ public class PowerUsageSummary extends PowerUsageBase implements
         mHelpPreference = findPreference(KEY_BATTERY_ERROR);
         mHelpPreference.setVisible(false);
 
+        mBatteryChargingModePreference = findPreference(KEY_BATTERY_CHARGING_MODE);
+        mBatteryChargingModePreference.setSummary(getString(R.string.charging_normal));
+
         mBatteryHealthPreference = findPreference(KEY_BATTERY_HEALTH);
-        mBatteryHealthPreference.setSummary(getBatHealth());
+        new Thread(new Runnable(){
+            @Override
+            public void run(){
+                mBatteryHealthPreference.setSummary(getBatHealth());
+            }
+        }).start();
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if (KEY_BATTERY_CHARGING_MODE.equals(preference.getKey())){
+            Settings.Global.putStringForUser(getContext().getContentResolver(),
+                    Settings.Global.SET_BATTERY_CHARGING_MODE, System.currentTimeMillis() + "",
+                    UserHandle.myUserId());
+            return true;
+        }
+        return super.onPreferenceTreeClick(preference);
     }
 
     @VisibleForTesting
