@@ -558,6 +558,7 @@
     <string name="security_settings_sfps_enroll_find_sensor_title" msgid="8327884364635804363">"Tryk let på knappen uden at trykke den helt ned"</string>
     <string name="security_settings_udfps_enroll_find_sensor_title" msgid="8077484429913330179">"Sådan konfigurerer du fingeraftryk"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"Den sidder på bagsiden af telefonen. Brug pegefingeren."</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"Det er tænk og sluk knappen på siden af din telefon"</string>
     <string name="security_settings_sfps_enroll_find_sensor_message" product="tablet" msgid="3861487880213212565">"Fingeraftrykslæseren sidder på afbryderknappen. Det er den flade knap ud for den hævede lydstyrkeknap på din tablets kant.\n\nNår du trykker på afbryderknappen, slukkes skærmen."</string>
     <string name="security_settings_sfps_enroll_find_sensor_message" product="device" msgid="700314363994033893">"Fingeraftrykslæseren sidder på afbryderknappen. Det er den flade knap ud for den hævede lydstyrkeknap på enhedens kant.\n\nNår du trykker på afbryderknappen, slukkes skærmen."</string>
     <string name="security_settings_sfps_enroll_find_sensor_message" product="default" msgid="5857063580604638331">"Fingeraftrykslæseren sidder på afbryderknappen. Det er den flade knap ud for den hævede lydstyrkeknap på telefonens kant.\n\nNår du trykker på afbryderknappen, slukkes skærmen."</string>

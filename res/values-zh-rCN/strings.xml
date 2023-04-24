@@ -558,6 +558,7 @@
     <string name="security_settings_sfps_enroll_find_sensor_title" msgid="8327884364635804363">"轻触电源按钮，但不要按下"</string>
     <string name="security_settings_udfps_enroll_find_sensor_title" msgid="8077484429913330179">"如何设置指纹"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"指纹传感器位于您手机的背面。请用食指触摸传感器。"</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"指纹传感器位于您手机的侧面。请用食指触摸传感器。"</string>
     <string name="security_settings_sfps_enroll_find_sensor_message" product="tablet" msgid="3861487880213212565">"指纹传感器在电源按钮上。电源按钮是一个扁平按钮，位于平板电脑边缘凸起的音量按钮旁边。\n\n按下电源按钮会关闭屏幕。"</string>
     <string name="security_settings_sfps_enroll_find_sensor_message" product="device" msgid="700314363994033893">"指纹传感器在电源按钮上。电源按钮是一个扁平按钮，位于设备边缘凸起的音量按钮旁边。\n\n按下电源按钮会关闭屏幕。"</string>
     <string name="security_settings_sfps_enroll_find_sensor_message" product="default" msgid="5857063580604638331">"指纹传感器在电源按钮上。电源按钮是一个扁平按钮，位于手机边缘凸起的音量按钮旁边。\n\n按下电源按钮会关闭屏幕。"</string>

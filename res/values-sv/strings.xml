@@ -558,6 +558,7 @@
     <string name="security_settings_sfps_enroll_find_sensor_title" msgid="8327884364635804363">"Nudda knappen utan att trycka på den"</string>
     <string name="security_settings_udfps_enroll_find_sensor_title" msgid="8077484429913330179">"Så konfigurerar du fingeravtryck"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"Den sitter på telefonens baksida. Använd pekfingret."</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"Det är av/på-knappen på sidan av telefonen"</string>
     <string name="security_settings_sfps_enroll_find_sensor_message" product="tablet" msgid="3861487880213212565">"Fingeravtryckssensorn sitter på av/på-knappen. Det är den platta knappen bredvid den upphöjda volymknappen på kanten av surfplattan.\n\nOm du trycker på av/på-knappen stängs skärmen av."</string>
     <string name="security_settings_sfps_enroll_find_sensor_message" product="device" msgid="700314363994033893">"Fingeravtryckssensorn sitter på av/på-knappen. Det är den platta knappen bredvid den upphöjda volymknappen på kanten av enheten.\n\nOm du trycker på av/på-knappen stängs skärmen av."</string>
     <string name="security_settings_sfps_enroll_find_sensor_message" product="default" msgid="5857063580604638331">"Fingeravtryckssensorn sitter på av/på-knappen. Det är den platta knappen bredvid den upphöjda volymknappen på kanten av telefonen.\n\nOm du trycker på av/på-knappen stängs skärmen av."</string>

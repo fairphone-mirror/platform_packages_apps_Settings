@@ -558,6 +558,7 @@
     <string name="security_settings_sfps_enroll_find_sensor_title" msgid="8327884364635804363">"請輕觸開關按鈕，但不要按下"</string>
     <string name="security_settings_udfps_enroll_find_sensor_title" msgid="8077484429913330179">"如何設定指紋"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"指紋感應器在手機背面。請使用食指輕觸感應器。"</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"指紋感應器在手機側面。請使用食指輕觸感應器。"</string>
     <string name="security_settings_sfps_enroll_find_sensor_message" product="tablet" msgid="3861487880213212565">"指紋感應器位於開關按鈕上，開關按鈕形狀扁平，位於平板電腦邊緣凸起的音量按鈕旁。\n\n按下開關按鈕即可關閉螢幕。"</string>
     <string name="security_settings_sfps_enroll_find_sensor_message" product="device" msgid="700314363994033893">"指紋感應器位於開關按鈕上，開關按鈕形狀扁平，位於裝置邊緣凸起的音量按鈕旁。\n\n按下開關按鈕即可關閉螢幕。"</string>
     <string name="security_settings_sfps_enroll_find_sensor_message" product="default" msgid="5857063580604638331">"指紋感應器位於開關按鈕上，開關按鈕形狀扁平，位於手機邊緣凸起的音量按鈕旁。\n\n按下開關按鈕即可關閉螢幕。"</string>

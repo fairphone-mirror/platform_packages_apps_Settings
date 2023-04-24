@@ -558,6 +558,7 @@
     <string name="security_settings_sfps_enroll_find_sensor_title" msgid="8327884364635804363">"Toque no botão liga/desliga sem pressionar"</string>
     <string name="security_settings_udfps_enroll_find_sensor_title" msgid="8077484429913330179">"Como configurar sua impressão digital"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"Ele fica na parte traseira do seu smartphone. Use o dedo indicador."</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"É o botão de ligar na lateral do seu telemóvel"</string>
     <string name="security_settings_sfps_enroll_find_sensor_message" product="tablet" msgid="3861487880213212565">"O sensor de impressão digital fica no botão liga/desliga. Ele é plano e está ao lado do botão de volume na borda do tablet.\n\nAo pressionar o botão liga/desliga, a tela é desativada."</string>
     <string name="security_settings_sfps_enroll_find_sensor_message" product="device" msgid="700314363994033893">"O sensor de impressão digital fica no botão liga/desliga. Ele é plano e está ao lado do botão de volume na borda do dispositivo.\n\nAo pressionar o botão liga/desliga, a tela é desativada."</string>
     <string name="security_settings_sfps_enroll_find_sensor_message" product="default" msgid="5857063580604638331">"O sensor de impressão digital fica no botão liga/desliga. Ele é plano e está ao lado do botão de volume na borda do smartphone.\n\nAo pressionar o botão liga/desliga, a tela é desativada."</string>
