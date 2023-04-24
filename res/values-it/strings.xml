@@ -404,6 +404,7 @@
     <string name="security_settings_sfps_enroll_find_sensor_title" msgid="8327884364635804363">"Tocca il tasto di accensione senza premerlo"</string>
     <string name="security_settings_udfps_enroll_find_sensor_title" msgid="8077484429913330179">"Come configurare la tua impronta"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"Si trova sulla parte posteriore del telefono. Utilizza il dito indice."</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"È il pulsante di accensione sul lato del telefono"</string>
     <string name="security_settings_udfps_enroll_find_sensor_message" msgid="8383106460819519961">"Il sensore di impronte digitali è sullo schermo. Nella prossima schermata dovrai acquisire la tua impronta."</string>
     <string name="security_settings_udfps_enroll_find_sensor_start_button" msgid="3172268783620336357">"Inizia"</string>
     <string name="security_settings_udfps_enroll_a11y" msgid="1899453114050362235">"Sposta il dito sullo schermo per trovare il sensore di impronte digitali, quindi toccalo e tieni premuto."</string>
