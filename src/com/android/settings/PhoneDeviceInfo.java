@@ -310,11 +310,11 @@ public class PhoneDeviceInfo extends Activity {
     private String readTPLCMVersion(){
         String version = null;
         try {
-            InputStream is = new FileInputStream("proc/android_touch/vendor");
+            InputStream is = new FileInputStream("sys/emkit/info/touch");
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
             while ((version = reader.readLine()) != null) {
                 Log.e(TAG, "readTPLCMVersion " + version);
-                if(version.contains("TOUCH_VER")){
+                if(version.contains("fw_ver")){
                     break;
                 }
             }
@@ -327,11 +327,11 @@ public class PhoneDeviceInfo extends Activity {
         //read null try again
         if(version == null){
             try {
-                InputStream is = new FileInputStream("proc/android_touch/vendor");
+                InputStream is = new FileInputStream("sys/emkit/info/touch");
                 BufferedReader reader = new BufferedReader(new InputStreamReader(is));
                 while ((version = reader.readLine()) != null) {
                     Log.e(TAG, "readTPLCMVersion " + version);
-                    if(version.contains("TOUCH_VER")){
+                    if(version.contains("fw_ver")){
                         break;
                     }
                 }
@@ -342,7 +342,7 @@ public class PhoneDeviceInfo extends Activity {
                 Log.e(TAG, "getVersion fail" + e);
             }
         }
-        return version != null ? version.substring(11):getString(R.string.device_info_default);
+        return version != null ? version.substring(7):getString(R.string.device_info_default);
     }
 
     private String formatDateCode(byte[] raw) {
