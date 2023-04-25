@@ -157,15 +157,15 @@ public class ModuleDeviceInfo extends Activity {
     private String readDisplayInfo() {
         StringBuffer info = new StringBuffer("");
         try {
-            InputStream is = new FileInputStream("/proc/android_touch/vendor");
+            InputStream is = new FileInputStream("/sys/emkit/info/display");
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
             String line = "";
             while ((line = reader.readLine()) != null) {
-                if (line.contains("IC")) {
+                if (line.contains("display_ic")) {
                     info = info.append(line);
                     info = info.append("\n");
                 }
-                if (line.contains("Cusomer")) {
+                if (line.contains("vendor")) {
                     info = info.append(line);
                 }
             }
