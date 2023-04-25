@@ -21,6 +21,7 @@ import android.os.IBinder;
 import android.os.Parcel;
 import android.os.RemoteException;
 import android.os.ServiceManager;
+import android.os.SystemProperties;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.preference.Preference;
@@ -50,6 +51,8 @@ public class ShowRefreshRatePreferenceController extends DeveloperOptionsPrefere
 
     private final IBinder mSurfaceFlinger;
 
+    private String shouldShowRate = null;
+
     public ShowRefreshRatePreferenceController(Context context) {
         super(context);
         mSurfaceFlinger = ServiceManager.getService(SURFACE_FLINGER_SERVICE_KEY);
@@ -63,6 +66,12 @@ public class ShowRefreshRatePreferenceController extends DeveloperOptionsPrefere
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final boolean isEnabled = (Boolean) newValue;
+        if (isEnabled){
+            shouldShowRate = "1";
+        }else {
+            shouldShowRate = "0";
+        }
+        SystemProperties.set("sys.show_refresh_rate",shouldShowRate);
         writeShowRefreshRateSetting(isEnabled);
         return true;
     }
