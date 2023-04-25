@@ -26,6 +26,8 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.UserHandle;
+import android.util.Log;
+import android.widget.Toast;
 import android.provider.Settings;
 import android.text.TextUtils;
 
@@ -46,7 +48,7 @@ import android.hardware.Sensor;
 /** PreferenceController that shows the Reduce Bright Colors summary */
 public class ReduceBrightColorsPreferenceController
         extends AccessibilityQuickSettingsPrimarySwitchPreferenceController
-        implements LifecycleObserver, OnStart, OnStop {
+        implements LifecycleObserver, OnStart, OnStop, Preference.OnPreferenceClickListener{
     private ContentObserver mSettingsContentObserver;
     private PrimarySwitchPreference mPreference;
     private final Context mContext;
@@ -77,8 +79,20 @@ public class ReduceBrightColorsPreferenceController
                 }
             }
         };
+
         mColorDisplayManager = mContext.getSystemService(ColorDisplayManager.class);
         mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
+    }
+
+    @Override
+    public boolean onPreferenceClick(Preference preference) {
+
+        boolean isEnableExtraDim = Secure.getInt(mContext.getContentResolver(),Secure.ENABLE_REDUCE_BRIGHT_COLORS,0) == 1;
+        if(!isEnableExtraDim){
+            Toast.makeText(mContext,mContext.getText(R.string.toast_extra_dim_info), Toast.LENGTH_LONG).show();
+        }
+
+        return false;
     }
 
     @Override
@@ -114,12 +128,18 @@ public class ReduceBrightColorsPreferenceController
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
         mPreference = screen.findPreference(getPreferenceKey());
-        boolean isEnableExtraDim = Secure.getInt(mContext.getContentResolver(),Secure.ENABLE_REDUCE_BRIGHT_COLORS,0) == 1;
-        if(isEnableExtraDim){
-            mPreference.setSwitchEnabled(true);
-        } else {
-            mPreference.setSwitchEnabled(false);
+
+        if (mPreference != null) {
+
+            boolean isEnableExtraDim = Secure.getInt(mContext.getContentResolver(),Secure.ENABLE_REDUCE_BRIGHT_COLORS,0) == 1;
+            if(isEnableExtraDim){
+                mPreference.setSwitchEnabled(true);
+            } else {
+                mPreference.setSwitchEnabled(false);
+            }
+            mPreference.setOnPreferenceClickListener(this);
         }
+
     }
 
     @Override
