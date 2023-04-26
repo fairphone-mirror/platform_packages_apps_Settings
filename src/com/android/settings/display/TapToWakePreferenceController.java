@@ -22,10 +22,18 @@ import androidx.preference.SwitchPreference;
 import com.android.settings.core.PreferenceControllerMixin;
 import com.android.settingslib.core.AbstractPreferenceController;
 
+import android.util.Log;
+import java.io.IOException;
+import java.io.BufferedWriter;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+
 public class TapToWakePreferenceController extends AbstractPreferenceController implements
         PreferenceControllerMixin, Preference.OnPreferenceChangeListener {
 
     private static final String KEY_TAP_TO_WAKE = "tap_to_wake";
+    private static final String  DOUBLE_TOP_EN = "/sys/devices/platform/goodix_ts.0/gesture/double_en";
 
     public TapToWakePreferenceController(Context context) {
         super(context);
@@ -46,14 +54,53 @@ public class TapToWakePreferenceController extends AbstractPreferenceController 
     public void updateState(Preference preference) {
         int value = Settings.Secure.getInt(
                 mContext.getContentResolver(), Settings.Secure.DOUBLE_TAP_TO_WAKE, 0);
+        String douTapEn = readLine(DOUBLE_TOP_EN);
+        Log.i("sunth__","      TapToWakePreferenceController        value=" + value + " \n" + douTapEn);
+        if ("disable".equals(douTapEn)){
+            if (value == 1){
+                Settings.Secure.putInt(mContext.getContentResolver(), Settings.Secure.DOUBLE_TAP_TO_WAKE, 0);
+                value = 0;
+            }
+        }else if ("enable".equals(douTapEn)){
+            if (value == 0){
+                Settings.Secure.putInt(mContext.getContentResolver(), Settings.Secure.DOUBLE_TAP_TO_WAKE, 1);
+                value = 1;
+            }
+        }
         ((SwitchPreference) preference).setChecked(value != 0);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         boolean value = (Boolean) newValue;
+        writeLine(DOUBLE_TOP_EN,value ? "1" : "0");
         Settings.Secure.putInt(
                 mContext.getContentResolver(), Settings.Secure.DOUBLE_TAP_TO_WAKE, value ? 1 : 0);
         return true;
+    }
+
+    private String readLine(String filename) {
+        String value = "0";
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            value = reader.readLine();
+        } catch (IOException exception) {
+            Log.e("sunth__", "failed for: " + exception.getMessage());
+            exception.printStackTrace();
+        }
+        Log.i("sunth__", "read filename = " + filename + ", value = " + value);
+        return value;
+    }
+
+    private void writeLine(String filename, String value) {
+        Log.e("sunth__", " write filename = "+filename + "   value :" + value);
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(filename), 256);
+            writer.write(value);
+            writer.close();
+        } catch (IOException exception) {
+            Log.e("sunth__", "failed for: " + exception.getMessage());
+            exception.printStackTrace();
+        }
     }
 }
