@@ -342,26 +342,35 @@ public class PowerUsageSummary extends PowerUsageBase implements
 
     private String getBatHealth(){
         String batHealth = null;
-        String soh = readLine("/sys/class/qcom-battery/soh");
-        String cycle_count = readLine("/sys/class/power_supply/battery/cycle_count");
-        String charge_full_design = readLine("/sys/class/power_supply/battery/charge_full_design");
+        String soh = readBatHealth("/sys/class/qcom-battery/soh");
+        String cycle_count = readBatHealth("/sys/class/power_supply/battery/cycle_count");
+        String charge_full_design = readBatHealth("/sys/class/power_supply/battery/charge_full_design");
         batHealth = getString(R.string.batteryh_soh) + soh + "\n" +
                 getString(R.string.batteryh_soc) + cycle_count + "\n" +
                 getString(R.string.batteryh_cfd) + charge_full_design ;
         return batHealth;
     }
 
-    private String readLine(String filename) {
+    private String readBatHealth(String filename) {
         String value = "0";
+        BufferedReader reader = null;
+        FileReader fr = null;
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            fr = new FileReader(filename);
+            reader = new BufferedReader(fr);
             value = reader.readLine();
         } catch (IOException exception) {
-            Log.e(TAG, "writeLine, failed for: " + exception.getMessage());
             exception.printStackTrace();
+        }finally {
+            try{
+                if (reader != null)
+                    reader.close();
+                if (fr != null)
+                    fr.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
-        Log.i(TAG, "filename = " + filename + ", value = " + value);
-
         return value;
     }
 }
