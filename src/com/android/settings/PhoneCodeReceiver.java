@@ -18,6 +18,10 @@ import android.view.WindowManager;
 import com.android.internal.telephony.PhoneConstants;
 import com.arima.settings.OemLockVerifier;
 import android.content.DialogInterface;
+import java.io.File;
+import java.io.IOException;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 
 public class PhoneCodeReceiver extends BroadcastReceiver {
 
@@ -118,27 +122,30 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                 OemLockVerifier oemLockVerifier = new OemLockVerifier(context, (check_code, msg) -> Log.e(TAG, "oemLockVerifier queryVerifyResult msg > " + msg));
                 oemLockVerifier.queryVerifyResult(getIMEI(), Build.getSerial());
             } else if (HOST_CODE_BATTERY_HEALTY.equals(host)){
-                String status = SystemProperties.get(BATTERY_HEALTY_ENABLE, "Close");
-                AlertDialog alert = new AlertDialog.Builder(context.getApplicationContext())
-                        .setTitle(R.string.dialog_title_battery_healty)
-                        .setMessage(status)
-                        .setPositiveButton(R.string.launch_instant_app, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                SystemProperties.set(BATTERY_HEALTY_ENABLE, "Open");
-                            }
-                        })
-                        .setNegativeButton(R.string.suggestion_button_close, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                SystemProperties.set(BATTERY_HEALTY_ENABLE, "Close");
-                                //TODO:charge enable
-                            }
-                        })
-                        .setCancelable(false)
-                        .create();
-                alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
-                alert.show();
+                if(fp5txtIsExists()) {
+                    String status = SystemProperties.get(BATTERY_HEALTY_ENABLE, "Close");
+                    AlertDialog alert = new AlertDialog.Builder(context.getApplicationContext())
+                            .setTitle(R.string.dialog_title_battery_healty)
+                            .setMessage(status)
+                            .setPositiveButton(R.string.launch_instant_app, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    SystemProperties.set(BATTERY_HEALTY_ENABLE, "Open");
+                                }
+                            })
+                            .setNegativeButton(R.string.suggestion_button_close, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    SystemProperties.set(BATTERY_HEALTY_ENABLE, "Close");
+                                    //charge enable
+                                    writeBatEn("6000000");
+                                }
+                            })
+                            .setCancelable(false)
+                            .create();
+                    alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+                    alert.show();
+                }
             }
         }
 
@@ -159,6 +166,42 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
     private String getIMEI() {
         TelephonyManager telephonyManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
         return telephonyManager.getImei(PhoneConstants.SIM_ID_1);
+    }
+
+    private void writeBatEn(String value) {
+        BufferedWriter bw = null;
+        FileWriter fw = null;
+        try {
+            fw = new FileWriter("/sys/class/power_supply/battery/user_fcc");
+            bw = new BufferedWriter(fw, 256);
+            bw.write(value);
+            bw.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            try{
+                if (bw != null)
+                    bw.close();
+                if (fw != null)
+                    fw.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private boolean fp5txtIsExists(){
+        try {
+            File f = new File("/storage/emulated/0/FP5.txt");
+            if(f.exists()) {
+                return true;
+            }else{
+                return false;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
 }
