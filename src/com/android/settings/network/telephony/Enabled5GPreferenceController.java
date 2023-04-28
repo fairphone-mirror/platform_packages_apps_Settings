@@ -45,6 +45,7 @@ import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import androidx.annotation.VisibleForTesting;
+import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
@@ -79,6 +80,9 @@ public class Enabled5GPreferenceController extends TelephonyTogglePreferenceCont
 
     private SharedPreferences mSharedPreferences;
     private boolean mChangedBy5gToggle = false;
+
+    // add for FP5-744, to get PNT(Preferred Network Type) list from EnabledNetworkModePreferenceController
+    ListPreference mPreferredNetworkModePreference;
 
     private final BroadcastReceiver mDefaultDataChangedReceiver = new BroadcastReceiver() {
         @Override
@@ -164,6 +168,9 @@ public class Enabled5GPreferenceController extends TelephonyTogglePreferenceCont
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
         mPreference = screen.findPreference(getPreferenceKey());
+
+        // add for FP5-744, get Preference from EnabledNetworkModePreferenceController
+        mPreferredNetworkModePreference = screen.findPreference("preferred_network_mode_key");
     }
 
     @Override
@@ -210,8 +217,28 @@ public class Enabled5GPreferenceController extends TelephonyTogglePreferenceCont
         if (!SubscriptionManager.isValidSubscriptionId(mSubId)) {
             return false;
         }
-        int oldNetworkMode = getAllowedNetworkMode();
+
+        Log.d(TAG, "setChecked: " + isChecked);
         long newNetworkBitMask;
+
+        // add for FP5-744 begin
+        // The first time you click 5G ON/OFF, the saved PNT is invalid
+        int userSelectedNwMode = getPreviousSelectedNwType();
+        if ((userSelectedNwMode != NETWORK_MODE_TYPE_INVALID)) {
+            // If the previously saved PNT is valid, use it
+            newNetworkBitMask = MobileNetworkUtils
+                    .getRafFromNetworkType(userSelectedNwMode);
+            cachePreviousSelectedNwType(NETWORK_MODE_TYPE_INVALID);
+        } else {
+            // If the previously saved PNT is invalid, generate a new PNT closest to current one
+            int oldNetworkMode = getAllowedNetworkMode();
+            long oldNetworkBitMask = MobileNetworkUtils.getRafFromNetworkType(oldNetworkMode);
+            newNetworkBitMask = getNetworkFromPreferredPreference(isChecked, oldNetworkBitMask);
+            cachePreviousSelectedNwType(oldNetworkMode);
+        }
+        // add for FP5-744 end
+
+        /*
         if (TelephonyManager.NETWORK_MODE_NR_ONLY != oldNetworkMode) {
             long oldNetworkBitMask = MobileNetworkUtils.getRafFromNetworkType(oldNetworkMode);
             if (isChecked) {
@@ -257,11 +284,125 @@ public class Enabled5GPreferenceController extends TelephonyTogglePreferenceCont
             newNetworkBitMask = MobileNetworkUtils
                     .getRafFromNetworkType(TelephonyManager.NETWORK_MODE_LTE_ONLY);
         }
+        */
+
         mTelephonyManager.setAllowedNetworkTypesForReason(
                 TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER, newNetworkBitMask);
         mChangedBy5gToggle = true;
         return true;
     }
+
+    // add for FP5-744 begin
+    /**
+     * Automatically generate a new PNT based on whether 5G is enabled or not
+     *
+     * <p/>Based on A13, following the rules
+     *
+     * <p/>1. All PNT(Preferred Network types) must be in the prefered network list in EnabledNetworkModePreferenceController,
+     * this list base on CarrierConfig, No matter how 5G ON/OFF switched
+     *
+     * <p/>2. When 5G ON/OFF is switched, the current PNT is automatically saved,
+     * When 5G ON/OFF is switched again, the previous saved PNT is returned
+     *
+     * <p/>3. After 5G ON/OFF switched, the PNT in the prefered network list in EnabledNetworkModePreferenceController is automatically switched
+     *
+     * @param is5GChecked true: 5G ON, false: 5G OFF
+     * @param oldBitMask old PNT bit mask
+     *
+     * @return
+     * new PNT bit mask closest to oldBitMask
+     *
+     */
+    private long getNetworkFromPreferredPreference(boolean is5GChecked, long oldBitMask) {
+        long newNetworkBitMask = TelephonyManager.NETWORK_TYPE_BITMASK_UNKNOWN;
+        final CharSequence[] values = mPreferredNetworkModePreference.getEntryValues();
+
+        Log.d(TAG, "enable 5G: " + is5GChecked);
+        Log.d(TAG, "old network type {BitMask: " + oldBitMask
+                + ", Type: " + MobileNetworkUtils.getNetworkTypeFromRaf((int)oldBitMask) + "}");
+
+        // loop every PTN(preferred network type) in prefered network list
+        int index = 0;
+        for (CharSequence s : values) {
+            int networkType = Integer.valueOf(s.toString());
+            long networkBitMask = MobileNetworkUtils.getRafFromNetworkType(networkType);
+            Log.d(TAG, "loop preference list[" + index + "]"
+                    + " {BitMask: " + networkBitMask + ", Type: " + networkType + "}");
+            index++;
+
+            if (is5GChecked) {
+                // if need 5G, but current PNT include no 5G, skip
+                if (!isIncludeBitMask(networkBitMask, TelephonyManager.NETWORK_CLASS_BITMASK_5G)) {
+                    Log.d(TAG, "no 5G, skip");
+                    continue;
+                }
+            } else {
+                // if need no 5G, but current PNT include 5G, skip
+                if (isIncludeBitMask(networkBitMask, TelephonyManager.NETWORK_CLASS_BITMASK_5G)) {
+                    Log.d(TAG, "have 5G, skip");
+                    continue;
+                }
+
+                // if need no 5G and old PNT is 5G only, this is special case
+                if (MobileNetworkUtils.getNetworkTypeFromRaf((int)oldBitMask)
+                        == TelephonyManager.NETWORK_MODE_NR_ONLY) {
+                    // if current PNT is LTE only, return immediately
+                    if (networkType == TelephonyManager.NETWORK_MODE_LTE_ONLY) {
+                        newNetworkBitMask = networkBitMask;
+                        break;
+                    }
+                }
+            }
+
+            // old PNT include 2G, but current PNT include no 2G, skip
+            if (isIncludeBitMask(oldBitMask, TelephonyManager.NETWORK_CLASS_BITMASK_2G)) {
+                if (!isIncludeBitMask(networkBitMask, TelephonyManager.NETWORK_CLASS_BITMASK_2G)) {
+                    Log.d(TAG, "no 2G, skip");
+                    continue;
+                }
+            }
+
+            // old PNT include 3G, but current PNT include no 3G, skip
+            if (isIncludeBitMask(oldBitMask, TelephonyManager.NETWORK_CLASS_BITMASK_3G)) {
+                if (!isIncludeBitMask(networkBitMask, TelephonyManager.NETWORK_CLASS_BITMASK_3G)) {
+                    Log.d(TAG, "no 3G, skip");
+                    continue;
+                }
+            }
+
+            // old PNT include 4G, but current PNT include no 4G, skip
+            if (isIncludeBitMask(oldBitMask, TelephonyManager.NETWORK_CLASS_BITMASK_4G)) {
+                if (!isIncludeBitMask(networkBitMask, TelephonyManager.NETWORK_CLASS_BITMASK_4G)) {
+                    Log.d(TAG, "no 4G, skip");
+                    continue;
+                }
+            }
+
+            // gets the bitmask closest to oldBitMask
+            if (newNetworkBitMask == TelephonyManager.NETWORK_TYPE_BITMASK_UNKNOWN) {
+                newNetworkBitMask = networkBitMask;
+            } else if (networkBitMask < newNetworkBitMask) {
+                newNetworkBitMask = networkBitMask;
+            }
+
+            Log.d(TAG, "close to oldBitMask");
+        }
+
+        Log.d(TAG, "new network type {BitMask: " + newNetworkBitMask
+                + ", Type: " + MobileNetworkUtils.getNetworkTypeFromRaf((int)newNetworkBitMask) + "}");
+        return newNetworkBitMask;
+    }
+
+    private boolean isIncludeBitMask(long networkBitMask, long bitMask) {
+        boolean ret = false;
+        long include = networkBitMask & bitMask;
+        if (include > 0) {
+            ret = true;
+        }
+
+        return ret;
+    }
+    // add for FP5-744 end
 
     private void cachePreviousSelectedNwType(int oldNetworkMode) {
         Log.d(TAG, "cachePreviousSelectedNwType: " + oldNetworkMode);
