@@ -5027,6 +5027,14 @@
             android:permission="android.permission.BIND_JOB_SERVICE" />
         <!--Add by T2M yingyubin FP4-3639 20220414-->
 
+        <receiver android:name=".DiagProtectorMode"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="2324" />
+            </intent-filter>
+        </receiver>
+
         <activity android:name="com.android.settings.ModuleDeviceInfo"
             android:exported="true"
             android:label="@string/hidden_activity_module_info"

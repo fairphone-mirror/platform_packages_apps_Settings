@@ -12373,4 +12373,8 @@
     <string name="charging_normal">Normal mode</string>
 
     <string name="dcdimming_title">DC dimming</string>
+    <!-- Diag -->
+    <string name="diagprotect_title">DiagProtector Setting</string>
+    <string name="diagprotect_on">Diag Protector ON</string>
+    <string name="diagprotect_off">Diag Protector OFF</string>
 </resources>
