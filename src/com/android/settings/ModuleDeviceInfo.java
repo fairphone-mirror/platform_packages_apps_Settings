@@ -151,7 +151,7 @@ public class ModuleDeviceInfo extends Activity {
     }
 
     private String readBattaryInfo() {
-        return readHwInfo("/sys/class/power_supply/bms/resistance_id");
+        return readHwInfo("/sys/emkit/info/battery_id");
     }
 
     private String readDisplayInfo() {
