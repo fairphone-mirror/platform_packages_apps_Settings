@@ -400,7 +400,7 @@ public abstract class BiometricEnrollIntroduction extends BiometricEnrollBase
                     if(mToken != null){
                         try{
                             Intent faceIntent = new Intent()
-                                    .setComponent(new ComponentName("com.fp.faceunlock","com.fp.faceunlock.anc.enroll.EnrollActivity"))
+                                    .setComponent(new ComponentName("com.fp.faceunlock","com.fp.faceunlock.anc.intro.IntroFaceUnlockActivity"))
                                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             Intent settingsIntent = new Intent()
                                     .setComponent(new ComponentName("com.fp.faceunlock","com.fp.faceunlock.anc.SettingsActivity"))
