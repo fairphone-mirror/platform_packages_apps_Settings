@@ -375,6 +375,9 @@ public class MobileNetworkUtils {
         if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
             return false;
         }
+
+        // modify for FP5-875, copy from [FP4-870]Remove unused settings options begin
+        /*
         final PersistableBundle carrierConfig =
                 CarrierConfigCache.getInstance(context).getConfigForSubId(subId);
         if (carrierConfig != null
@@ -406,6 +409,8 @@ public class MobileNetworkUtils {
                 return true;
             }
         }
+        */
+        // modify for FP5-875, copy from [FP4-870]Remove unused settings options end
 
         return false;
     }
