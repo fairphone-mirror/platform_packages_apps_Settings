@@ -28,6 +28,7 @@ import java.io.BufferedWriter;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
+import android.os.SystemProperties;
 
 public class TapToWakePreferenceController extends AbstractPreferenceController implements
         PreferenceControllerMixin, Preference.OnPreferenceChangeListener {
@@ -55,12 +56,21 @@ public class TapToWakePreferenceController extends AbstractPreferenceController 
         int value = Settings.Secure.getInt(
                 mContext.getContentResolver(), Settings.Secure.DOUBLE_TAP_TO_WAKE, 0);
         String douTapEn = readDouEn();
+        String double_en = SystemProperties.get("persist.sys.double_en");
         if ("disable".equals(douTapEn) && value == 1){
             Settings.Secure.putInt(mContext.getContentResolver(), Settings.Secure.DOUBLE_TAP_TO_WAKE, 0);
             value = 0;
         }else if ("enable".equals(douTapEn) && value == 0){
             Settings.Secure.putInt(mContext.getContentResolver(), Settings.Secure.DOUBLE_TAP_TO_WAKE, 1);
             value = 1;
+        }else {
+            if (double_en != null){
+                Settings.Secure.putInt(mContext.getContentResolver(), Settings.Secure.DOUBLE_TAP_TO_WAKE, 0);
+                value = 0;
+            }else if ("1".equals(double_en)){
+                Settings.Secure.putInt(mContext.getContentResolver(), Settings.Secure.DOUBLE_TAP_TO_WAKE, 1);
+                value = 1;
+            }
         }
         ((SwitchPreference) preference).setChecked(value != 0);
     }
@@ -69,6 +79,7 @@ public class TapToWakePreferenceController extends AbstractPreferenceController 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         boolean value = (Boolean) newValue;
         writeDouEn(value ? "1" : "0");
+        SystemProperties.set("persist.sys.double_en",value ? "1" : "0");
         Settings.Secure.putInt(
                 mContext.getContentResolver(), Settings.Secure.DOUBLE_TAP_TO_WAKE, value ? 1 : 0);
         return true;
