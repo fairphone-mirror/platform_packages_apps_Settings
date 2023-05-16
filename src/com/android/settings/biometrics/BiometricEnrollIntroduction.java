@@ -399,15 +399,10 @@ public abstract class BiometricEnrollIntroduction extends BiometricEnrollBase
                     //add by t2m yingyubin for FP5-186 20230325
                     if(mToken != null){
                         try{
-                            Intent faceIntent = new Intent()
-                                    .setComponent(new ComponentName("com.fp.faceunlock","com.fp.faceunlock.anc.intro.IntroFaceUnlockActivity"))
-                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             Intent settingsIntent = new Intent()
                                     .setComponent(new ComponentName("com.fp.faceunlock","com.fp.faceunlock.anc.SettingsActivity"))
                                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            boolean hasFaceEnrolled = android.provider.Settings.System.getInt(getContentResolver(),"enroll_main_face_id", 0) > 0
-                                    || android.provider.Settings.System.getInt(getContentResolver(), "enroll_second_face_id", 0) > 0;
-                            startActivity(hasFaceEnrolled ? settingsIntent : faceIntent);
+                            startActivity(settingsIntent);
                             finish();
                         }catch(Exception e) {
                         }

@@ -460,7 +460,7 @@ public class ChooseLockGeneric extends SettingsActivity {
                     if(mForFace) {
                         try{
                             Intent faceIntent = new Intent()
-                                    .setComponent(new ComponentName("com.fp.faceunlock","com.fp.faceunlock.anc.intro.IntroFaceUnlockActivity"))
+                                    .setComponent(new ComponentName("com.fp.faceunlock","com.fp.faceunlock.anc.SettingsActivity"))
                                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(faceIntent);
                         }catch(Exception e) {
