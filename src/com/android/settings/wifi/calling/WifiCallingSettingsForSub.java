@@ -295,6 +295,22 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
                     FRAGMENT_BUNDLE_SUBID, SubscriptionManager.INVALID_SUBSCRIPTION_ID);
         }
 
+        // add for FP5-1231 begin
+        String title = getResourcesForSubId().getString(R.string.wifi_calling_settings_title);
+        final CarrierConfigManager configManager =
+                getActivity().getSystemService(CarrierConfigManager.class);
+        if (configManager != null) {
+            Log.d(TAG, "get title from carrierconfig");
+            PersistableBundle b = configManager.getConfigForSubId(mSubId);
+            if (b != null) {
+                title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+                Log.d(TAG, "title: " + title);
+            }
+        }
+
+        getActivity().setTitle(title);
+        // add for FP5-1231 end
+
         mProvisioningManager = getImsProvisioningManager();
         mImsMmTelManager = getImsMmTelManager();
 
