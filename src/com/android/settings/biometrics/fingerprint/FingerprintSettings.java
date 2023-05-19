@@ -406,12 +406,12 @@ public class FingerprintSettings extends SubSettings {
                 column2.mTitle = getText(
                         R.string.security_fingerprint_disclaimer_lockscreen_disabled_2
                 );
-                column2.mLearnMoreClickListener = learnMoreClickListener;
+                //column2.mLearnMoreClickListener = learnMoreClickListener;
                 mFooterColumns.add(column2);
             } else {
                 final FooterColumn column = new FooterColumn();
                 column.mTitle = getText(R.string.security_settings_fingerprint_v2_home_screen_text);
-                column.mLearnMoreClickListener = learnMoreClickListener;
+                //column.mLearnMoreClickListener = learnMoreClickListener;
                 mFooterColumns.add(column);
             }
         }
