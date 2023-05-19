@@ -74,6 +74,7 @@ public class PhoneDeviceInfo extends Activity {
     private TextView mTFT;
     private TextView mUpdateTime;
     private TextView mGMSversion;
+    private TextView mCameraTuning;
     static final String BASEBAND_PROPERTY = "gsm.version.baseband";
     static final String FACTORY_SN_PROPERTY = "ro.vendor.tct.trace.bsn";
     static final String MFG_DATE_PROPERTY = "ro.vendor.tct.mfg.date";
@@ -104,6 +105,7 @@ public class PhoneDeviceInfo extends Activity {
         mTFT = (TextView)view.findViewById(R.id.tft);
         mUpdateTime = (TextView)view.findViewById(R.id.updatetime);
         mGMSversion = (TextView)view.findViewById(R.id.gmsversion);
+        mCameraTuning = (TextView)view.findViewById(R.id.cameratuning);
         setContentView(view);
     }
 
@@ -146,6 +148,7 @@ public class PhoneDeviceInfo extends Activity {
         mTFT.setText("TFT : \n" + readTFT());
         mUpdateTime.setText("Up time \n" + DateUtils.formatElapsedTime(SystemClock.elapsedRealtime() / 1000));
         mGMSversion.setText("GMS version : \n" + readGMSversion());
+        mCameraTuning.setText("Camera tuning Version : \n" + readCameraTuningversion());
     }
 
     private String readGMSversion(){
@@ -404,6 +407,32 @@ public class PhoneDeviceInfo extends Activity {
         }
     }
 
+    private String readCameraTuningversion(){
+        String cameratuning = "";
+        String version = null;
+        try {
+            InputStream is = new FileInputStream("vendor/etc/camera/tuningversion_fp5.txt");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            while ((version = reader.readLine()) != null) {
+                Log.e(TAG, "readCameraTuningversion version " + version);
+                if(version.contains("==imx800")){
+                    cameratuning += "Camera_IMX800:\n";
+                }else if(version.contains("==imx858")){
+                    cameratuning += "\nCamera_IMX858:\n";
+                }else if(version.contains("==s5kjn1")){
+                    cameratuning += "\nCamera_S5KJN1:\n";
+                }else{
+                    cameratuning += version.substring(7) +";";
+                }
+            }
+            reader.close();
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e(TAG, "readCameraTuningversion fail" + e);
+        }
+        return cameratuning;
+    }
 
     private class MyHandler extends Handler {
         private TextView m_updatetime;
