@@ -65,6 +65,7 @@ import android.database.ContentObserver;
 import android.os.Handler;
 import android.os.Looper;
 
+
 /**
  * This is the inner class of {@link WifiCallingSettings} fragment.
  * The preference screen lets you enable/disable Wi-Fi Calling and change Wi-Fi Calling mode.
@@ -109,6 +110,9 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
     private ImsMmTelManager mImsMmTelManager;
     private ProvisioningManager mProvisioningManager;
     private TelephonyManager mTelephonyManager;
+    private ContentResolver mContentResolver;
+    private static final Uri WFC_URI = Uri.parse("content://telephony/siminfo");
+    private ContentObserver mWfcObserver;
 
     private final PhoneTelephonyCallback mTelephonyCallback = new PhoneTelephonyCallback();
 
@@ -330,6 +334,7 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
 
         updateDescriptionForOptions(
                 List.of(mButtonWfcMode, mButtonWfcRoamingMode, mUpdateAddress));
+        mContentResolver = getContext().getContentResolver();
     }
 
     @Override
@@ -505,6 +510,16 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
 
         // Register callback for provisioning changes.
         registerProvisioningChangedCallback();
+        if (mWfcObserver == null) {
+
+            mWfcObserver = new ContentObserver(new Handler(Looper.getMainLooper())) {
+                @Override
+                public void onChange(boolean selfChange) {
+                    updateBody();
+                }
+            };
+        }
+        mContentResolver.registerContentObserver(WFC_URI, false, mWfcObserver);
     }
 
     @Override
@@ -525,6 +540,7 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
 
         // Remove callback for provisioning changes.
         unregisterProvisioningChangedCallback();
+        mContentResolver.unregisterContentObserver(mWfcObserver);
     }
 
     /**
