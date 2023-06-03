@@ -288,6 +288,7 @@
                 <action android:name="android.settings.NETWORK_OPERATOR_SETTINGS" />
                 <action android:name="android.settings.DATA_ROAMING_SETTINGS" />
                 <action android:name="android.settings.MMS_MESSAGE_SETTING" />
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -2835,7 +2836,6 @@
             <intent-filter android:priority="1">
                 <action android:name="android.settings.APPLICATION_DEVELOPMENT_SETTINGS" />
                 <action android:name="com.android.settings.APPLICATION_DEVELOPMENT_SETTINGS" />
-                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES"/>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
@@ -4332,6 +4332,17 @@
             android:name=".SettingsDumpService"
             android:exported="true"
             android:permission="android.permission.DUMP" />
+
+        <service
+            android:name=".qs.VoWifiTile"
+            android:label="@string/wifi_calling_settings_title"
+            android:icon="@drawable/ic_vowifi_calling"
+            android:exported="true"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
 
         <!-- Quick Settings tiles for Developer Options -->
         <service
