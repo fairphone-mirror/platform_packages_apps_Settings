@@ -4720,4 +4720,32 @@
     <string name="contrast_medium" msgid="384414510709285811">"Vừa"</string>
     <string name="contrast_high" msgid="3988567609694797696">"Cao"</string>
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"Ứng dụng này chỉ có thể mở trong 1 cửa sổ"</string>
+    <string name="attention">Chú ý</string>
+    <string name="cannot_detect_face">Không thể phát hiện ra khuôn mặt của bạn</string>
+    <string name="face_add_title">Thêm dữ liệu khuôn mặt</string>
+    <string name="face_detect_timeout_dialog_button_retry">THỬ LẠI</string>
+    <string name="face_detect_timeout_dialog_message">Không nhận diện được khuôn mặt. Đảm bảo camera sạch và di chuyển điện thoại cách mặt bạn khoảng 20-50 cm.</string>
+    <string name="face_detect_timeout_dialog_title">Không thể đăng ký khuôn mặt</string>
+    <string name="face_disabled_condition3_rom4">Mở khóa bằng khuôn mặt thất bại ba lần liên tiếp.</string>
+    <string name="face_disabled_title_rom4">Mở khóa bằng khuôn mặt sẽ bị vô hiệu hóa trong các trường hợp sau:</string>
+    <string name="face_enable_condition_rom4">Mã PIN, mẫu hình hoặc mật khẩu là cần thiết nếu bạn muốn mở khóa bằng khuôn mặt hoạt động trở lại.</string>
+    <string name="face_recognition_button_start">Bắt đầu</string>
+    <string name="face_unlock_finish_msg_rom4">Đã thêm dữ liệu khuôn mặt của bạn</string>
+    <string name="face_unlock_recognition_ready_rom4">Để đạt được kết quả tốt nhất, hãy nhận diện khuôn mặt của bạn trong nhà và tránh ánh sáng mặt trời trực tiếp.</string>
+    <string name="face_unlock_register_prompt">Giữ điện thoại cách mặt bạn 20-50 cm. Định vị khuôn mặt của bạn trong hình vuông được hiển thị trên màn hình.</string>
+    <string name="face_unlock_settings_title_rom4">Nhận diện khuôn mặt</string>
+    <string name="faceunlock_last_delete_title">Xóa dữ liệu khuôn mặt?</string>
+    <string name="scanning_face">Đang quét dữ liệu khuôn mặt...</string>
+    <string name="warning_tips_rom4_first_part">"Nhận diện khuôn mặt là một cách mới và tiện lợi để mở khóa thiết bị. Người dùng phải đọc và hiểu những rủi ro của các tuyên bố sau đây trước khi sử dụng nhận diện khuôn mặt để mở khóa thiết bị của bạn:
+ 
+ - Thiết bị của bạn có thể được mở khóa bởi một người hoặc một thứ giống như bạn
+ 
+ -Mức bảo mật nhận diện khuôn mặt thấp hơn mẫu hình / mã PIN / mật khẩu"</string>
+    <string name="warning_tips_rom4_second_part">" -Trong khi bạn cố gắng thiết lập nhận diện khuôn mặt, tốt hơn là bạn nên giữ thói quen sử dụng hàng ngày. Nhiều tình huống có thể ảnh hưởng đến tốc độ hoặc chất lượng nhận diện, chẳng hạn như: mang kính râm, mũ, mặt nạ, trang điểm v.v.
+ 
+ -Trong khi bạn cố gắng thiết lập nhận diện khuôn mặt, đảm bảo ống kính camera và khu vực được nhận diện sạch sẽ và ở vị trí có vệt sáng."</string>
+    <string name="warning_tips_rom4_second_part_title">Cải thiện chất lượng nhận diện khuôn mặt</string>
+    <string name="warning_tips_rom4_third_part">" -Dữ liệu cá nhân của bạn sẽ chỉ được lưu trữ và xử lý trên thiết bị này."</string>
+    <string name="warning_tips_rom4_third_part_title">Giới thiệu về Quyền riêng tư</string>
+    <string name="warning_title">Cảnh báo rủi ro</string>
 </resources>

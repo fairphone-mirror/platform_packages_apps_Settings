@@ -4728,4 +4728,32 @@
     <string name="contrast_medium" msgid="384414510709285811">"متوسط"</string>
     <string name="contrast_high" msgid="3988567609694797696">"مرتفع"</string>
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"لا يمكن فتح هذا التطبيق إلا في نافذة واحدة."</string>
+    <string name="attention">انتبه</string>
+    <string name="cannot_detect_face">يتعذر اكتشاف وجهك</string>
+    <string name="face_add_title">إضافة بيانات الوجه</string>
+    <string name="face_detect_timeout_dialog_button_retry">إعادة المحاولة</string>
+    <string name="face_detect_timeout_dialog_message">لم يتم التعرف على الوجه. تأكد من أن الكاميرا نظيفة وأبعد هاتفك حوالي 20-50 سم من وجهك.</string>
+    <string name="face_detect_timeout_dialog_title">يتعذر تسجيل الوجه</string>
+    <string name="face_disabled_condition3_rom4">فشل مفتاح الوجه ثلاث مرات متتالية.</string>
+    <string name="face_disabled_title_rom4">سيتم تعطيل مفتاح الوجه في الحالات التالية:</string>
+    <string name="face_enable_condition_rom4">يلزم إدخال رمز PIN أو النمط أو كلمة المرور إذا كنت تريد إتاحة مفتاح الوجه مرة أخرى.</string>
+    <string name="face_recognition_button_start">بدء</string>
+    <string name="face_unlock_finish_msg_rom4">تم إضافة بيانات وجهك</string>
+    <string name="face_unlock_recognition_ready_rom4">لتحقيق أفضل نتيجة، اقترح التعرف على وجهك في منطقة داخلية وبعيدًا عن ضوء الشمس.</string>
+    <string name="face_unlock_register_prompt">أبعد هاتفك مسافة 20-50 سم من وجهك. اضبط موضع وجهك في المربع الذي يظهر على الشاشة.</string>
+    <string name="face_unlock_settings_title_rom4">التعرف على الوجه</string>
+    <string name="faceunlock_last_delete_title">هل تريد حذف بيانات الوجه؟</string>
+    <string name="scanning_face">يتم مسح بيانات الوجه...</string>
+    <string name="warning_tips_rom4_first_part">"التعرف على الوجه هو طريقة سهلة وجديدة لإلغاء قفل الجهاز. يجب على المستخدمين قراءة واستيعاب المخاطر المذكورة في البيانات التالية قبل استخدام التعرف على الوجه:
+ 
+ - من الممكن إلغاء قفل جهازك من قبل شخص أو شيء يشبهك
+ 
+ -درجة أمان وسيلة التعرف على الوجه أقل من النمط/رمز PIN/كلمة المرور"</string>
+    <string name="warning_tips_rom4_second_part">" -عندما تحاول إعداد التعرف على الوجه، من الأفضل أن تحافظ يوميًا على عادتك. فقد تؤثر مواقف كثيرة على سرعة التعرف أو جودته مثل : ارتداء النظارات أو القبعات أو الأقنعة أو التجميل أو غير ذلك.
+ 
+ -عندما تحاول إعداد التعرف على الوجه، تأكد من أن عدسات الكاميرا والمنطقة المصوب عليها نظيفة وفي موضع نقطة الضوء."</string>
+    <string name="warning_tips_rom4_second_part_title">تحسين جودة التعرف على الوجه</string>
+    <string name="warning_tips_rom4_third_part">" -سيتم تخزين بياناتك الشخصية ومعالجتها على الجهاز فقط."</string>
+    <string name="warning_tips_rom4_third_part_title">حول الخصوصية</string>
+    <string name="warning_title">تحذير مخاطر</string>
 </resources>

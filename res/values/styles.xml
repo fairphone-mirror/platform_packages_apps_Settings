@@ -954,4 +954,45 @@
         <item name="biometricsEnrollProgressHelp">@color/udfps_enroll_progress_help</item>
         <item name="biometricsEnrollProgressHelpWithTalkback">@color/udfps_enroll_progress_help_with_talkback</item>
     </style>
+
+    <style name="BottomDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="BottomDialog.Animation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/translate_in</item>
+        <item name="android:windowExitAnimation">@anim/translate_out</item>
+    </style>
+
+    <style name="FaceUnlockSetupWizardPrimaryButton" parent="@style/SudGlifButton.Primary">
+        <item name="android:background">@drawable/face_unlock_setupwizard_primary_btn_style</item>
+    </style>
+
+    <style name="Button.Face_Unlock" parent="@android:style/Widget.Material.Button.Borderless">
+        <item name="android:textSize">20.0dip</item>
+        <item name="android:textColor">@color/face_unlock_btn_txt_color</item>
+        <item name="android:lineSpacingExtra">@dimen/suw_description_line_spacing_extra</item>
+    </style>
+
+    <style name="FaceUnlockLongButton" parent="@style/Button.Face_Unlock">
+        <item name="android:textSize">@dimen/face_unlock_long_btn_text_size</item>
+        <item name="android:textColor">@color/face_unlock_long_btn_text_color</item>
+        <item name="android:background">@drawable/face_unlock_long_btn_bg</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:layout_marginStart">56dip</item>
+        <item name="android:layout_marginEnd">56dip</item>
+    </style>
+    <style name="DisclaimerBtnStyle" parent="@style/Button.Face_Unlock">
+        <item name="android:textSize">20dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Theme.Dialog" parent="@style/Theme.AppCompat.DayNight.Dialog" >
+        <item name="android:windowBackground">@drawable/tct_alert_dialog_window_bg</item>
+        <item name="android:textColorPrimary">@color/face_unlock_text_color</item>
+    </style>
 </resources>

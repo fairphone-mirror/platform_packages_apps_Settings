@@ -4722,4 +4722,32 @@
     <string name="contrast_medium" msgid="384414510709285811">"Mediu"</string>
     <string name="contrast_high" msgid="3988567609694797696">"Ridicat"</string>
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"Aplicația se poate deschide într-o singură fereastră"</string>
+    <string name="attention">Atenţie</string>
+    <string name="cannot_detect_face">Fața dvs. nu poate fi detectată</string>
+    <string name="face_add_title">Adăugare date privind fața</string>
+    <string name="face_detect_timeout_dialog_button_retry">REÎNCERCARE</string>
+    <string name="face_detect_timeout_dialog_message">Fața nu a fost recunoscută. Asigurați-vă că lentila aparatului foto este curată și mutați telefonul la circa 20-50 cm de față.</string>
+    <string name="face_detect_timeout_dialog_title">Fața dvs. nu poate fi înregistrată</string>
+    <string name="face_disabled_condition3_rom4">Tasta Face a eșuat de trei ori la rând.</string>
+    <string name="face_disabled_title_rom4">Tasta Face va fi dezactivată în următoarele cazuri:</string>
+    <string name="face_enable_condition_rom4">PIN-ul, modelul sau parola este necesar(ă) dacă doriți să puneți din nou la dispoziție tasta faceți din nou cheia de față disponibilă.</string>
+    <string name="face_recognition_button_start">Începeţi</string>
+    <string name="face_unlock_finish_msg_rom4">Au fost adăugate datele dvs. de recunoaștere facială.</string>
+    <string name="face_unlock_recognition_ready_rom4">Pentru rezultate optime, vă recomandăm să utilizați funcția de recunoaștere facială în interior și într-un loc ferit de lumina directă a soarelui.</string>
+    <string name="face_unlock_register_prompt">Țineți telefonul la 20-50 cm de față. Poziționați fața în pătratul afișat pe ecran.</string>
+    <string name="face_unlock_settings_title_rom4">Recunoaștere facială</string>
+    <string name="faceunlock_last_delete_title">Eliminaţi datele privind faţa?</string>
+    <string name="scanning_face">Se scanează datele faciale ...</string>
+    <string name="warning_tips_rom4_first_part">"Funcția de recunoaștere facială este o metodă nouă și convenabilă de a debloca dispozitivul. Înainte de a utiliza această funcție, utilizatorii trebuie să citească și să se asigure că au înțeles riscurile prezentate în următoarele riscuri:
+ 
+ - Este posibil ca dispozitivul să poată fi deblocat de o persoană sau un obiect care seamănă cu dvs.
+ 
+ - Funcția de recunoaștere facială este mai puțin sigură decât un model / un cod PIN / o parolă"</string>
+    <string name="warning_tips_rom4_second_part">" - Când configurați funcția de recunoaștere facială, este recomandat să vă păstrați înfățișarea obișnuită. Există multe situații care pot afecta viteza sau calitatea funcției de recunoaștere, cum ar fi: utilizarea de ochelari de soare, pălării, măști, machiaj etc.
+ 
+ - Când configurați funcția de recunoaștere facială, asigurați-vă că lentila aparatului foto și zona de recunoaștere sunt curate și că iluminarea este corespunzătoare."</string>
+    <string name="warning_tips_rom4_second_part_title">Îmbunătățirea calității recunoașterii faciale</string>
+    <string name="warning_tips_rom4_third_part">" - Datele dvs. personale vor fi stocate și procesate numai pe dispozitiv."</string>
+    <string name="warning_tips_rom4_third_part_title">Despre confidențialitate</string>
+    <string name="warning_title">Avertisment privind riscurile</string>
 </resources>

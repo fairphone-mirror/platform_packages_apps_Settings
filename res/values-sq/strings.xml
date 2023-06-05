@@ -4720,4 +4720,32 @@
     <string name="contrast_medium" msgid="384414510709285811">"Mesatar"</string>
     <string name="contrast_high" msgid="3988567609694797696">"I lartë"</string>
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"Ky aplikacion mund të hapet vetëm në 1 dritare"</string>
+    <string name="attention">Kujdes</string>
+    <string name="cannot_detect_face">Fytyra nuk mund të dallohet</string>
+    <string name="face_add_title">Shto të dhënat e fytyrës</string>
+    <string name="face_detect_timeout_dialog_button_retry">RIPROVO</string>
+    <string name="face_detect_timeout_dialog_message">Fytyra nuk mund të njihet. Sigurohu që kamera të jetë e pastër dhe lëvize telefonin rreth 20-50 cm nga fytyra.</string>
+    <string name="face_detect_timeout_dialog_title">Fytyra nuk mund të regjistrohet</string>
+    <string name="face_disabled_condition3_rom4">Çelësi fytyrë dështoi tre herë me radhë.</string>
+    <string name="face_disabled_title_rom4">Tasti i fytyrës do të çaktivizohet në rastet e mëposhtme:</string>
+    <string name="face_enable_condition_rom4">Nevojitet PIN, vizatim ose fjalëkalim nëse doni ta bëni të disponueshëm përsëri çelësin fytyrë.</string>
+    <string name="face_recognition_button_start">Fillo</string>
+    <string name="face_unlock_finish_msg_rom4">Të dhënat e fytyrës suaj janë shtuar</string>
+    <string name="face_unlock_recognition_ready_rom4">Për rezultat më të mirë, sugjerohet që fytyra të njihet në ambient të brendshëm dhe lart nga drita e drejtpërdrejtë e diellit.</string>
+    <string name="face_unlock_register_prompt">Mbaje telefonin 20-50 cm larg nga fytyra. Pozicionoje fytyrën tënde në katrorin që shfaqet në ekran.</string>
+    <string name="face_unlock_settings_title_rom4">Njohje fytyre</string>
+    <string name="faceunlock_last_delete_title">Të hiqen të dhënat e fytyrës?</string>
+    <string name="scanning_face">Duke skanuar të dhënat e fytyrës.</string>
+    <string name="warning_tips_rom4_first_part">"Njohja e fytyrës është një mënyrë e re dhe praktike për të shkyçur pajisjen. Përdoruesit duhet të kenë lexuar dhe kuptuar rreziqet e deklaratave të mëposhtme përpara se të përdorin njohjen e fytyrës për të shkyçur pajisjen:
+ 
+ - Pajisja jote mund të shkyçet nga një person ose send që ngjan si ti
+ 
+ -Siguria e njohjes së fytyrës është më e ulët se motivi/PIN-i/fjalëkalimi"</string>
+    <string name="warning_tips_rom4_second_part">" - Ndërsa provon të konfigurosh njohjen e fytyrës, është më mirë që të vazhdosh mënyrën e përditshme të përdorimit. Shumë situata mund të ndikojnë në shpejtësinë ose cilësinë e njohjes, si p.sh.: syzet e diellit, kapelat, maskat, grimi i fytyrës etj.
+ 
+ -Ndërsa provon të konfigurosh njohjen e fytyrës, sigurohu që lentja e kamerës dhe zona e njohur të jenë të pastra dhe në një pozicion të ndriçuar."</string>
+    <string name="warning_tips_rom4_second_part_title">Përmirësimi i cilësisë së njohjes së fytyrës</string>
+    <string name="warning_tips_rom4_third_part">" - Të dhënat e tua personale do të ruhen dhe do të përpunohen vetëm në pajisje."</string>
+    <string name="warning_tips_rom4_third_part_title">Rreth privatësisë</string>
+    <string name="warning_title">Paralajmërimi i rrezikut</string>
 </resources>

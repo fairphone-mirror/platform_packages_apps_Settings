@@ -4724,4 +4724,32 @@
     <string name="contrast_medium" msgid="384414510709285811">"Stredný"</string>
     <string name="contrast_high" msgid="3988567609694797696">"Vysoký"</string>
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"Táto aplikácia môže byť otvorená iba v jednom okne"</string>
+    <string name="attention">Upozornenie</string>
+    <string name="cannot_detect_face">Nie je možné rozpoznať vašu tvár</string>
+    <string name="face_add_title">Pridať údaje o tvári</string>
+    <string name="face_detect_timeout_dialog_button_retry">SKÚSIŤ ZNOVA</string>
+    <string name="face_detect_timeout_dialog_message">Tvár nebola zaregistrovaná. Uistite sa, že je fotoaparát čistý a umiestnite telefón do vzdialenosti 20 až 50 cm od tváre.</string>
+    <string name="face_detect_timeout_dialog_title">Tvár nie je možné zaregistrovať</string>
+    <string name="face_disabled_condition3_rom4">Kľúč tváre nebol platný trikrát po sebe.</string>
+    <string name="face_disabled_title_rom4">Kľúč tváre bude zakázaný v nasledujúcich prípadoch:</string>
+    <string name="face_enable_condition_rom4">PIN, vzor alebo heslo sú potrebné, ak chcete, aby bol kľúč tváre znova k dispozícii.</string>
+    <string name="face_recognition_button_start">Spustiť</string>
+    <string name="face_unlock_finish_msg_rom4">Údaje o vašej tvári boli pridané</string>
+    <string name="face_unlock_recognition_ready_rom4">Pre čo najlepší výsledok odporúčame rozpoznávať tvár v interiéri a mimo priameho slnečného svetla.</string>
+    <string name="face_unlock_register_prompt">Podržte telefón vo vzdialenosti 20 až 50 cm od tváre. Umiestnite tvár do štvorca zobrazeného na obrazovke.</string>
+    <string name="face_unlock_settings_title_rom4">Rozpoznanie tváre</string>
+    <string name="faceunlock_last_delete_title">Chcete odstrániť údaje o tvári?</string>
+    <string name="scanning_face">Skenujú sa údaje tváre...</string>
+    <string name="warning_tips_rom4_first_part">"Rozpoznanie tváre je nový a pohodlný spôsob odomknutia zariadenia. Používatelia sú povinní prečítať si o rizikách v nasledujúcich vyhláseniach a porozumieť im pred použitím rozpoznania tváre na odomknutie zariadenia
+ 
+ - Vaše zariadenie môže odomknúť osoba alebo predmet, ktorý vyzerá ako vy
+ 
+ - Úroveň zabezpečenia rozpoznania tváre je nižšia než zabezpečenie pomocou gesta/kódu PIN/hesla"</string>
+    <string name="warning_tips_rom4_second_part">" - Počas nastavovania rozpoznania tváre je lepšie zachovať zvyky denného používania. Mnoho situácií môže ovplyvniť rýchlosť alebo kvalitu rozpoznania, napríklad: nosenie slnečných okuliarov, čiapok, masiek, mejkapu atď.
+ 
+ - Počas nastavovania rozpoznania tváre sa uistite, že sú objektív fotoaparátu a rozpoznávaná oblasť čisté a dobre osvetlené."</string>
+    <string name="warning_tips_rom4_second_part_title">Vylepšenie kvality rozpoznania tváre</string>
+    <string name="warning_tips_rom4_third_part">" - Vaše osobné údaje sa uložia a spracujú iba v zariadení."</string>
+    <string name="warning_tips_rom4_third_part_title">O ochrane osobných údajov</string>
+    <string name="warning_title">Varovanie: Riziko</string>
 </resources>

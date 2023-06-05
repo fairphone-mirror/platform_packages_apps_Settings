@@ -4717,4 +4717,32 @@
     <string name="contrast_medium" msgid="384414510709285811">"Nivel medio"</string>
     <string name="contrast_high" msgid="3988567609694797696">"Nivel alto"</string>
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"Esta aplicación só se pode abrir en 1 ventá"</string>
+    <string name="attention">Atención</string>
+    <string name="cannot_detect_face">Non se detecta a súa cara</string>
+    <string name="face_add_title">Engadir datos faciais</string>
+    <string name="face_detect_timeout_dialog_button_retry">TENTAR DE NOVO</string>
+    <string name="face_detect_timeout_dialog_message">Cara non recoñecida. Asegúrese de que a cámara está limpa e manteña o teléfono a uns 20-50 cm da cara.</string>
+    <string name="face_detect_timeout_dialog_title">Non se pode rexistrar a cara</string>
+    <string name="face_disabled_condition3_rom4">Tres erros consecutivos coa chave facial.</string>
+    <string name="face_disabled_title_rom4">A chave facial desactivarase nos seguintes casos:</string>
+    <string name="face_enable_condition_rom4">Necesítase o PIN, o modelo ou o contrasinal se queres que a chave facial estea dispoñible de novo.</string>
+    <string name="face_recognition_button_start">Iniciar</string>
+    <string name="face_unlock_finish_msg_rom4">Engadíronse os teus datos faciais</string>
+    <string name="face_unlock_recognition_ready_rom4">Para mellores resultados, use o recoñecemento facial en interiores sen luz solar directa.</string>
+    <string name="face_unlock_register_prompt">Manteña o teléfono a 20-50 cm da cara. Sitúe a cara no cadrado que aparece na pantalla.</string>
+    <string name="face_unlock_settings_title_rom4">Recoñecemento facial</string>
+    <string name="faceunlock_last_delete_title">Quitar datos faciais?</string>
+    <string name="scanning_face">Escaneando datos faciais...</string>
+    <string name="warning_tips_rom4_first_part">"O desbloqueo por recoñecemento facial é un novo método para desbloquear comodamente o dispositivo. Os usuarios deben ler e comprender os seguintes riscos antes de usar o recoñecemento facial para desbloquear o dispositivo:
+ 
+ - O dispositivo pode ser desbloqueado por unha persoa ou cousa con parecido a vostede
+ 
+ -O recoñecemento facial é menos seguro có modelo/PIN/contrasinal"</string>
+    <string name="warning_tips_rom4_second_part">" -Mentres configura o recoñecemento facial, é aconsellable practicar cada día. Hai moitas situacións que poden afectar a velocidade ou calidade do recoñecemento facial, como: lentes de sol, sombreiros, máscaras, maquillaxe, etc.
+ 
+ -Mentres tenta configurar o recoñecemento facial, asegúrese de que o obxectivo da cámara e a zona recoñecida estean limpos e con boa iluminación."</string>
+    <string name="warning_tips_rom4_second_part_title">Como mellorar a exactitude do recoñecemento facial</string>
+    <string name="warning_tips_rom4_third_part">" -Os seus datos persoais só se almacenarán e procesarán neste dispositivo."</string>
+    <string name="warning_tips_rom4_third_part_title">Acerca da privacidadey</string>
+    <string name="warning_title">Advertencia de riscos</string>
 </resources>

@@ -460,7 +460,7 @@ public class ChooseLockGeneric extends SettingsActivity {
                     if(mForFace) {
                         try{
                             Intent faceIntent = new Intent()
-                                    .setComponent(new ComponentName("com.fp.faceunlock","com.fp.faceunlock.anc.SettingsActivity"))
+                                    .setComponent(new ComponentName("com.android.settings","com.android.settings.anc.AncSettings"))
                                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(faceIntent);
                         }catch(Exception e) {
@@ -830,7 +830,7 @@ public class ChooseLockGeneric extends SettingsActivity {
                 if(hasFaceEnrolled) {
                     try{
                         Intent deleteFace = new Intent()
-                                .setComponent(new ComponentName("com.fp.faceunlock","com.fp.faceunlock.anc.service.DeleteService"));
+                                .setComponent(new ComponentName("com.android.settings","com.android.settings.anc.service.DeleteService"));
                         getActivity().startService(deleteFace);
                     }catch(Exception e) {
                     }

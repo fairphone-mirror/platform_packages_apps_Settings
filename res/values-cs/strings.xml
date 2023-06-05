@@ -4724,4 +4724,32 @@
     <string name="contrast_medium" msgid="384414510709285811">"Střední"</string>
     <string name="contrast_high" msgid="3988567609694797696">"Vysoká"</string>
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"Tuto aplikaci lze otevřít jen v jednom okně"</string>
+    <string name="attention">Upozornění</string>
+    <string name="cannot_detect_face">Obličej nelze rozpoznat</string>
+    <string name="face_add_title">Přidat obličejová data</string>
+    <string name="face_detect_timeout_dialog_button_retry">OPAKOVAT</string>
+    <string name="face_detect_timeout_dialog_message">Obličej nebyl rozpoznán. Zkontrolujte, zda je objektiv čistý, a umístěte telefon do vzdálenosti 20–50 cm od obličeje.</string>
+    <string name="face_detect_timeout_dialog_title">Obličej nelze zaregistrovat</string>
+    <string name="face_disabled_condition3_rom4">Odemčení klíčem obličeje bylo třikrát po sobě neúspěšné-</string>
+    <string name="face_disabled_title_rom4">Klíč obličeje bude v následujících případech zakázaný:</string>
+    <string name="face_enable_condition_rom4">Chcete-li mít odemykání klíčem obličeje znovu k dispozici, je třeba odemknout zařízení kódem PIN, gestem nebo heslem.</string>
+    <string name="face_recognition_button_start">Spustit</string>
+    <string name="face_unlock_finish_msg_rom4">Byl přidán váš obličej</string>
+    <string name="face_unlock_recognition_ready_rom4">Doporučujeme provádět rozpoznávání obličeje v interiéru a mimo přímé sluneční světlo.</string>
+    <string name="face_unlock_register_prompt">Telefon podržte 20–50 cm od obličeje. Obličej nastavte do čtverce na obrazovce.</string>
+    <string name="face_unlock_settings_title_rom4">Rozpoznávání obličeje</string>
+    <string name="faceunlock_last_delete_title">Odebrat obličejová data?</string>
+    <string name="scanning_face">Snímání obličeje…</string>
+    <string name="warning_tips_rom4_first_part">"Rozpoznávání obličeje je nový a praktický nástroj na odemykání zařízení. Předtím, než budete moci zařízení odemykat obličejem, je nutné si přečíst a pochopit následující upozornění:
+ 
+ - Zařízení může být odemčeno osobou nebo věcí, která vypadá jako vy.
+ 
+ - Rozpoznávání obličeje není tak bezpečné jako odemykání gestem, kódem PIN či heslem"</string>
+    <string name="warning_tips_rom4_second_part">" - Rozpoznávání obličeje nastavujte při běžných denních situacích. Rychlost či funkčnost rozpoznávání mohou být omezeny, když například máte na sobě sluneční brýle, klobouk, masku, make-up atd.
+ 
+ - Při nastavování rozpoznávání obličeje musí být objektiv i váš obličej čisté a na světle."</string>
+    <string name="warning_tips_rom4_second_part_title">Jak zlepšit rozpoznávání obličeje</string>
+    <string name="warning_tips_rom4_third_part">" - Vaše osobní data budou uložena a zpracována jen v tomto zařízení."</string>
+    <string name="warning_tips_rom4_third_part_title">O ochraně osobních údajů</string>
+    <string name="warning_title">Upozornění na riziko</string>
 </resources>

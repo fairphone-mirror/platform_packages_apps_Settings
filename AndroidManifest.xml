@@ -148,6 +148,7 @@
             android:usesCleartextTraffic="true"
             android:defaultToDeviceProtectedStorage="true"
             android:directBootAware="true"
+            tools:replace="android:label"
             android:appComponentFactory="androidx.core.app.CoreComponentFactory"
             android:gwpAsanMode="always"
             android:enableOnBackInvokedCallback="true">
@@ -5054,6 +5055,60 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="com.android.settings.anc.SetupWizardFaceUnlockIntroActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name="com.android.settings.anc.SetupWizardFaceUnlockActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name="com.android.settings.anc.SetupWizardFaceUnlockActivityOption"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.android.setupwizard.Faceunlock" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.android.settings.anc.intro.DisclaimerActivity"
+            android:excludeFromRecents="true"
+            android:label="@string/disclamer"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.settings.anc.intro.IntroFaceUnlockActivity"
+            android:label="@string/face_unlock_settings_title_rom4"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name="com.android.settings.anc.service.DeleteService"
+            android:exported="false" />
+
+        <activity
+            android:name="com.android.settings.anc.AncSettings"
+            android:label="@string/face_unlock_settings_title_rom4"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.settings.anc.enroll.EnrollActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.settings.anc.unlock.UnlockActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
         <!-- This is the longest AndroidManifest.xml ever. -->
     </application>
 </manifest>

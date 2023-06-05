@@ -4720,4 +4720,32 @@
     <string name="contrast_medium" msgid="384414510709285811">"中"</string>
     <string name="contrast_high" msgid="3988567609694797696">"高"</string>
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"このアプリはウィンドウが 1 つの場合のみ開くことができます"</string>
+    <string name="attention">注意</string>
+    <string name="cannot_detect_face">顔を検出できません</string>
+    <string name="face_add_title">顔データを追加します</string>
+    <string name="face_detect_timeout_dialog_button_retry">やり直す</string>
+    <string name="face_detect_timeout_dialog_message">顔を認識できません。カメラが汚れていないことを確認し、顔をカメラから20～50 cm程度離してください。</string>
+    <string name="face_detect_timeout_dialog_title">顔を登録できません</string>
+    <string name="face_disabled_condition3_rom4">連続して3回フェイスキーが失敗した。</string>
+    <string name="face_disabled_title_rom4">フェイスキーは次の場合に無効になります。</string>
+    <string name="face_enable_condition_rom4">PIN、パターンまたはパスワードは再度フェスキーを有効にする場合に必要です。</string>
+    <string name="face_recognition_button_start">開始</string>
+    <string name="face_unlock_finish_msg_rom4">顔データが追加されました</string>
+    <string name="face_unlock_recognition_ready_rom4">最高の結果を得るには、フェイスキーを屋内で使用し、直射日光は避けてください。</string>
+    <string name="face_unlock_register_prompt">携帯電話を顔から20～50 cm離して持ちます。画面に表示される四角形に顔が収まるようにします。</string>
+    <string name="face_unlock_settings_title_rom4">フェイスキー</string>
+    <string name="faceunlock_last_delete_title">顔データを削除しますか？</string>
+    <string name="scanning_face">顔データをスキャン中...</string>
+    <string name="warning_tips_rom4_first_part">"フェイスキーは端末のロックを解除する新しく便利な方法です。フェイスキーを使用して端末のロックを解除する前に、次に記載されているリスクを読み、理解してください。
+ 
+ - お使いの端末のロックが、あなたの顔に似た人物に解除されることがあります。
+ 
+ -フェイスキーのセキュリティは、パターン/PIN/パスワードを使用した場合よりも弱いです。"</string>
+    <string name="warning_tips_rom4_second_part">" -フェイスキー設定を試行している間は、毎日使用する習慣を維持することをお勧めします。認識の速度や品質にはサングラス、帽子、マスクの着用、化粧など、影響を受けるものが多数あります。
+ 
+ -フェイスキー設定を試行している間、カメラレンズと認識領域に汚れがないようにし、ライトを正しく配置してください。"</string>
+    <string name="warning_tips_rom4_second_part_title">フェイスキーの品質の向上</string>
+    <string name="warning_tips_rom4_third_part">" -お客様の個人情報は端末上でのみ保存、処理されます。"</string>
+    <string name="warning_tips_rom4_third_part_title">個人情報について</string>
+    <string name="warning_title">リスクの警告</string>
 </resources>

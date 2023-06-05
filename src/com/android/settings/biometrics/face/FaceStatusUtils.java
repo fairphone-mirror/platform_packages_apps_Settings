@@ -113,13 +113,7 @@ public class FaceStatusUtils {
 
     //add by t2m yingyubin for FP5-186 20230325
     private boolean isFaceUnlockSupported(){
-        PackageManager packageManager =  mContext.getPackageManager();
-        try{
-            packageManager.getPackageInfo("com.fp.faceunlock",PackageManager.GET_ACTIVITIES);
-            return true;
-        }catch(NameNotFoundException e){
-            return false;
-        }
+        return true;
     }
     //add by t2m yingyubin for FP5-186 20230325
 }

@@ -418,4 +418,9 @@
     <dimen name="screen_flash_color_button_inner_circle_size">42dp</dimen>
     <dimen name="screen_flash_color_button_inner_circle_padding">3dp</dimen>
     <dimen name="screen_flash_color_button_inner_circle_stroke">1dp</dimen>
+
+    <dimen name="suw_description_line_spacing_extra">4sp</dimen>
+    <dimen name="actionbar_elevation">0dp</dimen>
+    <dimen name="face_unlock_long_btn_text_size">14sp</dimen>
+    <dimen name="face_unlock_btn_radius">20dp</dimen>
 </resources>

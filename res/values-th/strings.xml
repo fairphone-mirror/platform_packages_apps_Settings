@@ -4720,4 +4720,32 @@
     <string name="contrast_medium" msgid="384414510709285811">"ปานกลาง"</string>
     <string name="contrast_high" msgid="3988567609694797696">"สูง"</string>
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"แอปนี้เปิดได้ใน 1 หน้าต่างเท่านั้น"</string>
+    <string name="attention">โปรดทราบ</string>
+    <string name="cannot_detect_face">ไม่สามารถตรวจจับใบหน้าได้</string>
+    <string name="face_add_title">เพิ่มข้อมูลใบหน้า</string>
+    <string name="face_detect_timeout_dialog_button_retry">ลองใหม่</string>
+    <string name="face_detect_timeout_dialog_message">ไม่สามารถตรวจจับใบหน้าได้ ตรวจสอบว่ากล้องถ่ายรูปไม่มีฝุ่นเกาะ และขยับโทรศัพท์ให้ห่างจากใบหน้าของคุณ 20-50 ซม.</string>
+    <string name="face_detect_timeout_dialog_title">ไม่สามารถลงทะเบียนใบหน้าได้</string>
+    <string name="face_disabled_condition3_rom4">ปุ่มใบหน้าใช้งานไม่ได้สามครั้งติดต่อกัน</string>
+    <string name="face_disabled_title_rom4">ปุ่มใบหน้าจะถูกปิดใช้งานในกรณีต่อไปนี้</string>
+    <string name="face_enable_condition_rom4">ต้องมีการใช้งานรูปแบบหรือรหัสผ่าน PIN หากคุณต้องการให้ปุ่มใบหน้าสามารถใช้งานได้อีกครั้ง</string>
+    <string name="face_recognition_button_start">เริ่มต้น</string>
+    <string name="face_unlock_finish_msg_rom4">ข้อมูลใบหน้าของคุณถูกเพิ่มเข้าไปแล้ว</string>
+    <string name="face_unlock_recognition_ready_rom4">เพื่อผลลัพธ์ที่ดีที่สุด ขอแนะนำให้ตรวจจับใบหน้าของคุณในที่ร่ม และห่างจากแสงแดดโดยตรง</string>
+    <string name="face_unlock_register_prompt">ถือโทรศัพท์ห่างจากใบหน้า 20-50 ซม.ให้ใบหน้าของคุณอยู่ในกรอบสี่เหลี่ยมบนหน้าจอ</string>
+    <string name="face_unlock_settings_title_rom4">ตรวจหาใบหน้า</string>
+    <string name="faceunlock_last_delete_title">ลบข้อมูลใบหน้าหรือไม่?</string>
+    <string name="scanning_face">กำลังสแกนข้อมูลใบหน้า...</string>
+    <string name="warning_tips_rom4_first_part">"การตรวจหาใบหน้าเป็นวิธีที่ใหม่และง่ายดายในการปลดล็อกอุปกรณ์ ผู้ใช้จะต้องอ่านและยอมรับความเสี่ยงดังต่อไปนี้ก่อนที่จะใช้งานการตรวจหาใบหน้าเพื่อปลดล็อกอุปกรณ์ของคุณ:
+ 
+ - อุปกรณ์ของคุณจะต้องปลดล็อกโดยตัวบุคคลหรือรูปภาพที่เหมือนใบหน้าของคุณ
+ 
+ - ความปลอดภัยของการตรวจหาใบหน้าต่ำกว่ารูปแบบ/PIN/รหัสผ่าน"</string>
+    <string name="warning_tips_rom4_second_part">" - หากคุณต้องการตั้งค่าการตรวจหาใบหน้า แนะนำให้ใช้งานด้วยวิธีเดิมในทุกวัน สิ่งอาจส่งผลกระทบความเร็วหรือคุณภาพของการตรวจหามีหลายประการ เช่น: การใส่แว่นกันแดด หมวก หน้ากาก แต่งหน้า ฯลฯ
+ 
+ - ขณะตั้งค่าการตรวจหาใบหน้า ให้ตรวจสอบว่าเลนส์กล้องถ่ายรูปและบริเวณที่ตรวจหาปราศจากฝุ่นเกาะ และอยู่ในตำแหน่งที่มีแสงสว่าง"</string>
+    <string name="warning_tips_rom4_second_part_title">การปรับปรุงคุณภาพการตรวจหาใบหน้า</string>
+    <string name="warning_tips_rom4_third_part">" - ข้อมูลส่วนบุคคลของคุณจะได้รับการจัดเก็บและประมวลผลในอุปกรณ์นี้เท่านั้น"</string>
+    <string name="warning_tips_rom4_third_part_title">เกี่ยวกับความเป็นส่วนตัว</string>
+    <string name="warning_title">คำเตือนความเสี่ยง</string>
 </resources>

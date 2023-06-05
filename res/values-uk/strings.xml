@@ -4724,4 +4724,32 @@
     <string name="contrast_medium" msgid="384414510709285811">"Середній"</string>
     <string name="contrast_high" msgid="3988567609694797696">"Високий"</string>
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"Цей додаток можна відкрити лише в одному вікні"</string>
+    <string name="attention">Увага</string>
+    <string name="cannot_detect_face">Не вдається виявити ваше обличчя</string>
+    <string name="face_add_title">Додати дані обличчя</string>
+    <string name="face_detect_timeout_dialog_button_retry">ПОВТОРИТИ</string>
+    <string name="face_detect_timeout_dialog_message">Обличчя не розпізнане. Упевніться, що камера чиста, і розташуйте телефон на відстані приблизно 20-50 см від вашого обличчя.</string>
+    <string name="face_detect_timeout_dialog_title">Не вдалося зареєструвати обличчя</string>
+    <string name="face_disabled_condition3_rom4">Якщо було здійснено три невдалі послідовні спроби розблокування пристрою за допомогою цієї функції.</string>
+    <string name="face_disabled_title_rom4">Функція розблокування за допомогою обличчя вимикається в таких ситуаціях:</string>
+    <string name="face_enable_condition_rom4">Для повторного ввімкнення функції розблокування за допомогою обличчя потрібно буде ввести PIN-код, графічний ключ або пароль.</string>
+    <string name="face_recognition_button_start">Почати</string>
+    <string name="face_unlock_finish_msg_rom4">Ваше обличчя було успішно додано</string>
+    <string name="face_unlock_recognition_ready_rom4">Для найкращих результатів радимо використовувати розпізнавання облич у приміщенні, не під прямим сонячним світлом.</string>
+    <string name="face_unlock_register_prompt">Тримайте телефон за 20-50 см від вашого обличчя. Поверніть обличчя так, щоб воно потрапило у квадрат на екрані.</string>
+    <string name="face_unlock_settings_title_rom4">Розпізнавання облич</string>
+    <string name="faceunlock_last_delete_title">Видалити дані облич?</string>
+    <string name="scanning_face">Сканування параметрів обличчя...</string>
+    <string name="warning_tips_rom4_first_part">"Розпізнавання облич — це новий та зручний спосіб розблокування пристрою. Користувач має ознайомитися з наступними твердженнями, щоб усвідомлювати ризики, перш ніж починати використовувати розпізнавання облич для розблокування пристрою:
+ 
+ - Ваш пристрій може бути розблоковано особою чи предметом, які виглядають подібно до вас
+ 
+ - Рівень захисту розпізнавання облич нижче, ніж в зразка / PIN-коду / паролю"</string>
+    <string name="warning_tips_rom4_second_part">" - Під час налаштування розпізнавання облич краще користуватися ним протягом всього дня. Багато факторів можуть впливати на швидкість та якість розпізнавання, в тому числі: вдягнені сонячні окуляри, головні убори, маски, наявність макіяжу тощо.
+ 
+ - Під час налаштування розпізнавання облич упевніться, що об’єктив камери чистий, а зона розпізнавання знаходиться в освітленому місці."</string>
+    <string name="warning_tips_rom4_second_part_title">Покращення якості розпізнавання облич</string>
+    <string name="warning_tips_rom4_third_part">" - Ваші особисті дані будуть зберігатись та оброблятись виключно на цьому пристрої."</string>
+    <string name="warning_tips_rom4_third_part_title">Про приватність</string>
+    <string name="warning_title">Попередження про ризик</string>
 </resources>

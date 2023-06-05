@@ -4724,4 +4724,33 @@
     <string name="contrast_medium" msgid="384414510709285811">"Średni"</string>
     <string name="contrast_high" msgid="3988567609694797696">"Wysoki"</string>
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"Ta aplikacja może być otwarta tylko w 1 oknie."</string>
+    <string name="attention">Uwaga</string>
+    <string name="cannot_detect_face">Wykrywanie twarzy nieudane</string>
+    <string name="face_add_title">Dodaj dane twarzy</string>
+    <string name="face_detect_timeout_dialog_button_retry">SPRÓBUJ PONOWNIE</string>
+    <string name="face_detect_timeout_dialog_message">Nie rozpoznano twarzy. Upewnij się, że aparat jest czysty, a następnie umieść telefon około 20 – 50 cm od twarzy.</string>
+    <string name="face_detect_timeout_dialog_title">Rejestracja twarzy nieudana</string>
+    <string name="face_disabled_condition3_rom4">Nie udało się odblokować twarzą trzy razy z rzędu.</string>
+    <string name="face_disabled_title_rom4">Otwieranie twarzą zostanie wyłączone w poniższych przypadkach:</string>
+    <string name="face_enable_condition_rom4">Kod PIN, wzór lub hasło to warunek ponownej aktywacji odblokowywania twarzą.</string>
+    <string name="face_recognition_button_start">Rozpocznij</string>
+    <string name="face_unlock_finish_msg_rom4">Dodano dane twarzy</string>
+    <string name="face_unlock_recognition_ready_rom4">"Aby osiągnąć optymalne rezultaty, sugeruj korzystanie z funkcji
+rozpoznawania twarzy, przebywając w pomieszczeniu i z dala od bezpośredniego światła słonecznego."</string>
+    <string name="face_unlock_register_prompt">Trzymaj telefon 20 – 50 cm od twarzy. Ustaw telefon tak, aby Twoja twarz znajdowała się w kwadracie widocznym na ekranie.</string>
+    <string name="face_unlock_settings_title_rom4">Rozpoznawanie twarzy</string>
+    <string name="faceunlock_last_delete_title">Usunąć dane twarzy?</string>
+    <string name="scanning_face">Skanowanie danych twarzy...</string>
+    <string name="warning_tips_rom4_first_part">"Funkcja rozpoznawania twarzy to nowy, wygodny sposób odblokowywania urządzenia. Przed rozpoczęciem korzystania z funkcji rozpoznawania twarzy do odblokowania urządzenia użytkownik musi zapoznać się z poniższymi oświadczeniami dotyczącymi czynników ryzyka:
+ 
+ - Urządzenie będzie mogło zostać odblokowane przez osobę lub przedmiot, które przypomina Ciebie wyglądem
+ 
+ - Funkcja rozpoznawania twarzy zapewnia mniejszy poziom bezpieczeństwa niż wzór/PIN/hasło"</string>
+    <string name="warning_tips_rom4_second_part">" - Podczas konfiguracji funkcji rozpoznawania twarzy postaraj się, aby wyglądać tak, jak wyglądasz na co dzień. Na prędkość i jakość rozpoznawania twarzy wpływają różne czynniki, np.: okulary przeciwsłoneczne, nakrycia głowy, maski, makijaż itp.
+ 
+ - Podczas konfiguracji funkcji rozpoznawania twarzy upewnij się, że obiektyw aparatu i obszar, w którym przeprowadzasz konfigurację, są czyste i odpowiednio oświetlone."</string>
+    <string name="warning_tips_rom4_second_part_title">Poprawa działania funkcji rozpoznawania twarzy</string>
+    <string name="warning_tips_rom4_third_part">" - Twoje dane osobowe będą przechowywane i przetwarzane wyłącznie na tym urządzeniu."</string>
+    <string name="warning_tips_rom4_third_part_title">Informacje na temat prywatności</string>
+    <string name="warning_title">Ostrzeżenie o zagrożeniu</string>
 </resources>
