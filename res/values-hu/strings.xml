@@ -5904,4 +5904,32 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"Helytelen jelszó"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"A hallgatás megkezdéséhez igazítsa a QR-kódot az alábbi panel közepére"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"A QR-kód formátuma nem érvényes"</string>
+    <string name="attention">Figyelem</string>
+    <string name="cannot_detect_face">Az arcfelismerés nem sikerült</string>
+    <string name="face_add_title">Arcadatok megadása</string>
+    <string name="face_detect_timeout_dialog_button_retry">ÚJRAPRÓBÁLKOZÁS</string>
+    <string name="face_detect_timeout_dialog_message">Az arc nem ismerhető fel. Ellenőrizze, hogy a kamera lencséje tiszta, és tartsa a telefont kb. 20–50 cm-re az arcától.</string>
+    <string name="face_detect_timeout_dialog_title">Az arca regisztrálása sikertelen.</string>
+    <string name="face_disabled_condition3_rom4">Az arcfelismerő egymás után háromszor sikertelenül működött.</string>
+    <string name="face_disabled_title_rom4">Az arcfelismerő a következő esetekben lesz letiltva:</string>
+    <string name="face_enable_condition_rom4">PIN-kód, mintázat vagy jelszó szükséges, ha újból elérhetővé szeretné tenni az arcfelismerőt.</string>
+    <string name="face_recognition_button_start">Indítás</string>
+    <string name="face_unlock_finish_msg_rom4">Arcfelismerési adatai hozzáadva</string>
+    <string name="face_unlock_recognition_ready_rom4">Az optimális eredmények érdekében az Arcfelismerés funkció beltérben, közvetlen napfénytől távol eső helyen való használata javasolt.</string>
+    <string name="face_unlock_register_prompt">Tartsa a telefont 20–50 cm-re az arcától. Illessze az arcát a képernyőn látható keretbe.</string>
+    <string name="face_unlock_settings_title_rom4">Arcfelismerés</string>
+    <string name="faceunlock_last_delete_title">Arc-azonosító adatok eltávolítása?</string>
+    <string name="scanning_face">Arcadatok beolvasása...</string>
+    <string name="warning_tips_rom4_first_part">"Az Arcfelismerés egy új és kényelmes módja a készülék feloldásának. Az Arcfelismerés funkció használatával történő feloldás előtt a felhasználóknak el kell olvasnia és meg kell értenie a következő kockázatokat:
+ 
+ - A készüléke bármilyen személy vagy olyan tárgy által feloldható, amely hasonlít Önre.
+ 
+ - Az Arcfelismerés kevésbé biztonságos, mint a minta/ PIN-kód / jelszó"</string>
+    <string name="warning_tips_rom4_second_part">" - Az Arcfelismerés funkció konfigurálása közben célszerű a napi szokásos viselet megtartása. Számos helyzet befolyásolhatja az arcfelismerés gyorsaságát és minőségét, pl.: napszemüveg, sapka, maszk, smink stb. viselése.
+ 
+ - Az Arcfelismerés konfigurálása során ellenőrizze, hogy a kamera lencséje és a felismerendő terület tiszta és a fényviszonyok is megfelelőek."</string>
+    <string name="warning_tips_rom4_second_part_title">Az Arcfelismerés funkció minőségének javítása</string>
+    <string name="warning_tips_rom4_third_part">" - Az Ön személyes adatai kizárólag a készülékén kerülnek tárolásra és feldolgozásra."</string>
+    <string name="warning_tips_rom4_third_part_title">"Az adatvédelemről "</string>
+    <string name="warning_title">Kockázatokra vonatkozó figyelmeztetés</string>
 </resources>

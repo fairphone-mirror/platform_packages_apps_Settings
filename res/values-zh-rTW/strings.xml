@@ -5907,4 +5907,11 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"密碼錯誤"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"如要開始收聽，請將掃描器對準下方的 QR 圖碼"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"QR 圖碼格式無效"</string>
+    <string name="face_add_title">添加人臉資料</string>
+    <string name="face_detect_timeout_dialog_button_retry">重試</string>
+    <string name="face_recognition_button_start">開始</string>
+    <string name="faceunlock_last_delete_title">是否移除所有人臉資料？</string>
+    <string name="faceunlock_setupwizard">用人臉解鎖</string>
+    <string name="warning_title">風險警示</string>
+    <string name="enroll_main_first">請先錄入人臉數據。</string>
 </resources>

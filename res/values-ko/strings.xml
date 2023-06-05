@@ -5910,4 +5910,32 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"잘못된 비밀번호"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"오디오를 들으려면 아래의 QR 코드가 가운데에 오도록 스캔하세요"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"QR 코드가 유효한 형식이 아닙니다."</string>
+    <string name="attention">주의</string>
+    <string name="cannot_detect_face">얼굴을 감지할 수 없습니다.</string>
+    <string name="face_add_title">얼굴 데이터 추가</string>
+    <string name="face_detect_timeout_dialog_button_retry">다시시도</string>
+    <string name="face_detect_timeout_dialog_message">얼굴이 인식되지 않았습니다. 카메라가 깨끗한지 확인하고, 휴대폰을 얼굴에서 20-50 cm 떨어뜨려 보십시오.</string>
+    <string name="face_detect_timeout_dialog_title">얼굴을 등록할 수 없습니다</string>
+    <string name="face_disabled_condition3_rom4">얼굴 키를 연속해서 3번 틀린 경우.</string>
+    <string name="face_disabled_title_rom4">다음의 경우 얼굴 키가 비활성화됩니다:</string>
+    <string name="face_enable_condition_rom4">얼굴 키를 다시 사용하기 위해서는 PIN, 패턴 또는 암호가 필요합니다.</string>
+    <string name="face_recognition_button_start">시작</string>
+    <string name="face_unlock_finish_msg_rom4">얼굴 데이터가 추가되었습니다.</string>
+    <string name="face_unlock_recognition_ready_rom4">최상의 결과를 얻기 위해서 직사광선을 피해 실내에서 얼굴 키를 촬영하는 것이 권장됩니다.</string>
+    <string name="face_unlock_register_prompt">휴대폰을 얼굴에서 20-50 cm 떨어뜨린 상태로 유지하십시오. 얼굴이 화면에 표시된 사각형 안에 오도록 하십시오.</string>
+    <string name="face_unlock_settings_title_rom4">얼굴 키</string>
+    <string name="faceunlock_last_delete_title">얼굴 데이터를 제거하시겠습니까?</string>
+    <string name="scanning_face">얼굴 데이터 스캔 중...</string>
+    <string name="warning_tips_rom4_first_part">"얼굴인식 잠금해제는 기기의 잠금을 풀기 위한 새롭고 편리한 방법입니다. 사용자는 기기의 잠금을 풀기 위해 얼굴인식 잠금해제를 사용하기 전에 다음의 위험을 읽고 숙지해야 합니다:
+ 
+ - 사용자와 닮은 사람 또는 사물로 기기의 잠금이 풀릴 수 있습니다.
+ 
+ -얼굴 인식의 보안은 패턴/PIN/암호보다 낮습니다"</string>
+    <string name="warning_tips_rom4_second_part">" -얼굴인식 잠금해제를 설정할 때 일상적인 사용 습관을 유지하는 것이 더 좋습니다. 선글라스, 모자, 마스크 착용, 화장 등 다양한 상태가 인식의 속도나 질에 영향을 줄 수 있습니다.
+ 
+ -얼굴인식 잠금해제를 설정하는 동안 카메라 렌즈와 인식 영역이 깨끗하고 빛이 잘 드는 위치에 있는지 확인하십시오."</string>
+    <string name="warning_tips_rom4_second_part_title">얼굴인식 잠금해제의 품질 개선</string>
+    <string name="warning_tips_rom4_third_part">" -개인 데이터는 기기에만 저장되어 처리됩니다."</string>
+    <string name="warning_tips_rom4_third_part_title">개인 정보 보호에 관하여</string>
+    <string name="warning_title">위험 경고</string>
 </resources>

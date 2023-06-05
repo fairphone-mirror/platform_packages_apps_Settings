@@ -5910,4 +5910,32 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"Vale parool"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"Kuulamise alustamiseks paigutage QR-kood allpool keskele"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"QR-kood ei ole sobilik vorming"</string>
+    <string name="attention">Tähelepanu</string>
+    <string name="cannot_detect_face">Näo tuvastamine ebaõnnestus</string>
+    <string name="face_add_title">Lisa näo andmeid</string>
+    <string name="face_detect_timeout_dialog_button_retry">PROOVI UUESTI</string>
+    <string name="face_detect_timeout_dialog_message">Nägu ei tuvastatud. Tee kindlaks, et kaamera on puhas, ja hoia telefoni umbes 20–50 cm kaugusel näost.</string>
+    <string name="face_detect_timeout_dialog_title">Ei saanud nägu tuvastada</string>
+    <string name="face_disabled_condition3_rom4">Näovõtme kasutamine ebaõnnestus kolm korda järjest.</string>
+    <string name="face_disabled_title_rom4">Näovõti keelatakse järgmistel juhtudel.</string>
+    <string name="face_enable_condition_rom4">Näovõtme kasutamise jätkamiseks on vaja PIN-koodi, mustrit või parooli.</string>
+    <string name="face_recognition_button_start">Alusta</string>
+    <string name="face_unlock_finish_msg_rom4">Sinu näoandmed on lisatud</string>
+    <string name="face_unlock_recognition_ready_rom4">Parima tulemuse jaoks soovitame tuvastada nägu siseruumides ja eemal otsesest päikesevalgusest.</string>
+    <string name="face_unlock_register_prompt">Hoia telefoni umbes 20–50 cm kaugusel näost. Positsioneeri nägu ekraanil näidatavasse ruutu.</string>
+    <string name="face_unlock_settings_title_rom4">Näotuvastus</string>
+    <string name="faceunlock_last_delete_title">Kas eemaldada näo andmed?</string>
+    <string name="scanning_face">Näoandmete skannimine…</string>
+    <string name="warning_tips_rom4_first_part">"Näotuvastus on uus ja mugav viis seadme avamiseks. Kasutajad peavad lugema järgmisi tingimusi ja nende riskidest aru saamaenne näotuvastuse kasutamist seadme avamiseks:
+ 
+ - Sinu seadet saab avada inimene või ese, mis näeb sinu moodi välja
+ 
+ - Näotuvastuse turvalisus on madalam, kui mustril/PIN-il/paroolil"</string>
+    <string name="warning_tips_rom4_second_part">" - Kui sa seadistad näotuvastust, on parem samal ajal kasutada juba olemasolevat harjumust. Paljud olukorrad võivad mõjutada tuvastuse kiirust või kvaliteeti, näiteks: päikeseprillide, mütsi, maski, meigi kandmine jne.
+ 
+ - Kui oled seadistamas näotuvastust, tee kindlaks, et kaamera lääts ja tuvastatav ala on puhtad ja valges kohas."</string>
+    <string name="warning_tips_rom4_second_part_title">Näotuvastuse kvaliteedi parandamine</string>
+    <string name="warning_tips_rom4_third_part">" - Sinu isikuandmeid salvestatakse ja töödeldakse ainult selles seadmes."</string>
+    <string name="warning_tips_rom4_third_part_title">Teave privaatsuse kohta</string>
+    <string name="warning_title">Riskihoiatus</string>
 </resources>

@@ -5991,4 +5991,33 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"Nepareiza parole"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"Lai sāktu klausīties, centrējiet tālāk norādīto kvadrātkodu."</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"Kvadrātkoda formāts nav derīgs."</string>
+    <string name="attention">Uzmanību!</string>
+    <string name="cannot_detect_face">Jūsu seju neizdevās atpazīt</string>
+    <string name="face_add_title">Pievienot sejas datus</string>
+    <string name="face_detect_timeout_dialog_button_retry">MĒĢINĀT VĒLREIZ</string>
+    <string name="face_detect_timeout_dialog_message">Seja nav atpazīta. Pārbaudiet, vai kamera ir tīra, un novietojiet tālruni aptuveni 20-50 cm attālumā no sejas.</string>
+    <string name="face_detect_timeout_dialog_title">Neizdodas reģistrēt seju</string>
+    <string name="face_disabled_condition3_rom4">Sejas taustiņa lietošana neizdevās trīs reizes pēc kārtas.</string>
+    <string name="face_disabled_title_rom4">Sejas taustiņš tiks atspējots turpmāk norādītajos gadījumos.</string>
+    <string name="face_enable_condition_rom4">Ja vēlaties atkal iespējot sejas taustiņu, ir nepieciešams PIN kods, kombinācija vai parole.</string>
+    <string name="face_recognition_button_start">Sākt</string>
+    <string name="face_unlock_finish_msg_rom4">Jūsu sejas dati ir pievienoti</string>
+    <string name="face_unlock_recognition_ready_rom4">Lai rezultāts būtu pēc iespējas labāks, izmēģiniet sejas atpazīšanu telpās un vietās, kur nav tiešas saules gaismas.</string>
+    <string name="face_unlock_register_prompt">Turiet tālruni 20-50 cm attālumā no sejas. Ievietojiet seju ekrānā attēlotajā kvadrātā.</string>
+    <string name="face_unlock_settings_title_rom4">Seju atpazīšana</string>
+    <string name="faceunlock_last_delete_title">"Vai noņemt sejas datus?
+ "</string>
+    <string name="scanning_face">Skenē sejas datus...</string>
+    <string name="warning_tips_rom4_first_part">"Sejas atpazīšana ir gluži jauns un ērts ierīces bloķēšanas veids. Pirms sejas atpazīšanas funkcijas lietošanas ierīces atbloķēšanai tās lietotājiem ir jāiepazīstas ar brīdinājumiem par risku:
+ 
+ - Jūsu ierīci varēs atbloķēt persona nav nedzīva lieta, kas izskatās pēc jums.
+ 
+ -Sejas atpazīšanas funkcijas drošības līmenis ir zemāks nekā grafiskajai kombinācijai/PIN kodam/parolei"</string>
+    <string name="warning_tips_rom4_second_part">" -Veicot sejas atpazīšanas iestatīšanu, ir labi to darīt katru dienu. Atpazīšanas kvalitāti un ātrumu var ietekmēt dažādi apstākļi, piemēram: saulesbriļļu, cepuru, masku, dekoratīvās kosmētikas u.c. nēsāšana.
+ 
+ -Iestatot sejas atpazīšanas funkciju, vispirms pārbaudiet, vai kameras objektīvs un atpazīstamā zona ir tīra un labi apgaismota."</string>
+    <string name="warning_tips_rom4_second_part_title">Tiek veikta sejas atpazīšanas funkcijas kvalitātes uzlabošana</string>
+    <string name="warning_tips_rom4_third_part">" -Jūsu personīgie dati tiks uzglabāti un apstrādāti tikai ierīcē."</string>
+    <string name="warning_tips_rom4_third_part_title">Par privātumu</string>
+    <string name="warning_title">Brīdinājums par risku</string>
 </resources>

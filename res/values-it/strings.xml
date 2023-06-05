@@ -5907,4 +5907,32 @@
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"Il formato del codice QR non è valido"</string>
 
     <string name="status_sdn">Servizio chiamata (SDN).</string>
+    <string name="attention">Attenzione</string>
+    <string name="cannot_detect_face">Impossibile rilevare il viso</string>
+    <string name="face_add_title">Aggiungi dati sul viso</string>
+    <string name="face_detect_timeout_dialog_button_retry">RIPROVA</string>
+    <string name="face_detect_timeout_dialog_message">"Viso non registrato. Assicurarsi che l'obiettivo della fotocamera sia pulito e spostare il telefono a una distanza di circa 25-50 cm dal viso."</string>
+    <string name="face_detect_timeout_dialog_title">Impossibile registrare il viso</string>
+    <string name="face_disabled_condition3_rom4">Il riconoscimento facciale non è andato a buon fine per tre volte consecutive.</string>
+    <string name="face_disabled_title_rom4">Il riconoscimento facciale verrà disattivato nei seguenti casi:</string>
+    <string name="face_enable_condition_rom4">PIN, sequenza o password sono necessari per riattivare la funzione di riconoscimento facciale.</string>
+    <string name="face_recognition_button_start">Inizia</string>
+    <string name="face_unlock_finish_msg_rom4">I dati del tuo viso sono stati aggiunti</string>
+    <string name="face_unlock_recognition_ready_rom4">Per risultati ottimali, si consiglia di eseguire il riconoscimento del viso in luoghi interni e lontano dalla luce solare diretta.</string>
+    <string name="face_unlock_register_prompt">Tenere il telefono a una distanza di circa 20-50 cm dal viso. Posizionare il viso nel riquadro visualizzato sullo schermo.</string>
+    <string name="face_unlock_settings_title_rom4">Riconoscimento viso</string>
+    <string name="faceunlock_last_delete_title">Eliminare i dati sul viso?</string>
+    <string name="scanning_face">Scansione dei dati del viso...</string>
+    <string name="warning_tips_rom4_first_part">"Il riconoscimento del viso è un metodo nuovo e comodo per sbloccare il dispositivo. Gli utenti sono tenuti a leggere e comprendere i rischi riportati nelle seguenti avvertenze prima di utilizzare il riconoscimento del viso come metodo di sblocco:
+ 
+ - Il dispositivo potrebbe essere sbloccato da una persona o da un oggetto con tratti simili a quelli dell'utente
+ 
+ -La sicurezza del riconoscimento viso è inferiore rispetto a quella offerta da sequenza/PIN/password"</string>
+    <string name="warning_tips_rom4_second_part">" - Durante l'impostazione del riconoscimento viso, è preferibile mantenere le abitudini di utilizzo quotidiane. Svariate situazioni possono influenzare la velocità o la qualità del riconoscimento, tra cui: indossare occhiali, cappelli, maschere, trucco e così via.
+ 
+ - Durante l'impostazione del riconoscimento del viso, assicurarsi che l'obiettivo della fotocamera e l'area di riconoscimento siano puliti e ben illuminati."</string>
+    <string name="warning_tips_rom4_second_part_title">Migliorare la qualità del riconoscimento del viso</string>
+    <string name="warning_tips_rom4_third_part">" - I dati personali verranno salvati ed elaborati solo sul dispositivo."</string>
+    <string name="warning_tips_rom4_third_part_title">Informazioni sulla privacy</string>
+    <string name="warning_title">Avviso di rischio</string>
 </resources>

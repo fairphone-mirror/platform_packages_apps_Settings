@@ -6084,4 +6084,32 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"Napačno geslo"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"Če želite začeti poslušati, postavite spodnjo kodo QR na sredino."</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"Koda QR nima pravilne oblike zapisa."</string>
+    <string name="attention">Pozor</string>
+    <string name="cannot_detect_face">Obraza ni mogoče zaznati</string>
+    <string name="face_add_title">Dodaj podatke o obrazu</string>
+    <string name="face_detect_timeout_dialog_button_retry">POSKUSI ZNOVA</string>
+    <string name="face_detect_timeout_dialog_message">Obraz ni prepoznan. Prepričajte se, da je kamera čista, in premaknite telefon približno 20–50 cm od obraza.</string>
+    <string name="face_detect_timeout_dialog_title">Obraza ni mogoče registrirati</string>
+    <string name="face_disabled_condition3_rom4">Ključ obraza ni bil uspešen trikrat zaporedoma.</string>
+    <string name="face_disabled_title_rom4">Ključ obraza bo onemogočen v naslednjih primerih:</string>
+    <string name="face_enable_condition_rom4">Če želite ponovno aktivirati ključ obraza, je potreben PIN, kombinacija gibov ali geslo.</string>
+    <string name="face_recognition_button_start">Začetek</string>
+    <string name="face_unlock_finish_msg_rom4">Dodani so podatki o vašem obrazu</string>
+    <string name="face_unlock_recognition_ready_rom4">Za najboljši rezultat priporočamo, da obraz prepoznate v notranjem prostoru in stran od neposredne sončne svetlobe.</string>
+    <string name="face_unlock_register_prompt">Držite telefon 20–50 cm od obraza. Obraz namestite znotraj kvadratka, prikazanega na zaslonu.</string>
+    <string name="face_unlock_settings_title_rom4">Prepoznavanje obraza</string>
+    <string name="faceunlock_last_delete_title">Odstranim podatke o obrazu?</string>
+    <string name="scanning_face">Branje podatkov obraza ...</string>
+    <string name="warning_tips_rom4_first_part">"Prepoznavanje obraza je nov in priročen način odklepanja naprave. Uporabniki morajo prebrati in razumeti tveganja, povezana z naslednjimi izjavami, preden uporabijo prepoznavanje obraza za odklepanje naprave:
+ 
+ - Vašo napravo lahko odklene oseba ali stvar, ki vam je podobna
+ 
+ -Stopnja varnosti pri prepoznavanju obraza je nižja kot pri kombinaciji gibov/kodi PIN/geslu"</string>
+    <string name="warning_tips_rom4_second_part">" -Ko poskušate nastaviti prepoznavanje obraza, je bolje, da ohranite svoje vsakodnevne navade. Veliko primerov lahko negativno vpliva na hitrost ali kakovost prepoznavanja, na primer: nošenje sončnih očal, kap, mask, ličil itd.
+ 
+ -Ko poskušate nastaviti prepoznavanje obraza, se prepričajte, da sta objektiv kamere in območje za prepoznavanje čista ter osvetljena."</string>
+    <string name="warning_tips_rom4_second_part_title">Izboljšanje kakovosti prepoznavanja obraza</string>
+    <string name="warning_tips_rom4_third_part">" -Vaši osebni podatki bodo shranjeni in obdelani le v napravi."</string>
+    <string name="warning_tips_rom4_third_part_title">O zasebnosti</string>
+    <string name="warning_title">Opozorilo pred tveganji</string>
 </resources>

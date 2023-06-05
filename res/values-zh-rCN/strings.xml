@@ -5944,4 +5944,36 @@
     <string name="batteryh_soc">充放电循环次数:</string>
     <!--charge full design-->
     <string name="batteryh_cfd">满充次数:</string>
+    <string name="face_unlock_settings_title_rom4">人脸解锁</string>
+    <string name="face_unlock_register_prompt">把手机放在离脸20-50厘米的地方。把你的脸放在屏幕上显示的圆形中。</string>
+    <string name="main_face_title">面部录入</string>
+    <string name="second_face_title">备份面部录入</string>
+    <string name="faceunlock_last_delete_title">提示</string>
+    <string name="confirm_remove_enroll_face">确定要删除录入面部?</string>
+    <string name="face_detect_timeout_dialog_title">无法注册面部</string>
+    <string name="face_detect_timeout_dialog_message">无法注册脸部脸部未被识别。确保相机是干净的，并将手机移动到距离脸部20-50厘米的地方。</string>
+    <string name="face_detect_timeout_dialog_button_retry">重试</string>
+    <string name="scanning_face">扫描面部数据...</string>
+    <string name="cannot_detect_face">看不清你的脸</string>
+    <string name="face_add_title">添加人脸数据</string>
+    <string name="face_unlock_recognition_ready_rom4">为了获得最佳效果，我们建议在室内进行面部解锁，避免阳光直射。</string>
+    <string name="face_recognition_button_start">开始</string>
+    <string name="disclamer">免责申明</string>
+    <string name="warning_title">风险预警</string>
+    <string name="warning_tips_rom4_first_part">面部解锁是一种新的、方便的解锁方式。在使用Face unlock解锁设备之前，用户必须阅读并了解以下声明的风险:/n/n-您的设备可能会被与您长得很像的人或物解锁/n/n- Face unlock的安全性低于使用图案/ PIN /密码</string>
+    <string name="warning_tips_rom4_second_part_title">提高人脸解锁的质量</string>
+    <string name="warning_tips_rom4_second_part">-当你尝试设置面部解锁时，最好保持日常使用的习惯。许多情况都会影响识别的速度或质量，例如戴太阳镜，帽子，面具，化妆等。/n/n当您尝试设置面部解锁时，请确保相机镜头和识别区域干净且光线充足。</string>
+    <string name="warning_tips_rom4_third_part_title">关于隐私</string>
+    <string name="warning_tips_rom4_third_part">-您的个人资料只会在该装置上储存及处理。</string>
+    <string name="face_unlock_finish_msg_rom4">您的面部数据已被添加</string>
+    <string name="attention">注意</string>
+    <string name="face_disabled_title_rom4">"人脸解锁在以下情况下将被禁用： "</string>
+    <string name="face_disabled_condition3_rom4">"- 人脸解锁连续失败三次。 "</string>
+    <string name="face_enable_condition_rom4">"如果想重新使用人脸解锁，请先使用PIN、图案或者密码来解锁设备。 "</string>
+    <string name="enroll_main_first">请先注册一个人脸数据。</string>
+    <string name="faceunlock_setupwizard">使用人脸解锁</string>
+    <string name="face_unlock_user_experience">使用人脸解锁，能够获得更快速、更便捷的解锁体验。</string>
+    <string name="face_unlock_less_secure_than_strong_auth">请注意：人脸解锁的安全性可能不及安全系数高的图案或者PIN码。</string>
+    <string name="security_settings_faceunlock_cancel_setup">"跳过 "</string>
+    <string name="security_settings_faceunlock_next">下一步</string>
 </resources>

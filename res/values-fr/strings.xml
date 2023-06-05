@@ -5911,5 +5911,34 @@
 
     <string name="status_sdn">Numéro de numérotation de service</string>
     <string name="wfc_help_desc_text">Appels Wi-Fi\n\nUtilisez les réseaux Wi-Fi pour passer et recevoir des appels n’importe où en France métropolitaine, même sans réseau mobile.\n\nPour activer le service, veuillez vérifier auprès de votre opérateur la compatibilité de votre offre. Ensuite, connectez-vous à un réseau Wi-Fi, puis activer les Appels Wi-Fi directement dans les paramètres de votre téléphone. Dès que vous verrez cette icône, vous pourrez alors passer et recevoir vos appels grâce au Wi-Fi. </string>
+    <string name="attention">Avertissement</string>
+    <string name="cannot_detect_face">Impossible de détecter votre visage</string>
+    <string name="face_add_title">Ajouter des données faciales</string>
+    <string name="face_detect_timeout_dialog_button_retry">RÉESSAYER</string>
+    <string name="face_detect_timeout_dialog_message">Visage non reconnu. Assurez-vous que l’objectif est propre et placez votre téléphone à 20 à 50 cm du visage.</string>
+    <string name="face_detect_timeout_dialog_title">Inscription du visage impossible</string>
+    <string name="face_disabled_condition3_rom4">Face Key a échoué trois fois de suite.</string>
+    <string name="face_disabled_title_rom4">La reconnaissance faciale « Face Key » sera désactivée dans les cas suivants :</string>
+    <string name="face_enable_condition_rom4">Un code PIN, un modèle ou un mot de passe sont nécessaires si vous souhaitez à nouveau activer la reconnaissance faciale.</string>
+    <string name="face_recognition_button_start">Démarrer</string>
+    <string name="face_unlock_finish_msg_rom4">Vos données faciales ont été ajoutées</string>
+    <string name="face_unlock_recognition_ready_rom4">Pour de meilleurs résultats de reconnaissance de votre visage, il est conseillé de procéder en intérieur, loin de la lumière directe du soleil.</string>
+    <string name="face_unlock_register_prompt">Maintenez votre téléphone à 20 à 50 cm du visage. Positionnez votre visage dans le cadre affiché à l’écran.</string>
+    <string name="face_unlock_settings_title_rom4">Reconnaissance faciale</string>
+    <string name="faceunlock_last_delete_title">Supprimer les données faciales ?</string>
+    <string name="scanning_face">Numérisation des données faciales ...</string>
+    <string name="warning_tips_rom4_first_part">"La reconnaissance faciale est un nouveau moyen pratique de déverrouiller votre appareil. Les utilisateurs doivent avoir lu et déclaré avoir compris les risques liés aux points suivants avant d’utiliser la reconnaissance faciale pour déverrouiller leur appareil :
+ 
+ - Il se peut que votre appareil soit déverrouillé par une personne ou un objet vous ressemblant ou vous imitant.
+ 
+ -La sécurité de la reconnaissance faciale est inférieure à la saisie d’un schéma/code PIN/mot de passe"</string>
+    <string name="warning_tips_rom4_second_part">" -Lorsque vous tentez de configurer la reconnaissance faciale, il est conseillé de l’utiliser tous les jours pour qu’elle s’améliore. De nombreux états peuvent affecter la vitesse ou la qualité de la reconnaissance, par exemple : porter des lunettes de soleil, un chapeau, un masque, du maquillage, etc.
+ 
+ -Si vous essayez de configurer la reconnaissance faciale, assurez-vous que l’objectif de l’appareil photo est propre et que l’éclairage est suffisant."</string>
+    <string name="warning_tips_rom4_second_part_title">Amélioration de la qualité de la reconnaissance faciale</string>
+    <string name="warning_tips_rom4_third_part">" -Vos données personnelles seront stockées et traitées sur le téléphone uniquement."</string>
+    <string name="warning_tips_rom4_third_part_title">Politique de confidentialité</string>
+    <string name="warning_title">Avis de risque</string>
+    <string name="enroll_main_first">Veuillez d’abord entrer les données du visage.</string>
 
 </resources>

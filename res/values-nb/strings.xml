@@ -5904,4 +5904,33 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"Feil passord"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"For å begynne å lytte, midtstill QR-koden nedenfor"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"QR-koden er ikke i et gyldig format"</string>
+    <string name="attention">Obs!</string>
+    <string name="cannot_detect_face">Kan ikke oppdage ansiktet ditt</string>
+    <string name="face_add_title">Legg til ansiktsdata</string>
+    <string name="face_detect_timeout_dialog_button_retry">PRØV PÅ NYTT</string>
+    <string name="face_detect_timeout_dialog_message">Ansiktet ble ikke gjenkjent. Forsikre deg om at kameraet er rent og flytt telefonen ca. 20–50 cm fra ansiktet.</string>
+    <string name="face_detect_timeout_dialog_title">Kan ikke registrere ansiktet</string>
+    <string name="face_disabled_condition3_rom4">Ansiktsnøkkelen feilet tre ganger på rad.</string>
+    <string name="face_disabled_title_rom4">Ansiktsnøkkelen deaktiveres i følgende tilfeller:</string>
+    <string name="face_enable_condition_rom4">PIN, mønster eller passord er nødvendig dersom du ønsker å gjøre ansiktsnøkkelen tilgjengelig igjen.</string>
+    <string name="face_recognition_button_start">Start</string>
+    <string name="face_unlock_finish_msg_rom4">Dine ansiktsdata er lagt til</string>
+    <string name="face_unlock_recognition_ready_rom4">For best mulig resultat, anbefaler vi at du gjenkjenner ansiktet innendørs og ikke i direkte sollys.</string>
+    <string name="face_unlock_register_prompt">Hold telefonen din 20–50 cm fra ansiktet. Posisjoner ansiktet ditt i firkanten på skjermen.</string>
+    <string name="face_unlock_settings_title_rom4">Ansiktsgjenkjenning</string>
+    <string name="faceunlock_last_delete_title">"Fjerne ansiktsdata?
+ "</string>
+    <string name="scanning_face">Skanner ansiktsdata ...</string>
+    <string name="warning_tips_rom4_first_part">"Ansiktsgjenkjenning er en ny og beleilig måte å låse opp skjermen på. Brukere må ha lest og forstått risikoen av følgende før de bruker ansiktsgjenkjenning for å låse opp enheten:
+ 
+ – Enheten din kan låses opp av en person eller ting som ser ut som deg
+ 
+ -Sikkerheten til ansiktsgjenkjenning er lavere enn med mønster/PIN-kode/passord"</string>
+    <string name="warning_tips_rom4_second_part">" -Når du setter opp ansiktsgjenkjenning, er det best å se ut som  du gjør til vanlig. Mange situasjoner kan påvirke hastigheten og kvaliteten på gjenkjenningen, slik som: bruk av solbriller, hatter, masker, sminke osv.
+ 
+ -Når du setter opp ansiktsgjenkjenning, må du forsikre deg om at kameralinsen og området som skal gjenkjennes er rene og er tilstrekkelig opplyst."</string>
+    <string name="warning_tips_rom4_second_part_title">Forbedre kvaliteten på ansiktsgjenkjenning</string>
+    <string name="warning_tips_rom4_third_part">" -Din personlige informasjon lagres og behandles bare på denne enheten."</string>
+    <string name="warning_tips_rom4_third_part_title">Om personvern</string>
+    <string name="warning_title">Risikoadvarsel</string>
 </resources>

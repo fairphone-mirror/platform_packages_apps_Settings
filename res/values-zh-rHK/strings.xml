@@ -5908,4 +5908,38 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"密碼錯誤"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"如要開始收聽，請將掃瞄器對準下方的 QR 碼"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"QR 碼格式無效"</string>
+    <string name="attention">注意</string>
+    <string name="cannot_detect_face">無法偵測到您的面孔</string>
+    <string name="face_add_title">添加人臉資料</string>
+    <string name="face_detect_timeout_dialog_button_retry">重試</string>
+    <string name="face_detect_timeout_dialog_message">人臉不可識別。確保相機是乾淨的，將您的手機移動至遠離您的面孔約 20-50 釐米的位置。</string>
+    <string name="face_detect_timeout_dialog_title">無法登入人臉</string>
+    <string name="face_disabled_condition3_rom4">人臉識別連續失敗三次。</string>
+    <string name="face_disabled_title_rom4">人臉識別將在以下情況下停用：</string>
+    <string name="face_enable_condition_rom4">如果您希望人臉識別再次可用，需要使用 PIN 碼、圖案或密碼。</string>
+    <string name="face_recognition_button_start">開始</string>
+    <string name="face_unlock_finish_msg_rom4">您的臉部數據已添加</string>
+    <string name="face_unlock_less_secure_than_strong_auth">請注意：人臉解鎖的安全程度可能不如圖形或 PIN。</string>
+    <string name="face_unlock_recognition_ready_rom4">為了得到最好的效果，建議在室內和避免陽光直射的時候識別您的面孔。</string>
+    <string name="face_unlock_register_prompt">把您的手機放在離您的面孔 20-50 釐米的位置。在螢幕顯示的方塊中調整您面孔的位置。</string>
+    <string name="face_unlock_settings_title_rom4">人臉識別</string>
+    <string name="face_unlock_user_experience">使用人臉解鎖，以獲得更快、更流暢的解鎖體驗。</string>
+    <string name="faceunlock_last_delete_title">是否移除面孔資料？</string>
+    <string name="faceunlock_setupwizard">用人臉解鎖</string>
+    <string name="scanning_face">正在掃描人臉數據......</string>
+    <string name="security_settings_faceunlock_cancel_setup">略過</string>
+    <string name="security_settings_faceunlock_next">繼續</string>
+    <string name="warning_tips_rom4_first_part">"人臉識別是一種新的、方便的解鎖裝置的方法。在使用人臉識別來解鎖裝置之前，使用者必須已經閱讀並理解了下列聲明的風險：
+ 
+您的裝置可能被一個看起來像您的個人或物解鎖
+ 
+ -人臉識別的安全性低於圖形/PIN/密碼"</string>
+    <string name="warning_tips_rom4_second_part">" -當你嘗試設定人臉識別，最好保持日常使用習慣。 許很多情況會影響識別的速度或質量，比如： 戴墨鏡、帽子、面具、化妝等。
+ 
+ -當您嘗試設定面部識別，確保相機鏡頭和識別區域是乾淨的，在一個光點位置。"</string>
+    <string name="warning_tips_rom4_second_part_title">提高人臉識別的質量</string>
+    <string name="warning_tips_rom4_third_part">" -您的個人資料僅在裝置上儲存和處理。"</string>
+    <string name="warning_tips_rom4_third_part_title">關於隱私</string>
+    <string name="warning_title">風險警示</string>
+    <string name="enroll_main_first">請先錄入人臉數據。</string>
 </resources>

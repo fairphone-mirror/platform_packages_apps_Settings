@@ -5914,4 +5914,33 @@
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"Das Format des QR-Codes ist ungültig"</string>
 
     <string name="status_sdn">Service Rufnummer</string>
+    <string name="attention">Vorsicht</string>
+    <string name="cannot_detect_face">Das Gesicht wurde nicht erkannt</string>
+    <string name="face_add_title">Gesichtsdaten hinzufügen</string>
+    <string name="face_detect_timeout_dialog_button_retry">ERNEUT VERSUCHEN</string>
+    <string name="face_detect_timeout_dialog_message">Gesicht wurde nicht erkannt. Prüfen Sie, ob die Kamera sauber ist, und halten Sie das Telefon ungefähr 20–50 cm von Ihrem Gesicht entfernt.</string>
+    <string name="face_detect_timeout_dialog_title">Gesicht konnte nicht registriert werden</string>
+    <string name="face_disabled_condition3_rom4">Der Gesichtsschlüssel hat dreimal hintereinander versagt.</string>
+    <string name="face_disabled_title_rom4">Die Gesichtsschlüssel werden in den folgenden Fällen deaktiviert:</string>
+    <string name="face_enable_condition_rom4">Die PIN, das Muster oder das Passwort werden benötigt, wenn Sie den Gesichtsschlüssel wieder verfügbar machen wollen.</string>
+    <string name="face_recognition_button_start">Starten</string>
+    <string name="face_unlock_finish_msg_rom4">Ihre Gesichtsdaten wurden hinzugefügt.</string>
+    <string name="face_unlock_recognition_ready_rom4">Zum Erzielen der bestmöglichen Ergebnisse sollten Sie Ihr Gesicht in einem Gebäude und an einem Ort, der vor direkter Sonneneinstrahlung geschützt ist, registrieren.</string>
+    <string name="face_unlock_register_prompt">Halten Sie das Telefon ungefähr 20–50 cm von Ihrem Gesicht entfernt. Richten Sie das Quadrat auf dem Bildschirm auf Ihr Gesicht aus.</string>
+    <string name="face_unlock_settings_title_rom4">Gesichtserkennung</string>
+    <string name="faceunlock_last_delete_title">Gesichtsdaten entfernen?</string>
+    <string name="scanning_face">Gesichtsdaten werden gescannt...</string>
+    <string name="warning_tips_rom4_first_part">"Die Gesichtserkennung ist eine neue, praktische Entsperrmethode für Geräte. Lesen Sie die folgenden Hinweise und stellen Sie sicher, dass Sie diese verstanden haben, bevor Sie die Gesichtserkennung zum Entsperren von Geräten verwenden:
+ 
+ -Ihr Gerät kann unter Umständen von einer ähnlich aussehenden Person entsperrt werden
+ 
+ -Die Sicherheit bei der Gesichtserkennungsmethode ist geringer als bei der Entsperrung durch ein Muster/eine PIN/ein Passwort"</string>
+    <string name="warning_tips_rom4_second_part">" -Beachten Sie beim Einrichten der Gesichtserkennung, dass etliche Faktoren die Geschwindigkeit und Qualität der Erkennung im täglichen Gebrauch beeinträchtigen können. Dazu zählen das Tragen von Sonnenbrillen, Hüten, Masken, Make-up usw.
+ 
+ -Beim Einrichten der Gesichtserkennung müssen Kameralinse und Erkennungsbereich sauber sein und sich an einem ausreichend beleuchteten Ort befinden."</string>
+    <string name="warning_tips_rom4_second_part_title">Qualität der Gesichtserkennung verbessern</string>
+    <string name="warning_tips_rom4_third_part">" -Ihre personenbezogenen Daten werden nur auf dem Gerät gespeichert und verarbeitet."</string>
+    <string name="warning_tips_rom4_third_part_title">Informationen zum Datenschutz</string>
+    <string name="warning_title">Warnung</string>
+    <string name="enroll_main_first">Bitte geben Sie zuerst Gesichtsdaten ein.</string>
 </resources>

@@ -6078,4 +6078,32 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"Netinkamas slaptažodis"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"Jei norite pradėti klausyti, nustatykite toliau pateiktą QR kodą per vidurį"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"QR kodas netinkamo formato"</string>
+    <string name="attention">Dėmesio</string>
+    <string name="cannot_detect_face">Neįmanoma nustatyti veido</string>
+    <string name="face_add_title">Įtraukti veido duomenis</string>
+    <string name="face_detect_timeout_dialog_button_retry">BANDYTI DAR KARTĄ</string>
+    <string name="face_detect_timeout_dialog_message">Veidas neatpažintas. Įsitikinkite, kad fotoaparatas yra švarus, ir nustatykite savo telefoną apytiksliai 20–50 cm atstumu nuo veido.</string>
+    <string name="face_detect_timeout_dialog_title">Neįmanoma užregistruoti veido</string>
+    <string name="face_disabled_condition3_rom4">Užrakinti pagal veidą nepavyko tris kartus iš eilės.</string>
+    <string name="face_disabled_title_rom4">Užrakinimas pagal veidą bus išjungtas šiais atvejais:</string>
+    <string name="face_enable_condition_rom4">Jeigu norite vėl naudotis užrakinimu pagal veidą, jums reikės PIN kodo, šablono arba slaptažodžio.</string>
+    <string name="face_recognition_button_start">Pradėti</string>
+    <string name="face_unlock_finish_msg_rom4">Jūsų veido duomenys buvo pridėti</string>
+    <string name="face_unlock_recognition_ready_rom4">Siekdami geriausio rezultato, atpažinkite savo veidą viduje ir toliau nuo tiesioginės saulės šviesos.</string>
+    <string name="face_unlock_register_prompt">Laikykite savo telefoną 20–50 cm atstumu nuo veido. Nustatykite savo veidą ekrane rodomo kvadrato srityje.</string>
+    <string name="face_unlock_settings_title_rom4">Veido atpažinimas</string>
+    <string name="faceunlock_last_delete_title">Ištrinti veido duomenis?</string>
+    <string name="scanning_face">Nuskaitomi veido duomenys</string>
+    <string name="warning_tips_rom4_first_part">"Veido atpažinimas yra naujas ir patogus būdas atrakinti įrenginį. Prieš naudodami veido atpažinimą savo įrenginiui atrakinti, naudotojai privalo perskaityti ir suprasti toliau pateikiamus pareiškimus:
+ 
+ - Jūsų įrenginys gali būti atrakintas asmens arba objekto, kuris atrodo taip, kaip jūs
+ 
+ -Veido atpažinimo funkcija užtikrina mažesnį saugumą nei modelis / PIN / slaptažodis"</string>
+    <string name="warning_tips_rom4_second_part">" -Bandant nustatyti veido atpažinimą, geriau palaikyti kasdienį naudojimo įprotį. Daugybė situacijų gali paveikti atpažinimo greitį ir kokybę, pavyzdžiui: naudojami saulės akiniai, kepurės, kaukės, makiažas ir pan.
+ 
+ -Bandydami nustatyti veido atpažinimą, įsitikinkite, kad fotoaparato objektyvas ir atpažinimo sritis yra švarūs, o vietoje pakankamai šviesu."</string>
+    <string name="warning_tips_rom4_second_part_title">Veido atpažinimo funkcijos kokybės pagerinimas</string>
+    <string name="warning_tips_rom4_third_part">" -Jūsų asmens duomenys bus laikomi ir apdorojami tik įrenginyje."</string>
+    <string name="warning_tips_rom4_third_part_title">Apie privatumą</string>
+    <string name="warning_title">Perspėjimas apie riziką</string>
 </resources>

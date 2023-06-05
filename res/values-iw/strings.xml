@@ -6082,4 +6082,32 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"סיסמה שגויה"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"‏כדי להתחיל בהאזנה, צריך להציב את קוד ה‑QR במרכז החלון שבהמשך"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"‏הפורמט של קוד ה‑QR לא תקין"</string>
+    <string name="attention">התראה</string>
+    <string name="cannot_detect_face">לא ניתן לזהות את פניך</string>
+    <string name="face_add_title">הוסף נתוני פנים</string>
+    <string name="face_detect_timeout_dialog_button_retry">נסה שנית</string>
+    <string name="face_detect_timeout_dialog_message">פנים לא מוכרות. בדוק שהמצלמה נקייה והזז את הטלפון למרחק של 20-50 סמ מפניך.</string>
+    <string name="face_detect_timeout_dialog_title">לא ניתן לרשום פנים</string>
+    <string name="face_disabled_condition3_rom4">פתיחה בזיהוי פנים נכשלה שלוש פעמים ברציפות.</string>
+    <string name="face_disabled_title_rom4">פתיחה בזיהוי פנים תושבת במקרים הבאים:</string>
+    <string name="face_enable_condition_rom4">יש צורך ב-PIN, בתבנית או בסיסמה אם תרצה להפוך את הפתיחה בזיהוי פנים לזמינה שוב.</string>
+    <string name="face_recognition_button_start">התחל</string>
+    <string name="face_unlock_finish_msg_rom4">נתוני הפנים שלך נוספו</string>
+    <string name="face_unlock_recognition_ready_rom4">להשגת התוצאות הטובות ביותר, אנו מציעים להשתמש במפתח פנים במקום סגור הרחק מאור שמש ישיר.</string>
+    <string name="face_unlock_register_prompt">החזק את הטלפון 20-50 ס\"מ מפניך. הצב את פניך בריבוע המוצג על המסך.</string>
+    <string name="face_unlock_settings_title_rom4">מפתח פנים</string>
+    <string name="faceunlock_last_delete_title">למחוק את נתוני הפנים?</string>
+    <string name="scanning_face">סורק נתוני פנים...</string>
+    <string name="warning_tips_rom4_first_part">"מפתח פנים זו דרך חדשה ונוחה לפתוח את הנעילה של התקן. משתמשים חייבים לקרוא ולהבין את הסיכונים המפורטים בהצהרות שלהלן לפני השימוש במפתח פנים לפתיחת הנעילה של התקן:
+ 
+ - קיימת אפשרות שההתקן ייפתח על ידי אדם או דבר דומים לך
+ 
+ - רמת האבטחה שמציע מפתח פנים נמוכה מזו המושגת בשימוש בתבנית, מזהה אישי (PIN) או סיסמה"</string>
+    <string name="warning_tips_rom4_second_part">" - כחלק מתהליך הכינון של מפתח פנים, אנו ממליצים להשתמש בו כהרגל שיגרה מדי יום ביומו. מאפיינים רבים יכולים להשפיע על המהירות והאיכות של ההכרה, כגון הרכבת משקפי שמש, חבישת כובע, מסכות, איפור וכדומה
+ 
+ - בתהליך הכינון של מפתח פנים חשוב לבדוק ולוודא שעדשות המצלמה ואזור ההכרה נקיים ומוארים היטב."</string>
+    <string name="warning_tips_rom4_second_part_title">שיפור האיכות של מפתח פנים</string>
+    <string name="warning_tips_rom4_third_part">" - הנתונים האישיים שלך יאוחסנו ויעובדו בהתקן בלבד."</string>
+    <string name="warning_tips_rom4_third_part_title">" פרטיות"</string>
+    <string name="warning_title">אזהרת סיכון</string>
 </resources>

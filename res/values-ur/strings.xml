@@ -5904,4 +5904,32 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"غلط پاس ورڈ"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"‏سننا شروع کرنے کے لیے، نیچے کے QR کوڈ کو سینٹر میں رکھیں"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"‏QR کوڈ درست فارمیٹ نہیں ہے"</string>
+    <string name="attention">توجہ دیں</string>
+    <string name="cannot_detect_face">"آپ کے  چہرے کا سراغ لگانے سے قاصر"</string>
+    <string name="face_add_title">چہرے کا ڈیٹا شامل کریں</string>
+    <string name="face_detect_timeout_dialog_button_retry">دوبارہ کوشش کریں</string>
+    <string name="face_detect_timeout_dialog_message">چہرے کو پہچاننے سے قاصر۔ یقینی بنائيں کلہ کیمرا صاف ہے اور اپنے فون کو اپنے چہرے سے 20-50 سینٹی میٹر دور ہٹائيں۔</string>
+    <string name="face_detect_timeout_dialog_title">چہرے کو رجسٹر کرنے سے قاصر</string>
+    <string name="face_disabled_condition3_rom4">چہرے کی کلید لگاتار تین مرتبہ ناکام ہوگئی ہو۔</string>
+    <string name="face_disabled_title_rom4">چہرے کی کلید (فیس کی) درج ذیل صورتوں میں غیر فعال ہوجائے گی:</string>
+    <string name="face_enable_condition_rom4">اگر آپ چہرے کی کلید کو دوبارہ دستیاب بنانا چاہتے ہوں تو PIN، نمونہ یا پاسورڈ درکار ہوگا۔</string>
+    <string name="face_recognition_button_start">شروع کریں</string>
+    <string name="face_unlock_finish_msg_rom4">آپ کا فیس ڈیٹا منسلک کرلیا گیا ہے</string>
+    <string name="face_unlock_recognition_ready_rom4">بہترین نتیجے کیلئے کسی بند جگے اور دھوپ کی براہ راست روشنی سے دور اپنے چہرے کی پہچان کرنے کی تجویز دی جاتی ہے۔</string>
+    <string name="face_unlock_register_prompt">اپنے فون کو اپنے چہرے سے 20-50 سینٹی میٹر دور پکڑیں۔ اپنے چہرے کو اسکرین پر ظاہر کیے گئے اسکویر میں ڈالیں۔</string>
+    <string name="face_unlock_settings_title_rom4">چہرے کی پہچان</string>
+    <string name="faceunlock_last_delete_title">چہرے کا ڈیٹا ہٹائیں؟</string>
+    <string name="scanning_face">چہرے کے ڈیٹا کو اسکین کررہا ہے...</string>
+    <string name="warning_tips_rom4_first_part">"چہرے کی پہچان آلہ کو غیر مقفل کرنے کا ایک نیا اور اسان طریقہ ہے۔ اپنے آلے کو غیر مقفل کرنے کیلئے چہرے کی پہچان کو استعمال کرنے سے پہلے صارفین کو خطروں کے حوالے سے مندرجہ ذيل بیانات پڑھنے اور سمجھنے کی ضرورت ہے۔
+ 
+ - آپ کے آلے کو آپ سے مشابہت رکھنے والے شے یا شخص کے ذریعے کھولا جاسکتا ہے
+ 
+ -چہرے کی پہچان کی سیکورٹی پیٹرن/ PIN / پاسورڈ سے کم ہے"</string>
+    <string name="warning_tips_rom4_second_part">" -چہرے کی پہچان کو سیٹ اپ کرنے کے دوران، روزانہ استعمال کی جانے والی عادت رکھنا بہتر ہے۔ بہت سے صورت حال پہنچان کی رفتار اور کوالٹی کو اثر انداز کرتے ہیں جیسے: میک اپ، صن گلاسز، ٹوپیاں یا ماسک وغیرہ پہننا۔
+ 
+ -چہرے کی پہچان کو سیٹ اپ کرتے وقت یقینی بنائيں کہ کیمرا اور زیر پہچان علاقہ صاف ہیں اور ایک روشن جگہ میں ہیں۔"</string>
+    <string name="warning_tips_rom4_second_part_title">چہرے کی شناخت کی کوالٹی میں بہتری لانا</string>
+    <string name="warning_tips_rom4_third_part">" - میں آپ کا ذاتی ڈیٹا صرف آلے پر محفوظ اور پراسیس کیا جائے گا۔"</string>
+    <string name="warning_tips_rom4_third_part_title">رازداری کے بارے میں</string>
+    <string name="warning_title">خطرے کی تنبیہ</string>
 </resources>

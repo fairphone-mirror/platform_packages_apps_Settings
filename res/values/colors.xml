@@ -219,4 +219,56 @@
 
     <!-- Icon tint color for battery usage system icon -->
     <color name="battery_usage_system_icon_color">?android:attr/textColorPrimary</color>
+
+    <color name="circle_border">#FFDEF5FF</color>
+    <color name="divider_color_custom">@color/tct_stander_divider</color>
+    <color name="action_bar_text_color">#de000000</color>
+    <color name="action_bar_text_color_main">#ff000000</color>
+    <color name="category_background_color">#fff2f1f1</color>
+    <color name="custom_settings_accent_color">#ff2c7ebd</color>
+    <color name="custom_settings_background_color">#ffffffff</color>
+    <color name="custom_settings_colorPrimary">#ffffffff</color>
+    <color name="custom_settings_colorPrimaryDark">#ffffffff</color>
+    <color name="face_unlock_btn_txt_color">#ff4c72bf</color>
+    <color name="face_unlock_long_btn_text_color">#ffffffff</color>
+    <color name="face_unlock_text_color">#de000000</color>
+    <color name="ic_arrow_back_color">#ff000000</color>
+    <color name="list_blank_area_background_color">#fff5f6f7</color>
+    <color name="list_title_background_color">#fff6f6f6</color>
+    <color name="preference_category_text_color">#80000000</color>
+    <color name="search_background_color">#ffefefef</color>
+    <color name="search_text_hint_color">#4d000000</color>
+    <color name="tct_alert_dialog_bg_color">#ffffffff</color>
+    <color name="tct_alert_dialog_btn_bg_color">#ffeef1f9</color>
+    <color name="tct_alert_dialog_btn_text_color">#ff4c72bf</color>
+    <color name="tct_alert_dialog_btn_text_disable_color">#ffb3b3b3</color>
+    <color name="tct_alert_dialog_divider_color">#24000000</color>
+    <color name="tct_btn_checked_disable_primary_color">#ff9e9e9e</color>
+    <color name="tct_btn_radio_off_disable_primary_color">#ff9e9e9e</color>
+    <color name="tct_btn_radio_off_primary_color">#ff757575</color>
+    <color name="tct_btn_radio_on_disable_secondary_color">#ff9e9e9e</color>
+    <color name="tct_btn_unchecked_color">#ff757575</color>
+    <color name="tct_btn_unchecked_disable_color">#ffd7d7d7</color>
+    <color name="tct_btn_unchecked_disable_secondary_color">#ffebebeb</color>
+    <color name="tct_stander_accent_primary">#ff4c72bf</color>
+    <color name="tct_stander_accent_primary_disable">#ffbbc9e7</color>
+    <color name="tct_stander_accent_primary_light">#ff80a0f2</color>
+    <color name="tct_stander_accent_primary_pressed">#ff365399</color>
+    <color name="tct_stander_bg_banner">#3380a0f2</color>
+    <color name="tct_stander_bg_basic">#fff5f5f5</color>
+    <color name="tct_stander_bg_button_secondary">#1a80a0f2</color>
+    <color name="tct_stander_bg_button_secondary_pressed">#3380a0f2</color>
+    <color name="tct_stander_bg_layout">#fff5f6f7</color>
+    <color name="tct_stander_bg_toast">#ff333333</color>
+    <color name="tct_stander_correct_normal">#ff43a047</color>
+    <color name="tct_stander_divider">#0d000000</color>
+    <color name="tct_stander_error">#ffb00020</color>
+    <color name="tct_stander_mask">#4d000000</color>
+    <color name="tct_stander_text_disabled">#ffcccccc</color>
+    <color name="tct_stander_text_primary">#ff212121</color>
+    <color name="tct_stander_text_secondary">#ff757575</color>
+    <color name="tct_stander_vertical_divider">#19000000</color>
+    <color name="tct_stander_warning_normal">#fffb8c00</color>
+    <color name="window_background_color">#ffffffff</color>
+    <color name="suggestion_tile_background">#ffffffff</color>
 </resources>

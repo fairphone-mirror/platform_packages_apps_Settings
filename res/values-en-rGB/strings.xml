@@ -5904,4 +5904,32 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"Wrong password"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"To start listening, centre the QR code below"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"QR code isn\'t a valid format"</string>
+    <string name="attention">Attention</string>
+    <string name="cannot_detect_face">"Can't detect your face"</string>
+    <string name="face_add_title">Add face data</string>
+    <string name="face_detect_timeout_dialog_button_retry">RETRY</string>
+    <string name="face_detect_timeout_dialog_message">Face not recognised. Check that the camera is clean and move your phone about 20-50 cm from your face.</string>
+    <string name="face_detect_timeout_dialog_title">Can’t register face</string>
+    <string name="face_disabled_condition3_rom4">Face unlock failed three times in a row.</string>
+    <string name="face_disabled_title_rom4">Face unlock will be disabled in the following cases:</string>
+    <string name="face_enable_condition_rom4">PIN, pattern or password is needed if you want to make face unlock available again.</string>
+    <string name="face_recognition_button_start">Start</string>
+    <string name="face_unlock_finish_msg_rom4">Your face data has been added</string>
+    <string name="face_unlock_recognition_ready_rom4">For best results, we suggest that face unlock takes place indoors and away from direct sunlight.</string>
+    <string name="face_unlock_register_prompt">Hold your phone 20-50 cm from your face. Position your face in the square shown on the screen.</string>
+    <string name="face_unlock_settings_title_rom4">Face unlock</string>
+    <string name="faceunlock_last_delete_title">Remove face data?</string>
+    <string name="scanning_face">Scanning face data...</string>
+    <string name="warning_tips_rom4_first_part">"Face unlock is a new and convenient way to unlock your device. Users must have read and understood the risks of the following statements before using Face unlock to unlock their device:
+ 
+ - Your device may be unlocked by a person or thing that looks like you
+ 
+ -The security of Face unlock is lower than when using a pattern / PIN / password"</string>
+    <string name="warning_tips_rom4_second_part">" -While you try to set up the Face unlock, it's better to maintain a habit of daily use. Many situations can affect the speed or quality of recognition, such as wearing sunglasses, hats, masks, make-up etc.
+ 
+ -While you try to set up the Face unlock, make sure the camera lens and recognition area are clean and in a well lit position."</string>
+    <string name="warning_tips_rom4_second_part_title">Improving the quality of Face unlock</string>
+    <string name="warning_tips_rom4_third_part">" -Your personal data will be stored and processed on the device only."</string>
+    <string name="warning_tips_rom4_third_part_title">About Privacy</string>
+    <string name="warning_title">Risk warning</string>
 </resources>

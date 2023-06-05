@@ -100,6 +100,7 @@ android_library {
         "settings-log-bridge-protos-lite",
         "settings-telephony-protos-lite",
         "contextualcards",
+        "faceid_sdk",
         "settings-logtags",
         "statslog-settings",
         "zxing-core-1.7",
@@ -158,6 +159,11 @@ android_app {
 android_library_import {
     name: "contextualcards",
     aars: ["libs/contextualcards.aar"],
+}
+
+android_library_import {
+    name: "faceid_sdk",
+    aars: ["libs/faceid_sdk_V3.0.3.2310_2023-04-20.aar"],
 }
 
 filegroup {

@@ -5904,4 +5904,33 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"Väärä salasana"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"Aloita kuuntelu keskittämällä alla olevaan QR-koodiin"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"QR-koodin muoto ei kelpaa"</string>
+    <string name="attention">Huomio</string>
+    <string name="cannot_detect_face">Kasvojesi tunnistaminen ei onnistunut</string>
+    <string name="face_add_title">Lisää kasvotietoja</string>
+    <string name="face_detect_timeout_dialog_button_retry">YRITÄ UUDELLEEN</string>
+    <string name="face_detect_timeout_dialog_message">Kasvoja ei tunnistettu. Varmista, että kamera on puhdas ja siirrä puhelimesi noin 20–50 cm etäisyydelle kasvoistasi.</string>
+    <string name="face_detect_timeout_dialog_title">Kasvojen rekisteröinti ei onnistunut</string>
+    <string name="face_disabled_condition3_rom4">Kasvopainike ei toiminut kolme kertaa peräkkäin.</string>
+    <string name="face_disabled_title_rom4">Kasvopainike ei ole toiminnassa seuraavissa tapauksissa:</string>
+    <string name="face_enable_condition_rom4">PIN-koodi, kuvio tai salasana tarvitaan, jos haluat saada kasvopainikkeen takaisin käyttöön.</string>
+    <string name="face_recognition_button_start">Aloita</string>
+    <string name="face_unlock_finish_msg_rom4">Kasvotiedot on lisätty</string>
+    <string name="face_unlock_recognition_ready_rom4">Parhaan tuloksen saat tunnistamalla kasvosi sisätiloissa, poissa suorasta auringonvalosta.</string>
+    <string name="face_unlock_register_prompt">Pidä puhelintasi 20–50 cm etäisyydellä kasvoistasi. Sijoita kasvosi ruudulla näkyvään neliöön.</string>
+    <string name="face_unlock_settings_title_rom4">Kasvojentunnistus</string>
+    <string name="faceunlock_last_delete_title">"Poistetaanko kasvotiedot?
+ "</string>
+    <string name="scanning_face">Skannataan kasvotietoja...</string>
+    <string name="warning_tips_rom4_first_part">"Kasvojentunnistus on uusi ja kätevä tapa poistaa laitteen lukitus. Käyttäjien täytyy lukea ja ymmärtää seuraavat riskit ennen kasvojentunnistuksen käyttämistä laitteen lukituksen poistamiseen:
+ 
+ - Henkilö tai esine, joka näyttää sinulta, voi poistaa laitteesi lukituksen
+ 
+ - Kasvojentunnistuksen suojaus on heikompi kuin kuvion/PIN-koodin/salasanan"</string>
+    <string name="warning_tips_rom4_second_part">" - Yrittäessäsi määrittää kasvojentunnistusta, siitä kannattaa tehdä päivittäinen tapa. Kasvojentunnistuksen nopeuteen ja laatuun voi vaikuttaa monet tekijät, kuten: aurinkolasien, hatun, naamion, meikin yms. käyttäminen
+ 
+ - Yrittäessäsi määrittää kasvojentunnistusta, varmista että kameran linssi ja tunnistettava alue ovat puhtaita ja valoisassa kohdassa."</string>
+    <string name="warning_tips_rom4_second_part_title">Kasvojentunnistuksen laadun parantaminen</string>
+    <string name="warning_tips_rom4_third_part">" - Henkilötietosi tallennetaan vain laitteen käyttöön."</string>
+    <string name="warning_tips_rom4_third_part_title">Yksityisyyden suoja</string>
+    <string name="warning_title">Riskivaroitus</string>
 </resources>

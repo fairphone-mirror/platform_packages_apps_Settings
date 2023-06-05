@@ -5991,4 +5991,32 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"Погрешна лозинка"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"Да бисте почели да слушате, центрирајте QR кôд испод"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"QR кôд није у важећем формату"</string>
+    <string name="attention">Pažnja</string>
+    <string name="cannot_detect_face">Lice ne može da se orktije</string>
+    <string name="face_add_title">Dodaj podatke o licu</string>
+    <string name="face_detect_timeout_dialog_button_retry">POKUŠAJ PONOVO</string>
+    <string name="face_detect_timeout_dialog_message">Lice nije prepoznato. Proverite da li je foto-aparat čist i pomerite telefon na oko 20–50 cm udaljenosti od lica.</string>
+    <string name="face_detect_timeout_dialog_title">Lice ne može da se registruje</string>
+    <string name="face_disabled_condition3_rom4">Prepoznavanje lica nije uspelo 3 puta zaredom.</string>
+    <string name="face_disabled_title_rom4">Taster za prepoznavanje lica biće deaktviran u sledećim slučajevima:</string>
+    <string name="face_enable_condition_rom4">PIN, obrazac ili lozinka su potrebni ako želite da prepoznavanje lica bude ponovo dostupno.</string>
+    <string name="face_recognition_button_start">Počni</string>
+    <string name="face_unlock_finish_msg_rom4">Dodati su podaci o vašem licu.</string>
+    <string name="face_unlock_recognition_ready_rom4">Za najbolji rezultat, obavljajte prepoznavanje lica u zatvorenom prostoru i kada niste na direktnoj sunčevoj svetlosti.</string>
+    <string name="face_unlock_register_prompt">Držite telefon na 20–50 cm udaljenosti od lica. Neka vaše lice bude u kvadratu prikazanom na ekranu.</string>
+    <string name="face_unlock_settings_title_rom4">Prepoznavanje lica</string>
+    <string name="faceunlock_last_delete_title">Ukloniti podatke o licu?</string>
+    <string name="scanning_face">Skeniranje podataka o licu...</string>
+    <string name="warning_tips_rom4_first_part">"Prepoznavanje lica je nov pogodan način da otključate uređaj. Korisnici moraju da pročitaju i razumeju rizike navedene u sledećim izjavama pre korišćenja prepoznavanja lica za otključavanje uređaja:
+ 
+ - Uređaj bi mogli da otključaju osoba ili predmet koji izgledaju kao vi
+ 
+ - Bezbednost je sa prepoznavanjem lica manja nego sa obrascem / PIN kodom / lozinkom"</string>
+    <string name="warning_tips_rom4_second_part">" - Dok pokušavate da podesite prepoznavanje lica, bolje je da se držite svakodnevnih navika pri korišćenju. Mnoge situacije bi mogle da utiču na brzinu ili kvalitet prepoznavanja, kao što su: nošenje naočara za sunce, šešira, maski, šminke itd.
+ 
+ - Dok pokušavate da podesite prepoznavanje lica, proverite da li su sočivo fotoaparata i područje prepoznavanja čisti i dobro osvetljeni."</string>
+    <string name="warning_tips_rom4_second_part_title">Poboljšavanje kvaliteta prepoznavanja lica</string>
+    <string name="warning_tips_rom4_third_part">" - Vaši lični podaci će se čuvati i obrađivati samo na uređaju."</string>
+    <string name="warning_tips_rom4_third_part_title">O privatnosti</string>
+    <string name="warning_title">Upozorenje na rizik</string>
 </resources>

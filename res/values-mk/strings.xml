@@ -5908,4 +5908,32 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"Погрешна лозинка"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"За да започне слушањето, центрирајте го QR-кодот долу"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"QR-кодот не е во важечки формат"</string>
+    <string name="attention">Внимание</string>
+    <string name="cannot_detect_face">Не може да го детектира вашето лице</string>
+    <string name="face_add_title">Додадете податоци за лице</string>
+    <string name="face_detect_timeout_dialog_button_retry">ОБИДИ СЕ ПОВТОРНО</string>
+    <string name="face_detect_timeout_dialog_message">Лицето не се препознава. Проверете дали камерата е чиста и оддалечете го телефонот околу 20-50 см од вашето лице.</string>
+    <string name="face_detect_timeout_dialog_title">Не може да регистрира лице</string>
+    <string name="face_disabled_condition3_rom4">Копчето за отклучување со лице не успеало да се вклучи три пати по ред.</string>
+    <string name="face_disabled_title_rom4">Копчето за отклучување со лице ќе биде оневозможено во следниве случаи:</string>
+    <string name="face_enable_condition_rom4">Потребен е PIN код, шема или лозинка ако сакате копчето за отклучување со лице повторно да го направите достапно.</string>
+    <string name="face_recognition_button_start">Старт</string>
+    <string name="face_unlock_finish_msg_rom4">Податоците за вашето лице се додадени</string>
+    <string name="face_unlock_recognition_ready_rom4">За најдобар резултат, ви препорачуваме да го препознаете лицето во затворен простор и подалеку од директно светло.</string>
+    <string name="face_unlock_register_prompt">Држете го телефонот за растојание од 20-50 см од лицето. Поставете го лицето во четириаголникот што се прикажува на екранот.</string>
+    <string name="face_unlock_settings_title_rom4">Препознавање на лице</string>
+    <string name="faceunlock_last_delete_title">Отстрани ги сите податоци за лице?</string>
+    <string name="scanning_face">Се скенираат податоците за лицето...</string>
+    <string name="warning_tips_rom4_first_part">"Препознавањето на лице е нов и практичен начин да го отклучувате уредот. Корисниците мора да ги прочитаат и разберат опасностите од следните изјави пред да користат препознавање на лице за да го отклучите вашиот уред:
+ 
+ - Вашиот уред може да го отклучи лице или предмет што личи на вас
+ 
+ -Безбедноста на препознавањето на лице е помала од онаа со шема/PIN/лозинка"</string>
+    <string name="warning_tips_rom4_second_part">" -Додека се обидувате да го поставите препознавањето на лице, подобри е да го користите секојдневно. Голем број ситуации може да влијаат врз брзината или квалитетот на препознавањето, како на пример: ако носите очила, капи, маски, шминка итн.
+ 
+ -Додека се обидувате да го поставите препознавањето на лице, проверете дали леќата на камерата и областа што се препознава се чисти и осветлени соодветно."</string>
+    <string name="warning_tips_rom4_second_part_title">Подобрување на квалитетот на препознавање на лице</string>
+    <string name="warning_tips_rom4_third_part">" -Вашите лични податоци ќе бидат складирани и обработувани единствено на уредот."</string>
+    <string name="warning_tips_rom4_third_part_title">Информации за приватност</string>
+    <string name="warning_title">Предупредување за опасност</string>
 </resources>

@@ -5904,4 +5904,32 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"Kata laluan salah"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"Untuk mula mendengar, pusatkan kod QR di bawah"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"Kod QR bukan dalam format yang sah"</string>
+    <string name="attention">Perhatian</string>
+    <string name="cannot_detect_face">Tidak dapat mengesan wajah anda</string>
+    <string name="face_add_title">Tambah data wajah</string>
+    <string name="face_detect_timeout_dialog_button_retry">CUBA SEMULA</string>
+    <string name="face_detect_timeout_dialog_message">Wajah tidak dikenali. Pastikan kamera bersih dan gerakkan telefon anda dalam jarak lebih kurang 20-50 cm dari wajah anda.</string>
+    <string name="face_detect_timeout_dialog_title">Tidak dapat mendaftarkan wajah</string>
+    <string name="face_disabled_condition3_rom4">Kunci muka gagal tiga kali berturut-turut.</string>
+    <string name="face_disabled_title_rom4">Kunci muka akan dinyahdayakan dalam kes berikut:</string>
+    <string name="face_enable_condition_rom4">PIN, corak atau kata laluan diperlukan jika anda mahu membuat kunci muka tersedia semula.</string>
+    <string name="face_recognition_button_start">Mula</string>
+    <string name="face_unlock_finish_msg_rom4">Data wajah anda telah ditambah</string>
+    <string name="face_unlock_recognition_ready_rom4">Untuk mendapatkan hasil terbaik, dicadangkan agar buat pengecaman wajah anda di dalam bangunan dan jauh daripada sinaran langsung cahaya matahari.</string>
+    <string name="face_unlock_register_prompt">Pegang telefon anda dalam jarak 20-50 cm dari wajah anda. Letakkan wajah anda di dalam segi empat yang ditunjukkan pada skrin.</string>
+    <string name="face_unlock_settings_title_rom4">Pengecaman wajah</string>
+    <string name="faceunlock_last_delete_title">Alih keluar data wajah?</string>
+    <string name="scanning_face">Mengimbas data muka...</string>
+    <string name="warning_tips_rom4_first_part">"Pengecaman wajah merupakan cara yang baharu dan mudah untuk membuka kunci peranti. Pengguna mestilah telah membaca dan memahami risiko kenyataan yang berikut sebelum menggunakan pengecaman wajah untuk membuka kunci peranti anda:
+ 
+ - Peranti anda boleh dibuka kunci oleh orang atau benda yang kelihatan seperti anda
+ 
+ -Keselamatan pengecaman wajah adalah lebih rendah daripada corak / PIN / kata laluan"</string>
+    <string name="warning_tips_rom4_second_part">" -Sewaktu anda menyediakan pengecaman wajah, adalah lebih baik mengamalkan tabiat penggunaan harian. Banyak situasi yang boleh menjejaskan kelajuan atau kualiti pengecaman, misalnya: memakai cermin mata hitam, topi, topeng, solekan, dll.
+ 
+ -Sewaktu anda menyediakan pengecaman wajah, pastikan kanta kamera dan kawasan pengecaman adalah bersih dan dalam kedudukan bintik cahaya."</string>
+    <string name="warning_tips_rom4_second_part_title">Meningkatkan kualiti pengecaman wajah</string>
+    <string name="warning_tips_rom4_third_part">" -Data peribadi anda akan disimpan dan diproses pada peranti sahaja."</string>
+    <string name="warning_tips_rom4_third_part_title">Mengenai Privasi</string>
+    <string name="warning_title">Amaran risiko</string>
 </resources>

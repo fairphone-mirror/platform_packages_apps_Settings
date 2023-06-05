@@ -5904,4 +5904,32 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"Yanlış şifre"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"Dinlemeye başlamak için aşağıdaki QR kodunu ortalayın"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"QR kodu geçerli bir biçim değil"</string>
+    <string name="attention">Dikkat</string>
+    <string name="cannot_detect_face">Yüzünüz algılanamıyor</string>
+    <string name="face_add_title">Yüz verisi ekle</string>
+    <string name="face_detect_timeout_dialog_button_retry">TEKRAR DENE</string>
+    <string name="face_detect_timeout_dialog_message">Yüzünüz tanınamadı. Kameranın temiz ve telefonunuzun yüzünüzden yaklaşık 20-50 cm uzakta olduğundan emin olun.</string>
+    <string name="face_detect_timeout_dialog_title">Yüzünüz kaydedilemiyor.</string>
+    <string name="face_disabled_condition3_rom4">Yüz tuşunun arka arkaya üç kez başarısız olduğu durumlarda.</string>
+    <string name="face_disabled_title_rom4">Yüz tuşu aşağıdaki durumlarda kapatılacaktır:</string>
+    <string name="face_enable_condition_rom4">Yüz tuşunu tekrar kullanılabilir hale getirmek için PIN, desen veya şifreye ihtiyacınız vardır.</string>
+    <string name="face_recognition_button_start">Başlat</string>
+    <string name="face_unlock_finish_msg_rom4">Yüz veriniz eklendi</string>
+    <string name="face_unlock_recognition_ready_rom4">En iyi sonuçları almak için, yüzünüzü kapalı alanda ve doğrudan güneş ışığından uzakta tanıtın.</string>
+    <string name="face_unlock_register_prompt">Telefonunuzu yüzünüzden 20-50 cm uzakta tutun. Yüzünüzü ekranda görüntülenen karenin içinde konumlandırın.</string>
+    <string name="face_unlock_settings_title_rom4">Yüz tanıma</string>
+    <string name="faceunlock_last_delete_title">Yüz verisi silinsin mi?</string>
+    <string name="scanning_face">Yüz verileri taranıyor...</string>
+    <string name="warning_tips_rom4_first_part">"Yüz tanıma özelliği, cihazınızın kilidini açmanın yeni ve kullanışlı bir yoludur. Kullanıcılar cihazlarının kilidini açmak için yüz tanıma özelliğini kullanmadan önce şu risk ifadelerini okumalı ve anlamalıdır:
+ 
+ - Cihazınızın kilidi size benzeyen biri ya da bir şey tarafından açılabilir
+ 
+ - Yüz tanıma özelliğinin güvenliği desen / PIN kodu / parola seçeneklerine kıyasla zayıftır"</string>
+    <string name="warning_tips_rom4_second_part">" - Yüz tanımayı etkinleştirirken gündelik kullanım alışkanlıklarınızı sürdürmeniz yerinde olur. Birçok durum yüz tanıma hızını veya kalitesini etkileyebilir. Örneğin, güneş gözlüğü, şapka, maske, makyaj vb.
+ 
+ - Yüz tanımayı etkinleştirirken kamera lensinin ve tanıma alanının temiz ve spot konumunda olduğundan emin olun."</string>
+    <string name="warning_tips_rom4_second_part_title">Yüz tanıma kalitesinin iyileştirilmesi</string>
+    <string name="warning_tips_rom4_third_part">" - Kişisel verileriniz yalnızca cihazda depolanacak ve işlenecektir."</string>
+    <string name="warning_tips_rom4_third_part_title">Gizlilik Hakkında</string>
+    <string name="warning_title">Risk uyarısı</string>
 </resources>

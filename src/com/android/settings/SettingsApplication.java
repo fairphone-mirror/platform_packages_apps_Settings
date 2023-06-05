@@ -21,6 +21,7 @@ import android.app.Application;
 import com.android.settings.activityembedding.ActivityEmbeddingRulesController;
 import com.android.settings.homepage.SettingsHomepageActivity;
 import com.android.settingslib.applications.AppIconCacheManager;
+import com.android.settings.anc.lifecycle.LifecycleCallback;
 
 import java.lang.ref.WeakReference;
 
@@ -36,6 +37,7 @@ public class SettingsApplication extends Application {
         final ActivityEmbeddingRulesController controller =
                 new ActivityEmbeddingRulesController(this);
         controller.initRules();
+        registerActivityLifecycleCallbacks(new LifecycleCallback());
     }
 
     public void setHomeActivity(SettingsHomepageActivity homeActivity) {

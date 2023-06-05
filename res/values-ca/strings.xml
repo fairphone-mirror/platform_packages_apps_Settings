@@ -5904,4 +5904,32 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"Contrasenya incorrecta"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"Per començar a escoltar, centra el codi QR de més avall"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"El codi QR no té un format vàlid"</string>
+    <string name="attention">Alerta</string>
+    <string name="cannot_detect_face">No es detecta el rostre</string>
+    <string name="face_add_title">Afegir dades sobre el rostre</string>
+    <string name="face_detect_timeout_dialog_button_retry">REINTENTAR</string>
+    <string name="face_detect_timeout_dialog_message">No es reconeix el rostre. Assegureu-vos que la càmera és neta i moveu el telèfon a uns 20-50 cm de distància del rostre.</string>
+    <string name="face_detect_timeout_dialog_title">No es pot registrar el rostre.</string>
+    <string name="face_disabled_condition3_rom4">El reconeixement facial ha fallat tres cops seguits.</string>
+    <string name="face_disabled_title_rom4">El reconeixement facial es desactivarà en els casos següents:</string>
+    <string name="face_enable_condition_rom4">Caldrà introduir el PIN, el patró o la contrasenya per reactivar la funció de reconeixement facial.</string>
+    <string name="face_recognition_button_start">Iniciar</string>
+    <string name="face_unlock_finish_msg_rom4">S’han afegit les dades de la cara</string>
+    <string name="face_unlock_recognition_ready_rom4">"Per obtenir els millors resultats, es recomana fer el reconeixement facial dins d'un edifici i allunyat de la llum del sol directa."</string>
+    <string name="face_unlock_register_prompt">Col·loqueu el telèfon a uns 20-50 cm de distància del rostre. Col·loqueu el rostre al requadre que apareix a la pantalla.</string>
+    <string name="face_unlock_settings_title_rom4">Reconeixement facial</string>
+    <string name="faceunlock_last_delete_title">Voleu eliminar les dades facials?</string>
+    <string name="scanning_face">Escanejant les dades facials...</string>
+    <string name="warning_tips_rom4_first_part">"El reconeixement facial és una forma nova i pràctica de desbloquejar el dispositiu. El usuaris han d'haver llegit i entès els riscos de les qüestions següents abans de fer servir el reconeixement facial per desbloquejar el seu dispositiu:
+ 
+ -Una persona o cosa que se us assembli podria desbloquejar el vostre dispositiu. 
+ 
+ -La seguretat del reconeixement facial és inferior a la del patró, el PIN o la contrasenya"</string>
+    <string name="warning_tips_rom4_second_part">" -Quan configureu el reconeixement facial, s'aconsella portar la roba que feu servir els dies feiners. Moltes situacions poden afectar la velocitat o la qualitat del reconeixement, com ara: portar ulleres de sol, barrets, màscares, maquillatge, etc.
+ 
+ -Quan configureu el reconeixement facial, assegureu-vos que la lent de la càmera i els voltants estiguin nets i en un lloc ben il·luminat."</string>
+    <string name="warning_tips_rom4_second_part_title">Millora de la qualitat del reconeixement facial</string>
+    <string name="warning_tips_rom4_third_part">" -Les vostres dades personals s'emmagatzemaran i es processaran només al dispositiu."</string>
+    <string name="warning_tips_rom4_third_part_title">Quant a la privadesa</string>
+    <string name="warning_title">Alerta sobre risc</string>
 </resources>

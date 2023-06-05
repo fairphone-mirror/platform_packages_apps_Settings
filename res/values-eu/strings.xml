@@ -5904,4 +5904,32 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"Pasahitza ez da zuzena"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"Entzuten hasteko, zentratu beheko QR kodea"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"QR kodearen formatuak ez du balio"</string>
+    <string name="attention">Kontuz</string>
+    <string name="cannot_detect_face">Ezin da hauteman aurpegia</string>
+    <string name="face_add_title">Gehitu gailuaren datuak</string>
+    <string name="face_detect_timeout_dialog_button_retry">SAIATU BERRIRO</string>
+    <string name="face_detect_timeout_dialog_message">Ez da ezagutzen aurpegia. Ziurtatu kamera garbi dagoela eta jarri telefonoa aurpegitik 20-50 cm-ra.</string>
+    <string name="face_detect_timeout_dialog_title">Ezin da erregistratu aurpegia</string>
+    <string name="face_disabled_condition3_rom4">Aurpegiaren bidezko desblokeoak huts egin du hiru biderrez jarraian.</string>
+    <string name="face_disabled_title_rom4">Hurrengo kasu hauetan desgaituko da aurpegiaren bidezko desblokeoa:</string>
+    <string name="face_enable_condition_rom4">PIN kodea, eredua edo pasahitza behar da aurpegiaren bidezko desblokeoa berriro gaitu nahi baduzu.</string>
+    <string name="face_recognition_button_start">Hasi</string>
+    <string name="face_unlock_finish_msg_rom4">Zure aurpegi-datuak gehitu egin dira</string>
+    <string name="face_unlock_recognition_ready_rom4">Emaitzarik onenak lortzeko, hobe da eraikin batean barnean zaudela eta eguzki-argi zuzenetik kanpo zaudela hautematea aurpegia.</string>
+    <string name="face_unlock_register_prompt">Eutsi telefonoari aurpegitik 20-50 cm-ra. Jarri aurpegia pantailan agertzen den laukian.</string>
+    <string name="face_unlock_settings_title_rom4">Aurpegi-hautematea</string>
+    <string name="faceunlock_last_delete_title">Aurpegi-datuak ezabatu?</string>
+    <string name="scanning_face">Aurpegiaren datuak eskaneatzen...</string>
+    <string name="warning_tips_rom4_first_part">"Gailua desblokeatzeko modu berri eta erosoa da aurpegiaren hautematea. Hala ere, erabiltzaileek hura erabiltzearen arriskuei buruzko adierazpen hauek irakurri eta ulertu behar dituzte gailua desblokeatzeko aurpegiaren hautematea erabili aurretik:
+ 
+ - Baliteke zure antza duen pertsona nahiz gauza batek gailua desblokeatu ahal izatea
+ 
+ -Aurpegiaren hautematea ez da eredu/PIN/pasahitz bat erabiltzea bezain segurua"</string>
+    <string name="warning_tips_rom4_second_part">" -Aurpegiaren hautematea konfiguratzen duzunean, normalean izaten duzun itxura izatea komeni zaizu. Badaude hautematearen abiadura eta kalitateari eragin diezaieketen egoerak, adibidez: eguzkitako betaurrekoak, kapelak, maskarak, makillajea eta abar izatea.
+ 
+ -Aurpegiaren hautematea konfiguratzen duzunean, ziurtatu kameraren lentea eta hautemate-eremua garbi daudela eta tokia argiztatuta dagoela."</string>
+    <string name="warning_tips_rom4_second_part_title">Aurpegiaren hautematearen kalitatea hobetzea</string>
+    <string name="warning_tips_rom4_third_part">" -Zure datu pertsonalak gailuan soilik gordeko eta prozesatuko dira."</string>
+    <string name="warning_tips_rom4_third_part_title">Pribatutasunari buruz</string>
+    <string name="warning_title">Arriskuaren abisua</string>
 </resources>

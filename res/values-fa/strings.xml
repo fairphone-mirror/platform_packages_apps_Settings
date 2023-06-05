@@ -5904,4 +5904,32 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"گذرواژه اشتباه است"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"برای گوش دادن، رمزینه پاسخ‌سریع زیر را در مرکز کادر قرار دهید"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"قالب رمزینه پاسخ‌سریع نامعتبر است"</string>
+    <string name="attention">توجه</string>
+    <string name="cannot_detect_face">نمی تواند چهره شما را ردیابی کند</string>
+    <string name="face_add_title">افزودن داده چهره</string>
+    <string name="face_detect_timeout_dialog_button_retry">سعی مجدد</string>
+    <string name="face_detect_timeout_dialog_message">چهره تشخیص داده نشد. دقت کنید دوربین تمیز باشد و تلفن را حدود 20 تا 50 سانتی متری چهره خود نگه دارید.</string>
+    <string name="face_detect_timeout_dialog_title">نمی تواند چهره را ثبت کند</string>
+    <string name="face_disabled_condition3_rom4">کلید چهره سه مرتبه در یک ردیف عمل نکرد.</string>
+    <string name="face_disabled_title_rom4">کلید چهره در موارد زیر غیرفعال می شود:</string>
+    <string name="face_enable_condition_rom4">اگر می خواهید دوباره کلید چهره موجود باشد به پین، الگو یا رمز عبور نیاز است.</string>
+    <string name="face_recognition_button_start">شروع</string>
+    <string name="face_unlock_finish_msg_rom4">داده چهره تان اضافه شد</string>
+    <string name="face_unlock_recognition_ready_rom4">برای رسیدن به بهترین نتیجه، پیشنهاد می شود چهره داخل ساختمان و دور از نور مستقیم آفتاب تشخیص داده شود.</string>
+    <string name="face_unlock_register_prompt">تلفن را 20 تا 50 سانتی متری چهره خود نگه دارید. چهره خود را روبروی مربعی که روی صفحه نشان داده می شود بگیرید.</string>
+    <string name="face_unlock_settings_title_rom4">تشخیص چهره</string>
+    <string name="faceunlock_last_delete_title">حذف داده چهره؟</string>
+    <string name="scanning_face">در حال اسکن کردن داده های چهره...</string>
+    <string name="warning_tips_rom4_first_part">"تشخیص چهره روشی جدید و راحت برای باز کردن قفل دستگاه است. کاربران باید مطالب زیر را مطالعه کرده و با خطرات آشنا شوند قبل از اینکه بخواهید با استفاده از تشخیص چهره، قفل دستگاه را باز کنید:
+ 
+ - ممکن است قفل دستگاه توسط فرد یا چیزی که شبیه شماست باز شود
+ 
+ -امنیت تشخیص چهره نسبت به الگو / پین / رمز عبور کمتر است"</string>
+    <string name="warning_tips_rom4_second_part">" -زمانی که می خواهید تشخیص چهره را تنظیم کنید، بهتر است عادت استفاده روزانه خود را حفظ کنید. بسیاری از شرایط می توانند بر روی سرعت یا کیفیت تشخیص اثر بگذارند از جمله: پوشیدن عینک آفتابی، کلاه، ماسک، آرایش و غیره.
+ 
+ -زمانی که سعی می کنید تشخیص چهره را تنظیم کنید، دقت کنید لنز دوربین و ناحیه تشخیصی تمیز باشند و در جایی که نور است قرار داشته باشید."</string>
+    <string name="warning_tips_rom4_second_part_title">بهبود کیفیت تشخیص چهره</string>
+    <string name="warning_tips_rom4_third_part">" - داده های شخصی شما ذخیره شده و تنها بر روی دستگاه پردازش م"</string>
+    <string name="warning_tips_rom4_third_part_title">درباره حریم خصوصی</string>
+    <string name="warning_title">هشدار خطر</string>
 </resources>
