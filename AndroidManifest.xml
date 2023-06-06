@@ -4678,7 +4678,6 @@
         <activity
             android:name="com.android.settings.anc.AncSettings"
             android:label="@string/face_unlock_settings_title_rom4"
-            android:excludeFromRecents="true"
             android:exported="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />

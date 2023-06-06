@@ -43,4 +43,15 @@ public class ActivityManager {
     public int getActivityListSize() {
         return mActivityList.size();
     }
+
+    public boolean containActivity(String activityName){
+        if(!mActivityList.isEmpty() && activityName != null){
+            for(Activity activity : mActivityList){
+                if(activityName.equals(activity.getClass().getSimpleName())){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

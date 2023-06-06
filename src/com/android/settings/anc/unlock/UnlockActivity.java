@@ -17,10 +17,12 @@ import androidx.annotation.Nullable;
 import com.anc.faceid.bean.AncFaceIdConfig;
 import com.anc.faceid.bean.AncFaceIdUnlockInfo;
 import com.anc.faceid.bean.AncPowerMode;
+import com.android.settings.anc.AncSettings;
 import com.android.settings.anc.LiteManager;
 import com.android.settings.anc.camera.CameraFactory;
 import com.android.settings.anc.camera.CameraWrapper;
 import com.android.settings.anc.util.Constants;
+import com.android.settings.anc.lifecycle.ActivityManager;
 
 public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCallback {
     private static final String TAG = "UnlockActivity";
@@ -132,7 +134,9 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
         if (mLiteManager != null) {
             mLiteManager.reset();
             mLiteManager.commitSave();
-//            mLiteManager.release();
+            if(!ActivityManager.getInstance().containActivity(AncSettings.class.getSimpleName())){
+                mLiteManager.release();
+            }
         }
     }
 
