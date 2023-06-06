@@ -331,7 +331,12 @@ public class TetherSettings extends RestrictedSettingsFragment
         registerReceiver();
 
         mEthernetListener = new EthernetListener();
-        if (mEm != null)
+        if (mEm != null) {
+            // FP4T-257: Ethernet tethering item is automatically disabled after turned on
+            for (String s: mEm.getInterfaceList()) mAvailableInterfaces.add(s);
+            mEm.addInterfaceStateListener(r -> mHandler.post(r), mEthernetListener);
+        }
+ 
             mEm.addInterfaceStateListener(r -> mHandler.post(r), mEthernetListener);
 
         updateUsbState();
