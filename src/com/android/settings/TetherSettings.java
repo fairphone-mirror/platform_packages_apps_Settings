@@ -336,8 +336,6 @@ public class TetherSettings extends RestrictedSettingsFragment
             for (String s: mEm.getInterfaceList()) mAvailableInterfaces.add(s);
             mEm.addInterfaceStateListener(r -> mHandler.post(r), mEthernetListener);
         }
- 
-            mEm.addInterfaceStateListener(r -> mHandler.post(r), mEthernetListener);
 
         updateUsbState();
         updateBluetoothAndEthernetState();
