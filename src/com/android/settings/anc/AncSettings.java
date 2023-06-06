@@ -16,8 +16,6 @@ import android.widget.ImageView;
 import android.app.Activity;
 import android.view.Menu;
 
-//import com.android.internal.widget.LockPatternUtils;
-
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -29,6 +27,7 @@ import com.android.settings.anc.util.BottomDialog;
 import com.android.settings.anc.util.Constants;
 import com.android.settings.anc.util.DialogUtil;
 import com.android.settings.anc.BaseActivity;
+import com.android.settings.password.ChooseLockSettingsHelper;
 
 import java.io.File;
 
@@ -49,7 +48,6 @@ public class AncSettings extends BaseActivity {
     private final int REQUEST_CONFIRM_CODE = 101;
     private Handler mHandler;
     private boolean mShowConfirm = false;
-    //private LockPatternUtils mLockPatternUtils;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +60,6 @@ public class AncSettings extends BaseActivity {
         }
         mDialogUtil = new DialogUtil(this);
         mHandler = new Handler();
-        //mLockPatternUtils = new LockPatternUtils(this);
         LiteManager.getInstance().initLite(this, new LiteManager.Callback() {
             @Override
             public void onSuccess(Object object) {
@@ -134,15 +131,16 @@ public class AncSettings extends BaseActivity {
             }
         });
         mReceiver = new MyReceiver();
-        IntentFilter homeFilter = new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
-        registerReceiver(mReceiver, homeFilter);
+        IntentFilter intentFilter = new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
+        intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
+        registerReceiver(mReceiver, intentFilter);
         mKeyguardManager = (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        return true;
+    private boolean runKeyguardConfirmation(int request) {
+        final ChooseLockSettingsHelper.Builder builder =
+                new ChooseLockSettingsHelper.Builder(this);
+        return builder.setRequestCode(request).show();
     }
 
     @Override
@@ -167,14 +165,10 @@ public class AncSettings extends BaseActivity {
         mHandler.postDelayed(() -> {
             Log.d(TAG, "isLock:" + mKeyguardManager.isKeyguardLocked() + ",isDeviceLocked:" + mKeyguardManager.isDeviceLocked());
             if (mShowConfirm && !mKeyguardManager.isKeyguardLocked()) {
-                Intent confirmIntent = mKeyguardManager.createConfirmDeviceCredentialIntent(null, null);
-                //confirmIntent.setComponent(new ComponentName("com.android.settings", "com.android.settings.password.ConfirmLockPattern"));
-                if (confirmIntent != null) {
-                    startActivityForResult(confirmIntent, REQUEST_CONFIRM_CODE);
-                }
+                runKeyguardConfirmation(REQUEST_CONFIRM_CODE);
                 mShowConfirm = false;
             }
-        }, 350);
+        }, 200);
     }
 
     @Override
@@ -202,6 +196,7 @@ public class AncSettings extends BaseActivity {
         mHandler.removeCallbacksAndMessages(null);
         unregisterReceiver(mReceiver);
         mDialogUtil.onDestroy();
+        LiteManager.getInstance().release();
     }
 
     @Override
@@ -214,6 +209,7 @@ public class AncSettings extends BaseActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         Log.d(TAG, "onNewIntent");
+        mShowConfirm = false;
     }
 
     private class MyReceiver extends BroadcastReceiver {
@@ -221,23 +217,21 @@ public class AncSettings extends BaseActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
+            if (ActivityManager.getInstance().getCurrentActivity() != AncSettings.this) {
+                Log.d(TAG, "current activity is not AncSettings");
+                return;
+            }
             if (Intent.ACTION_CLOSE_SYSTEM_DIALOGS.equals(action)) {
                 String reason = intent.getStringExtra("reason");
                 Log.d(TAG, "reason:" + reason);
                 if (reason == null) {
                     return;
                 }
-                if (ActivityManager.getInstance().getCurrentActivity() != AncSettings.this) {
-                    Log.d(TAG, "current activity is not AncSettings");
-                    return;
-                }
-
                 if (reason.equals(SYSTEM_HOME_KEY)) {
-                    finish();
-                } else if (SYSTEM_POWER_KEY.equals(reason)) {
-                    Log.d(TAG, "reason:" + reason);
                     mShowConfirm = true;
                 }
+            } else if (Intent.ACTION_SCREEN_OFF.equals(action)) {
+                mShowConfirm = true;
             }
         }
     }
