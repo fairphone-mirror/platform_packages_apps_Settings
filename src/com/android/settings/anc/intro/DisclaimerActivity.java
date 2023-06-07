@@ -5,10 +5,10 @@ import android.view.MenuItem;
 import android.app.Activity;
 import android.view.Menu;
 
-import com.android.settings.anc.BaseActivity;
+import com.android.settings.core.SettingsBaseActivity;
 import com.android.settings.R;
 
-public class DisclaimerActivity extends BaseActivity {
+public class DisclaimerActivity extends SettingsBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,9 @@ public class DisclaimerActivity extends BaseActivity {
         if (getActionBar() != null) {
             getActionBar().setDisplayHomeAsUpEnabled(true);
             getActionBar().setHomeButtonEnabled(true);
+        }
+        if(mAppBarLayout != null) {
+            mAppBarLayout.setExpanded(false,false);
         }
     }
 

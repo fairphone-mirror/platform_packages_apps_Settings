@@ -26,12 +26,12 @@ import com.android.settings.anc.lifecycle.ActivityManager;
 import com.android.settings.anc.util.BottomDialog;
 import com.android.settings.anc.util.Constants;
 import com.android.settings.anc.util.DialogUtil;
-import com.android.settings.anc.BaseActivity;
+import com.android.settings.core.SettingsBaseActivity;
 import com.android.settings.password.ChooseLockSettingsHelper;
 
 import java.io.File;
 
-public class AncSettings extends BaseActivity {
+public class AncSettings extends SettingsBaseActivity {
     private static final String TAG = "AncSettings";
     private ConstraintLayout mSecondFaceLayout;
     private ImageView mMainDelete;
