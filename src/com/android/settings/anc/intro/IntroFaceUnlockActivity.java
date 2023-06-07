@@ -11,9 +11,9 @@ import android.view.Menu;
 
 import com.android.settings.R;
 import com.android.settings.anc.enroll.EnrollActivity;
-import com.android.settings.anc.BaseActivity;
+import com.android.settings.core.SettingsBaseActivity;
 
-public class IntroFaceUnlockActivity extends BaseActivity {
+public class IntroFaceUnlockActivity extends SettingsBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,9 @@ public class IntroFaceUnlockActivity extends BaseActivity {
         if (getActionBar() != null) {
             getActionBar().setDisplayHomeAsUpEnabled(true);
             getActionBar().setHomeButtonEnabled(true);
+        }
+        if(mAppBarLayout != null) {
+            mAppBarLayout.setExpanded(false,false);
         }
         TextView mTvDisclaimer = findViewById(R.id.tv_disclaimer);
         Button mBtStart = findViewById(R.id.bt_start);

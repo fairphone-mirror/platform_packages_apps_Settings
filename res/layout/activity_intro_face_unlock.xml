@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/tct_stander_bg_basic"
     tools:context=".anc.intro.IntroFaceUnlockActivity">
 
     <TextView
@@ -53,6 +52,7 @@
 
 
     <ImageView
+        android:id="@+id/iv_add_face_data"
         android:layout_width="220dp"
         android:layout_height="220dp"
         android:layout_marginTop="68dp"
@@ -66,9 +66,9 @@
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         style="@style/FaceUnlockLongButton"
-        android:layout_marginBottom="40dp"
+        android:layout_marginTop="120dp"
         android:text="@string/face_recognition_button_start"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_add_face_data"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
