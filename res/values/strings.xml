@@ -14585,6 +14585,9 @@
     <string name="fingerprint_settings_open_description">"Switch on if you prefer to unlock without waking up the phone first."</string>
     <string name="menu_vowifi_help">"HELP"</string>
     <string name="wfc_help_desc_text">Wi-Fi calling\n\nUse Wi-Fi networks to make and receive calls anywhere in metropolitan France, without connecting to a mobile network.\n\nTo use the service, check that it is offered by your service provider, enable it in Call settings, then connect to a Wi-Fi network. The icon below will be shown whenever this function is available.</string>
-
+    <!-- Diag -->
+    <string name="diagprotect_title">DiagProtector Setting</string>
+    <string name="diagprotect_on">Diag Protector ON</string>
+    <string name="diagprotect_off">Diag Protector OFF</string>
 
 </resources>
