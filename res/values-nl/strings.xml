@@ -5936,4 +5936,5 @@
     <string name="warning_tips_rom4_third_part">" - Uw persoonlijke gegevens worden alleen op het apparaat opgeslagen en verwerkt."</string>
     <string name="warning_tips_rom4_third_part_title">Privacy-informatie</string>
     <string name="warning_title">"Waarschuwing voor risico's"</string>
+    <string name="data_preference">Gegevensvoorkeur</string>
 </resources>
