@@ -4753,5 +4753,5 @@
     <string name="warning_tips_rom4_third_part_title">Politique de confidentialité</string>
     <string name="warning_title">Avis de risque</string>
     <string name="enroll_main_first">Veuillez d’abord entrer les données du visage.</string>
-
+    <string name="data_preference">Préférence de données</string>
 </resources>

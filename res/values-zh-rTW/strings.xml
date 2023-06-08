@@ -4728,4 +4728,5 @@
     <string name="faceunlock_setupwizard">用人臉解鎖</string>
     <string name="warning_title">風險警示</string>
     <string name="enroll_main_first">請先錄入人臉數據。</string>
+    <string name="data_preference">"數據偏好設定"</string>
 </resources>
