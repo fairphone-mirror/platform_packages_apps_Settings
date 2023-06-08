@@ -77,6 +77,7 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
     private final int RETRY_DIALOG_TIME = 10000;
     private final String SYSTEM_RECENT_KEY = "recentapps";
     private MyReceiver mReceiver;
+    private boolean isEnrollSuccess = false;
 
     private final LiteManager.Callback mCallBack = new LiteManager.Callback() {
         @Override
@@ -86,6 +87,7 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
             mCameraWrapper.stopDetect();
             mHandler.postDelayed(() -> {
                 mEnrollDone.setVisibility(View.VISIBLE);
+                isEnrollSuccess = true;
                 mSurface.setVisibility(View.INVISIBLE);
                 AnimatedVectorDrawable animatedVectorDrawable = (AnimatedVectorDrawable) getDrawable(R.drawable.enroll_finished);
                 if (animatedVectorDrawable != null) {
@@ -221,8 +223,17 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
     }
 
     @Override
+    public void finish(){
+        if(isEnrollSuccess) {
+            setResult(RESULT_OK);
+        }
+        super.finish();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
+        Log.d(TAG, "onDestroy");
         unregisterReceiver(mReceiver);
         mActivity = null;
         mHandler.removeCallbacksAndMessages(null);
@@ -374,7 +385,6 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
                     })
                     .setNegativeButton(R.string.cancel, (dialog1, which) -> {
                         dialog1.dismiss();
-                        //startSettingsActivity();
                         finish();
                     })
                     .create();
@@ -384,19 +394,10 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
 
     private void showAttentionDialog() {
         BottomDialog dialog = new BottomDialog(EnrollActivity.this, R.layout.dialog_enroll_success_attention);
-        dialog.setCancelable(false);
         dialog.setOnClickListener(R.id.bt_ok, v -> {
             dialog.dismiss();
-            //startSettingsActivity();
-            setResult(RESULT_OK);
             EnrollActivity.this.finish();
         });
         dialog.show();
-    }
-
-    private void startSettingsActivity() {
-        Intent intent = new Intent(EnrollActivity.this, AncSettings.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
     }
 }
