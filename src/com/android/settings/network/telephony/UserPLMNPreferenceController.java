@@ -63,9 +63,9 @@ public class UserPLMNPreferenceController extends TelephonyBasePreferenceControl
 
     @Override
     public int getAvailabilityStatus(int subId) {
-        return  SubscriptionManager.isValidSubscriptionId(subId)  && !hasOrangeFeature()
+        return  /*SubscriptionManager.isValidSubscriptionId(subId)  && !hasOrangeFeature()
                 ? AVAILABLE
-                : CONDITIONALLY_UNAVAILABLE;
+                :*/ CONDITIONALLY_UNAVAILABLE;
     }
 
     @Override
