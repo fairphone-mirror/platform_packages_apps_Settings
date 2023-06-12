@@ -5937,4 +5937,6 @@
     <string name="warning_tips_rom4_third_part_title">Privacy-informatie</string>
     <string name="warning_title">"Waarschuwing voor risico's"</string>
     <string name="data_preference">Gegevensvoorkeur</string>
+    <string name="unlock_failed_reset_title">"Automatische Fabrieksreset"</string>
+    <string name="unlock_failed_reset_description">"Als u uw telefoon 15 keer verkeerd probeert te ontgrendelen, wordt hij teruggezet naar de fabrieksinstellingen. Alle gegevens, inclusief bestanden en gedownloade apps, worden gewist."</string>
 </resources>

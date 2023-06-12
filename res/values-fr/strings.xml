@@ -5941,4 +5941,6 @@
     <string name="warning_title">Avis de risque</string>
     <string name="enroll_main_first">Veuillez d’abord entrer les données du visage.</string>
     <string name="data_preference">Préférence de données</string>
+    <string name="unlock_failed_reset_title">"Réinitialisation automatique d'usine"</string>
+    <string name="unlock_failed_reset_description">"Si vous tentez de déverrouiller votre téléphone de manière incorrecte 15 fois, il sera réinitialisé aux paramètres d'usine. Toutes les données, y compris les fichiers et les applications téléchargées, seront supprimées."</string>
 </resources>

@@ -5942,4 +5942,6 @@
     <string name="warning_tips_rom4_third_part_title">關於隱私</string>
     <string name="warning_title">風險警示</string>
     <string name="enroll_main_first">請先錄入人臉數據。</string>
+    <string name="unlock_failed_reset_title">"自動恢復原廠設定"</string>
+    <string name="unlock_failed_reset_description">"若連續15次未正確解鎖您的手機, 手機會被重置回原廠設定。所有的資料, 包含您新增的檔案及下載的應用程式都將會被刪除"</string>
 </resources>
