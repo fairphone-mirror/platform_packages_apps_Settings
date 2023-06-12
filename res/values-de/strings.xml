@@ -4753,4 +4753,6 @@
     <string name="warning_title">Warnung</string>
     <string name="enroll_main_first">Bitte geben Sie zuerst Gesichtsdaten ein.</string>
     <string name="data_preference">Datenpräferenz</string>
+    <string name="unlock_failed_reset_title">"Automatisches Zurücksetzen auf Werkseinstellungen."</string>
+    <string name="unlock_failed_reset_description">"Wenn Sie 15-mal versuchen, Ihr Telefon falsch zu entsperren, wird es auf die Werkseinstellungen zurückgesetzt. Alle Daten, einschließlich Dateien und heruntergeladene Apps, werden gelöscht."</string>
 </resources>
