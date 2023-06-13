@@ -944,7 +944,9 @@ public class FingerprintSettings extends SubSettings {
                                             parent.renameFingerPrint(mFp.getBiometricId(),
                                                     newName);
                                         }
-                                        mDismissListener.onDismiss(dialog);
+                                        if (mDismissListener != null){
+                                            mDismissListener.onDismiss(dialog);
+                                        }
                                         dialog.dismiss();
                                     }
                                 })
