@@ -102,6 +102,13 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         Log.d(TAG, "onNewIntent");
+        if(intent != null){
+            boolean stopUnlock = intent.getBooleanExtra("stop_unlock",false);
+            if(stopUnlock){
+                finish();
+                return;
+            }
+        }
         startUnlock();
     }
 
