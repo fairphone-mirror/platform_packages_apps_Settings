@@ -423,36 +423,40 @@ public class CommonUtil {
             }
         }
         File file = new File(dir, name);
-
-        File SDcard_path = Environment.getExternalStorageDirectory();
-        StatFs stat = new StatFs(SDcard_path.getPath());
-        long avaliableBlocks = stat.getAvailableBlocks();
-
-        FileOutputStream fos = null;
-        InputStream is = null;
         String ret = null;
-        try {
-            int count;
-            byte[] buffer = new byte[1024];
-            fos = new FileOutputStream(file);
-            is = context.getResources().openRawResource(res);
-            long source_size = is.available();
-            if (avaliableBlocks < source_size / 4096 + 256)
-                return Memory_flag;
-            while ((count = is.read(buffer)) != -1) {
-                fos.write(buffer, 0, count);
-            }
-
+        if(file.exists() && file.isFile()){
             ret = file.getAbsolutePath();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        } finally {
+        } else {
+            File SDcard_path = Environment.getExternalStorageDirectory();
+            StatFs stat = new StatFs(SDcard_path.getPath());
+            long avaliableBlocks = stat.getAvailableBlocks();
+
+            FileOutputStream fos = null;
+            InputStream is = null;
+
             try {
-                if (fos != null) fos.close();
-                if (is != null) is.close();
+                int count;
+                byte[] buffer = new byte[1024];
+                fos = new FileOutputStream(file);
+                is = context.getResources().openRawResource(res);
+                long source_size = is.available();
+                if (avaliableBlocks < source_size / 4096 + 256)
+                    return Memory_flag;
+                while ((count = is.read(buffer)) != -1) {
+                    fos.write(buffer, 0, count);
+                }
+
+                ret = file.getAbsolutePath();
             } catch (Exception e) {
                 e.printStackTrace();
+                return null;
+            } finally {
+                try {
+                    if (fos != null) fos.close();
+                    if (is != null) is.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
         return ret;
