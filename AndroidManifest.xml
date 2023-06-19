@@ -4695,6 +4695,7 @@
             android:name="com.android.settings.anc.unlock.UnlockActivity"
             android:excludeFromRecents="true"
             android:exported="true"
+            android:taskAffinity="com.android.settings.unlock"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
 
