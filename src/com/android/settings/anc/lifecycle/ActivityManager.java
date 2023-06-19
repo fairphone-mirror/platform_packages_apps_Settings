@@ -26,6 +26,9 @@ public class ActivityManager {
     }
 
     public void pushActivity(Activity activity) {
+        if(activity != null && "UnlockActivity".equals(activity.getClass().getSimpleName())){
+            return;
+        }
         if (mActivityList.contains(activity)) {
             if (mActivityList.getLast() != activity) {
                 mActivityList.remove(activity);
@@ -37,6 +40,9 @@ public class ActivityManager {
     }
 
     public void popActivity(Activity activity) {
+        if(activity != null && "UnlockActivity".equals(activity.getClass().getSimpleName())){
+            return;
+        }
         mActivityList.remove(activity);
     }
 
