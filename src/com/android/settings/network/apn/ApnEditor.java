@@ -802,10 +802,15 @@ public class ApnEditor extends SettingsPreferenceFragment
                     }
                     mMvnoMatchData.setText(telephonyManager.getGroupIdLevel1());
                 } else if (values[mvnoIndex].equals("ICCID")) {
-                    if (mMvnoMatchDataStr != null) {
-                        Log.d(TAG, "mMvnoMatchDataStr: " + mMvnoMatchDataStr);
-                        mMvnoMatchData.setText(mMvnoMatchDataStr);
+                    TelephonyManager telephonyManager = (TelephonyManager)
+                        getContext().getSystemService(TelephonyManager.class);
+                    final TelephonyManager telephonyManagerForSubId =
+                        telephonyManager.createForSubscriptionId(mSubId);
+                    if (telephonyManagerForSubId != null) {
+                        telephonyManager = telephonyManagerForSubId;
                     }
+                    String iccid = telephonyManager.getUiccCardsInfo().get(0).getIccId();
+                    mMvnoMatchData.setText(iccid);
                 } else {
                     // mvno type 'none' case. At this time, mvnoIndex should be 0.
                     mMvnoMatchData.setText("");
