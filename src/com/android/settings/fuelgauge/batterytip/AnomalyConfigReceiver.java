@@ -28,6 +28,8 @@ import android.content.IntentFilter;
 import java.util.List;
 import android.net.Uri;
 import android.os.SystemProperties;
+import android.content.ContentResolver;
+import android.provider.Settings;
 /**
  * Receive broadcast when {@link StatsManager} restart, then check the anomaly config and
  * prepare info for {@link StatsManager}
@@ -52,6 +54,15 @@ public class AnomalyConfigReceiver extends BroadcastReceiver {
 
             if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
                 AnomalyCleanupJobService.scheduleCleanUp(context);
+                final ContentResolver cr = context.getContentResolver();
+                float minRefreshRate = Settings.System.getFloatForUser(cr,
+                    Settings.System.MIN_REFRESH_RATE, 0f, cr.getUserId());
+                if(minRefreshRate == 90f){
+                    Settings.System.putFloatForUser(cr,
+                        Settings.System.MIN_REFRESH_RATE, 60f,cr.getUserId());
+                    Settings.System.putFloatForUser(cr,
+                        Settings.System.MIN_REFRESH_RATE, 90f,cr.getUserId());
+                }
             }
             if("0".equals(SystemProperties.get(T2M_PROP_SET_FILESDEFAULT,"0"))){
                 final PackageManager pm = context.getPackageManager();
