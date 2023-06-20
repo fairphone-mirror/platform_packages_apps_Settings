@@ -310,7 +310,7 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
         int width = dm.widthPixels;
 
         layoutParams.width = width;
-        layoutParams.height = mCameraWrapper.getWidth() * width / mCameraWrapper.getHeight();
+        layoutParams.height = width;
 
         Log.d(TAG, "adjustSurfaceViewSize()...width:" + layoutParams.width + " height:" + layoutParams.height);
         mSurface.setLayoutParams(layoutParams);
@@ -319,7 +319,7 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
         mSurface.invalidate();
         ViewGroup.LayoutParams layoutParams1 = mRoundClipView.getLayoutParams();
         layoutParams1.width = layoutParams.width;
-        layoutParams1.height = layoutParams.height / 3 * 2;
+        layoutParams1.height = mCameraWrapper.getWidth() * width / mCameraWrapper.getHeight() / 3 * 2;
         mRoundClipView.setCalWh(layoutParams1.width, layoutParams1.height);
         mRoundClipView.setLayoutParams(layoutParams1);
         mRoundClipView.setRect(100, 50, 380, 400);
@@ -327,7 +327,7 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
         config.rectTop = 50;
         config.rectLeft = 50;
         config.rectRight = 430;
-        config.rectBottom = 400;
+        config.rectBottom = 480;
         LiteManager.getInstance().setConfig(config);
 
     }
