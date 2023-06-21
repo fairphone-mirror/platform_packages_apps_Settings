@@ -114,6 +114,9 @@ android_library {
         "glide-gifdecoder-prebuilt",
         "glide-disklrucache-prebuilt",
         "Settings-change-ids",
+        "androidx.vectordrawable_vectordrawable-animated",
+        "androidx.exifinterface_exifinterface",
+        "glide-annotation-and-compiler-prebuilt",
     ],
 
     libs: [
