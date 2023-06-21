@@ -54,7 +54,8 @@ public class RegulatoryInfoDisplayActivity extends Activity implements
             "/data/misc/elabel/regulatory_info.png";
     private static final String REGULATORY_INFO_FILEPATH_TEMPLATE =
             "/data/misc/elabel/regulatory_info_%s.png";
-    private static final String sRegulatoryUrl = "https://techsupport.fairphone.com/labels/FP5_e-Label.png";
+    private static final String sRegulatoryUrl = "https://techsupport.fairphone.com/labels/FP4_e-Label.png";
+    private static final String sRegulatoryUrl_FP5 = "https://techsupport.fairphone.com/labels/FP5_e-Label.png";
 
     /**
      * Display the regulatory info graphic in a dialog window.
@@ -64,7 +65,7 @@ public class RegulatoryInfoDisplayActivity extends Activity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.regulatory_info);
         ImageView image = findViewById(R.id.regulatoryInfo);
-        Glide.with(this).load(sRegulatoryUrl).error(R.drawable.regulatory_info).into(image);
+        Glide.with(this).load(sRegulatoryUrl_FP5).error(R.drawable.regulatory_info).into(image);
         // AlertDialog.Builder builder = new AlertDialog.Builder(this)
         //         .setTitle(R.string.regulatory_labels)
         //         .setOnDismissListener(this)
