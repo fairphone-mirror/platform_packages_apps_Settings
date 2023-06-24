@@ -362,8 +362,7 @@ public abstract class BiometricEnrollIntroduction extends BiometricEnrollBase
                     if(mToken != null){
                         try{
                             Intent settingsIntent = new Intent()
-                                    .setComponent(new ComponentName("com.android.settings","com.android.settings.anc.AncSettings"))
-                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    .setComponent(new ComponentName("com.android.settings","com.android.settings.anc.AncSettings"));
                             startActivity(settingsIntent);
                             finish();
                         }catch(Exception e) {
