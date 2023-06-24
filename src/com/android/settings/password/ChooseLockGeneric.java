@@ -460,8 +460,7 @@ public class ChooseLockGeneric extends SettingsActivity {
                     if(mForFace) {
                         try{
                             Intent faceIntent = new Intent()
-                                    .setComponent(new ComponentName("com.android.settings","com.android.settings.anc.AncSettings"))
-                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    .setComponent(new ComponentName("com.android.settings","com.android.settings.anc.AncSettings"));
                             startActivity(faceIntent);
                         }catch(Exception e) {
 
