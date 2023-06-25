@@ -2758,7 +2758,7 @@
     <string name="print_search_box_shown_utterance" msgid="6215002365360341961">"Sökrutan visas"</string>
     <string name="print_search_box_hidden_utterance" msgid="5355387966141712567">"Sökrutan är dold"</string>
     <string name="printer_info_desc" msgid="1206872325746154206">"Mer information om den här skrivaren"</string>
-    <string name="power_usage_summary_title" msgid="4198312848584882113">"Batteri"</string>
+    <string name="power_usage_summary_title" msgid="4198312848584882113">"Batteri och laddare"</string>
     <string name="power_usage_summary" msgid="6857382582534984531">"Appar som har förbrukat batteriet"</string>
     <string name="power_usage_not_available" msgid="3425302437465106036">"Batteriinfo ej tillgänglig."</string>
     <string name="power_usage_level_and_status" msgid="821521456989429593">"<xliff:g id="LEVEL">%1$s</xliff:g> - <xliff:g id="STATUS">%2$s</xliff:g>"</string>
@@ -5547,7 +5547,7 @@
     <string name="switch_sim_dialog_no_switch_text" msgid="7053939850026876088">"Om du senare vill använda mobildata, samtalsfunktioner och sms öppnar du nätverksinställningarna"</string>
     <string name="sim_card_label" msgid="5632157635124050923">"SIM-kort"</string>
     <string name="erase_sim_dialog_title" msgid="881253002169177016">"Vill du rensa det här nedladdade SIM-kortet?"</string>
-    <string name="erase_sim_dialog_text" msgid="753031064269699885">"Om du rensar det här SIM-kortet tas tjänsten hos <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> bort från enheten.\n\nTjänsten hos <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> avslutas inte."</string>
+    <string name="erase_sim_dialog_text" msgid="753031064269699885">"Att radera denna SIM tar bort <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> -tjänsten från den här enheten. Tjänsten för <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> kommer inte att avbrytas. Observera att en internetanslutning (mobildata eller Wi-Fi) krävs för att radera den valda SIM-profilen från enheten."</string>
     <string name="erase_sim_confirm_button" msgid="8309115684335320541">"Rensa"</string>
     <string name="erasing_sim" msgid="7877703231075699139">"Rensar SIM-kort …"</string>
     <string name="erase_sim_fail_title" msgid="2024446702985862427">"Det gick inte att rensa SIM-kortet"</string>
@@ -5936,4 +5936,32 @@
     <string name="warning_tips_rom4_third_part">" -Dina personliga data lagras och behandlas endast på enheten."</string>
     <string name="warning_tips_rom4_third_part_title">Om sekretess</string>
     <string name="warning_title">Riskvarning</string>
+    <string name="orientation_timing_title">Orienteringstidpunkt</string>
+    <string name="orientation_timing_spead_0_title">Sakta ner med 1 sekund</string>
+    <string name="orientation_timing_spead_1_title">Sakta ner med 0,5 sekunder</string>
+    <string name="orientation_timing_spead_2_title">Normal</string>
+    <string name="orientation_timing_spead_3_title">Accelerera med 0,5 sekunder</string>
+    <string name="orientation_timing_spead_4_title">Accelerera med 1 sekund</string>
+    <string name="dcdimming_title">DC-dimning</string>
+    <!--state of health-->
+    <string name="batteryh_soh">hälsotillstånd:</string>
+    <!--state of count-->
+    <string name="batteryh_soc">antal laddnings-/urladdningscykler:</string>
+    <!--charge full design-->
+    <string name="batteryh_cfd">design för full laddning:</string>
+    <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
+    <string name="toast_extra_dim_info">En mörkare miljö behövs.</string>
+    <string name="set_refresh_rate">Ställ in uppdateringsfrekvens</string>
+    <string name="pick_up_to_wake_title">Plocka upp för att väcka</string>
+    <string name="desktop_mode_title">Skrivbordsläge</string>
+    <string name="desktop_mode_summary">Använd skrivbordsläge på sekundära skärmar</string>
+    <string name="sunlight_mode_title">Solljusläge</string>
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="unlock_failed_reset_title">Automatisk fabriksåterställning</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="unlock_failed_reset_description">Om du misslyckas med att låsa upp din telefon 15 gånger så kommer den att återställas till fabriksinställningarna. All data såsom filer och nedladdade appar kommer att raderas.</string>
+    <!-- Mobile network settings screen, title of item showing the name of the default subscription
+    that will be used for data. This only appears in multi-SIM mode. [CHAR LIMIT=NONE] -->
+    <string name="data_preference">Preferens för data</string>
+
 </resources>
