@@ -968,7 +968,7 @@
     <string name="accessibility_personal_account_title" msgid="8535265881509557013">"Cuenta personal (<xliff:g id="MANAGED_BY">%s</xliff:g>)"</string>
     <string name="search_settings" msgid="7573686516434589771">"Buscar"</string>
     <string name="display_settings" msgid="7197750639709493852">"Pantalla"</string>
-    <string name="accelerometer_title" msgid="7745991950833748909">"Girar pantalla automáticamente"</string>
+    <string name="accelerometer_title" msgid="7745991950833748909">"Rotación de pantalla automatico"</string>
     <string name="auto_rotate_option_off" msgid="2788096269396290731">"Desactivado"</string>
     <string name="auto_rotate_option_on" msgid="5776678230808498171">"Activado"</string>
     <string name="auto_rotate_option_face_based" msgid="3438645484087953174">"Activado: basado en caras"</string>
