@@ -1383,7 +1383,7 @@
     <string name="accessibility_personal_account_title" msgid="8535265881509557013">"Personlig konto – <xliff:g id="MANAGED_BY">%s</xliff:g>"</string>
     <string name="search_settings" msgid="7573686516434589771">"Søg"</string>
     <string name="display_settings" msgid="7197750639709493852">"Skærm"</string>
-    <string name="accelerometer_title" msgid="7745991950833748909">"Roter skærm automatisk"</string>
+    <string name="accelerometer_title" msgid="7745991950833748909">"Automatisk roterende skærm"</string>
     <string name="auto_rotate_option_off" msgid="2788096269396290731">"Fra"</string>
     <string name="auto_rotate_option_on" msgid="5776678230808498171">"Til"</string>
     <string name="auto_rotate_option_face_based" msgid="3438645484087953174">"Til – ansigtsbaseret"</string>
