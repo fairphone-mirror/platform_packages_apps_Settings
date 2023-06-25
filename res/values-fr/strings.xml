@@ -4782,5 +4782,8 @@
     <!-- Mobile network settings screen, title of item showing the name of the default subscription
     that will be used for data. This only appears in multi-SIM mode. [CHAR LIMIT=NONE] -->
     <string name="data_preference">Préférences de données</string>
+    <string name="confirm_remove_enroll_face">Voulez-vous vraiment supprimer le visage enregistré ?</string>
+    <string name="main_face_title">Enregistrement du visage</string>
+    <string name="second_face_title">Sauvegarde de l’enregistrement du visage</string>
 
 </resources>
