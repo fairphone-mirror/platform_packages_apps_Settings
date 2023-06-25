@@ -2157,7 +2157,7 @@
     <string name="print_search_box_shown_utterance" msgid="6215002365360341961">"Zoekvak getoond"</string>
     <string name="print_search_box_hidden_utterance" msgid="5355387966141712567">"Zoekvak verborgen"</string>
     <string name="printer_info_desc" msgid="1206872325746154206">"Meer informatie over deze printer"</string>
-    <string name="power_usage_summary_title" msgid="4198312848584882113">"Batterij"</string>
+    <string name="power_usage_summary_title" msgid="4198312848584882113">"Batterij en opladen"</string>
     <string name="power_usage_summary" msgid="6857382582534984531">"Waarvoor de batterij is gebruikt"</string>
     <string name="power_usage_level_and_status" msgid="821521456989429593">"<xliff:g id="LEVEL">%1$s</xliff:g> - <xliff:g id="STATUS">%2$s</xliff:g>"</string>
     <string name="power_discharge_remaining" msgid="6997529817917076536">"<xliff:g id="REMAIN">%1$s</xliff:g> tot batterij leeg is"</string>
@@ -4334,7 +4334,7 @@
     <string name="switch_sim_dialog_no_switch_text" msgid="7053939850026876088">"Als je mobiele data, gespreksfuncties en sms later wilt gebruiken, ga je naar de netwerkinstellingen"</string>
     <string name="sim_card_label" msgid="6263064316075963775">"Simkaart"</string>
     <string name="erase_sim_dialog_title" msgid="4742077437653028326">"Deze e-simkaart wissen?"</string>
-    <string name="erase_sim_dialog_text" msgid="753031064269699885">"Als je deze simkaart wist, wordt de <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g>-service van dit apparaat verwijderd.\n\nDe service voor <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> wordt niet geannuleerd."</string>
+    <string name="erase_sim_dialog_text" msgid="753031064269699885">"Het wissen van deze SIM verwijdert <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> -service van dit apparaat. Service voor  <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> wordt niet geannuleerd. Houd er rekening mee dat een internetverbinding (mobiele gegevens of Wi-Fi) vereist is om het geselecteerde SIM-profiel van het apparaat te wissen."</string>
     <string name="erase_sim_confirm_button" msgid="8309115684335320541">"Wissen"</string>
     <string name="erasing_sim" msgid="7877703231075699139">"Simkaart wissen…"</string>
     <string name="erase_sim_fail_title" msgid="2024446702985862427">"Kan simkaart niet wissen"</string>
@@ -4752,6 +4752,32 @@
     <string name="warning_tips_rom4_third_part_title">Privacy-informatie</string>
     <string name="warning_title">"Waarschuwing voor risico's"</string>
     <string name="data_preference">Gegevensvoorkeur</string>
-    <string name="unlock_failed_reset_title">"Automatische Fabrieksreset"</string>
-    <string name="unlock_failed_reset_description">"Als u uw telefoon 15 keer verkeerd probeert te ontgrendelen, wordt hij teruggezet naar de fabrieksinstellingen. Alle gegevens, inclusief bestanden en gedownloade apps, worden gewist."</string>
+    <string name="orientation_timing_title">Timing van de oriëntatie</string>
+    <string name="orientation_timing_spead_0_title">Met 1 seconde vertragen</string>
+    <string name="orientation_timing_spead_1_title">Met een halve seconde vertragen</string>
+    <string name="orientation_timing_spead_2_title">Normaal</string>
+    <string name="orientation_timing_spead_3_title">Met een halve seconde versnellen</string>
+    <string name="orientation_timing_spead_4_title">Met 1 seconde versnellen</string>
+    <string name="dcdimming_title">DC-dimmen</string>
+    <!--state of health-->
+    <string name="batteryh_soh">Gezondheidsstatus:</string>
+    <!--state of count-->
+    <string name="batteryh_soc">Aantal laad- en ontlaadcycli:</string>
+    <!--charge full design-->
+    <string name="batteryh_cfd">Volledige capaciteit (ontwerp):</string>
+    <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
+    <string name="toast_extra_dim_info">Zorg voor een donkerdere omgeving.</string>
+    <string name="set_refresh_rate">Ververssnelheid instellen</string>
+    <string name="pick_up_to_wake_title">Til op om te activeren</string>
+    <string name="desktop_mode_title">Desktopmodus</string>
+    <string name="desktop_mode_summary">Gebruik de desktopmodus op secundaire beeldschermen</string>
+    <string name="sunlight_mode_title">Zonlichtmodus</string>
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="unlock_failed_reset_title">Automatisch terugzetten naar fabrieksinstellingen</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="unlock_failed_reset_description">Als je je telefoon 15 keer incorrect probeert te ontgrendelen, wordt het apparaat teruggezet naar de fabrieksinstellingen. Alle gegevens, inclusief bestanden en gedownloade apps, worden verwijderd.</string>
+    <!-- Mobile network settings screen, title of item showing the name of the default subscription
+    that will be used for data. This only appears in multi-SIM mode. [CHAR LIMIT=NONE] -->
+    <string name="data_preference">Gegevens en voorkeuren</string>
+
 </resources>
