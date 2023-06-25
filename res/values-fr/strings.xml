@@ -4765,7 +4765,6 @@
     <string name="batteryh_soh">état de santé :</string>
     <!--state of count-->
     <string name="batteryh_soc">nombre de cycles de charge/décharge :</string>
-    <string name="batteryh_soc">nombre de cycles de charge/décharge :</string>
     <!--charge full design-->
     <string name="batteryh_cfd">charge complète d’origine :</string>
     <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
@@ -4781,9 +4780,9 @@
     <string name="unlock_failed_reset_description">Votre téléphone sera réinitialisé si vous tentez de le déverrouiller 15 fois de manière incorrecte. Toutes les données, y compris les fichiers et les apps téléchargées, seront supprimées.</string>
     <!-- Mobile network settings screen, title of item showing the name of the default subscription
     that will be used for data. This only appears in multi-SIM mode. [CHAR LIMIT=NONE] -->
-    <string name="data_preference">Préférences de données</string>
     <string name="confirm_remove_enroll_face">Voulez-vous vraiment supprimer le visage enregistré ?</string>
     <string name="main_face_title">Enregistrement du visage</string>
     <string name="second_face_title">Sauvegarde de l’enregistrement du visage</string>
+    <string name="dialog_title_battery_healty">État de la batterie</string>
 
 </resources>

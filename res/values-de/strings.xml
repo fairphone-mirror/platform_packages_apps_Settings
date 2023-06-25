@@ -4779,9 +4779,9 @@
     <string name="unlock_failed_reset_description">Nach 15 fehlgeschlagenen Versuchen, dein Telefon zu entsperren, wird es auf die Werkseinstellungen zurückgesetzt. Alle Daten, enthaltenen Dateien und heruntergeladenen Apps werden gelöscht.</string>
     <!-- Mobile network settings screen, title of item showing the name of the default subscription
     that will be used for data. This only appears in multi-SIM mode. [CHAR LIMIT=NONE] -->
-    <string name="data_preference">Datenpräferenz</string>
     <string name="confirm_remove_enroll_face">Möchtest du das registrierte Gesicht wirklich entfernen?</string>
     <string name="main_face_title">Gesichtsregistrierung</string>
     <string name="second_face_title">Zurück Gesichtsregistrierung</string>
+    <string name="dialog_title_battery_healty">Akkugesundheit</string>
 
 </resources>

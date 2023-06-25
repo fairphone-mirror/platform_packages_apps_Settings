@@ -4782,5 +4782,6 @@
     <string name="confirm_remove_enroll_face">Bekräftar du borttagning av registrerat ansikte?</string>
     <string name="main_face_title">Ansiktsregistrering</string>
     <string name="second_face_title">Tillbaka från ansiktsregistrering</string>
+    <string name="dialog_title_battery_healty">Batterihälsa</string>
 
 </resources>
