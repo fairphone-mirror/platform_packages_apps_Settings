@@ -4762,7 +4762,7 @@
     <!--state of count-->
     <string name="batteryh_soc">充放电循环次数:</string>
     <!--charge full design-->
-    <string name="batteryh_cfd">满充次数:</string>
+    <string name="batteryh_cfd">电池容量:</string>
     <string name="face_unlock_settings_title_rom4">人脸解锁</string>
     <string name="face_unlock_register_prompt">把手机放在离脸20-50厘米的地方。把你的脸放在屏幕上显示的圆形中。</string>
     <string name="main_face_title">面部录入</string>
