@@ -5963,9 +5963,9 @@
     <string name="unlock_failed_reset_description">Als je je telefoon 15 keer incorrect probeert te ontgrendelen, wordt het apparaat teruggezet naar de fabrieksinstellingen. Alle gegevens, inclusief bestanden en gedownloade apps, worden verwijderd.</string>
     <!-- Mobile network settings screen, title of item showing the name of the default subscription
     that will be used for data. This only appears in multi-SIM mode. [CHAR LIMIT=NONE] -->
-    <string name="data_preference">Gegevens en voorkeuren</string>
     <string name="confirm_remove_enroll_face">Weet je zeker dat je je geregistreerde gezicht wilt verwijderen?</string>
     <string name="main_face_title">Gezichtsregistratie</string>
     <string name="second_face_title">Terug naar gezichtsregistratie</string>
+    <string name="dialog_title_battery_healty">Gezondheid van de batterij</string>
 
 </resources>
