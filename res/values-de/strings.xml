@@ -4729,12 +4729,12 @@
     <string name="face_detect_timeout_dialog_button_retry">ERNEUT VERSUCHEN</string>
     <string name="face_detect_timeout_dialog_message">Gesicht wurde nicht erkannt. Prüfen Sie, ob die Kamera sauber ist, und halten Sie das Telefon ungefähr 20–50 cm von Ihrem Gesicht entfernt.</string>
     <string name="face_detect_timeout_dialog_title">Gesicht konnte nicht registriert werden</string>
-    <string name="face_disabled_condition3_rom4">Der Gesichtsschlüssel hat dreimal hintereinander versagt.</string>
-    <string name="face_disabled_title_rom4">Die Gesichtsschlüssel werden in den folgenden Fällen deaktiviert:</string>
-    <string name="face_enable_condition_rom4">Die PIN, das Muster oder das Passwort werden benötigt, wenn Sie den Gesichtsschlüssel wieder verfügbar machen wollen.</string>
+    <string name="face_disabled_condition3_rom4">Entsperrung durch Gesichtserkennung 3-mal hintereinander fehlgeschlagen.</string>
+    <string name="face_disabled_title_rom4">Entsperrung durch Gesichtserkennung wird in den folgenden Fällen deaktiviert:</string>
+    <string name="face_enable_condition_rom4">PIN-Muster oder Passwort zur erneuten Aktivierung der Entsperrung durch Gesichtserkennung erforderlich.</string>
     <string name="face_recognition_button_start">Starten</string>
     <string name="face_unlock_finish_msg_rom4">Ihre Gesichtsdaten wurden hinzugefügt.</string>
-    <string name="face_unlock_recognition_ready_rom4">Zum Erzielen der bestmöglichen Ergebnisse sollten Sie Ihr Gesicht in einem Gebäude und an einem Ort, der vor direkter Sonneneinstrahlung geschützt ist, registrieren.</string>
+    <string name="face_unlock_recognition_ready_rom4">Für optimale Ergebnisse empfehlen wir, die Entsperrung durch Gesichtserkennung in Innenräumen und Schutz vor direkter Sonneneinstrahlung.</string>
     <string name="face_unlock_register_prompt">Halten Sie das Telefon ungefähr 20–50 cm von Ihrem Gesicht entfernt. Richten Sie das Quadrat auf dem Bildschirm auf Ihr Gesicht aus.</string>
     <string name="face_unlock_settings_title_rom4">Gesichtserkennung</string>
     <string name="faceunlock_last_delete_title">Gesichtsdaten entfernen?</string>
