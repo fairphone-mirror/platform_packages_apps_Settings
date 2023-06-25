@@ -5913,12 +5913,12 @@
     <string name="face_detect_timeout_dialog_button_retry">PRØV IGEN</string>
     <string name="face_detect_timeout_dialog_message">Hvis ansigtet ikke bliver registreret, skal du sørge for, at kameraet er rent, og flytte telefonen 20-50 cm væk fra ansigtet.</string>
     <string name="face_detect_timeout_dialog_title">Hvis ansigtet ikke bliver registreret</string>
-    <string name="face_disabled_condition3_rom4">Hovedtasten mislykkedes tre gange i træk.</string>
-    <string name="face_disabled_title_rom4">Hovedtasten deaktiveres i følgende tilfælde:</string>
-    <string name="face_enable_condition_rom4">PIN-kode, mønster eller adgangskode er nødvendig, hvis du vil gøre hovedtasten tilgængelig igen.</string>
+    <string name="face_disabled_condition3_rom4">oplåsning med ansigtsgenkendelse mislykkedes tre gange i træk.</string>
+    <string name="face_disabled_title_rom4">oplåsning med ansigtsgenkendelse deaktiveres i følgende tilfælde:</string>
+    <string name="face_enable_condition_rom4">PIN-mønster eller adgangskode er nødvendig, hvis du vil gøre oplåsning med ansigtsgenkendelse tilgængelig igen.</string>
     <string name="face_recognition_button_start">Start</string>
     <string name="face_unlock_finish_msg_rom4">Dine ansigtsdata er blevet tilføjet</string>
-    <string name="face_unlock_recognition_ready_rom4">For at få det bedste resultat bør dit ansigt genkendes indendørs og væk fra direkte sollys.</string>
+    <string name="face_unlock_recognition_ready_rom4">For at opnå de bedste resultater anbefaler vi, at oplåsning med ansigtsgenkendelse foregår indendørs og væk fra direkte sollys.</string>
     <string name="face_unlock_register_prompt">Hold telefonen 20-50 cm væk fra ansigtet. Sørg for, at dit ansigt er inden for den firkant, der ses på skærmen.</string>
     <string name="face_unlock_settings_title_rom4">Ansigtsgenkendelse</string>
     <string name="faceunlock_last_delete_title">"Fjern viste data?

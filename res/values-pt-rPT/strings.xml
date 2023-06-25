@@ -5906,16 +5906,16 @@
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"O código QR não é um formato válido"</string>
     <string name="attention">Atenção</string>
     <string name="cannot_detect_face">Não é possível detetar o seu rosto</string>
-    <string name="face_add_title">Adicionar dados de rosto</string>
+    <string name="face_add_title">Adicionar dados faciais</string>
     <string name="face_detect_timeout_dialog_button_retry">REPETIR</string>
     <string name="face_detect_timeout_dialog_message">Rosto não reconhecido. Certifique-se de que a câmara está limpa e afaste o telefone cerca de 20-50 cm do rosto.</string>
     <string name="face_detect_timeout_dialog_title">Não é possível registar o rosto</string>
-    <string name="face_disabled_condition3_rom4">A tecla de desbloqueio por rosto falhou três vezes seguidas.</string>
-    <string name="face_disabled_title_rom4">A tecla de desbloqueio por rosto será desativada nos seguintes casos:</string>
-    <string name="face_enable_condition_rom4">O PIN, o padrão ou a palavra-passe é necessário se quiser disponibilizar a tecla de desbloqueio por rosto novamente.</string>
+    <string name="face_disabled_condition3_rom4">O desbloqueio facial falhou três vezes seguidas.</string>
+    <string name="face_disabled_title_rom4">o desbloqueio facial será desativado nos seguintes casos:</string>
+    <string name="face_enable_condition_rom4">É necessário um padrão PIN ou uma palavra-passe se pretender tornar o desbloqueio facial novamente disponível.</string>
     <string name="face_recognition_button_start">Iniciar</string>
     <string name="face_unlock_finish_msg_rom4">Os dados de rosto foram adicionados</string>
-    <string name="face_unlock_recognition_ready_rom4">Para o melhor resultado, sugerimos que reconheça o seu rosto no interior e afastado da luz solar direta.</string>
+    <string name="face_unlock_recognition_ready_rom4">Para obter melhores resultados, sugerimos que o desbloqueio facial seja efetuado em espaços interiores e longe da luz solar direta.</string>
     <string name="face_unlock_register_prompt">Segure o seu telefone a 20-50 cm do seu rosto. Posicione o seu rosto no quadrado apresentado no ecrã.</string>
     <string name="face_unlock_settings_title_rom4">Reconhecimento de rosto</string>
     <string name="faceunlock_last_delete_title">Remover os dados de rosto?</string>

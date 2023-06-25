@@ -5913,12 +5913,12 @@
     <string name="face_detect_timeout_dialog_button_retry">FÖRSÖK IGEN</string>
     <string name="face_detect_timeout_dialog_message">Ansiktet känns inte igen. Se till att kameran är ren och flytta telefonen 20-50 cm från ansiktet.</string>
     <string name="face_detect_timeout_dialog_title">Det går inte att läsa in ansiktet</string>
-    <string name="face_disabled_condition3_rom4">Ansiktsknappen misslyckades tre gånger i rad.</string>
-    <string name="face_disabled_title_rom4">Ansiktsknappen kommer att vara inaktiverad i följande fall:</string>
-    <string name="face_enable_condition_rom4">PIN-kod, mönster eller lösenord krävs om du vill göra ansiktsknappen tillgänglig igen.</string>
+    <string name="face_disabled_condition3_rom4">ansiktsupplåsning misslyckades tre gånger i rad.</string>
+    <string name="face_disabled_title_rom4">ansiktsupplåsning inaktiveras i följande fall:</string>
+    <string name="face_enable_condition_rom4">PIN-mönster eller lösenord krävs om du vill göra ansiktsupplåsning tillgänglig igen.</string>
     <string name="face_recognition_button_start">Starta</string>
     <string name="face_unlock_finish_msg_rom4">Dina ansiktsdata har lagts till</string>
-    <string name="face_unlock_recognition_ready_rom4">För bästa resultat bör du läsa in ansiktet inomhus utan direkt solljus.</string>
+    <string name="face_unlock_recognition_ready_rom4">För bästa resultat rekommenderar vi ansiktsupplåsning inomhus på avstånd från direkt solljus.</string>
     <string name="face_unlock_register_prompt">Håll telefonen 20-50 cm från ansiktet. Positionera ditt ansikte i kvadraten som visas på skärmen.</string>
     <string name="face_unlock_settings_title_rom4">Ansiktsigenkänning</string>
     <string name="faceunlock_last_delete_title">"Ta bort ansiktsdata?

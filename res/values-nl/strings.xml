@@ -5914,12 +5914,12 @@
     <string name="face_detect_timeout_dialog_button_retry">OPNIEUW PROBEREN</string>
     <string name="face_detect_timeout_dialog_message">Gezicht niet herkend. Zorg ervoor dat de camera schoon is en houd uw telefoon op een afstand van ongeveer 20-50 cm van uw gezicht.</string>
     <string name="face_detect_timeout_dialog_title">Kan gezicht niet registreren</string>
-    <string name="face_disabled_condition3_rom4">Gezichtstoets drie keer achter elkaar mislukt.</string>
-    <string name="face_disabled_title_rom4">Gezichtstoets wordt uitgeschakeld in de volgende gevallen:</string>
-    <string name="face_enable_condition_rom4">PIN, patroon of wachtwoord nodig als u de gezichtstoets weer beschikbaar maken.</string>
+    <string name="face_disabled_condition3_rom4">De gezichtsontgrendeling is drie keer achter elkaar mislukt.</string>
+    <string name="face_disabled_title_rom4">De gezichtsontgrendeling wordt in de volgende gevallen uitgeschakeld:</string>
+    <string name="face_enable_condition_rom4">Je hebt een pincode, patroon of wachtwoord nodig als je de gezichtsontgrendeling opnieuw wilt inschakelen.</string>
     <string name="face_recognition_button_start">Starten</string>
     <string name="face_unlock_finish_msg_rom4">Uw gezichtsgegevens zijn gedeactiveerd</string>
-    <string name="face_unlock_recognition_ready_rom4">Voor het beste resultaat raden we u aan uw gezicht binnenshuis en niet in direct zonlicht te laten herkennen.</string>
+    <string name="face_unlock_recognition_ready_rom4">Voor het beste resultaat raden we aan de gezichtsontgrendeling binnenshuis en niet in direct zonlicht uit te voeren.</string>
     <string name="face_unlock_register_prompt">Houd uw telefoon op een afstand van 20-50 cm van uw gezicht. Positioneer uw gezicht in het vierkant dat op het scherm wordt weergegeven.</string>
     <string name="face_unlock_settings_title_rom4">Gezichtsherkenning</string>
     <string name="faceunlock_last_delete_title">Gezichtsgegevens verwijderen?</string>

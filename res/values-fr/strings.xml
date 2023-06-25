@@ -5917,12 +5917,12 @@
     <string name="face_detect_timeout_dialog_button_retry">RÉESSAYER</string>
     <string name="face_detect_timeout_dialog_message">Visage non reconnu. Assurez-vous que l’objectif est propre et placez votre téléphone à 20 à 50 cm du visage.</string>
     <string name="face_detect_timeout_dialog_title">Inscription du visage impossible</string>
-    <string name="face_disabled_condition3_rom4">Face Key a échoué trois fois de suite.</string>
-    <string name="face_disabled_title_rom4">La reconnaissance faciale « Face Key » sera désactivée dans les cas suivants :</string>
-    <string name="face_enable_condition_rom4">Un code PIN, un modèle ou un mot de passe sont nécessaires si vous souhaitez à nouveau activer la reconnaissance faciale.</string>
+    <string name="face_disabled_condition3_rom4">Le déverrouillage par reconnaissance faciale a échoué trois fois de suite</string>
+    <string name="face_disabled_title_rom4">Le déverrouillage par reconnaissance faciale sera désactivé dans les cas suivants :</string>
+    <string name="face_enable_condition_rom4">Un code PIN ou un mot de passe est nécessaire si vous souhaitez que le déverrouillage par reconnaissance faciale soit de nouveau disponible.</string>
     <string name="face_recognition_button_start">Démarrer</string>
     <string name="face_unlock_finish_msg_rom4">Vos données faciales ont été ajoutées</string>
-    <string name="face_unlock_recognition_ready_rom4">Pour de meilleurs résultats de reconnaissance de votre visage, il est conseillé de procéder en intérieur, loin de la lumière directe du soleil.</string>
+    <string name="face_unlock_recognition_ready_rom4">Pour de meilleurs résultats, nous conseillons d’effectuer le déverrouillage par reconnaissance faciale à l’intérieur et à l’abri de la lumière directe du soleil</string>
     <string name="face_unlock_register_prompt">Maintenez votre téléphone à 20 à 50 cm du visage. Positionnez votre visage dans le cadre affiché à l’écran.</string>
     <string name="face_unlock_settings_title_rom4">Reconnaissance faciale</string>
     <string name="faceunlock_last_delete_title">Supprimer les données faciales ?</string>
