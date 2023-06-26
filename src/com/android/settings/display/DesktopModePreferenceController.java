@@ -7,6 +7,7 @@ import android.provider.Settings;
 import androidx.fragment.app.Fragment;
 import androidx.preference.Preference;
 import androidx.preference.SwitchPreference;
+import android.widget.Toast;
 
 import com.android.settings.R;
 import com.android.settings.core.PreferenceControllerMixin;
@@ -57,6 +58,8 @@ public class DesktopModePreferenceController extends AbstractPreferenceControlle
         if (value) {
             RebootConfirmationDialogFragment.show(
                     mFragment, R.string.reboot_dialog_force_desktop_mode, this);
+        } else {
+            Toast.makeText(mContext, R.string.desktop_mode_off_info, Toast.LENGTH_LONG).show();
         }
         return true;
     }
