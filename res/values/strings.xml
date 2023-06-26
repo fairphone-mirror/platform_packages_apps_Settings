@@ -14637,4 +14637,5 @@
     <string name="face_unlock_less_secure_than_strong_auth">Note: Your face unlock may be less secure than a strong pattern or PIN.</string>
     <string name="security_settings_faceunlock_cancel_setup">Skip</string>
     <string name="security_settings_faceunlock_next">Next</string>
+    <string name="desktop_mode_off_info">Changes take effect when is reconnected</string>
 </resources>
