@@ -4331,7 +4331,7 @@
     <string name="switch_sim_dialog_no_switch_text" msgid="7053939850026876088">"Para usar dados móveis, recursos de chamada e SMS mais tarde, acesse as configurações de rede"</string>
     <string name="sim_card_label" msgid="6263064316075963775">"Chip"</string>
     <string name="erase_sim_dialog_title" msgid="4742077437653028326">"Você quer mesmo apagar este eSIM?"</string>
-    <string name="erase_sim_dialog_text" msgid="753031064269699885">"A apagamento deste SIM remove o serviço <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> deste dispositivo. O serviço para <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> não será cancelado. Observe que uma conexão com a Internet (dados móveis ou Wi-Fi) é necessária para apagar o perfil SIM selecionado do dispositivo."</string>
+    <string name="erase_sim_dialog_text" msgid="753031064269699885">"A apagamento deste SIM remove o serviço <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> deste dispositivo.\n\n O serviço para <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> não será cancelado. Observe que uma conexão com a Internet (dados móveis ou Wi-Fi) é necessária para apagar o perfil SIM selecionado do dispositivo."</string>
     <string name="erase_sim_confirm_button" msgid="8309115684335320541">"Limpar"</string>
     <string name="erasing_sim" msgid="7877703231075699139">"Limpando chip…"</string>
     <string name="erase_sim_fail_title" msgid="2024446702985862427">"Não é possível limpar o chip"</string>

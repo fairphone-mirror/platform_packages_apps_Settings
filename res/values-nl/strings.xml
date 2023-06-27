@@ -4334,7 +4334,7 @@
     <string name="switch_sim_dialog_no_switch_text" msgid="7053939850026876088">"Als je mobiele data, gespreksfuncties en sms later wilt gebruiken, ga je naar de netwerkinstellingen"</string>
     <string name="sim_card_label" msgid="6263064316075963775">"Simkaart"</string>
     <string name="erase_sim_dialog_title" msgid="4742077437653028326">"Deze e-simkaart wissen?"</string>
-    <string name="erase_sim_dialog_text" msgid="753031064269699885">"Het wissen van deze SIM verwijdert <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> -service van dit apparaat. Service voor  <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> wordt niet geannuleerd. Houd er rekening mee dat een internetverbinding (mobiele gegevens of Wi-Fi) vereist is om het geselecteerde SIM-profiel van het apparaat te wissen."</string>
+    <string name="erase_sim_dialog_text" msgid="753031064269699885">"Het wissen van deze SIM verwijdert <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> -service van dit apparaat.\n\n Service voor  <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> wordt niet geannuleerd. Houd er rekening mee dat een internetverbinding (mobiele gegevens of Wi-Fi) vereist is om het geselecteerde SIM-profiel van het apparaat te wissen."</string>
     <string name="erase_sim_confirm_button" msgid="8309115684335320541">"Wissen"</string>
     <string name="erasing_sim" msgid="7877703231075699139">"Simkaart wissen…"</string>
     <string name="erase_sim_fail_title" msgid="2024446702985862427">"Kan simkaart niet wissen"</string>
