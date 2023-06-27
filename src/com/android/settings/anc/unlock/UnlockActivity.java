@@ -75,15 +75,7 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
         LiteManager.getInstance().initLite(this, new LiteManager.Callback() {
             @Override
             public void onSuccess(Object object) {
-                mCameraWrapper = CameraFactory.getCamera();
-                mLiteManager = LiteManager.getInstance();
-                AncFaceIdConfig config = LiteManager.getInstance().getConfig();
-                config.rectTop = 0;
-                config.rectLeft = 0;
-                config.rectRight = 480;
-                config.rectBottom = 640;
-                LiteManager.getInstance().setConfig(config);
-                openCamera();
+
             }
 
             @Override
@@ -96,6 +88,15 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
 
             }
         });
+        mLiteManager = LiteManager.getInstance();
+        AncFaceIdConfig config = LiteManager.getInstance().getConfig();
+        config.rectTop = 0;
+        config.rectLeft = 0;
+        config.rectRight = 480;
+        config.rectBottom = 640;
+        LiteManager.getInstance().setConfig(config);
+        mCameraWrapper = CameraFactory.getCamera();
+        openCamera();
     }
 
     @Override
@@ -114,13 +115,13 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
 
     @Override
     public void onPreviewFrame(final byte[] bytes) {
-        Log.d(TAG, "onPreviewFrame()... ");
         if (++mFrameOffset < Constants.UNLOCK_IGNORED_AHEAD_FRAME ||
                 !LiteManager.getInstance().canCompare() || failTimes >= 3) {
             Log.d(TAG, "not to compare too many failTimes:" + failTimes);
             return;
         }
 
+        Log.d(TAG,"start compare");
         // compare
         LiteManager.getInstance().compare(bytes, mCameraWrapper.getWidth(),
                 mCameraWrapper.getHeight(), mCameraWrapper.getAngle(),
