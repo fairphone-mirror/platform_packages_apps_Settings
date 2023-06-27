@@ -4784,5 +4784,8 @@
     <string name="second_face_title">Tilbage til ansigtsregistrering</string>
     <string name="dialog_title_battery_healty">Sundhedstilstand for batteri</string>
     <string name="disclamer">Ansvarsfraskrivelse</string>
+    <string name="charging_slow">Langsom tilstand</string>
+    <string name="charging_normal">Normal tilstand</string>
+    <string name="charging_state">Opladningstilstand</string>
 
 </resources>

@@ -4796,4 +4796,7 @@
     <string name="security_settings_faceunlock_cancel_setup">"跳过 "</string>
     <string name="security_settings_faceunlock_next">下一步</string>
     <string name="desktop_mode_off_info">更改在重新连接时生效</string>
+    <string name="charging_state">充电模式</string>
+    <string name="charging_slow">慢充模式</string>
+    <string name="charging_normal">正常模式</string>
 </resources>
