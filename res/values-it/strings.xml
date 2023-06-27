@@ -5966,5 +5966,6 @@
     <string name="main_face_title">Registrazione del viso</string>
     <string name="second_face_title">Registrazione del viso di backup</string>
     <string name="dialog_title_battery_healty">Livello di salute della batteria</string>
+    <string name="disclamer">Disclaimer</string>
 
 </resources>

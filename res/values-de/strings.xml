@@ -5974,5 +5974,6 @@
     <string name="main_face_title">Gesichtsregistrierung</string>
     <string name="second_face_title">Zurück Gesichtsregistrierung</string>
     <string name="dialog_title_battery_healty">Akkugesundheit</string>
+    <string name="disclamer">Haftungsausschluss</string>
 
 </resources>

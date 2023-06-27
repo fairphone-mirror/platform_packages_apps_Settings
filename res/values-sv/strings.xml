@@ -5967,5 +5967,6 @@
     <string name="main_face_title">Ansiktsregistrering</string>
     <string name="second_face_title">Tillbaka från ansiktsregistrering</string>
     <string name="dialog_title_battery_healty">Batterihälsa</string>
+    <string name="disclamer">Ansiktsregistrering</string>
 
 </resources>

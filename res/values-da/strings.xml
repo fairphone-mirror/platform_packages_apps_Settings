@@ -5967,5 +5967,6 @@
     <string name="main_face_title">Ansigtsgenkendelse</string>
     <string name="second_face_title">Tilbage til ansigtsregistrering</string>
     <string name="dialog_title_battery_healty">Sundhedstilstand for batteri</string>
+    <string name="disclamer">Ansvarsfraskrivelse</string>
 
 </resources>
