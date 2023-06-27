@@ -5547,7 +5547,7 @@
     <string name="switch_sim_dialog_no_switch_text" msgid="7053939850026876088">"Per utilizzare i dati mobili, le funzionalità di chiamata e gli SMS in un secondo momento, vai alle impostazioni di rete"</string>
     <string name="sim_card_label" msgid="5632157635124050923">"Scheda SIM"</string>
     <string name="erase_sim_dialog_title" msgid="881253002169177016">"Eliminare questa SIM scaricata?"</string>
-    <string name="erase_sim_dialog_text" msgid="753031064269699885">"La cancellazione di questa SIM rimuove il servizio <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> da questo dispositivo. Il servizio per <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> non verrà annullato. Attenzione: è necessaria una connessione Internet (dati mobili o Wi-Fi) per cancellare correttamente il profilo SIM selezionato dal dispositivo."</string>
+    <string name="erase_sim_dialog_text" msgid="753031064269699885">"La cancellazione di questa SIM rimuove il servizio <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> da questo dispositivo.\n\n Il servizio per <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> non verrà annullato. Attenzione: è necessaria una connessione Internet (dati mobili o Wi-Fi) per cancellare correttamente il profilo SIM selezionato dal dispositivo."</string>
     <string name="erase_sim_confirm_button" msgid="8309115684335320541">"Elimina"</string>
     <string name="erasing_sim" msgid="7877703231075699139">"Reset della SIM…"</string>
     <string name="erase_sim_fail_title" msgid="2024446702985862427">"Impossibile resettare la SIM"</string>

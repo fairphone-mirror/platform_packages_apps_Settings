@@ -5554,7 +5554,7 @@
     <string name="switch_sim_dialog_no_switch_text" msgid="7053939850026876088">"Wenn du mobile Daten, Anruffunktionen und SMS später einrichten möchtest, kannst du das in deinen Netzwerkeinstellungen tun"</string>
     <string name="sim_card_label" msgid="5632157635124050923">"SIM-Karte"</string>
     <string name="erase_sim_dialog_title" msgid="881253002169177016">"Diese heruntergeladene SIM löschen?"</string>
-    <string name="erase_sim_dialog_text" msgid="753031064269699885">"Durch das Löschen dieser SIM wird der Dienst <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> von diesem Gerät entfernt. Der Dienst für <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> wird nicht entfernt. Bitte beachte, dass eine Internetverbindung (mobile Daten oder Wi-Fi) nötig ist um das ausgewählte SIM-Profil aus dem Gerät zu löschen."</string>
+    <string name="erase_sim_dialog_text" msgid="753031064269699885">"Durch das Löschen dieser SIM wird der Dienst <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> von diesem Gerät entfernt. \n\nDer Dienst für <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> wird nicht entfernt. Bitte beachte, dass eine Internetverbindung (mobile Daten oder Wi-Fi) nötig ist um das ausgewählte SIM-Profil aus dem Gerät zu löschen."</string>
     <string name="erase_sim_confirm_button" msgid="8309115684335320541">"Löschen"</string>
     <string name="erasing_sim" msgid="7877703231075699139">"SIM wird gelöscht…"</string>
     <string name="erase_sim_fail_title" msgid="2024446702985862427">"SIM kann nicht gelöscht werden"</string>
