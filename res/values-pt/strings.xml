@@ -5942,5 +5942,8 @@
     <string name="second_face_title">Inscrição da parte posterior da cabeça</string>
     <string name="dialog_title_battery_healty">Estado da bateria</string>
     <string name="disclamer">Declaração de limitação de responsabilidade</string>
+    <string name="charging_slow">Modo lento</string>
+    <string name="charging_normal">Modo normal</string>
+    <string name="charging_state">Modo de carregamento</string>
 
 </resources>

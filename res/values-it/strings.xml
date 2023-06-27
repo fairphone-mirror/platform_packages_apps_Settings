@@ -5967,5 +5967,8 @@
     <string name="second_face_title">Registrazione del viso di backup</string>
     <string name="dialog_title_battery_healty">Livello di salute della batteria</string>
     <string name="disclamer">Disclaimer</string>
+    <string name="charging_slow">Modalità lenta</string>
+    <string name="charging_normal">Modalità normale</string>
+    <string name="charging_state">Modalità di ricarica</string>
 
 </resources>

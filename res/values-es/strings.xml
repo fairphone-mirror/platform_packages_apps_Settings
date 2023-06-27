@@ -5972,5 +5972,8 @@
     <string name="second_face_title">Volver a registro de cara</string>
     <string name="dialog_title_battery_healty">Salud de la batería</string>
     <string name="disclamer">Exención de responsabilidad</string>
+    <string name="charging_slow">Modo lento</string>
+    <string name="charging_normal">Modo normal</string>
+    <string name="charging_state">Modo de carga</string>
 
 </resources>
