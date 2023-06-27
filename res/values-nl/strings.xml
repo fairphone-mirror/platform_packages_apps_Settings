@@ -4782,5 +4782,6 @@
     <string name="main_face_title">Gezichtsregistratie</string>
     <string name="second_face_title">Terug naar gezichtsregistratie</string>
     <string name="dialog_title_battery_healty">Gezondheid van de batterij</string>
+    <string name="disclamer">Disclaimer</string>
 
 </resources>

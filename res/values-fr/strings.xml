@@ -4784,5 +4784,6 @@
     <string name="main_face_title">Enregistrement du visage</string>
     <string name="second_face_title">Sauvegarde de l’enregistrement du visage</string>
     <string name="dialog_title_battery_healty">État de la batterie</string>
+    <string name="disclamer">Clause de non-responsabilité</string>
 
 </resources>

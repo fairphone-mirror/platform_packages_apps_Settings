@@ -4751,5 +4751,6 @@
     <string name="main_face_title">Inscrição facial</string>
     <string name="second_face_title">Inscrição da parte posterior da cabeça</string>
     <string name="dialog_title_battery_healty">Estado da bateria</string>
+    <string name="disclamer">Declaração de limitação de responsabilidade</string>
 
 </resources>
