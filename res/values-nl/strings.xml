@@ -5923,7 +5923,7 @@
     <string name="face_unlock_register_prompt">Houd uw telefoon op een afstand van 20-50 cm van uw gezicht. Positioneer uw gezicht in het vierkant dat op het scherm wordt weergegeven.</string>
     <string name="face_unlock_settings_title_rom4">Gezichtsherkenning</string>
     <string name="faceunlock_last_delete_title">Gezichtsgegevens verwijderen?</string>
-    <string name="scanning_face">Gezichtsgegeven scannen...</string>
+    <string name="scanning_face">Gezichtsgegevens scannen...</string>
     <string name="warning_tips_rom4_first_part">"Gezichtsherkenning is een nieuwe, handige manier om apparaten te ontgrendelen. Gebruikers moeten de volgende verklaringen hebben gelezen en de risico's daarvan begrijpen:
  
  - Uw apparaat kan worden ontgrendeld door personen of objecten die op u lijken

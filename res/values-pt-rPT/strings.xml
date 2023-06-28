@@ -5919,7 +5919,7 @@
     <string name="face_unlock_register_prompt">Segure o seu telefone a 20-50 cm do seu rosto. Posicione o seu rosto no quadrado apresentado no ecrã.</string>
     <string name="face_unlock_settings_title_rom4">Reconhecimento de rosto</string>
     <string name="faceunlock_last_delete_title">Remover os dados de rosto?</string>
-    <string name="scanning_face">A ler dados de rosto...</string>
+    <string name="scanning_face">Digitalizar dados da face...</string>
     <string name="warning_tips_rom4_first_part">"O reconhecimento de rosto é uma forma nova e prática de desbloquear o dispositivo. Os utilizadores têm de ler e compreender os riscos das seguintes declarações antes de utilizarem o reconhecimento de rosto para desbloquear o dispositivo:
  
  - O seu dispositivo pode ser desbloqueado por uma pessoa ou coisa que se pareça consigo

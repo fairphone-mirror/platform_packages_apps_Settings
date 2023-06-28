@@ -5922,7 +5922,7 @@
     <string name="face_unlock_register_prompt">Tenere il telefono a una distanza di circa 20-50 cm dal viso. Posizionare il viso nel riquadro visualizzato sullo schermo.</string>
     <string name="face_unlock_settings_title_rom4">Riconoscimento viso</string>
     <string name="faceunlock_last_delete_title">Eliminare i dati sul viso?</string>
-    <string name="scanning_face">Scansione dei dati del viso...</string>
+    <string name="scanning_face">Scansionare i dati facciali...</string>
     <string name="warning_tips_rom4_first_part">"Il riconoscimento del viso è un metodo nuovo e comodo per sbloccare il dispositivo. Gli utenti sono tenuti a leggere e comprendere i rischi riportati nelle seguenti avvertenze prima di utilizzare il riconoscimento del viso come metodo di sblocco:
  
  - Il dispositivo potrebbe essere sbloccato da una persona o da un oggetto con tratti simili a quelli dell'utente
