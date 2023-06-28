@@ -4738,7 +4738,7 @@
     <string name="face_unlock_register_prompt">Halten Sie das Telefon ungefähr 20–50 cm von Ihrem Gesicht entfernt. Richten Sie das Quadrat auf dem Bildschirm auf Ihr Gesicht aus.</string>
     <string name="face_unlock_settings_title_rom4">Gesichtserkennung</string>
     <string name="faceunlock_last_delete_title">Gesichtsdaten entfernen?</string>
-    <string name="scanning_face">Gesichtsdaten werden gescannt...</string>
+    <string name="scanning_face">Gesichtsdaten scannen...</string>
     <string name="warning_tips_rom4_first_part">"Die Gesichtserkennung ist eine neue, praktische Entsperrmethode für Geräte. Lesen Sie die folgenden Hinweise und stellen Sie sicher, dass Sie diese verstanden haben, bevor Sie die Gesichtserkennung zum Entsperren von Geräten verwenden:
  
  -Ihr Gerät kann unter Umständen von einer ähnlich aussehenden Person entsperrt werden

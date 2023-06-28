@@ -4739,7 +4739,7 @@
     <string name="face_unlock_settings_title_rom4">Ansiktsigenkänning</string>
     <string name="faceunlock_last_delete_title">"Ta bort ansiktsdata?
  "</string>
-    <string name="scanning_face">Genomsöker ansiktsdata...</string>
+    <string name="scanning_face">Skanna ansiktsdata...</string>
     <string name="warning_tips_rom4_first_part">"Ansiktsigenkänning är en ny och smidig metod för att låsa upp din enhet. Du måste läsa och förstå riskerna som beskrivs nedan innan du kan använda ansiktsigenkänning för att låsa upp enheten:
  
  - Din enhet kan låsas upp av en person eller någonting annat som ser ut som du

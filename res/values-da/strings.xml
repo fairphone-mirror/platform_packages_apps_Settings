@@ -4739,7 +4739,7 @@
     <string name="face_unlock_settings_title_rom4">Ansigtsgenkendelse</string>
     <string name="faceunlock_last_delete_title">"Fjern viste data?
  "</string>
-    <string name="scanning_face">Scanner ansigtsdata …</string>
+    <string name="scanning_face">Scan ansigtsdata …</string>
     <string name="warning_tips_rom4_first_part">"Ansigtsgenkendelse er en ny og praktisk måde at låse enheden op på. Som bruger skal du have læst og forstået risiciene ved følgende tiltag, før du anvender ansigtsgenkendelse til at låse enheden op:
  
  - Enheden kan åbnes af en person eller ting, der ser ud som dig

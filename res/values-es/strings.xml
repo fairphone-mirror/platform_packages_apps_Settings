@@ -4741,7 +4741,7 @@
     <string name="face_unlock_register_prompt">Sostenga el teléfono a una distancia de 20-50 cm de su rostro. Coloque el rostro en el recuadro que aparece en la pantalla.</string>
     <string name="face_unlock_settings_title_rom4">Reconocimiento facial</string>
     <string name="faceunlock_last_delete_title">¿Desea eliminar los datos faciales?</string>
-    <string name="scanning_face">Escaneando datos faciales...</string>
+    <string name="scanning_face">Escanear datos faciales...</string>
     <string name="warning_tips_rom4_first_part">"El reconocimiento facial es una forma nueva y cómoda de desbloquear el dispositivo. El usuario debe haber leído y entendido los riesgos de las siguientes afirmaciones antes de utilizar el reconocimiento facial para desbloquear el dispositivo:
  
  - El dispositivo puede desbloquearse por una persona o cosa que se le parezca.
