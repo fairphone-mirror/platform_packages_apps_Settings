@@ -46,9 +46,9 @@ public class LowBatteryDetector implements BatteryTipDetector {
 
     @Override
     public BatteryTip detect() {
-        final boolean lowBattery = mBatteryInfo.batteryLevel <= mWarningLevel
-                || (mBatteryInfo.discharging && mBatteryInfo.remainingTimeUs != 0
-                && mBatteryInfo.remainingTimeUs < TimeUnit.HOURS.toMicros(mPolicy.lowBatteryHour));
+        final boolean lowBattery = mBatteryInfo.batteryLevel <= mWarningLevel;
+                // || (mBatteryInfo.discharging && mBatteryInfo.remainingTimeUs != 0
+                // && mBatteryInfo.remainingTimeUs < TimeUnit.HOURS.toMicros(mPolicy.lowBatteryHour));
         final boolean lowBatteryEnabled = mPolicy.lowBatteryEnabled && !mIsPowerSaveMode;
         final boolean dischargingLowBatteryState =
                 mPolicy.testLowBatteryTip || (mBatteryInfo.discharging && lowBattery);
