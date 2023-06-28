@@ -54,6 +54,7 @@ import java.io.FileReader;
 import android.util.Log;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.os.SystemProperties;
 
 /**
  * Displays a list of apps and subsystems that consume power, ordered by how much power was consumed
@@ -106,6 +107,13 @@ public class PowerUsageSummary extends PowerUsageBase implements
         @Override
         public void onChange(boolean selfChange, Uri uri) {
             restartBatteryInfoLoader();
+        }
+    };
+
+    final ContentObserver mUpdateSummarySettingsObserver = new ContentObserver(new Handler()) {
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            setChargingModeSummary();
         }
     };
 
@@ -197,11 +205,16 @@ public class PowerUsageSummary extends PowerUsageBase implements
                 Global.getUriFor(Global.BATTERY_ESTIMATES_LAST_UPDATE_TIME),
                 false,
                 mSettingsObserver);
+        getContentResolver().registerContentObserver(
+                Global.getUriFor(Global.UPDATE_BATTERY_CHARGING_MODE),
+                false,
+                mUpdateSummarySettingsObserver);
     }
 
     @Override
     public void onPause() {
         getContentResolver().unregisterContentObserver(mSettingsObserver);
+        getContentResolver().unregisterContentObserver(mUpdateSummarySettingsObserver);
         super.onPause();
     }
 
@@ -277,7 +290,7 @@ public class PowerUsageSummary extends PowerUsageBase implements
         mHelpPreference.setVisible(false);
 
         mBatteryChargingModePreference = findPreference(KEY_BATTERY_CHARGING_MODE);
-        mBatteryChargingModePreference.setSummary(getString(R.string.charging_normal));
+        setChargingModeSummary();
 
         mBatteryHealthPreference = findPreference(KEY_BATTERY_HEALTH);
         new Thread(new Runnable(){
@@ -297,6 +310,19 @@ public class PowerUsageSummary extends PowerUsageBase implements
             return true;
         }
         return super.onPreferenceTreeClick(preference);
+    }
+
+    private void setChargingModeSummary(){
+        String charging_mode_summary = "";
+        String charge_mode = SystemProperties.get("persist.sys.charge_mode");
+        if (charge_mode != null &&( "1".equals(charge_mode))){
+            charging_mode_summary = getString(R.string.charging_slow);
+        }else if (charge_mode != null && "0".equals(charge_mode)){
+            charging_mode_summary = getString(R.string.charging_normal);
+        }else {
+            charging_mode_summary = getString(R.string.charging_normal);
+        }
+        mBatteryChargingModePreference.setSummary(charging_mode_summary);
     }
 
     @VisibleForTesting
