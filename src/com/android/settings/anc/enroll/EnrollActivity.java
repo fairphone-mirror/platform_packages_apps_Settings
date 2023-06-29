@@ -34,6 +34,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.content.ComponentName;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -49,7 +50,7 @@ import com.android.settings.anc.camera.CameraWrapper;
 import com.android.settings.anc.util.BottomDialog;
 import com.android.settings.anc.util.Constants;
 import com.android.settings.anc.util.RoundClipView;
-
+import com.android.settings.anc.lifecycle.ActivityManager;
 
 public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCallback {
 
@@ -78,6 +79,7 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
     private final String SYSTEM_RECENT_KEY = "recentapps";
     private MyReceiver mReceiver;
     private boolean isEnrollSuccess = false;
+    private boolean mOperateRecent = false;
 
     private final LiteManager.Callback mCallBack = new LiteManager.Callback() {
         @Override
@@ -250,8 +252,14 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
                     return;
                 }
 
-                if (SYSTEM_RECENT_KEY.equals(reason)) {
-                    mHandler.postDelayed(EnrollActivity.this::finish, 500);
+                if (SYSTEM_RECENT_KEY.equals(reason) && !mOperateRecent) {
+                    if(ActivityManager.getInstance().containActivity(AncSettings.class.getSimpleName())){
+                        Intent faceIntent = new Intent()
+                            .setComponent(new ComponentName("com.android.settings","com.android.settings.anc.TempActivity"));
+                        startActivity(faceIntent);
+                    }
+                    mOperateRecent = true;
+                    EnrollActivity.this.finish();
                 }
             }
         }
