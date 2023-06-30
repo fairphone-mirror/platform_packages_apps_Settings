@@ -152,7 +152,9 @@ public class StorageWizardFormatProgress extends StorageWizardBase {
 
             if (e != null) {
                 Log.e(TAG, "Failed to partition", e);
-                Toast.makeText(activity, e.getMessage(), Toast.LENGTH_LONG).show();
+                if(e.getMessage() != null){
+                    Toast.makeText(activity, e.getMessage(), Toast.LENGTH_LONG).show();
+                }
                 activity.finishAffinity();
                 return;
             }
