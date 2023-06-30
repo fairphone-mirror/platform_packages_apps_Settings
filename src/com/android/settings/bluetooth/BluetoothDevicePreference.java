@@ -137,6 +137,29 @@ public final class BluetoothDevicePreference extends GearPreference {
     }
 
     public BluetoothDevicePreference(Context context, CachedBluetoothDevice cachedDevice,
+            boolean showDeviceWithoutNames, @SortType int type,String key) {
+        super(context, null);
+        mResources = getContext().getResources();
+        mUserManager = (UserManager) context.getSystemService(Context.USER_SERVICE);
+        mShowDevicesWithoutNames = showDeviceWithoutNames;
+        setKey(key);
+
+        if (sDimAlpha == Integer.MIN_VALUE) {
+            TypedValue outValue = new TypedValue();
+            context.getTheme().resolveAttribute(android.R.attr.disabledAlpha, outValue, true);
+            sDimAlpha = (int) (outValue.getFloat() * 255);
+        }
+
+        mCachedDevice = cachedDevice;
+        mCallback = new BluetoothDevicePreferenceCallback();
+        mCachedDevice.registerCallback(mCallback);
+        mCurrentTime = System.currentTimeMillis();
+        mType = type;
+        onPreferenceAttributesChanged();
+        mHideSummary = false;
+    }
+
+    public BluetoothDevicePreference(Context context, CachedBluetoothDevice cachedDevice,
             boolean showDeviceWithoutNames, @SortType int type, boolean hideSummary) {
         super(context, null);
         mResources = getContext().getResources();

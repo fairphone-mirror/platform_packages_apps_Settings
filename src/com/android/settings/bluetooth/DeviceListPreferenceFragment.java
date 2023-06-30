@@ -200,7 +200,7 @@ public abstract class DeviceListPreferenceFragment extends
             return;
         }
 
-        if (mFilter != null && mFilter.matches(cachedDevice.getDevice())) {
+        if (mFilter != null && mFilter.matches(cachedDevice.getDevice()) && (mShowDevicesWithoutNames || cachedDevice.hasHumanReadableName())) {
             createDevicePreference(cachedDevice);
         }
     }
@@ -217,8 +217,8 @@ public abstract class DeviceListPreferenceFragment extends
 
         if (preference == null) {
             preference = new BluetoothDevicePreference(getPrefContext(), cachedDevice,
-                    mShowDevicesWithoutNames, BluetoothDevicePreference.SortType.TYPE_FIFO);
-            preference.setKey(key);
+                    mShowDevicesWithoutNames, BluetoothDevicePreference.SortType.TYPE_FIFO,key);
+            // preference.setKey(key);
             //Set hideSecondTarget is true if it's bonded device.
             preference.hideSecondTarget(true);
             mDeviceListGroup.addPreference(preference);
