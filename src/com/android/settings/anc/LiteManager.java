@@ -311,6 +311,11 @@ public class LiteManager {
         return AncFaceIdApi.getInstance().getFaceIdCount();
     }
 
+    public boolean checkFaceId(int id){
+        AncFaceIdStatus status = AncFaceIdApi.getInstance().checkFaceId(id);
+        return status == AncFaceIdStatus.ANC_UNLOCK_OK;
+    }
+
     /**
      * 删除底库文件（多底库版本调用,单底库版本调用不能保证正确性，建议不在单底库版本中调用）
      *

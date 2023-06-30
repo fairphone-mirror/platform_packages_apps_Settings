@@ -63,7 +63,7 @@ public class AncSettings extends SettingsBaseActivity {
         LiteManager.getInstance().initLite(this, new LiteManager.Callback() {
             @Override
             public void onSuccess(Object object) {
-
+                checkFaceStatus();
             }
 
             @Override
@@ -143,6 +143,21 @@ public class AncSettings extends SettingsBaseActivity {
         return builder.setRequestCode(request).show();
     }
 
+    private void checkFaceStatus() {
+        int mainFaceId = Settings.System.getInt(getContentResolver(), "enroll_main_face_id", 0);
+        int secondFaceId = Settings.System.getInt(getContentResolver(), "enroll_second_face_id", 0);
+        if(mainFaceId > 0) {
+            if(!LiteManager.getInstance().checkFaceId(mainFaceId)){
+                Settings.System.putInt(getContentResolver(), "enroll_main_face_id", 0);
+            }
+        }
+        if(secondFaceId > 0) {
+            if(!LiteManager.getInstance().checkFaceId(secondFaceId)){
+                Settings.System.putInt(getContentResolver(), "enroll_second_face_id", 0);
+            }
+        }
+        updateButton();
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         if (menuItem.getItemId() == android.R.id.home) {
