@@ -69,7 +69,7 @@ public class TapToWakePreferenceController extends AbstractPreferenceController 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         boolean value = (Boolean) newValue;
-        writeDouEn(value ? "1" : "0");
+        //writeDouEn(value ? "1" : "0");
         SystemProperties.set("persist.sys.double_en",value ? "1" : "0");
         Settings.Secure.putInt(
                 mContext.getContentResolver(), Settings.Secure.DOUBLE_TAP_TO_WAKE, value ? 1 : 0);
