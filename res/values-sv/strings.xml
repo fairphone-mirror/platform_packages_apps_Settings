@@ -5967,7 +5967,7 @@
     <string name="main_face_title">Ansiktsregistrering</string>
     <string name="second_face_title">Tillbaka från ansiktsregistrering</string>
     <string name="dialog_title_battery_healty">Batterihälsa</string>
-    <string name="disclamer">Ansiktsregistrering</string>
+    <string name="disclamer">Ansvarsfriskrivning</string>
     <string name="charging_slow">Långsamt läge</string>
     <string name="charging_normal">Normalt läge</string>
     <string name="charging_state">Laddningsläge</string>
