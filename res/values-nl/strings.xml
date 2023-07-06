@@ -4751,7 +4751,7 @@
     <string name="warning_tips_rom4_third_part">" - Uw persoonlijke gegevens worden alleen op het apparaat opgeslagen en verwerkt."</string>
     <string name="warning_tips_rom4_third_part_title">Privacy-informatie</string>
     <string name="warning_title">"Waarschuwing voor risico's"</string>
-    <string name="data_preference">Gegevensvoorkeur</string>
+    <string name="data_preference">"Gegevens en voorkeuren"</string>
     <string name="orientation_timing_title">Timing van de oriëntatie</string>
     <string name="orientation_timing_spead_0_title">Met 1 seconde vertragen</string>
     <string name="orientation_timing_spead_1_title">Met een halve seconde vertragen</string>
