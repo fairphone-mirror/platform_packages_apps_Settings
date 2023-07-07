@@ -4787,5 +4787,10 @@
     <string name="charging_slow">Långsamt läge</string>
     <string name="charging_normal">Normalt läge</string>
     <string name="charging_state">Laddningsläge</string>
+    <string name="faceunlock_setupwizard">Lås upp med ansikte</string>
+    <string name="face_unlock_user_experience">Använd ansiktsupplåsning för en snabbare och smidigare upplåsning.</string>
+    <string name="face_unlock_less_secure_than_strong_auth">Obs! Din ansiktsupplåsning kan vara mindre säker än ett avancerat mönster eller PIN-kod.</string>
+    <string name="security_settings_faceunlock_cancel_setup">Hoppa över</string>
+    <string name="security_settings_faceunlock_next">Nästa</string>
 
 </resources>

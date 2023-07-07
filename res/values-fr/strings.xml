@@ -4788,5 +4788,10 @@
     <string name="charging_slow">Mode lent</string>
     <string name="charging_normal">Mode normal</string>
     <string name="charging_state">Mode de recharge</string>
+    <string name="faceunlock_setupwizard">Déverrouiller par reconnaissance faciale</string>
+    <string name="face_unlock_user_experience">Utiliser le déverrouillage par reconnaissance faciale pour une expérience de déverrouillage plus rapide et plus fluide.</string>
+    <string name="face_unlock_less_secure_than_strong_auth">"Remarque : votre déverrouillage par reconnaissance faciale peut s’avérer moins sûr qu’un modèle de forme ou qu’un code PIN complexes."</string>
+    <string name="security_settings_faceunlock_cancel_setup">Ignorer</string>
+    <string name="security_settings_faceunlock_next">Suivant</string>
 
 </resources>

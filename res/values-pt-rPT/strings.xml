@@ -4748,4 +4748,9 @@
     <string name="warning_tips_rom4_third_part">" - Os seus dados pessoais serão guardados e processados apenas no dispositivo."</string>
     <string name="warning_tips_rom4_third_part_title">Sobre a privacidade</string>
     <string name="warning_title">Aviso de risco</string>
+    <string name="faceunlock_setupwizard">Desbloquear com o rosto</string>
+    <string name="face_unlock_user_experience">Utilize o desbloqueio por rosto para uma experiência de desbloqueio mais rápida e fácil.</string>
+    <string name="face_unlock_less_secure_than_strong_auth">Nota: o desbloqueio por rosto pode ser menos seguro do que um padrão forte ou PIN.</string>
+    <string name="security_settings_faceunlock_cancel_setup">Ignorar</string>
+    <string name="security_settings_faceunlock_next">Avançar</string>
 </resources>

@@ -4786,5 +4786,10 @@
     <string name="charging_slow">Modalità lenta</string>
     <string name="charging_normal">Modalità normale</string>
     <string name="charging_state">Modalità di ricarica</string>
+    <string name="faceunlock_setupwizard">Sblocca con il viso</string>
+    <string name="face_unlock_user_experience">"Si prega di usare lo sblocco viso per un'esperienza di blocco più veloce e più scorrevole."</string>
+    <string name="face_unlock_less_secure_than_strong_auth">Nota: lo sblocco con il tuo viso potrebbe essere meno sicuro di una sequenza complessa o di un PIN.</string>
+    <string name="security_settings_faceunlock_cancel_setup">Salta</string>
+    <string name="security_settings_faceunlock_next">Avanti</string>
 
 </resources>
