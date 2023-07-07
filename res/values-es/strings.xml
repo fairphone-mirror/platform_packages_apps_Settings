@@ -5975,5 +5975,10 @@
     <string name="charging_slow">Modo lento</string>
     <string name="charging_normal">Modo normal</string>
     <string name="charging_state">Modo de carga</string>
+    <string name="faceunlock_setupwizard">Desbloquear con la cara</string>
+    <string name="face_unlock_user_experience">Disfrute de una experiencia de desbloqueo más rápida y cómoda con el desbloqueo facial.</string>
+    <string name="face_unlock_less_secure_than_strong_auth">Nota: El desbloqueo mediante el reconocimiento facial puede ser menos seguro que un patrón complejo o el PIN.</string>
+    <string name="security_settings_faceunlock_cancel_setup">Saltar</string>
+    <string name="security_settings_faceunlock_next">Siguiente</string>
 
 </resources>

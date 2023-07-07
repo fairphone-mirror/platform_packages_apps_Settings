@@ -5918,7 +5918,7 @@
     <string name="face_disabled_title_rom4">De gezichtsontgrendeling wordt in de volgende gevallen uitgeschakeld:</string>
     <string name="face_enable_condition_rom4">Je hebt een pincode, patroon of wachtwoord nodig als je de gezichtsontgrendeling opnieuw wilt inschakelen.</string>
     <string name="face_recognition_button_start">Starten</string>
-    <string name="face_unlock_finish_msg_rom4">Uw gezichtsgegevens zijn gedeactiveerd</string>
+    <string name="face_unlock_finish_msg_rom4">Uw gezichtsgegevens zijn toegevoegd</string>
     <string name="face_unlock_recognition_ready_rom4">Voor het beste resultaat raden we aan de gezichtsontgrendeling binnenshuis en niet in direct zonlicht uit te voeren.</string>
     <string name="face_unlock_register_prompt">Houd uw telefoon op een afstand van 20-50 cm van uw gezicht. Positioneer uw gezicht in het vierkant dat op het scherm wordt weergegeven.</string>
     <string name="face_unlock_settings_title_rom4">Gezichtsherkenning</string>
@@ -5971,5 +5971,10 @@
     <string name="charging_slow">Langzame modus</string>
     <string name="charging_normal">Normale modus</string>
     <string name="charging_state">Oplaadmodus</string>
+    <string name="faceunlock_setupwizard">Ontgrendelen met gezicht</string>
+    <string name="face_unlock_user_experience">Gebruik ontgrendelen met gezicht voor een snellere en eenvoudige ontgrendelervaring.</string>
+    <string name="face_unlock_less_secure_than_strong_auth">Opmerking: Ontgrendelen met uw gezicht kan minder veilig zijn dan een sterk patroon of PIN-code.</string>
+    <string name="security_settings_faceunlock_cancel_setup">Overslaan</string>
+    <string name="security_settings_faceunlock_next">Volgende</string>
 
 </resources>
