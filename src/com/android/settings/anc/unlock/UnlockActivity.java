@@ -35,7 +35,6 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
     private final CameraWrapper.CameraOpenCallback mCameraOpenListener = new CameraWrapper.CameraOpenCallback() {
         @Override
         public void onOpenSuccess() {
-            Log.d(TAG, "onOpenSuccess");
             // set orientation
             mCameraWrapper.setDisplayOrientation(Constants.ORIENTATION_90);
             mCameraWrapper.startPreview(null);
@@ -44,20 +43,16 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
 
         @Override
         public void onDisconnected() {
-            Log.d(TAG, "onDisconnected");
         }
 
         @Override
         public void onOpenFailed() {
-            Log.d(TAG, "onOpenFailed");
         }
     };
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG, "onCreate");
-        //setShowWhenLocked(true);
         Window window = getWindow();
         window.setGravity(Gravity.LEFT | Gravity.TOP);
         WindowManager.LayoutParams layoutParams = window.getAttributes();
@@ -102,7 +97,6 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        Log.d(TAG, "onNewIntent");
         if(intent != null){
             boolean stopUnlock = intent.getBooleanExtra("stop_unlock",false);
             if(stopUnlock){
@@ -117,11 +111,9 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
     public void onPreviewFrame(final byte[] bytes) {
         if (++mFrameOffset < Constants.UNLOCK_IGNORED_AHEAD_FRAME ||
                 !LiteManager.getInstance().canCompare() || failTimes >= 3) {
-            Log.d(TAG, "not to compare too many failTimes:" + failTimes);
             return;
         }
 
-        Log.d(TAG,"start compare");
         // compare
         LiteManager.getInstance().compare(bytes, mCameraWrapper.getWidth(),
                 mCameraWrapper.getHeight(), mCameraWrapper.getAngle(),
@@ -131,7 +123,6 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(TAG, "onDestroy");
         if (mCameraWrapper != null) {
             mCameraWrapper.stopPreview();
         }
@@ -152,7 +143,6 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
-            Log.d(TAG, "onReceive action:" + action);
             if (Intent.ACTION_USER_PRESENT.equals(action) ||
                     Intent.ACTION_SCREEN_OFF.equals(action)) {
                 UnlockActivity.this.finish();
@@ -162,7 +152,6 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
 
     // open Camera
     public void openCamera() {
-        Log.d(TAG, "openCamera()...");
         // open camera and enable detect
         mCameraWrapper.openCamera(false, this, mCameraOpenListener);
         mFrameOffset = 0;
@@ -172,7 +161,6 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
         if (mLiteManager == null) {
             return;
         }
-        Log.d(TAG, "startUnlock()...");
         mLiteManager.prepare(AncPowerMode.ANC_UNLOCK_POWER_HIGH);
 
         LiteManager.getInstance().setCompareTimeout(Constants.UNLOCK_TIMEOUT, mTimeoutCallback);
@@ -182,14 +170,12 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
     }
 
     private void stopUnlock() {
-        Log.d(TAG, "stopUnlock()...");
         mCameraWrapper.stopDetect();
 
         mLiteManager.reset();
     }
 
     private final LiteManager.TimeoutCallback mTimeoutCallback = info -> {
-        Log.d(TAG, "onTimeout()...");
         stopUnlock();
         failTimes++;
         Intent intent = new Intent("intent.action.faceunlock");
@@ -203,9 +189,6 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
             // stop unlock firstly
             stopUnlock();
             AncFaceIdUnlockInfo info = (AncFaceIdUnlockInfo) object;
-            Log.d(TAG, "onSuccess()..." + info.compareScore + " feature id: " + info.faceId);
-            Log.d(TAG, "info.unlockSpendTime:" + info.unlockSpendTime + ",info.detectSpendTime:" +
-                    info.detectSpendTime + ",info.liveSpendTime:" + info.liveSpendTime + ",info.featureSpendTime:" + info.featureSpendTime);
             Intent intent = new Intent("intent.action.faceunlock");
             intent.putExtra("faceunlock_status", 0);
             UnlockActivity.this.sendBroadcast(intent);
@@ -222,7 +205,6 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
 
         @Override
         public void onError(String errorMsg) {
-            Log.d(TAG, "onError()...errorMsg:" + errorMsg);
         }
     };
 }

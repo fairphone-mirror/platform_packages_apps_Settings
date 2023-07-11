@@ -182,7 +182,6 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
 
             @Override
             public void onSuccess(Object object) {
-                Log.d(TAG, "initLite onSuccess");
                 mLiteManager.prepare(AncPowerMode.ANC_UNLOCK_POWER_HIGH);
                 // open camera and enable detect
                 mCameraWrapper.openCamera(false, EnrollActivity.this, mCameraOpenListener);
@@ -195,7 +194,6 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
 
             @Override
             public void onError(String errorMsg) {
-                Log.d(TAG, "initLite onError :" + errorMsg);
             }
         });
         mActivity = this;
@@ -218,7 +216,6 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(TAG, "onPause");
         mCameraWrapper.closeCamera();
         mLiteManager.reset();
         finish();
@@ -235,7 +232,6 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(TAG, "onDestroy");
         unregisterReceiver(mReceiver);
         mActivity = null;
         mHandler.removeCallbacksAndMessages(null);
@@ -247,7 +243,6 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
             String action = intent.getAction();
             if (Intent.ACTION_CLOSE_SYSTEM_DIALOGS.equals(action)) {
                 String reason = intent.getStringExtra("reason");
-                Log.d(TAG, "reason:" + reason);
                 if (reason == null) {
                     return;
                 }
@@ -267,7 +262,6 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
 
     @Override
     public void onPreviewFrame(final byte[] bytes) {
-        Log.d(TAG, "onPreviewFrame() stopDetect:" + stopDetect);
         // need to check if feature save is executing
         if (!stopDetect && mLiteManager.canSaveFeature()) {
             boolean isMain = Settings.System.getInt(EnrollActivity.this.getContentResolver(), "enroll_main_face_id", 0) == 0;
@@ -278,13 +272,11 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
     }
 
     private void initSurfaceHolder() {
-        Log.d(TAG, "initSurfaceHolder()...begin");
         SurfaceHolder surfaceHolder = mSurface.getHolder();
         surfaceHolder.setKeepScreenOn(true);
         surfaceHolder.addCallback(new SurfaceHolder.Callback() {
             @Override
             public void surfaceCreated(SurfaceHolder holder) {
-                Log.d(TAG, "surfaceCreated()...");
                 mSurfaceHolder = holder;
                 checkAndStartPreview();
                 // adjust surface layout
@@ -294,20 +286,15 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
 
             @Override
             public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-                Log.d(TAG, "surfaceChanged()...");
             }
 
             @Override
             public void surfaceDestroyed(SurfaceHolder holder) {
-                Log.d(TAG, "surfaceDestroyed()...");
             }
         });
-
-        Log.d(TAG, "initSurfaceHolder()...end");
     }
 
     private void adjustSurfaceViewSize() {
-        Log.d(TAG, "adjustSurfaceViewSize()...");
         ViewGroup.LayoutParams layoutParams = mSurface.getLayoutParams();
         if (null == layoutParams) {
             return;
@@ -320,7 +307,6 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
         layoutParams.width = width;
         layoutParams.height = width;
 
-        Log.d(TAG, "adjustSurfaceViewSize()...width:" + layoutParams.width + " height:" + layoutParams.height);
         mSurface.setLayoutParams(layoutParams);
         mSurface.getHolder().setFixedSize(layoutParams.width, layoutParams.height);
         mSurface.requestLayout();
@@ -341,13 +327,10 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
     }
 
     private void createCamera() {
-        Log.d(TAG, "createCamera()...");
         mCameraWrapper = CameraFactory.getCamera();
     }
 
     private void checkAndStartPreview() {
-        Log.d(TAG, "checkAndStartPreview()...Camera Opened:" + mIsCameraOpened +
-                " Holder:" + mSurfaceHolder);
         if (mIsCameraOpened && null != mSurfaceHolder) {
             // set orientation
             mCameraWrapper.setDisplayOrientation(Constants.ORIENTATION_90);

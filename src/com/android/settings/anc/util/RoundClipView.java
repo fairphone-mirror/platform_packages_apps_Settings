@@ -69,7 +69,6 @@ public class RoundClipView extends View {
             if(mMeasureWidth!=mSetWidth||mMeasureHeight!=mSetHeight){
                 mMeasureWidth=mSetWidth;
                 mMeasureHeight=mSetHeight;
-                Log.d(TAG, "onDraw: mMeasureWidth="+mMeasureWidth+"mMeasureHeight="+mMeasureHeight+"mSetWidth="+mSetWidth+"mSetHeight="+mSetHeight);
             }
 
             int realLeft = (mMeasureWidth * mLeft) / 480;
@@ -80,7 +79,6 @@ public class RoundClipView extends View {
             mClipCx = (realLeft + realRight) / 2;
             mClipCy = (realTop + realBottom) / 2;
             mClipCy += mClipCy / 2;
-            Log.d(TAG, "top:" + mTop + "bottom:" + mBottom + "  mMeasureWidth:" + mMeasureWidth + "  mMeasureHeight:" + mMeasureHeight + "   mClipCx:" + mClipCx + "   mClipCy:" + mClipCy);
             mClipRadius = (realRight - realLeft) / 3 * 2;
             mProgressRect = new RectF(0, (mMeasureHeight - mMeasureWidth) / 2, mMeasureWidth, (mMeasureWidth + mMeasureHeight) / 2);
         }
