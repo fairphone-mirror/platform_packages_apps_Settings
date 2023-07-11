@@ -4781,7 +4781,7 @@
     <string name="data_preference">Data-præference</string>
     <string name="confirm_remove_enroll_face">Ønsker du at fjerne det registrerede ansigt?</string>
     <string name="main_face_title">Ansigtsgenkendelse</string>
-    <string name="second_face_title">Tilbage til ansigtsregistrering</string>
+    <string name="second_face_title">Sikkerhedskopi ansigtsregistrering</string>
     <string name="dialog_title_battery_healty">Sundhedstilstand for batteri</string>
     <string name="disclamer">Ansvarsfraskrivelse</string>
     <string name="charging_slow">Langsom tilstand</string>
@@ -4792,5 +4792,7 @@
     <string name="face_unlock_less_secure_than_strong_auth">Bemærk: Dit ansigt kan være mindre sikkert end et stærkt mønster eller en pinkode.</string>
     <string name="security_settings_faceunlock_cancel_setup">Spring over</string>
     <string name="security_settings_faceunlock_next">Næste</string>
+    <string name="enroll_main_first">Tilmeld venligst ansigtsdata først.</string>
+    <string name="desktop_mode_off_info">Ændringer træder i kraft, når de er forbundet igen</string>
 
 </resources>

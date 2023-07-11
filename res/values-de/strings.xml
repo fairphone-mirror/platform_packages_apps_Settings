@@ -4751,7 +4751,7 @@
     <string name="warning_tips_rom4_third_part">" -Ihre personenbezogenen Daten werden nur auf dem Gerät gespeichert und verarbeitet."</string>
     <string name="warning_tips_rom4_third_part_title">Informationen zum Datenschutz</string>
     <string name="warning_title">Warnung</string>
-    <string name="enroll_main_first">Bitte geben Sie zuerst Gesichtsdaten ein.</string>
+    <string name="enroll_main_first">Bitte registriere zuerst deine Gesichtsdaten.</string>
     <string name="data_preference">Datenpräferenz</string>
     <string name="orientation_timing_title">Orientierungszeit</string>
     <string name="orientation_timing_spead_0_title">Um 1 Sekunde verlangsamen</string>
@@ -4792,6 +4792,7 @@
     <string name="face_unlock_less_secure_than_strong_auth">Hinweis: Unter Umständen ist Ihr Gesicht weniger sicher als ein sicheres Muster oder eine sichere PIN.</string>
     <string name="security_settings_faceunlock_cancel_setup">Überspringen</string>
     <string name="security_settings_faceunlock_next">Weiter</string>
+    <string name="desktop_mode_off_info">Änderungen werden nach erneuter Verbindung wirksam.</string>
 
 
 </resources>

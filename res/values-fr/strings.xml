@@ -4752,7 +4752,7 @@
     <string name="warning_tips_rom4_third_part">" -Vos données personnelles seront stockées et traitées sur le téléphone uniquement."</string>
     <string name="warning_tips_rom4_third_part_title">Politique de confidentialité</string>
     <string name="warning_title">Avis de risque</string>
-    <string name="enroll_main_first">Veuillez d’abord entrer les données du visage.</string>
+    <string name="enroll_main_first">"Veuillez d'abord enregistrer votre visage pour la reconnaissance faciale."</string>
     <string name="data_preference">Préférence de données</string>
     <string name="orientation_timing_title">Durée d’orientation</string>
     <string name="orientation_timing_spead_0_title">Ralentir de 1 seconde</string>
@@ -4793,5 +4793,6 @@
     <string name="face_unlock_less_secure_than_strong_auth">"Remarque : votre déverrouillage par reconnaissance faciale peut s’avérer moins sûr qu’un modèle de forme ou qu’un code PIN complexes."</string>
     <string name="security_settings_faceunlock_cancel_setup">Ignorer</string>
     <string name="security_settings_faceunlock_next">Suivant</string>
+    <string name="desktop_mode_off_info">Les modifications prennent effet après reconnexion</string>
 
 </resources>
