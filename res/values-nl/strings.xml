@@ -5965,7 +5965,7 @@
     that will be used for data. This only appears in multi-SIM mode. [CHAR LIMIT=NONE] -->
     <string name="confirm_remove_enroll_face">Weet je zeker dat je je geregistreerde gezicht wilt verwijderen?</string>
     <string name="main_face_title">Gezichtsregistratie</string>
-    <string name="second_face_title">Terug naar gezichtsregistratie</string>
+    <string name="second_face_title">Back-up gezichtsregistratie</string>
     <string name="dialog_title_battery_healty">Gezondheid van de batterij</string>
     <string name="disclamer">Disclaimer</string>
     <string name="charging_slow">Langzame modus</string>
@@ -5976,5 +5976,7 @@
     <string name="face_unlock_less_secure_than_strong_auth">Opmerking: Ontgrendelen met uw gezicht kan minder veilig zijn dan een sterk patroon of PIN-code.</string>
     <string name="security_settings_faceunlock_cancel_setup">Overslaan</string>
     <string name="security_settings_faceunlock_next">Volgende</string>
+    <string name="enroll_main_first">Registreer eerst gezichtsgegevens.</string>
+    <string name="desktop_mode_off_info">Wijzigen worden doorgevoerd na opnieuw verbinden</string>
 
 </resources>

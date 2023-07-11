@@ -5975,5 +5975,7 @@
     <string name="face_unlock_less_secure_than_strong_auth">Nota: lo sblocco con il tuo viso potrebbe essere meno sicuro di una sequenza complessa o di un PIN.</string>
     <string name="security_settings_faceunlock_cancel_setup">Salta</string>
     <string name="security_settings_faceunlock_next">Avanti</string>
+    <string name="enroll_main_first">Registra prima i dati del volto.</string>
+    <string name="desktop_mode_off_info">I cambiamenti avranno effetto quando sarai riconnesso</string>
 
 </resources>

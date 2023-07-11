@@ -5939,7 +5939,7 @@
     <string name="warning_tips_rom4_third_part">" - Sus datos personales se almacenarán sólo en el dispositivo."</string>
     <string name="warning_tips_rom4_third_part_title">Acerca de la Privacidad</string>
     <string name="warning_title">Advertencia de riesgos</string>
-    <string name="enroll_main_first">Por favor, introduzca los datos de la cara primero.</string>
+    <string name="enroll_main_first">Por favor introduce los datos faciales primero.</string>
     <string name="orientation_timing_title">Tiempo de orientación</string>
     <string name="orientation_timing_spead_0_title">Ralentizar 1 segundo</string>
     <string name="orientation_timing_spead_1_title">Ralentizar 0,5 segundos</string>
@@ -5969,7 +5969,7 @@
     <string name="data_preference">Preferencia de datos</string>
     <string name="confirm_remove_enroll_face">¿Confirmas que quieres eliminar el registro de cara?</string>
     <string name="main_face_title">Registro de cara</string>
-    <string name="second_face_title">Volver a registro de cara</string>
+    <string name="second_face_title">Copia de seguridad registro de cara</string>
     <string name="dialog_title_battery_healty">Salud de la batería</string>
     <string name="disclamer">Exención de responsabilidad</string>
     <string name="charging_slow">Modo lento</string>
@@ -5980,5 +5980,6 @@
     <string name="face_unlock_less_secure_than_strong_auth">Nota: El desbloqueo mediante el reconocimiento facial puede ser menos seguro que un patrón complejo o el PIN.</string>
     <string name="security_settings_faceunlock_cancel_setup">Saltar</string>
     <string name="security_settings_faceunlock_next">Siguiente</string>
+    <string name="desktop_mode_off_info">Los cambios se aplican cuando se reconecte</string>
 
 </resources>
