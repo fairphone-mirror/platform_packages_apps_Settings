@@ -346,6 +346,12 @@ public class StorageDashboardFragment extends DashboardFragment
             mStorageEntries.clear();
             mStorageEntries.addAll(
                     StorageUtils.getAllStorageEntries(getContext(), mStorageManager));
+
+            if (mStorageEntries != null && !mStorageEntries.contains(mSelectedStorageEntry)) {
+                mStorageSelectionController.setStorageEntries(mStorageEntries);
+                mSelectedStorageEntry = mStorageSelectionController.getLastStorageEntry();                
+            }
+            
             refreshUi();
         }
         mStorageManager.registerListener(mStorageEventListener);
