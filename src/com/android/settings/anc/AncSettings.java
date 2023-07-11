@@ -52,7 +52,6 @@ public class AncSettings extends SettingsBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG, "onCreate");
         setContentView(R.layout.anc_face_settings);
         if (getActionBar() != null) {
             getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -170,7 +169,6 @@ public class AncSettings extends SettingsBaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(TAG, "onResume");
         updateButton();
         if (firstTime && !hasMain && !hasSecond) {
             Intent intent = new Intent(AncSettings.this, IntroFaceUnlockActivity.class);
@@ -178,7 +176,6 @@ public class AncSettings extends SettingsBaseActivity {
         }
         firstTime = false;
         mHandler.postDelayed(() -> {
-            Log.d(TAG, "isLock:" + mKeyguardManager.isKeyguardLocked() + ",isDeviceLocked:" + mKeyguardManager.isDeviceLocked());
             if (mShowConfirm && !mKeyguardManager.isKeyguardLocked()) {
                 runKeyguardConfirmation(REQUEST_CONFIRM_CODE);
                 mShowConfirm = false;
@@ -189,7 +186,6 @@ public class AncSettings extends SettingsBaseActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(TAG, "onStop");
     }
 
     @Override
@@ -207,7 +203,6 @@ public class AncSettings extends SettingsBaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(TAG, "onDestroy");
         mHandler.removeCallbacksAndMessages(null);
         unregisterReceiver(mReceiver);
         mDialogUtil.onDestroy();
@@ -217,13 +212,11 @@ public class AncSettings extends SettingsBaseActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(TAG, "onPause");
     }
 
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        Log.d(TAG, "onNewIntent");
         mShowConfirm = false;
     }
 
@@ -238,7 +231,6 @@ public class AncSettings extends SettingsBaseActivity {
             }
             if (Intent.ACTION_CLOSE_SYSTEM_DIALOGS.equals(action)) {
                 String reason = intent.getStringExtra("reason");
-                Log.d(TAG, "reason:" + reason);
                 if (reason == null) {
                     return;
                 }
@@ -267,7 +259,6 @@ public class AncSettings extends SettingsBaseActivity {
     }
 
     private boolean deleteFeatureFace(int faceId) {
-        Log.d(TAG, "deleteFeatureFace()...");
         int ret = LiteManager.getInstance().deleteFeature(faceId);
         Log.d(TAG, "ret:" + ret);
         boolean success = false;
@@ -291,7 +282,6 @@ public class AncSettings extends SettingsBaseActivity {
             if (faceFile.exists()) {
                 success = faceFile.delete();
             }
-            Log.d(TAG, "delete:" + faceFile.getPath());
         } catch (Exception e) {
             e.printStackTrace();
         }

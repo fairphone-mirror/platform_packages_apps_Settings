@@ -21,7 +21,6 @@ public class DeleteService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        Log.d(TAG,"onHandleIntent");
         if (intent != null) {
             final int mainId = Settings.System.getInt(getContentResolver(), "enroll_main_face_id", 0);
             final int secondId = Settings.System.getInt(getContentResolver(), "enroll_second_face_id", 0);
@@ -58,7 +57,6 @@ public class DeleteService extends IntentService {
     }
 
     private boolean deleteFeatureFace(int faceId) {
-        Log.d(TAG, "deleteFeatureFace()...");
         int ret = LiteManager.getInstance().deleteFeature(faceId);
         Log.d(TAG, "ret:" + ret);
         boolean success = false;
@@ -82,7 +80,6 @@ public class DeleteService extends IntentService {
             if (faceFile.exists()) {
                 success = faceFile.delete();
             }
-            Log.d(TAG, "delete:" + faceFile.getPath());
         } catch (Exception e) {
             e.printStackTrace();
         }

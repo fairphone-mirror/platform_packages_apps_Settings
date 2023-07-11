@@ -97,14 +97,12 @@ public class Camera2WrapperImpl extends CameraWrapper {
     private final CameraDevice.StateCallback mCameraStateCallback = new CameraDevice.StateCallback() {
         @Override
         public void onOpened(@NonNull CameraDevice cameraDevice) {
-            Log.d(TAG, "onOpened()...");
             mCameraDevice = cameraDevice;
             callbackToCaller(Result.RESULT_SUCCESS);
         }
 
         @Override
         public void onDisconnected(@NonNull CameraDevice cameraDevice) {
-            Log.d(TAG, "onDisconnected()...");
             mCameraDevice.close();
             mCameraDevice = null;
             callbackToCaller(Result.RESULT_DISCONNECTED);
@@ -126,7 +124,6 @@ public class Camera2WrapperImpl extends CameraWrapper {
      */
     @Override
     public void openCamera(boolean isBackCamera, Context context, CameraOpenCallback callback) {
-        Log.d(TAG, "openCamera()...back camera:" + isBackCamera);
 
         // init worker thread
         initEventLooper(context);
@@ -148,7 +145,6 @@ public class Camera2WrapperImpl extends CameraWrapper {
      */
     @Override
     public void startPreview(SurfaceHolder surfaceHolder) {
-        Log.d(TAG, "startPreview()...");
 
         // save holder
         mSurfaceHolder = surfaceHolder;
@@ -184,7 +180,6 @@ public class Camera2WrapperImpl extends CameraWrapper {
      */
     @Override
     public void stopPreview() {
-        Log.d(TAG, "stopPreview()...");
         if (checkNotNull(mCameraCaptureSession)) {
             try {
                 mCameraCaptureSession.stopRepeating();
@@ -207,7 +202,6 @@ public class Camera2WrapperImpl extends CameraWrapper {
      */
     @Override
     public void closeCamera() {
-        Log.d(TAG, "closeCamera()...");
         stopPreview();
 
         if (checkNotNull(mCameraDevice)) {
@@ -239,11 +233,9 @@ public class Camera2WrapperImpl extends CameraWrapper {
 
     // init event thread
     private void initEventLooper(Context context) {
-        Log.d(TAG, "initEventLooper()...");
         mHandlerThread = new HandlerThread(TAG);
         mHandlerThread.start();
         mHandler = new Handler(mHandlerThread.getLooper(), msg -> {
-            Log.d(TAG, "handleMessage()..." + msg);
             switch (msg.what) {
                 case EVENT_OPEN_CAMERA:
                     handleOpenCamera();
@@ -262,7 +254,6 @@ public class Camera2WrapperImpl extends CameraWrapper {
     }
 
     private void exitEventLooper() {
-        Log.d(TAG, "exitEventLooper()...");
         if (checkNotNull(mUIHandler)) {
             mUIHandler.removeCallbacksAndMessages(null);
         }
@@ -282,7 +273,6 @@ public class Camera2WrapperImpl extends CameraWrapper {
      */
     // handle for opening Camera
     private void handleOpenCamera() {
-        Log.d(TAG, "handleOpenCamera()...");
 
         mCameraManager = (CameraManager) mContext.getSystemService(Activity.CAMERA_SERVICE);
         if (!checkNotNull(mCameraManager)) {
@@ -317,7 +307,6 @@ public class Camera2WrapperImpl extends CameraWrapper {
      * Start Preview
      */
     private void handleStartPreview() {
-        Log.d(TAG, "handleStartPreview()...");
 
         // check if Camera already opened
         if (!checkNotNull(mCameraDevice)) {
@@ -378,7 +367,6 @@ public class Camera2WrapperImpl extends CameraWrapper {
     }
 
     private void callbackToCaller(final int result) {
-        Log.d(TAG, "callbackToCaller...");
         if (checkNotNull(mUIHandler)) {
             mUIHandler.post(new Runnable() {
                 @Override
@@ -410,7 +398,6 @@ public class Camera2WrapperImpl extends CameraWrapper {
 
     // select back or front Camera
     private String selectBackOrFrontCamera() {
-        Log.d(TAG, "selectBackOrFrontCamera()...");
         String cameraId = null;
 
         try {
@@ -429,8 +416,6 @@ public class Camera2WrapperImpl extends CameraWrapper {
                         break;
                     }
                 }
-
-                Log.d(TAG, "Camera Id:" + cameraId);
             }
         } catch (CameraAccessException e) {
             Log.e(TAG, "Invalid Camera Id");

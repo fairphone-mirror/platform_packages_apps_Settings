@@ -226,7 +226,6 @@ public class LiteManager {
 
         // If set timeout callback, post delayed event
         if (!mUIHandler.hasMessages(EVENT_SAVEFEATURE_TIMEOUT) && null != mFeatureSaveTimeoutCallback) {
-            Log.d(TAG, "post time out for save feature.");
             mUIHandler.sendEmptyMessageDelayed(EVENT_SAVEFEATURE_TIMEOUT, mFeatureSaveTimeout);
         }
 
@@ -267,7 +266,6 @@ public class LiteManager {
 
         // If set timeout callback, post delayed event
         if (!mUIHandler.hasMessages(EVENT_COMPARE_TIMEOUT) && null != mCompareTimeoutCallback) {
-            Log.d(TAG, "post time out for authFaceId.");
             mUIHandler.sendEmptyMessageDelayed(EVENT_COMPARE_TIMEOUT, mCompareTimeout);
         }
 
@@ -379,7 +377,6 @@ public class LiteManager {
 
     // loadModel AncFaceIdApi SDK
     private int handleInit() {
-        Log.d(TAG, "handleInit()...");
 
         //(1)get folder for save files of face unlock
         File dir = mContext.getExternalFilesDir(Constants.UNLOCK_FACE_FOLDER_PATH);
@@ -399,7 +396,6 @@ public class LiteManager {
                 return AncFaceIdStatus.ANC_UNLOCK_UNAVAILABLE_MEMORY.toInt();
         }
 
-        Log.d(TAG, "mozre handleInit: " + dir.getAbsolutePath());
         ancFaceIdApi.init(dir.getAbsolutePath(), null);
         ancFaceIdApi.setLogLevel(1);
         //(3)customConfig
@@ -410,7 +406,6 @@ public class LiteManager {
         String liveTypeModel = partModel[3].split("_")[1];
         String extractMode = partModel[partModel.length - 1].replace("recognize_", "").replaceAll(".pack", "");
 
-        Log.d(TAG, "liveTypeModel = " + liveTypeModel + ", extractMode = " + extractMode);
         config.compDeviceType = mLiveTypeMap.get(liveTypeModel);
         config.extractConfig = mExtractMap.get(extractMode);
 
@@ -453,17 +448,12 @@ public class LiteManager {
 
         //(5)loadModel All
         final int result = ancFaceIdApi.loadModel(modelPath).toInt();
-        Log.d(TAG, "handleInit()...result:" + result);
-        Log.d(TAG, "SDK VERSION:" + ancFaceIdApi.getVersion());
-
-        Log.d(TAG, "checkFeatureUpdate ret = " + ancFaceIdApi.checkFeatureUpdate().toInt());
 
         return result;
     }
 
     // feature save
     private int handleSaveFeature(final byte[] imageData, final int width, final int height, final int angle, final boolean isMain) {
-        Log.d(TAG, "handleSaveFeature()...");
 
         //(1)Check PD data or not
         byte[] data = imageData;
@@ -474,7 +464,6 @@ public class LiteManager {
         int[] id = new int[1];
         AncFaceIdStatus result = AncFaceIdApi.getInstance().enrollFaceId(data, curWidth, curHeight, angle,
                 mArrayFeature, mArrayImage, id);
-        Log.d(TAG, "save feature:" + result);
 
         //(3)save feature image for Demo Apk
         if (result == AncFaceIdStatus.ANC_UNLOCK_OK) {
@@ -498,13 +487,11 @@ public class LiteManager {
             commitSave();
         }
 
-        Log.d(TAG, "handleSaveFeature()...result:" + result);
         return result.toInt();
     }
 
     // authFaceId
     private int handleCompare(final byte[] imageData, final int width, final int height, final int angle) {
-        Log.d(TAG, "handleCompare()...");
         //(1)Check PD data or not
         byte[] data = imageData;
         int curWidth = width;
@@ -515,12 +502,6 @@ public class LiteManager {
         // reset Report info
 
         int result = AncFaceIdApi.getInstance().authFaceId(data, curWidth, curHeight, angle, mUnlockInfo).toInt();
-        Log.d(TAG, "result：" + result + " authFaceId time:" + mUnlockInfo.unlockSpendTime + " run: fake = "
-                + mUnlockInfo.liveAttackCount + ", low = " + mUnlockInfo.compareFailCount + ", authFaceId compareScore:"
-                + mUnlockInfo.compareScore + " live compareScore:" + mUnlockInfo.liveScore / 100.0);
-        Log.d(TAG, "rect left:" + mUnlockInfo.faceRectLeft + " top:" + mUnlockInfo.faceRectTop + " right:" + mUnlockInfo.faceRectRight
-                + " bottom:" + mUnlockInfo.faceRectBottom);
-        Log.d(TAG, "occlusion left eye occ:" + mUnlockInfo.leftEyeOcc + ", right eye occ:" + mUnlockInfo.rightEyeOcc + ", mouth occ:" + mUnlockInfo.mouthOcc);
 
 
         String fileName = simpleDateFormat.format(new Date()) + "." + (System
@@ -587,7 +568,6 @@ public class LiteManager {
 
     // LiteSDK inner loadModel
     private void initManager(final Context context) {
-        Log.d(TAG, "initManager()...");
         // create worker thread
         if (null == mHandlerThread) {
             mHandlerThread = new HandlerThread(TAG);
@@ -605,11 +585,9 @@ public class LiteManager {
 
     //init UI Handler
     private void initUIHandler(final Context context) {
-        Log.d(TAG, "initUIHandler()...");
         mUIHanlderCallback = new Handler.Callback() {
             @Override
             public boolean handleMessage(Message message) {
-                Log.d(TAG, "message:" + message.what);
                 switch (message.what) {
                     case EVENT_INIT:
                         callbackToCaller(message.arg1, null, (Callback) message.obj);
@@ -638,7 +616,6 @@ public class LiteManager {
                     case EVENT_COMPARE:
                         // notify time out to caller when current state is TIMEOUT
                         // and authFaceId is failed.
-                        Log.d(TAG, "mozre handleMessage: authFaceId");
                         if (AncFaceIdStatus.ANC_UNLOCK_OK.toInt() != message.arg1 &&
                                 State.TIMEOUT == mCompareState.get() &&
                                 null != mCompareTimeoutCallback) {
@@ -704,7 +681,6 @@ public class LiteManager {
 
     // Quit worker thread/looper and unInit resource
     private void releaseManager() {
-        Log.d(TAG, "releaseManager()...");
 
         // reset state
         resetManager();
@@ -726,7 +702,6 @@ public class LiteManager {
 
     // reset timeout callback
     private void resetTimeoutCallback() {
-        Log.d(TAG, "resetTimeoutCallback()...");
         // reset timeout of feature save
         setFeatureSaveTimeout(0, null);
 
@@ -737,7 +712,6 @@ public class LiteManager {
 
     // reset state
     private void resetManager() {
-        Log.d(TAG, "resetManager()...");
         setFeatureSaveState(State.IDLE);
         setCompareState(State.IDLE);
 
@@ -751,7 +725,6 @@ public class LiteManager {
     }
 
     private void removeUIHandlerEvent(int event) {
-        Log.d(TAG, "removeUIHandlerEvent()...");
         if (null != mUIHandler) {
             mUIHandler.removeMessages(event);
         }
