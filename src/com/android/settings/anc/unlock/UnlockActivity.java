@@ -109,8 +109,7 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
 
     @Override
     public void onPreviewFrame(final byte[] bytes) {
-        if (++mFrameOffset < Constants.UNLOCK_IGNORED_AHEAD_FRAME ||
-                !LiteManager.getInstance().canCompare() || failTimes >= 3) {
+        if (!LiteManager.getInstance().canCompare() || failTimes >= 3) {
             return;
         }
 
