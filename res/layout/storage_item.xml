@@ -69,14 +69,12 @@
                 android:id="@android:id/progress"
                 android:layout_width="match_parent"
                 android:layout_height="8dp"
-                android:maxHeight="8dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginBottom="4dp"
                 android:max="100"
                 android:layout_below="@android:id/title"
-                android:progressDrawable="@drawable/storage_progress_bar"
                 app:layout_constraintTop_toBottomOf="@android:id/title"
-                style="@android:style/Widget.ProgressBar.Horizontal" />
+                style="?android:attr/progressBarStyleHorizontal" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 </LinearLayout>
