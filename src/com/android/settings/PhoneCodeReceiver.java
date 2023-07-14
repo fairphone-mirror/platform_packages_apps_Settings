@@ -142,6 +142,7 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                                     SystemProperties.set(BATTERY_HEALTY_ENABLE, "Close");
                                     //charge enable
                                     writeBatEn("6000000");
+                                    SystemProperties.set("persist.sys.battery.icon.enable","0");
                                 }
                             })
                             .setCancelable(false)

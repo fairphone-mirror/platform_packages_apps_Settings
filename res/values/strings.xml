@@ -12411,4 +12411,7 @@
     <string name="security_settings_faceunlock_cancel_setup">Skip</string>
     <string name="security_settings_faceunlock_next">Next</string>
     <string name="desktop_mode_off_info">Changes take effect when is reconnected</string>
+
+    <string name="battery_protect">Battery Protect</string>
+    <string name="battery_protect_description">set the maximum battery charge level to 80%</string>
 </resources>

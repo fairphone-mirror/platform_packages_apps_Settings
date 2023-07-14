@@ -61,6 +61,12 @@
         android:summary="@string/dialog_title_battery_healty"/>
 
     <SwitchPreference
+        android:key="battery_protect"
+        android:title="@string/battery_protect"
+        android:summary="@string/battery_protect_description"
+        settings:controller="com.android.settings.display.BatteryProtectPreferenceController" />
+
+    <SwitchPreference
         android:key="battery_percentage"
         android:title="@string/battery_percentage"
         android:summary="@string/battery_percentage_description"
