@@ -22,6 +22,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import android.os.UserHandle;
 
 public class PhoneCodeReceiver extends BroadcastReceiver {
 
@@ -143,6 +144,8 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                                     //charge enable
                                     writeBatEn("6000000");
                                     SystemProperties.set("persist.sys.battery.icon.enable","0");
+                                    Settings.Global.putStringForUser(mContext.getContentResolver(),
+                                        Settings.Global.UPDATE_BATTERY_CHARGING_MODE, System.currentTimeMillis() + "",UserHandle.myUserId());
                                 }
                             })
                             .setCancelable(false)

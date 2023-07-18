@@ -21,6 +21,8 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import android.os.SystemProperties;
 import android.util.Log;
+import android.os.UserHandle;
+import android.provider.Settings.Global;
 
 /**
  * add for FP5-2137 set battery protect by suntianhai 2023.07.13
@@ -61,13 +63,20 @@ public class BatteryProtectPreferenceController extends BasePreferenceController
         if (!protectBattery) {
             //charge enable
             writeBatEn("6000000");
-            SystemProperties.set("persist.sys.battery.icon.enable","0");
         }
         SystemProperties.set(BATTERY_PROTECT_ENABLE,protectBattery? "1":"0");
+        SystemProperties.set("persist.sys.battery.icon.enable",protectBattery? "1":"0");
+        updateBattery();
         return true;
     }
 
-        private void writeBatEn(String value) {
+    private void updateBattery(){
+        Settings.Global.putStringForUser(mContext.getContentResolver(),
+                Settings.Global.UPDATE_BATTERY_CHARGING_MODE, System.currentTimeMillis() + "",
+                UserHandle.myUserId());
+    }
+
+    private void writeBatEn(String value) {
         BufferedWriter bw = null;
         FileWriter fw = null;
         try {
