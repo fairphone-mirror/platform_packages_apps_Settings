@@ -97,7 +97,6 @@ public class SetRefreshRatePreferenceController extends AbstractPreferenceContro
     private int getRateWhich(){
         int rate_n = 0;
         String refresh_Rate = Float.toString(mDefaultDisplay.getRefreshRate());
-        Log.i("sth_", "____refreshRate:" + refresh_Rate);
         if (refresh_Rate.contains("60")){
             rate_n = 0;
         }else if (refresh_Rate.contains("90")){
