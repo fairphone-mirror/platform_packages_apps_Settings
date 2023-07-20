@@ -47,9 +47,10 @@ public class OemLockVerifier {
 
     //private static final String DEBOUG_X_API_KEY = "E/xUciBHocHSzETALqTk9Q==";
     //private static final String X_API_KEY = "p0C44XA4efzIqbchuzGpYw==";
-    private static final String DEBUG_X_API_KEY_FOR_FP5 = "D6CEhOGPjYQxfu24lvkMXw==";
+    //private static final String DEBUG_X_API_KEY_FOR_FP5_TEST = "D6CEhOGPjYQxfu24lvkMXw==";
+    private static final String DEBUG_X_API_KEY_FOR_FP5_RELEASE = "vGLa6e2U4hQ1Nh/Fe6nuXg==";
 
-    private static final String FP4_RELEASE_API_KEY = "nYhYMjXvVRd8SCNwPOTNuQ==";//warning !!!  Do not in code now !!!!!!
+    //private static final String FP4_RELEASE_API_KEY = "nYhYMjXvVRd8SCNwPOTNuQ==";//warning !!!  Do not in code now !!!!!!
 
     private String mTargetUrl;
 
@@ -70,9 +71,9 @@ public class OemLockVerifier {
 
     public void queryVerifyResult(String imei, String sn) {
         //prepare imei, serial, user entered password
-        //mTargetUrlTest = SVR_URL + "/" + imei + "/" + sn;
+        mTargetUrlTest = SVR_URL + "/" + imei + "/" + sn;
         // if (isDebugOsBuild()) {
-             mTargetUrlTest = DEBUG_SVR_URL + "/" + imei + "/" + sn;
+        //      mTargetUrlTest = DEBUG_SVR_URL + "/" + imei + "/" + sn;
         // }
         Log.d(TAG, "targetUrl=" + mTargetUrlTest);
         if (imei == null || sn == null) {
@@ -161,9 +162,9 @@ public class OemLockVerifier {
 
     public void queryVerifyResultGet(String user_pass, String imei, String sn) {
         //prepare imei, serial, user entered password
-        //mTargetUrl = SVR_URL + "/" + imei + "/" + sn + "/" + user_pass;
+        mTargetUrl = SVR_URL + "/" + imei + "/" + sn + "/" + user_pass;
         // if (isDebugOsBuild()) {
-             mTargetUrl = DEBUG_SVR_URL + "/" + imei + "/" + sn + "/" + user_pass;
+        //      mTargetUrl = DEBUG_SVR_URL + "/" + imei + "/" + sn + "/" + user_pass;
         // }
         Log.d(TAG, "queryVerifyResultGet--targetUrl=" + mTargetUrl);
         if (imei == null || sn == null || user_pass == null) {
@@ -193,7 +194,11 @@ public class OemLockVerifier {
                     //     token=X_API_KEY;
                     // }
                     //token = FP4_RELEASE_API_KEY;
-                    token = DEBUG_X_API_KEY_FOR_FP5;
+                    // if (isDebugOsBuild()) {
+                    //     token= DEBUG_X_API_KEY_FOR_FP5_TEST;
+                    // }else{
+                        token= DEBUG_X_API_KEY_FOR_FP5_RELEASE;
+                    // }
                     SSLContext sslcontext = SSLContext.getInstance("SSL");
                     sslcontext.init(null, new TrustManager[]{new MyX509TrustManager()}, new java.security.SecureRandom());
 
