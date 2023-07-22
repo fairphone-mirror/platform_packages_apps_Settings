@@ -17,4 +17,6 @@
 <paths xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Offer access to files under Context.getCacheDir() -->
     <cache-path name="my_cache" />
+    <external-path name="system_ext/etc" path="."/>
+    <root-path name="system_ext/etc" path="/system_ext/etc/" />
 </paths>
