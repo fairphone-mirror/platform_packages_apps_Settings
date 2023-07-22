@@ -203,3 +203,15 @@ filegroup {
     name: "Settings_manifest",
     srcs: ["AndroidManifest.xml"],
 }
+
+prebuilt_etc {
+    name: "FAIRPHONE.html.gz",
+    system_ext_specific: true,
+    src: "legalinfo/FAIRPHONE.html.gz",
+}
+
+prebuilt_etc {
+    name: "FAIRPHONE.png",
+    system_ext_specific: true,
+    src: "legalinfo/FAIRPHONE.png",
+}

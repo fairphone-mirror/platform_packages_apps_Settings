@@ -12414,4 +12414,6 @@
 
     <string name="battery_protect">Battery Protect</string>
     <string name="battery_protect_description">set the maximum battery charge level to 80%</string>
+
+    <string name="legal_info_title">Open source licenses</string>
 </resources>
