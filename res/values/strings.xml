@@ -13834,4 +13834,6 @@
     <string name="diagprotect_title">DiagProtector Setting</string>
     <string name="diagprotect_on">Diag Protector ON</string>
     <string name="diagprotect_off">Diag Protector OFF</string>
+
+    <string name="legal_info_title">Open source licenses</string>
 </resources>
