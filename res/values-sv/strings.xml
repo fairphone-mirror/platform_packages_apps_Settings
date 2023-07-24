@@ -5908,4 +5908,5 @@
     <string name="fingerprint_settings_open_description">"Slå på om du föredrar att låsa upp utan att väcka telefonen först."</string>
     <string name="fingerprint_settings_open_title">Finger Print Lås upp beteende</string>
     <string name="status_sdn">Tjänstens uppringningsnummer</string>
+    <string name="legal_info_title">Open source-licenser</string>
 </resources>
