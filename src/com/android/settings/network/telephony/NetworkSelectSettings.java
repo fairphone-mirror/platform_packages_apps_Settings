@@ -469,12 +469,18 @@ public class NetworkSelectSettings extends DashboardFragment implements
     // modify by T2M.zhang renjie for FP4-3074 21-10-13 begin
     private List<CellInfo> processCellInfoList(List<CellInfo> cellInfoList){
         List<CellInfo> mCellInfoList = new ArrayList<>();
+        //modify by T2M.sunhuan for FP4T-550/FP4T-551 23-07-26 begin
+        String operator = mTelephonyManager.getNetworkOperator(mSubId);
+        Log.d(TAG, "operator = "+operator);
+        //modify by T2M.sunhuan for FP4T-550/FP4T-551 23-07-26 end
 
         for (int index = 0; index < cellInfoList.size(); index++) {
             CellInfo cellInfo = cellInfoList.get(index);
             CellIdentity cid = CellInfoUtil.getCellIdentity(cellInfo);
             mCellInfoList.add(cellInfo);
-            for (CellInfo mCellInfo:mCellInfoList){
+            // modify by T2M.sunhuan for FP4T-550/FP4T-551 23-07-26
+            if (!TextUtils.isEmpty(operator) && !(operator.equals("26201") || operator.equals("26202"))) {
+                for (CellInfo mCellInfo:mCellInfoList){
                     if (mCellInfo.equals(cellInfo)) continue;
 
                     CellIdentity mCid = CellInfoUtil.getCellIdentity(mCellInfo);
@@ -491,6 +497,7 @@ public class NetworkSelectSettings extends DashboardFragment implements
                         }
                     }
                     //[BUG]-Modify-End by shaopan.tang
+                }
             }
         }
               return mCellInfoList;
