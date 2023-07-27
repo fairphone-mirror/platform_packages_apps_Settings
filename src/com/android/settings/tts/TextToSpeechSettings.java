@@ -228,6 +228,10 @@ public class TextToSpeechSettings extends SettingsPreferenceFragment
         // them to resize, which results in the recyclerview smoothly animating them at inopportune
         // times. Disable the animation so widgets snap to their positions rather than sliding
         // around while the user is interacting with it.
+        if(getListView() == null || getListView().getItemAnimator() == null){
+            return;
+        }
+
         getListView().getItemAnimator().setMoveDuration(0);
 
         if (mTts == null || mCurrentDefaultLocale == null) {
