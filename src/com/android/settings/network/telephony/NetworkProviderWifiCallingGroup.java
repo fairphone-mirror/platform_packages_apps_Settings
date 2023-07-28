@@ -259,6 +259,10 @@ public class NetworkProviderWifiCallingGroup extends
                         mCarrierConfigManager.getConfigForSubId(subId);
                 if (carrierConfig != null) {
                     categorytitle = carrierConfig.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+                    if ("".equals(categorytitle)){
+                        categorytitle = SubscriptionManager.getResourcesForSubId(mContext, subId)
+                                .getString(R.string.wifi_calling_settings_title);
+                    }
                     Log.d(TAG, "update categorytitle: " + categorytitle);
                 }
             }
