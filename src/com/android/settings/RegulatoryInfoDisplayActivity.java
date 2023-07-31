@@ -65,7 +65,7 @@ public class RegulatoryInfoDisplayActivity extends Activity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.regulatory_info);
         ImageView image = findViewById(R.id.regulatoryInfo);
-        Glide.with(this).load(sRegulatoryUrl_FP5).error(R.drawable.regulatory_info_fp5).into(image);
+        Glide.with(this).load(sRegulatoryUrl_FP5).error(R.drawable.regulatory_info_fp5_new).into(image);
         // AlertDialog.Builder builder = new AlertDialog.Builder(this)
         //         .setTitle(R.string.regulatory_labels)
         //         .setOnDismissListener(this)
