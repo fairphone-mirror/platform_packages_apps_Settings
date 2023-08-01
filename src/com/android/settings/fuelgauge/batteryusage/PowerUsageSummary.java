@@ -71,8 +71,9 @@ public class PowerUsageSummary extends PowerUsageBase implements
     @VisibleForTesting
     static final String KEY_BATTERY_USAGE = "battery_usage_summary";
 
-    static final String KEY_BATTERY_CHARGING_MODE = "battery_charging_mode";
+    // static final String KEY_BATTERY_CHARGING_MODE = "battery_charging_mode";
     static final String KEY_BATTERY_HEALTH = "battery_health";
+    static final String KEY_CHARGING_MODE = "charging_mode";
 
     @VisibleForTesting
     PowerUsageFeatureProvider mPowerFeatureProvider;
@@ -94,8 +95,9 @@ public class PowerUsageSummary extends PowerUsageBase implements
     @VisibleForTesting
     Preference mBatteryUsagePreference;
 
-    Preference mBatteryChargingModePreference;
+    // Preference mBatteryChargingModePreference;
     Preference mBatteryHealthPreference;
+    Preference mChargingModePreference;
 
     @VisibleForTesting
     final ContentObserver mSettingsObserver = new ContentObserver(new Handler()) {
@@ -108,7 +110,8 @@ public class PowerUsageSummary extends PowerUsageBase implements
     final ContentObserver mUpdateSummarySettingsObserver = new ContentObserver(new Handler()) {
         @Override
         public void onChange(boolean selfChange, Uri uri) {
-            setChargingModeSummary();
+            // setChargingModeSummary();
+            setBCMSummary();
         }
     };
 
@@ -214,6 +217,13 @@ public class PowerUsageSummary extends PowerUsageBase implements
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+        setBCMSummary();
+    }
+
+
+    @Override
     public int getMetricsCategory() {
         return SettingsEnums.FUELGAUGE_POWER_USAGE_SUMMARY_V2;
     }
@@ -286,8 +296,10 @@ public class PowerUsageSummary extends PowerUsageBase implements
         mHelpPreference = findPreference(KEY_BATTERY_ERROR);
         mHelpPreference.setVisible(false);
 
-        mBatteryChargingModePreference = findPreference(KEY_BATTERY_CHARGING_MODE);
-        setChargingModeSummary();
+        // mBatteryChargingModePreference = findPreference(KEY_BATTERY_CHARGING_MODE);
+        // setChargingModeSummary();
+        mChargingModePreference = findPreference(KEY_CHARGING_MODE);
+        setBCMSummary();
 
         mBatteryHealthPreference = findPreference(KEY_BATTERY_HEALTH);
         new Thread(new Runnable(){
@@ -300,16 +312,29 @@ public class PowerUsageSummary extends PowerUsageBase implements
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-        if (KEY_BATTERY_CHARGING_MODE.equals(preference.getKey())){
-            Settings.Global.putStringForUser(getContext().getContentResolver(),
-                    Settings.Global.SET_BATTERY_CHARGING_MODE, System.currentTimeMillis() + "",
-                    UserHandle.myUserId());
-            return true;
-        }
+        // if (KEY_BATTERY_CHARGING_MODE.equals(preference.getKey())){
+        //     Settings.Global.putStringForUser(getContext().getContentResolver(),
+        //             Settings.Global.SET_BATTERY_CHARGING_MODE, System.currentTimeMillis() + "",
+        //             UserHandle.myUserId());
+        //     return true;
+        // }
         return super.onPreferenceTreeClick(preference);
     }
 
-    private void setChargingModeSummary(){
+    // private void setChargingModeSummary(){
+    //     String charging_mode_summary = "";
+    //     String charge_mode = SystemProperties.get("persist.sys.charge_mode");
+    //     if (charge_mode != null &&( "1".equals(charge_mode))){
+    //         charging_mode_summary = getString(R.string.charging_slow);
+    //     }else if (charge_mode != null && "0".equals(charge_mode)){
+    //         charging_mode_summary = getString(R.string.charging_normal);
+    //     }else {
+    //         charging_mode_summary = getString(R.string.charging_normal);
+    //     }
+    //     mBatteryChargingModePreference.setSummary(charging_mode_summary);
+    // }
+
+    private void setBCMSummary(){
         String charging_mode_summary = "";
         String charge_mode = SystemProperties.get("persist.sys.charge_mode");
         if (charge_mode != null &&( "1".equals(charge_mode))){
@@ -319,7 +344,7 @@ public class PowerUsageSummary extends PowerUsageBase implements
         }else {
             charging_mode_summary = getString(R.string.charging_normal);
         }
-        mBatteryChargingModePreference.setSummary(charging_mode_summary);
+        mChargingModePreference.setSummary(charging_mode_summary);
     }
 
     @VisibleForTesting
