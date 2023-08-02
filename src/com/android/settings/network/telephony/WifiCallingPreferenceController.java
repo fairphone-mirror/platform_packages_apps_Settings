@@ -98,7 +98,7 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
 
         // add by T2M.zhangrenjie for FP4-847 2021-07-22 end
         return SubscriptionManager.isValidSubscriptionId(subId)
-                && isWifiCallingEnabled(mContext, subId)
+                && MobileNetworkUtils.isWifiCallingEnabled(mContext, subId, null, null)
                 && isWfcEnabledByCarrierConfig(subId)
                 ? AVAILABLE
                 : UNSUPPORTED_ON_DEVICE;
@@ -166,8 +166,10 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
         if (mCarrierConfigManager != null) {
             PersistableBundle b = mCarrierConfigManager.getConfigForSubId(mSubId);
             if (b != null) {
-                title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
-
+                String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+                if (!"".equals(carrierconfig_title)){
+                    title = carrierconfig_title;
+                }
             }
         }
         // add by T2M.dengxiangyu for FP4-61 2021-04-14 end
