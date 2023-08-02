@@ -134,6 +134,10 @@ public class VoWifiTile extends TileService {
                 boolean isWFCEnabled = b.getBoolean(CarrierConfigManager.KEY_WFC_TOGGLE_SHOW_BOOL
                         , false);
                 title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE,"");
+                if ("".equals(title)) {
+                    title = SubscriptionManager.getResourcesForSubId(getApplicationContext(), mSubId)
+                            .getString(R.string.wifi_calling_settings_title);
+                }
                 Log.d(TAG, "wfc toggle show: " + isWFCEnabled);
                 return isWFCEnabled;
             }

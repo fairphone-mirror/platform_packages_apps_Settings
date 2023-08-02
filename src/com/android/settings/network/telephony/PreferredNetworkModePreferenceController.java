@@ -30,6 +30,7 @@ import static com.android.settings.network.telephony.TelephonyConstants.RadioAcc
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.DialogInterface;
 import android.database.ContentObserver;
 import android.os.Handler;
@@ -153,7 +154,8 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
             Log.d(TAG, "get preferred network mode: " + pref_network_mode);
         }
 
-        if (pref_network_mode != null && pref_network_value != null) {
+        if (pref_network_mode != null && pref_network_value != null && pref_network_mode.length != 0
+                && pref_network_value.length != 0) {
             Log.d(TAG, "init preferred network from carrier config");
             preference.setEntries(pref_network_mode);
             preference.setEntryValues(pref_network_value);
@@ -293,9 +295,9 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
         final PersistableBundle carrierConfig = mCarrierConfigCache.getConfigForSubId(mSubId);
         String[] pref_network_mode = null;
         String[] pref_network_value = null;
-        String summerry = null;
+        String summary = null;
 
-        Log.d(LOG_TAG, "set networkmode(" + networkmode + ") summary");
+        Log.d(TAG, "set networkmode(" + networkmode + ") summary");
         if (carrierConfig != null) {
             /*
             check in vendor.xml of carrier config
@@ -312,17 +314,20 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
 
         }
 
-        if (pref_network_mode != null && pref_network_value != null){
-            for (int index = 0; index < pref_network_value.length; index++) {
-                if (pref_network_value[index].equals(String.valueOf(networkmode))){
-                    summerry = pref_network_mode[index];
-                    break;
-                }
+        if (pref_network_mode == null || pref_network_value == null || pref_network_mode.length == 0 || pref_network_value.length == 0) {
+            final Resources res = SubscriptionManager.getResourcesForSubId(mContext, mSubId);
+            pref_network_mode = res.getStringArray(R.array.preferred_network_mode_custom_choices);
+            pref_network_value = res.getStringArray(R.array.preferred_network_mode_custom_choices_value);
+        }
+        for (int index = 0; index < pref_network_value.length; index++) {
+            if (pref_network_value[index].equals(String.valueOf(networkmode))) {
+                summary = pref_network_mode[index];
+                break;
             }
         }
-        if (summerry != null) {
-            Log.d(LOG_TAG, "summary: " + summerry);
-            preference.setSummary(summerry);
+        if (summary != null) {
+            Log.d(TAG, "summary: " + summary);
+            preference.setSummary(summary);
         } else {
             preference.setSummary(getPreferredNetworkModeSummaryResId(networkmode));
         }

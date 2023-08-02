@@ -22,6 +22,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.os.PersistableBundle;
 import android.provider.Settings;
 import android.telecom.PhoneAccountHandle;
 import android.telecom.TelecomManager;
@@ -204,6 +205,7 @@ public class NetworkProviderWifiCallingGroup extends
 
     private void setSubscriptionInfoForPreference(Map<Integer, Preference> toRemovePreferences) {
         int order = PREF_START_ORDER;
+        String categorytitle = mContext.getString(R.string.calls_and_sms_category);
         for (SubscriptionInfo info : mSubInfoListForWfc) {
             final int subId = info.getSubscriptionId();
 
@@ -250,6 +252,21 @@ public class NetworkProviderWifiCallingGroup extends
                 resId = R.string.calls_sms_wfc_summary;
             }
             pref.setSummary(resId);
+
+            Log.d(TAG, "categorytitle: " + categorytitle);
+            if (mCarrierConfigManager != null) {
+                final PersistableBundle carrierConfig =
+                        mCarrierConfigManager.getConfigForSubId(subId);
+                if (carrierConfig != null) {
+                    categorytitle = carrierConfig.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+                    if ("".equals(categorytitle)) {
+                        categorytitle = SubscriptionManager.getResourcesForSubId(mContext, subId)
+                                .getString(R.string.wifi_calling_settings_title);
+                    }
+                    Log.d(TAG, "update categorytitle: " + categorytitle);
+                }
+            }
+            mPreferenceGroup.setTitle(categorytitle);
 
             mWifiCallingForSubPreferences.put(subId, pref);
         }

@@ -74,7 +74,7 @@ open class WifiCallingPreferenceController @JvmOverloads constructor(
      */
     override fun getAvailabilityStatus(subId: Int) =
         if (SubscriptionManager.isValidSubscriptionId(subId)
-                && isWifiCallingEnabled(mContext, subId)
+                && MobileNetworkUtils.isWifiCallingEnabled(mContext, subId, null)
                 && isWfcEnabledByCarrierConfig(subId)) AVAILABLE
         else CONDITIONALLY_UNAVAILABLE
 
@@ -148,7 +148,10 @@ open class WifiCallingPreferenceController @JvmOverloads constructor(
         if (carrierConfigManager != null) {
             val b = carrierConfigManager.getConfigForSubId(mSubId)
             if (b != null) {
-                preference.title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE)
+                val carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE)
+                if (!"".equals(carrierconfig_title)) {
+                   preference.title = carrierconfig_title;
+                }
             }
         }
 
