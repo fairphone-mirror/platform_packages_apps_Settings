@@ -19,11 +19,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string-array name="preferred_network_mode_custom_choices">
-        <item>@string/network_5G_recommended</item>
-        <item>@string/network_4G</item>
-        <item>@string/network_2G_3G_preferred</item>
-        <item>@string/network_3G_only</item>
-        <item>@string/network_2G_only</item>
+        <item>@string/prefer_5G</item>
+        <item>@string/prefer_4G</item>
+        <item>@string/prefer_3G</item>
+        <item>@string/only_3G</item>
+        <item>@string/only_2G</item>
     </string-array>
 
     <string-array name="preferred_network_mode_custom_choices_value">
