@@ -5135,6 +5135,14 @@
         </activity>
         <!-- add for FP5-197 show ENDC info 2023-03-27 end -->
 
+        <activity android:name="com.android.settings.fuelgauge.batterysaver.BatsActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
         <!-- This is the longest AndroidManifest.xml ever. -->
     </application>
 </manifest>
