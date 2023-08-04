@@ -32,6 +32,8 @@ public class BatteryChargingState extends RadioButtonPickerFragment {
     // 1  0
     private String[] mValues;
 
+    public BatteryChargingState() { }
+
     @Override
     public int getMetricsCategory() {
         return SettingsEnums.BATTERY_CHARGING_STATE;

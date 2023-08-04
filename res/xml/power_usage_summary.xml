@@ -58,10 +58,6 @@
         settings:controller="com.android.settings.fuelgauge.batterytip.BatteryManagerPreferenceController"
         settings:keywords="@string/keywords_battery_adaptive_preferences" />
 
-    <!-- <Preference
-        android:key="battery_charging_mode"
-        android:title="@string/charging_state"/> -->
-
     <Preference
         android:key="charging_mode"
         android:title="@string/charging_state"
