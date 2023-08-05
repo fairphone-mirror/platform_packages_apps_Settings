@@ -4799,4 +4799,6 @@
     <string name="charging_state">充电模式</string>
     <string name="charging_slow">慢充模式</string>
     <string name="charging_normal">正常模式</string>
+    <string name="battery_protect">电池保护</string>
+    <string name="battery_protect_description">将最大电池电量设置为80%</string>
 </resources>

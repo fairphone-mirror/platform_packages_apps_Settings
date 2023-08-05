@@ -4798,5 +4798,7 @@
     <string name="auto_3G">"3G/2G Automatisch"</string>
     <string name="only_3G">"3G Nur"</string>
     <string name="only_2G">"2G Nur"</string>
+    <string name="battery_protect">Akku schützen</string>
+    <string name="battery_protect_description">Akku auf höchstens 80% laden</string>
 
 </resources>

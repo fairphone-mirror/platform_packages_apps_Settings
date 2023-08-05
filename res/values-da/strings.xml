@@ -4799,4 +4799,6 @@
     <string name="auto_3G">"3G/2G Automatisk"</string>
     <string name="only_3G">"3G Kun"</string>
     <string name="only_2G">"2G Kun"</string>
+    <string name="battery_protect">Batteri beskytter</string>
+    <string name="battery_protect_description">Indstil det maksimale batteriopladningsniveau til 80%</string>
 </resources>

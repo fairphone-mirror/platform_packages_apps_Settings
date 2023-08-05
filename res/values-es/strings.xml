@@ -4801,4 +4801,6 @@
     <string name="auto_3G">"3G/2G Automático"</string>
     <string name="only_3G">"3G Solo"</string>
     <string name="only_2G">"2G Solo"</string>
+    <string name="battery_protect">Proteger la batería</string>
+    <string name="battery_protect_description">Establece el nivel máximo de carga de la batería al 80%</string>
 </resources>
