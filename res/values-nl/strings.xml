@@ -5983,4 +5983,6 @@
     <string name="auto_3G">"3G/2G Automatisch"</string>
     <string name="only_3G">"3G Alleen"</string>
     <string name="only_2G">"2G Alleen"</string>
+    <string name="battery_protect">Batterijbescherming</string>
+    <string name="battery_protect_description">Beperkt de maximale 80%</string>
 </resources>
