@@ -12361,17 +12361,6 @@
     <string name="desktop_mode_summary">Use desktop mode on secondary displays</string>
     <!--ADD by T2M yingyubin for Desktop mode-->
     <string name="sunlight_mode_title">Sunlight mode</string>
-
-    <!--state of health-->
-    <string name="batteryh_soh">state of health:</string>
-    <!--state of count-->
-    <string name="batteryh_soc">charge/discharge cycle count:</string>
-    <!--charge full design-->
-    <string name="batteryh_cfd">charge full design:</string>
-    <string name="charging_state">Charging mode</string>
-    <string name="charging_slow">Slow mode</string>
-    <string name="charging_normal">Normal mode</string>
-
     <string name="dcdimming_title">DC dimming</string>
     <!-- Diag -->
     <string name="diagprotect_title">DiagProtector Setting</string>
@@ -12411,10 +12400,6 @@
     <string name="security_settings_faceunlock_cancel_setup">Skip</string>
     <string name="security_settings_faceunlock_next">Next</string>
     <string name="desktop_mode_off_info">Changes take effect when is reconnected</string>
-
-    <string name="battery_protect">Battery Protect</string>
-    <string name="battery_protect_description">set the maximum battery charge level to 80%</string>
-
     <string name="legal_info_title">Open source licenses</string>
     <string name="prefer_5G">"5G/4G/3G/2G"</string>
     <string name="prefer_4G">"4G/3G/2G"</string>
@@ -12425,4 +12410,18 @@
     <string name="auto_3G">"3G/2G automatic"</string>
     <string name="only_3G">"3G only"</string>
     <string name="only_2G">"2G only"</string>
+
+    <!--add by suntaunhai start-->
+    <string name="batteryh_soh">state of health:</string>
+    <string name="batteryh_soc">charge/discharge cycle count:</string>
+    <string name="batteryh_cfd">charge full design:</string>
+    <string name="charging_state">Charging mode</string>
+    <string name="charging_slow">Slow mode</string>
+    <string name="charging_normal">Normal mode</string>
+    <string name="battery_protect">Battery Protect</string>
+    <string name="battery_protect_description">set the maximum battery charge level to 80%</string>
+    <string name="battery_charging_privacy">Customize your charging speed. Remember slower charging equals longer battery life.</string>
+    <string name="battery_charging_privacy_eco">Eco Charge: Optimise your battery’s longevity with this mode.</string>
+    <string name="battery_charging_privacy_fast">Fast Charge: Get back to 100% as quickly as possible.</string>
+    <!--add by suntaunhai end-->
 </resources>
