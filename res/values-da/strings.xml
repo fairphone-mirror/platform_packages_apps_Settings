@@ -5908,4 +5908,9 @@
     <string name="fingerprint_settings_open_description">"Tænd, hvis du foretrækker at låse op uden at vågne telefonen først."</string>
     <string name="fingerprint_settings_open_title">Fingerprint Lås op adfærd</string>
     <string name="status_sdn">Indtast nummer service</string>
+    <string name="auto_5G">"5G/4G/3G/2G Automatisk"</string>
+    <string name="auto_4G">"4G/3G/2G Automatisk"</string>
+    <string name="auto_3G">"3G/2G Automatisk"</string>
+    <string name="only_3G">"3G Kun"</string>
+    <string name="only_2G">"2G Kun"</string>
 </resources>

@@ -19,4 +19,6 @@
     <string name="wifi_calling_settings_title" msgid="264665264535884440">"WLAN Call"</string>
     <string name="wifi_calling_off_explanation" msgid="6295526820826322895">"When WLAN Call is on, your phone can route calls via Wi-Fi networks or your carrier\u2019s network, depending on your preference and which signal is stronger. Before turning on this feature, check with your carrier regarding fees and other details.<xliff:g id="ADDITIONAL_TEXT">%1$s</xliff:g>"</string>
     <string name="wifi_calling_main_switch_title" msgid="4070224008346815634">"Use WLAN Call"</string>
+    <string name="prefer_5G">"2G/3G/LTE/5G"</string>
+    <string name="prefer_4G">"2G/3G/LTE"</string>
 </resources>
