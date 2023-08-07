@@ -4803,4 +4803,7 @@
     <string name="only_2G">"2G Solo"</string>
     <string name="battery_protect">Proteger la batería</string>
     <string name="battery_protect_description">Establece el nivel máximo de carga de la batería al 80%</string>
+    <string name="battery_charging_privacy">Customize your charging speed. Remember slower charging equals longer battery life.</string>
+    <string name="battery_charging_privacy_eco">CARGA ECO: optimiza la longevidad de tu batería con este modo.</string>
+    <string name="battery_charging_privacy_fast">CARGA RÁPIDA: Vuelve al 100% lo más rápido posible.</string>
 </resources>
