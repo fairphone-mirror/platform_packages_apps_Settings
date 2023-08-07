@@ -5987,4 +5987,7 @@
     <string name="only_2G">"2G Endast"</string>
     <string name="battery_protect">Batteriskydd</string>
     <string name="battery_protect_description">Ställ in den maximala batteriladdningsnivån till 80%</string>
+    <string name="battery_charging_privacy">Customize your charging speed. Remember slower charging equals longer battery life.</string>
+    <string name="battery_charging_privacy_eco">Eco Charge: Optimera batteriets livslängd med det här läget.</string>
+    <string name="battery_charging_privacy_fast">Snabb laddning: Kom tillbaka till 100% så snabbt som möjligt.</string>
 </resources>
