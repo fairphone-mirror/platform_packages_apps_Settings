@@ -5913,4 +5913,6 @@
     <string name="auto_3G">"3G/2G Automatisk"</string>
     <string name="only_3G">"3G Kun"</string>
     <string name="only_2G">"2G Kun"</string>
+    <!-- Title for the Longevity & device statistics -->
+    <string name="longevity_device_statistics_list_item_title">"Levetid og enhedsstatistik"</string>
 </resources>

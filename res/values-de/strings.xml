@@ -5925,4 +5925,6 @@
     <string name="only_3G">"3G Nur"</string>
     <string name="only_2G">"2G Nur"</string>
 
+    <!-- Title for the Longevity & device statistics -->
+    <string name="longevity_device_statistics_list_item_title">"Langlebigkeit &amp; Gerätestatistiken"</string>
 </resources>

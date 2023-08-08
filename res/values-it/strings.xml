@@ -5914,4 +5914,7 @@
     <string name="auto_3G">"3G/2G Automatico"</string>
     <string name="only_3G">"3G Solo"</string>
     <string name="only_2G">"2G Solo"</string>
+
+    <!-- Title for the Longevity & device statistics -->
+    <string name="longevity_device_statistics_list_item_title">"Durata e statistiche del dispositivo"</string>
 </resources>
