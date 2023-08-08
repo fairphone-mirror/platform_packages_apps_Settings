@@ -126,8 +126,12 @@ public class AppAllServicesPreferenceController extends AppInfoPreferenceControl
         // This won't be null since the preference is only shown for packages that can handle the
         // intent.
         ResolveInfo resolveInfo = getResolveInfo(0);
-        featuresIntent.setComponent(
+        if (resolveInfo != null) {
+            featuresIntent.setComponent(
                 new ComponentName(mPackageName, resolveInfo.activityInfo.name));
+        } else {
+            return;
+        }
 
         Activity activity = mParent.getActivity();
         try {
