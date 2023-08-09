@@ -108,7 +108,7 @@ public class StorageWizardFormatProgress extends StorageWizardBase {
                                 result.complete(extras);
                             }
                         });
-                        mPrivateBench = result.get(60, TimeUnit.SECONDS).getLong("run",
+                        mPrivateBench = result.get(200, TimeUnit.SECONDS).getLong("run",
                                 Long.MAX_VALUE);
                     }
 
