@@ -4771,7 +4771,7 @@
     <string name="switch_sim_dialog_no_switch_text" msgid="7053939850026876088">"Per utilizzare i dati mobili, le funzionalità di chiamata e gli SMS in un secondo momento, vai alle impostazioni di rete"</string>
     <string name="sim_card_label" msgid="6263064316075963775">"SIM"</string>
     <string name="erase_sim_dialog_title" msgid="4742077437653028326">"Vuoi resettare questa eSIM?"</string>
-    <string name="erase_sim_dialog_text" msgid="1406141218170595272">"Questa operazione rimuove il servizio di <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> dal dispositivo, ma il tuo piano di <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> non sarà annullato."</string>
+    <string name="erase_sim_dialog_text" msgid="753031064269699885">"La cancellazione di questa SIM rimuove il servizio <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> da questo dispositivo.\n\n Il servizio per <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> non verrà annullato. Attenzione: è necessaria una connessione Internet (dati mobili o Wi-Fi) per cancellare correttamente il profilo SIM selezionato dal dispositivo."</string>
     <string name="erase_sim_confirm_button" msgid="8309115684335320541">"Elimina"</string>
     <string name="erasing_sim" msgid="4237180547590463930">"Reset dell\'eSIM in corso…"</string>
     <string name="erase_sim_fail_title" msgid="1445700500168357303">"Impossibile resettare l\'eSIM"</string>

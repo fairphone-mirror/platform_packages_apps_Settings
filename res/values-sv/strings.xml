@@ -4771,7 +4771,7 @@
     <string name="switch_sim_dialog_no_switch_text" msgid="7053939850026876088">"Om du senare vill använda mobildata, samtalsfunktioner och sms öppnar du nätverksinställningarna"</string>
     <string name="sim_card_label" msgid="6263064316075963775">"SIM-kort"</string>
     <string name="erase_sim_dialog_title" msgid="4742077437653028326">"Vill du rensa det här eSIM-kortet?"</string>
-    <string name="erase_sim_dialog_text" msgid="1406141218170595272">"Det här tar bort <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g>-tjänsten från den här enheten, men ditt <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g>-abonnemang avslutas inte."</string>
+    <string name="erase_sim_dialog_text" msgid="753031064269699885">"Att radera denna SIM tar bort <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> -tjänsten från den här enheten.\n\n Tjänsten för <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> kommer inte att avbrytas. Observera att en internetanslutning (mobildata eller Wi-Fi) krävs för att radera den valda SIM-profilen från enheten."</string>
     <string name="erase_sim_confirm_button" msgid="8309115684335320541">"Rensa"</string>
     <string name="erasing_sim" msgid="4237180547590463930">"Rensar eSIM …"</string>
     <string name="erase_sim_fail_title" msgid="1445700500168357303">"Det gick inte att rensa detta eSIM"</string>
