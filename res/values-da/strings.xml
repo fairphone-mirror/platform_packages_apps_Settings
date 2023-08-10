@@ -5547,7 +5547,8 @@
     <string name="switch_sim_dialog_no_switch_text" msgid="7053939850026876088">"Hvis du senere vil bruge mobildata, opkaldsfunktioner og sms, kan du gå til dine netværksindstillinger"</string>
     <string name="sim_card_label" msgid="5632157635124050923">"SIM-kort"</string>
     <string name="erase_sim_dialog_title" msgid="881253002169177016">"Vil du rydde dette downloadede SIM-kort?"</string>
-    <string name="erase_sim_dialog_text" msgid="753031064269699885">"Hvis du rydder dette SIM-kort, fjernes tjenesten fra <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> på denne enhed.\n\nTjenesten fra <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> opsiges ikke."</string>
+    <string name="erase_sim_dialog_text" msgid="753031064269699885">"Sletning af denne sim fjerner <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> -tjeneste fra denne enhed.\n\n Tjeneste til <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> annulleres ikke. Bemærk, at der kræves en internetforbindelse (mobildata eller Wi-Fi) for at slette den valgte SIM-profil fra enheden."</string>
+
     <string name="erase_sim_confirm_button" msgid="8309115684335320541">"Ryd"</string>
     <string name="erasing_sim" msgid="7877703231075699139">"Rydder SIM-kort…"</string>
     <string name="erase_sim_fail_title" msgid="2024446702985862427">"SIM-kortet kan ikke ryddes"</string>

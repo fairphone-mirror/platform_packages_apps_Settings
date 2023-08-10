@@ -5549,7 +5549,8 @@
     <string name="switch_sim_dialog_no_switch_text" msgid="7053939850026876088">"Pour utiliser ultérieurement les données mobiles, les fonctionnalités d\'appel et les SMS, accédez à vos paramètres réseau"</string>
     <string name="sim_card_label" msgid="5632157635124050923">"Carte SIM"</string>
     <string name="erase_sim_dialog_title" msgid="881253002169177016">"Effacer ce profil SIM téléchargé ?"</string>
-    <string name="erase_sim_dialog_text" msgid="753031064269699885">"Si vous effacez ce profil SIM, le service \"<xliff:g id="CARRIER_NAME_A">%1$s</xliff:g>\" sera supprimé de cet appareil.\n\nVotre service \"<xliff:g id="CARRIER_NAME_B">%1$s</xliff:g>\" ne sera pas résilié."</string>
+    <string name="erase_sim_dialog_text" msgid="753031064269699885">"L'effacement de cette carte SIM supprime le service de l'opérateur \"<xliff:g id="CARRIER_NAME_A">%1$s</xliff:g>\" de cet appareil.\n\nLe service pour \"<xliff:g id="CARRIER_NAME_B">%1$s</xliff:g>\" ne sera pas annulé. Veuillez noter qu'une connexion Internet (données mobiles ou Wi-Fi) est nécessaire pour effacer le profil SIM sélectionné de l'appareil."</string>
+
     <string name="erase_sim_confirm_button" msgid="8309115684335320541">"Effacer"</string>
     <string name="erasing_sim" msgid="7877703231075699139">"Effacement du profil SIM…"</string>
     <string name="erase_sim_fail_title" msgid="2024446702985862427">"Impossible d\'effacer le profil SIM"</string>
