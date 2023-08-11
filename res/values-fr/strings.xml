@@ -770,7 +770,8 @@
     <string name="wifi_password" msgid="1458802324849513755">"Mot de passe"</string>
     <string name="wifi_show_password" msgid="6865993988238157923">"Afficher le mot de passe"</string>
     <string name="wifi_ap_choose_2G" msgid="1436802195991542016">"Bande 2,4 GHz"</string>
-    <string name="wifi_ap_prefer_5G" msgid="2520628479818369902">"Bande 5 GHz (de préférence)"</string>
+    <string name="wifi_ap_prefer_5G" msgid="2520628479818369902">"Bande 5 GHz (de préférence)"</string>
+    <string name="wifi_ap_prefer_6G" >"Bande 6 GHz (de préférence)"</string>
     <string name="wifi_ip_settings" msgid="6420498748726599133">"Paramètres IP"</string>
     <string name="wifi_privacy_settings" msgid="3283946009000725698">"Confidentialité"</string>
     <string name="wifi_subscription" msgid="4432423938285430113">"Abonnement"</string>

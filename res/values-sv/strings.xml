@@ -769,8 +769,9 @@
     <string name="wifi_eap_anonymous" msgid="8630332141751267000">"Anonym identitet"</string>
     <string name="wifi_password" msgid="1458802324849513755">"Lösenord"</string>
     <string name="wifi_show_password" msgid="6865993988238157923">"Visa lösenord"</string>
-    <string name="wifi_ap_choose_2G" msgid="1436802195991542016">"2,4 GHz-bandet"</string>
-    <string name="wifi_ap_prefer_5G" msgid="2520628479818369902">"5,0 GHz-bandet föredras"</string>
+    <string name="wifi_ap_choose_2G" msgid="1436802195991542016">"2,4 GHz bandet"</string>
+    <string name="wifi_ap_prefer_5G" msgid="2520628479818369902">"5 GHz bandet föredras"</string>
+    <string name="wifi_ap_prefer_6G">"6 GHz bandet föredras"</string>
     <string name="wifi_ip_settings" msgid="6420498748726599133">"IP-inställningar"</string>
     <string name="wifi_privacy_settings" msgid="3283946009000725698">"Integritet"</string>
     <string name="wifi_subscription" msgid="4432423938285430113">"Prenumeration"</string>
