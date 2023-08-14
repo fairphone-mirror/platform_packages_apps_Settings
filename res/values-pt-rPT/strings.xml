@@ -1270,7 +1270,7 @@
     <string name="reset_bluetooth_wifi_complete_toast" msgid="5893439291030574365">"O Bluetooth e o Wi-Fi foram repostos"</string>
     <string name="erase_euicc_data_button" msgid="728078969563311737">"Apagar"</string>
     <string name="reset_esim_title" msgid="4194570573425902754">"Apagar eSIMs"</string>
-    <string name="reset_esim_desc" msgid="3662444090563399131">"Esta ação não cancela qualquer plano de serviços móveis. Para transferir SIMs de substituição, contacte o seu operador."</string>
+    <string name="reset_esim_desc" msgid="3662444090563399131">"Esta ação não cancela qualquer plano de serviços móveis. Para transferir SIMs de substituição, contacte o seu operador. Observe que uma conexão com a Internet (dados móveis ou Wi-Fi) é necessária para apagar o perfil SIM selecionado do dispositivo."</string>
     <string name="reset_network_button_text" msgid="2281476496459610071">"Repor definições"</string>
     <string name="reset_network_final_desc" msgid="5304365082065278425">"Pretende repor todas as definições de rede? Não é possível anular esta ação."</string>
     <string name="reset_network_final_desc_esim" msgid="1129251284212847939">"Repor todas as definições de rede e apagar os eSIMs? Não é possível anular esta ação."</string>
