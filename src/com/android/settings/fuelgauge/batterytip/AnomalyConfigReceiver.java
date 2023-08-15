@@ -30,6 +30,7 @@ import android.net.Uri;
 import android.os.SystemProperties;
 import android.content.ContentResolver;
 import android.provider.Settings;
+import static android.provider.Settings.System.SCREEN_OFF_TIMEOUT;
 /**
  * Receive broadcast when {@link StatsManager} restart, then check the anomaly config and
  * prepare info for {@link StatsManager}
@@ -62,6 +63,11 @@ public class AnomalyConfigReceiver extends BroadcastReceiver {
                         Settings.System.MIN_REFRESH_RATE, 60f,cr.getUserId());
                     Settings.System.putFloatForUser(cr,
                         Settings.System.MIN_REFRESH_RATE, 90f,cr.getUserId());
+                }
+
+                int screen_time = Settings.System.getInt(cr, SCREEN_OFF_TIMEOUT, 60*1000);
+                if(Settings.Secure.getInt(cr, Settings.Secure.USER_SETUP_COMPLETE, 0) != 0 && screen_time == 121000){
+                    Settings.System.putInt(cr, SCREEN_OFF_TIMEOUT, 60*1000); 
                 }
             }
             if("0".equals(SystemProperties.get(T2M_PROP_SET_FILESDEFAULT,"0"))){
