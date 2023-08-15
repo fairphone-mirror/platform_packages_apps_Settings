@@ -4786,8 +4786,8 @@
     <string name="second_face_title">Sauvegarde de l’enregistrement du visage</string>
     <string name="dialog_title_battery_healty">État de la batterie</string>
     <string name="disclamer">Clause de non-responsabilité</string>
-    <string name="charging_slow">Mode lent</string>
-    <string name="charging_normal">Mode normal</string>
+    <string name="charging_slow">Charge Eco</string>
+    <string name="charging_normal">Charge rapide</string>
     <string name="charging_state">Mode de recharge</string>
     <string name="faceunlock_setupwizard">Déverrouiller par reconnaissance faciale</string>
     <string name="face_unlock_user_experience">Utiliser le déverrouillage par reconnaissance faciale pour une expérience de déverrouillage plus rapide et plus fluide.</string>

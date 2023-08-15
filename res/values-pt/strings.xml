@@ -4753,8 +4753,8 @@
     <string name="second_face_title">Inscrição facial de cópia de segurança</string>
     <string name="dialog_title_battery_healty">Estado da bateria</string>
     <string name="disclamer">Declaração de limitação de responsabilidade</string>
-    <string name="charging_slow">Modo lento</string>
-    <string name="charging_normal">Modo normal</string>
+    <string name="charging_slow">Carga ecológica</string>
+    <string name="charging_normal">Carga rápida</string>
     <string name="charging_state">Modo de carregamento</string>
     <string name="enroll_main_first">Por favor, inscreva os dados da face primeiro.</string>
     <string name="desktop_mode_off_info">As mudanças entram em vigor quando se reconectado</string>

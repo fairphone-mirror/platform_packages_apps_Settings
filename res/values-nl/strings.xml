@@ -4784,8 +4784,8 @@
     <string name="second_face_title">Back-up gezichtsregistratie</string>
     <string name="dialog_title_battery_healty">Gezondheid van de batterij</string>
     <string name="disclamer">Disclaimer</string>
-    <string name="charging_slow">Langzame modus</string>
-    <string name="charging_normal">Normale modus</string>
+    <string name="charging_slow">Eco-laden</string>
+    <string name="charging_normal">Snel-laden</string>
     <string name="charging_state">Oplaadmodus</string>
     <string name="faceunlock_setupwizard">Ontgrendelen met gezicht</string>
     <string name="face_unlock_user_experience">Gebruik ontgrendelen met gezicht voor een snellere en eenvoudige ontgrendelervaring.</string>
