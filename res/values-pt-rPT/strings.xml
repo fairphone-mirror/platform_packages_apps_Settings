@@ -1495,7 +1495,7 @@
     <string name="reset_bluetooth_wifi_button_text" msgid="3974098137045963639">"Repor"</string>
     <string name="reset_bluetooth_wifi_complete_toast" msgid="5893439291030574365">"O Bluetooth e o Wi-Fi foram repostos"</string>
     <string name="reset_esim_title" msgid="4194570573425902754">"Apagar eSIMs"</string>
-    <string name="reset_esim_desc" msgid="6125192435907740751">"Esta ação não cancela o seu plano de serviços móveis. Para receber um SIM de substituição, contacte a sua operadora."</string>
+    <string name="reset_esim_desc" msgid="3662444090563399131">"Esta ação não cancela qualquer plano de serviços móveis. Para transferir SIMs de substituição, contacte o seu operador. Observe que uma conexão com a Internet (dados móveis ou Wi-Fi) é necessária para apagar o perfil SIM selecionado do dispositivo."</string>
     <string name="reset_network_button_text" msgid="2281476496459610071">"Repor definições"</string>
     <string name="reset_network_final_desc" msgid="5304365082065278425">"Quer repor todas as definições de rede? Não é possível anular esta ação."</string>
     <string name="reset_network_final_desc_esim" msgid="1129251284212847939">"Repor todas as definições de rede e apagar os eSIMs? Não é possível anular esta ação."</string>
@@ -4770,7 +4770,7 @@
     <string name="switch_sim_dialog_no_switch_text" msgid="7053939850026876088">"Para utilizar dados móveis, funcionalidades de chamadas e SMS posteriormente, aceda às definições de rede."</string>
     <string name="sim_card_label" msgid="6263064316075963775">"SIM"</string>
     <string name="erase_sim_dialog_title" msgid="4742077437653028326">"Apagar este eSIM?"</string>
-    <string name="erase_sim_dialog_text" msgid="1406141218170595272">"Esta ação remove o serviço da operadora <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> neste dispositivo, mas o seu plano da operadora <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> não é cancelado."</string>
+    <string name="erase_sim_dialog_text" msgid="753031064269699885">"A apagamento deste SIM remove o serviço <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> deste dispositivo.\n\n O serviço para <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> não será cancelado. Observe que uma conexão com a Internet (dados móveis ou Wi-Fi) é necessária para apagar o perfil SIM selecionado do dispositivo."</string>
     <string name="erase_sim_confirm_button" msgid="8309115684335320541">"Apagar"</string>
     <string name="erasing_sim" msgid="4237180547590463930">"A apagar o eSIM…"</string>
     <string name="erase_sim_fail_title" msgid="1445700500168357303">"Não é possível apagar o eSIM"</string>

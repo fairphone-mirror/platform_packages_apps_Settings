@@ -3532,7 +3532,7 @@
     <!-- Erase Euicc dialog and SD card & phone storage settings screen, title for the menu option and checkbox to let user decide whether erase eSIM data together [CHAR LIMIT=50] -->
     <string name="reset_esim_title">Erase eSIMs</string>
     <!-- Erase Euicc dialog and SD card & phone storage settings screen, message for the checkbox to let user decide whether erase eSIM data together [CHAR LIMIT=NONE] -->
-    <string name="reset_esim_desc">This won’t cancel your mobile service plan. To get a replacement SIM, contact your carrier.</string>
+    <string name="reset_esim_desc">"This won’t cancel any mobile service plans. To download replacement SIMs, contact your carrier. Please note that an internet connection (mobile data or Wi-Fi) is required to erase the selected SIM profile from the device."</string>
 
     <!-- SD card & phone storage settings screen, button on screen after user selects Reset network settings -->
     <string name="reset_network_button_text">Reset settings</string>

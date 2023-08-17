@@ -1496,7 +1496,7 @@
     <string name="reset_bluetooth_wifi_button_text" msgid="3974098137045963639">"Zurücksetzen"</string>
     <string name="reset_bluetooth_wifi_complete_toast" msgid="5893439291030574365">"Bluetooth und WLAN wurden zurückgesetzt"</string>
     <string name="reset_esim_title" msgid="4194570573425902754">"eSIMs löschen"</string>
-    <string name="reset_esim_desc" msgid="6125192435907740751">"Dein Mobilfunkvertrag wird dadurch nicht gekündigt. Um eine Ersatz-SIM-Karte zu erhalten, wende dich an deinen Mobilfunkanbieter."</string>
+    <string name="reset_esim_desc" msgid="3662444090563399131">"Dein Mobilfunkvertrag wird dadurch nicht gekündigt. Wende dich an deinen Mobilfunkanbieter, um Ersatz-SIMs herunterzuladen. Bitte beachte, dass eine Internetverbindung (mobile Daten oder Wi-Fi) nötig ist um das ausgewählte SIM-Profil aus dem Gerät zu löschen."</string>
     <string name="reset_network_button_text" msgid="2281476496459610071">"Einstellungen zurücksetzen"</string>
     <string name="reset_network_final_desc" msgid="5304365082065278425">"Sämtliche Netzwerkeinstellungen zurücksetzen? Dieser Vorgang kann nicht rückgängig gemacht werden."</string>
     <string name="reset_network_final_desc_esim" msgid="1129251284212847939">"Alle Netzwerkeinstellungen zurücksetzen und eSIMs löschen? Diese Aktion lässt sich nicht rückgängig machen."</string>

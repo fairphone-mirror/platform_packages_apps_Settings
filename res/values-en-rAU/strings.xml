@@ -4770,7 +4770,7 @@
     <string name="switch_sim_dialog_no_switch_text" msgid="7053939850026876088">"To use mobile data, call features and SMS at a later time, go to your network settings"</string>
     <string name="sim_card_label" msgid="6263064316075963775">"SIM"</string>
     <string name="erase_sim_dialog_title" msgid="4742077437653028326">"Erase this eSIM?"</string>
-    <string name="erase_sim_dialog_text" msgid="1406141218170595272">"This removes <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> service from this device, but your <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> plan won\'t be cancelled."</string>
+    <string name="erase_sim_dialog_text" msgid="753031064269699885">"Erasing this SIM removes <xliff:g id="carrier_name_a" example="Google Fi">%1$s</xliff:g> service from this device.\n\nService for <xliff:g id="carrier_name_b" example="Google Fi">%1$s</xliff:g> won't be canceled. Please note that an internet connection (mobile data or Wi-Fi) is required to erase the selected SIM profile from the device."</string>
     <string name="erase_sim_confirm_button" msgid="8309115684335320541">"Erase"</string>
     <string name="erasing_sim" msgid="4237180547590463930">"Erasing eSIM…"</string>
     <string name="erase_sim_fail_title" msgid="1445700500168357303">"Can\'t erase eSIM"</string>

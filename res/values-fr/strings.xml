@@ -1495,7 +1495,7 @@
     <string name="reset_bluetooth_wifi_button_text" msgid="3974098137045963639">"Réinitialiser"</string>
     <string name="reset_bluetooth_wifi_complete_toast" msgid="5893439291030574365">"Le Bluetooth et le Wi‑Fi ont été réinitialisés"</string>
     <string name="reset_esim_title" msgid="4194570573425902754">"Effacer les eSIM"</string>
-    <string name="reset_esim_desc" msgid="6125192435907740751">"Votre forfait mobile ne sera pas résilié. Pour obtenir une carte SIM de rechange, contactez votre opérateur."</string>
+    <string name="reset_esim_desc" msgid="3662444090563399131">"Cela n\'entraînera la résiliation d\'aucun forfait mobile. Pour télécharger des profils SIM de remplacement, contactez votre opérateur. Veuillez noter qu'une connexion Internet (données mobiles ou Wi-Fi) est nécessaire pour effacer le profil SIM sélectionné de l'appareil."</string>
     <string name="reset_network_button_text" msgid="2281476496459610071">"Réinitialiser les paramètres"</string>
     <string name="reset_network_final_desc" msgid="5304365082065278425">"Réinitialiser tous les paramètres du réseau ? Cette action est irréversible."</string>
     <string name="reset_network_final_desc_esim" msgid="1129251284212847939">"Réinitialiser tous les paramètres réseau et effacer les eSIM ? Cette action est irréversible."</string>

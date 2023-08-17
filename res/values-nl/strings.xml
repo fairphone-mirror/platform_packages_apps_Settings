@@ -1495,7 +1495,7 @@
     <string name="reset_bluetooth_wifi_button_text" msgid="3974098137045963639">"Resetten"</string>
     <string name="reset_bluetooth_wifi_complete_toast" msgid="5893439291030574365">"Bluetooth en wifi zijn gereset"</string>
     <string name="reset_esim_title" msgid="4194570573425902754">"E-simkaarten wissen"</string>
-    <string name="reset_esim_desc" msgid="6125192435907740751">"Je mobiele abonnement wordt hierdoor niet opgezegd. Neem contact op met je provider voor een vervangende simkaart."</string>
+    <string name="reset_esim_desc" msgid="3662444090563399131">"Hiermee zeg je geen mobiele abonnementen op. Neem contact op met je provider als je vervangende simkaarten wilt downloaden. Houd er rekening mee dat een internetverbinding (mobiele gegevens of Wi-Fi) vereist is om het geselecteerde SIM-profiel van het apparaat te wissen."</string>
     <string name="reset_network_button_text" msgid="2281476496459610071">"Instellingen resetten"</string>
     <string name="reset_network_final_desc" msgid="5304365082065278425">"Alle netwerkinstellingen resetten? Je kunt deze actie niet ongedaan maken."</string>
     <string name="reset_network_final_desc_esim" msgid="1129251284212847939">"Alle netwerkinstellingen resetten en e-simkaarten wissen? Je kunt deze actie niet ongedaan maken."</string>

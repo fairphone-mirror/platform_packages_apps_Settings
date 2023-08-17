@@ -1495,7 +1495,7 @@
     <string name="reset_bluetooth_wifi_button_text" msgid="3974098137045963639">"Restablecer"</string>
     <string name="reset_bluetooth_wifi_complete_toast" msgid="5893439291030574365">"El Bluetooth y el Wi-Fi se han restablecido"</string>
     <string name="reset_esim_title" msgid="4194570573425902754">"Borrar eSIMs"</string>
-    <string name="reset_esim_desc" msgid="6125192435907740751">"Esta acción no cancelará tu plan de servicios móviles. Para obtener una SIM de recambio, ponte en contacto con tu operador."</string>
+    <string name="reset_esim_desc" msgid="3662444090563399131">"No se cancelará ningún plan de servicios móviles. Para descargar una tarjeta SIM de sustitución, ponte en contacto con tu operador. Ten en cuenta que hace falta una conexión a Internet (datos móvil o Wi-Fi) para borrar el perfil SIM seleccionado del dispositivo."</string>
     <string name="reset_network_button_text" msgid="2281476496459610071">"Restablecer ajustes"</string>
     <string name="reset_network_final_desc" msgid="5304365082065278425">"¿Quieres restablecer la configuración de red? No podrás deshacer esta acción."</string>
     <string name="reset_network_final_desc_esim" msgid="1129251284212847939">"¿Restablecer todos los ajustes de red y borrar las eSIMs? No podrás deshacer esta acción."</string>

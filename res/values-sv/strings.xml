@@ -1496,7 +1496,7 @@
     <string name="reset_bluetooth_wifi_button_text" msgid="3974098137045963639">"Återställ"</string>
     <string name="reset_bluetooth_wifi_complete_toast" msgid="5893439291030574365">"Bluetooth och wifi har återställts"</string>
     <string name="reset_esim_title" msgid="4194570573425902754">"Rensa eSIM-kort"</string>
-    <string name="reset_esim_desc" msgid="6125192435907740751">"Detta avslutar inte ditt mobilabonnemang. Kontakta operatören för att ersätta SIM-kortet."</string>
+    <string name="reset_esim_desc" msgid="3662444090563399131">"Det här avbryter inte något serviceavtal för telefonen. Om du vill ladda ned SIM-kort som ersätter de gamla kontaktar du operatören. Observera att en internetanslutning (mobildata eller Wi-Fi) krävs för att radera den valda SIM-profilen från enheten."</string>
     <string name="reset_network_button_text" msgid="2281476496459610071">"Återställ inställningar"</string>
     <string name="reset_network_final_desc" msgid="5304365082065278425">"Vill du återställa alla nätverksinställningar? Det går inte att ångra den här åtgärden."</string>
     <string name="reset_network_final_desc_esim" msgid="1129251284212847939">"Vill du återställa alla nätverksinställningar och rensa eSIM-kort? Det går inte att ångra den här åtgärden."</string>

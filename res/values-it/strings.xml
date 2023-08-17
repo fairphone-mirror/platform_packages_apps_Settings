@@ -1496,7 +1496,7 @@
     <string name="reset_bluetooth_wifi_button_text" msgid="3974098137045963639">"Reimposta"</string>
     <string name="reset_bluetooth_wifi_complete_toast" msgid="5893439291030574365">"Bluetooth e Wi-Fi sono stati reimpostati"</string>
     <string name="reset_esim_title" msgid="4194570573425902754">"Resetta eSIM"</string>
-    <string name="reset_esim_desc" msgid="6125192435907740751">"Il tuo piano dati mobile non verrà annullato. Per ottenere una SIM sostitutiva, contatta il tuo operatore."</string>
+    <string name="reset_esim_desc" msgid="3662444090563399131">"Gli eventuali piani tariffari non verranno annullati. Per scaricare SIM sostitutive, contatta il tuo operatore. Attenzione: è necessaria una connessione Internet (dati mobili o Wi-Fi) per cancellare correttamente il profilo SIM selezionato dal dispositivo."</string>
     <string name="reset_network_button_text" msgid="2281476496459610071">"Reimposta"</string>
     <string name="reset_network_final_desc" msgid="5304365082065278425">"Ripristinare tutte le impostazioni della rete? Questa azione non può essere annullata."</string>
     <string name="reset_network_final_desc_esim" msgid="1129251284212847939">"Vuoi reimpostare tutte le impostazioni di rete e resettare le eSIM? L\'operazione non può essere annullata."</string>
