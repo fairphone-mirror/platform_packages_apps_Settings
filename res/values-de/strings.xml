@@ -1845,7 +1845,7 @@
     <string name="reset_network_desc" msgid="1112523764899788246">"Hierdurch werden sämtliche Netzwerkeinstellungen zurückgesetzt, einschließlich:\n\n"<li>"WLAN"</li>\n<li>"Mobile Daten"</li>\n<li>"Bluetooth"</li></string>
     <string name="erase_euicc_data_button" msgid="728078969563311737">"Löschen"</string>
     <string name="reset_esim_title" msgid="6152167073280852849">"Heruntergeladene SIMs löschen"</string>
-    <string name="reset_esim_desc" msgid="3662444090563399131">"Dein Mobilfunkvertrag wird dadurch nicht gekündigt. Wende dich an deinen Mobilfunkanbieter, um Ersatz-SIMs herunterzuladen."</string>
+    <string name="reset_esim_desc" msgid="3662444090563399131">"Dein Mobilfunkvertrag wird dadurch nicht gekündigt. Wende dich an deinen Mobilfunkanbieter, um Ersatz-SIMs herunterzuladen. Bitte beachte, dass eine Internetverbindung (mobile Daten oder Wi-Fi) nötig ist um das ausgewählte SIM-Profil aus dem Gerät zu löschen."</string>
     <string name="reset_network_button_text" msgid="2281476496459610071">"Einstellungen zurücksetzen"</string>
     <string name="reset_network_final_desc" msgid="5304365082065278425">"Sämtliche Netzwerkeinstellungen zurücksetzen? Dieser Vorgang kann nicht rückgängig gemacht werden."</string>
     <string name="reset_network_final_desc_esim" msgid="8342882682282693844">"Alle Netzwerkeinstellungen zurücksetzen und heruntergeladene SIMs löschen? Dieser Vorgang kann nicht rückgängig gemacht werden."</string>

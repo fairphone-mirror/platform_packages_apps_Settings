@@ -1838,7 +1838,7 @@
     <string name="reset_network_desc" msgid="1112523764899788246">"Se recuperarán todos los ajustes de red, como:\n\n"<li>"Wi‑Fi"</li>\n<li>"Datos móviles"</li>\n<li>"Bluetooth"</li></string>
     <string name="erase_euicc_data_button" msgid="728078969563311737">"Borrar"</string>
     <string name="reset_esim_title" msgid="6152167073280852849">"Borrar las SIMs descargadas"</string>
-    <string name="reset_esim_desc" msgid="3662444090563399131">"No se cancelará ningún plan de servicios móviles. Para descargar una tarjeta SIM de sustitución, ponte en contacto con tu operador."</string>
+    <string name="reset_esim_desc" msgid="3662444090563399131">"No se cancelará ningún plan de servicios móviles. Para descargar una tarjeta SIM de sustitución, ponte en contacto con tu operador. Ten en cuenta que hace falta una conexión a Internet (datos móvil o Wi-Fi) para borrar el perfil SIM seleccionado del dispositivo."</string>
     <string name="reset_network_button_text" msgid="2281476496459610071">"Restablecer ajustes"</string>
     <string name="reset_network_final_desc" msgid="5304365082065278425">"¿Quieres restablecer la configuración de red? No podrás deshacer esta acción."</string>
     <string name="reset_network_final_desc_esim" msgid="8342882682282693844">"¿Quieres recuperar todos los ajustes de red y borrar todas las SIM descargadas? No podrás deshacer esta acción."</string>

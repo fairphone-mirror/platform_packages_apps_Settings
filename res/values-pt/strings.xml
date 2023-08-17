@@ -1844,7 +1844,7 @@
     <string name="reset_network_desc" msgid="1112523764899788246">"Esta ação redefinirá todas as configurações de rede, inclusive:\n\n"<li>"Wi‑Fi"</li>\n<li>"Dados móveis"</li>\n<li>"Bluetooth"</li></string>
     <string name="erase_euicc_data_button" msgid="728078969563311737">"Limpar"</string>
     <string name="reset_esim_title" msgid="6152167073280852849">"Apagar chips salvos"</string>
-    <string name="reset_esim_desc" msgid="3662444090563399131">"Isso não cancelará nenhum plano de serviços móveis. Para fazer o download de chips substitutos, entre em contato com a operadora."</string>
+    <string name="reset_esim_desc" msgid="3662444090563399131">"Isso não cancelará nenhum plano de serviços móveis. Para fazer o download de chips substitutos, entre em contato com a operadora. Observe que uma conexão com a Internet (dados móveis ou Wi-Fi) é necessária para apagar o perfil SIM selecionado do dispositivo."</string>
     <string name="reset_network_button_text" msgid="2281476496459610071">"Redefinir configurações"</string>
     <string name="reset_network_final_desc" msgid="5304365082065278425">"Redefinir todas as configurações de rede? Não é possível desfazer essa ação."</string>
     <string name="reset_network_final_desc_esim" msgid="8342882682282693844">"Redefinir todas as configurações de rede e apagar os chips salvos? Não é possível desfazer essa ação."</string>
