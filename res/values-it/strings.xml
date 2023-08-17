@@ -1838,7 +1838,7 @@
     <string name="reset_network_desc" msgid="1112523764899788246">"Verranno reimpostate tutte le impostazioni di rete, tra cui:\n\n"<li>"Wi‑Fi"</li>\n<li>"Dati mobili"</li>\n<li>"Bluetooth"</li></string>
     <string name="erase_euicc_data_button" msgid="728078969563311737">"Resetta"</string>
     <string name="reset_esim_title" msgid="6152167073280852849">"Resetta SIM scaricate"</string>
-    <string name="reset_esim_desc" msgid="3662444090563399131">"Gli eventuali piani tariffari non verranno annullati. Per scaricare SIM sostitutive, contatta il tuo operatore."</string>
+    <string name="reset_esim_desc" msgid="3662444090563399131">"Gli eventuali piani tariffari non verranno annullati. Per scaricare SIM sostitutive, contatta il tuo operatore. Attenzione: è necessaria una connessione Internet (dati mobili o Wi-Fi) per cancellare correttamente il profilo SIM selezionato dal dispositivo."</string>
     <string name="reset_network_button_text" msgid="2281476496459610071">"Reimposta"</string>
     <string name="reset_network_final_desc" msgid="5304365082065278425">"Ripristinare tutte le impostazioni della rete? Questa azione non può essere annullata."</string>
     <string name="reset_network_final_desc_esim" msgid="8342882682282693844">"Reimpostare tutte le impostazioni di rete e resettare tutte le SIM scaricate? Questa azione non può essere annullata."</string>

@@ -1838,7 +1838,7 @@
     <string name="reset_network_desc" msgid="1112523764899788246">"Denne handling nulstiller alle netværksindstillinger, bl.a.:\n\n"<li>"Wi‑Fi"</li>\n<li>"Mobildata"</li>\n<li>"Bluetooth"</li></string>
     <string name="erase_euicc_data_button" msgid="728078969563311737">"Ryd"</string>
     <string name="reset_esim_title" msgid="6152167073280852849">"Ryd downloadede SIM-kort"</string>
-    <string name="reset_esim_desc" msgid="3662444090563399131">"Mobilabonnementer opsiges ikke. Kontakt dit mobilselskab for at downloade nye SIM-kort."</string>
+    <string name="reset_esim_desc" msgid="3662444090563399131">"Mobilabonnementer opsiges ikke. Kontakt dit mobilselskab for at downloade nye SIM-kort. Bemærk, at der kræves en internetforbindelse (mobildata eller Wi-Fi) for at slette den valgte SIM-profil fra enheden."</string>
     <string name="reset_network_button_text" msgid="2281476496459610071">"Nulstil indstillinger"</string>
     <string name="reset_network_final_desc" msgid="5304365082065278425">"Vil du nulstille alle netværksindstillinger? Denne handling kan ikke fortrydes."</string>
     <string name="reset_network_final_desc_esim" msgid="8342882682282693844">"Vil du nulstille alle netværksindstillingerne og rydde downloadede SIM-kort? Denne handling kan ikke fortrydes."</string>
