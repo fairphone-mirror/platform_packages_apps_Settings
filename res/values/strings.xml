@@ -14643,8 +14643,8 @@
     <string name="batteryh_soc">charge/discharge cycle count:</string>
     <string name="batteryh_cfd">charge full design:</string>
     <string name="charging_state">Charging mode</string>
-    <string name="charging_slow">Slow mode</string>
-    <string name="charging_normal">Normal mode</string>
+    <string name="charging_slow">Eco Charge</string>
+    <string name="charging_normal">Fast Charge</string>
     <string name="battery_protect">Battery Protect</string>
     <string name="battery_protect_description">set the maximum battery charge level to 80%</string>
     <string name="battery_charging_privacy">Customize your charging speed. Remember slower charging equals longer battery life.</string>

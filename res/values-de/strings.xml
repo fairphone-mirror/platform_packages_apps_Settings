@@ -5976,8 +5976,8 @@
     <string name="second_face_title">Zurück Gesichtsregistrierung</string>
     <string name="dialog_title_battery_healty">Akkugesundheit</string>
     <string name="disclamer">Haftungsausschluss</string>
-    <string name="charging_slow">Langsamer Modus</string>
-    <string name="charging_normal">Normaler Modus</string>
+    <string name="charging_slow">Öko-Modus</string>
+    <string name="charging_normal">Schneller Modus</string>
     <string name="charging_state">Lademodus</string>
     <string name="faceunlock_setupwizard">Mit Gesichtserkennung entsperren</string>
     <string name="face_unlock_user_experience">Verwenden Sie die Gesichtsfreigabe für eine schnellere und reibungslosere Entsperrung.</string>

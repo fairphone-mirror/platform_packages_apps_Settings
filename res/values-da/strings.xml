@@ -5969,8 +5969,8 @@
     <string name="second_face_title">Sikkerhedskopi ansigtsregistrering</string>
     <string name="dialog_title_battery_healty">Sundhedstilstand for batteri</string>
     <string name="disclamer">Ansvarsfraskrivelse</string>
-    <string name="charging_slow">Langsom tilstand</string>
-    <string name="charging_normal">Normal tilstand</string>
+    <string name="charging_slow">ECO -opladning</string>
+    <string name="charging_normal">Hurtig opladning</string>
     <string name="charging_state">Opladningstilstand</string>
     <string name="faceunlock_setupwizard">Lås op med ansigt</string>
     <string name="face_unlock_user_experience">Brug ansigtslåsning for hurtigere op nemmere at låse op.</string>
