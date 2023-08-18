@@ -1768,4 +1768,15 @@
         <item>"46006"</item>
         <item>"46009"</item>
     </string-array>
+
+    <string-array name="charging_mode">
+        <item>@string/charging_slow</item>
+        <item>@string/charging_normal</item>
+    </string-array>
+
+    <string-array name="charging_mode_value">
+        <item>"0"</item>
+        <item>"1"</item>
+    </string-array>
+
 </resources>
