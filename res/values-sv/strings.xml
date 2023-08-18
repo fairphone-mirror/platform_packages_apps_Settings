@@ -1112,9 +1112,10 @@
     <string name="wifi_show_password" msgid="6865993988238157923">"Visa lösenord"</string>
     <string name="wifi_ap_band_config" msgid="1589020070150933055">"Välj AP-band"</string>
     <string name="wifi_ap_choose_auto" msgid="8944442003151215691">"Automatiskt"</string>
-    <string name="wifi_ap_choose_2G" msgid="1436802195991542016">"2,4 GHz-bandet"</string>
+    <string name="wifi_ap_choose_2G" msgid="1436802195991542016">"2,4 GHz bandet"</string>
     <string name="wifi_ap_choose_5G" msgid="8413248472288180075">"5,0 GHz-bandet"</string>
-    <string name="wifi_ap_prefer_5G" msgid="2520628479818369902">"5,0 GHz-bandet föredras"</string>
+    <string name="wifi_ap_prefer_5G" msgid="2520628479818369902">"5 GHz bandet föredras"</string>
+    <string name="wifi_ap_prefer_6G">"6 GHz bandet föredras"</string>
     <string name="wifi_ap_2G" msgid="4099628221864343015">"2,4 GHz"</string>
     <string name="wifi_ap_5G" msgid="3493942667238551207">"5,0 GHz"</string>
     <string name="wifi_ap_band_select_one" msgid="5221193733812493435">"Välj minst ett band för Wi‑Fi-surfzon:"</string>

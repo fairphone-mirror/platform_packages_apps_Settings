@@ -1114,7 +1114,8 @@
     <string name="wifi_ap_choose_auto" msgid="8944442003151215691">"Automatica"</string>
     <string name="wifi_ap_choose_2G" msgid="1436802195991542016">"Banda a 2,4 GHz"</string>
     <string name="wifi_ap_choose_5G" msgid="8413248472288180075">"Banda a 5 GHz"</string>
-    <string name="wifi_ap_prefer_5G" msgid="2520628479818369902">"Banda a 5,0 GHz preferita"</string>
+    <string name="wifi_ap_prefer_5G" msgid="2520628479818369902">"Banda a 5 GHz preferita"</string>
+    <string name="wifi_ap_prefer_6G" >"Banda a 6 GHz preferita"</string>
     <string name="wifi_ap_2G" msgid="4099628221864343015">"2,4 GHz"</string>
     <string name="wifi_ap_5G" msgid="3493942667238551207">"5 GHz"</string>
     <string name="wifi_ap_band_select_one" msgid="5221193733812493435">"Scegli almeno una banda per l\'hotspot Wi‑Fi:"</string>
