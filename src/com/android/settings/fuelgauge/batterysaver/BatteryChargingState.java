@@ -12,23 +12,26 @@ import android.util.Log;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.os.SystemProperties;
+import androidx.preference.PreferenceScreen;
+import com.android.settingslib.widget.FooterPreference;
+import com.android.settingslib.widget.SelectorWithWidgetPreference;
 
 
 /**
  * author : suntianhai
  * e-mail : tianhai.sun@t2mobile.com
  * time   : 2023/08/1
- * desc   : add for FP5-2351 to set Battery Charging mode 
+ * desc   : add for FP5-2351 to set Battery Charging mode
  * version: 1.0
- * 
+ *
  */
 public class BatteryChargingState extends RadioButtonPickerFragment {
 	private static final String TAG = "BatteryChargingState";
 
-
+    private Context mContext;
+    private FooterPreference mPrivacyPreference;
     // charging_slow  charging_normal
     private String[] mEntries;
-
     // 1  0
     private String[] mValues;
 
@@ -62,10 +65,12 @@ public class BatteryChargingState extends RadioButtonPickerFragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        mContext = context;
         mEntries = getContext().getResources().getStringArray(
                 R.array.charging_mode);
         mValues = getContext().getResources().getStringArray(
                 R.array.charging_mode_value);
+        mPrivacyPreference = new FooterPreference(context);
     }
 
     @Override
@@ -87,6 +92,34 @@ public class BatteryChargingState extends RadioButtonPickerFragment {
     @Override
     public void onStop() {
         super.onStop();
+    }
+
+    @Override
+    public void updateCandidates() {
+        final String defaultKey = getDefaultKey();
+        final PreferenceScreen screen = getPreferenceScreen();
+        screen.removeAll();
+
+        final List<? extends CandidateInfo> candidateList = getCandidates();
+        if (candidateList == null) {
+            return;
+        }
+
+        for (CandidateInfo info : candidateList) {
+            SelectorWithWidgetPreference pref =
+                    new SelectorWithWidgetPreference(getPrefContext());
+            bindPreference(pref, info.getKey(), info, defaultKey);
+            screen.addPreference(pref);
+        }
+        String title = mContext.getResources().getString(R.string.battery_charging_privacy) + "\n" +
+        mContext.getResources().getString(R.string.battery_charging_privacy_eco) + "\n" +
+        mContext.getResources().getString(R.string.battery_charging_privacy_fast);
+        mPrivacyPreference = new FooterPreference(mContext);
+        mPrivacyPreference.setIcon(R.drawable.ic_privacy_shield_24dp);
+        mPrivacyPreference.setTitle(title);
+        mPrivacyPreference.setSelectable(false);
+        mPrivacyPreference.setLayoutResource(R.layout.preference_footer);
+        screen.addPreference(mPrivacyPreference);
     }
 
     @Override
