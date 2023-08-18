@@ -1841,7 +1841,7 @@
     <string name="reset_network_desc" msgid="1112523764899788246">"Tous les paramètres réseau seront réinitialisés, y compris les suivants :\n\n"<li>"Wi‑Fi"</li>\n<li>"Données mobiles"</li>\n<li>"Bluetooth"</li></string>
     <string name="erase_euicc_data_button" msgid="728078969563311737">"Effacer"</string>
     <string name="reset_esim_title" msgid="6152167073280852849">"Effacer les profils SIM téléchargés"</string>
-    <string name="reset_esim_desc" msgid="3662444090563399131">"Cela n\'entraînera la résiliation d\'aucun forfait mobile. Pour télécharger des profils SIM de remplacement, contactez votre opérateur."</string>
+    <string name="reset_esim_desc" msgid="3662444090563399131">"Cela n\'entraînera la résiliation d\'aucun forfait mobile. Pour télécharger des profils SIM de remplacement, contactez votre opérateur. Veuillez noter qu'une connexion Internet (données mobiles ou Wi-Fi) est nécessaire pour effacer le profil SIM sélectionné de l'appareil."</string>
     <string name="reset_network_button_text" msgid="2281476496459610071">"Réinitialiser les paramètres"</string>
     <string name="reset_network_final_desc" msgid="5304365082065278425">"Réinitialiser tous les paramètres du réseau ? Cette action est irréversible."</string>
     <string name="reset_network_final_desc_esim" msgid="8342882682282693844">"Réinitialiser tous les paramètres réseau et effacer les profils SIM téléchargés ? Cette action est irréversible."</string>
