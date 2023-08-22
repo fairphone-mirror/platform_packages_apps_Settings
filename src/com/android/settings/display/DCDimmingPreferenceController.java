@@ -84,7 +84,7 @@ public class DCDimmingPreferenceController extends TogglePreferenceController
 
     @Override
     public int getAvailabilityStatus() {
-        return AVAILABLE;
+        return CONDITIONALLY_UNAVAILABLE;
     }
 
     @Override
