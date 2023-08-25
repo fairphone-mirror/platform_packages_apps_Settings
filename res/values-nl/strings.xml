@@ -5906,7 +5906,7 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"Onjuist wachtwoord"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"Centreer de onderstaande QR-code om te beginnen met luisteren"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"QR-code heeft geen geldige indeling"</string>
-    <string name="data_preference">Gegevensvoorkeur</string>
+    <string name="data_preference">"Gegevens en voorkeuren"</string>
 
     <string name="unlock_failed_reset_title">"Automatische Fabrieksreset"</string>
     <string name="unlock_failed_reset_description">"Als u uw telefoon 15 keer verkeerd probeert te ontgrendelen, wordt hij teruggezet naar de fabrieksinstellingen. Alle gegevens, inclusief bestanden en gedownloade apps, worden gewist."</string>
