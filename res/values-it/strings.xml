@@ -4725,4 +4725,5 @@
     <string name="qsb_search_bar_title_description">Mostra/Nascondi la barra di ricerca della schermata iniziale</string>
     <string name="reboot_required_title">Riavvio richiesto</string>
     <string name="reboot_required_message">Applica e riavvia per applicare le modifiche</string>
+    <string name="data_preference">"Preferenze dati mobili"</string>
 </resources>

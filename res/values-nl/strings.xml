@@ -4726,4 +4726,5 @@
     <string name="qsb_search_bar_title_description">Zoekbalk startscherm weergeven/verbergen</string>
     <string name="reboot_required_title">Opnieuw opstarten vereist</string>
     <string name="reboot_required_message">Toepassen en herstarten om toe te passen</string>
+    <string name="data_preference">"Gegevens en voorkeuren"</string>
 </resources>
