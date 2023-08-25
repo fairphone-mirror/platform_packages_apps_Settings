@@ -5964,4 +5964,5 @@
     <string name="find_broadcast_password_dialog_password_error" msgid="243855327674765">"Password errata"</string>
     <string name="bt_le_audio_scan_qr_code_scanner" msgid="7614569515419813053">"Per iniziare ad ascoltare, centra il codice QR qui sotto"</string>
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"Il formato del codice QR non è valido"</string>
-</resources>
+    <string name="data_preference">"Preferenze dati mobili"</string>
+    </resources>
