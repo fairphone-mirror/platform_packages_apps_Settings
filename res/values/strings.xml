@@ -12421,7 +12421,7 @@
     <string name="battery_protect">Battery Protect</string>
     <string name="battery_protect_description">set the maximum battery charge level to 80%</string>
     <string name="battery_charging_privacy">Customize your charging speed. Remember slower charging equals longer battery life.</string>
-    <string name="battery_charging_privacy_eco">Eco Charge: Optimise your battery’s longevity with this mode.</string>
-    <string name="battery_charging_privacy_fast">Fast Charge: Get back to 100% as quickly as possible.</string>
+    <string name="battery_charging_privacy_eco">Optimise your battery’s longevity with this mode.</string>
+    <string name="battery_charging_privacy_fast">Get back to 100% as quickly as possible.</string>
     <!--add by suntaunhai end-->
 </resources>

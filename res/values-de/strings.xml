@@ -4802,6 +4802,6 @@
     <string name="battery_protect">Akku schützen</string>
     <string name="battery_protect_description">Akku auf höchstens 80% laden</string>
     <string name="battery_charging_privacy">Passe deine Ladegeschwindigkeit an. Langsameres Laden verlängert die Akku-Lebensdauer.</string>
-    <string name="battery_charging_privacy_eco">Öko-Modus: Optimiere mit diesem Modus auf die Langlebigkeit deines Akku.</string>
-    <string name="battery_charging_privacy_fast">Schneller Modus: Lade so schnell wie möglich auf 100% auf.</string>
+    <string name="battery_charging_privacy_eco">Optimiere mit diesem Modus auf die Langlebigkeit deines Akku.</string>
+    <string name="battery_charging_privacy_fast">Lade so schnell wie möglich auf 100% auf.</string>
 </resources>
