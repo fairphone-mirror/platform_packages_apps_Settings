@@ -25,6 +25,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings.Global;
+import android.content.SharedPreferences;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.loader.app.LoaderManager;
@@ -65,6 +66,7 @@ public class PowerUsageSummary extends PowerUsageBase implements
         BatteryTipPreferenceController.BatteryTipListener {
 
     static final String TAG = "PowerUsageSummary";
+    private boolean isDebug = false;
 
     @VisibleForTesting
     static final String KEY_BATTERY_ERROR = "battery_help_message";
@@ -306,6 +308,15 @@ public class PowerUsageSummary extends PowerUsageBase implements
                 mBatteryHealthPreference.setSummary(getBatHealth());
             }
         }).start();
+        boolean isRemoveBatteryHealth = getContext().getSharedPreferences("BatteryData", Context.MODE_PRIVATE).getBoolean(com.android.settings.SettingsApplication.IS_REMOVE_BATTERY_HEALTH,false);
+        if (isDebug) {
+            android.util.Log.d("debugdebug","PowerUsageSummary.java-initPreference-isRemoveBatteryHealth:"+isRemoveBatteryHealth);
+        }
+        if (isRemoveBatteryHealth) {
+            mBatteryHealthPreference.setVisible(false);
+        } else {
+            mBatteryHealthPreference.setVisible(true);
+        }
     }
 
     @Override
