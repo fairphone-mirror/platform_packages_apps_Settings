@@ -565,6 +565,10 @@ public class SimStatusDialogController implements LifecycleObserver {
             dataNetworkTypeName = "NR NSA";
         }
 
+        Log.d(TAG, "actualDataNetworkType: " + actualDataNetworkType);
+        Log.d(TAG, "actualVoiceNetworkType: " + actualVoiceNetworkType);
+        Log.d(TAG, "overrideNetworkType: " + overrideNetworkType);
+
         boolean show4GForLTE = false;
         final PersistableBundle carrierConfig = mCarrierConfigManager.getConfigForSubId(subId);
         if (carrierConfig != null) {
@@ -740,6 +744,8 @@ public class SimStatusDialogController implements LifecycleObserver {
 
         @Override
         public void onServiceStateChanged(ServiceState serviceState) {
+            Log.d(TAG, "onServiceStateChanged: " + serviceState);
+            updateNetworkType();
             updateNetworkProvider();
             updateServiceState(serviceState);
             updateRoamingStatus(serviceState);
