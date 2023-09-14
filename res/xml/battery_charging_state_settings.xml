@@ -16,4 +16,10 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/charging_state"/>
+    android:title="@string/charging_state">
+
+    <Preference
+        android:key="battery_summary"
+        android:summary="@string/battery_charging_privacy"/>
+
+</PreferenceScreen>

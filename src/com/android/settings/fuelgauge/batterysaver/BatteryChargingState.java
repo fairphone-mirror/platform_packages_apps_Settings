@@ -103,7 +103,7 @@ public class BatteryChargingState extends RadioButtonPickerFragment {
     public void updateCandidates() {
         final String defaultKey = getDefaultKey();
         final PreferenceScreen screen = getPreferenceScreen();
-        screen.removeAll();
+        // screen.removeAll();
 
         final List<? extends CandidateInfo> candidateList = getCandidates();
         if (candidateList == null) {
@@ -117,13 +117,13 @@ public class BatteryChargingState extends RadioButtonPickerFragment {
             bindPreferenceExtra(pref,info.getKey(),info,defaultKey,defaultKey);
             screen.addPreference(pref);
         }
-        String title = mContext.getResources().getString(R.string.battery_charging_privacy);
-        mPrivacyPreference = new FooterPreference(mContext);
-        mPrivacyPreference.setIcon(R.drawable.ic_privacy_shield_24dp);
-        mPrivacyPreference.setTitle(title);
-        mPrivacyPreference.setSelectable(false);
-        mPrivacyPreference.setLayoutResource(R.layout.preference_footer);
-        screen.addPreference(mPrivacyPreference);
+        // String title = mContext.getResources().getString(R.string.battery_charging_privacy);
+        // mPrivacyPreference = new FooterPreference(mContext);
+        // mPrivacyPreference.setIcon(null);
+        // mPrivacyPreference.setTitle(title);
+        // mPrivacyPreference.setSelectable(false);
+        // mPrivacyPreference.setLayoutResource(R.layout.preference_footer);
+        // screen.addPreference(mPrivacyPreference);
     }
 
     @Override
@@ -151,7 +151,6 @@ public class BatteryChargingState extends RadioButtonPickerFragment {
                 (ChargingStateCandidateInfo) info;
         final CharSequence summary = candidateInfo.getSummary();
         if (summary != null) {
-            Log.i("sth__","      summary =" + summary);
             pref.setSummary(summary);
             pref.setAppendixVisibility(View.GONE);
         }
