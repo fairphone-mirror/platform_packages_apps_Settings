@@ -15,6 +15,7 @@ import android.os.SystemProperties;
 import androidx.preference.PreferenceScreen;
 import com.android.settingslib.widget.FooterPreference;
 import com.android.settingslib.widget.SelectorWithWidgetPreference;
+import android.view.View;
 
 
 /**
@@ -34,6 +35,8 @@ public class BatteryChargingState extends RadioButtonPickerFragment {
     private String[] mEntries;
     // 1  0
     private String[] mValues;
+    // summary
+    private String[] mSummary;
 
     public BatteryChargingState() { }
 
@@ -51,12 +54,12 @@ public class BatteryChargingState extends RadioButtonPickerFragment {
     protected List<? extends CandidateInfo> getCandidates() {
         final List<CandidateInfo> candidates = new ArrayList<>();
 
-        if (mEntries == null || mValues == null) {
+        if (mEntries == null || mValues == null || mSummary == null) {
             return candidates;
         }
 
         for (int i = 0; i < mValues.length; i++) {
-            candidates.add(new ChargingStateCandidateInfo(mEntries[i], mValues[i], true));
+            candidates.add(new ChargingStateCandidateInfo(mEntries[i],mSummary[i], mValues[i], true));
         }
 
         return candidates;
@@ -70,6 +73,8 @@ public class BatteryChargingState extends RadioButtonPickerFragment {
                 R.array.charging_mode);
         mValues = getContext().getResources().getStringArray(
                 R.array.charging_mode_value);
+        mSummary = getContext().getResources().getStringArray(
+                R.array.charging_mode_summary);
         mPrivacyPreference = new FooterPreference(context);
     }
 
@@ -109,11 +114,10 @@ public class BatteryChargingState extends RadioButtonPickerFragment {
             SelectorWithWidgetPreference pref =
                     new SelectorWithWidgetPreference(getPrefContext());
             bindPreference(pref, info.getKey(), info, defaultKey);
+            bindPreferenceExtra(pref,info.getKey(),info,defaultKey,defaultKey);
             screen.addPreference(pref);
         }
-        String title = mContext.getResources().getString(R.string.battery_charging_privacy) + "\n" +
-        mContext.getResources().getString(R.string.battery_charging_privacy_eco) + "\n" +
-        mContext.getResources().getString(R.string.battery_charging_privacy_fast);
+        String title = mContext.getResources().getString(R.string.battery_charging_privacy);
         mPrivacyPreference = new FooterPreference(mContext);
         mPrivacyPreference.setIcon(R.drawable.ic_privacy_shield_24dp);
         mPrivacyPreference.setTitle(title);
@@ -140,14 +144,29 @@ public class BatteryChargingState extends RadioButtonPickerFragment {
         return true;
     }
 
+    @Override
+    public void bindPreferenceExtra(SelectorWithWidgetPreference pref, String key,
+            CandidateInfo info, String defaultKey, String systemDefaultKey) {
+        final ChargingStateCandidateInfo candidateInfo =
+                (ChargingStateCandidateInfo) info;
+        final CharSequence summary = candidateInfo.getSummary();
+        if (summary != null) {
+            pref.setSummary(summary);
+            pref.setAppendixVisibility(View.GONE);
+        }
+    }
+
+
     private static class ChargingStateCandidateInfo extends CandidateInfo {
         private final CharSequence mLabel;
         private final String mKey;
+        private final CharSequence mSummary;
 
-        ChargingStateCandidateInfo(CharSequence label, String key, boolean enabled) {
+        ChargingStateCandidateInfo(CharSequence label,CharSequence summary, String key, boolean enabled) {
             super(enabled);
             mLabel = label;
             mKey = key;
+            mSummary = summary;
         }
 
         @Override
@@ -163,6 +182,10 @@ public class BatteryChargingState extends RadioButtonPickerFragment {
         @Override
         public String getKey() {
             return mKey;
+        }
+
+        public CharSequence getSummary() {
+            return mSummary;
         }
     }
 

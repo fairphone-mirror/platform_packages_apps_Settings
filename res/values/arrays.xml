@@ -1779,4 +1779,9 @@
         <item>"1"</item>
     </string-array>
 
+    <string-array name="charging_mode_summary">
+        <item>@string/battery_charging_privacy_eco</item>
+        <item>@string/battery_charging_privacy_fast</item>
+    </string-array>
+
 </resources>

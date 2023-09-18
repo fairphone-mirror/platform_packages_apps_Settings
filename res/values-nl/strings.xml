@@ -5987,6 +5987,6 @@
     <string name="battery_protect">Batterijbescherming</string>
     <string name="battery_protect_description">Beperkt de maximale 80%</string>
     <string name="battery_charging_privacy">Pas je oplaadsnelheid aan. Langzaam laden verlengt de levensduur van de batterij.</string>
-    <string name="battery_charging_privacy_eco">Eco-laden: Optimaliseer de levensduur van uw batterij met deze modus.</string>
-    <string name="battery_charging_privacy_fast">Snel-laden: Laadt de batterij zo snel als mogelijk tot 100%.</string>
+    <string name="battery_charging_privacy_eco">Optimaliseer de levensduur van uw batterij met deze modus.</string>
+    <string name="battery_charging_privacy_fast">Laadt de batterij zo snel als mogelijk tot 100%.</string>
 </resources>

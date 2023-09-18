@@ -5990,6 +5990,6 @@
     <string name="battery_protect">Protéger la batterie</string>
     <string name="battery_protect_description">Réglez le niveau de charge de batterie maximum à 80%</string>
     <string name="battery_charging_privacy">Personnalisez votre vitesse de charge.N\'oubliez pas que la charge plus lente équivaut à une durée de vie de la batterie plus longue.</string>
-    <string name="battery_charging_privacy_eco">Charge Eco: optimiser la longévité de votre batterie avec ce mode.</string>
-    <string name="battery_charging_privacy_fast">Charge rapide: revenez à 100% le plus rapidement possible.</string>
+    <string name="battery_charging_privacy_eco">Optimiser la longévité de votre batterie avec ce mode.</string>
+    <string name="battery_charging_privacy_fast">Revenez à 100% le plus rapidement possible.</string>
 </resources>
