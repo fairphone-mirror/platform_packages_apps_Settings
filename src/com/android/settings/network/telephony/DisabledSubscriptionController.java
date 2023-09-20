@@ -75,11 +75,16 @@ public class DisabledSubscriptionController extends TelephonyBasePreferenceContr
     }
 
     private void update() {
+        int phoneId,uiccStatus;
         if (mCategory == null || !SubscriptionManager.isValidSubscriptionId(mSubId)) {
             return;
         }
+        phoneId = mSubscriptionManager.getSlotIndex(mSubId);
+        uiccStatus = PrimaryCardAndSubsidyLockUtils.getUiccCardProvisioningStatus(phoneId);
+
         // TODO b/135222940: re-evaluate whether to use mSubscriptionManager#isSubscriptionEnabled
-        mCategory.setVisible(mSubscriptionManager.isActiveSubscriptionId(mSubId));
+        mCategory.setVisible(uiccStatus == PrimaryCardAndSubsidyLockUtils.CARD_PROVISIONED);
+
     }
 
     @Override
