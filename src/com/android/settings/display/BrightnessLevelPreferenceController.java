@@ -135,7 +135,7 @@ public class BrightnessLevelPreferenceController extends AbstractPreferenceContr
 
     @Override
     public boolean handlePreferenceTreeClick(Preference preference) {
-        if (!TextUtils.equals(preference.getKey(), getPreferenceKey())) {
+        if (!TextUtils.equals(preference.getKey(), getPreferenceKey()) || !DCDimmingPreferenceController.IS_UI_FINISHED) {
             return false;
         }
         final Intent intent = new Intent(ACTION_SHOW_BRIGHTNESS_DIALOG);
