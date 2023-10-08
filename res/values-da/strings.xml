@@ -4805,4 +4805,6 @@
     <string name="battery_charging_privacy">Tilpas din opladningshastighed. Husk langsommere opladning er lig med længere batterilevetid.</string>
     <string name="battery_charging_privacy_eco">Optimer din batteris levetid med denne tilstand.</string>
     <string name="battery_charging_privacy_fast">Kom tilbage til 100% så hurtigt som muligt.</string>
+    <string name="fingerprint_settings_open_description">"Tænd, hvis du foretrækker at låse op uden at vågne telefonen først."</string>
+    <string name="fingerprint_settings_open_title">Fingerprint Lås op adfærd</string>
 </resources>

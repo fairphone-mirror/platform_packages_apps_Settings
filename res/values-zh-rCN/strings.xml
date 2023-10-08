@@ -4804,4 +4804,8 @@
     <string name="battery_charging_privacy">自定义充电速度。请记住，充电速度越慢，电池寿命越长。</string>
     <string name="battery_charging_privacy_eco">使用此模式优化电池寿命。</string>
     <string name="battery_charging_privacy_fast">尽快恢复到100%。</string>
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="fingerprint_settings_open_title">指纹解锁方式</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="fingerprint_settings_open_description">默认按键解锁。如果需要触摸解锁则打开开关。</string>
 </resources>

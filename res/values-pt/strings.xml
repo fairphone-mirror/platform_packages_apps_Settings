@@ -4768,4 +4768,6 @@
     <string name="battery_charging_privacy">Personalize sua velocidade de carregamento. Lembre -se de que o carregamento mais lento é igual à vida útil da bateria.</string>
     <string name="battery_charging_privacy_eco">Otimize a longevidade da sua bateria com este modo.</string>
     <string name="battery_charging_privacy_fast">Volte a 100% o mais rápido possível.</string>
+    <string name="fingerprint_settings_open_description">"Ligue se você preferir desbloquear sem acordar o telefone primeiro."</string>
+    <string name="fingerprint_settings_open_title">Impressão digital desbloquear comportamento</string>
 </resources>
