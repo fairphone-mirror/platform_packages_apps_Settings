@@ -5352,4 +5352,6 @@
     <string name="data_preference">Datenpräferenz</string>
     <string name="status_sdn">"Servicenummern"</string>
     <string name="pocket_mode">Taschenmodus</string>
+    <string name="fingerprint_settings_open_description">"Einschalten, um das Telefon ohne vorherige Aktivierung zu entsperren"</string>
+    <string name="fingerprint_settings_open_title">Fingerabruck Entsperrverhalten</string>
 </resources>

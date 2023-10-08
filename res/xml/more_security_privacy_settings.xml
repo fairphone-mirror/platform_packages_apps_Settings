@@ -233,5 +233,11 @@
         android:summary="@string/unlock_failed_reset_description"
         settings:controller="com.android.settings.security.UnlockFailedResetController" />
 
+    <SwitchPreference
+        android:order="320"
+        android:key="fingerprint_settings_behavior"
+        android:title="@string/fingerprint_settings_open_title"
+        android:summary="@string/fingerprint_settings_open_description"
+        settings:controller="com.android.settings.security.FingerPrintBehaviorController" />
 
 </PreferenceScreen>

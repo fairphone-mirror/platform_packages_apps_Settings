@@ -5371,4 +5371,8 @@
     <string name="audio_streams_main_page_qr_code_scanner_summary" msgid="5312980105735143360">"扫描音频流二维码即可通过“<xliff:g id="DEVICE_NAME">%1$s</xliff:g>”收听"</string>
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"分享期间无法修改密码。若要更改密码，请先关闭“音频分享”功能。"</string>
     <string name="pocket_mode">口袋模式</string>
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="fingerprint_settings_open_title">指纹解锁方式</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="fingerprint_settings_open_description">默认按键解锁。如果需要触摸解锁则打开开关。</string>
 </resources>

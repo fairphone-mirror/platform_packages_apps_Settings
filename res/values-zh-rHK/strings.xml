@@ -5347,4 +5347,8 @@
     <string name="audio_streams_main_page_password_dialog_join_button" msgid="2967747276379153408">"收聽串流"</string>
     <string name="audio_streams_main_page_qr_code_scanner_summary" msgid="5312980105735143360">"使用「<xliff:g id="DEVICE_NAME">%1$s</xliff:g>」掃瞄音訊串流 QR 碼即可收聽"</string>
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"分享音訊期間無法編輯密碼。如要變更密碼，請先關閉音訊分享功能。"</string>
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="fingerprint_settings_open_title">"指紋解鎖方式"</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="fingerprint_settings_open_description">"默認按鍵後觸摸指紋鍵解鎖。若需要觸摸指紋鍵直接解鎖則打開開關"</string>
 </resources>

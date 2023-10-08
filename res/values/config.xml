@@ -273,6 +273,9 @@
     <!-- Whether Settings intelligence supports presenting Slices. -->
     <bool name="config_settingsintelligence_slice_supported">false</bool>
 
+    <!-- Whether the fingerpint behavior is defaulted to be on or off-->
+    <bool name="config_fingerprint_settings_behavior_on">true</bool>
+
     <!-- Package Installer package name -->
     <string name="config_package_installer_package_name" translatable="false">
         com.android.packageinstaller

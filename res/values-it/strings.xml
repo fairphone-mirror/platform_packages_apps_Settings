@@ -5349,4 +5349,6 @@
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"Impossibile modificare la password durante la condivisione. Per modificarla, devi prima disattivare la condivisione audio."</string>
     <string name="data_preference">"Preferenze dati mobili"</string>
     <string name="pocket_mode">Pocket Mode</string>
+    <string name="fingerprint_settings_open_description">"Selezionare se si preferisce sbloccare il telefono senza prima accendere lo schermo."</string>
+    <string name="fingerprint_settings_open_title">Controllo dello sblocco con impronte digitali</string>
 </resources>
