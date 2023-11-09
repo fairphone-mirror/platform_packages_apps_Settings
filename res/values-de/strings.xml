@@ -5995,4 +5995,6 @@
     <string name="battery_charging_privacy">Passe deine Ladegeschwindigkeit an. Langsameres Laden verlängert die Akku-Lebensdauer.</string>
     <string name="battery_charging_privacy_eco">Optimiere mit diesem Modus auf die Langlebigkeit deines Akku.</string>
     <string name="battery_charging_privacy_fast">Lade so schnell wie möglich auf 100% auf.</string>
+    <string name="fingerprint_settings_open_description">"Einschalten, um das Telefon ohne vorherige Aktivierung zu entsperren"</string>
+    <string name="fingerprint_settings_open_title">Fingerabruck Entsperrverhalten</string>
 </resources>

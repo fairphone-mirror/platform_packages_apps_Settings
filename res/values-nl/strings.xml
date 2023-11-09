@@ -5989,4 +5989,6 @@
     <string name="battery_charging_privacy">Pas je oplaadsnelheid aan. Langzaam laden verlengt de levensduur van de batterij.</string>
     <string name="battery_charging_privacy_eco">Optimaliseer de levensduur van uw batterij met deze modus.</string>
     <string name="battery_charging_privacy_fast">Laadt de batterij zo snel als mogelijk tot 100%.</string>
+    <string name="fingerprint_settings_open_description">"Schakel in als je liever de telefoon ontgrendelt zonder hem eerst te activeren."</string>
+    <string name="fingerprint_settings_open_title">Ontgrendelgedrag vingerafdrukscanner</string>
 </resources>

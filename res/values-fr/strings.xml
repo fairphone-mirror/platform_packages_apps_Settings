@@ -5992,4 +5992,6 @@
     <string name="battery_charging_privacy">Personnalisez votre vitesse de charge.N\'oubliez pas que la charge plus lente équivaut à une durée de vie de la batterie plus longue.</string>
     <string name="battery_charging_privacy_eco">Optimiser la longévité de votre batterie avec ce mode.</string>
     <string name="battery_charging_privacy_fast">Revenez à 100% le plus rapidement possible.</string>
+    <string name="fingerprint_settings_open_description">"Activez si vous préférez déverrouiller le téléphone sans le réveiller au préalable."</string>
+    <string name="fingerprint_settings_open_title">Comportement de déverrouillage par empreinte digitale</string>
 </resources>
