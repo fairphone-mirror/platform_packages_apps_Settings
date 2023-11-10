@@ -4945,11 +4945,6 @@
                 <data
                     android:host="2288379"
                     android:scheme="android_secret_code" />
-
-                <!-- add for FP5-197 show ENDC info 2023-03-27 -->
-                <data
-                    android:host="36327"
-                    android:scheme="android_secret_code" />
             </intent-filter>
         </receiver>
 
@@ -5123,17 +5118,6 @@
             android:taskAffinity="com.android.settings.unlock"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
-
-        <!-- add for FP5-197 show ENDC info 2023-03-27 begin -->
-        <activity android:name="com.android.settings.BandCombination"
-            android:exported="true"
-            android:label="@string/bandcomb"
-            android:configChanges="orientation|screenSize|keyboardHidden">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <!-- add for FP5-197 show ENDC info 2023-03-27 end -->
 
         <activity android:name="com.android.settings.fuelgauge.batterysaver.BatsActivity"
             android:exported="true"
