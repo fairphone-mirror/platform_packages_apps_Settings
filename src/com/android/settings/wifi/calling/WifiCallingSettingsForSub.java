@@ -307,10 +307,7 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
             Log.d(TAG, "get title from carrierconfig");
             PersistableBundle b = configManager.getConfigForSubId(mSubId);
             if (b != null) {
-                String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
-                if (!"".equals(carrierconfig_title)){
-                    title = carrierconfig_title;
-                }
+                title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
                 Log.d(TAG, "title: " + title);
             }
         }
@@ -566,10 +563,7 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
             Log.d(TAG, "get title from carrierconfig");
             PersistableBundle b = configManager.getConfigForSubId(mSubId);
             if (b != null) {
-                String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
-                if (!"".equals(carrierconfig_title)){
-                    title = carrierconfig_title;
-                }
+                title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
                 Log.d(TAG, "title: " + title);
             }
         }

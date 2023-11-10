@@ -50,7 +50,6 @@ import androidx.lifecycle.OnLifecycleEvent;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
-import android.content.res.Resources;
 
 import com.android.settings.R;
 import com.android.settings.network.AllowedNetworkTypesListener;
@@ -158,7 +157,7 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
             Log.d(LOG_TAG, "get preferred network mode: " + pref_network_mode);
         }
 
-        if (pref_network_mode != null && pref_network_value != null && pref_network_mode.length != 0 && pref_network_value.length != 0) {
+        if (pref_network_mode != null && pref_network_value != null) {
             Log.d(LOG_TAG, "init preferred network from carrier config");
             preference.setEntries(pref_network_mode);
             preference.setEntryValues(pref_network_value);
@@ -300,19 +299,16 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
                     break;
             }
         }*/
-        if (pref_network_mode == null || pref_network_value == null || pref_network_mode.length == 0 || pref_network_value.length == 0){
-            final Resources res = SubscriptionManager.getResourcesForSubId(mContext, mSubId);
-            pref_network_mode = res.getStringArray(R.array.preferred_network_mode_custom_choices);
-            pref_network_value = res.getStringArray(R.array.preferred_network_mode_custom_choices_value);
-
-        }
-        for (int index = 0; index < pref_network_value.length; index++) {
-            if (pref_network_value[index].equals(String.valueOf(networkmode))){
-                summerry = pref_network_mode[index];
-                break;
+        // modify by T2M.zhang renjie for FP4-2652 21-8-28 begin
+        if (pref_network_mode != null && pref_network_value != null){
+            for (int index = 0; index < pref_network_value.length; index++) {
+                if (pref_network_value[index].equals(String.valueOf(networkmode))){
+                    summerry = pref_network_mode[index];
+                    break;
+                }
             }
         }
-
+        // modify by T2M.zhang renjie for FP4-2652 21-8-28 end
         if (summerry != null) {
             Log.d(LOG_TAG, "summary: " + summerry);
             preference.setSummary(summerry);

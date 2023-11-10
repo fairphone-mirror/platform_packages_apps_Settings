@@ -165,10 +165,8 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
         if (mCarrierConfigManager != null) {
             PersistableBundle b = mCarrierConfigManager.getConfigForSubId(mSubId);
             if (b != null) {
-                String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
-                if (!"".equals(carrierconfig_title)){
-                    title = carrierconfig_title;
-                }
+                title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+
             }
         }
         // add by T2M.dengxiangyu for FP4-61 2021-04-14 end
