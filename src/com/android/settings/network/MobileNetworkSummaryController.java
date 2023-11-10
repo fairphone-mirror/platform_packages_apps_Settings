@@ -21,11 +21,9 @@ import static androidx.lifecycle.Lifecycle.Event.ON_RESUME;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.SystemProperties;//[BUG]-Modify by shaopan.tang 2023-06-02 FP5-1550 Not allow to active esim profile when exceed 5 
 import android.os.UserManager;
 import android.telephony.SubscriptionManager;
 import android.telephony.euicc.EuiccManager;
-import android.widget.Toast;
 
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
@@ -147,18 +145,9 @@ public class MobileNetworkSummaryController extends AbstractPreferenceController
     }
 
     private void startAddSimFlow() {
-        //[BUG]-Modify-Begin by shaopan.tang 2023-06-02 FP5-1550 Not allow to active esim profile when exceed 5
-        int euiccprofilenum = Settings.Global.getInt(mContext.getContentResolver(),"esim_profile_number", 0);
-        android.util.Log.d("MobileNetworkSummaryController", "euiccprofilenum = " + euiccprofilenum);
-        if (euiccprofilenum > SystemProperties.getInt("vendor.t2m.maxprofiles", 5)){
-            final Toast toast = Toast.makeText(mContext, "the eSIM profile couldn't be downloaded as the memory is full", Toast.LENGTH_LONG);
-            toast.show();
-        } else {
-            final Intent intent = new Intent(EuiccManager.ACTION_PROVISION_EMBEDDED_SUBSCRIPTION);
-            intent.putExtra(EuiccManager.EXTRA_FORCE_PROVISION, true);
-            mContext.startActivity(intent);
-        }
-        //[BUG]-Modify-End by shaopan.tang
+        final Intent intent = new Intent(EuiccManager.ACTION_PROVISION_EMBEDDED_SUBSCRIPTION);
+        intent.putExtra(EuiccManager.EXTRA_FORCE_PROVISION, true);
+        mContext.startActivity(intent);
     }
 
     private void initPreference() {
