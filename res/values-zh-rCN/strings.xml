@@ -1954,7 +1954,7 @@
     <string name="accessibility_autoclick_longer_desc" msgid="2566025502981487443">"较长"</string>
     <string name="accessibility_autoclick_seekbar_desc" msgid="8363959277814621118">"自动点击时间"</string>
     <string name="accessibility_vibration_settings_title" msgid="936301142478631993">"振动和触感反馈"</string>
-    <string name="accessibility_vibration_settings_summary" msgid="3690308537483465527">"控制各种使用情形的振动强度"</string>
+    <string name="accessibility_vibration_settings_summary" msgid="3690308537483465527">"控制各种使用情形的振动"</string>
     <string name="accessibility_vibration_settings_state_on" msgid="5566026932372832502">"已开启"</string>
     <string name="accessibility_vibration_settings_state_off" msgid="7946588741954981703">"关闭"</string>
     <string name="accessibility_vibration_setting_disabled_for_silent_mode_summary" msgid="3982701772953323190">"设备已设为静音，因此该设置已停用"</string>

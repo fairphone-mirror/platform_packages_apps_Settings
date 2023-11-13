@@ -1955,7 +1955,7 @@
     <string name="accessibility_autoclick_longer_desc" msgid="2566025502981487443">"Plus long"</string>
     <string name="accessibility_autoclick_seekbar_desc" msgid="8363959277814621118">"Délai du clic automatique"</string>
     <string name="accessibility_vibration_settings_title" msgid="936301142478631993">"Vibreur et retour haptique"</string>
-    <string name="accessibility_vibration_settings_summary" msgid="3690308537483465527">"Contrôler la force des vibrations pour différentes utilisations"</string>
+    <string name="accessibility_vibration_settings_summary" msgid="3690308537483465527">"Contrôlez les vibrations du dispositif pour différentes utilisations"</string>
     <string name="accessibility_vibration_settings_state_on" msgid="5566026932372832502">"Activé"</string>
     <string name="accessibility_vibration_settings_state_off" msgid="7946588741954981703">"Désactivés"</string>
     <string name="accessibility_vibration_setting_disabled_for_silent_mode_summary" msgid="3982701772953323190">"Ce paramètre est désactivé, car l\'appareil est mode silencieux"</string>

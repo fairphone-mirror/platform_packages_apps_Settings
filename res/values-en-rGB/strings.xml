@@ -1953,7 +1953,7 @@
     <string name="accessibility_autoclick_longer_desc" msgid="2566025502981487443">"Longer"</string>
     <string name="accessibility_autoclick_seekbar_desc" msgid="8363959277814621118">"Auto click time"</string>
     <string name="accessibility_vibration_settings_title" msgid="936301142478631993">"Vibration and haptics"</string>
-    <string name="accessibility_vibration_settings_summary" msgid="3690308537483465527">"Control the vibration strength for different usages"</string>
+    <string name="accessibility_vibration_settings_summary" msgid="3690308537483465527">"Control device vibration for different usages"</string>
     <string name="accessibility_vibration_settings_state_on" msgid="5566026932372832502">"On"</string>
     <string name="accessibility_vibration_settings_state_off" msgid="7946588741954981703">"Off"</string>
     <string name="accessibility_vibration_setting_disabled_for_silent_mode_summary" msgid="3982701772953323190">"Setting disabled because device is set to silent"</string>
