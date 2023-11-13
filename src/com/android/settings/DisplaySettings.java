@@ -30,7 +30,6 @@ import com.android.settings.display.TapToWakePreferenceController;
 import com.android.settings.display.ThemePreferenceController;
 import com.android.settings.display.VrDisplayPreferenceController;
 import com.android.settings.display.PickUpToWakePreferenceController;
-import com.android.settings.display.DesktopModePreferenceController;
 import com.android.settings.display.SunlightModePreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.core.AbstractPreferenceController;
@@ -87,9 +86,6 @@ public class DisplaySettings extends DashboardFragment {
         //add by t2m yingyubin for FP5-189 20230324
         controllers.add(new PickUpToWakePreferenceController(context));
         controllers.add(new BrightnessLevelPreferenceController(context, lifecycle));
-        //ADD by T2M yingyubin for Desktop mode
-        controllers.add(new DesktopModePreferenceController(context));
-        //ADD by T2M yingyubin for Desktop mode
         //Add by t2m yingyubin for FP5-565 20230414
         controllers.add(new SunlightModePreferenceController(context));
         //Add-End by t2m yingyubin
