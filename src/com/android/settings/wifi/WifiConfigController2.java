@@ -1069,7 +1069,7 @@ public class WifiConfigController2 implements TextWatcher,
             loadCertificates(
                     mEapCaCertSpinner,
                     androidKeystoreAliasLoader.getCaCertAliases(),
-                    mDoNotValidateEapServerString,
+                    null /* noCertificateString */,
                     false /* showMultipleCerts */,
                     true /* showUsePreinstalledCertOption */);
             loadCertificates(
@@ -1155,7 +1155,7 @@ public class WifiConfigController2 implements TextWatcher,
                             && enterpriseConfig.isTrustOnFirstUseEnabled()) {
                         setSelection(mEapCaCertSpinner, mTrustOnFirstUse);
                     } else {
-                        setSelection(mEapCaCertSpinner, mDoNotValidateEapServerString);
+                        setSelection(mEapCaCertSpinner, mUnspecifiedCertString);
                     }
                 } else if (caCerts.length == 1) {
                     setSelection(mEapCaCertSpinner, caCerts[0]);
@@ -1166,7 +1166,7 @@ public class WifiConfigController2 implements TextWatcher,
                     loadCertificates(
                             mEapCaCertSpinner,
                             androidKeystoreAliasLoader.getCaCertAliases(),
-                            mDoNotValidateEapServerString,
+                            null /* noCertificateString */,
                             true /* showMultipleCerts */,
                             true /* showUsePreinstalledCertOption */);
                     setSelection(mEapCaCertSpinner, mMultipleCertSetString);
@@ -1306,8 +1306,7 @@ public class WifiConfigController2 implements TextWatcher,
 
         if (mView.findViewById(R.id.l_ca_cert).getVisibility() != View.GONE) {
             String eapCertSelection = (String) mEapCaCertSpinner.getSelectedItem();
-            if (eapCertSelection.equals(mDoNotValidateEapServerString)
-                    || eapCertSelection.equals(mUnspecifiedCertString)
+            if (eapCertSelection.equals(mUnspecifiedCertString)
                     || (mIsTrustOnFirstUseSupported
                             && eapCertSelection.equals(mTrustOnFirstUse))) {
                 setMinTlsVerInvisible();
