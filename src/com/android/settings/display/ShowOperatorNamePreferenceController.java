@@ -24,6 +24,7 @@ import androidx.preference.SwitchPreference;
 
 import com.android.settings.core.PreferenceControllerMixin;
 import com.android.settingslib.core.AbstractPreferenceController;
+import com.android.settings.R;
 
 public class ShowOperatorNamePreferenceController extends AbstractPreferenceController
         implements PreferenceControllerMixin, Preference.OnPreferenceChangeListener {
@@ -36,15 +37,16 @@ public class ShowOperatorNamePreferenceController extends AbstractPreferenceCont
 
     @Override
     public boolean isAvailable() {
-        final CarrierConfigManager configMgr = mContext
-                .getSystemService(CarrierConfigManager.class);
-        if (configMgr == null) {
-            return false;
-        }
-        final PersistableBundle b = configMgr.getConfigForSubId(SubscriptionManager
-                .getDefaultDataSubscriptionId());
-        return b != null && b.getBoolean(CarrierConfigManager
-                .KEY_SHOW_OPERATOR_NAME_IN_STATUSBAR_BOOL, false);
+        // final CarrierConfigManager configMgr = mContext
+        //         .getSystemService(CarrierConfigManager.class);
+        // if (configMgr == null) {
+        //     return false;
+        // }
+        // final PersistableBundle b = configMgr.getConfigForSubId(SubscriptionManager
+        //         .getDefaultDataSubscriptionId());
+        // return b != null && b.getBoolean(CarrierConfigManager
+        //         .KEY_SHOW_OPERATOR_NAME_IN_STATUSBAR_BOOL, false);
+        return mContext.getResources().getBoolean(R.bool.config_showOperatorNameInStatusBar);
     }
 
     @Override
