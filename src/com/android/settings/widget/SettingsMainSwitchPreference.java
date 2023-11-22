@@ -197,6 +197,12 @@ public class SettingsMainSwitchPreference extends TwoStatePreference implements
         }
     }
 
+    public void setEnableEffect(boolean enableEffect){
+        if (mMainSwitchBar != null) {
+            mMainSwitchBar.setEnableEffect(enableEffect);
+        }
+    }
+
     /**
      * Set the OnBeforeCheckedChangeListener.
      */

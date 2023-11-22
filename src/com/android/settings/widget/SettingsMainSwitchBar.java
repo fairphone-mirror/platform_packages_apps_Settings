@@ -57,6 +57,7 @@ public class SettingsMainSwitchBar extends MainSwitchBar {
     private OnBeforeCheckedChangeListener mOnBeforeListener;
 
     private String mMetricsTag;
+    private boolean mEnableEffect = false;
 
     public SettingsMainSwitchBar(Context context) {
         this(context, null);
@@ -106,7 +107,11 @@ public class SettingsMainSwitchBar extends MainSwitchBar {
             //[BUG]-Modify-Begin by shaopan.tang 2022-10-20 [FP4S-656]eSIM profile can not re-enabled
             Log.i("SettingsMainSwitchBar", "setDisabledByAdmin setenabled to true instead of getting value from isEnabled(): " + isEnabled());
             //setEnabled(isEnabled());
-            setEnabled(true);
+            if(mEnableEffect){
+                setEnabled(isEnabled());
+            } else {
+                setEnabled(true);
+            }
             //[BUG]-Modify-ENd by shaopan.tang
         }
     }
@@ -179,5 +184,9 @@ public class SettingsMainSwitchBar extends MainSwitchBar {
                 SettingsEnums.PAGE_UNKNOWN,
                 mMetricsTag + "/switch_bar",
                 isChecked ? 1 : 0);
+    }
+
+    public void setEnableEffect(boolean enableEffect){
+        this.mEnableEffect = enableEffect;
     }
 }
