@@ -48,6 +48,7 @@ public class SettingsMainSwitchBar extends MainSwitchBar {
 
     private final MetricsFeatureProvider mMetricsFeatureProvider;
     private OnBeforeCheckedChangeListener mOnBeforeListener;
+    private boolean mEnableEffect = false;
 
     private int mMetricsCategory;
 
@@ -85,7 +86,11 @@ public class SettingsMainSwitchBar extends MainSwitchBar {
         } else {
             mDisabledByAdmin = false;
             mSwitch.setVisibility(View.VISIBLE);
-            setEnabled(true);
+            if (mEnableEffect) {
+                setEnabled(isEnabled());
+            } else {
+                setEnabled(true);
+            }
         }
     }
 
@@ -144,6 +149,10 @@ public class SettingsMainSwitchBar extends MainSwitchBar {
 
     private void logMetrics(boolean isChecked) {
         mMetricsFeatureProvider.changed(mMetricsCategory, "switch_bar", isChecked ? 1 : 0);
+    }
+
+    public void setEnableEffect(boolean enableEffect) {
+        this.mEnableEffect = enableEffect;
     }
 
     private void performRestrictedClick() {

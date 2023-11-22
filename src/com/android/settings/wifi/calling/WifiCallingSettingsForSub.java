@@ -125,11 +125,10 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
 
             final SettingsMainSwitchPreference prefSwitch = (SettingsMainSwitchPreference)
                     getPreferenceScreen().findPreference(SWITCH_BAR);
+            prefSwitch.setEnableEffect(true);
             if (prefSwitch != null) {
                 isWfcEnabled = prefSwitch.isChecked();
-                isCallStateIdle = getTelephonyManagerForSub(
-                        WifiCallingSettingsForSub.this.mSubId).getCallStateForSubscription()
-                        == TelephonyManager.CALL_STATE_IDLE;
+                isCallStateIdle = state == TelephonyManager.CALL_STATE_IDLE;
 
                 boolean isNonTtyOrTtyOnVolteEnabled = true;
                 if (isWfcEnabled || isCallStateIdle) {
@@ -139,7 +138,7 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
                 }
 
                 isWfcEnabled = isWfcEnabled && isNonTtyOrTtyOnVolteEnabled;
-                prefSwitch.setEnabled(isCallStateIdle && isNonTtyOrTtyOnVolteEnabled);
+                prefSwitch.setSwitchBarEnabled(isCallStateIdle && isNonTtyOrTtyOnVolteEnabled);
             }
 
             boolean isWfcModeEditable = true;
