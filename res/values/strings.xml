@@ -12361,6 +12361,13 @@
     <string name="diagprotect_on">Diag Protector ON</string>
     <string name="diagprotect_off">Diag Protector OFF</string>
 
+    <!--[FEATURE]-Add-Begin by shaopan.tang 2023-11-28 FP5U-38 Disable or enable rmnet port by the following hidden code -->
+    <!-- Rmnet -->
+    <string name="rmnetprotect_title">RmnetProtector Setting</string>
+    <string name="rmnetprotect_on">Rmnet Protector ON</string>
+    <string name="rmnetprotect_off">Rmnet Protector OFF</string>
+    <!--[FEATURE]-Add-End by shaopan.tang -->
+
     <string name="face_unlock_settings_title_rom4">Face unlock</string>
     <string name="face_unlock_register_prompt">Hold your phone 20-50 cm from your face.Position your face in the circle shown on the screen.</string>
     <string name="main_face_title">Face Enroll</string>

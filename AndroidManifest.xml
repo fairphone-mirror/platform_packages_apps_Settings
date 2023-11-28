@@ -5051,6 +5051,16 @@
             </intent-filter>
         </receiver>
 
+        <!--[FEATURE]-Add-Begin by shaopan.tang 2023-11-28 FP5U-38 Disable or enable rmnet port by the following hidden code -->
+        <receiver android:name=".RmnetProtectorMode"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:scheme="android_secret_code" android:host="2325" />
+            </intent-filter>
+        </receiver>
+        <!--[FEATURE]-Add-End by shaopan.tang -->
+
         <activity android:name="com.android.settings.ModuleDeviceInfo"
             android:exported="true"
             android:label="@string/hidden_activity_module_info"
