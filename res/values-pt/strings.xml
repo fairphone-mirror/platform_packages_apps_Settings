@@ -4750,7 +4750,7 @@
     <string name="data_preference">Preferência de dados</string>
     <string name="confirm_remove_enroll_face">Confirma a remoção do rosto inscrito?</string>
     <string name="main_face_title">Inscrição facial</string>
-    <string name="second_face_title">Inscrição facial de cópia de segurança</string>
+    <string name="second_face_title">Inscrição da parte posterior da cabeça</string>
     <string name="dialog_title_battery_healty">Estado da bateria</string>
     <string name="disclamer">Declaração de limitação de responsabilidade</string>
     <string name="charging_slow">Carga ecológica</string>
@@ -4770,4 +4770,9 @@
     <string name="battery_charging_privacy_fast">Volte a 100% o mais rápido possível.</string>
     <string name="fingerprint_settings_open_description">"Ligue se você preferir desbloquear sem acordar o telefone primeiro."</string>
     <string name="fingerprint_settings_open_title">Impressão digital desbloquear comportamento</string>
+    <string name="face_add_title">Adicionar dados faciais</string>
+    <string name="face_disabled_condition3_rom4">O desbloqueio facial falhou três vezes seguidas.</string>
+    <string name="face_disabled_title_rom4">o desbloqueio facial será desativado nos seguintes casos:</string>
+    <string name="face_enable_condition_rom4">É necessário um padrão PIN ou uma palavra-passe se pretender tornar o desbloqueio facial novamente disponível.</string>
+    <string name="face_unlock_recognition_ready_rom4">Para obter melhores resultados, sugerimos que o desbloqueio facial seja efetuado em espaços interiores e longe da luz solar direta.</string>
 </resources>

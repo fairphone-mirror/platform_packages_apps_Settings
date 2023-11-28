@@ -4782,7 +4782,7 @@
     <string name="data_preference">Preferens för data</string>
     <string name="confirm_remove_enroll_face">Bekräftar du borttagning av registrerat ansikte?</string>
     <string name="main_face_title">Ansiktsregistrering</string>
-    <string name="second_face_title">Backup ansiktsregistrering</string>
+    <string name="second_face_title">Tillbaka från ansiktsregistrering</string>
     <string name="dialog_title_battery_healty">Batterihälsa</string>
     <string name="disclamer">Ansvarsfriskrivning</string>
     <string name="charging_slow">Eco Charge</string>

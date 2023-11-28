@@ -4785,7 +4785,7 @@
     <string name="data_preference">Preferencia de datos</string>
     <string name="confirm_remove_enroll_face">¿Confirmas que quieres eliminar el registro de cara?</string>
     <string name="main_face_title">Registro de cara</string>
-    <string name="second_face_title">Copia de seguridad registro de cara</string>
+    <string name="second_face_title">Volver a registro de cara</string>
     <string name="dialog_title_battery_healty">Salud de la batería</string>
     <string name="disclamer">Exención de responsabilidad</string>
     <string name="charging_slow">CARGA ECO</string>

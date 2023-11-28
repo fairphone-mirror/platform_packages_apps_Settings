@@ -4781,7 +4781,7 @@
     that will be used for data. This only appears in multi-SIM mode. [CHAR LIMIT=NONE] -->
     <string name="confirm_remove_enroll_face">Weet je zeker dat je je geregistreerde gezicht wilt verwijderen?</string>
     <string name="main_face_title">Gezichtsregistratie</string>
-    <string name="second_face_title">Back-up gezichtsregistratie</string>
+    <string name="second_face_title">Terug naar gezichtsregistratie</string>
     <string name="dialog_title_battery_healty">Gezondheid van de batterij</string>
     <string name="disclamer">Disclaimer</string>
     <string name="charging_slow">Eco-laden</string>
