@@ -5309,7 +5309,7 @@
     <!-- Title for preference screen for configuring vibrations. [CHAR LIMIT=NONE] -->
     <string name="accessibility_vibration_settings_title">Vibration &amp; haptics</string>
     <!-- Summary for preference screen for configuring vibrations. [CHAR LIMIT=NONE] -->
-    <string name="accessibility_vibration_settings_summary">Control the vibration strength for different usages</string>
+    <string name="accessibility_vibration_settings_summary">Control device vibration for different usages</string>
     <!-- "Vibration & haptics" preference's state when enabled. This text is shown next to the "Vibration & haptics" preference title. [CHAR LIMIT=NONE] -->
     <string name="accessibility_vibration_settings_state_on">On</string>
     <!-- "Vibration & haptics" preference's state when disabled. This text is shown next to the "Vibration & haptics" preference title. [CHAR LIMIT=NONE] -->

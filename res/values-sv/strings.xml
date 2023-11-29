@@ -2250,7 +2250,7 @@
     <string name="accessibility_autoclick_longer_desc" msgid="2566025502981487443">"Längre"</string>
     <string name="accessibility_autoclick_seekbar_desc" msgid="8363959277814621118">"Tid för automatiskt klick"</string>
     <string name="accessibility_vibration_settings_title" msgid="936301142478631993">"Vibration och haptik"</string>
-    <string name="accessibility_vibration_settings_summary" msgid="3690308537483465527">"Styr vibrationsstyrkan för olika användningar"</string>
+    <string name="accessibility_vibration_settings_summary" msgid="3690308537483465527">"Kontrollenhetens vibration för olika användningar"</string>
     <string name="accessibility_vibration_settings_state_on" msgid="5566026932372832502">"På"</string>
     <string name="accessibility_vibration_settings_state_off" msgid="7946588741954981703">"Av"</string>
     <string name="accessibility_vibration_setting_disabled_for_silent_mode_summary" msgid="3982701772953323190">"Inställningen är inaktiverad eftersom enheten är inställd på ljudlöst"</string>
