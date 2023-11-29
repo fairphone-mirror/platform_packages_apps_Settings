@@ -1954,7 +1954,7 @@
     <string name="accessibility_autoclick_longer_desc" msgid="2566025502981487443">"Mais longo"</string>
     <string name="accessibility_autoclick_seekbar_desc" msgid="8363959277814621118">"Tempo do clique automático."</string>
     <string name="accessibility_vibration_settings_title" msgid="936301142478631993">"Vibração e funcionalidade tátil"</string>
-    <string name="accessibility_vibration_settings_summary" msgid="3690308537483465527">"Controle a intensidade da vibração para utilizações diferentes"</string>
+    <string name="accessibility_vibration_settings_summary" msgid="3690308537483465527">"Vibração do dispositivo de controle para diferentes usos"</string>
     <string name="accessibility_vibration_settings_state_on" msgid="5566026932372832502">"Ativado"</string>
     <string name="accessibility_vibration_settings_state_off" msgid="7946588741954981703">"Desativado"</string>
     <string name="accessibility_vibration_setting_disabled_for_silent_mode_summary" msgid="3982701772953323190">"Definição desativada porque o dispositivo está no modo silencioso"</string>
