@@ -41,6 +41,9 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
     private Context mContext;
     private String READ_ERROR_STR = "????????";
 
+    // add for FP5-197 2023-03-27 begin
+    private static final String HOST_CODE_ENDC = "36327";
+
     @Override
     public void onReceive(Context context, Intent intent) {
         Log.i(TAG, "onReceive : " + intent.toString());
@@ -151,6 +154,16 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                     alert.show();
                 }
             }
+
+            // add for FP5-197 show ENDC info 2023-03-27 begin
+            else if (HOST_CODE_ENDC.equals(host)) {
+                Log.d(TAG, "ENCD code");
+                Intent i = new Intent(context, BandCombination.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(i);
+            }
+            // add for FP5-197 show ENDC info 2023-03-27 end
+
         }
 
     }
