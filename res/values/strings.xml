@@ -12354,6 +12354,10 @@
     <string name="orientation_timing_spead_2_title">Normal</string>
     <string name="orientation_timing_spead_3_title">Accelerate for 0.5 seconds</string>
     <string name="orientation_timing_spead_4_title">Accelerate for 1 seconds</string>
+    <!--ADD by T2M yingyubin for Desktop mode-->
+    <string name="desktop_mode_title">Desktop mode</string>
+    <string name="desktop_mode_summary">Use desktop mode on secondary displays</string>
+    <!--ADD by T2M yingyubin for Desktop mode-->
     <string name="sunlight_mode_title">Sunlight mode</string>
     <string name="dcdimming_title">DC dimming</string>
     <!-- Diag -->
@@ -12400,6 +12404,7 @@
     <string name="face_unlock_less_secure_than_strong_auth">Note: Your face unlock may be less secure than a strong pattern or PIN.</string>
     <string name="security_settings_faceunlock_cancel_setup">Skip</string>
     <string name="security_settings_faceunlock_next">Next</string>
+    <string name="desktop_mode_off_info">Changes take effect when is reconnected</string>
     <string name="legal_info_title">Open source licenses</string>
     <string name="prefer_5G">"5G/4G/3G/2G"</string>
     <string name="prefer_4G">"4G/3G/2G"</string>
