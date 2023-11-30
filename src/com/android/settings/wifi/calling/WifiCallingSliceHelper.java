@@ -160,7 +160,10 @@ public class WifiCallingSliceHelper {
                 Log.d(TAG, "get title from carrierconfig");
                 PersistableBundle b = configManager.getConfigForSubId(subId);
                 if (b != null) {
-                    title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+                    String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+                    if (!"".equals(carrierconfig_title)){
+                        title = carrierconfig_title;
+                    }
                     Log.d(TAG, "title: " + title);
                 }
             }
@@ -194,7 +197,10 @@ public class WifiCallingSliceHelper {
             Log.d(TAG, "get title from carrierconfig");
             PersistableBundle b = configManager.getConfigForSubId(subId);
             if (b != null) {
-                title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+                String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+                if (!"".equals(carrierconfig_title)){
+                    title = carrierconfig_title;
+                }
                 Log.d(TAG, "title: " + title);
             }
         }
