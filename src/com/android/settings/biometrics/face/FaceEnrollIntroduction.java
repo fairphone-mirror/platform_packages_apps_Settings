@@ -170,7 +170,8 @@ public class FaceEnrollIntroduction extends BiometricEnrollIntroduction {
             infoMessageRequireEyes.setText(getInfoMessageRequireEyes());
         }
 
-        mFaceManager.addAuthenticatorsRegisteredCallback(
+        if(mFaceManager != null) {
+            mFaceManager.addAuthenticatorsRegisteredCallback(
                 new IFaceAuthenticatorsRegisteredCallback.Stub() {
                     @Override
                     public void onAllAuthenticatorsRegistered(
@@ -186,6 +187,7 @@ public class FaceEnrollIntroduction extends BiometricEnrollIntroduction {
                         onFaceStrengthChanged();
                     }
                 });
+        }
 
         // This path is an entry point for SetNewPasswordController, e.g.
         // adb shell am start -a android.app.action.SET_NEW_PASSWORD
@@ -194,24 +196,26 @@ public class FaceEnrollIntroduction extends BiometricEnrollIntroduction {
                 mFooterBarMixin.getPrimaryButton().setEnabled(false);
                 // We either block on generateChallenge, or need to gray out the "next" button until
                 // the challenge is ready. Let's just do this for now.
-                mFaceManager.generateChallenge(mUserId, (sensorId, userId, challenge) -> {
-                    if (isFinishing()) {
-                        // Do nothing if activity is finishing
-                        Log.w(TAG, "activity finished before challenge callback launched.");
-                        return;
-                    }
+                if(mFaceManager != null) {
+                    mFaceManager.generateChallenge(mUserId, (sensorId, userId, challenge) -> {
+                        if (isFinishing()) {
+                            // Do nothing if activity is finishing
+                            Log.w(TAG, "activity finished before challenge callback launched.");
+                            return;
+                        }
 
-                    try {
-                        mToken = requestGatekeeperHat(challenge);
-                        mSensorId = sensorId;
-                        mChallenge = challenge;
-                        mFooterBarMixin.getPrimaryButton().setEnabled(true);
-                    } catch (GatekeeperCredentialNotMatchException e) {
-                        // Let BiometricEnrollBase#onCreate() to trigger confirmLock()
-                        getIntent().removeExtra(ChooseLockSettingsHelper.EXTRA_KEY_GK_PW_HANDLE);
-                        recreate();
-                    }
-                });
+                        try {
+                            mToken = requestGatekeeperHat(challenge);
+                            mSensorId = sensorId;
+                            mChallenge = challenge;
+                            mFooterBarMixin.getPrimaryButton().setEnabled(true);
+                        } catch (GatekeeperCredentialNotMatchException e) {
+                            // Let BiometricEnrollBase#onCreate() to trigger confirmLock()
+                            getIntent().removeExtra(ChooseLockSettingsHelper.EXTRA_KEY_GK_PW_HANDLE);
+                            recreate();
+                        }
+                    });
+                }
             }
         }
 

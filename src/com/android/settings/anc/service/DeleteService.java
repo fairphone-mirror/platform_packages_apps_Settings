@@ -8,6 +8,7 @@ import android.util.Log;
 import com.anc.faceid.bean.AncFaceIdStatus;
 import com.android.settings.anc.LiteManager;
 import com.android.settings.anc.util.Constants;
+import com.android.settings.safetycenter.BiometricsSafetySource;
 
 import java.io.File;
 
@@ -40,6 +41,7 @@ public class DeleteService extends IntentService {
                                 Settings.System.putInt(getContentResolver(), "enroll_second_face_id", 0);
                             }
                         }
+                        BiometricsSafetySource.onBiometricsChanged(getApplicationContext());
                     }
 
                     @Override
