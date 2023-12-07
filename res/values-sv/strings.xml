@@ -4809,4 +4809,5 @@
     <string name="battery_charging_privacy_fast">Kom tillbaka till 100% så snabbt som möjligt.</string>
     <string name="fingerprint_settings_open_description">"Slå på om du föredrar att låsa upp utan att väcka telefonen först."</string>
     <string name="fingerprint_settings_open_title">Finger Print Lås upp beteende</string>
+    <string name="pocket_mode">Fickläge</string>
 </resources>

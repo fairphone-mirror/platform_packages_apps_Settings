@@ -4775,4 +4775,5 @@
     <string name="face_disabled_title_rom4">o desbloqueio facial será desativado nos seguintes casos:</string>
     <string name="face_enable_condition_rom4">É necessário um padrão PIN ou uma palavra-passe se pretender tornar o desbloqueio facial novamente disponível.</string>
     <string name="face_unlock_recognition_ready_rom4">Para obter melhores resultados, sugerimos que o desbloqueio facial seja efetuado em espaços interiores e longe da luz solar direta.</string>
+    <string name="pocket_mode">Modo de bolso</string>
 </resources>

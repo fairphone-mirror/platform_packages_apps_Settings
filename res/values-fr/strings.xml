@@ -4807,4 +4807,5 @@
     <string name="battery_charging_privacy_fast">Revenez à 100% le plus rapidement possible.</string>
     <string name="fingerprint_settings_open_description">"Activez si vous préférez déverrouiller le téléphone sans le réveiller au préalable."</string>
     <string name="fingerprint_settings_open_title">Comportement de déverrouillage par empreinte digitale</string>
+    <string name="pocket_mode">Mode de poche</string>
 </resources>

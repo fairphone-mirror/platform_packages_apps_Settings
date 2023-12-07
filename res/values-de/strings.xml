@@ -4806,4 +4806,5 @@
     <string name="battery_charging_privacy_fast">Lade so schnell wie möglich auf 100% auf.</string>
     <string name="fingerprint_settings_open_description">"Einschalten, um das Telefon ohne vorherige Aktivierung zu entsperren"</string>
     <string name="fingerprint_settings_open_title">Fingerabruck Entsperrverhalten</string>
+    <string name="pocket_mode">Taschenmodus</string>
 </resources>
