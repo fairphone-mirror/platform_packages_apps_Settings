@@ -135,8 +135,10 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
                     getPreferenceScreen().findPreference(SWITCH_BAR);
             if (prefSwitch != null) {
                 isWfcEnabled = prefSwitch.isChecked();
-                isCallStateIdle = getTelephonyManagerForSub(
-                        WifiCallingSettingsForSub.this.mSubId).getCallState()
+                isCallStateIdle = /*getTelephonyManagerForSub(
+                        WifiCallingSettingsForSub.this.mSubId).getCallState()*/
+                        // modify by T2M.zhang renjie for FP5-2972 23-12-18
+                        state
                         == TelephonyManager.CALL_STATE_IDLE;
 
                 boolean isNonTtyOrTtyOnVolteEnabled = true;
