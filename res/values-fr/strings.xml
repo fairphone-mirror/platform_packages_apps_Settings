@@ -1078,7 +1078,7 @@
     <string name="doze_title" msgid="1523090408230862316">"Activer l\'écran si notifications"</string>
     <string name="doze_summary" msgid="8252867381522942804">"Quand l\'écran est éteint, il se rallume en cas de nouvelles notifications"</string>
     <string name="doze_always_on_title" msgid="7326245192352868477">"Toujours afficher heure et infos"</string>
-    <string name="doze_always_on_summary" msgid="509097829739647852">"Batterie davantage sollicitée"</string>
+    <string name="doze_always_on_summary" msgid="509097829739647852">"Consommation élevée de la batterie "</string>
     <string name="force_bold_text" msgid="4620929631102086716">"Texte en gras"</string>
     <string name="title_font_size" msgid="570613010306330622">"Taille de la police"</string>
     <string name="short_summary_font_size" msgid="8444689613442419978">"Agrandir ou réduire le texte"</string>

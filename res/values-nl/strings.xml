@@ -1078,7 +1078,7 @@
     <string name="doze_title" msgid="1523090408230862316">"Scherm activeren voor meldingen"</string>
     <string name="doze_summary" msgid="8252867381522942804">"Als het scherm donker is, gaat het aan bij nieuwe meldingen"</string>
     <string name="doze_always_on_title" msgid="7326245192352868477">"Altijd tijd en info tonen"</string>
-    <string name="doze_always_on_summary" msgid="509097829739647852">"Hoger batterijgebruik"</string>
+    <string name="doze_always_on_summary" msgid="509097829739647852">"Hoog batterijverbruik"</string>
     <string name="force_bold_text" msgid="4620929631102086716">"Vetgedrukte tekst"</string>
     <string name="title_font_size" msgid="570613010306330622">"Lettergrootte"</string>
     <string name="short_summary_font_size" msgid="8444689613442419978">"Maak de tekst groter of kleiner"</string>
