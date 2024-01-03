@@ -251,9 +251,11 @@ public final class BluetoothDevicePreference extends GearPreference {
             Log.d(TAG, "No BT device to register.");
             return;
         }
-        mBluetoothDevices.forEach(bd ->
-                mBluetoothAdapter.addOnMetadataChangedListener(bd,
-                        getContext().getMainExecutor(), mMetadataListener));
+        if (mBluetoothAdapter != null) {
+            mBluetoothDevices.forEach(bd ->
+                    mBluetoothAdapter.addOnMetadataChangedListener(bd,
+                            getContext().getMainExecutor(), mMetadataListener));
+        }
     }
 
     private void unregisterMetadataChangedListener() {
@@ -261,8 +263,10 @@ public final class BluetoothDevicePreference extends GearPreference {
             Log.d(TAG, "No BT device to unregister.");
             return;
         }
-        mBluetoothDevices.forEach(
-                bd -> mBluetoothAdapter.removeOnMetadataChangedListener(bd, mMetadataListener));
+        if (mBluetoothAdapter != null) {
+            mBluetoothDevices.forEach(
+                    bd -> mBluetoothAdapter.removeOnMetadataChangedListener(bd, mMetadataListener));
+        }
         mBluetoothDevices.clear();
     }
 
