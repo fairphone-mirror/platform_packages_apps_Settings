@@ -1533,7 +1533,7 @@
     <string name="doze_title" msgid="1523090408230862316">"Ativar ecrã para notificações"</string>
     <string name="doze_summary" msgid="8252867381522942804">"Quando o ecrã está escuro, acende-se se surgirem novas notificações"</string>
     <string name="doze_always_on_title" msgid="7326245192352868477">"Mostrar sempre hora e informações"</string>
-    <string name="doze_always_on_summary" msgid="509097829739647852">"Maior utilização da bateria"</string>
+    <string name="doze_always_on_summary" msgid="509097829739647852">"Elevada utilização da bateria"</string>
     <string name="force_bold_text" msgid="4620929631102086716">"Texto em negrito"</string>
     <string name="title_font_size" msgid="570613010306330622">"Tamanho do tipo de letra"</string>
     <string name="short_summary_font_size" msgid="8444689613442419978">"Aumente ou diminua o tamanho do texto"</string>
