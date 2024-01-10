@@ -2552,7 +2552,7 @@
     <string name="accessibility_autoclick_longer_desc" msgid="2566025502981487443">"Länger"</string>
     <string name="accessibility_autoclick_seekbar_desc" msgid="8363959277814621118">"Zeit vor automatischem Klick"</string>
     <string name="accessibility_vibration_settings_title" msgid="936301142478631993">"Vibration und haptisches Feedback"</string>
-    <string name="accessibility_vibration_settings_summary" msgid="3690308537483465527">"Vibrationsstärke für verschiedene Anwendungsfälle anpassen"</string>
+    <string name="accessibility_vibration_settings_summary" msgid="3690308537483465527">"Steuerung der Vibration für verschiedene Anwendungen"</string>
     <string name="accessibility_vibration_settings_state_on" msgid="5566026932372832502">"An"</string>
     <string name="accessibility_vibration_settings_state_off" msgid="7946588741954981703">"Aus"</string>
     <string name="accessibility_vibration_setting_disabled_for_silent_mode_summary" msgid="3982701772953323190">"Einstellung deaktiviert, da das Gerät stummgeschaltet ist"</string>
