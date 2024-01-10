@@ -2438,7 +2438,7 @@
     <!-- Label for the radio button to choose wifi ap channel automatically-->
     <string name="wifi_ap_choose_auto">Auto</string>
     <!-- Label for the radio button to choose wifi ap 2.4 GHz band -->
-    <string name="wifi_ap_choose_2G">2,4 GHz Band</string>
+    <string name="wifi_ap_choose_2G">2.4 GHz Band</string>
     <!-- Label for the radio button to only choose wifi ap 5GHz band -->
     <string name="wifi_ap_choose_5G">5.0 GHz Band</string>
     <!-- Label for the radio button to only choose wifi ap 6GHz band -->
