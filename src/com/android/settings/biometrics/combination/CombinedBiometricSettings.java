@@ -21,6 +21,7 @@ import static com.android.settings.password.ChooseLockSettingsHelper.EXTRA_KEY_G
 import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ComponentName;
 import android.os.Bundle;
 import android.os.UserHandle;
 
@@ -137,6 +138,16 @@ public class CombinedBiometricSettings extends BiometricsSettingsBase {
 
     @Override
     protected boolean onRetryPreferenceTreeClick(Preference preference, final boolean retry) {
+        if(KEY_FACE_SETTINGS.equals(preference.getKey())) {
+            try{
+                Intent faceIntent = new Intent()
+                        .setComponent(new ComponentName("com.android.settings","com.android.settings.anc.AncSettings"));
+                startActivity(faceIntent);
+            }catch(Exception e) {
+
+            }
+            return true;
+        }
         if (!mActiveUnlockStatusUtils.isAvailable()
                 || !KEY_ACTIVE_UNLOCK_SETTINGS.equals(preference.getKey())) {
             return super.onRetryPreferenceTreeClick(preference, retry);
