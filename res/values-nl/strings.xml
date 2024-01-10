@@ -5991,4 +5991,5 @@
     <string name="battery_charging_privacy_fast">Laadt de batterij zo snel als mogelijk tot 100%.</string>
     <string name="fingerprint_settings_open_description">"Schakel in als je liever de telefoon ontgrendelt zonder hem eerst te activeren."</string>
     <string name="fingerprint_settings_open_title">Ontgrendelgedrag vingerafdrukscanner</string>
+    <string name="pocket_mode">Broekzakmodus</string>
 </resources>

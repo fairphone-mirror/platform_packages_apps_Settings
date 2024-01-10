@@ -34,6 +34,7 @@ import com.android.settings.display.VrDisplayPreferenceController;
 import com.android.settings.display.PickUpToWakePreferenceController;
 import com.android.settings.display.DesktopModePreferenceController;
 import com.android.settings.display.SunlightModePreferenceController;
+import com.android.settings.display.PocketModePreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
@@ -96,6 +97,7 @@ public class DisplaySettings extends DashboardFragment {
         //Add by t2m yingyubin for FP5-565 20230414
         controllers.add(new SunlightModePreferenceController(context));
         //Add-End by t2m yingyubin
+        controllers.add(new PocketModePreferenceController(context));
         return controllers;
     }
 

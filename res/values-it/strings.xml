@@ -5990,4 +5990,5 @@
     <string name="battery_charging_privacy_fast">Torna al 100% il più rapidamente possibile.</string>
     <string name="fingerprint_settings_open_description">"Selezionare se si preferisce sbloccare il telefono senza prima accendere lo schermo."</string>
     <string name="fingerprint_settings_open_title">Controllo dello sblocco con impronte digitali</string>
+    <string name="pocket_mode">Pocket Mode</string>
 </resources>

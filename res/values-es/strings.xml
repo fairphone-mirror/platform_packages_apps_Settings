@@ -5994,4 +5994,5 @@
     <string name="battery_charging_privacy_fast">Vuelve al 100% lo más rápido posible.</string>
     <string name="fingerprint_settings_open_description">"Habilita si prefieres desbloquear con tu huella dactilar, sin encender el teléfono primero."</string>
     <string name="fingerprint_settings_open_title">Modo de desbloqueo con huella digital</string>
+    <string name="pocket_mode">Modo de bolsillo</string>
 </resources>

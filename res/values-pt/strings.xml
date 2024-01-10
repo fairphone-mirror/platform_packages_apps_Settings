@@ -5960,4 +5960,5 @@
     <string name="battery_charging_privacy_fast">Volte a 100% o mais rápido possível.</string>
     <string name="fingerprint_settings_open_description">"Ligue se você preferir desbloquear sem acordar o telefone primeiro."</string>
     <string name="fingerprint_settings_open_title">Impressão digital desbloquear comportamento</string>
+    <string name="pocket_mode">Modo de bolso</string>
 </resources>
