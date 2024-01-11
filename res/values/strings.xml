@@ -14602,4 +14602,15 @@
     <string name="auto_3G">"3G/2G automatic"</string>
     <string name="only_3G">"3G only"</string>
     <string name="only_2G">"2G only"</string>
+
+    <string name="battery_protect">Battery Protect</string>
+    <string name="battery_protect_description">set the maximum battery charge level to 80%</string>
+    <!--state of health-->
+    <string name="batteryh_soh">state of health:</string>
+    <!--state of count-->
+    <string name="batteryh_soc">charge/discharge cycle count:</string>
+    <!--charge full design-->
+    <string name="batteryh_cfd">charge full design:</string>
+    <string name="dialog_title_battery_healty">Battery health</string>
+
 </resources>

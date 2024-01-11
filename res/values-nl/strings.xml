@@ -5921,4 +5921,7 @@
 
     <!-- Title for the Longevity & device statistics -->
     <string name="longevity_device_statistics_list_item_title">"Levensduur en toestelstatistieken"</string>
+    <string name="battery_protect">Batterijbescherming</string>
+    <string name="battery_protect_description">Beperkt de maximale 80%</string>
+
 </resources>

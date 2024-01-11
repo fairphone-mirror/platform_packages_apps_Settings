@@ -14,6 +14,12 @@ import java.util.List;
 import android.os.SystemProperties;
 import android.app.AlertDialog;
 import android.view.WindowManager;
+import android.content.DialogInterface;
+import java.io.File;
+import java.io.IOException;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import android.os.UserHandle;
 
 import com.android.internal.telephony.PhoneConstants;
 import com.arima.settings.OemLockVerifier;
@@ -30,14 +36,18 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
     private static final String HOST_CODE_MODULEINFO = "001";
     private static final String HOST_CODE_IMS = "23486583";
     private static final String HOST_CODE_TEST_OEM_UNLOCK = "002";
+    private static final String HOST_CODE_BATTERY_HEALTY = "2288379";
+    private static final String BATTERY_HEALTY_ENABLE = "persist.sys.battery.healty.enable";
+
     private Context mContext;
     private String READ_ERROR_STR = "????????";
+
 
     @Override
     public void onReceive(Context context, Intent intent) {
         Log.i(TAG, "onReceive : " + intent.toString());
         mContext = context;
-        
+
         final String action = intent.getAction();
         if (intent.getAction().equals("android.provider.Telephony.SECRET_CODE")) {
             String host = intent.getData() != null ? intent.getData().getHost() : null;
@@ -47,7 +57,7 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                 List<PackageInfo> packages = pm.getInstalledPackages(PackageManager.MATCH_UNINSTALLED_PACKAGES);
                 for (PackageInfo pi : packages) {
                     if(pi.packageName != null && pi.packageName.startsWith("com.google")
-                    && !pi.packageName.equals("com.google.android.dialer") 
+                    && !pi.packageName.equals("com.google.android.dialer")
                     && !pi.packageName.equals("com.google.android.networkstack.tethering") 
                     && !pi.packageName.equals("com.google.android.networkstack")
                     && !pi.packageName.equals("com.google.android.networkstack.permissionconfig")
@@ -114,6 +124,32 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
             } else if (HOST_CODE_TEST_OEM_UNLOCK.equals(host)) {
                 OemLockVerifier oemLockVerifier = new OemLockVerifier(context, (check_code, msg) -> Log.e(TAG, "oemLockVerifier queryVerifyResult msg > " + msg));
                 oemLockVerifier.queryVerifyResult(getIMEI(), Build.getSerial());
+            } else if (HOST_CODE_BATTERY_HEALTY.equals(host)){
+                if(fp4tTxtIsExists()) {
+                    String status = SystemProperties.get(BATTERY_HEALTY_ENABLE, "Close");
+                    AlertDialog alert = new AlertDialog.Builder(context.getApplicationContext())
+                            .setTitle(R.string.dialog_title_battery_healty)
+                            .setMessage(status)
+                            .setPositiveButton(R.string.launch_instant_app, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    SystemProperties.set(BATTERY_HEALTY_ENABLE, "Open");
+                                }
+                            })
+                            .setNegativeButton(R.string.suggestion_button_close, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    SystemProperties.set(BATTERY_HEALTY_ENABLE, "Close");
+                                    //charge enable
+                                    writeBatEn("1");
+                                    SystemProperties.set("persist.sys.battery.icon.enable","0");
+                                }
+                            })
+                            .setCancelable(false)
+                            .create();
+                    alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+                    alert.show();
+                }
             }
         }
 
@@ -134,6 +170,42 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
     private String getIMEI() {
         TelephonyManager telephonyManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
         return telephonyManager.getImei(PhoneConstants.SIM_ID_1);
+    }
+
+    private void writeBatEn(String value) {
+        BufferedWriter bw = null;
+        FileWriter fw = null;
+        try {
+            fw = new FileWriter("/sys/class/power_supply/battery/charging_enabled");
+            bw = new BufferedWriter(fw, 256);
+            bw.write(value);
+            bw.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            try{
+                if (bw != null)
+                    bw.close();
+                if (fw != null)
+                    fw.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private boolean fp4tTxtIsExists(){
+        try {
+            File f = new File("/storage/emulated/0/FP4T.txt");
+            if(f.exists()) {
+                return true;
+            }else{
+                return false;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
 }

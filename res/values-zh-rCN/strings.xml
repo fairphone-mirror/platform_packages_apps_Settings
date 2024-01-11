@@ -5933,4 +5933,14 @@
     <string name="fingerprint_settings_open_title">指纹解锁方式</string>
     <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
     <string name="fingerprint_settings_open_description">默认按键解锁。如果需要触摸解锁则打开开关。</string>
+    <string name="battery_protect">电池保护</string>
+    <string name="battery_protect_description">将最大电池电量设置为80%</string>
+
+    <!--state of health-->
+    <string name="batteryh_soh">健康状态:</string>
+    <!--state of count-->
+    <string name="batteryh_soc">充放电循环次数:</string>
+    <!--charge full design-->
+    <string name="batteryh_cfd">满充次数:</string>
+
 </resources>

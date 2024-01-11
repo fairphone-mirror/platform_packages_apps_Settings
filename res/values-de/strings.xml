@@ -5928,4 +5928,6 @@
 
     <!-- Title for the Longevity & device statistics -->
     <string name="longevity_device_statistics_list_item_title">"Langlebigkeit &amp; Gerätestatistiken"</string>
+    <string name="battery_protect">Akku schützen</string>
+    <string name="battery_protect_description">Akku auf höchstens 80% laden</string>
 </resources>

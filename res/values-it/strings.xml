@@ -5918,4 +5918,7 @@
 
     <!-- Title for the Longevity & device statistics -->
     <string name="longevity_device_statistics_list_item_title">"Durata e statistiche del dispositivo"</string>
+    <string name="battery_protect">Protezione della batteria</string>
+    <string name="battery_protect_description">Imposta il livello massimo della carica della batteria all 80%</string>
+
 </resources>

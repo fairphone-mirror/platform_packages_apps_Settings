@@ -25,11 +25,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings.Global;
+import android.os.SystemProperties;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 import androidx.preference.Preference;
+import android.content.SharedPreferences;
 
 import com.android.settings.R;
 import com.android.settings.SettingsActivity;
@@ -48,6 +50,10 @@ import com.android.settingslib.search.SearchIndexable;
 import com.android.settingslib.widget.LayoutPreference;
 
 import java.util.List;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import android.util.Log;
 
 /**
  * Displays a list of apps and subsystems that consume power, ordered by how much power was consumed
@@ -58,6 +64,11 @@ public class PowerUsageSummary extends PowerUsageBase implements
         BatteryTipPreferenceController.BatteryTipListener {
 
     static final String TAG = "PowerUsageSummary";
+    static final String KEY_BATTERY_HEALTH = "battery_health";
+    private static final String MFG_DATE_PROPERTY = "ro.vendor.tct.mfg.date";
+    private static final int BLACKOUT_TIME = 20231225;
+
+    private boolean isDebug = false;
 
     @VisibleForTesting
     static final String KEY_BATTERY_ERROR = "battery_help_message";
@@ -88,6 +99,8 @@ public class PowerUsageSummary extends PowerUsageBase implements
     Preference mHelpPreference;
     @VisibleForTesting
     Preference mBatteryUsagePreference;
+
+    Preference mBatteryHealthPreference;
 
     @VisibleForTesting
     final ContentObserver mSettingsObserver = new ContentObserver(new Handler()) {
@@ -263,6 +276,69 @@ public class PowerUsageSummary extends PowerUsageBase implements
 
         mHelpPreference = findPreference(KEY_BATTERY_ERROR);
         mHelpPreference.setVisible(false);
+
+
+        mBatteryHealthPreference = findPreference(KEY_BATTERY_HEALTH);
+        new Thread(new Runnable(){
+            @Override
+            public void run(){
+                mBatteryHealthPreference.setSummary(getBatHealth());
+            }
+        }).start();
+        boolean isRemoveBatteryHealth = getContext().getSharedPreferences("BatteryData", Context.MODE_PRIVATE).getBoolean(com.android.settings.SettingsApplication.IS_REMOVE_BATTERY_HEALTH,false);
+        if (isDebug) {
+            android.util.Log.d("debugdebug","PowerUsageSummary.java-initPreference-isRemoveBatteryHealth:"+isRemoveBatteryHealth);
+        }
+
+        boolean isShowBatteryHealth = false;
+        String date = SystemProperties.get(MFG_DATE_PROPERTY,"");
+        int dateTime = -1;
+        if(date != null && !"".equals(date)){
+            dateTime = formateDateCode(date.getBytes());
+            if (dateTime > BLACKOUT_TIME) {
+                isShowBatteryHealth = true;
+            }
+        }
+        if (isRemoveBatteryHealth) {
+            mBatteryHealthPreference.setVisible(false);
+        } else {
+            mBatteryHealthPreference.setVisible(true);
+            if (!isShowBatteryHealth) {
+                mBatteryHealthPreference.setVisible(false);
+            }
+        }
+    }
+
+    private int formateDateCode(byte[] raw) {
+        String dayString = "**";
+        String monthString = "**";
+        String yearString = "****";
+        int i;
+
+        if (raw.length != 3) {
+            return -1;
+        }
+
+        String dayRule = "123456789ABCDEFGHIJKLMNOPQRSTUV";
+        String monthRule = "EFGHIJKLMNOP";
+        String yearRule = "UVWXYZ6ABCDEFGHIJKLMNOPQ";// "KLMNOPQRSTUVWXYZ";
+        // get day value
+        i = dayRule.indexOf(raw[0]);
+        if (i >= 0) {
+            dayString = String.format("%02d", i + 1);
+        }
+        // get month value
+        i = monthRule.indexOf(raw[1]);
+        if (i >= 0) {
+            monthString = String.format("%02d", i + 1);
+        }
+        // get year value
+        i = yearRule.indexOf(raw[2]);
+        if (i >= 0) {
+            yearString = String.format("20%02d", i + 10);
+        }
+
+        return Integer.valueOf(yearString + monthString + dayString);
     }
 
     @VisibleForTesting
@@ -305,4 +381,39 @@ public class PowerUsageSummary extends PowerUsageBase implements
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.power_usage_summary);
+
+
+    private String getBatHealth(){
+        String batHealth = null;
+        String soh = readBatHealth("/sys/class/power_supply/bms/soh");
+        String cycle_count = readBatHealth("/sys/class/power_supply/battery/cycle_count");
+        String charge_full_design = readBatHealth("/sys/class/power_supply/battery/charge_full_design");
+        batHealth = getString(R.string.batteryh_soh) + soh + "\n" +
+                getString(R.string.batteryh_soc) + cycle_count + "\n" +
+                getString(R.string.batteryh_cfd) + Long.valueOf(charge_full_design)/1000 + "mAh" ;
+        return batHealth;
+    }
+
+    private String readBatHealth(String filename) {
+        String value = "0";
+        BufferedReader reader = null;
+        FileReader fr = null;
+        try {
+            fr = new FileReader(filename);
+            reader = new BufferedReader(fr);
+            value = reader.readLine();
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }finally {
+            try{
+                if (reader != null)
+                    reader.close();
+                if (fr != null)
+                    fr.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return value;
+    }
 }
