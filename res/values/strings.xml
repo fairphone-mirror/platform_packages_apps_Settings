@@ -1805,7 +1805,7 @@
     <!-- Label for the check box to show password -->
     <string name="wifi_show_password">Show password</string>
     <!-- Label for the radio button to choose wifi ap 2.4 GHz band -->
-    <string name="wifi_ap_choose_2G">2,4 GHz Band</string>
+    <string name="wifi_ap_choose_2G">2.4 GHz Band</string>
     <!-- Label for the radio button to only choose wifi ap 6GHz band -->
     <string name="wifi_ap_choose_6G">6.0 GHz Band</string>
     <!-- Label for the radio button to choose both wifi ap band (2.4GHz + 5GHz) -->
