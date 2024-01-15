@@ -210,6 +210,11 @@
         android:fragment="com.android.settings.security.MemtagPage"
         settings:controller="com.android.settings.security.MemtagPagePreferenceController" />
 
-
+    <SwitchPreference
+        android:order="310"
+        android:key="unlock_failed_reset"
+        android:title="@string/unlock_failed_reset_title"
+        android:summary="@string/unlock_failed_reset_description"
+        settings:controller="com.android.settings.security.UnlockFailedResetController"/>
 
 </PreferenceScreen>
