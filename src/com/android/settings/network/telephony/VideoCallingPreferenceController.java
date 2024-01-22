@@ -63,8 +63,19 @@ public class VideoCallingPreferenceController extends TelephonyTogglePreferenceC
 
     @Override
     public int getAvailabilityStatus(int subId) {
+        //[BUG]-Modify-Begin by shaopan.tang 2024-01-22 FP5U-163 Carrier video calling option display obnormal when switch 4G calling
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14 begin
+        Log.d(TAG, "getAvailabilityStatus VT");
+        boolean vtToggleShow = false;
+        final PersistableBundle carrierConfig = CarrierConfigCache.getInstance(mContext).getConfigForSubId(mSubId);
+        if (carrierConfig != null) {
+            vtToggleShow = carrierConfig.getBoolean(CarrierConfigManager.KEY_VT_TOGGLE_SHOW_BOOL, false);
+            Log.d(TAG, "vt toggle show: " + vtToggleShow);
+        }
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14 end
+        //[BUG]-Modify-End by shaopan.tang
         return SubscriptionManager.isValidSubscriptionId(subId)
-                && isVideoCallEnabled(subId)
+                && isVideoCallEnabled(subId) && vtToggleShow //[BUG]-Modify by shaopan.tang 2024-01-22 FP5U-163 Carrier video calling option display obnormal when switch 4G calling
                 ? AVAILABLE
                 : CONDITIONALLY_UNAVAILABLE;
     }
