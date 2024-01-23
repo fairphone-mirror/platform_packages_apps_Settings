@@ -136,6 +136,7 @@ public class MobileNetworkSwitchController extends BasePreferenceController impl
         if ((TelephonyManager.CALL_STATE_IDLE != mCallState) || isEcbmEnabled || isScbmEnabled) {
             Log.d(TAG, "update: disable switchbar, isEcbmEnabled=" + isEcbmEnabled +
                     ", isScbmEnabled=" + isScbmEnabled + ", mCallState=" + mCallState);
+            mSwitchBar.setEnableEffect(true);//[BUG]-Modify by renjie.zhang 2023-01-23 FP4T-1007 [FP4t#468] Use SIM does not grey out correctly on receiving/during a call
             mSwitchBar.setSwitchBarEnabled(false);
         } else {
             mSwitchBar.setSwitchBarEnabled(true);
