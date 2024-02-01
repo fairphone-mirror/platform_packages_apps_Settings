@@ -38,7 +38,7 @@
 
     <PreferenceCategory
         android:key="provider_model_calling_category"
-        android:title="@string/calls_and_sms_category"
+        android:title="@string/wifi_calling_settings_title"
         android:order="20"
         settings:controller="com.android.settings.network.telephony.NetworkProviderWifiCallingPreferenceController"
         settings:allowDividerAbove="true"
