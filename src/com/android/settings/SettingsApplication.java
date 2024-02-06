@@ -41,13 +41,14 @@ import java.lang.ref.WeakReference;
 
 /** Settings application which sets up activity embedding rules for the large screen device. */
 public class SettingsApplication extends Application {
-
+    private static final String TAG = "SettingsApplication";
     private WeakReference<SettingsHomepageActivity> mHomeActivity = new WeakReference<>(null);
     private BatteryBroadcastReceiver mBatteryBroadcastReceiver = null;
     private static final long ONE_WEEK_SECONDS = 7 * 24 * 60 * 60;
     private static final String BATTERY_CYCLE_COUNT = "BatteryCycleCount";
     private static final String BATTERY_SOH = "BatterySoh";
     public static final String IS_REMOVE_BATTERY_HEALTH = "IsRemoveBatteryHealth";
+    private static final String FIRST_BOOT_TIME = "persist.sys.first_boot_time";
     private boolean isDebug = false;
 
     @Override
@@ -99,12 +100,22 @@ public class SettingsApplication extends Application {
                 if (sohInt < 100) {
                     sharedPreferences.edit().putInt(BATTERY_SOH,sohInt).commit();
                 }
-                boolean isTimeOverWeeks = (readTFT() > ONE_WEEK_SECONDS);
+                long firstBootTime = SystemProperties.getLong(FIRST_BOOT_TIME,0);
+                if (firstBootTime == 0) {
+                    SystemProperties.set(FIRST_BOOT_TIME,readTFT()+"");
+                }
+                boolean isTimeOverWeeks = false;
+                if (firstBootTime > 0) {
+                    isTimeOverWeeks = (readTFT() - firstBootTime) > ONE_WEEK_SECONDS;
+                }
+                if (isDebug) {
+                    Log.d(TAG,"SettingsApplication.java-BatteryBroadcastReceiver-isTimeOverWeeks:"+isTimeOverWeeks+"    firstBootTime:"+firstBootTime+"    readTFT() - firstBootTime:"+(readTFT() - firstBootTime));
+                }
                 if (isTimeOverWeeks) {
                     int mBatteryCycleCount = sharedPreferences.getInt(BATTERY_CYCLE_COUNT,0);
                     int mBatterySoh = sharedPreferences.getInt(BATTERY_SOH,100);
                     if (isDebug) {
-                        android.util.Log.d("debugdebug","SettingsApplication.java-BatteryBroadcastReceiver-sohInt:"+sohInt+"    mBatterySoh:"+mBatterySoh+"    cycleCountInt:"+cycleCountInt+"    mBatteryCycleCount:"+mBatteryCycleCount);
+                        Log.d(TAG,"SettingsApplication.java-BatteryBroadcastReceiver-sohInt:"+sohInt+"    mBatterySoh:"+mBatterySoh+"    cycleCountInt:"+cycleCountInt+"    mBatteryCycleCount:"+mBatteryCycleCount);
                     }
                     if ((mBatterySoh < 100 && sohInt == 100) || (mBatteryCycleCount > 0 && cycleCountInt == 0)) {
                         sharedPreferences.edit().putBoolean(IS_REMOVE_BATTERY_HEALTH,true).commit();
