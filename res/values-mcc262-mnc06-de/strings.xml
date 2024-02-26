@@ -17,6 +17,5 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="wfcSpnFormat_wlan_call" msgid="4895315549916165700">"WLAN Call"</string>
-    <string name="wifi_calling_settings_title">WLAN Call</string>
 
 </resources>

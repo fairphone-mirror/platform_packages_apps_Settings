@@ -56,6 +56,8 @@ import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+import com.android.settings.utils.CarrierParamsUtil;
+
 /**
  * Helper class to control slices for wifi calling settings.
  */
@@ -155,13 +157,25 @@ public class WifiCallingSliceHelper {
 
             // add by T2M.dengxiangyu for FP4-61 2021-04-14 begin
             String title = res.getText(R.string.wifi_calling_settings_title).toString();
+
+            //Modify begin by renjie.zhang FP5U-304 2024/2/23
+            PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(mContext).getCarrierParams(subId);
+            if (carrierParams != null) {
+                String carrierParamsTitle = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+                if (!"".equals(carrierParamsTitle)) {
+                    Log.d(TAG, "get title from carrierParams");
+                    title = carrierParamsTitle;
+                }
+            }
+            //Modify end by renjie.zhang FP5U-304 2024/2/23
+
             final CarrierConfigManager configManager = getCarrierConfigManager(mContext);
             if (configManager != null) {
-                Log.d(TAG, "get title from carrierconfig");
                 PersistableBundle b = configManager.getConfigForSubId(subId);
                 if (b != null) {
                     String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
                     if (!"".equals(carrierconfig_title)){
+                        Log.d(TAG, "get title from carrierconfig");
                         title = carrierconfig_title;
                     }
                     Log.d(TAG, "title: " + title);
@@ -192,6 +206,18 @@ public class WifiCallingSliceHelper {
 
         // add by T2M.dengxiangyu for FP4-61 2021-04-14 begin
         String title = res.getText(R.string.wifi_calling_settings_title).toString();
+
+        //Modify begin by renjie.zhang FP5U-304 2024/2/23
+        PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(mContext).getCarrierParams(subId);
+        if (carrierParams != null) {
+            String carrierParamsTitle = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+            if (!"".equals(carrierParamsTitle)) {
+                Log.d(TAG, "get title from carrierParams");
+                title = carrierParamsTitle;
+            }
+        }
+        //Modify end by renjie.zhang FP5U-304 2024/2/23
+
         final CarrierConfigManager configManager = getCarrierConfigManager(mContext);
         if (configManager != null) {
             Log.d(TAG, "get title from carrierconfig");

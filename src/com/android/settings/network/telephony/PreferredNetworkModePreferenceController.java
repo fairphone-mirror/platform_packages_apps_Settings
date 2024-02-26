@@ -57,6 +57,8 @@ import com.android.settings.network.AllowedNetworkTypesListener;
 import com.android.settings.network.CarrierConfigCache;
 import com.android.settings.network.telephony.TelephonyConstants.TelephonyManagerConstants;
 
+import com.android.settings.utils.CarrierParamsUtil;
+
 /**
  * Preference controller for "Preferred network mode"
  */
@@ -73,6 +75,10 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
     private AllowedNetworkTypesListener mAllowedNetworkTypesListener;
     @VisibleForTesting
     Integer mCallState;
+    
+    private String[] pref_network_mode = null;
+    private String[] pref_network_value = null;
+
 
     public PreferredNetworkModePreferenceController(Context context, String key) {
         super(context, key);
@@ -136,41 +142,52 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
         }
         super.updateState(preference);
         final ListPreference listPreference = (ListPreference) preference;
+        //Modify begin by renjie.zhang FP5U-304 2024/2/23
         final int networkMode = getPreferredNetworkMode();
-        // add by T2M.dengxiangyu for FP4-61 2021-04-14
         updatePreferenceEntries(listPreference);
         listPreference.setValue(Integer.toString(networkMode));
         //listPreference.setSummary(getPreferredNetworkModeSummaryResId(networkMode));
+        //Modify END by renjie.zhang FP5U-304 2024/2/23
         setNetworkModeSummaryText(listPreference, networkMode);
         listPreference.setEnabled(isCallStateIdle());
     }
 
-    // add by T2M.dengxiangyu for FP4-61 2021-04-14 begin
+    //Modify begin by renjie.zhang FP5U-304 2024/2/23
     private void updatePreferenceEntries(ListPreference preference) {
         // Default values
         final PersistableBundle carrierConfig = mCarrierConfigCache.getConfigForSubId(mSubId);
-        String[] pref_network_mode = null;
-        String[] pref_network_value = null;
 
         if (carrierConfig != null) {
             pref_network_mode = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_MODE);
             pref_network_value = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_VALUE);
-            Log.d(LOG_TAG, "get preferred network mode: " + pref_network_mode);
         }
 
         if (pref_network_mode != null && pref_network_value != null && pref_network_mode.length != 0 && pref_network_value.length != 0) {
             Log.d(LOG_TAG, "init preferred network from carrier config");
-            preference.setEntries(pref_network_mode);
-            preference.setEntryValues(pref_network_value);
-        } else {
-            Log.d(LOG_TAG, "init preferred network from default config");
-            //[11086878] The preferred network modes defined by T2M begin
-            preference.setEntries(R.array.preferred_network_mode_custom_choices);
-            preference.setEntryValues(R.array.preferred_network_mode_custom_choices_value);
-            //[11086878] The preferred network modes defined by T2M end
+        }else {
+
+            PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(mContext).getCarrierParams(mSubId);
+            if (carrierParams != null) {
+                pref_network_mode = carrierParams.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_MODE);
+                pref_network_value = carrierParams.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_VALUE);
+            }
+
+            if (pref_network_mode != null && pref_network_value != null && pref_network_mode.length != 0 && pref_network_value.length != 0) {
+                Log.d(LOG_TAG, "init preferred network from Settings params");
+            } else {
+                Log.d(LOG_TAG, "init preferred network from default config");
+                //[11086878] The preferred network modes defined by T2M begin
+                final Resources res = SubscriptionManager.getResourcesForSubId(mContext, mSubId);
+                pref_network_mode = res.getStringArray(R.array.preferred_network_mode_custom_choices);
+                pref_network_value = res.getStringArray(R.array.preferred_network_mode_custom_choices_value);
+                //[11086878] The preferred network modes defined by T2M end
+            }
         }
+
+        preference.setEntries(pref_network_mode);
+        preference.setEntryValues(pref_network_value);
     }
-    // add by T2M.dengxiangyu for FP4-61 2021-04-14 end
+    //Modify END by renjie.zhang FP5U-304 2024/2/23
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object object) {
@@ -260,67 +277,27 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
                         TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER));
     }
 
-    // add by T2M.dengxiangyu for FP4-1952 2021-07-28 begin
+    //Modify begin by renjie.zhang FP5U-304 2024/2/23
     private void setNetworkModeSummaryText(ListPreference preference, int networkmode) {
-        final PersistableBundle carrierConfig = mCarrierConfigCache.getConfigForSubId(mSubId);
-        String[] pref_network_mode = null;
-        String[] pref_network_value = null;
-        String summerry = null;
+        String summary = null;
 
         Log.d(LOG_TAG, "set networkmode(" + networkmode + ") summary");
-        if (carrierConfig != null) {
-            /*
-            check in vendor.xml of carrier config
-            <string-array name="preferred_network_mode_choices" num="4">
-                <item value="5G/4G/3G/2G"/>
-                <item value="4G/3G/2G"/>
-                <item value="3G/2G"/>
-                <item value="2G"/>
-            </string-array>
-            */
 
-            pref_network_mode = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_MODE);
-            pref_network_value = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_VALUE);
-
-        }
-
-        /*if (pref_network_mode != null && pref_network_mode.length == 4) {
-            switch (networkmode) {
-                case TelephonyManagerConstants.NETWORK_MODE_NR_LTE_GSM_WCDMA:
-                    summerry = pref_network_mode[0];
-                    break;
-                case TelephonyManagerConstants.NETWORK_MODE_LTE_GSM_WCDMA:
-                    summerry = pref_network_mode[1];
-                    break;
-                case TelephonyManagerConstants.NETWORK_MODE_WCDMA_PREF:
-                    summerry = pref_network_mode[2];
-                    break;
-                case TelephonyManagerConstants.NETWORK_MODE_GSM_ONLY:
-                    summerry = pref_network_mode[3];
-                    break;
-            }
-        }*/
-        if (pref_network_mode == null || pref_network_value == null || pref_network_mode.length == 0 || pref_network_value.length == 0){
-            final Resources res = SubscriptionManager.getResourcesForSubId(mContext, mSubId);
-            pref_network_mode = res.getStringArray(R.array.preferred_network_mode_custom_choices);
-            pref_network_value = res.getStringArray(R.array.preferred_network_mode_custom_choices_value);
-
-        }
         for (int index = 0; index < pref_network_value.length; index++) {
             if (pref_network_value[index].equals(String.valueOf(networkmode))){
-                summerry = pref_network_mode[index];
+                summary = pref_network_mode[index];
                 break;
             }
         }
 
-        if (summerry != null) {
-            Log.d(LOG_TAG, "summary: " + summerry);
-            preference.setSummary(summerry);
+        if (summary != null) {
+            Log.d(LOG_TAG, "summary: " + summary);
+            preference.setSummary(summary);
         } else {
             preference.setSummary(getPreferredNetworkModeSummaryResId(networkmode));
         }
     }
-    // add by T2M.dengxiangyu for FP4-1952 2021-07-28 end
+    //Modify END by renjie.zhang FP5U-304 2024/2/23
 
     private int getPreferredNetworkModeSummaryResId(int NetworkMode) {
         switch (NetworkMode) {

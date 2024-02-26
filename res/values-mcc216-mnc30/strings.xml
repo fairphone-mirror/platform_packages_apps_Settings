@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="prefer_5G">"2G/3G/4G/5G"</string>
-    <string name="prefer_4G">"2G/3G/4G"</string>
-    <string name="wifi_calling_settings_title">WiFi Hang</string>
-
-</resources>

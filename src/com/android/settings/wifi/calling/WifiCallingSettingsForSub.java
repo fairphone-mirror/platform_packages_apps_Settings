@@ -65,6 +65,8 @@ import android.database.ContentObserver;
 import android.os.Handler;
 import android.os.Looper;
 
+import com.android.settings.utils.CarrierParamsUtil;
+
 
 /**
  * This is the inner class of {@link WifiCallingSettings} fragment.
@@ -303,6 +305,18 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
 
         // add for FP5-1231 begin
         String title = getResourcesForSubId().getString(R.string.wifi_calling_settings_title);
+
+        //Modify begin by renjie.zhang FP5U-304 2024/2/23
+        PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(getActivity()).getCarrierParams(mSubId);
+        if (carrierParams != null) {
+            String carrierParamsTitle = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+            if (!"".equals(carrierParamsTitle)) {
+                Log.d(TAG, "get title from carrierParams");
+                title = carrierParamsTitle;
+            }
+        }
+        //Modify end by renjie.zhang FP5U-304 2024/2/23
+
         final CarrierConfigManager configManager =
                 getActivity().getSystemService(CarrierConfigManager.class);
         if (configManager != null) {
@@ -562,6 +576,18 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
 
         // add by T2M.dengxiangyu for FP4-61 2021-04-14 begin
         String title = getResourcesForSubId().getString(R.string.wifi_calling_settings_title);
+
+        //Modify begin by renjie.zhang FP5U-304 2024/2/23
+        PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(getActivity()).getCarrierParams(mSubId);
+        if (carrierParams != null) {
+            String carrierParamsTitle = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+            if (!"".equals(carrierParamsTitle)) {
+                Log.d(TAG, "get title from carrierParams");
+                title = carrierParamsTitle;
+            }
+        }
+        //Modify end by renjie.zhang FP5U-304 2024/2/23
+
         final CarrierConfigManager configManager =
                 getActivity().getSystemService(CarrierConfigManager.class);
         if (configManager != null) {

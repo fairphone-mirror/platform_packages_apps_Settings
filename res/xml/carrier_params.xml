@@ -1,0 +1,4378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carrier_ui_params_list >
+    <carrier_ui_params mcc="001" mnc="01">
+        <string name="wifi_calling_settings_title">WiFi Calling</string>
+        <string-array name="preferred_network_mode_values" num="3">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G/2G global"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="001" mnc="01" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G/2G da"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="001" mnc="01" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G/2G de"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="001" mnc="01" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G/2G es"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="001" mnc="01" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G/2G fr"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="001" mnc="01" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G/2G it"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="001" mnc="01" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G/2G nl"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="001" mnc="01" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G/2G pt"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="001" mnc="01" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G/2G sv"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+    <carrier_ui_params mcc="204" mnc="04">
+        <string name="wifi_calling_settings_title">Bellen via Wi-Fi</string>
+        <string-array name="preferred_network_mode_values" num="5">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="2"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="5">
+            <item value="Automatic (5G &amp; 4G &amp; 3G &amp; 2G)"/>
+            <item value="Automatic (4G &amp; 3G &amp; 2G)"/>
+            <item value="Automatic (3G &amp; 2G)"/>
+            <item value="3G only"/>
+            <item value="2G only"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="04" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="5">
+            <item value="Automatisk (5G &amp; 4G &amp; 3G &amp; 2G)"/>
+            <item value="Automatisk (4G &amp; 3G &amp; 2G)"/>
+            <item value="Automatisk (3G &amp; 2G)"/>
+            <item value="3G Kun"/>
+            <item value="2G Kun"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="04" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="5">
+            <item value="Automatisch (5G &amp; 4G &amp; 3G &amp; 2G)"/>
+            <item value="Automatisch (4G &amp; 3G &amp; 2G)"/>
+            <item value="Automatisch (3G &amp; 2G)"/>
+            <item value="3G Nur"/>
+            <item value="2G Nur"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="04" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="5">
+            <item value="Automático (5G &amp; 4G &amp; 3G &amp; 2G)"/>
+            <item value="Automatico (4G &amp; 3G &amp; 2G)"/>
+            <item value="Automatico (3G &amp; 2G)"/>
+            <item value="3G Solo"/>
+            <item value="2G Solo"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="04" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="5">
+            <item value="Automatique (5G &amp; 4G &amp; 3G &amp; 2G)"/>
+            <item value="Automatique (4G &amp; 3G &amp; 2G)"/>
+            <item value="Automatique (3G &amp; 2G)"/>
+            <item value="3G Uniquement"/>
+            <item value="2G Uniquement"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="04" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="5">
+            <item value="Automatico (5G &amp; 4G &amp; 3G &amp; 2G)"/>
+            <item value="Automatico (4G &amp; 3G &amp; 2G)"/>
+            <item value="Automatico (3G &amp; 2G)"/>
+            <item value="3G Solo"/>
+            <item value="2G Solo"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="04" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via Wi-Fi</string>
+        <string-array name="preferred_network_mode_choices" num="5">
+            <item value="Automatisch (5G &amp; 4G &amp; 3G &amp; 2G)"/>
+            <item value="Automatisch (4G &amp; 3G &amp; 2G)"/>
+            <item value="Automatisch (3G &amp; 2G)"/>
+            <item value="3G Alleen"/>
+            <item value="2G Alleen"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="04" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="5">
+            <item value="Automático (5G &amp; 4G &amp; 3G &amp; 2G)"/>
+            <item value="Automatico (4G &amp; 3G &amp; 2G)"/>
+            <item value="Automatico (3G &amp; 2G)"/>
+            <item value="3G Apenas"/>
+            <item value="2G Apenas"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="04" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="5">
+            <item value="Automatisk (5G &amp; 4G &amp; 3G &amp; 2G)"/>
+            <item value="Automatisk (4G &amp; 3G &amp; 2G)"/>
+            <item value="Automatisk (3G &amp; 2G)"/>
+            <item value="3G Endast"/>
+            <item value="2G Endast"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+
+    <carrier_ui_params mcc="204" mnc="08">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="08" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="08" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="08" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="08" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="08" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="08" language="nl">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="08" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="08" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+
+
+    <carrier_ui_params mcc="204" mnc="16">
+        <string name="wifi_calling_settings_title">Bellen via Wi-Fi</string>
+        <string-array name="preferred_network_mode_values" num="2">
+            <item value="26"/>
+            <item value="9"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/4G/5G"/>
+            <item value="2G/3G/4G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="16" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/4G/5G"/>
+            <item value="2G/3G/4G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="16" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/4G/5G"/>
+            <item value="2G/3G/4G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="16" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/4G/5G"/>
+            <item value="2G/3G/4G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="16" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/4G/5G"/>
+            <item value="2G/3G/4G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="16" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/4G/5G"/>
+            <item value="2G/3G/4G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="16" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via Wi-Fi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/4G/5G"/>
+            <item value="2G/3G/4G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="16" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/4G/5G"/>
+            <item value="2G/3G/4G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="16" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/4G/5G"/>
+            <item value="2G/3G/4G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="204" mnc="69">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="69" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="69" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="69" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="69" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="69" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="69" language="nl">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="69" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="204" mnc="69" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+    <carrier_ui_params mcc="208" mnc="00">
+        <string name="wifi_calling_settings_title">Appels Wi-Fi</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="00" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="00" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="00" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="00" language="fr">
+        <string name="wifi_calling_settings_title">Appels Wi-Fi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="00" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="00" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="00" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="00" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="208" mnc="01">
+        <string name="wifi_calling_settings_title">Appels Wi-Fi</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="01" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="01" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="01" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="01" language="fr">
+        <string name="wifi_calling_settings_title">Appels Wi-Fi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="01" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="01" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="01" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="01" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+
+    <carrier_ui_params mcc="208" mnc="02">
+        <string name="wifi_calling_settings_title">Appels Wi-Fi</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="02" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="02" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="02" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="02" language="fr">
+        <string name="wifi_calling_settings_title">Appels Wi-Fi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="02" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="02" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="02" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="02" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="208" mnc="09">
+        <string name="wifi_calling_settings_title">Appels Wi-Fi</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G automatique"/>
+            <item value="4G/3G/2G automatique"/>
+            <item value="3G/2G automatique"/>
+            <item value="2G uniquement"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="09" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G Automatisk"/>
+            <item value="4G/3G/2G Automatisk"/>
+            <item value="3G/2G Automatisk"/>
+            <item value="2G Kun"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="09" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G Automatisch"/>
+            <item value="4G/3G/2G Automatisch"/>
+            <item value="3G/2G Automatisch"/>
+            <item value="2G Nur"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="09" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G Automático"/>
+            <item value="4G/3G/2G Automático"/>
+            <item value="3G/2G Automático"/>
+            <item value="2G Solo"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="09" language="fr">
+        <string name="wifi_calling_settings_title">Appels Wi-Fi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G automatique"/>
+            <item value="4G/3G/2G automatique"/>
+            <item value="3G/2G automatique"/>
+            <item value="2G uniquement"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="09" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G Automatico"/>
+            <item value="4G/3G/2G Automatico"/>
+            <item value="3G/2G Automatico"/>
+            <item value="2G Solo"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="09" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G Automatisch"/>
+            <item value="4G/3G/2G Automatisch"/>
+            <item value="3G/2G Automatisch"/>
+            <item value="2G Alleen"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="09" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G Automático"/>
+            <item value="4G/3G/2G Automático"/>
+            <item value="3G/2G Automático"/>
+            <item value="2G Apenas"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="09" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G Automatisk"/>
+            <item value="4G/3G/2G Automatisk"/>
+            <item value="3G/2G Automatisk"/>
+            <item value="2G Endast"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="208" mnc="10">
+        <string name="wifi_calling_settings_title">Appels Wi-Fi</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G automatique"/>
+            <item value="4G/3G/2G automatique"/>
+            <item value="3G/2G automatique"/>
+            <item value="2G uniquement"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="10" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G Automatisk"/>
+            <item value="4G/3G/2G Automatisk"/>
+            <item value="3G/2G Automatisk"/>
+            <item value="2G Kun"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="10" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G Automatisch"/>
+            <item value="4G/3G/2G Automatisch"/>
+            <item value="3G/2G Automatisch"/>
+            <item value="2G Nur"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="10" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G Automático"/>
+            <item value="4G/3G/2G Automático"/>
+            <item value="3G/2G Automático"/>
+            <item value="2G Solo"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="10" language="fr">
+        <string name="wifi_calling_settings_title">Appels Wi-Fi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G automatique"/>
+            <item value="4G/3G/2G automatique"/>
+            <item value="3G/2G automatique"/>
+            <item value="2G uniquement"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="10" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G Automatico"/>
+            <item value="4G/3G/2G Automatico"/>
+            <item value="3G/2G Automatico"/>
+            <item value="2G Solo"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="10" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G Automatisch"/>
+            <item value="4G/3G/2G Automatisch"/>
+            <item value="3G/2G Automatisch"/>
+            <item value="2G Alleen"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="10" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G Automático"/>
+            <item value="4G/3G/2G Automático"/>
+            <item value="3G/2G Automático"/>
+            <item value="2G Apenas"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="10" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G Automatisk"/>
+            <item value="4G/3G/2G Automatisk"/>
+            <item value="3G/2G Automatisk"/>
+            <item value="2G Endast"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="208" mnc="15">
+        <string name="wifi_calling_settings_title">WiFi Call</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="15" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="15" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="15" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="15" language="fr">
+        <string name="wifi_calling_settings_title">WiFi Call</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="15" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="15" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="15" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="15" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="208" mnc="16">
+        <string name="wifi_calling_settings_title">WiFi Call</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="16" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="16" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="16" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="16" language="fr">
+        <string name="wifi_calling_settings_title">WiFi Call</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="16" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="16" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="16" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="16" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="208" mnc="20">
+        <string name="wifi_calling_settings_title">Appel WiFi</string>
+        <string-array name="preferred_network_mode_values" num="2">
+            <item value="26"/>
+            <item value="9"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="20" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="20" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="20" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="20" language="fr">
+        <string name="wifi_calling_settings_title">Appel WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="20" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="20" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="20" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="208" mnc="20" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="216" mnc="30">
+        <string name="wifi_calling_settings_title">WiFi Hang</string>
+        <string-array name="preferred_network_mode_values" num="2">
+            <item value="26"/>
+            <item value="9"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/4G/5G"/>
+            <item value="2G/3G/4G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="216" mnc="30" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/4G/5G"/>
+            <item value="2G/3G/4G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="216" mnc="30" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/4G/5G"/>
+            <item value="2G/3G/4G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="216" mnc="30" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/4G/5G"/>
+            <item value="2G/3G/4G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="216" mnc="30" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/4G/5G"/>
+            <item value="2G/3G/4G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="216" mnc="30" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/4G/5G"/>
+            <item value="2G/3G/4G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="216" mnc="30" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/4G/5G"/>
+            <item value="2G/3G/4G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="216" mnc="30" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/4G/5G"/>
+            <item value="2G/3G/4G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="216" mnc="30" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/4G/5G"/>
+            <item value="2G/3G/4G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="219">
+        <string name="wifi_calling_settings_title">WiFi poziv</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="219" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="219" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="219" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="219" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="219" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="219" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="219" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="219" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="228" mnc="01">
+        <string name="wifi_calling_settings_title">WiFi Call</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="228" mnc="01" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="228" mnc="01" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="228" mnc="01" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="228" mnc="01" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="228" mnc="01" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="228" mnc="01" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="228" mnc="01" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="228" mnc="01" language="sv">
+        <string name="wifi_calling_settings_title">WiFi Call</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="230" mnc="01">
+        <string name="wifi_calling_settings_title">Wi-Fi volání</string>
+        <string-array name="preferred_network_mode_values" num="2">
+            <item value="26"/>
+            <item value="9"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="230" mnc="01" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="230" mnc="01" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="230" mnc="01" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="230" mnc="01" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="230" mnc="01" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="230" mnc="01" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="230" mnc="01" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="230" mnc="01" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+    <carrier_ui_params mcc="232" mnc="01">
+        <string name="wifi_calling_settings_title">WLAN-Call</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="01" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="01" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="01" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="01" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="01" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="01" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="01" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="01" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+    <carrier_ui_params mcc="232" mnc="02">
+        <string name="wifi_calling_settings_title">WLAN-Call</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="02" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="02" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="02" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="02" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="02" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="02" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="02" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="02" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="232" mnc="03">
+        <string name="wifi_calling_settings_title">WLAN-Call</string>
+        <string-array name="preferred_network_mode_values" num="2">
+            <item value="26"/>
+            <item value="9"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="03" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="03" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="03" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="03" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="03" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="03" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="03" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="03" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="232" mnc="07">
+        <string name="wifi_calling_settings_title">WLAN-Call</string>
+        <string-array name="preferred_network_mode_values" num="2">
+            <item value="26"/>
+            <item value="9"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="07" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="07" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="07" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="07" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="07" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="07" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="07" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="07" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="232" mnc="11">
+        <string name="wifi_calling_settings_title">WLAN-Call</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="11" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="11" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="11" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="11" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="11" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="11" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="11" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="11" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="232" mnc="12">
+        <string name="wifi_calling_settings_title">WLAN-Call</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="12" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="12" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="12" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="12" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="12" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="12" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="12" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="232" mnc="12" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="234">
+        <string name="wifi_calling_settings_title">WiFi Calling</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="234" mnc="10">
+        <string name="wifi_calling_settings_title">O2 WiFiCall</string>
+        <string-array name="preferred_network_mode_values" num="3">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="10" language="da">
+        <string name="wifi_calling_settings_title">O2 WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="10" language="de">
+        <string name="wifi_calling_settings_title">O2 WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="10" language="es">
+        <string name="wifi_calling_settings_title">O2 Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="10" language="fr">
+        <string name="wifi_calling_settings_title">O2 Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="10" language="it">
+        <string name="wifi_calling_settings_title">O2 Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="10" language="nl">
+        <string name="wifi_calling_settings_title">O2 Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="10" language="pt">
+        <string name="wifi_calling_settings_title">O2 Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="10" language="sv">
+        <string name="wifi_calling_settings_title">O2 WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="234" mnc="15">
+        <string name="wifi_calling_settings_title">WIFI Calling</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="15" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="15" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="15" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="15" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="15" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="15" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="15" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="15" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="234" mnc="30">
+        <string name="wifi_calling_settings_title">EE Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_values" num="1">
+            <item value="26"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="30" language="da">
+        <string name="wifi_calling_settings_title">EE WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="30" language="de">
+        <string name="wifi_calling_settings_title">EE WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="30" language="es">
+        <string name="wifi_calling_settings_title">EE Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="30" language="fr">
+        <string name="wifi_calling_settings_title">EE Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="30" language="it">
+        <string name="wifi_calling_settings_title">EE Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="30" language="nl">
+        <string name="wifi_calling_settings_title">EE Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="30" language="pt">
+        <string name="wifi_calling_settings_title">EE Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="30" language="sv">
+        <string name="wifi_calling_settings_title">EE WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="234" mnc="31">
+        <string name="wifi_calling_settings_title">EE Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_values" num="1">
+            <item value="26"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="31" language="da">
+        <string name="wifi_calling_settings_title">EE WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="31" language="de">
+        <string name="wifi_calling_settings_title">EE WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="31" language="es">
+        <string name="wifi_calling_settings_title">EE Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="31" language="fr">
+        <string name="wifi_calling_settings_title">EE Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="31" language="it">
+        <string name="wifi_calling_settings_title">EE Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="31" language="nl">
+        <string name="wifi_calling_settings_title">EE Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="31" language="pt">
+        <string name="wifi_calling_settings_title">EE Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="31" language="sv">
+        <string name="wifi_calling_settings_title">EE WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="234" mnc="32">
+        <string name="wifi_calling_settings_title">EE Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_values" num="1">
+            <item value="26"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="32" language="da">
+        <string name="wifi_calling_settings_title">EE WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="32" language="de">
+        <string name="wifi_calling_settings_title">EE WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="32" language="es">
+        <string name="wifi_calling_settings_title">EE Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="32" language="fr">
+        <string name="wifi_calling_settings_title">EE Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="32" language="it">
+        <string name="wifi_calling_settings_title">EE Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="32" language="nl">
+        <string name="wifi_calling_settings_title">EE Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="32" language="pt">
+        <string name="wifi_calling_settings_title">EE Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="32" language="sv">
+        <string name="wifi_calling_settings_title">EE WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="234" mnc="33">
+        <string name="wifi_calling_settings_title">EE Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_values" num="1">
+            <item value="26"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="33" language="da">
+        <string name="wifi_calling_settings_title">EE WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="33" language="de">
+        <string name="wifi_calling_settings_title">EE WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="33" language="es">
+        <string name="wifi_calling_settings_title">EE Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="33" language="fr">
+        <string name="wifi_calling_settings_title">EE Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="33" language="it">
+        <string name="wifi_calling_settings_title">EE Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="33" language="nl">
+        <string name="wifi_calling_settings_title">EE Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="33" language="pt">
+        <string name="wifi_calling_settings_title">EE Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="33" language="sv">
+        <string name="wifi_calling_settings_title">EE WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="234" mnc="34">
+        <string name="wifi_calling_settings_title">EE Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_values" num="1">
+            <item value="26"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="34" language="da">
+        <string name="wifi_calling_settings_title">EE WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="34" language="de">
+        <string name="wifi_calling_settings_title">EE WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="34" language="es">
+        <string name="wifi_calling_settings_title">EE Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="34" language="fr">
+        <string name="wifi_calling_settings_title">EE Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="34" language="it">
+        <string name="wifi_calling_settings_title">EE Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="34" language="nl">
+        <string name="wifi_calling_settings_title">EE Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="34" language="pt">
+        <string name="wifi_calling_settings_title">EE Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="34" language="sv">
+        <string name="wifi_calling_settings_title">EE WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="234" mnc="57">
+        <string name="wifi_calling_settings_title">Sky WiFiCall</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="57" language="da">
+        <string name="wifi_calling_settings_title">Sky WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="57" language="de">
+        <string name="wifi_calling_settings_title">Sky WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="57" language="es">
+        <string name="wifi_calling_settings_title">Sky Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="57" language="fr">
+        <string name="wifi_calling_settings_title">Sky Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="57" language="it">
+        <string name="wifi_calling_settings_title">Sky Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="57" language="nl">
+        <string name="wifi_calling_settings_title">Sky Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="57" language="pt">
+        <string name="wifi_calling_settings_title">Sky Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="57" language="sv">
+        <string name="wifi_calling_settings_title">Sky WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="234" mnc="86">
+        <string name="wifi_calling_settings_title">EE Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_values" num="1">
+            <item value="26"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="86" language="da">
+        <string name="wifi_calling_settings_title">EE WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="86" language="de">
+        <string name="wifi_calling_settings_title">EE WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="86" language="es">
+        <string name="wifi_calling_settings_title">EE Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="86" language="fr">
+        <string name="wifi_calling_settings_title">EE Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="86" language="it">
+        <string name="wifi_calling_settings_title">EE Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="86" language="nl">
+        <string name="wifi_calling_settings_title">EE Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="86" language="pt">
+        <string name="wifi_calling_settings_title">EE Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="86" language="sv">
+        <string name="wifi_calling_settings_title">EE WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="1">
+            <item value="5G/4G/3G/2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="234" mnc="91">
+        <string name="wifi_calling_settings_title">WIFI Calling</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="91" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="91" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="91" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="91" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="91" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="91" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="91" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="234" mnc="91" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="240" mnc="01">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="01" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="01" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="01" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="01" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="01" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="01" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="01" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="01" language="sv">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="240" mnc="06">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="06" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="06" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="06" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="06" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="06" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="06" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="06" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="06" language="sv">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="240" mnc="08">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="08" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="08" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="08" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="08" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="08" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="08" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="08" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="240" mnc="08" language="sv">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="242" mnc="01">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="01" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="01" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="01" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="01" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="01" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="01" language="nl">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="01" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="01" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="242" mnc="02">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="02" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="02" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="02" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="02" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="02" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="02" language="nl">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="02" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="02" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+
+    <carrier_ui_params mcc="242" mnc="05">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="05" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="05" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="05" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="05" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="05" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="05" language="nl">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="05" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="242" mnc="05" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="260" mnc="02">
+        <string name="wifi_calling_settings_title">Połączenie przez Wi-Fi</string>
+        <string-array name="preferred_network_mode_values" num="2">
+            <item value="26"/>
+            <item value="9"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="260" mnc="02" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="260" mnc="02" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="260" mnc="02" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="260" mnc="02" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="260" mnc="02" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="260" mnc="02" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="260" mnc="02" language="pt">
+        <string name="wifi_calling_settings_title">Połączenie przez Wi-Fi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="260" mnc="02" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="262" mnc="01">
+        <string name="wifi_calling_settings_title">WLAN Call</string>
+        <string-array name="preferred_network_mode_values" num="2">
+            <item value="26"/>
+            <item value="9"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="01" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="01" language="de">
+        <string name="wifi_calling_settings_title">WLAN Call</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="01" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="01" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="01" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="01" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="01" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="01" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="262" mnc="02">
+        <string name="wifi_calling_settings_title">WiFi Calling</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="02" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="02" language="de">
+        <string name="wifi_calling_settings_title">WiFi Calling</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="02" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="02" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="02" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="02" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="02" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="02" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+
+    <carrier_ui_params mcc="262" mnc="03">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="03" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="03" language="de">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="03" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="03" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="03" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="03" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="03" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="03" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="262" mnc="06">
+        <string name="wifi_calling_settings_title">WLAN Call</string>
+        <string-array name="preferred_network_mode_values" num="2">
+            <item value="26"/>
+            <item value="9"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="06" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="06" language="de">
+        <string name="wifi_calling_settings_title">WLAN Call</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="06" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="06" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="06" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="06" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="06" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="06" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="2">
+            <item value="2G/3G/LTE/5G"/>
+            <item value="2G/3G/LTE"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="262" mnc="07">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="07" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="07" language="de">
+        <string name="wifi_calling_settings_title">Wi-Fi Calling</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="07" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="07" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="07" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="07" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="07" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="07" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+
+    <carrier_ui_params mcc="262" mnc="23">
+        <string name="wifi_calling_settings_title">WLAN Call</string>
+        <string-array name="preferred_network_mode_values" num="4">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="0"/>
+            <item value="1"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="23" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="23" language="de">
+        <string name="wifi_calling_settings_title">WLAN Call</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="23" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="23" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="23" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="23" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="23" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="262" mnc="23" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="4">
+            <item value="5G/4G/3G/2G"/>
+            <item value="4G/3G/2G"/>
+            <item value="3G/2G"/>
+            <item value="2G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+    <carrier_ui_params mcc="466">
+        <string name="wifi_calling_settings_title">WIFI Calling</string>
+        <string-array name="preferred_network_mode_values" num="3">
+            <item value="26"/>
+            <item value="9"/>
+            <item value="2"/>
+        </string-array>
+
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G"/>
+            <item value="4G/3G"/>
+            <item value="3G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="466" language="da">
+        <string name="wifi_calling_settings_title">WIFI-opkald</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G"/>
+            <item value="4G/3G"/>
+            <item value="3G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="466" language="de">
+        <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G"/>
+            <item value="4G/3G"/>
+            <item value="3G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="466" language="es">
+        <string name="wifi_calling_settings_title">Llamadas WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G"/>
+            <item value="4G/3G"/>
+            <item value="3G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="466" language="fr">
+        <string name="wifi_calling_settings_title">Appels WIFI</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G"/>
+            <item value="4G/3G"/>
+            <item value="3G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="466" language="it">
+        <string name="wifi_calling_settings_title">Chiamata WiFi</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G"/>
+            <item value="4G/3G"/>
+            <item value="3G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="466" language="nl">
+        <string name="wifi_calling_settings_title">Bellen via wifi</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G"/>
+            <item value="4G/3G"/>
+            <item value="3G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="466" language="pt">
+        <string name="wifi_calling_settings_title">Chamada WI-FI</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G"/>
+            <item value="4G/3G"/>
+            <item value="3G"/>
+        </string-array>
+    </carrier_ui_params>
+
+    <carrier_ui_params mcc="466" language="sv">
+        <string name="wifi_calling_settings_title">WIFI-samtal</string>
+        <string-array name="preferred_network_mode_choices" num="3">
+            <item value="5G/4G/3G"/>
+            <item value="4G/3G"/>
+            <item value="3G"/>
+        </string-array>
+    </carrier_ui_params>
+
+
+
+</carrier_ui_params_list>
