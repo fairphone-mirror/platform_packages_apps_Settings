@@ -41,9 +41,12 @@
     <!-- Fully-qualified class name for the implementation of the FeatureFactory to be instantiated. -->
     <string name="config_featureFactory" translatable="false">com.android.settings.overlay.FeatureFactoryImpl</string>
 
-    <!-- Package name and fully-qualified class name for the wallpaper picker activity. -->
+    <!-- Package name and fully-qualified class name for the wallpaper picker activity. 
     <string name="config_wallpaper_picker_package" translatable="false">com.android.settings</string>
     <string name="config_wallpaper_picker_class" translatable="false">com.android.settings.Settings$WallpaperSettingsActivity</string>
+    -->
+    <string name="config_wallpaper_picker_package" translatable="false">com.android.wallpaper</string>
+    <string name="config_wallpaper_picker_class" translatable="false">com.android.wallpaper.picker.CustomizationPickerActivity</string>
     <!-- Fully-qualified class name for the styles & wallpaper picker activity. -->
     <string name="config_styles_and_wallpaper_picker_class" translatable="false"></string>
     <!-- Action name for the wallpaper picker activity. -->
