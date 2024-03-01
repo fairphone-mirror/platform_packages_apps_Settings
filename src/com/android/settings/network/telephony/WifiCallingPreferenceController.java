@@ -165,7 +165,7 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
         //Modify begin by renjie.zhang FP5U-304 2024/2/23
         PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(mContext).getCarrierParams(mSubId);
         if (carrierParams != null) {
-            String carrierParamsTitle = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+            String carrierParamsTitle = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
             if (!"".equals(carrierParamsTitle)) {
                 Log.d(TAG, "get title from carrierParams");
                 title = carrierParamsTitle;
@@ -175,7 +175,7 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
         if (mCarrierConfigManager != null) {
             PersistableBundle b = mCarrierConfigManager.getConfigForSubId(mSubId);
             if (b != null) {
-                String wifiCallingTitle = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+                String wifiCallingTitle = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
                 if (!"".equals(wifiCallingTitle)) {
                     title = wifiCallingTitle;
                 }

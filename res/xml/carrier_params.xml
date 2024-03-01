@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <carrier_ui_params_list >
-    <carrier_ui_params mcc="001" mnc="01">
+    <carrier_ui_params mcc="001" mnc="02">
         <string name="wifi_calling_settings_title">WiFi Calling</string>
         <string-array name="preferred_network_mode_values" num="3">
             <item value="26"/>
@@ -15,7 +15,7 @@
         </string-array>
     </carrier_ui_params>
 
-    <carrier_ui_params mcc="001" mnc="01" language="da">
+    <carrier_ui_params mcc="001" mnc="02" language="da">
         <string name="wifi_calling_settings_title">WIFI-opkald</string>
         <string-array name="preferred_network_mode_choices" num="3">
             <item value="5G/4G/3G/2G da"/>
@@ -24,7 +24,7 @@
         </string-array>
     </carrier_ui_params>
 
-    <carrier_ui_params mcc="001" mnc="01" language="de">
+    <carrier_ui_params mcc="001" mnc="02" language="de">
         <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
         <string-array name="preferred_network_mode_choices" num="3">
             <item value="5G/4G/3G/2G de"/>
@@ -33,7 +33,7 @@
         </string-array>
     </carrier_ui_params>
 
-    <carrier_ui_params mcc="001" mnc="01" language="es">
+    <carrier_ui_params mcc="001" mnc="02" language="es">
         <string name="wifi_calling_settings_title">Llamadas WIFI</string>
         <string-array name="preferred_network_mode_choices" num="3">
             <item value="5G/4G/3G/2G es"/>
@@ -42,7 +42,7 @@
         </string-array>
     </carrier_ui_params>
 
-    <carrier_ui_params mcc="001" mnc="01" language="fr">
+    <carrier_ui_params mcc="001" mnc="02" language="fr">
         <string name="wifi_calling_settings_title">Appels WIFI</string>
         <string-array name="preferred_network_mode_choices" num="3">
             <item value="5G/4G/3G/2G fr"/>
@@ -51,7 +51,7 @@
         </string-array>
     </carrier_ui_params>
 
-    <carrier_ui_params mcc="001" mnc="01" language="it">
+    <carrier_ui_params mcc="001" mnc="02" language="it">
         <string name="wifi_calling_settings_title">Chiamata WiFi</string>
         <string-array name="preferred_network_mode_choices" num="3">
             <item value="5G/4G/3G/2G it"/>
@@ -60,7 +60,7 @@
         </string-array>
     </carrier_ui_params>
 
-    <carrier_ui_params mcc="001" mnc="01" language="nl">
+    <carrier_ui_params mcc="001" mnc="02" language="nl">
         <string name="wifi_calling_settings_title">Bellen via wifi</string>
         <string-array name="preferred_network_mode_choices" num="3">
             <item value="5G/4G/3G/2G nl"/>
@@ -69,7 +69,7 @@
         </string-array>
     </carrier_ui_params>
 
-    <carrier_ui_params mcc="001" mnc="01" language="pt">
+    <carrier_ui_params mcc="001" mnc="02" language="pt">
         <string name="wifi_calling_settings_title">Chamada WI-FI</string>
         <string-array name="preferred_network_mode_choices" num="3">
             <item value="5G/4G/3G/2G pt"/>
@@ -78,7 +78,7 @@
         </string-array>
     </carrier_ui_params>
 
-    <carrier_ui_params mcc="001" mnc="01" language="sv">
+    <carrier_ui_params mcc="001" mnc="02" language="sv">
         <string name="wifi_calling_settings_title">WIFI-samtal</string>
         <string-array name="preferred_network_mode_choices" num="3">
             <item value="5G/4G/3G/2G sv"/>

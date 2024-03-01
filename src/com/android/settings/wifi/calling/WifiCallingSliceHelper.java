@@ -161,7 +161,7 @@ public class WifiCallingSliceHelper {
             //Modify begin by renjie.zhang FP5U-304 2024/2/23
             PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(mContext).getCarrierParams(subId);
             if (carrierParams != null) {
-                String carrierParamsTitle = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+                String carrierParamsTitle = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
                 if (!"".equals(carrierParamsTitle)) {
                     Log.d(TAG, "get title from carrierParams");
                     title = carrierParamsTitle;
@@ -173,7 +173,7 @@ public class WifiCallingSliceHelper {
             if (configManager != null) {
                 PersistableBundle b = configManager.getConfigForSubId(subId);
                 if (b != null) {
-                    String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+                    String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
                     if (!"".equals(carrierconfig_title)){
                         Log.d(TAG, "get title from carrierconfig");
                         title = carrierconfig_title;
@@ -210,7 +210,7 @@ public class WifiCallingSliceHelper {
         //Modify begin by renjie.zhang FP5U-304 2024/2/23
         PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(mContext).getCarrierParams(subId);
         if (carrierParams != null) {
-            String carrierParamsTitle = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+            String carrierParamsTitle = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
             if (!"".equals(carrierParamsTitle)) {
                 Log.d(TAG, "get title from carrierParams");
                 title = carrierParamsTitle;
@@ -223,7 +223,7 @@ public class WifiCallingSliceHelper {
             Log.d(TAG, "get title from carrierconfig");
             PersistableBundle b = configManager.getConfigForSubId(subId);
             if (b != null) {
-                String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
+                String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
                 if (!"".equals(carrierconfig_title)){
                     title = carrierconfig_title;
                 }
