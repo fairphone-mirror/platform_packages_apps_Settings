@@ -4289,8 +4289,8 @@
     <carrier_ui_params mcc="466">
         <string name="wifi_calling_settings_title">WIFI Calling</string>
         <string-array name="preferred_network_mode_values" num="3">
-            <item value="26"/>
-            <item value="9"/>
+            <item value="28"/>
+            <item value="12"/>
             <item value="2"/>
         </string-array>
 
