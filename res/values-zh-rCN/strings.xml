@@ -5942,5 +5942,5 @@
     <string name="batteryh_soc">充放电循环次数:</string>
     <!--charge full design-->
     <string name="batteryh_cfd">满充次数:</string>
-
+    <string name="pocket_mode">口袋模式</string>
 </resources>

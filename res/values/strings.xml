@@ -14613,4 +14613,6 @@
     <string name="batteryh_cfd">charge full design:</string>
     <string name="dialog_title_battery_healty">Battery health</string>
 
+    <!--add by suntianhai for pocket mode-->
+    <string name="pocket_mode">Pocket mode</string>
 </resources>
