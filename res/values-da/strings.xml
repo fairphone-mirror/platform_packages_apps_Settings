@@ -5347,4 +5347,5 @@
     <string name="audio_streams_main_page_password_dialog_join_button" msgid="2967747276379153408">"Lyt til stream"</string>
     <string name="audio_streams_main_page_qr_code_scanner_summary" msgid="5312980105735143360">"Scan en QR-kode til en lydstream for at lytte via <xliff:g id="DEVICE_NAME">%1$s</xliff:g>"</string>
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"Adgangskoden kan ikke ændres under deling. Deaktiver lyddeling for at ændre adgangskoden."</string>
+    <string name="pocket_mode">Lommetilstand</string>
 </resources>
