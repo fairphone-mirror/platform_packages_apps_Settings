@@ -2546,7 +2546,7 @@
     <string name="accessibility_autoclick_longer_desc" msgid="2566025502981487443">"較長"</string>
     <string name="accessibility_autoclick_seekbar_desc" msgid="8363959277814621118">"自動點擊時間"</string>
     <string name="accessibility_vibration_settings_title" msgid="936301142478631993">"震動與觸覺回饋"</string>
-    <string name="accessibility_vibration_settings_summary" msgid="3690308537483465527">"控制各種使用情形的震動強度"</string>
+    <string name="accessibility_vibration_settings_summary" msgid="3690308537483465527">"控制各種使用情形的震動"</string>
     <string name="accessibility_vibration_settings_state_on" msgid="5566026932372832502">"已開啟"</string>
     <string name="accessibility_vibration_settings_state_off" msgid="7946588741954981703">"已關閉"</string>
     <string name="accessibility_vibration_setting_disabled_for_silent_mode_summary" msgid="3982701772953323190">"裝置已設為靜音，因此設定已停用"</string>
