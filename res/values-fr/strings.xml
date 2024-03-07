@@ -4808,4 +4808,6 @@
     <string name="fingerprint_settings_open_description">"Activez si vous préférez déverrouiller le téléphone sans le réveiller au préalable."</string>
     <string name="fingerprint_settings_open_title">Comportement de déverrouillage par empreinte digitale</string>
     <string name="pocket_mode">Mode de poche</string>
+    <string name="swap_back_recents_title">Ã‰changer la navigation arriÃ¨re / rÃ©centes</string>
+    <string name="swap_back_recents_summary">Ã‰changez les boutons arriÃ¨re et rÃ©cent dans la barre de navigation</string>
 </resources>

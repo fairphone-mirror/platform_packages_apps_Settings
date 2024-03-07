@@ -12434,4 +12434,8 @@
     <string name="fingerprint_settings_open_title">Fingerprint Unlock Behavior</string>
     <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
     <string name="fingerprint_settings_open_description">"Switch on if you prefer to unlock without waking up the phone first."</string>
+    <!-- Title text for swapping the back and recents buttons in the navigation bar. [CHAR LIMIT=60] -->
+    <string name="swap_back_recents_title">Swap Back/Recents Navigation</string>
+    <!-- Summary text for swapping the back and recents buttons in the navigation bar. [CHAR LIMIT=NONE] -->
+    <string name="swap_back_recents_summary">Swap the back and recents button in the navigation bar.</string>
 </resources>
