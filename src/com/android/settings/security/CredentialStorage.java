@@ -44,6 +44,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.R;
+import com.android.settings.core.HideNonSystemOverlayMixin;
 import com.android.settings.password.ChooseLockSettingsHelper;
 import com.android.settings.vpn2.VpnUtils;
 
@@ -75,6 +76,7 @@ public final class CredentialStorage extends FragmentActivity {
     protected void onCreate(Bundle savedState) {
         super.onCreate(savedState);
         mUtils = new LockPatternUtils(this);
+        getLifecycle().addObserver(new HideNonSystemOverlayMixin(this));
     }
 
     @Override
@@ -85,7 +87,7 @@ public final class CredentialStorage extends FragmentActivity {
         final String action = intent.getAction();
         final UserManager userManager = (UserManager) getSystemService(Context.USER_SERVICE);
         if (!userManager.hasUserRestriction(UserManager.DISALLOW_CONFIG_CREDENTIALS)) {
-            if (ACTION_RESET.equals(action)) {
+            if (ACTION_RESET.equals(action) && checkCallerIsSelf()) {
                 new ResetDialog();
             } else {
                 if (ACTION_INSTALL.equals(action) && checkCallerIsCertInstallerOrSelfInProfile()) {
@@ -315,6 +317,19 @@ public final class CredentialStorage extends FragmentActivity {
         setResult(RESULT_OK);
 
         finish();
+    }
+
+    /**
+     * Check that the caller is Settings.
+     */
+    private boolean checkCallerIsSelf() {
+        try {
+            return Process.myUid() == android.app.ActivityManager.getService()
+                    .getLaunchedFromUid(getActivityToken());
+        } catch (RemoteException re) {
+            // Error talking to ActivityManager, just give up
+            return false;
+        }
     }
 
     /**

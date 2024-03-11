@@ -2046,6 +2046,7 @@
         </activity>
 
         <activity android:name=".bluetooth.BluetoothPairingDialog"
+                  android:permission="android.permission.BLUETOOTH_PRIVILEGED"
                   android:excludeFromRecents="true"
                   android:windowSoftInputMode="stateVisible|adjustResize"
                   android:theme="@style/Theme.AlertDialog"
@@ -2761,6 +2762,10 @@
             </intent-filter>
         </activity>
 
+        <!--
+            The Wi-Fi result data will only be returned from WifiDialogActivity if the calling
+            package has ACCESS_COARSE_LOCATION or ACCESS_FINE_LOCATION permission. (see b/185126813)
+        -->
         <activity
             android:name=".wifi.WifiDialogActivity"
             android:label=""
@@ -3470,6 +3475,24 @@
                 <action android:name="com.android.settings.action.LAUNCH_BLUETOOTH_PAIRING"/>
             </intent-filter>/>
         </receiver>
+
+       <activity android:name=".network.telephony.UserPLMNListActivity"
+           android:exported="true"
+           android:label="@string/uplmn_settings_title"
+           android:configChanges="orientation|screenSize|keyboardHidden">
+           <intent-filter>
+               <action android:name="android.intent.action.MAIN" />
+           </intent-filter>
+       </activity>
+
+        <activity android:name=".network.telephony.UserPLMNEditorActivity"
+            android:exported="true"
+            android:label="@string/uplmn_settings_title"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
 
         <!-- This is the longest AndroidManifest.xml ever. -->
 

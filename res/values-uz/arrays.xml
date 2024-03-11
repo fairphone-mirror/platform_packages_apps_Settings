@@ -100,7 +100,7 @@
     <!-- no translation found for wifi_tether_security:1 (1428294025896439258) -->
   <string-array name="eap_ocsp_type">
     <item msgid="7202884222741437608">"Tasdiqlanmasin"</item>
-    <item msgid="5703177653586269306">"Sertifikat holatini talab qilish"</item>
+    <item msgid="5703177653586269306">"Sertifikat holatini soʻrash"</item>
     <item msgid="326388247868439528">"Sertifikat holatini talab qilish"</item>
     <item msgid="1090956283885790552">"Barcha ishonchsiz sertifikat holatlarini talab qilish"</item>
   </string-array>
@@ -438,7 +438,7 @@
   </string-array>
   <string-array name="security_settings_premium_sms_values">
     <item msgid="3985605994234635072">"So‘rash"</item>
-    <item msgid="2358187544264718285">"Hech qachon ruxsat berilmasin"</item>
+    <item msgid="2358187544264718285">"Ruxsat berilmasin"</item>
     <item msgid="7043782324123900484">"Har doim ruxsat berilsin"</item>
   </string-array>
   <string-array name="ram_states">
