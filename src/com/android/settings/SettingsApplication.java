@@ -37,6 +37,7 @@ import com.android.settingslib.spa.framework.common.SpaEnvironmentFactory;
 
 import com.google.android.setupcompat.util.WizardManagerHelper;
 import com.android.settings.anc.lifecycle.LifecycleCallback;
+import com.android.internal.app.LocalePicker;
 
 import android.content.IntentFilter;
 import android.content.BroadcastReceiver;
@@ -46,10 +47,12 @@ import android.util.Log;
 import android.content.Context;
 import android.os.SystemClock;
 import android.os.SystemProperties;
+import android.os.UserHandle;
 
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.Locale;
 
 
 import java.lang.ref.WeakReference;
@@ -65,6 +68,7 @@ public class SettingsApplication extends Application {
     public static final String IS_REMOVE_BATTERY_HEALTH = "IsRemoveBatteryHealth";
     private static final String FIRST_BOOT_TIME = "persist.sys.first_boot_time";
     private boolean isDebug = false;
+    public static boolean isLaunguageChanged = false;
 
     private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
@@ -99,6 +103,9 @@ public class SettingsApplication extends Application {
 
         registerReceiver(mBroadcastReceiver,
                 new IntentFilter(TelephonyManager.ACTION_MULTI_SIM_CONFIG_CHANGED));
+        registerReceiver(new LocaleChangeReceiver(),
+                new IntentFilter(Intent.ACTION_LOCALE_CHANGED));
+        registerUserSetupCompleteListener();
         registerActivityLifecycleCallbacks(new LifecycleCallback());
         if (mBatteryBroadcastReceiver == null) {
             mBatteryBroadcastReceiver = new BatteryBroadcastReceiver();
@@ -107,6 +114,33 @@ public class SettingsApplication extends Application {
             registerReceiver(mBatteryBroadcastReceiver, intentFilter);
         }
     }
+
+    private void registerUserSetupCompleteListener() {
+        Uri userSetupCompleteUri = Settings.Secure.getUriFor(
+                Settings.Secure.USER_SETUP_COMPLETE);
+        getContentResolver().registerContentObserver(userSetupCompleteUri,
+                false, new ContentObserver(null) {
+                    @Override
+                    public void onChange(boolean selfChange, Uri uri) {
+                        if (userSetupCompleteUri.equals(uri)) {
+                            boolean isUserSetupCompleted = Settings.Secure.getInt(getContentResolver(), Settings.Secure.USER_SETUP_COMPLETE, 0) != 0;
+                            if (isUserSetupCompleted) {
+                                if (!isLaunguageChanged) {
+                                    Locale oldLocale = Locale.getDefault();
+                                    Locale newLocal = new Locale("en_US");
+                                    if (oldLocale.toString().startsWith("en")) {
+                                        newLocal = new Locale("zh_CN_#Hans");
+                                    }
+                                    LocalePicker.updateLocale(newLocal);
+                                    LocalePicker.updateLocale(oldLocale);
+                                    isLaunguageChanged = true;
+                                }
+                            }
+                        }
+                    }
+                }, UserHandle.USER_ALL);
+    }
+
 
     /**
      * Set the spa environment instance.
