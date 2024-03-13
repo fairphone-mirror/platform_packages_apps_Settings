@@ -172,6 +172,8 @@ public class SettingsActivity extends SettingsBaseActivity
 
     private static final String EXTRA_UI_OPTIONS = "settings:ui_options";
 
+    private static final String WALLPAPER_ACTIVITY = "com.android.settings.wallpaper.WallpaperSuggestionActivity";
+
     private String mFragmentClass;
     private String mHighlightMenuKey;
 
@@ -764,6 +766,13 @@ public class SettingsActivity extends SettingsBaseActivity
              startActivity(newIntent);
              finish();
              return;
+        }
+        if (fragmentName.equals(WALLPAPER_ACTIVITY)) {
+            final Intent wallpaperIntent = new Intent();
+            wallpaperIntent.setClassName(this,WALLPAPER_ACTIVITY);
+            startActivity(wallpaperIntent);
+            finish();
+            return;
         }
 
         Log.d(LOG_TAG, "Switching to fragment " + fragmentName);
