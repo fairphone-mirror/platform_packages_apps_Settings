@@ -5066,6 +5066,13 @@
         </receiver>
         <!--[FEATURE]-Add-End by shaopan.tang -->
 
+        <receiver android:name=".LocaleChangeReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+
         <activity android:name="com.android.settings.ModuleDeviceInfo"
             android:exported="true"
             android:label="@string/hidden_activity_module_info"

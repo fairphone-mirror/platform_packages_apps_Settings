@@ -19,7 +19,6 @@ package com.android.settings.sim.receivers;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.util.Log;
 
@@ -32,20 +31,19 @@ import java.util.Locale;
 /** This class manage all SIM operations after device boot up. */
 public class SimCompleteBootReceiver extends BroadcastReceiver {
     private static final String TAG = "SimCompleteBootReceiver";
-    private static boolean isLaunguageChanged = false;
+    public static boolean isLaunguageChanged = false;
 
     @Override
     public void onReceive(Context context, Intent intent) {
         if (!isLaunguageChanged) {
-            Configuration configuration = context.getResources().getConfiguration();
             Locale oldLocale = Locale.getDefault();
             Locale newLocal = new Locale("en_US");
-            if ("en_US".equals(oldLocale)) {
-                newLocal = new Locale("zh_CN");
+            if (oldLocale.toString().startsWith("en")) {
+                newLocal = new Locale("zh_CN_#Hans");
             }
             LocalePicker.updateLocale(newLocal);
-            isLaunguageChanged = true;
             LocalePicker.updateLocale(oldLocale);
+            isLaunguageChanged = true;
         }
         if (!Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
             Log.e(TAG, "Invalid broadcast received.");
