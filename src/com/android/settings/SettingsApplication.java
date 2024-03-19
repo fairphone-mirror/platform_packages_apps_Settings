@@ -49,6 +49,7 @@ public class SettingsApplication extends Application {
     private static final String BATTERY_SOH = "BatterySoh";
     public static final String IS_REMOVE_BATTERY_HEALTH = "IsRemoveBatteryHealth";
     private static final String FIRST_BOOT_TIME = "persist.sys.first_boot_time";
+    private static final String IS_BATTERY_HEALTH_HIDE = "persist.sys.is_battery_health_hide";
     private boolean isDebug = false;
 
     @Override
@@ -88,6 +89,13 @@ public class SettingsApplication extends Application {
             String action = intent.getAction();
             String batteryChangeAction = "android.intent.action.BATTERY_CHANGED";
             SharedPreferences sharedPreferences= getSharedPreferences("BatteryData", Context.MODE_PRIVATE);
+
+            boolean isRecoveBatteryHealth = sharedPreferences.getBoolean(IS_REMOVE_BATTERY_HEALTH,false);
+            if (isRecoveBatteryHealth) {
+                SystemProperties.set(IS_BATTERY_HEALTH_HIDE,"1");
+            } else {
+                SystemProperties.set(IS_BATTERY_HEALTH_HIDE,"0");
+            }
 
             if (batteryChangeAction.equals(action)) {
                 String soh = readBatHealth("/sys/class/qcom-battery/soh");
