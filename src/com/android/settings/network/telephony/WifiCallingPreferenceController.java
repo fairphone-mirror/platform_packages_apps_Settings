@@ -51,6 +51,8 @@ import com.android.ims.ImsConfig;
 
 import java.util.List;
 
+import com.android.settings.utils.CarrierParamsUtil;
+
 /**
  * Preference controller for "Wifi Calling"
  */
@@ -136,9 +138,7 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
     }
 
     private boolean isWfcEnabledByCarrierConfig(int mSubId){
-        Log.d(TAG, "update wfc");
-        String title = SubscriptionManager.getResourcesForSubId(mContext, mSubId)
-                .getString(R.string.wifi_calling_settings_title);
+        Log.d(TAG, "isWfcEnabledByCarrierConfig");
         if (mCarrierConfigManager != null) {
             PersistableBundle b = mCarrierConfigManager.getConfigForSubId(mSubId);
             if (b != null) {
@@ -163,12 +163,22 @@ public class WifiCallingPreferenceController extends TelephonyBasePreferenceCont
         Log.d(TAG, "update WFC");
         String title = SubscriptionManager.getResourcesForSubId(mContext, mSubId)
                 .getString(R.string.wifi_calling_settings_title);
+        //Modify begin by renjie.zhang FP5U-304 2024/2/23
+        PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(mContext).getCarrierParams(mSubId);
+        if (carrierParams != null) {
+            String carrierParamsTitle = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
+            if (!"".equals(carrierParamsTitle)) {
+                Log.d(TAG, "get title from carrierParams");
+                title = carrierParamsTitle;
+            }
+        }
+        //Modify end by renjie.zhang FP5U-304 2024/2/23
         if (mCarrierConfigManager != null) {
             PersistableBundle b = mCarrierConfigManager.getConfigForSubId(mSubId);
             if (b != null) {
-                String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
-                if (!"".equals(carrierconfig_title)){
-                    title = carrierconfig_title;
+                String wifiCallingTitle = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
+                if (!"".equals(wifiCallingTitle)) {
+                    title = wifiCallingTitle;
                 }
             }
         }

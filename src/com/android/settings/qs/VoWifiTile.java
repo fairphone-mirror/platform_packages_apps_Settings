@@ -20,6 +20,8 @@ import android.util.Log;
 import com.android.settings.R;
 import com.android.settings.network.ims.WifiCallingQueryImsState;
 
+import com.android.settings.utils.CarrierParamsUtil;
+
 import java.util.List;
 
 public class VoWifiTile extends TileService {
@@ -137,10 +139,16 @@ public class VoWifiTile extends TileService {
                 boolean isWFCEnabled = b.getBoolean(CarrierConfigManager.KEY_WFC_TOGGLE_SHOW_BOOL
                         , false);
                 title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE,"");
-                if ("".equals(title)){
-                    title = SubscriptionManager.getResourcesForSubId(getApplicationContext(), mSubId)
-                            .getString(R.string.wifi_calling_settings_title);
+
+                //Modify begin by renjie.zhang FP5U-304 2024/2/23
+                if ("".equals(title)) {
+                    PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(getApplicationContext()).getCarrierParams(mSubId);
+                    if (carrierParams != null) {
+                        title = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE,"");
+                    }
                 }
+                //Modify end by renjie.zhang FP5U-304 2024/2/23
+
                 Log.d(TAG, "wfc toggle show: " + isWFCEnabled);
                 return isWFCEnabled;
             }

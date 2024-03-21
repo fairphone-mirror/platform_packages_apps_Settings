@@ -58,6 +58,8 @@ import android.view.MenuItem;
 import com.android.settings.core.SubSettingLauncher;
 import android.app.settings.SettingsEnums;
 
+import com.android.settings.utils.CarrierParamsUtil;
+
 /**
  * "Wi-Fi Calling settings" screen. This is the container fragment which holds
  * {@link WifiCallingSettingsForSub} fragments.
@@ -295,15 +297,23 @@ public class WifiCallingSettings extends SettingsPreferenceFragment
             String title = SubscriptionManager.getResourcesForSubId(getContext(), subId)
                     .getString(R.string.wifi_calling_settings_title);
 
+            //Modify begin by renjie.zhang FP5U-304 2024/2/23
+            PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(getContext()).getCarrierParams(subId);
+            if (carrierParams != null) {
+                String carrierParamsTitle = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
+                if (!"".equals(carrierParamsTitle)) {
+                    Log.d(TAG, "get title from carrierParams");
+                    title = carrierParamsTitle;
+                }
+            }
+            //Modify end by renjie.zhang FP5U-304 2024/2/23
+
             // add by T2M.dengxiangyu for FP4-61 2021-04-14 begin
             if (configManager != null) {
                 Log.d(TAG, "get title from carrierconfig");
                 PersistableBundle b = configManager.getConfigForSubId(subId);
                 if (b != null) {
-                    String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE);
-                    if (!"".equals(carrierconfig_title)){
-                        title = carrierconfig_title;
-                    }
+                    title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
                     Log.d(TAG, "title: " + title);
                 }
             }

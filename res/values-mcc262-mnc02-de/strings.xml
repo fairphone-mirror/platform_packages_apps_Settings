@@ -20,5 +20,4 @@
     <string name="wifi_calling_off_explanation_2" msgid="5645212744935818562">\n\n"Du kannst von deinem Gerät via \"WiFi Calling\" keine Notrufe tätigen. Wenn du versuchst, den Notruf zu erreichen, nutzt dein Gerät automatisch das Mobilfunknetz. Notrufe sind nur an Orten mit Mobilfunkabdeckung möglich."</string>
     <string name="wifi_calling_turn_on" msgid="7687886259199428823">"WiFi Calling verwenden"</string>
     <string name="wifi_calling_main_switch_title" msgid="4070224008346815634">"WiFi Calling verwenden"</string>
-    <string name="wifi_calling_settings_title">"WIFI-Anrufe"</string>
 </resources>
