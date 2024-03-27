@@ -123,7 +123,7 @@ public class WifiCallingSettings extends SettingsPreferenceFragment
         if (configManager != null) {
             PersistableBundle b = configManager.getConfigForSubId(subId);
             if (b != null) {
-                if (b.getBoolean("orange_new_feature_enabled",false)){
+                if (b.getBoolean("orange_settings_feature_enabled", false)){
                     orange_feature = true;
                 }
             }
