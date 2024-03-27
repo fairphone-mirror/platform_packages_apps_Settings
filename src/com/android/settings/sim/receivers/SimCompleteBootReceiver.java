@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.util.Log;
+import android.os.LocaleList;
 
 import com.android.internal.app.LocalePicker;
 import com.android.settings.sim.SimActivationNotifier;
@@ -37,12 +38,14 @@ public class SimCompleteBootReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         if (!isLaunguageChanged) {
             Locale oldLocale = Locale.getDefault();
+            LocaleList locales = context.getResources().getConfiguration().getLocales();
             Locale newLocal = new Locale("en_US");
             if (oldLocale.toString().startsWith("en")) {
                 newLocal = new Locale("zh_CN_#Hans");
             }
             LocalePicker.updateLocale(newLocal);
-            LocalePicker.updateLocale(oldLocale);
+            //LocalePicker.updateLocale(oldLocale);
+            LocalePicker.updateLocales(locales);
             isLaunguageChanged = true;
         }
         if (!Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
