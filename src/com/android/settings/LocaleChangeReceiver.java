@@ -9,6 +9,7 @@ import android.provider.Settings.Secure;
 import android.database.ContentObserver;
 import android.provider.Settings;
 import android.util.Log;
+import android.os.LocaleList;
 
 import com.android.internal.app.LocalePicker;
 import com.android.settings.sim.receivers.SimCompleteBootReceiver;
@@ -95,12 +96,14 @@ public class LocaleChangeReceiver extends BroadcastReceiver {
                             }
                             Locale oldLocale = Locale.getDefault();
                             Locale newLocal = new Locale("en_US");
+                            LocaleList locales = context.getResources().getConfiguration().getLocales();
                             if ("en_US".equals(oldLocale.toString())) {
                                 newLocal = new Locale("zh_CN_#Hans");
                             }
                             SystemProperties.set(IS_LANGUAGE_CHANGED,"1");
                             LocalePicker.updateLocale(newLocal);
-                            LocalePicker.updateLocale(oldLocale);
+                            //LocalePicker.updateLocale(oldLocale);
+                            LocalePicker.updateLocales(locales);
                         }
                     }
                 }

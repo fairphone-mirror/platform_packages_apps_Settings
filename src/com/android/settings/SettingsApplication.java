@@ -26,6 +26,7 @@ import android.net.Uri;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.FeatureFlagUtils;
+import android.os.LocaleList;
 
 import com.android.settings.activityembedding.ActivityEmbeddingRulesController;
 import com.android.settings.activityembedding.ActivityEmbeddingUtils;
@@ -128,11 +129,13 @@ public class SettingsApplication extends Application {
                                 if (!isLaunguageChanged) {
                                     Locale oldLocale = Locale.getDefault();
                                     Locale newLocal = new Locale("en_US");
+                                    LocaleList locales = getResources().getConfiguration().getLocales();
                                     if (oldLocale.toString().startsWith("en")) {
                                         newLocal = new Locale("zh_CN_#Hans");
                                     }
                                     LocalePicker.updateLocale(newLocal);
-                                    LocalePicker.updateLocale(oldLocale);
+                                    //LocalePicker.updateLocale(oldLocale);
+                                    LocalePicker.updateLocales(locales);
                                     isLaunguageChanged = true;
                                 }
                             }
