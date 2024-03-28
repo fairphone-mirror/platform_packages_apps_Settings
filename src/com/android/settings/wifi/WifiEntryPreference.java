@@ -33,6 +33,8 @@ import androidx.annotation.VisibleForTesting;
 import androidx.preference.PreferenceViewHolder;
 
 import com.android.settingslib.R;
+//[BUG]-Add by zxue 2024-03-28 [FP5U-360][Google GMS][CTSV 14.0R3][Device owner tests] Disallow adding WiFi config failed
+import android.os.UserManager;
 import com.android.settingslib.RestrictedPreference;
 import com.android.settingslib.Utils;
 import com.android.settingslib.wifi.WifiUtils;
@@ -74,6 +76,9 @@ public class WifiEntryPreference extends RestrictedPreference implements
 
     public WifiEntryPreference(@NonNull Context context, @NonNull WifiEntry wifiEntry) {
         this(context, wifiEntry, new WifiUtils.InternetIconInjector(context));
+		
+		//[BUG]-Add by zxue 2024-03-28 [FP5U-360][Google GMS][CTSV 14.0R3][Device owner tests] Disallow adding WiFi config failed
+		checkRestrictionAndSetDisabled(UserManager.DISALLOW_ADD_WIFI_CONFIG);
     }
 
     @VisibleForTesting
