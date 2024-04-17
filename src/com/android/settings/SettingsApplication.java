@@ -45,10 +45,14 @@ import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
-import android.content.Context;
 import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.os.UserHandle;
+import android.os.ParcelFileDescriptor;
+import android.app.WallpaperManager;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 
 import java.io.IOException;
 import java.io.BufferedReader;
@@ -114,6 +118,37 @@ public class SettingsApplication extends Application {
             IntentFilter intentFilter = new IntentFilter();
             intentFilter.addAction("android.intent.action.BATTERY_CHANGED");
             registerReceiver(mBatteryBroadcastReceiver, intentFilter);
+        }
+
+        ParcelFileDescriptor mParcelFileDescriptor = WallpaperManager.getInstance(getBaseContext()).getWallpaperFile(WallpaperManager.FLAG_LOCK);
+        if (mParcelFileDescriptor == null) {
+            setDefaultOnLock(getBaseContext());
+        }
+    }
+
+    /**
+     * Set default Lock wallpaper
+     */
+    private void setDefaultOnLock(Context mContext) {
+        try {
+            WallpaperManager mWallpaperManager = WallpaperManager.getInstance(mContext);
+            BitmapDrawable finalBitmapDrawable = null;
+            BitmapDrawable lockDrawableFromCustomization = (BitmapDrawable) mWallpaperManager.getDrawable();
+            BitmapDrawable lockDrawableFromGoogle = (BitmapDrawable) mWallpaperManager.getBuiltInDrawable();
+            if (lockDrawableFromCustomization == null) {
+                if (lockDrawableFromGoogle != null) {
+                    finalBitmapDrawable = lockDrawableFromGoogle;
+                } else {
+                    Log.e(TAG, "No default vendor-customized wallpapers and no Google wallpapers");
+                    return;
+                }
+            } else {
+                finalBitmapDrawable = lockDrawableFromCustomization;
+            }
+            Bitmap lockBitmap = finalBitmapDrawable.getBitmap();
+            mWallpaperManager.setBitmap(lockBitmap,null,true,WallpaperManager.FLAG_LOCK);
+        } catch (IOException e) {
+            Log.w(TAG, "Setting wallpaper to default threw exception", e);
         }
     }
 
