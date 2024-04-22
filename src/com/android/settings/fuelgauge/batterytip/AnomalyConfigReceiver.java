@@ -65,9 +65,9 @@ public class AnomalyConfigReceiver extends BroadcastReceiver {
                         Settings.System.MIN_REFRESH_RATE, 90f,cr.getUserId());
                 }
 
-                int screen_time = Settings.System.getInt(cr, SCREEN_OFF_TIMEOUT, 60*1000);
+                int screen_time = Settings.System.getInt(cr, SCREEN_OFF_TIMEOUT, 30*1000);
                 if(Settings.Secure.getInt(cr, Settings.Secure.USER_SETUP_COMPLETE, 0) != 0 && screen_time == 121000){
-                    Settings.System.putInt(cr, SCREEN_OFF_TIMEOUT, 60*1000); 
+                    Settings.System.putInt(cr, SCREEN_OFF_TIMEOUT, 30*1000); 
                 }
             }
             if("0".equals(SystemProperties.get(T2M_PROP_SET_FILESDEFAULT,"0"))){
