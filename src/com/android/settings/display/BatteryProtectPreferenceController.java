@@ -65,7 +65,6 @@ public class BatteryProtectPreferenceController extends BasePreferenceController
             writeBatEn("6000000");
         }
         SystemProperties.set(BATTERY_PROTECT_ENABLE,protectBattery? "1":"0");
-        SystemProperties.set("persist.sys.battery.icon.enable",protectBattery? "1":"0");
         updateBattery();
         return true;
     }
