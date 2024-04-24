@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Icon;
+import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
@@ -18,18 +19,20 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.settings.R;
+import com.android.settings.SettingsActivity;
+import com.android.settings.SubSettings;
 import com.android.settings.network.ims.WifiCallingQueryImsState;
-
+import com.android.settings.wifi.calling.WifiCallingSettings;
 import com.android.settings.utils.CarrierParamsUtil;
 
 import java.util.List;
 
 public class VoWifiTile extends TileService {
-
     private static final String TAG = "VoWifiTile";
     private static final String LEGACY_ACTION_CONFIGURE_PHONE_ACCOUNT =
             "android.telecom.action.CONNECTION_SERVICE_CONFIGURE";
     private int mSubId = SubscriptionManager.INVALID_SUBSCRIPTION_ID;
+
     private ImsMmTelManager mImsMmTelManager;
     private CarrierConfigManager mCarrierConfigManager;
     private String title = "";
@@ -56,13 +59,13 @@ public class VoWifiTile extends TileService {
         if (state == Tile.STATE_ACTIVE) {
             icon = Icon.createWithResource(getApplicationContext(), R.drawable.ic_vowifi_calling_disable);
             getQsTile().setState(Tile.STATE_INACTIVE);// 更改成非活跃状态
-            updateWfcMode(false);
+            //updateWfcMode(false);
             getQsTile().setIcon(icon);//设置图标
             getQsTile().updateTile();//更新Tile
         } else if (state == Tile.STATE_INACTIVE) {
             icon = Icon.createWithResource(getApplicationContext(), R.drawable.ic_vowifi_calling);
             getQsTile().setState(Tile.STATE_ACTIVE);//更改成活跃状态
-            updateWfcMode(true);
+            //updateWfcMode(true);
             getQsTile().setIcon(icon);//设置图标
             getQsTile().updateTile();//更新Tile
         }
@@ -70,6 +73,19 @@ public class VoWifiTile extends TileService {
         if (!"".equals(title)) {
             getQsTile().setLabel(title);
         }
+
+        //[BUG]-Modify-Begin by shaopan.tang 2024-04-18 FP5U-495 Location warning not present if VoWiFi activated from shortcut
+        // Launch disclaimer fragment before turning on WFC
+        Log.d(TAG, "onClick, start WifiCallingSettings ");
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.setClass(getApplicationContext(), SubSettings.class);
+        intent.putExtra(SettingsActivity.EXTRA_SHOW_FRAGMENT, WifiCallingSettings.class.getName());
+        final Bundle args = new Bundle();
+        args.putInt(Settings.EXTRA_SUB_ID, mSubId);
+        intent.putExtras(args);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivityAndCollapse(intent);
+        //[BUG]-Modify-End by shaopan.tang
     }
 
     @Override
@@ -78,7 +94,6 @@ public class VoWifiTile extends TileService {
         Log.d(TAG, "onStartListening");
         updateIcon();
     }
-
 
     private ImsMmTelManager getImsMmTelManager() {
         SubscriptionManager subscriptionManager = (SubscriptionManager) getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE);
