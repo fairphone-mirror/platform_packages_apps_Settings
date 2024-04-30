@@ -1,5 +1,6 @@
 package com.android.settings.qs;
 
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -84,7 +85,7 @@ public class VoWifiTile extends TileService {
         args.putInt(Settings.EXTRA_SUB_ID, mSubId);
         intent.putExtras(args);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivityAndCollapse(intent);
+        startActivityAndCollapse(PendingIntent.getActivity(getApplicationContext(), 0, intent, PendingIntent.FLAG_IMMUTABLE));
         //[BUG]-Modify-End by shaopan.tang
     }
 
