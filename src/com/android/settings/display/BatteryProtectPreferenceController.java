@@ -16,9 +16,6 @@ import com.android.settings.core.BasePreferenceController;
 import com.android.settings.core.PreferenceControllerMixin;
 import com.android.settings.overlay.FeatureFactory;
 
-import java.io.IOException;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import android.os.SystemProperties;
 import android.util.Log;
 import android.os.UserHandle;
@@ -53,17 +50,13 @@ public class BatteryProtectPreferenceController extends BasePreferenceController
     @Override
     public void updateState(Preference preference) {
         boolean isProtected = false;
-        String ss = SystemProperties.get(BATTERY_PROTECT_ENABLE);
-        ((SwitchPreference) preference).setChecked((ss != null && "1".equals(ss))? true : false);
+        String bat_pro_en = SystemProperties.get(BATTERY_PROTECT_ENABLE);
+        ((SwitchPreference) preference).setChecked((bat_pro_en != null && "1".equals(bat_pro_en))? true : false);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         boolean protectBattery = (Boolean) newValue;
-        if (!protectBattery) {
-            //charge enable
-            writeBatEn("6000000");
-        }
         SystemProperties.set(BATTERY_PROTECT_ENABLE,protectBattery? "1":"0");
         updateBattery();
         return true;
@@ -73,28 +66,6 @@ public class BatteryProtectPreferenceController extends BasePreferenceController
         Settings.Global.putStringForUser(mContext.getContentResolver(),
                 Settings.Global.UPDATE_BATTERY_CHARGING_MODE, System.currentTimeMillis() + "",
                 UserHandle.myUserId());
-    }
-
-    private void writeBatEn(String value) {
-        BufferedWriter bw = null;
-        FileWriter fw = null;
-        try {
-            fw = new FileWriter("/sys/class/power_supply/battery/user_fcc");
-            bw = new BufferedWriter(fw, 256);
-            bw.write(value);
-            bw.flush();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }finally {
-            try{
-                if (bw != null)
-                    bw.close();
-                if (fw != null)
-                    fw.close();
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
     }
 
 }
