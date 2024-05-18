@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Icon;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -19,6 +20,7 @@ import android.telephony.ims.ImsMmTelManager;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.android.internal.annotations.VisibleForTesting;
 import com.android.settings.R;
 import com.android.settings.SettingsActivity;
 import com.android.settings.SubSettings;
@@ -32,6 +34,14 @@ public class VoWifiTile extends TileService {
     private static final String TAG = "VoWifiTile";
     private static final String LEGACY_ACTION_CONFIGURE_PHONE_ACCOUNT =
             "android.telecom.action.CONNECTION_SERVICE_CONFIGURE";
+
+    //[BUG]-Modify-Begin by shaopan.tang 2024-04-18 FP5U-495 Location warning not present if VoWiFi activated from shortcut
+    private static final String SHARED_PREFERENCES_NAME = "wfc_disclaimer_prefs";
+    @VisibleForTesting
+    static final String KEY_HAS_AGREED_LOCATION_DISCLAIMER
+            = "key_has_agreed_location_disclaimer";
+    //[BUG]-Modify-End by shaopan.tang
+
     private int mSubId = SubscriptionManager.INVALID_SUBSCRIPTION_ID;
 
     private ImsMmTelManager mImsMmTelManager;
@@ -77,15 +87,23 @@ public class VoWifiTile extends TileService {
 
         //[BUG]-Modify-Begin by shaopan.tang 2024-04-18 FP5U-495 Location warning not present if VoWiFi activated from shortcut
         // Launch disclaimer fragment before turning on WFC
-        Log.d(TAG, "onClick, start WifiCallingSettings ");
-        Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.setClass(getApplicationContext(), SubSettings.class);
-        intent.putExtra(SettingsActivity.EXTRA_SHOW_FRAGMENT, WifiCallingSettings.class.getName());
-        final Bundle args = new Bundle();
-        args.putInt(Settings.EXTRA_SUB_ID, mSubId);
-        intent.putExtras(args);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivityAndCollapse(PendingIntent.getActivity(getApplicationContext(), 0, intent, PendingIntent.FLAG_IMMUTABLE));
+       if (showWFCLocationPrivacyPolicyByCarrierConfig(mSubId) && !getBooleanSharedPrefs(KEY_HAS_AGREED_LOCATION_DISCLAIMER, false)){
+            Log.d(TAG, "onClick, start WifiCallingSettings ");
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.setClass(getApplicationContext(), SubSettings.class);
+            intent.putExtra(SettingsActivity.EXTRA_SHOW_FRAGMENT, WifiCallingSettings.class.getName());
+            final Bundle args = new Bundle();
+            args.putInt(Settings.EXTRA_SUB_ID, mSubId);
+            intent.putExtras(args);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivityAndCollapse(PendingIntent.getActivity(getApplicationContext(), 0, intent, PendingIntent.FLAG_IMMUTABLE));
+        } else {
+            if (state == Tile.STATE_ACTIVE) {
+                updateWfcMode(false);
+            } else if (state == Tile.STATE_INACTIVE) {
+                updateWfcMode(true);
+            }
+        }
         //[BUG]-Modify-End by shaopan.tang
     }
 
@@ -236,4 +254,34 @@ public class VoWifiTile extends TileService {
         getQsTile().setIcon(icon);//设置图标
         getQsTile().updateTile();//更新Tile
     }
+
+    //[BUG]-Modify-Begin by shaopan.tang 2024-04-18 FP5U-495 Location warning not present if VoWiFi activated from shortcut
+    private boolean showWFCLocationPrivacyPolicyByCarrierConfig(int mSubId){
+        Log.d(TAG, "showWFCLocationPrivacyPolicyByCarrierConfig");
+        if (mCarrierConfigManager != null) {
+            PersistableBundle b = mCarrierConfigManager.getConfigForSubId(mSubId);
+            if (b != null) {
+                boolean showWFCLocationPrivacyPolicy = b.getBoolean(CarrierConfigManager.KEY_SHOW_WFC_LOCATION_PRIVACY_POLICY_BOOL);
+                boolean isWFCEnabledbyDefault = b.getBoolean(CarrierConfigManager.KEY_CARRIER_DEFAULT_WFC_IMS_ENABLED_BOOL);
+                Log.d(TAG, "showWFCLocationPrivacyPolicy: " + showWFCLocationPrivacyPolicy + " !isWFCEnabledbyDefault " + !isWFCEnabledbyDefault);
+                return showWFCLocationPrivacyPolicy && !isWFCEnabledbyDefault;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Gets the boolean value from shared preferences.
+     *
+     * @param key The key for the preference item.
+     * @param defValue Value to return if this preference does not exist.
+     * @return The boolean value of corresponding key, or defValue.
+     */
+    private boolean getBooleanSharedPrefs(String key, boolean defValue) {
+        SharedPreferences prefs = getSharedPreferences(SHARED_PREFERENCES_NAME,
+                Context.MODE_PRIVATE);
+        Log.d(TAG, "getBooleanSharedPrefs: " + prefs.getBoolean(key + mSubId, defValue));
+        return prefs.getBoolean(key + mSubId, defValue);
+    }
+    //[BUG]-Modify-End by shaopan.tang
 }
