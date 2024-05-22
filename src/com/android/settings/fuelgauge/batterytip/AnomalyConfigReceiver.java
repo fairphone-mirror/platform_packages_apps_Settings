@@ -38,6 +38,10 @@ import static android.provider.Settings.System.SCREEN_OFF_TIMEOUT;
 public class AnomalyConfigReceiver extends BroadcastReceiver {
     private static final String TAG = "AnomalyConfigReceiver";
     private static final String T2M_PROP_SET_FILESDEFAULT = "persist.sys.setfilesdefault";
+
+    private final int ON = 1;
+    private final int OFF = 0;
+
     @Override
     public void onReceive(Context context, Intent intent) {
         if (StatsManager.ACTION_STATSD_STARTED.equals(intent.getAction())
@@ -69,6 +73,12 @@ public class AnomalyConfigReceiver extends BroadcastReceiver {
                 if(Settings.Secure.getInt(cr, Settings.Secure.USER_SETUP_COMPLETE, 0) != 0 && screen_time == 121000){
                     Settings.System.putInt(cr, SCREEN_OFF_TIMEOUT, 30*1000); 
                 }
+
+                if(Settings.Secure.getInt(cr, Settings.Secure.DOZE_ALWAYS_ON, -1) == ON){
+                    Settings.Secure.putInt(cr, Settings.Secure.DOZE_ALWAYS_ON, OFF);
+                }
+
+
             }
             if("0".equals(SystemProperties.get(T2M_PROP_SET_FILESDEFAULT,"0"))){
                 final PackageManager pm = context.getPackageManager();
