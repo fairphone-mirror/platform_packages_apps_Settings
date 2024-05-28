@@ -4808,4 +4808,6 @@
     <string name="fingerprint_settings_open_description">"Tænd, hvis du foretrækker at låse op uden at vågne telefonen først."</string>
     <string name="fingerprint_settings_open_title">Fingerprint Lås op adfærd</string>
     <string name="pocket_mode">Lommetilstand</string>
+    <string name="swap_back_recents_title">"Skift tilbage/seneste navigation"</string>
+    <string name="swap_back_recents_summary">"Skift tilbage og seneste-knappen i navigationslinjen"</string>
 </resources>

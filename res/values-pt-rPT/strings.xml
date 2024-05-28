@@ -4754,4 +4754,6 @@
     <string name="face_unlock_less_secure_than_strong_auth">Nota: o desbloqueio por rosto pode ser menos seguro do que um padrão forte ou PIN.</string>
     <string name="security_settings_faceunlock_cancel_setup">Ignorar</string>
     <string name="security_settings_faceunlock_next">Avançar</string>
+    <string name="swap_back_recents_title">"Troque a ordem de Anterior e Vista geral de apps"</string>
+    <string name="swap_back_recents_summary">"Troque a ordem dos botões Anterior e Vista geral de apps na barra de navegação"</string>
 </resources>

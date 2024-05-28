@@ -4748,4 +4748,6 @@
     <string name="warning_tips_rom4_third_part">" - Sus datos personales se almacenarán y procesarán sólo en el dispositivo."</string>
     <string name="warning_tips_rom4_third_part_title">Información sobre la privacidad</string>
     <string name="warning_title">Advertencia de riesgos</string>
+    <string name="swap_back_recents_title">"Cambia la navegación de volver/recientes"</string>
+    <string name="swap_back_recents_summary">"Cambia los botones de volver y recientes en la barra de navegación"</string>
 </resources>

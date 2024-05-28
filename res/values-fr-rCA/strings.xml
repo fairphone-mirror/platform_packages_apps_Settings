@@ -4721,4 +4721,6 @@
     <string name="contrast_high" msgid="3988567609694797696">"Élevé"</string>
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"Cette application ne peut être ouverte que dans une seule fenêtre."</string>
     <string name="data_preference">Préférence de données</string>
+    <string name="swap_back_recents_title">"Échanger la navigation arrière / récentes"</string>
+    <string name="swap_back_recents_summary">"Échangez les boutons arrière et récent dans la barre de navigation"</string>
 </resources>

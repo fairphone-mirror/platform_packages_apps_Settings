@@ -4749,4 +4749,6 @@
     <string name="warning_tips_rom4_third_part">" -Din personlige informasjon lagres og behandles bare på denne enheten."</string>
     <string name="warning_tips_rom4_third_part_title">Om personvern</string>
     <string name="warning_title">Risikoadvarsel</string>
+    <string name="swap_back_recents_title">"Bytt tilbake/nylig navigering"</string>
+    <string name="swap_back_recents_summary">"Bytt tilbake- og siste-knappen i navigasjonslinjen"</string>
 </resources>

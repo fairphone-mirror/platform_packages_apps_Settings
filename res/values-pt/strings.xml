@@ -4776,6 +4776,6 @@
     <string name="face_enable_condition_rom4">É necessário um padrão PIN ou uma palavra-passe se pretender tornar o desbloqueio facial novamente disponível.</string>
     <string name="face_unlock_recognition_ready_rom4">Para obter melhores resultados, sugerimos que o desbloqueio facial seja efetuado em espaços interiores e longe da luz solar direta.</string>
     <string name="pocket_mode">Modo de bolso</string>
-    <string name="swap_back_recents_title">Troque a ordem de Anterior e Vista geral de apps</string>
-    <string name="swap_back_recents_summary">Troque a ordem dos botÃµes Anterior e Vista geral de apps na barra de navegaÃ§Ã£o</string>
+    <string name="swap_back_recents_title">"Troque a ordem de Anterior e Vista geral de apps"</string>
+    <string name="swap_back_recents_summary">"Troque a ordem dos botões Anterior e Vista geral de apps na barra de navegação"</string>
 </resources>
