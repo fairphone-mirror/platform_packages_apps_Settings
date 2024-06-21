@@ -99,8 +99,7 @@ public class AmbientDisplayAlwaysOnPreferenceController extends TogglePreference
     }
 
     public static boolean isAvailable(AmbientDisplayConfiguration config) {
-        //return config.alwaysOnAvailableForUser(MY_USER);
-        return false;
+        return config.alwaysOnAvailableForUser(MY_USER);
     }
 
     private AmbientDisplayConfiguration getConfig() {
