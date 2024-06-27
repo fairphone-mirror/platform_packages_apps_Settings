@@ -4716,4 +4716,8 @@
     <string name="contrast_medium" msgid="384414510709285811">"Middel"</string>
     <string name="contrast_high" msgid="3988567609694797696">"Høj"</string>
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"Denne app kan kun åbnes i 1 vindue"</string>
+    <string name="qsb_search_bar_title">Søgelinje</string>
+    <string name="qsb_search_bar_title_description">Vis/Skjul søgelinje på startskærmen</string>
+    <string name="reboot_required_title">Genstart påkrævet</string>
+    <string name="reboot_required_message">Anvend og genstart for at anvende ændringer</string>
 </resources>

@@ -4718,4 +4718,9 @@
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"Deze app kan maar in 1 venster worden geopend"</string>
     <string name="swap_back_recents_title">Terug- en recent-knop omwissel</string>
     <string name="swap_back_recents_summary">Wissel de terug- en recent-knop om in de navigatiebalk</string>
+
+    <string name="qsb_search_bar_title">Zoekbalk</string>
+    <string name="qsb_search_bar_title_description">Zoekbalk startscherm weergeven/verbergen</string>
+    <string name="reboot_required_title">Opnieuw opstarten vereist</string>
+    <string name="reboot_required_message">Toepassen en herstarten om toe te passen</string>
 </resources>

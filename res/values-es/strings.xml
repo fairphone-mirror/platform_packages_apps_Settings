@@ -4718,4 +4718,9 @@
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"Esta aplicación solo puede abrirse en una ventana"</string>
     <string name="swap_back_recents_title">Cambia la navegación de volver/recientes</string>
     <string name="swap_back_recents_summary">Cambia los botones de volver y recientes en la barra de navegación</string>
+
+    <string name="qsb_search_bar_title">Barra de búsqueda</string>
+    <string name="qsb_search_bar_title_description">Mostrar/Ocultar la barra de búsqueda en la pantalla de inicio</string>
+    <string name="reboot_required_title">Reinicio necesario</string>
+    <string name="reboot_required_message">Aplicar y reiniciar para que los cambios tengan efecto</string>
 </resources>

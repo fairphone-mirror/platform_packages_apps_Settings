@@ -172,5 +172,12 @@
             android:key="vr_display_pref"
             android:title="@string/display_vr_pref_title"
             android:fragment="com.android.settings.display.VrDisplayPreferencePicker"/>
+
+        <SwitchPreference
+            android:key="qsb_search_bar"
+            android:title="@string/qsb_search_bar_title"
+            android:summary="@string/qsb_search_bar_title_description"
+            android:defaultValue="true"
+            settings:controller="com.android.settings.display.SearchModePreferenceController"/>
     </PreferenceCategory>
 </PreferenceScreen>
