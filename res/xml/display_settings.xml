@@ -204,5 +204,11 @@
         <SwitchPreference
             android:key="pocket_mode"
             android:title="@string/pocket_mode"/>
+
+        <SwitchPreference
+            android:key="qsb_search_bar"
+            android:title="@string/qsb_search_bar_title"
+            android:defaultValue="true"
+            settings:controller="com.android.settings.display.SearchModePreferenceController"/>
     </PreferenceCategory>
 </PreferenceScreen>

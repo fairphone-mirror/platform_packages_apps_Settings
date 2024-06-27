@@ -13846,4 +13846,7 @@
     <string name="fingerprint_settings_open_title">Fingerprint Unlock Behavior</string>
     <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
     <string name="fingerprint_settings_open_description">"Switch on if you prefer to unlock without waking up the phone first."</string>
+
+    <!--Add search bar toggle-->
+    <string name="qsb_search_bar_title">Search bar on homescreen</string>
 </resources>
