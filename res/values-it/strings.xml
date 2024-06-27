@@ -5966,4 +5966,9 @@
     <string name="data_preference">"Preferenze dati mobili"</string>
     <string name="swap_back_recents_title">Inverti l\'ordine dei pulsanti Indietro e Panoramica App</string>
     <string name="swap_back_recents_summary">Inverti l\'ordine dei pulsanti per tornare indietro e mostrare l\'elenco app recenti nella barra di navigazione inferiore</string>
+
+    <string name="qsb_search_bar_title">Barra di ricerca</string>
+    <string name="qsb_search_bar_title_description">Mostra/Nascondi la barra di ricerca della schermata iniziale</string>
+    <string name="reboot_required_title">Riavvio richiesto</string>
+    <string name="reboot_required_message">Applica e riavvia per applicare le modifiche</string>
     </resources>

@@ -5966,4 +5966,9 @@
     <string name="battery_info">Batterie Information</string>
     <string name="swap_back_recents_title">Échanger la navigation arrière / récentes</string>
     <string name="swap_back_recents_summary">Échangez les boutons arrière et récent dans la barre de navigation</string>
+
+    <string name="qsb_search_bar_title">Barre de recherche</string>
+    <string name="qsb_search_bar_title_description">Afficher/supprimer la barre de recherche sur l\'écran d\'accueil</string>
+    <string name="reboot_required_title">Redémarrer le téléphone (obligatoire)</string>
+    <string name="reboot_required_message">Enregistrer les préférences et redémarrer</string>
 </resources>

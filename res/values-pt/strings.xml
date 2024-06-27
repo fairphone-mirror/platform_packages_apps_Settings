@@ -5962,4 +5962,9 @@
     <string name="bt_le_audio_qr_code_is_not_valid_format" msgid="7821837654128137901">"O código QR não está em um formato válido"</string>
     <string name="swap_back_recents_title">Troque a ordem de Anterior e Vista geral de apps</string>
     <string name="swap_back_recents_summary">Troque a ordem dos botões Anterior e Vista geral de apps na barra de navegação</string>
+
+    <string name="qsb_search_bar_title">Barra de pesquisa</string>
+    <string name="qsb_search_bar_title_description">Mostrar/Ocultar a barra de pesquisa da tela inicial</string>
+    <string name="reboot_required_title">Reinicialização necessária</string>
+    <string name="reboot_required_message">Aplicar alterações e Reiniciar</string>
 </resources>
