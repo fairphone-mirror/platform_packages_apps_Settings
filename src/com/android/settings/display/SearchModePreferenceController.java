@@ -1,16 +1,21 @@
 package com.android.settings.display;
 
 import android.app.ActivityManager;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.PowerManager;
 import android.os.UserHandle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
+import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
 
 public class SearchModePreferenceController extends BasePreferenceController {
@@ -21,6 +26,9 @@ public class SearchModePreferenceController extends BasePreferenceController {
     private SharedPreferences sharedPreferences;
     private static final String PREF_NAME = "QsbPrefs";
     public static final int AVAILABLE = 1;
+
+    private SwitchPreference switchPreference;
+    private boolean previousState;
 
     public SearchModePreferenceController(Context context) {
         super(context, KEY_SEARCH_BAR);
@@ -42,23 +50,47 @@ public class SearchModePreferenceController extends BasePreferenceController {
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
         try {
-            SwitchPreference preference = screen.findPreference(KEY_SEARCH_BAR);
-            if (preference != null) {
+            switchPreference = screen.findPreference(KEY_SEARCH_BAR);
+            if (switchPreference != null) {
                 boolean isSearchModeEnabled = sharedPreferences.getBoolean(KEY_SEARCH_BAR, true);
-                preference.setChecked(isSearchModeEnabled);
-                preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+                switchPreference.setChecked(isSearchModeEnabled);
+                switchPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
                     @Override
                     public boolean onPreferenceChange(Preference preference, Object newValue) {
                         boolean isEnabled = (Boolean) newValue;
-                        sharedPreferences.edit().putBoolean(KEY_SEARCH_BAR, isEnabled).apply(); // Save the new value to SharedPreferences
-                        broadcastSwitchState(isEnabled);
-                        return true;
+                        previousState = switchPreference.isChecked(); // Save the previous state
+                        showRebootDialog(isEnabled);
+                        return false; // Do not change the state immediately
                     }
                 });
             }
         } catch (Exception e) {
             Log.e(TAG, "Error displaying preference", e);
         }
+    }
+
+    private void showRebootDialog(boolean isEnabled) {
+        new AlertDialog.Builder(mContext)
+            .setTitle(mContext.getString(R.string.reboot_required_title))
+            .setMessage(mContext.getString(R.string.reboot_required_message))
+            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    // Save the new value to SharedPreferences
+                    sharedPreferences.edit().putBoolean(KEY_SEARCH_BAR, isEnabled).apply();
+                    broadcastSwitchState(isEnabled);
+                    rebootDevice();
+                }
+            })
+            .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    // User cancelled the dialog
+                    dialog.dismiss();
+                    // Reset the toggle to its previous state
+                    switchPreference.setChecked(previousState);
+                }
+            })
+            .setIcon(android.R.drawable.ic_dialog_alert)
+            .show();
     }
 
     private void broadcastSwitchState(boolean isEnabled) {
@@ -69,6 +101,18 @@ public class SearchModePreferenceController extends BasePreferenceController {
             mContext.sendBroadcastAsUser(intent, new UserHandle(userId));
         } catch (Exception e) {
             Log.e(TAG, "Failed to broadcast switch state", e);
+        }
+    }
+
+    private void rebootDevice() {
+        try {
+            PowerManager pm = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+            if (pm != null) {
+                pm.reboot(null);
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to reboot the device", e);
+            Toast.makeText(mContext, "Failed to reboot the device", Toast.LENGTH_SHORT).show();
         }
     }
 }

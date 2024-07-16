@@ -13854,4 +13854,7 @@
     <string name="swap_back_recents_title">Swap Back/Recents Navigation</string>
     <!-- Summary text for swapping the back and recents buttons in the navigation bar. [CHAR LIMIT=NONE] -->
     <string name="swap_back_recents_summary">Swap the back and recents button in the navigation bar.</string>
+    <string name="reboot_required_title">Reboot Required</string>
+    <string name="reboot_required_message">Change the search bar visibility requires a reboot. Reboot now?</string>
+
 </resources>
