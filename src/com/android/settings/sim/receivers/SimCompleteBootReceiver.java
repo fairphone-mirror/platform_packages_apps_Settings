@@ -24,6 +24,12 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.util.Log;
 import android.os.LocaleList;
+import android.provider.Settings;
+import android.view.IWindowManager;
+import android.os.ServiceManager;
+import android.os.RemoteException;
+import android.content.SharedPreferences;
+import android.os.RemoteException;
 
 import com.android.internal.app.LocalePicker;
 import com.android.settings.sim.SimActivationNotifier;
@@ -35,6 +41,8 @@ import java.util.Locale;
 public class SimCompleteBootReceiver extends BroadcastReceiver {
     private static final String TAG = "SimCompleteBootReceiver";
     public static boolean isLaunguageChanged = false;
+    private static final String SETTING_ANIMAL = "settingAnimal";
+    private static final String IS_RESET_VALUE = "isResetValue";
     private static final String MY_FAIRPHONE_PERMISSION = "persist.sys.fairphone.permission";
 
     @Override
@@ -55,6 +63,24 @@ public class SimCompleteBootReceiver extends BroadcastReceiver {
             Log.e(TAG, "Invalid broadcast received.");
             return;
         }
+        SharedPreferences sharedPreferences = context.getSharedPreferences(SETTING_ANIMAL,Context.MODE_PRIVATE);
+        int mFotaRestValue = sharedPreferences.getInt(IS_RESET_VALUE,0);
+        if (mFotaRestValue == 0) {
+            int oldKey = Settings.Secure.getInt(context.getContentResolver(),"def_orientation_timing",2);
+            if (oldKey != 2) {
+                try{
+                    //reset the animation scale to 1f
+                    IWindowManager mWindowManager = IWindowManager.Stub.asInterface(ServiceManager.getService(Context.WINDOW_SERVICE));
+                    mWindowManager.setAnimationScale(1, 1f);
+                } catch (RemoteException e) {
+                    // intentional no-op
+                    e.printStackTrace();
+                }
+            }
+            Boolean isCommited = sharedPreferences.edit().putInt(IS_RESET_VALUE,1).commit();
+            Log.i(TAG, "Reset the animation scale to 1f.");
+        }
+
         if (SimActivationNotifier.getShowSimSettingsNotification(context)) {
             SimNotificationService.scheduleSimNotification(
                     context, SimActivationNotifier.NotificationType.NETWORK_CONFIG);

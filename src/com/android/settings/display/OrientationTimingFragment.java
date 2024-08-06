@@ -23,9 +23,6 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.content.res.Resources;
 import android.util.Log;
-import android.view.IWindowManager;
-import android.os.ServiceManager;
-import android.os.RemoteException;
 
 import com.android.settings.R;
 import com.android.settings.widget.RadioButtonPickerFragment;
@@ -37,7 +34,6 @@ import java.util.List;
 public class OrientationTimingFragment extends RadioButtonPickerFragment {
     private static final String TAG = "OrientationTimingFragment";
     private String[] mInitialEntries;
-    private static final int TRANSITION_ANIMATION_SCALE_SELECTOR = 1;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -63,7 +59,7 @@ public class OrientationTimingFragment extends RadioButtonPickerFragment {
 
     @Override
     protected String getDefaultKey() {
-        int current = Settings.Secure.getInt(getContext().getContentResolver(),"def_orientation_timing",0);
+        int current = Settings.Secure.getInt(getContext().getContentResolver(),"def_orientation_timing",2);
         setDefaultKey(""+current);
         return ""+current;
     }
@@ -73,28 +69,17 @@ public class OrientationTimingFragment extends RadioButtonPickerFragment {
         if (TextUtils.isEmpty(key)) {
             return false;
         }
-        try {
-            IWindowManager mWindowManager = IWindowManager.Stub.asInterface(ServiceManager.getService(Context.WINDOW_SERVICE));
-            switch (key) {
-                case "0":
-                    mWindowManager.setAnimationScale(TRANSITION_ANIMATION_SCALE_SELECTOR, 5f);
-                    return Settings.Secure.putInt(getContext().getContentResolver(),"def_orientation_timing",0);
-                case "1":
-                    mWindowManager.setAnimationScale(TRANSITION_ANIMATION_SCALE_SELECTOR, 2f);
-                    return Settings.Secure.putInt(getContext().getContentResolver(),"def_orientation_timing",1);
-                case "2":
-                    mWindowManager.setAnimationScale(TRANSITION_ANIMATION_SCALE_SELECTOR, 1f);
-                    return Settings.Secure.putInt(getContext().getContentResolver(),"def_orientation_timing",2);
-                case "3":
-                    mWindowManager.setAnimationScale(TRANSITION_ANIMATION_SCALE_SELECTOR, 0.5f);
-                    return Settings.Secure.putInt(getContext().getContentResolver(),"def_orientation_timing",3);
-                case "4":
-                    mWindowManager.setAnimationScale(TRANSITION_ANIMATION_SCALE_SELECTOR, 0.1f);
-                    return Settings.Secure.putInt(getContext().getContentResolver(),"def_orientation_timing",4);
-            }
-        } catch (RemoteException e) {
-            // intentional no-op
-            e.printStackTrace();
+        switch (key) {
+            case "0":
+                return Settings.Secure.putInt(getContext().getContentResolver(),"def_orientation_timing",0);
+            case "1":
+                return Settings.Secure.putInt(getContext().getContentResolver(),"def_orientation_timing",1);
+            case "2":
+                return Settings.Secure.putInt(getContext().getContentResolver(),"def_orientation_timing",2);
+            case "3":
+                return Settings.Secure.putInt(getContext().getContentResolver(),"def_orientation_timing",3);
+            case "4":
+                return Settings.Secure.putInt(getContext().getContentResolver(),"def_orientation_timing",4);
         }
         return false;
     }
