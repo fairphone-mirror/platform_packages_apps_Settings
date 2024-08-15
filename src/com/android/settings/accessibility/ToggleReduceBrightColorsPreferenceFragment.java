@@ -70,6 +70,7 @@ public class ToggleReduceBrightColorsPreferenceFragment extends ToggleFeaturePre
     private final float CAN_ENTRY_EXTRA_DIM_VALUE = 80;
     private int mSmallLuxCounter = 0;
     private int mLageLuxCounter = 0 ;
+    private final String ACCESSIBILITY_BUTTON_TARGETS_STRING = "com.android.server.accessibility/ReduceBrightColors";
 
     @Override
     protected void registerKeysToObserverCallback(
@@ -125,7 +126,7 @@ public class ToggleReduceBrightColorsPreferenceFragment extends ToggleFeaturePre
                 mColorDisplayManager.setReduceBrightColorsActivated(false);
                 Secure.putInt(getContext().getContentResolver(),Secure.ENABLE_REDUCE_BRIGHT_COLORS,0);
                 Secure.putString(getContext().getContentResolver(),Secure.ACCESSIBILITY_SHORTCUT_TARGET_SERVICE,"");
-                Secure.putString(getContext().getContentResolver(),Secure.ACCESSIBILITY_BUTTON_TARGETS,"");
+                Secure.putString(getContext().getContentResolver(),Secure.ACCESSIBILITY_BUTTON_TARGETS,getButtonTargetsString());
             }
             if(mSmallLuxCounter == 10){
                 Secure.putInt(getContext().getContentResolver(),Secure.ENABLE_REDUCE_BRIGHT_COLORS,1);
@@ -137,6 +138,23 @@ public class ToggleReduceBrightColorsPreferenceFragment extends ToggleFeaturePre
             // Not used.
         }
     };
+
+    private String getButtonTargetsString() {
+        String mCurrentAccessibilityButtonTargets = Settings.Secure.getString(getContext().getContentResolver(),Secure.ACCESSIBILITY_BUTTON_TARGETS);
+        String[] strings = mCurrentAccessibilityButtonTargets.split(":");
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < strings.length; i++) {
+            if (!ACCESSIBILITY_BUTTON_TARGETS_STRING.equals(strings[i])){
+                if (i == 0) {
+                    result.append(strings[i]);
+                } else {
+                    result.append(":");
+                    result.append(strings[i]);
+                }
+            }
+        }
+        return result.toString();
+    }
 
     private void updateGeneralCategoryOrder() {
         final PreferenceCategory generalCategory = findPreference(KEY_GENERAL_CATEGORY);
@@ -162,6 +180,12 @@ public class ToggleReduceBrightColorsPreferenceFragment extends ToggleFeaturePre
         updateSwitchBarToggleSwitch();
         mSensorManager.registerListener(mLightSensorListener,mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT_BACK),
                   SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mSensorManager.unregisterListener(mLightSensorListener);
     }
 
     @Override
