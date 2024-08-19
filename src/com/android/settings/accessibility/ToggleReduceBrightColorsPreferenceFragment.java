@@ -140,7 +140,10 @@ public class ToggleReduceBrightColorsPreferenceFragment extends ToggleFeaturePre
     };
 
     private String getButtonTargetsString() {
-        String mCurrentAccessibilityButtonTargets = Settings.Secure.getString(getContext().getContentResolver(),Secure.ACCESSIBILITY_BUTTON_TARGETS);
+        String mCurrentAccessibilityButtonTargets = "";
+        if (Settings.Secure.getString(getContext().getContentResolver(),Secure.ACCESSIBILITY_BUTTON_TARGETS) != null) {
+            mCurrentAccessibilityButtonTargets = Settings.Secure.getString(getContext().getContentResolver(),Secure.ACCESSIBILITY_BUTTON_TARGETS);
+        }
         String[] strings = mCurrentAccessibilityButtonTargets.split(":");
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < strings.length; i++) {
