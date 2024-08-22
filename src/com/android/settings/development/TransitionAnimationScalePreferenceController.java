@@ -20,6 +20,7 @@ import android.content.Context;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.view.IWindowManager;
+import android.os.SystemProperties;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.preference.ListPreference;
@@ -81,6 +82,7 @@ public class TransitionAnimationScalePreferenceController extends
         try {
             float scale = newValue != null ? Float.parseFloat(newValue.toString()) : DEFAULT_VALUE;
             mWindowManager.setAnimationScale(TRANSITION_ANIMATION_SCALE_SELECTOR, scale);
+            SystemProperties.set("persist.sys.transition.animation.scale",Float.toString(scale));
             updateAnimationScaleValue();
         } catch (RemoteException e) {
             // intentional no-op

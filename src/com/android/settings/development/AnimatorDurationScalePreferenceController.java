@@ -20,6 +20,7 @@ import android.content.Context;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.view.IWindowManager;
+import android.os.SystemProperties;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.preference.ListPreference;
@@ -79,6 +80,7 @@ public class AnimatorDurationScalePreferenceController extends DeveloperOptionsP
         try {
             float scale = newValue != null ? Float.parseFloat(newValue.toString()) : DEFAULT_VALUE;
             mWindowManager.setAnimationScale(ANIMATOR_DURATION_SCALE_SELECTOR, scale);
+            SystemProperties.set("persist.sys.animator.duration.scale",Float.toString(scale));
             updateAnimationScaleValue();
         } catch (RemoteException e) {
             // intentional no-op
