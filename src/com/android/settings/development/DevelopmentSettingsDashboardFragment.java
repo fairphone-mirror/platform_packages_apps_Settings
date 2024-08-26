@@ -94,7 +94,7 @@ import java.util.List;
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class DevelopmentSettingsDashboardFragment extends RestrictedDashboardFragment
         implements OnCheckedChangeListener, OemUnlockDialogHost, AdbDialogHost,
-        AdbClearKeysDialogHost, LogPersistDialogHost,
+        AdbClearKeysDialogHost, LogPersistDialogHost,OemUnlockVerifyDialogHost,
         BluetoothRebootDialog.OnRebootDialogListener,
         AbstractBluetoothPreferenceController.Callback,
         NfcRebootDialog.OnNfcRebootDialogConfirmedListener, BluetoothSnoopLogHost {
@@ -401,6 +401,20 @@ public class DevelopmentSettingsDashboardFragment extends RestrictedDashboardFra
             FeatureFactory.getFeatureFactory().getSearchFeatureProvider()
                     .sendPreIndexIntent(getContext());
         }
+    }
+
+    @Override
+    public void onOemUnlockVerifyDialogConfirmed(String password) {
+        final OemUnlockPreferenceController controller = getDevelopmentOptionsController(
+                OemUnlockPreferenceController.class);
+        controller.onOemUnlockVerifyDialogConfirmed(password);
+    }
+
+    @Override
+    public void onOemUnlockVerifyDialogDismissed() {
+        final OemUnlockPreferenceController controller = getDevelopmentOptionsController(
+                OemUnlockPreferenceController.class);
+        controller.onOemUnlockVerifyDialogDismissed();
     }
 
     @Override

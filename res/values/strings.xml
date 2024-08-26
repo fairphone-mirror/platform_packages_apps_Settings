@@ -13815,4 +13815,5 @@
     <string name="dialog_title_image_mapping">"Image Mapping"</string>
     <string name="hidden_activity_device_info">"Device information"</string>
     <string name="hidden_activity_module_info">"Module information"</string>
+    <string name="verification_confirm_your_password_header">Input verify code:</string>
 </resources>

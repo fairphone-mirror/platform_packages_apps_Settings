@@ -19,10 +19,15 @@ package com.android.settings.development;
 import static com.android.settings.development.DevelopmentOptionsActivityRequestCodes.REQUEST_CODE_ENABLE_OEM_UNLOCK;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.UserManager;
@@ -30,17 +35,26 @@ import android.service.oemlock.OemLockManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 
+import com.android.internal.telephony.Phone;
+import com.android.internal.telephony.PhoneConstants;
+import com.android.internal.telephony.PhoneFactory;
 import com.android.settings.R;
 import com.android.settings.core.PreferenceControllerMixin;
 import com.android.settings.password.ChooseLockSettingsHelper;
 import com.android.settingslib.RestrictedSwitchPreference;
 import com.android.settingslib.development.DeveloperOptionsPreferenceController;
+
+import com.arima.settings.OemLockVerifier;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class OemUnlockPreferenceController extends DeveloperOptionsPreferenceController implements
         Preference.OnPreferenceChangeListener, PreferenceControllerMixin, OnActivityResultListener {
@@ -51,12 +65,21 @@ public class OemUnlockPreferenceController extends DeveloperOptionsPreferenceCon
     private static final String UNSUPPORTED = "-9999";
     private static final String SUPPORTED = "1";
 
+    private static final int HTTP_OK_RESULT = 0x01;
+    private static final int HTTP_CREATED_RESULT = 0x02;
+    private static final int HTTP_FAIL_RESULT = 0x03;
+    private static final int HTTP_VERIFY_FAIL_UNKNOWN = 0x04;
+    private static final boolean DEBUG = true;
+    private OemLockVerifier mVerifier = null;
+    private AlertDialog mWaitingDlg = null;
     private final OemLockManager mOemLockManager;
     private final UserManager mUserManager;
     private final TelephonyManager mTelephonyManager;
     private final Activity mActivity;
     @Nullable private final DevelopmentSettingsDashboardFragment mFragment;
     private RestrictedSwitchPreference mPreference;
+    private fp_password password_ckecker = new fp_password();
+    private Toast toast_msg = null;
 
     public OemUnlockPreferenceController(Context context, Activity activity,
             @Nullable DevelopmentSettingsDashboardFragment fragment) {
@@ -152,6 +175,119 @@ public class OemUnlockPreferenceController extends DeveloperOptionsPreferenceCon
         updateState(mPreference);
     }
 
+    private String getKey() {
+        String imei = getIMEI();
+        String sn = Build.getSerial();
+        return imei + sn;
+    }
+
+    private String getIMEI() {
+        TelephonyManager telephonyManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
+        return telephonyManager.getImei(PhoneConstants.SIM_ID_1);
+    }
+
+    Handler uiUpdater = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what)
+            {
+                case HTTP_OK_RESULT:
+                    if (mWaitingDlg.isShowing()) mWaitingDlg.dismiss();
+                    EnableOemUnlockSettingWarningDialog.show(mFragment);
+                    break;
+                case HTTP_CREATED_RESULT:
+                    if (mWaitingDlg.isShowing()) mWaitingDlg.dismiss();
+                    OemLockVerifyDialog.show(mFragment);
+                    break;
+                case HTTP_FAIL_RESULT:
+                    if (mWaitingDlg.isShowing()) mWaitingDlg.dismiss();
+                    break;
+                case HTTP_VERIFY_FAIL_UNKNOWN:
+                    if (mWaitingDlg.isShowing()) mWaitingDlg.dismiss();
+                    break;
+            }
+        }
+    };
+
+    public void onOemUnlockVerifyDialogConfirmed(String password) {
+        // Verify if the entered password is valid
+        String key = getKey();
+        if (key.isEmpty() || password.isEmpty()) {
+            showToast("Password verification failed.");
+            return;
+        }
+
+        // Initialize the OemLockVerifier if it's null
+        if (mVerifier == null) {
+            mVerifier = new OemLockVerifier(mContext, new OemLockVerifier.onResponseListener() {
+                @Override
+                public void onFinish(final int checkCode, final String msg) {
+                    handleVerificationResult(checkCode, msg);
+                }
+            });
+        }
+
+        // Log and initiate the verification process
+        Log.i(TAG, "invoke mVerifier.queryVerifyResult()----password = " + password);
+        mVerifier.queryVerifyResultGet(password, getIMEI(), Build.getSerial());
+        showWaitingLockQueryDialog();
+    }
+
+    private void handleVerificationResult(int checkCode, String msg) {
+        String message;
+        switch (checkCode) {
+            case OemLockVerifier.HTTP_OK:
+                uiUpdater.obtainMessage(HTTP_OK_RESULT).sendToTarget();
+                message = "Correct code";
+                break;
+            case OemLockVerifier.HTTP_VERIFY_FAIL_WRONG_CODE:
+                uiUpdater.obtainMessage(HTTP_FAIL_RESULT).sendToTarget();
+                message = "Incorrect code";
+                break;
+            case OemLockVerifier.HTTP_VERIFY_FAIL_NO_SUCH_PHONE:
+                uiUpdater.obtainMessage(HTTP_FAIL_RESULT).sendToTarget();
+                message = "No such phone";
+                break;
+            case OemLockVerifier.HTTP_VERIFY_FAIL_UNKNOWN:
+                uiUpdater.obtainMessage(HTTP_VERIFY_FAIL_UNKNOWN).sendToTarget();
+                message = "No internet connection found";
+                break;
+            default:
+                message = "Verification failed";
+                break;
+        }
+
+        if (DEBUG) {
+            // Use runOnUiThread to show the toast on the main/UI thread
+            mActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    showToast(message);
+                }
+            });
+        }
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(mContext, message, Toast.LENGTH_LONG).show();
+    }
+
+    private void showWaitingLockQueryDialog() {
+        if (mContext == null) return;
+
+        mWaitingDlg = new AlertDialog.Builder(mContext)
+                .setMessage("Processing...")
+                .create();
+        mWaitingDlg.show();
+    }
+
+    public void onOemUnlockVerifyDialogDismissed() {
+        if (mPreference == null) {
+            return;
+        }
+        updateState(mPreference);
+    }
+
     private void handleDeveloperOptionsToggled() {
         mPreference.setEnabled(enableOemUnlockPreference());
         if (mPreference.isEnabled()) {
@@ -218,7 +354,15 @@ public class OemUnlockPreferenceController extends DeveloperOptionsPreferenceCon
 
     @VisibleForTesting
     void confirmEnableOemUnlock() {
-        EnableOemUnlockSettingWarningDialog.show(mFragment);
+        if (isDebugOsBuild()) {
+            EnableOemUnlockSettingWarningDialog.show(mFragment);
+        } else {
+            OemLockVerifyDialog.show(mFragment);
+        }
+    }
+
+    private boolean isDebugOsBuild() {
+        return "userdebug".equals(Build.TYPE) || "eng".equals(Build.TYPE);
     }
 
     /**
