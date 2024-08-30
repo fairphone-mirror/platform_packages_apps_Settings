@@ -1,75 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".anc.intro.IntroFaceUnlockActivity">
 
-    <TextView
-        android:id="@+id/tv_add_face_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="@string/face_add_title"
-        android:textColor="@color/face_unlock_text_color"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textDirection="locale"
+        android:layout_marginBottom="50dp">
 
-    <TextView
-        android:id="@+id/tv_add_face_intro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        android:text="@string/face_unlock_recognition_ready_rom4"
-        android:textColor="@color/face_unlock_text_color"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_add_face_title" />
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="24dp">
 
-    <TextView
-        android:id="@+id/tv_disclaimer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:gravity="center"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        android:text="@string/disclamer"
-        android:textAllCaps="true"
-        android:textColor="@color/face_unlock_btn_txt_color"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_add_face_intro" />
+            <TextView
+                android:id="@+id/tv_add_face_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/face_add_title"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/face_unlock_text_color"
+                android:textSize="26sp"
+                android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/tv_add_face_intro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingEnd="24dp"
+                android:paddingStart="24dp"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/face_unlock_recognition_ready_rom4"
+                android:textColor="@color/face_unlock_text_color"
+                android:textSize="18sp" />
 
-    <ImageView
-        android:id="@+id/iv_add_face_data"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
-        android:layout_marginTop="68dp"
-        android:src="@drawable/ic_add_face_data_setup_wizard"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_disclaimer" />
+            <TextView
+                android:id="@+id/tv_disclaimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:paddingEnd="24dp"
+                android:paddingStart="24dp"
+                android:text="@string/disclamer"
+                android:textAllCaps="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/face_unlock_btn_txt_color"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/iv_add_face_data"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="68dp"
+                android:layout_marginBottom="70dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_add_face_data_setup_wizard"/>
+        </LinearLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/bt_start"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         style="@style/FaceUnlockLongButton"
-        android:layout_marginTop="120dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/face_recognition_button_start"
-        app:layout_constraintTop_toBottomOf="@+id/iv_add_face_data"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_gravity="bottom|center_horizontal"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
