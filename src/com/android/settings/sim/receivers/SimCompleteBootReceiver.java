@@ -16,6 +16,8 @@
 
 package com.android.settings.sim.receivers;
 
+import android.app.ActivityManager;
+import android.app.AppOpsManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -33,6 +35,7 @@ import java.util.Locale;
 public class SimCompleteBootReceiver extends BroadcastReceiver {
     private static final String TAG = "SimCompleteBootReceiver";
     public static boolean isLaunguageChanged = false;
+    private static final String MY_FAIRPHONE_PERMISSION = "persist.sys.fairphone.permission";
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -56,5 +59,28 @@ public class SimCompleteBootReceiver extends BroadcastReceiver {
             SimNotificationService.scheduleSimNotification(
                     context, SimActivationNotifier.NotificationType.NETWORK_CONFIG);
         }
+
+        if(isFirstSetMyFairPhonePermission(context)){
+            setFirstSetMyFairPhonePermission(context);
+            configVodafonePermission(context);
+        }
+
     }
+
+    private boolean isFirstSetMyFairPhonePermission(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(SETTING_ANIMAL,Context.MODE_PRIVATE);
+        return sharedPreferences.getInt(MY_FAIRPHONE_PERMISSION,0) == 0;
+    }
+
+    private void setFirstSetMyFairPhonePermission(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(SETTING_ANIMAL,Context.MODE_PRIVATE);
+        sharedPreferences.edit().putInt(MY_FAIRPHONE_PERMISSION,1).commit();
+    }
+
+    private void configVodafonePermission(Context context){
+        AppOpsManager appOpsManager = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
+        appOpsManager.setMode(AppOpsManager.OP_SYSTEM_ALERT_WINDOW,
+                  ActivityManager.getCurrentUser(), "com.fairphone.myfairphone", AppOpsManager.MODE_ALLOWED);
+    }
+
 }
