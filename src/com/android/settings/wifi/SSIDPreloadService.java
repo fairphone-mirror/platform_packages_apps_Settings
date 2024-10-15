@@ -1,12 +1,4 @@
 /*
- * Copyright (c) 2013 Qualcomm Technologies, Inc.  All Rights Reserved.
- * Qualcomm Technologies Proprietary and Confidential.
- *
- * Not a Contribution, Apache license notifications and license are retained
- * for attribution purposes only.
- */
-
-/*
  * Copyright (C) 2008 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
