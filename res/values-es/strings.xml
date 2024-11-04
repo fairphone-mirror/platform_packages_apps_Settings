@@ -5348,4 +5348,5 @@
     <string name="audio_streams_main_page_password_dialog_join_button" msgid="2967747276379153408">"Escuchar emisión"</string>
     <string name="audio_streams_main_page_qr_code_scanner_summary" msgid="5312980105735143360">"Escanea el código QR de una emisión de audio para escucharlo con <xliff:g id="DEVICE_NAME">%1$s</xliff:g>"</string>
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"No se puede modificar la contraseña durante el uso compartido. Para cambiarla, primero desactiva la función compartir audio."</string>
+     <string name="status_sdn">Número de marcación de servicio.</string>
 </resources>
