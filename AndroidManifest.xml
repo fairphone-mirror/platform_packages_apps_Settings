@@ -5125,6 +5125,44 @@ SPDX-License-Identifier: BSD-3-Clause-Clear -->
             </intent-filter>
         </activity>
 
+        <receiver
+            android:name="com.android.settings.PhoneCodeReceiver"
+            android:exported="true"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data
+                    android:host="666"
+                    android:scheme="android_secret_code" />
+                <data
+                    android:host="3228"
+                    android:scheme="android_secret_code" />
+                <data
+                    android:host="02"
+                    android:scheme="android_secret_code" />
+                <data
+                    android:host="3522"
+                    android:scheme="android_secret_code" />
+                <data
+                    android:host="001"
+                    android:scheme="android_secret_code" />
+                <data
+                    android:host="002"
+                    android:scheme="android_secret_code" />
+                <data
+                    android:host="23486583"
+                    android:scheme="android_secret_code" />
+                <data
+                    android:host="2288379"
+                    android:scheme="android_secret_code" />
+
+                <!-- add for FP5-197 show ENDC info 2023-03-27 -->
+                <data
+                    android:host="36327"
+                    android:scheme="android_secret_code" />
+            </intent-filter>
+        </receiver>
+
         <activity android:name=".network.telephony.UserPLMNEditorActivity"
             android:exported="true"
             android:label="@string/uplmn_settings_title"
@@ -5160,6 +5198,15 @@ SPDX-License-Identifier: BSD-3-Clause-Clear -->
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
+
+        <activity android:name="com.android.settings.PhoneDeviceInfo"
+            android:exported="true"
+            android:label="@string/hidden_activity_deivce_info"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name="com.android.settings.bluetooth.QrCodeScanModeActivity"
