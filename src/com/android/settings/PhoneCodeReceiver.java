@@ -15,7 +15,7 @@ import android.app.AlertDialog;
 import android.view.WindowManager;
 
 import com.android.internal.telephony.PhoneConstants;
-//import com.arima.settings.OemLockVerifier;
+import com.arima.settings.OemLockVerifier;
 import android.content.DialogInterface;
 import java.io.File;
 import java.io.IOException;
@@ -122,8 +122,8 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                 alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
                 alert.show();*/
             } else if (HOST_CODE_TEST_OEM_UNLOCK.equals(host)) {
-                /*OemLockVerifier oemLockVerifier = new OemLockVerifier(context, (check_code, msg) -> Log.e(TAG, "oemLockVerifier queryVerifyResult msg > " + msg));
-                oemLockVerifier.queryVerifyResult(getIMEI(), Build.getSerial());*/
+                OemLockVerifier oemLockVerifier = new OemLockVerifier(context, (check_code, msg) -> Log.e(TAG, "oemLockVerifier queryVerifyResult msg > " + msg));
+                oemLockVerifier.queryVerifyResult(getIMEI(), Build.getSerial());
             } else if (HOST_CODE_BATTERY_HEALTY.equals(host)){
                 /*if(fp5txtIsExists()) {
                     String status = SystemProperties.get(BATTERY_HEALTY_ENABLE, "Close");
