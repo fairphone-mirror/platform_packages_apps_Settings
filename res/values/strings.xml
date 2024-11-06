@@ -13814,4 +13814,5 @@
     <string name="status_sdn">"Service Dialing Number"</string>
     <string name="hidden_activity_deivce_info">"Device information"</string>
     <string name="dialog_title_image_mapping">"Image Mapping"</string>
+    <string name="pick_up_to_wake_title">Pick up to wake</string>
 </resources>
