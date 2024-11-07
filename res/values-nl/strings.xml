@@ -5348,4 +5348,42 @@
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"Kan wachtwoord niet bewerken tijdens het delen. Als je het wachtwoord wilt wijzigen, zet je audio delen eerst uit."</string>
     <string name="status_sdn">Servicedienstnummer</string>
     <string name="pick_up_to_wake_title">Til op om te activeren</string>
+    <string name="attention">Let op</string>
+    <string name="cannot_detect_face">Kan uw gezicht niet detecteren</string>
+    <string name="face_add_title">Gezichtsgegevens toevoegen</string>
+    <string name="face_detect_timeout_dialog_button_retry">OPNIEUW PROBEREN</string>
+    <string name="face_detect_timeout_dialog_message">Gezicht niet herkend. Zorg ervoor dat de camera schoon is en houd uw telefoon op een afstand van ongeveer 20-50 cm van uw gezicht.</string>
+    <string name="face_detect_timeout_dialog_title">Kan gezicht niet registreren</string>
+    <string name="face_disabled_condition3_rom4">De gezichtsontgrendeling is drie keer achter elkaar mislukt.</string>
+    <string name="face_disabled_title_rom4">De gezichtsontgrendeling wordt in de volgende gevallen uitgeschakeld:</string>
+    <string name="face_enable_condition_rom4">Je hebt een pincode, patroon of wachtwoord nodig als je de gezichtsontgrendeling opnieuw wilt inschakelen.</string>
+    <string name="face_recognition_button_start">Starten</string>
+    <string name="face_unlock_finish_msg_rom4">Uw gezichtsgegevens zijn toegevoegd</string>
+    <string name="face_unlock_recognition_ready_rom4">Voor het beste resultaat raden we aan de gezichtsontgrendeling binnenshuis en niet in direct zonlicht uit te voeren.</string>
+    <string name="face_unlock_register_prompt">Houd uw telefoon op een afstand van 20-50 cm van uw gezicht. Positioneer uw gezicht in het vierkant dat op het scherm wordt weergegeven.</string>
+    <string name="face_unlock_settings_title_rom4">Gezichtsherkenning</string>
+    <string name="faceunlock_last_delete_title">Gezichtsgegevens verwijderen?</string>
+    <string name="scanning_face">Gezichtsgegevens scannen...</string>
+    <string name="warning_tips_rom4_first_part">"Gezichtsherkenning is een nieuwe, handige manier om apparaten te ontgrendelen. Gebruikers moeten de volgende verklaringen hebben gelezen en de risico's daarvan begrijpen:
+ 
+ - Uw apparaat kan worden ontgrendeld door personen of objecten die op u lijken
+ 
+ - Gezichtsherkenning is minder veilig dan een patroon/PIN-code/wachtwoord"</string>
+    <string name="warning_tips_rom4_second_part">" - Terwijl u de gezichtsherkenning probeert in te stellen, is het goed om de dagelijkse gebruiksgewoonten aan te houden. Veel situaties kunnen van invloed zijn op de snelheid of kwaliteit van de herkenning, zoals: het dragen van zonnebrillen, hoeden, maskers, make-up, enzovoort.
+ 
+ - Terwijl u de gezichtsherkenning probeert in te stellen, moet u ervoor zorgen dat de cameralens en het herkenningsgebied schoon zijn en zich op een goed verlichte positie bevinden."</string>
+    <string name="warning_tips_rom4_second_part_title">De kwaliteit van gezichtsherkenning verbeteren</string>
+    <string name="warning_tips_rom4_third_part">" - Uw persoonlijke gegevens worden alleen op het apparaat opgeslagen en verwerkt."</string>
+    <string name="warning_tips_rom4_third_part_title">Privacy-informatie</string>
+    <string name="warning_title">"Waarschuwing voor risico's"</string>
+    <string name="confirm_remove_enroll_face">Weet je zeker dat je je geregistreerde gezicht wilt verwijderen?</string>
+    <string name="main_face_title">Gezichtsregistratie</string>
+    <string name="second_face_title">Terug naar gezichtsregistratie</string>
+    <string name="disclamer">Disclaimer</string>
+    <string name="faceunlock_setupwizard">Ontgrendelen met gezicht</string>
+    <string name="face_unlock_user_experience">Gebruik ontgrendelen met gezicht voor een snellere en eenvoudige ontgrendelervaring.</string>
+    <string name="face_unlock_less_secure_than_strong_auth">Opmerking: Ontgrendelen met uw gezicht kan minder veilig zijn dan een sterk patroon of PIN-code.</string>
+    <string name="security_settings_faceunlock_cancel_setup">Overslaan</string>
+    <string name="security_settings_faceunlock_next">Volgende</string>
+    <string name="enroll_main_first">Registreer eerst gezichtsgegevens.</string>
 </resources>

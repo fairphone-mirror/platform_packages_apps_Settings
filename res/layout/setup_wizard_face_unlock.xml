@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.setupdesign.GlifLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/setup_wizard_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:icon="@drawable/ic_face_key">
+
+    <LinearLayout
+        style="@style/SudContentFrame"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="vertical">
+
+        <com.google.android.setupdesign.view.RichTextView
+            android:id="@+id/user_experience"
+            style="@style/SudDescription.Glif"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:text="@string/face_unlock_user_experience" />
+
+        <com.google.android.setupdesign.view.RichTextView
+            android:id="@+id/description_text"
+            style="@style/SudDescription.Glif"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/face_unlock_less_secure_than_strong_auth" />
+
+        <com.google.android.setupdesign.view.FillContentLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                style="@style/SudContentIllustration"
+                android:layout_width="220dp"
+                android:layout_height="244dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_im_setup_face_key" />
+        </com.google.android.setupdesign.view.FillContentLayout>
+    </LinearLayout>
+</com.google.android.setupdesign.GlifLayout>

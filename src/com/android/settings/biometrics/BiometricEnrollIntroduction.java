@@ -18,6 +18,8 @@ package com.android.settings.biometrics;
 
 import android.app.admin.DevicePolicyManager;
 import android.content.Intent;
+import android.content.ComponentName;
+import android.provider.Settings;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.hardware.biometrics.BiometricAuthenticator;
@@ -416,6 +418,17 @@ public abstract class BiometricEnrollIntroduction extends BiometricEnrollBase
                         BiometricUtils.removeGatekeeperPasswordHandle(this, data);
                         getNextButton().setEnabled(true);
                     }));
+                    //add  for FP5-186 20230325
+                    if(mToken != null){
+                        try{
+                            Intent settingsIntent = new Intent()
+                                    .setComponent(new ComponentName("com.android.settings","com.android.settings.anc.AncSettings"));
+                            startActivity(settingsIntent);
+                            finish();
+                        }catch(Exception e) {
+                        }
+                    }
+                    //add  for FP5-186 20230325
                 }
             } else {
                 setResult(resultCode, data);

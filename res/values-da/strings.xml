@@ -5348,4 +5348,43 @@
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"Adgangskoden kan ikke ændres under deling. Deaktiver lyddeling for at ændre adgangskoden."</string>
     <string name="status_sdn">Indtast nummer service</string>
     <string name="pick_up_to_wake_title">Løft op for at vække</string>
+    <string name="attention">Bemærk</string>
+    <string name="cannot_detect_face">Kan ikke registrere dit ansigt</string>
+    <string name="face_add_title">Tilføj ansigtsdata</string>
+    <string name="face_detect_timeout_dialog_button_retry">PRØV IGEN</string>
+    <string name="face_detect_timeout_dialog_message">Hvis ansigtet ikke bliver registreret, skal du sørge for, at kameraet er rent, og flytte telefonen 20-50 cm væk fra ansigtet.</string>
+    <string name="face_detect_timeout_dialog_title">Hvis ansigtet ikke bliver registreret</string>
+    <string name="face_disabled_condition3_rom4">oplåsning med ansigtsgenkendelse mislykkedes tre gange i træk.</string>
+    <string name="face_disabled_title_rom4">oplåsning med ansigtsgenkendelse deaktiveres i følgende tilfælde:</string>
+    <string name="face_enable_condition_rom4">PIN-mønster eller adgangskode er nødvendig, hvis du vil gøre oplåsning med ansigtsgenkendelse tilgængelig igen.</string>
+    <string name="face_recognition_button_start">Start</string>
+    <string name="face_unlock_finish_msg_rom4">Dine ansigtsdata er blevet tilføjet</string>
+    <string name="face_unlock_recognition_ready_rom4">For at opnå de bedste resultater anbefaler vi, at oplåsning med ansigtsgenkendelse foregår indendørs og væk fra direkte sollys.</string>
+    <string name="face_unlock_register_prompt">Hold telefonen 20-50 cm væk fra ansigtet. Sørg for, at dit ansigt er inden for den firkant, der ses på skærmen.</string>
+    <string name="face_unlock_settings_title_rom4">Ansigtsgenkendelse</string>
+    <string name="faceunlock_last_delete_title">"Fjern viste data?
+ "</string>
+    <string name="scanning_face">Scan ansigtsdata …</string>
+    <string name="warning_tips_rom4_first_part">"Ansigtsgenkendelse er en ny og praktisk måde at låse enheden op på. Som bruger skal du have læst og forstået risiciene ved følgende tiltag, før du anvender ansigtsgenkendelse til at låse enheden op:
+ 
+ - Enheden kan åbnes af en person eller ting, der ser ud som dig
+ 
+ - Sikkerheden ved ansigtsgenkendelse er lavere end ved mønster/PIN/kodeord"</string>
+    <string name="warning_tips_rom4_second_part">" - Mens du prøver at konfigurere ansigtsgenkendelse, er det bedst at bruge den dagligt. Mange situationer kan påvirke genkendelseshastigheden eller -kvaliteten, f.eks.: Hvis du bærer solbriller, hat, maske, makeup osv.
+ 
+ - Mens du prøver at konfigurere ansigtsgenkendelse, bør du sørge for, at kameralinsen og optagearealet er rene og godt belyste."</string>
+    <string name="warning_tips_rom4_second_part_title">Forbedring af ansigtsgenkendelsens kvalitet</string>
+    <string name="warning_tips_rom4_third_part">" - Dine personlige data vil udelukkende blive gemt og behandlet på denne enhed."</string>
+    <string name="warning_tips_rom4_third_part_title">Om privatlivsindstillinger</string>
+    <string name="warning_title">Risikoadvarsel</string>
+    <string name="confirm_remove_enroll_face">Ønsker du at fjerne det registrerede ansigt?</string>
+    <string name="main_face_title">Ansigtsgenkendelse</string>
+    <string name="second_face_title">Tilbage til ansigtsregistrering</string>
+    <string name="disclamer">Ansvarsfraskrivelse</string>
+    <string name="faceunlock_setupwizard">Lås op med ansigt</string>
+    <string name="face_unlock_user_experience">Brug ansigtslåsning for hurtigere op nemmere at låse op.</string>
+    <string name="face_unlock_less_secure_than_strong_auth">Bemærk: Dit ansigt kan være mindre sikkert end et stærkt mønster eller en pinkode.</string>
+    <string name="security_settings_faceunlock_cancel_setup">Spring over</string>
+    <string name="security_settings_faceunlock_next">Næste</string>
+    <string name="enroll_main_first">Tilmeld venligst ansigtsdata først.</string>
 </resources>

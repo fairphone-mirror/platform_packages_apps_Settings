@@ -502,4 +502,8 @@
     <dimen name="zen_mode_icon_list_item_size">96dp</dimen>
     <dimen name="zen_mode_icon_list_circle_diameter">56dp</dimen>
     <dimen name="zen_mode_icon_list_icon_size">32dp</dimen>
+
+    <dimen name="suw_description_line_spacing_extra">4sp</dimen>
+    <dimen name="face_unlock_long_btn_text_size">14sp</dimen>
+    <dimen name="face_unlock_btn_radius">20dp</dimen>
 </resources>

@@ -25,6 +25,11 @@ import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
+import android.content.ContentResolver;
+import android.database.ContentObserver;
+import android.os.Handler;
+import android.os.Looper;
+import android.provider.Settings;
 
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.settings.Utils;
@@ -43,6 +48,8 @@ public class FaceStatusPreferenceController extends BiometricStatusPreferenceCon
     RestrictedPreference mPreference;
     private PreferenceScreen mPreferenceScreen;
     protected final FaceStatusUtils mFaceStatusUtils;
+    private final ContentResolver mContentResolver;
+    private final ContentObserver mContentObserver;
 
     public FaceStatusPreferenceController(Context context) {
         this(context, KEY_FACE_SETTINGS, null /* lifecycle */);
@@ -61,9 +68,31 @@ public class FaceStatusPreferenceController extends BiometricStatusPreferenceCon
         mFaceManager = Utils.getFaceManagerOrNull(context);
         mFaceStatusUtils = new FaceStatusUtils(context, mFaceManager, getUserId());
 
+        mContentResolver = context.getContentResolver();
+        mContentObserver = new ContentObserver(new Handler(Looper.getMainLooper())) {
+            @Override
+            public void onChange(boolean selfChange) {
+                if(mPreference != null) {
+                    updateState(mPreference);
+                }
+            }
+        };
+        mContentResolver.registerContentObserver(
+            Settings.System.getUriFor(
+                    "enroll_main_face_id"),
+                    /* notifyForDescendants= */ false, mContentObserver);
+        mContentResolver.registerContentObserver(
+            Settings.System.getUriFor(
+                    "enroll_second_face_id"),
+                    /* notifyForDescendants= */ false, mContentObserver);
         if (lifecycle != null) {
             lifecycle.addObserver(this);
         }
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
+    public void onDestroy() {
+        mContentResolver.unregisterContentObserver(mContentObserver);
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)

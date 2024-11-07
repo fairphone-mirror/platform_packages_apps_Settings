@@ -5350,4 +5350,42 @@
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"No se puede modificar la contraseña durante el uso compartido. Para cambiarla, primero desactiva la función compartir audio."</string>
      <string name="status_sdn">Número de marcación de servicio.</string>
      <string name="pick_up_to_wake_title">Activación al coger el móvil</string>
+     <string name="attention">Atención</string>
+    <string name="cannot_detect_face">No se puede detectar su rostro</string>
+    <string name="face_add_title">Añadir datos faciales</string>
+    <string name="face_detect_timeout_dialog_button_retry">REINTENTAR</string>
+    <string name="face_detect_timeout_dialog_message">Rostro no reconocido. Asegúrese de que la cámara está limpia y mueva el teléfono a unos 20-50 cm de su rostro.</string>
+    <string name="face_detect_timeout_dialog_title">No se puede registrar el rostro</string>
+    <string name="face_disabled_condition3_rom4">El desbloqueo facial falla tres veces seguidas.</string>
+    <string name="face_disabled_title_rom4">El desbloqueo facial se desactivará si se produce alguna de estas situaciones:</string>
+    <string name="face_enable_condition_rom4">El patrón con PIN o la contraseña son necesarios si quieres que el desbloqueo facial vuelva a estar disponible.</string>
+    <string name="face_recognition_button_start">Iniciar</string>
+    <string name="face_unlock_finish_msg_rom4">Se han añadido sus datos faciales</string>
+    <string name="face_unlock_recognition_ready_rom4">Para obtener unos resultados ideales te recomendamos que desbloquees la cara en un lugar cerrado y alejado de la luz solar directa.</string>
+    <string name="face_unlock_register_prompt">Sostenga el teléfono a una distancia de 20-50 cm de su rostro. Coloque el rostro en el recuadro que aparece en la pantalla.</string>
+    <string name="face_unlock_settings_title_rom4">Reconocimiento facial</string>
+    <string name="faceunlock_last_delete_title">¿Desea eliminar los datos faciales?</string>
+    <string name="scanning_face">Escanear datos faciales...</string>
+    <string name="warning_tips_rom4_first_part">"El reconocimiento facial es una forma nueva y cómoda de desbloquear el dispositivo. El usuario debe haber leído y entendido los riesgos de las siguientes afirmaciones antes de utilizar el reconocimiento facial para desbloquear el dispositivo:
+ 
+ - El dispositivo puede desbloquearse por una persona o cosa que se le parezca.
+ 
+ - La seguridad del reconocimiento facial es inferior a la que ofrece un patrón, un PIN o una contraseña"</string>
+    <string name="warning_tips_rom4_second_part">" - Mientras trata de configurar el reconocimiento facial, se recomienda mantenerlo a diario a través de un hábito. Hay muchas situaciones que pueden afectar a la rapidez o la calidad del reconocimiento, por ejemplo: llevar gafas de sol, gorras, máscaras, maquillaje, etc.
+ 
+ - Mientras trata de configurar el reconocimiento facial, asegúrese de que el objetivo de la cámara y la zona reconocida están limpios y colocados en un punto de luz."</string>
+    <string name="warning_tips_rom4_second_part_title">Mejora de la calidad del reconocimiento facial</string>
+    <string name="warning_tips_rom4_third_part">" - Sus datos personales se almacenarán sólo en el dispositivo."</string>
+    <string name="warning_tips_rom4_third_part_title">Acerca de la Privacidad</string>
+    <string name="warning_title">Advertencia de riesgos</string>
+    <string name="enroll_main_first">Por favor introduce los datos faciales primero.</string>
+    <string name="confirm_remove_enroll_face">¿Confirmas que quieres eliminar el registro de cara?</string>
+    <string name="main_face_title">Registro de cara</string>
+    <string name="second_face_title">Volver a registro de cara</string>
+    <string name="disclamer">Exención de responsabilidad</string>
+    <string name="faceunlock_setupwizard">Desbloquear con la cara</string>
+    <string name="face_unlock_user_experience">Disfrute de una experiencia de desbloqueo más rápida y cómoda con el desbloqueo facial.</string>
+    <string name="face_unlock_less_secure_than_strong_auth">Nota: El desbloqueo mediante el reconocimiento facial puede ser menos seguro que un patrón complejo o el PIN.</string>
+    <string name="security_settings_faceunlock_cancel_setup">Saltar</string>
+    <string name="security_settings_faceunlock_next">Siguiente</string>
 </resources>

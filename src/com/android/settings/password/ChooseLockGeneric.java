@@ -45,6 +45,7 @@ import android.app.admin.DevicePolicyManager.PasswordComplexity;
 import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ComponentName;
 import android.hardware.face.FaceManager;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
@@ -491,7 +492,19 @@ public class ChooseLockGeneric extends SettingsActivity {
                 updatePreferencesOrFinish(false /* isRecreatingActivity */);
             } else if (requestCode == CHOOSE_LOCK_REQUEST) {
                 if (resultCode != RESULT_CANCELED) {
-                    getActivity().setResult(resultCode, data);
+                    //add  for FP5-186 20230325
+                    if(mForFace) {
+                        try{
+                            Intent faceIntent = new Intent()
+                                    .setComponent(new ComponentName("com.android.settings","com.android.settings.anc.AncSettings"));
+                            startActivity(faceIntent);
+                        }catch(Exception e) {
+
+                        }
+                    } else {
+                        getActivity().setResult(resultCode, data);
+                    }
+                    //add  for FP5-186 20230325
                 } else {
                     // If PASSWORD_TYPE_KEY is set, this activity is used as a trampoline to start
                     // the actual password enrollment. If the result is canceled, which means the
@@ -853,6 +866,18 @@ public class ChooseLockGeneric extends SettingsActivity {
             }
 
             if (quality == DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED) {
+                //add  for FP5-186 20230406
+                boolean hasFaceEnrolled = android.provider.Settings.System.getInt(getContentResolver(),"enroll_main_face_id", 0) > 0
+                        || android.provider.Settings.System.getInt(getContentResolver(), "enroll_second_face_id", 0) > 0;
+                if(hasFaceEnrolled) {
+                    try{
+                        Intent deleteFace = new Intent()
+                                .setComponent(new ComponentName("com.android.settings","com.android.settings.anc.service.DeleteService"));
+                        getActivity().startService(deleteFace);
+                    }catch(Exception e) {
+                    }
+                }
+                //add  for FP5-186 20230406
                 // Clearing of user biometrics when screen lock is cleared is done at
                 // LockSettingsService.removeBiometricsForUser().
                 if (mUserPassword != null) {
@@ -928,8 +953,13 @@ public class ChooseLockGeneric extends SettingsActivity {
                 hasFingerprints = false;
             }
 
+            //add  for FP5-186 20230406
+            boolean hasFaceEnrolled = android.provider.Settings.System.getInt(getContentResolver(),"enroll_main_face_id", 0) > 0
+                    || android.provider.Settings.System.getInt(getContentResolver(), "enroll_second_face_id", 0) > 0;
             if (mFaceManager != null && mFaceManager.isHardwareDetected()) {
                 hasFace = mFaceManager.hasEnrolledTemplates(mUserId);
+            } else if (hasFaceEnrolled) {
+                hasFace = true;
             } else {
                 hasFace = false;
             }

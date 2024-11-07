@@ -5345,4 +5345,42 @@
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"Não é possível editar a senha enquanto compartilha. Para mudar a senha, primeiro desligue o compartilhamento de áudio."</string>
     <string name="status_sdn">Número de ligação ao serviço</string>
     <string name="pick_up_to_wake_title">Levantar para acordar</string>
+    <string name="attention">Atenção</string>
+    <string name="cannot_detect_face">Não é possível detetar o seu rosto</string>
+    <string name="face_add_title">Adicionar dados faciais</string>
+    <string name="face_detect_timeout_dialog_button_retry">REPETIR</string>
+    <string name="face_detect_timeout_dialog_message">Rosto não reconhecido. Certifique-se de que a câmara está limpa e afaste o telefone cerca de 20-50 cm do rosto.</string>
+    <string name="face_detect_timeout_dialog_title">Não é possível registar o rosto</string>
+    <string name="face_disabled_condition3_rom4">O desbloqueio facial falhou três vezes seguidas.</string>
+    <string name="face_disabled_title_rom4">o desbloqueio facial será desativado nos seguintes casos:</string>
+    <string name="face_enable_condition_rom4">É necessário um padrão PIN ou uma palavra-passe se pretender tornar o desbloqueio facial novamente disponível.</string>
+    <string name="face_recognition_button_start">Iniciar</string>
+    <string name="face_unlock_finish_msg_rom4">Os dados de rosto foram adicionados</string>
+    <string name="face_unlock_recognition_ready_rom4">Para obter melhores resultados, sugerimos que o desbloqueio facial seja efetuado em espaços interiores e longe da luz solar direta.</string>
+    <string name="face_unlock_register_prompt">Segure o seu telefone a 20-50 cm do seu rosto. Posicione o seu rosto no quadrado apresentado no ecrã.</string>
+    <string name="face_unlock_settings_title_rom4">Reconhecimento de rosto</string>
+    <string name="faceunlock_last_delete_title">Remover os dados de rosto?</string>
+    <string name="scanning_face">Digitalizar dados da face...</string>
+    <string name="warning_tips_rom4_first_part">"O reconhecimento de rosto é uma forma nova e prática de desbloquear o dispositivo. Os utilizadores têm de ler e compreender os riscos das seguintes declarações antes de utilizarem o reconhecimento de rosto para desbloquear o dispositivo:
+ 
+ - O seu dispositivo pode ser desbloqueado por uma pessoa ou coisa que se pareça consigo
+ 
+ - A segurança do reconhecimento por rosto é inferior ao padrão/PIN/palavra-passe"</string>
+    <string name="warning_tips_rom4_second_part">" - Ao tentar configurar o reconhecimento de rosto, é melhor manter um hábito de utilização diária. Muitas situações podem afetar a velocidade ou qualidade do reconhecimento, tais como: usar óculos de sol, chapéus, máscaras, maquilhagem etc.
+ 
+ - Ao tentar configurar o reconhecimento de rosto, certifique-se de que a lente da câmara e a área reconhecida estão limpas e com boa luminosidade."</string>
+    <string name="warning_tips_rom4_second_part_title">Melhorar a qualidade do reconhecimento de rosto</string>
+    <string name="warning_tips_rom4_third_part">" - Os seus dados pessoais serão guardados e processados apenas no dispositivo."</string>
+    <string name="warning_tips_rom4_third_part_title">Sobre a privacidade</string>
+    <string name="warning_title">Aviso de risco</string>
+    <string name="faceunlock_setupwizard">Desbloquear com o rosto</string>
+    <string name="face_unlock_user_experience">Utilize o desbloqueio por rosto para uma experiência de desbloqueio mais rápida e fácil.</string>
+    <string name="face_unlock_less_secure_than_strong_auth">Nota: o desbloqueio por rosto pode ser menos seguro do que um padrão forte ou PIN.</string>
+    <string name="security_settings_faceunlock_cancel_setup">Ignorar</string>
+    <string name="security_settings_faceunlock_next">Avançar</string>
+    <string name="confirm_remove_enroll_face">Confirma a remoção do rosto inscrito?</string>
+    <string name="main_face_title">Inscrição facial</string>
+    <string name="second_face_title">Inscrição da parte posterior da cabeça</string>
+    <string name="disclamer">Declaração de limitação de responsabilidade</string>
+    <string name="enroll_main_first">Por favor, inscreva os dados da face primeiro.</string>
 </resources>
