@@ -13824,4 +13824,10 @@
     <string name="orientation_timing_spead_2_title">Normal</string>
     <string name="orientation_timing_spead_3_title">Accelerate for 0.5 seconds</string>
     <string name="orientation_timing_spead_4_title">Accelerate for 1 seconds</string>
+
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="unlock_failed_reset_title">Auto factory reset</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="unlock_failed_reset_description">If you attempt to unlock your phone incorrectly 15times it will be reset to factory settings.All data,including files and downloaded apps,will be deleted.</string>
+
 </resources>
