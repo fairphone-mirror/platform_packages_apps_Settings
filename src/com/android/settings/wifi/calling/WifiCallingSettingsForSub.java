@@ -65,6 +65,9 @@ import com.android.settings.network.ims.WifiCallingQueryImsState;
 import com.android.settings.widget.SettingsMainSwitchPreference;
 
 import java.util.List;
+import android.provider.Settings;
+
+import com.android.settings.utils.CarrierParamsUtil;
 
 /**
  * This is the inner class of {@link WifiCallingSettings} fragment.
@@ -136,8 +139,10 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
                     getPreferenceScreen().findPreference(SWITCH_BAR);
             if (prefSwitch != null) {
                 isWfcEnabled = prefSwitch.isChecked();
-                isCallStateIdle = getTelephonyManagerForSub(
-                        WifiCallingSettingsForSub.this.mSubId).getCallStateForSubscription()
+                isCallStateIdle = /*getTelephonyManagerForSub(
+                        WifiCallingSettingsForSub.this.mSubId).getCallState()*/
+                        // modify by T2M.zhang renjie for FP5-2972 23-12-18
+                        state
                         == TelephonyManager.CALL_STATE_IDLE;
 
                 boolean isNonTtyOrTtyOnVolteEnabled = true;
@@ -303,6 +308,37 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
                     FRAGMENT_BUNDLE_SUBID, SubscriptionManager.INVALID_SUBSCRIPTION_ID);
         }
 
+        // add for FP5-1231 begin
+        String title = getResourcesForSubId().getString(R.string.wifi_calling_settings_title);
+
+        //Modify begin by renjie.zhang FP5U-304 2024/2/23
+        PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(getActivity()).getCarrierParams(mSubId);
+        if (carrierParams != null) {
+            String carrierParamsTitle = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
+            if (!"".equals(carrierParamsTitle)) {
+                Log.d(TAG, "get title from carrierParams");
+                title = carrierParamsTitle;
+            }
+        }
+        //Modify end by renjie.zhang FP5U-304 2024/2/23
+
+        final CarrierConfigManager configManager =
+                getActivity().getSystemService(CarrierConfigManager.class);
+        if (configManager != null) {
+            Log.d(TAG, "get title from carrierconfig");
+            PersistableBundle b = configManager.getConfigForSubId(mSubId);
+            if (b != null) {
+                String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
+                if (!"".equals(carrierconfig_title)){
+                    title = carrierconfig_title;
+                }
+                Log.d(TAG, "title: " + title);
+            }
+        }
+
+        getActivity().setTitle(title);
+        // add for FP5-1231 end
+
         mProvisioningManager = getImsProvisioningManager();
         mImsMmTelManager = getImsMmTelManager();
 
@@ -348,7 +384,11 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
 
     @VisibleForTesting
     boolean isWfcProvisionedOnDevice() {
-        return queryImsState(mSubId).isWifiCallingProvisioned();
+        // add by T2M.zhangrenjie for FP4-847 2021-07-22 begin
+        boolean ims_enabled = Settings.Global.getInt(getActivity().getContentResolver(), "ims_enable_settings",0) == 1;
+        Log.d(TAG, "debug ims_enabled = "+ims_enabled);
+        return ims_enabled || queryImsState(mSubId).isWifiCallingProvisioned();
+        // add by T2M.zhangrenjie for FP4-847 2021-07-22 end
     }
 
     private void updateBody() {
@@ -536,6 +576,33 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
             return;
         }
 
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14 begin
+        String title = getResourcesForSubId().getString(R.string.wifi_calling_settings_title);
+
+        //Modify begin by renjie.zhang FP5U-304 2024/2/23
+        PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(getActivity()).getCarrierParams(mSubId);
+        if (carrierParams != null) {
+            String carrierParamsTitle = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
+            if (!"".equals(carrierParamsTitle)) {
+                Log.d(TAG, "get title from carrierParams");
+                title = carrierParamsTitle;
+            }
+        }
+        //Modify end by renjie.zhang FP5U-304 2024/2/23
+
+        final CarrierConfigManager configManager =
+                getActivity().getSystemService(CarrierConfigManager.class);
+        if (configManager != null) {
+            Log.d(TAG, "get title from carrierconfig");
+            PersistableBundle b = configManager.getConfigForSubId(mSubId);
+            if (b != null) {
+                String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
+                if (!"".equals(carrierconfig_title)){
+                    title = carrierconfig_title;
+                }
+                Log.d(TAG, "title: " + title);
+            }
+        }
         // Launch disclaimer fragment before turning on WFC
         final Context context = getActivity();
         final Bundle args = new Bundle();
@@ -543,7 +610,7 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
         new SubSettingLauncher(context)
                 .setDestination(WifiCallingDisclaimerFragment.class.getName())
                 .setArguments(args)
-                .setTitleRes(R.string.wifi_calling_settings_title)
+                .setTitleText(title)
                 .setSourceMetricsCategory(getMetricsCategory())
                 .setResultListener(this, REQUEST_CHECK_WFC_DISCLAIMER)
                 .launch();
