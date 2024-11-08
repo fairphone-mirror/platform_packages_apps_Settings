@@ -2457,7 +2457,7 @@
     <string name="print_search_box_shown_utterance" msgid="6215002365360341961">"Casella di ricerca visualizzata"</string>
     <string name="print_search_box_hidden_utterance" msgid="5355387966141712567">"Casella di ricerca nascosta"</string>
     <string name="printer_info_desc" msgid="1206872325746154206">"Ulteriori informazioni su questa stampante"</string>
-    <string name="power_usage_summary_title" msgid="4198312848584882113">"Batteria"</string>
+    <string name="power_usage_summary_title" msgid="4198312848584882113">"Batteria e carica"</string>
     <string name="power_usage_summary" msgid="6857382582534984531">"Consumo batteria"</string>
     <string name="power_usage_level_and_status" msgid="821521456989429593">"<xliff:g id="LEVEL">%1$s</xliff:g> - <xliff:g id="STATUS">%2$s</xliff:g>"</string>
     <string name="power_discharge_remaining" msgid="6997529817917076536">"<xliff:g id="REMAIN">%1$s</xliff:g> rimanenti"</string>
@@ -4770,7 +4770,7 @@
     <string name="switch_sim_dialog_no_switch_text" msgid="7053939850026876088">"Per utilizzare i dati mobili, le funzionalità di chiamata e gli SMS in un secondo momento, vai alle impostazioni di rete"</string>
     <string name="sim_card_label" msgid="6263064316075963775">"SIM"</string>
     <string name="erase_sim_dialog_title" msgid="4742077437653028326">"Vuoi resettare questa eSIM?"</string>
-    <string name="erase_sim_dialog_text" msgid="1406141218170595272">"Questa operazione rimuove il servizio di <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> dal dispositivo, ma il tuo piano di <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> non sarà annullato."</string>
+    <string name="erase_sim_dialog_text" msgid="1406141218170595272">"La cancellazione di questa SIM rimuove il servizio <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> da questo dispositivo. Il servizio per <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> non verrà annullato. Attenzione: è necessaria una connessione Internet (dati mobili o Wi-Fi) per cancellare correttamente il profilo SIM selezionato dal dispositivo."</string>
     <string name="erase_sim_confirm_button" msgid="8309115684335320541">"Elimina"</string>
     <string name="erasing_sim" msgid="4237180547590463930">"Reset dell\'eSIM in corso…"</string>
     <string name="erase_sim_fail_title" msgid="1445700500168357303">"Impossibile resettare l\'eSIM"</string>
@@ -5385,5 +5385,34 @@
     <string name="face_unlock_less_secure_than_strong_auth">Nota: lo sblocco con il tuo viso potrebbe essere meno sicuro di una sequenza complessa o di un PIN.</string>
     <string name="security_settings_faceunlock_cancel_setup">Salta</string>
     <string name="security_settings_faceunlock_next">Avanti</string>
+    <string name="orientation_timing_title">Velocità di orientamento</string>
+    <string name="orientation_timing_spead_0_title">Rallenta di 1 secondo</string>
+    <string name="orientation_timing_spead_1_title">Rallenta di 0,5 secondi</string>
+    <string name="orientation_timing_spead_2_title">Normale</string>
+    <string name="orientation_timing_spead_3_title">Accellera di 0,5 secondi</string>
+    <string name="orientation_timing_spead_4_title">Accellera di 1 secondo</string>
+    <string name="dcdimming_title">DC Dimming (modalità anti-sfarfallio)</string>
+    <!--state of health-->
+    <string name="batteryh_soh">Stato di salute:</string>
+    <!--state of count-->
+    <string name="batteryh_soc">Conteggio dei cicli di carica/scarica:</string>
+    <!--charge full design-->
+    <string name="batteryh_cfd">Carica il design completo </string>
+    <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
+    <string name="toast_extra_dim_info">È necessario un ambiente più scuro.</string>
+    <string name="set_refresh_rate">Imposta la frequenza di aggiornamento del display</string>
+    <string name="desktop_mode_title">Modalità desktop</string>
+    <string name="desktop_mode_summary">Utilizzare la modalità desktop sui display secondari</string>
+    <string name="sunlight_mode_title">Sunlight mode (modalità luce solare)</string>
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="unlock_failed_reset_title">Ripristino automatico alle condizioni di fabbrica</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="unlock_failed_reset_description">Se si tenta di sbloccare il telefono in modo errato 15 volte, verrà ripristinato alle impostazioni di fabbrica. Verranno eliminati tutti i dati, i file inclusi e le app scaricate</string>
+    <!-- Mobile network settings screen, title of item showing the name of the default subscription
+    that will be used for data. This only appears in multi-SIM mode. [CHAR LIMIT=NONE] -->
+    <string name="dialog_title_battery_healty">Livello di salute della batteria</string>
+    <string name="charging_slow">Modalità lenta</string>
+    <string name="charging_normal">Modalità normale</string>
+    <string name="charging_state">Modalità di ricarica</string>
     <string name="enroll_main_first">Registra prima i dati del volto.</string>
 </resources>

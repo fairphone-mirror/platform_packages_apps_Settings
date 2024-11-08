@@ -2457,7 +2457,7 @@
     <string name="print_search_box_shown_utterance" msgid="6215002365360341961">"Søgefeltet er vist"</string>
     <string name="print_search_box_hidden_utterance" msgid="5355387966141712567">"Søgefeltet er skjult"</string>
     <string name="printer_info_desc" msgid="1206872325746154206">"Flere oplysninger om denne printer"</string>
-    <string name="power_usage_summary_title" msgid="4198312848584882113">"Batteri"</string>
+    <string name="power_usage_summary_title" msgid="4198312848584882113">"Batteri og opladning"</string>
     <string name="power_usage_summary" msgid="6857382582534984531">"Hvad der har brugt batteriet"</string>
     <string name="power_usage_level_and_status" msgid="821521456989429593">"<xliff:g id="LEVEL">%1$s</xliff:g> - <xliff:g id="STATUS">%2$s</xliff:g>"</string>
     <string name="power_discharge_remaining" msgid="6997529817917076536">"<xliff:g id="REMAIN">%1$s</xliff:g> tilbage"</string>
@@ -4770,7 +4770,7 @@
     <string name="switch_sim_dialog_no_switch_text" msgid="7053939850026876088">"Hvis du senere vil bruge mobildata, opkaldsfunktioner og sms, kan du gå til dine netværksindstillinger"</string>
     <string name="sim_card_label" msgid="6263064316075963775">"SIM-kort"</string>
     <string name="erase_sim_dialog_title" msgid="4742077437653028326">"Vil du rydde dette eSIM?"</string>
-    <string name="erase_sim_dialog_text" msgid="1406141218170595272">"Dette fjerner <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g>-tjenesten på denne enhed, men dit <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g>-abonnement opsiges ikke."</string>
+    <string name="erase_sim_dialog_text" msgid="1406141218170595272">"Sletning af denne sim fjerner <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> -tjeneste fra denne enhed. Tjeneste til <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> annulleres ikke. Bemærk, at der kræves en internetforbindelse (mobildata eller Wi-Fi) for at slette den valgte SIM-profil fra enheden."</string>
     <string name="erase_sim_confirm_button" msgid="8309115684335320541">"Ryd"</string>
     <string name="erasing_sim" msgid="4237180547590463930">"Sletter eSIM…"</string>
     <string name="erase_sim_fail_title" msgid="1445700500168357303">"Dette eSIM kan ikke ryddes"</string>
@@ -5386,5 +5386,35 @@
     <string name="face_unlock_less_secure_than_strong_auth">Bemærk: Dit ansigt kan være mindre sikkert end et stærkt mønster eller en pinkode.</string>
     <string name="security_settings_faceunlock_cancel_setup">Spring over</string>
     <string name="security_settings_faceunlock_next">Næste</string>
+    <string name="orientation_timing_title">Orienteringstidspunkt</string>
+    <string name="orientation_timing_spead_0_title">Sæt farten ned med 1 sekund</string>
+    <string name="orientation_timing_spead_1_title">Sæt farten ned med 0,5 sekunder</string>
+    <string name="orientation_timing_spead_2_title">Normal</string>
+    <string name="orientation_timing_spead_3_title">Accelerér i 0,5 sekunder</string>
+    <string name="orientation_timing_spead_4_title">Accelerer i 1 sekund</string>
+    <string name="dcdimming_title">DC-dæmpning</string>
+    <!--state of health-->
+    <string name="batteryh_soh">sundhedstilstand:</string>
+    <!--state of count-->
+    <string name="batteryh_soc">antal opladnings-/afladningscyklusser:</string>
+    <!--charge full design-->
+    <string name="batteryh_cfd">Design for fuld opladning:</string>
+    <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
+    <string name="toast_extra_dim_info">EDer er brug for et mørkere miljø.</string>
+    <string name="set_refresh_rate">Indstil opdateringsinterval</string>
+    <string name="desktop_mode_title">Desktop-tilstand</string>
+    <string name="desktop_mode_summary">Brug desktop-tilstand på sekundære skærme</string>
+    <string name="sunlight_mode_title">Sollys-tilstand</string>
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="unlock_failed_reset_title">Automatisk fabriksnulstilling</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="unlock_failed_reset_description">Hvis du forsøger at låse din telefon op forkert 15 gange, vil den blive nulstillet til fabriksindstillingerne. Alle data, inkluderede filer og downloadede apps vil blive slettet.</string>
+    <!-- Mobile network settings screen, title of item showing the name of the default subscription
+    that will be used for data. This only appears in multi-SIM mode. [CHAR LIMIT=NONE] -->
+    <string name="data_preference">Data-præference</string>
+    <string name="dialog_title_battery_healty">Sundhedstilstand for batteri</string>
+    <string name="charging_slow">Langsom tilstand</string>
+    <string name="charging_normal">Normal tilstand</string>
+    <string name="charging_state">Opladningstilstand</string>
     <string name="enroll_main_first">Tilmeld venligst ansigtsdata først.</string>
 </resources>

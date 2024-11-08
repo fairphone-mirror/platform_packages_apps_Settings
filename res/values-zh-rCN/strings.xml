@@ -2457,7 +2457,7 @@
     <string name="print_search_box_shown_utterance" msgid="6215002365360341961">"搜索框已显示"</string>
     <string name="print_search_box_hidden_utterance" msgid="5355387966141712567">"搜索框已隐藏"</string>
     <string name="printer_info_desc" msgid="1206872325746154206">"此打印机的详细信息"</string>
-    <string name="power_usage_summary_title" msgid="4198312848584882113">"电池"</string>
+    <string name="power_usage_summary_title" msgid="4198312848584882113">"电池和充电"</string>
     <string name="power_usage_summary" msgid="6857382582534984531">"耗电情况"</string>
     <string name="power_usage_level_and_status" msgid="821521456989429593">"<xliff:g id="LEVEL">%1$s</xliff:g> - <xliff:g id="STATUS">%2$s</xliff:g>"</string>
     <string name="power_discharge_remaining" msgid="6997529817917076536">"还可用：<xliff:g id="REMAIN">%1$s</xliff:g>"</string>
@@ -5392,6 +5392,9 @@
     <string name="face_disabled_title_rom4">"人脸解锁在以下情况下将被禁用： "</string>
     <string name="face_disabled_condition3_rom4">"- 人脸解锁连续失败三次。 "</string>
     <string name="face_enable_condition_rom4">"如果想重新使用人脸解锁，请先使用PIN、图案或者密码来解锁设备。 "</string>
+    <string name="charging_state">充电模式</string>
+    <string name="charging_slow">慢充模式</string>
+    <string name="charging_normal">正常模式</string>
     <string name="enroll_main_first">请先注册一个人脸数据。</string>
     <string name="faceunlock_setupwizard">使用人脸解锁</string>
     <string name="face_unlock_user_experience">使用人脸解锁，能够获得更快速、更便捷的解锁体验。</string>
