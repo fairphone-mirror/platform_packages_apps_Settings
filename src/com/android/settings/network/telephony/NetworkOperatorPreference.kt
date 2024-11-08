@@ -50,6 +50,8 @@ import com.android.settings.R
 import com.android.settings.network.telephony.CellInfoUtil.getNetworkTitle
 import com.android.settings.network.telephony.CellInfoUtil.getOperatorNumeric
 import java.util.Objects
+// modify by T2M.zhang renjie for FP4-2987 21-10-22
+import android.telephony.TelephonyManager
 
 /**
  * A Preference represents a network operator in the NetworkSelectSetting fragment.
@@ -63,6 +65,7 @@ open class NetworkOperatorPreference(
 ) : Preference(context) {
     private var cellInfo: CellInfo? = null
     private var cellId: CellIdentity? = null
+    private var mTelephonyManager: TelephonyManager? = null        // modify by T2M.zhang renjie for FP4-2987 21-10-22
     private var subId = SubscriptionManager.INVALID_SUBSCRIPTION_ID;
     private var isAdvancedScanSupported: Boolean = false;
     private val LEVEL_NONE: Int = -1
@@ -188,7 +191,17 @@ open class NetworkOperatorPreference(
         )
     }
 
-    private fun getIconIdForCell(): Int = when (cellId) {
+    private fun getIconIdForCell(): Int {
+        // modify by T2M.zhang renjie for FP4-2987 21-10-22 begin
+        if (mTelephonyManager == null) {
+            mTelephonyManager = getContext().getSystemService(TelephonyManager::class.java)!!.createForSubscriptionId(subId)
+        }
+        val imsi = mTelephonyManager!!.getSubscriberId()
+        if (imsi.startsWith("23457")) {
+            return MobileNetworkUtils.NO_CELL_DATA_TYPE_ICON
+        }
+
+        return when (cellId){
         is CellIdentityGsm -> R.drawable.signal_strength_g
         is CellIdentityCdma -> R.drawable.signal_strength_1x
         is CellIdentityWcdma, is CellIdentityTdscdma -> R.drawable.signal_strength_3g
@@ -200,6 +213,8 @@ open class NetworkOperatorPreference(
 
         is CellIdentityNr -> R.drawable.signal_strength_5g
         else -> MobileNetworkUtils.NO_CELL_DATA_TYPE_ICON
+        }
+        // modify by T2M.zhang renjie for FP4-2987 21-10-22 end
     }
 
     private fun getAccessNetworkTypeFromCellInfo(): Int = when (cellInfo) {
