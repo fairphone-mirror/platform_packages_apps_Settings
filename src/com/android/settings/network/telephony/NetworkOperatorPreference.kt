@@ -42,6 +42,7 @@ import android.telephony.CellInfoWcdma
 import android.telephony.CellSignalStrength;
 import android.telephony.SignalStrength
 import android.telephony.SubscriptionManager;
+import android.telephony.TelephonyManager
 import android.util.Log
 import androidx.annotation.OpenForTesting
 import androidx.preference.Preference
@@ -63,6 +64,7 @@ open class NetworkOperatorPreference(
 ) : Preference(context) {
     private var cellInfo: CellInfo? = null
     private var cellId: CellIdentity? = null
+    private var mTelephonyManager: TelephonyManager? = null
     private var subId = SubscriptionManager.INVALID_SUBSCRIPTION_ID;
     private var isAdvancedScanSupported: Boolean = false;
     private val LEVEL_NONE: Int = -1
@@ -188,18 +190,26 @@ open class NetworkOperatorPreference(
         )
     }
 
-    private fun getIconIdForCell(): Int = when (cellId) {
-        is CellIdentityGsm -> R.drawable.signal_strength_g
-        is CellIdentityCdma -> R.drawable.signal_strength_1x
-        is CellIdentityWcdma, is CellIdentityTdscdma -> R.drawable.signal_strength_3g
-
-        is CellIdentityLte -> {
-            if (show4GForLTE) R.drawable.ic_signal_strength_4g
-            else R.drawable.signal_strength_lte
+    private fun getIconIdForCell(): Int {
+        if (mTelephonyManager == null) {
+            mTelephonyManager = getContext().getSystemService(TelephonyManager::class.java)!!.createForSubscriptionId(subId)
+        }
+        val imsi = mTelephonyManager!!.getSubscriberId()
+        if (imsi.startsWith("23457")) {
+            return MobileNetworkUtils.NO_CELL_DATA_TYPE_ICON
         }
 
-        is CellIdentityNr -> R.drawable.signal_strength_5g
-        else -> MobileNetworkUtils.NO_CELL_DATA_TYPE_ICON
+        return when (cellId) {
+            is CellIdentityGsm -> R.drawable.signal_strength_g
+            is CellIdentityCdma -> R.drawable.signal_strength_1x
+            is CellIdentityWcdma, is CellIdentityTdscdma -> R.drawable.signal_strength_3g
+            is CellIdentityLte -> {
+                if (show4GForLTE) R.drawable.ic_signal_strength_4g
+                else R.drawable.signal_strength_lte
+            }
+            is CellIdentityNr -> R.drawable.signal_strength_5g
+            else -> MobileNetworkUtils.NO_CELL_DATA_TYPE_ICON
+        }
     }
 
     private fun getAccessNetworkTypeFromCellInfo(): Int = when (cellInfo) {

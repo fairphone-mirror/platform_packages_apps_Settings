@@ -31,18 +31,21 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.PersistableBundle;
 import android.provider.Settings;
+import android.telephony.AccessNetworkConstants;
 import android.telephony.CarrierConfigManager;
 import android.telephony.CellIdentity;
+import android.telephony.CellIdentityGsm;
+import android.telephony.CellIdentityLte;
+import android.telephony.CellIdentityNr;
+import android.telephony.CellIdentityTdscdma;
+import android.telephony.CellIdentityWcdma;
 import android.telephony.CellInfo;
-import android.telephony.CellInfoCdma;
-import android.telephony.CellInfoGsm;
-import android.telephony.CellInfoLte;
-import android.telephony.CellInfoWcdma;
 import android.telephony.NetworkRegistrationInfo;
 import android.telephony.SignalStrength;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.telephony.satellite.SatelliteManager;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 
@@ -81,6 +84,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
+
+import com.qualcomm.qcrilhook.QcRilHookCallback;
+import com.qualcomm.sysrilcmd.SysRilCmd;
+import com.qualcomm.sysrilcmd.ISysRilCmd;
 
 /**
  * "Choose network" settings UI for the Settings app.
@@ -180,7 +187,21 @@ public class NetworkSelectSettings extends DashboardFragment implements
         mNetworkScanRepository = new NetworkScanRepository(context, mSubId);
         mNetworkSelectRepository = new NetworkSelectRepository(context, mSubId);
         mSubscriptionsChangeListener.start();
+        mSysRil = new SysRilCmd(getContext(), mQcrilHookCb);
     }
+
+    private SysRilCmd mSysRil;
+    private QcRilHookCallback mQcrilHookCb = new QcRilHookCallback() {
+        @Override
+        public void onQcRilHookReady() {
+            Log.d(TAG, "onQcRilHookReady");
+        }
+
+        @Override
+        public void onQcRilHookDisconnected() {
+            Log.d(TAG, "onQcRilHookDisconnected");
+        }
+    };
 
     @Keep
     @VisibleForTesting
@@ -431,6 +452,119 @@ public class NetworkSelectSettings extends DashboardFragment implements
         }
     }
 
+    private List<CellInfo> customSomeCarriersCellinfos(List<CellInfo> cellInfoList) {
+        final String imsi = mTelephonyManager.getSubscriberId();
+        String mNetworkOperator = mTelephonyManager.getNetworkOperator(mSubId);
+        Log.d(TAG, "imsi = " + imsi + ",operator = " + mNetworkOperator);
+
+        if (mNetworkOperator == null || mNetworkOperator.isEmpty()) {
+            int phoneid = SubscriptionManager.getSlotIndex(mSubId);
+            mNetworkOperator = mSysRil.getDBStringValByPhoneid(ISysRilCmd.RIL_SUB_CMD_STRING_RPLMN, phoneid);
+            Log.d(TAG, "get rplmn[" + phoneid + "]: " + mNetworkOperator + " by sub: " + mSubId);
+        }
+
+        final String operator = mNetworkOperator;
+        if (imsi.startsWith("23457")) {
+                cellInfoList = cellInfoList.stream()
+                        .collect(Collectors.toMap(
+                                cellInfo -> {
+                                    CellIdentity cid = CellInfoUtil.getCellIdentity(cellInfo);
+                                    return cid.getOperatorAlphaLong() + cid.getPlmn();
+                                },
+                                cellInfo -> cellInfo,
+                                // display one rat for each operator.
+                                (existing, replacement) -> {
+                                    CellIdentity existingCid =
+                                            CellInfoUtil.getCellIdentity(existing);
+                                    CellIdentity replacementCid =
+                                            CellInfoUtil.getCellIdentity(replacement);
+                                    return getAccessNetworkType(existingCid) >= getAccessNetworkType(replacementCid) ? existing : replacement;
+                                }
+                        ))
+                        .values()
+                        .stream()
+                        .filter(cellInfo -> {//remove virgin plmn
+                            CellIdentity cid = CellInfoUtil.getCellIdentity(cellInfo);
+                            return !cid.getOperatorAlphaLong().toString().toLowerCase().contains("virgin") &&
+                                    !cid.getOperatorAlphaShort().toString().toLowerCase().contains("virgin");
+                        })
+                        .collect(Collectors.toList());
+
+        } else if (imsi.startsWith("23438")) {
+            cellInfoList = cellInfoList.stream()
+                    .filter(cellInfo -> {
+                        CellIdentity cid = CellInfoUtil.getCellIdentity(cellInfo);
+                        if (mForbiddenPlmns != null && mForbiddenPlmns.contains(getOperatorNumeric(cid))) {
+                            return false;
+                        }
+                        if (operator.startsWith("23415")) {
+                            return !cid.getOperatorAlphaLong().toString().toLowerCase().contains("vodafone") &&
+                                    !cid.getOperatorAlphaShort().toString().toLowerCase().contains("vodafone");
+                        } else if (operator.startsWith("23430") || operator.startsWith("23433")) {
+                            return !cid.getOperatorAlphaLong().toString().toLowerCase().contains("ee") &&
+                                    !cid.getOperatorAlphaShort().toString().toLowerCase().contains("ee");
+                        } else if (operator.startsWith("23410")) {
+                            return !cid.getOperatorAlphaLong().toString().toLowerCase().contains("o2") &&
+                                    !cid.getOperatorAlphaShort().toString().toLowerCase().contains("o2") &&
+                                    !cid.getOperatorAlphaLong().toString().toLowerCase().contains("vodafone") &&
+                                    !cid.getOperatorAlphaShort().toString().toLowerCase().contains("voda");
+                        }
+                        return true;
+                    })
+                    .collect(Collectors.toList());
+        }
+
+        return cellInfoList;
+    }
+
+    private int getAccessNetworkType(CellIdentity mCellId) {
+        int cellInfoType = mCellId == null ? CellInfo.TYPE_UNKNOWN : mCellId.getType();
+        int ant;
+        switch (cellInfoType) {
+            case CellInfo.TYPE_GSM:     ant = AccessNetworkConstants.AccessNetworkType.GERAN;
+                break;
+            case CellInfo.TYPE_LTE:     ant = AccessNetworkConstants.AccessNetworkType.EUTRAN;
+                break;
+            case CellInfo.TYPE_WCDMA:   // fallthrough
+            case CellInfo.TYPE_TDSCDMA: ant = AccessNetworkConstants.AccessNetworkType.UTRAN;
+                break;
+            case CellInfo.TYPE_NR:      ant = AccessNetworkConstants.AccessNetworkType.NGRAN;
+                break;
+            default:                    ant = AccessNetworkConstants.AccessNetworkType.UNKNOWN;
+        }
+
+        return ant;
+    }
+
+    /**
+     * Operator numeric of this cell
+     */
+    public String getOperatorNumeric(CellIdentity cellId) {
+        if (cellId == null) {
+            return null;
+        }
+        if (cellId instanceof CellIdentityGsm) {
+            return ((CellIdentityGsm) cellId).getMobileNetworkOperator();
+        }
+        if (cellId instanceof CellIdentityWcdma) {
+            return ((CellIdentityWcdma) cellId).getMobileNetworkOperator();
+        }
+        if (cellId instanceof CellIdentityTdscdma) {
+            return ((CellIdentityTdscdma) cellId).getMobileNetworkOperator();
+        }
+        if (cellId instanceof CellIdentityLte) {
+            return ((CellIdentityLte) cellId).getMobileNetworkOperator();
+        }
+        if (cellId instanceof CellIdentityNr) {
+            final String mcc = ((CellIdentityNr) cellId).getMccString();
+            if (mcc == null) {
+                return null;
+            }
+            return mcc.concat(((CellIdentityNr) cellId).getMncString());
+        }
+        return null;
+    }
+
     @VisibleForTesting
     protected void scanResultHandler(NetworkScanRepository.NetworkScanResult results) {
         int plmnCount = mPreferenceCategory.getPreferenceCount();
@@ -441,6 +575,11 @@ public class NetworkSelectSettings extends DashboardFragment implements
 
         mCellInfoList = filterOutSatellitePlmn(results.getCellInfos());
         Log.d(TAG, "CellInfoList: " + CellInfoUtil.cellInfoListToString(mCellInfoList));
+        if (mCellInfoList != null && mCellInfoList.size() != 0) {
+            mCellInfoList = customSomeCarriersCellinfos(mCellInfoList);
+            Log.d(TAG, "new mCellInfoList size: " +  mCellInfoList.size());
+            Log.d(TAG, "new mCellInfoList: " + CellInfoUtil.cellInfoListToString(mCellInfoList));
+        }
         updateAllPreferenceCategory();
         NetworkScanRepository.NetworkScanState state = results.getState();
         if (state == NetworkScanRepository.NetworkScanState.ERROR) {
