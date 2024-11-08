@@ -5350,6 +5350,9 @@
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"No se puede modificar la contraseña durante el uso compartido. Para cambiarla, primero desactiva la función compartir audio."</string>
      <string name="status_sdn">Número de marcación de servicio.</string>
      <string name="pick_up_to_wake_title">Activación al coger el móvil</string>
+    <string name="desktop_mode_title">Modo escritorio</string>
+    <string name="desktop_mode_summary">Utilizar el modo escritorio en pantallas secundarias</string>
+    <string name="desktop_mode_off_info">Los cambios se aplican cuando se reconecte</string>
      <string name="attention">Atención</string>
     <string name="cannot_detect_face">No se puede detectar su rostro</string>
     <string name="face_add_title">Añadir datos faciales</string>

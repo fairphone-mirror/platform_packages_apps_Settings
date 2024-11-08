@@ -5348,6 +5348,9 @@
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"Det går inte att redigera lösenordet medan delning pågår. Om du vill byta lösenord måste du först stänga av ljuddelningen."</string>
     <string name="status_sdn">Tjänstens uppringningsnummer</string>
     <string name="pick_up_to_wake_title">Plocka upp för att väcka</string>
+    <string name="desktop_mode_title">Skrivbordsläge</string>
+    <string name="desktop_mode_summary">Använd skrivbordsläge på sekundära skärmar</string>
+    <string name="desktop_mode_off_info">Ändringar träder i kraft när de ansluter igen</string>
     <string name="attention">Obs!</string>
     <string name="cannot_detect_face">Det går inte att läsa in ditt ansikte</string>
     <string name="face_add_title">Lägg till ansiktsdata</string>
