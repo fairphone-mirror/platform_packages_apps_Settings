@@ -5348,6 +5348,9 @@
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"Während der Freigabe kann das Passwort nicht geändert werden. Wenn du das Passwort ändern möchtest, deaktiviere zuerst die Audiofreigabe."</string>
     <string name="status_sdn">Service Rufnummer</string>
     <string name="pick_up_to_wake_title">Zum Aktivieren hochheben</string>
+    <string name="desktop_mode_title">Desktopmodus</string>
+    <string name="desktop_mode_summary">Desktopmodus auf sekundären Displays verwenden</string>
+    <string name="desktop_mode_off_info">Änderungen werden nach erneuter Verbindung wirksam.</string>
     <string name="attention">Vorsicht</string>
     <string name="cannot_detect_face">Das Gesicht wurde nicht erkannt</string>
     <string name="face_add_title">Gesichtsdaten hinzufügen</string>

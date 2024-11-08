@@ -5348,6 +5348,9 @@
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"Kan wachtwoord niet bewerken tijdens het delen. Als je het wachtwoord wilt wijzigen, zet je audio delen eerst uit."</string>
     <string name="status_sdn">Servicedienstnummer</string>
     <string name="pick_up_to_wake_title">Til op om te activeren</string>
+    <string name="desktop_mode_title">Desktopmodus</string>
+    <string name="desktop_mode_summary">Gebruik de desktopmodus op secundaire beeldschermen</string>
+    <string name="desktop_mode_off_info">Wijzigen worden doorgevoerd na opnieuw verbinden</string>
     <string name="attention">Let op</string>
     <string name="cannot_detect_face">Kan uw gezicht niet detecteren</string>
     <string name="face_add_title">Gezichtsgegevens toevoegen</string>

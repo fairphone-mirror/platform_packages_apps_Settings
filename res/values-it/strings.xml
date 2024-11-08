@@ -5348,6 +5348,9 @@
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"Impossibile modificare la password durante la condivisione. Per modificarla, devi prima disattivare la condivisione audio."</string>
     <string name="status_sdn">Servizio chiamata (SDN).</string>
     <string name="pick_up_to_wake_title">Prendi in mano per attivare lo schermo</string>
+    <string name="desktop_mode_title">Modalità desktop</string>
+    <string name="desktop_mode_summary">Utilizzare la modalità desktop sui display secondari</string>
+    <string name="desktop_mode_off_info">I cambiamenti avranno effetto quando sarai riconnesso</string>
     <string name="attention">Attenzione</string>
     <string name="cannot_detect_face">Impossibile rilevare il viso</string>
     <string name="face_add_title">Aggiungi i dati facciali</string>

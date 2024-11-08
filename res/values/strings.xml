@@ -13817,6 +13817,11 @@
     <string name="pick_up_to_wake_title">Pick up to wake</string>
     <string name="hidden_activity_module_info">"Module information"</string>
     <string name="verification_confirm_your_password_header">Input verify code :</string>
+    <!--ADD  for Desktop mode-->
+    <string name="desktop_mode_title">Desktop mode</string>
+    <string name="desktop_mode_summary">Use desktop mode on secondary displays</string>
+    <string name="desktop_mode_off_info">Changes take effect when is reconnected</string>
+    <!--ADD  for Desktop mode-->
     <string name="face_unlock_settings_title_rom4">Face unlock</string>
     <string name="face_unlock_register_prompt">Hold your phone 20-50 cm from your face.Position your face in the circle shown on the screen.</string>
     <string name="main_face_title">Face Enroll</string>
