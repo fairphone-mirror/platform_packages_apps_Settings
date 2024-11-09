@@ -50,11 +50,13 @@ import androidx.lifecycle.OnLifecycleEvent;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
+import android.content.res.Resources;
 
 import com.android.settings.R;
 import com.android.settings.network.AllowedNetworkTypesListener;
 import com.android.settings.network.CarrierConfigCache;
 import com.android.settings.network.telephony.TelephonyConstants.TelephonyManagerConstants;
+import com.android.settings.utils.CarrierParamsUtil;
 
 /**
  * Preference controller for "Preferred network mode"
@@ -72,6 +74,8 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
     private AllowedNetworkTypesListener mAllowedNetworkTypesListener;
     @VisibleForTesting
     Integer mCallState;
+    private String[] pref_network_mode = null;
+    private String[] pref_network_value = null;
 
     public PreferredNetworkModePreferenceController(Context context, String key) {
         super(context, key);
@@ -124,6 +128,8 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
         mPreference = screen.findPreference(getPreferenceKey());
+        // add by T2M.dengxiangyu for FP4-61 2021-04-14
+        updateState(mPreference);
     }
 
     @Override
@@ -133,12 +139,53 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
         }
         super.updateState(preference);
         final ListPreference listPreference = (ListPreference) preference;
+        //Modify begin by renjie.zhang FP5U-304 2024/2/23
         final int networkMode = getPreferredNetworkMode();
+        updatePreferenceEntries(listPreference);
         listPreference.setValue(Integer.toString(networkMode));
-        listPreference.setSummary(getPreferredNetworkModeSummaryResId(networkMode));
+        //listPreference.setSummary(getPreferredNetworkModeSummaryResId(networkMode));
+        //Modify END by renjie.zhang FP5U-304 2024/2/23
+        setNetworkModeSummaryText(listPreference, networkMode);
         listPreference.setEnabled(isCallStateIdle());
     }
 
+    //Modify begin by renjie.zhang FP5U-304 2024/2/23
+    private void updatePreferenceEntries(ListPreference preference) {
+        // Default values
+        final PersistableBundle carrierConfig = mCarrierConfigCache.getConfigForSubId(mSubId);
+
+        if (carrierConfig != null) {
+            pref_network_mode = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_MODE);
+            pref_network_value = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_VALUE);
+        }
+
+        if (pref_network_mode != null && pref_network_value != null && pref_network_mode.length != 0 && pref_network_value.length != 0) {
+            Log.d(LOG_TAG, "init preferred network from carrier config");
+        }else {
+
+            PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(mContext).getCarrierParams(mSubId);
+            if (carrierParams != null) {
+                pref_network_mode = carrierParams.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_MODE);
+                pref_network_value = carrierParams.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_VALUE);
+            }
+
+            if (pref_network_mode != null && pref_network_value != null && pref_network_mode.length != 0 && pref_network_value.length != 0) {
+                Log.d(LOG_TAG, "init preferred network from Settings params");
+            } else {
+                Log.d(LOG_TAG, "init preferred network from default config");
+                //[11086878] The preferred network modes defined by T2M begin
+                final Resources res = SubscriptionManager.getResourcesForSubId(mContext, mSubId);
+                pref_network_mode = res.getStringArray(R.array.preferred_network_mode_custom_choices);
+                pref_network_value = res.getStringArray(R.array.preferred_network_mode_custom_choices_value);
+                //[11086878] The preferred network modes defined by T2M end
+            }
+        }
+
+        preference.setEntries(pref_network_mode);
+        preference.setEntryValues(pref_network_value);
+    }
+    //Modify END by renjie.zhang FP5U-304 2024/2/23
+	
     @Override
     public boolean onPreferenceChange(Preference preference, Object object) {
         if (mTelephonyManager == null) {
@@ -206,7 +253,8 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
                 MobileNetworkUtils.getRafFromNetworkType(newPreferredNetworkMode));
 
         final ListPreference listPreference = (ListPreference) preference;
-        listPreference.setSummary(getPreferredNetworkModeSummaryResId(newPreferredNetworkMode));
+        //listPreference.setSummary(getPreferredNetworkModeSummaryResId(newPreferredNetworkMode));
+        setNetworkModeSummaryText(listPreference, newPreferredNetworkMode);
         return true;
     }
 
@@ -263,6 +311,28 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
                 (int) mTelephonyManager.getAllowedNetworkTypesForReason(
                         TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER));
     }
+
+    //Modify begin by renjie.zhang FP5U-304 2024/2/23
+    private void setNetworkModeSummaryText(ListPreference preference, int networkmode) {
+        String summary = null;
+
+        Log.d(LOG_TAG, "set networkmode(" + networkmode + ") summary");
+
+        for (int index = 0; index < pref_network_value.length; index++) {
+            if (pref_network_value[index].equals(String.valueOf(networkmode))){
+                summary = pref_network_mode[index];
+                break;
+            }
+        }
+
+        if (summary != null) {
+            Log.d(LOG_TAG, "summary: " + summary);
+            preference.setSummary(summary);
+        } else {
+            preference.setSummary(getPreferredNetworkModeSummaryResId(networkmode));
+        }
+    }
+    //Modify END by renjie.zhang FP5U-304 2024/2/23
 
     private int getPreferredNetworkModeSummaryResId(int NetworkMode) {
         switch (NetworkMode) {
