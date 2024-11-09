@@ -5345,8 +5345,6 @@
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"Não é possível editar a senha enquanto compartilha. Para mudar a senha, primeiro desligue o compartilhamento de áudio."</string>
     <string name="status_sdn">Número de ligação ao serviço</string>
     <string name="pick_up_to_wake_title">Levantar para acordar</string>
-    <string name="desktop_mode_title">Modo de ambiente de trabalho</string>
-    <string name="desktop_mode_summary">Utilize o modo de ambiente de trabalho em ecrãs secundários</string>
     <string name="desktop_mode_off_info">As mudanças entram em vigor quando se reconectado</string>
     <string name="attention">Atenção</string>
     <string name="cannot_detect_face">Não é possível detetar o seu rosto</string>

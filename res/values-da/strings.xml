@@ -5348,8 +5348,6 @@
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"Adgangskoden kan ikke ændres under deling. Deaktiver lyddeling for at ændre adgangskoden."</string>
     <string name="status_sdn">Indtast nummer service</string>
     <string name="pick_up_to_wake_title">Løft op for at vække</string>
-    <string name="desktop_mode_title">Desktop-tilstand</string>
-    <string name="desktop_mode_summary">Brug desktop-tilstand på sekundære skærme</string>
     <string name="desktop_mode_off_info">Ændringer træder i kraft, når de er forbundet igen</string>
     <string name="attention">Bemærk</string>
     <string name="cannot_detect_face">Kan ikke registrere dit ansigt</string>

@@ -5348,8 +5348,6 @@
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"Impossible de modifier le mot de passe lors du partage. Pour modifier le mot de passe, il faut d\'abord désactiver le partage audio."</string>
     <string name="status_sdn">Numéro de numérotation de service</string>
     <string name="pick_up_to_wake_title">Lever pour activer</string>
-    <string name="desktop_mode_title">Mode Bureau</string>
-    <string name="desktop_mode_summary">Utiliser le mode bureau sur les écrans secondaires</string>
     <string name="desktop_mode_off_info">Les modifications prennent effet après reconnexion</string>
     <string name="attention">Avertissement</string>
     <string name="cannot_detect_face">Impossible de détecter votre visage</string>
