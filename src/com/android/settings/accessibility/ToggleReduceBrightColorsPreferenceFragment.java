@@ -45,11 +45,18 @@ import com.android.settingslib.search.SearchIndexable;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.provider.Settings.Secure;
+import android.hardware.SensorManager;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorEvent;
+import android.hardware.Sensor;
 /** Settings for reducing brightness. */
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class ToggleReduceBrightColorsPreferenceFragment extends ToggleFeaturePreferenceFragment {
 
     private static final String TAG = "ToggleReduceBrightColorsPreferenceFragment";
+    private static final String ENABLE_REDUCE_BRIGHT_COLORS_KEY =
+            Settings.Secure.ENABLE_REDUCE_BRIGHT_COLORS;
     private static final String KEY_INTENSITY = "rbc_intensity";
     private static final String KEY_PERSIST = "rbc_persist";
     private static final String REDUCE_BRIGHT_COLORS_ACTIVATED_KEY =
@@ -59,6 +66,12 @@ public class ToggleReduceBrightColorsPreferenceFragment extends ToggleFeaturePre
     private ReduceBrightColorsPersistencePreferenceController mRbcPersistencePreferenceController;
     private ColorDisplayManager mColorDisplayManager;
 
+    private SensorManager mSensorManager;
+    private final float CAN_ENTRY_EXTRA_DIM_VALUE = 80;
+    private int mSmallLuxCounter = 0;
+    private int mLageLuxCounter = 0 ;
+    private final String ACCESSIBILITY_BUTTON_TARGETS_STRING = "com.android.server.accessibility/ReduceBrightColors";
+
     @Override
     protected void registerKeysToObserverCallback(
             AccessibilitySettingsContentObserver contentObserver) {
@@ -66,6 +79,7 @@ public class ToggleReduceBrightColorsPreferenceFragment extends ToggleFeaturePre
 
         final List<String> enableServiceFeatureKeys = new ArrayList<>(/* initialCapacity= */ 1);
         enableServiceFeatureKeys.add(REDUCE_BRIGHT_COLORS_ACTIVATED_KEY);
+        enableServiceFeatureKeys.add(ENABLE_REDUCE_BRIGHT_COLORS_KEY);
         contentObserver.registerKeysToObserverCallback(enableServiceFeatureKeys,
                 key -> updateSwitchBarToggleSwitch());
     }
@@ -88,12 +102,61 @@ public class ToggleReduceBrightColorsPreferenceFragment extends ToggleFeaturePre
         mRbcIntensityPreferenceController.displayPreference(getPreferenceScreen());
         mRbcPersistencePreferenceController.displayPreference(getPreferenceScreen());
         mColorDisplayManager = getContext().getSystemService(ColorDisplayManager.class);
+        mSensorManager = (SensorManager) getContext().getSystemService(Context.SENSOR_SERVICE);
         final View view = super.onCreateView(inflater, container, savedInstanceState);
         // Parent sets the title when creating the view, so set it after calling super
         mToggleServiceSwitchPreference.setTitle(R.string.reduce_bright_colors_switch_title);
         updateGeneralCategoryOrder();
         updateFooterPreference();
         return view;
+    }
+
+    private final SensorEventListener mLightSensorListener = new SensorEventListener() {
+        @Override
+        public void onSensorChanged(SensorEvent event) {
+            final float lux = event.values[0];
+            if(lux <= CAN_ENTRY_EXTRA_DIM_VALUE){
+                mSmallLuxCounter++;
+                mLageLuxCounter = 0;
+            }else {
+                mSmallLuxCounter = 0;
+                mLageLuxCounter++;
+            }
+            if(mLageLuxCounter == 10){
+                mColorDisplayManager.setReduceBrightColorsActivated(false);
+                Secure.putInt(getContext().getContentResolver(),Secure.ENABLE_REDUCE_BRIGHT_COLORS,0);
+                Secure.putString(getContext().getContentResolver(),Secure.ACCESSIBILITY_SHORTCUT_TARGET_SERVICE,"");
+                Secure.putString(getContext().getContentResolver(),Secure.ACCESSIBILITY_BUTTON_TARGETS,getButtonTargetsString());
+            }
+            if(mSmallLuxCounter == 10){
+                Secure.putInt(getContext().getContentResolver(),Secure.ENABLE_REDUCE_BRIGHT_COLORS,1);
+            }
+        }
+
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+            // Not used.
+        }
+    };
+
+    private String getButtonTargetsString() {
+        String mCurrentAccessibilityButtonTargets = "";
+        if (Settings.Secure.getString(getContext().getContentResolver(),Secure.ACCESSIBILITY_BUTTON_TARGETS) != null) {
+            mCurrentAccessibilityButtonTargets = Settings.Secure.getString(getContext().getContentResolver(),Secure.ACCESSIBILITY_BUTTON_TARGETS);
+        }
+        String[] strings = mCurrentAccessibilityButtonTargets.split(":");
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < strings.length; i++) {
+            if (!ACCESSIBILITY_BUTTON_TARGETS_STRING.equals(strings[i])){
+                if (i == 0) {
+                    result.append(strings[i]);
+                } else {
+                    result.append(":");
+                    result.append(strings[i]);
+                }
+            }
+        }
+        return result.toString();
     }
 
     private void updateGeneralCategoryOrder() {
@@ -118,6 +181,14 @@ public class ToggleReduceBrightColorsPreferenceFragment extends ToggleFeaturePre
     public void onResume() {
         super.onResume();
         updateSwitchBarToggleSwitch();
+        mSensorManager.registerListener(mLightSensorListener,mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT_BACK),
+                  SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mSensorManager.unregisterListener(mLightSensorListener);
     }
 
     @Override
@@ -194,6 +265,14 @@ public class ToggleReduceBrightColorsPreferenceFragment extends ToggleFeaturePre
                 .findPreference(KEY_PERSIST));
         if (mToggleServiceSwitchPreference.isChecked() != checked) {
             mToggleServiceSwitchPreference.setChecked(checked);
+        }
+        boolean isEnableExtraDim = Secure.getInt(getContext().getContentResolver(),Secure.ENABLE_REDUCE_BRIGHT_COLORS,0) == 1;
+        if(isEnableExtraDim){
+            mToggleServiceSwitchPreference.setSwitchBarEnabled(true);
+            mShortcutPreference.setEnabled(true);
+        } else {
+            mToggleServiceSwitchPreference.setSwitchBarEnabled(false);
+            mShortcutPreference.setEnabled(false);
         }
     }
 
