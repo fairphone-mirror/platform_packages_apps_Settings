@@ -47,7 +47,7 @@ class RegulatoryInfoDisplayActivity : Activity() {
         setContentView(R.layout.regulatory_info);
         val image = findViewById<ImageView>(R.id.regulatoryInfo)
         if(image != null) {
-            Glide.with(this).load(sRegulatoryUrl).error(R.drawable.regulatory_info).into(image);
+            Glide.with(this).load(sRegulatoryUrl).error(R.drawable.regulatory_info_fp5_new).into(image);
         }
         /**
         val builder = AlertDialog.Builder(this)
