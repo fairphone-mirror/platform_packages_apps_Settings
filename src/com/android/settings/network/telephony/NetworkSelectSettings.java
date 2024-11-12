@@ -475,7 +475,8 @@ public class NetworkSelectSettings extends DashboardFragment implements
             CellIdentity cid = CellInfoUtil.getCellIdentity(cellInfo);
             mCellInfoList.add(cellInfo);
             // modify by T2M.sunhuan for FP4T-550/FP4T-551 23-07-26
-            if (!TextUtils.isEmpty(operator) && !(operator.equals("26201") || operator.equals("26202"))) {
+            // modify by T2M.zhang renjie for FP5V-263 24-11-12
+            if (TextUtils.isEmpty(operator) || !(operator.equals("26201") || operator.equals("26202"))) {
                 for (CellInfo mCellInfo:mCellInfoList){
                     if (mCellInfo.equals(cellInfo)) continue;
 
