@@ -159,6 +159,11 @@
             android:title="@string/orientation_timing_title"
             android:fragment="com.android.settings.display.OrientationTimingFragment"/>
 
+        <SwitchPreference
+            android:key="dcdimming_preference"
+            android:title="@string/dcdimming_title"
+            settings:controller="com.android.settings.display.DCDimmingPreferenceController"/>
+
         <Preference
             android:key="screen_resolution"
             android:title="@string/screen_resolution_title"

@@ -13889,6 +13889,8 @@
     <string name="ims_unlock_enable">"IMS settings display"</string>
     <string name="ims_unlock_enable_summary">"Debug mode when IMS enable"</string>
 
+    <string name="dcdimming_title">DC dimming</string>
+
     <string name="ims_settings_title">"IMS Settings"</string>
     <string name="ims_settings_summary">"Debug mode for IMS Settings"</string>
     <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
