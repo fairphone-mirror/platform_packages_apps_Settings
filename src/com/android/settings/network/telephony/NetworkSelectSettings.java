@@ -39,10 +39,6 @@ import android.telephony.CellIdentityNr;
 import android.telephony.CellIdentityTdscdma;
 import android.telephony.CellIdentityWcdma;
 import android.telephony.CellInfo;
-import android.telephony.CellInfoCdma;
-import android.telephony.CellInfoGsm;
-import android.telephony.CellInfoLte;
-import android.telephony.CellInfoWcdma;
 import android.telephony.NetworkRegistrationInfo;
 import android.telephony.SignalStrength;
 import android.telephony.SubscriptionManager;
@@ -79,10 +75,6 @@ import kotlinx.coroutines.Job;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Optional;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -461,102 +453,68 @@ public class NetworkSelectSettings extends DashboardFragment implements
         }
     }
 
-    // modify by T2M.zhang renjie for FP4-2987 21-10-22 begin
-    // modify by T2M.zhang renjie for FP4-3074 21-10-13 begin
-    private List<CellInfo> processCellInfoList(List<CellInfo> cellInfoList){
-        List<CellInfo> mCellInfoList = new ArrayList<>();
-        //modify by T2M.sunhuan for FP4T-550/FP4T-551 23-07-26 begin
-        String operator = mTelephonyManager.getNetworkOperator(mSubId);
-        Log.d(TAG, "operator = "+operator);
-        //modify by T2M.sunhuan for FP4T-550/FP4T-551 23-07-26 end
-
-        for (int index = 0; index < cellInfoList.size(); index++) {
-            CellInfo cellInfo = cellInfoList.get(index);
-            CellIdentity cid = CellInfoUtil.getCellIdentity(cellInfo);
-            mCellInfoList.add(cellInfo);
-            // modify by T2M.sunhuan for FP4T-550/FP4T-551 23-07-26
-            // modify by T2M.zhang renjie for FP5V-263 24-11-12
-            if (TextUtils.isEmpty(operator) || !(operator.equals("26201") || operator.equals("26202"))) {
-                for (CellInfo mCellInfo:mCellInfoList){
-                    if (mCellInfo.equals(cellInfo)) continue;
-
-                    CellIdentity mCid = CellInfoUtil.getCellIdentity(mCellInfo);
-                    //[BUG]-Modify-Begin by shaopan.tang 2022-12-27 [FP4S-797]Manual NW shows unobnormal
-                    if (mCid.getOperatorAlphaLong().equals(cid.getOperatorAlphaLong())
-                            && !TextUtils.isEmpty(mCid.getPlmn())
-                            && mCid.getPlmn().equals(cid.getPlmn())){
-                        if (getAccessNetworkType(cid) < getAccessNetworkType(mCid)){
-                            mCellInfoList.remove(cellInfo);
-                            break;
-                        }else{
-                            mCellInfoList.remove(mCellInfo);
-                            break;
-                        }
-                    }
-                    //[BUG]-Modify-End by shaopan.tang
-                }
-            }
-        }
-              return mCellInfoList;
-    }
-
-    private List<CellInfo> removeUnusedCellInfo(List<CellInfo> cellInfoList){
-
-        String imsi = mTelephonyManager.getSubscriberId();
-        String operator = mTelephonyManager.getNetworkOperator(mSubId);
-        Log.d(TAG, "imsi = " + imsi +",operator = "+operator);
+    private List<CellInfo> customSomeCarriersCellinfos(List<CellInfo> cellInfoList) {
+        final String imsi = mTelephonyManager.getSubscriberId();
+        String mNetworkOperator = mTelephonyManager.getNetworkOperator(mSubId);
+        Log.d(TAG, "imsi = " + imsi + ",operator = " + mNetworkOperator);
 
         // add by T2M.dengxiangyu for FP4-2987 2022-01-05 begin
-        if (operator == null || operator.isEmpty()) {
+        if (mNetworkOperator == null || mNetworkOperator.isEmpty()) {
             int phoneid = SubscriptionManager.getSlotIndex(mSubId);
-            operator = mSysRil.getDBStringValByPhoneid(ISysRilCmd.RIL_SUB_CMD_STRING_RPLMN, phoneid);
-            Log.d(TAG, "get rplmn[" + phoneid + "]: " + operator + " by sub: " + mSubId);
+            mNetworkOperator = mSysRil.getDBStringValByPhoneid(ISysRilCmd.RIL_SUB_CMD_STRING_RPLMN, phoneid);
+            Log.d(TAG, "get rplmn[" + phoneid + "]: " + mNetworkOperator + " by sub: " + mSubId);
         }
         // add by T2M.dengxiangyu for FP4-2987 2022-01-05 end
 
+        final String operator = mNetworkOperator;
         if (imsi.startsWith("23457")) {
-            // display one rat for each operator.
-            cellInfoList = processCellInfoList(cellInfoList);
-            //remove some operator.
-            for (int i = cellInfoList.size() - 1; i >= 0; i--) {
-                CellInfo cellInfo = cellInfoList.get(i);
-                CellIdentity cid = CellInfoUtil.getCellIdentity(cellInfo);
-                /*if (cid.getOperatorAlphaLong().toString().toLowerCase().contains("o2") || cid.getOperatorAlphaShort().toString().toLowerCase().contains("o2")) {
-                    cellInfoList.remove(cellInfo);
-                }*/
-                if (cid.getOperatorAlphaLong().toString().toLowerCase().contains("virgin") || cid.getOperatorAlphaShort().toString().toLowerCase().contains("virgin")) {
-                    cellInfoList.remove(cellInfo);
-                }
+                cellInfoList = cellInfoList.stream()
+                        .collect(Collectors.toMap(
+                                cellInfo -> {
+                                    CellIdentity cid = CellInfoUtil.getCellIdentity(cellInfo);
+                                    return cid.getOperatorAlphaLong() + cid.getPlmn();
+                                },
+                                cellInfo -> cellInfo,
+                                // display one rat for each operator.
+                                (existing, replacement) -> {
+                                    CellIdentity existingCid =
+                                            CellInfoUtil.getCellIdentity(existing);
+                                    CellIdentity replacementCid =
+                                            CellInfoUtil.getCellIdentity(replacement);
+                                    return getAccessNetworkType(existingCid) >= getAccessNetworkType(replacementCid) ? existing : replacement;
+                                }
+                        ))
+                        .values()
+                        .stream()
+                        .filter(cellInfo -> {//remove virgin plmn
+                            CellIdentity cid = CellInfoUtil.getCellIdentity(cellInfo);
+                            return !cid.getOperatorAlphaLong().toString().toLowerCase().contains("virgin") &&
+                                    !cid.getOperatorAlphaShort().toString().toLowerCase().contains("virgin");
+                        })
+                        .collect(Collectors.toList());
 
-            }
-        }else if (imsi.startsWith("23438")) {
-            for (int i = cellInfoList.size() - 1; i >= 0; i--) {
-                CellInfo cellInfo = cellInfoList.get(i);
-                CellIdentity cid = CellInfoUtil.getCellIdentity(cellInfo);
-                if (mForbiddenPlmns != null && mForbiddenPlmns.contains(getOperatorNumeric(cid))){
-                    cellInfoList.remove(cellInfo);
-                    continue;
-                }
-                if (operator.startsWith("23415")){
-                    if (cid.getOperatorAlphaLong().toString().toLowerCase().contains("vodafone") || cid.getOperatorAlphaShort().toString().toLowerCase().contains("vodafone")) {
-                        cellInfoList.remove(cellInfo);
-                    }
-                }else if (operator.startsWith("23430") || operator.startsWith("23433")){
-                    if (cid.getOperatorAlphaLong().toString().toLowerCase().contains("ee") || cid.getOperatorAlphaShort().toString().toLowerCase().contains("ee")) {
-                        cellInfoList.remove(cellInfo);
-                    }
-                }
-                //[BUG]-Modify-Begin by shaopan.tang 2022-12-22 [FP4S-686]Wrong behaivor for manual network selection
-                else if (operator.startsWith("23410")){
-                    if (cid.getOperatorAlphaLong().toString().toLowerCase().contains("o2") || cid.getOperatorAlphaShort().toString().toLowerCase().contains("o2")) {
-                        cellInfoList.remove(cellInfo);
-                    }else if (cid.getOperatorAlphaLong().toString().toLowerCase().contains("vodafone") || cid.getOperatorAlphaShort().toString().toLowerCase().contains("voda")) {
-                        cellInfoList.remove(cellInfo);
-                    }
-                }
-                //[BUG]-Modify-End by shaopan.tang
-            }
-
+        } else if (imsi.startsWith("23438")) {
+            cellInfoList = cellInfoList.stream()
+                    .filter(cellInfo -> {
+                        CellIdentity cid = CellInfoUtil.getCellIdentity(cellInfo);
+                        if (mForbiddenPlmns != null && mForbiddenPlmns.contains(getOperatorNumeric(cid))) {
+                            return false;
+                        }
+                        if (operator.startsWith("23415")) {
+                            return !cid.getOperatorAlphaLong().toString().toLowerCase().contains("vodafone") &&
+                                    !cid.getOperatorAlphaShort().toString().toLowerCase().contains("vodafone");
+                        } else if (operator.startsWith("23430") || operator.startsWith("23433")) {
+                            return !cid.getOperatorAlphaLong().toString().toLowerCase().contains("ee") &&
+                                    !cid.getOperatorAlphaShort().toString().toLowerCase().contains("ee");
+                        } else if (operator.startsWith("23410")) {
+                            return !cid.getOperatorAlphaLong().toString().toLowerCase().contains("o2") &&
+                                    !cid.getOperatorAlphaShort().toString().toLowerCase().contains("o2") &&
+                                    !cid.getOperatorAlphaLong().toString().toLowerCase().contains("vodafone") &&
+                                    !cid.getOperatorAlphaShort().toString().toLowerCase().contains("voda");
+                        }
+                        return true;
+                    })
+                    .collect(Collectors.toList());
         }
 
         return cellInfoList;
@@ -623,8 +581,7 @@ public class NetworkSelectSettings extends DashboardFragment implements
         Log.d(TAG, "CellInfoList: " + CellInfoUtil.cellInfoListToString(mCellInfoList));
         if (mCellInfoList != null && mCellInfoList.size() != 0) {
             // modify by T2M.zhang renjie for FP4-3074 21-10-13 begin
-            mCellInfoList = processCellInfoList(mCellInfoList);
-            mCellInfoList = removeUnusedCellInfo(mCellInfoList);
+            mCellInfoList = customSomeCarriersCellinfos(mCellInfoList);
             Log.d(TAG, "new mCellInfoList size: " +  mCellInfoList.size());
             Log.d(TAG, "new mCellInfoList: " + CellInfoUtil.cellInfoListToString(mCellInfoList));
             // modify by T2M.zhang renjie for FP4-3074 21-10-13 end
