@@ -13894,5 +13894,7 @@
     <string name="ims_settings_title">"IMS Settings"</string>
     <string name="ims_settings_summary">"Debug mode for IMS Settings"</string>
     <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
-    <string name="toast_extra_dim_info">A darker environment is needed.</string> 
+    <string name="toast_extra_dim_info">A darker environment is needed.</string>
+
+    <string name="set_refresh_rate">Set Refresh Rate</string>
 </resources>

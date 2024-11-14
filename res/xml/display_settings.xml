@@ -195,6 +195,11 @@
             settings:keywords="@string/keywords_screensaver"
             settings:controller="com.android.settings.display.ScreenSaverPreferenceController"/>
 
+
+        <Preference
+            android:key="refresh_rate"
+            android:title="@string/set_refresh_rate"/>
+
         <SwitchPreferenceCompat
             android:key="camera_gesture"
             android:title="@string/camera_gesture_title"
