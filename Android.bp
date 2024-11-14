@@ -115,6 +115,10 @@ android_library {
         "glide-prebuilt",
         "glide-gifdecoder-prebuilt",
         "glide-disklrucache-prebuilt",
+
+        // Fairphone dependencies
+        "qcrilhook-class",
+        "sysrilcmd-class",
     ],
 
     plugins: ["androidx.room_room-compiler-plugin"],
@@ -131,8 +135,6 @@ android_library {
         "ims-common",
         "telephony-ext",
         "extphonelib",
-        "qcrilhook",
-        "sysrilcmd",
     ],
 }
 
@@ -157,7 +159,13 @@ android_app {
         "privapp_whitelist_com.android.settings",
         "settings-platform-compat-config",
     ],
-    static_libs: ["Settings-core"],
+    static_libs: [
+        "Settings-core",
+
+        // Fairphone dependencies
+        "qcrilhook-class",
+        "sysrilcmd-class",
+    ],
     uses_libs: ["org.apache.http.legacy"],
     use_resource_processor: true,
     resource_dirs: [],
@@ -166,8 +174,6 @@ android_app {
     },
     libs: [
         "extphonelib",
-        "qcrilhook",
-        "sysrilcmd",
     ],
 }
 
