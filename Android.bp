@@ -117,6 +117,8 @@ android_library {
         "androidx.vectordrawable_vectordrawable-animated",
         "androidx.exifinterface_exifinterface",
         "glide-annotation-and-compiler-prebuilt",
+        "qcrilhook_class",
+        "sysrilcmd_class",
     ],
 
     libs: [
@@ -124,8 +126,8 @@ android_library {
         "ims-common",
         "telephony-ext",
         "extphonelib",
-        "qcrilhook",
-        "sysrilcmd",
+        "qcrilhook_class",
+        "sysrilcmd_class",
     ],
 }
 
