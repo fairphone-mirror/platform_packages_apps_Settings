@@ -35,6 +35,17 @@
         android:title="@string/license_title"
         settings:controller="com.android.settings.deviceinfo.legal.LicensePreferenceController" />
 
+    <Preference
+        android:key="opensourceliscenses"
+        android:title="@string/legal_info_title">
+        <intent
+            android:action="android.settings.OPEN_SOURCE_LICENSES">
+            <extra
+                android:name="legal_info"
+                android:value="open_source_lisences"/>
+        </intent>
+    </Preference>
+
     <!-- Terms and conditions -->
     <Preference
         android:key="terms"
