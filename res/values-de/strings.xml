@@ -5416,4 +5416,5 @@
     <string name="face_unlock_less_secure_than_strong_auth">Hinweis: Unter Umständen ist Ihr Gesicht weniger sicher als ein sicheres Muster oder eine sichere PIN.</string>
     <string name="security_settings_faceunlock_cancel_setup">Überspringen</string>
     <string name="security_settings_faceunlock_next">Weiter</string>
+    <string name="pocket_mode">Taschenmodus</string>
 </resources>

@@ -5413,4 +5413,5 @@
     <string name="unlock_failed_reset_description">如果您尝试错误解锁手机15次，它将重置为出厂设置。所有数据，包括文件和下载的应用程序，都将被删除。</string>
 
     <string name="set_refresh_rate">设置刷新帧率</string>
+    <string name="pocket_mode">口袋模式</string>
 </resources>

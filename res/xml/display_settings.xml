@@ -240,5 +240,9 @@
             android:key="sunlight_mode"
             android:title="@string/sunlight_mode_title"/>
         <!--Add for FP5-565 20230414-->
+
+        <SwitchPreference
+            android:key="pocket_mode"
+            android:title="@string/pocket_mode"/>
     </PreferenceCategory>
 </PreferenceScreen>
