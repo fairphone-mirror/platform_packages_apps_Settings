@@ -5414,4 +5414,5 @@
     <string name="charging_normal">Modo normal</string>
     <string name="charging_state">Modo de carregamento</string>
     <string name="enroll_main_first">Por favor, inscreva os dados da face primeiro.</string>
+    <string name="pocket_mode">Modo de bolso</string>
 </resources>

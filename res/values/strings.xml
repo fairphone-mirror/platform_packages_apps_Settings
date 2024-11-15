@@ -13897,4 +13897,5 @@
     <string name="toast_extra_dim_info">A darker environment is needed.</string>
 
     <string name="set_refresh_rate">Set Refresh Rate</string>
+    <string name="pocket_mode">Pocket mode</string>
 </resources>

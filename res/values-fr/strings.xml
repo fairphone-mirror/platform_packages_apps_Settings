@@ -5418,4 +5418,5 @@
     <string name="security_settings_faceunlock_next">Suivant</string>
 
     <string name="wfc_help_desc_text">Appels Wi-Fi\n\nUtilisez les réseaux Wi-Fi pour passer et recevoir des appels n’importe où en France métropolitaine, même sans réseau mobile.\n\nPour activer le service, veuillez vérifier auprès de votre opérateur la compatibilité de votre offre. Ensuite, connectez-vous à un réseau Wi-Fi, puis activer les Appels Wi-Fi directement dans les paramètres de votre téléphone. Dès que vous verrez cette icône, vous pourrez alors passer et recevoir vos appels grâce au Wi-Fi. </string>
+    <string name="pocket_mode">Mode de poche</string>
 </resources>
