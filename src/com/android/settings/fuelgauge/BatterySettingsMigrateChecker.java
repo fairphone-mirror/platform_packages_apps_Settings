@@ -56,6 +56,17 @@ public final class BatterySettingsMigrateChecker extends BroadcastReceiver {
         }
 
         if(intent != null && Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())){
+
+            final ContentResolver cr = context.getContentResolver();
+            float minRefreshRate = Settings.System.getFloatForUser(cr,
+                Settings.System.MIN_REFRESH_RATE, 0f, cr.getUserId());
+            if(minRefreshRate == 90f){
+                Settings.System.putFloatForUser(cr,
+                    Settings.System.MIN_REFRESH_RATE, 60f,cr.getUserId());
+                Settings.System.putFloatForUser(cr,
+                    Settings.System.MIN_REFRESH_RATE, 90f,cr.getUserId());
+            }
+
             if("0".equals(SystemProperties.get(T2M_PROP_SET_FILESDEFAULT,"0"))){
                 final PackageManager pm = context.getPackageManager();
                 try{
