@@ -934,8 +934,9 @@ public final class Utils extends com.android.settingslib.Utils {
     }
 
     public static boolean hasFaceHardware(Context context) {
-        final FaceManager faceManager = getFaceManagerOrNull(context);
-        return faceManager != null && faceManager.isHardwareDetected();
+        return true;
+        // final FaceManager faceManager = getFaceManagerOrNull(context);
+        // return faceManager != null && faceManager.isHardwareDetected();
     }
 
     /**
