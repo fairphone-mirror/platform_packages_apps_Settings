@@ -21,6 +21,7 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -45,16 +46,43 @@ public class SettingsLicenseActivity extends FragmentActivity implements
 
     private static final int LOADER_ID_LICENSE_HTML_LOADER = 0;
 
+    private static final String DEFAULT_OPEN_SOURCE_LICENSE_PATH = "/system_ext/etc/FAIRPHONE.html.gz";
+    private String legalInfoExtra;
+    final String OPEN_SOURCE_LICENSES = "open_source_lisences";
+
+    // Used in com.android.htmlviewer.HTMLViewerActivity
+    private static final String HTMLVIEWER_EXTRA_MODULE = "extra.module";
+    private static final String HTMLVIEWER_EXTRA_MODULE_OSS_LICENSES = "open_source_lisences";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         File file = new File(LICENSE_PATH);
-        if (isFileValid(file)) {
-            showHtmlFromUri(Uri.fromFile(file));
+        legalInfoExtra = getIntent().getStringExtra("legal_info");
+        Log.d(TAG, "legalInfoExtra:" + legalInfoExtra);
+        String licenseHtmlPath = DEFAULT_OPEN_SOURCE_LICENSE_PATH;
+        if (OPEN_SOURCE_LICENSES.equals(legalInfoExtra) && isFilePathValid(licenseHtmlPath)) {
+            showSelectedFile(licenseHtmlPath);
         } else {
             showHtmlFromDefaultXmlFiles();
         }
+    }
+
+    private void showSelectedFile(final String path) {
+        if (TextUtils.isEmpty(path)) {
+            Log.e(TAG, "The system property for the license file is empty");
+            showErrorAndFinish();
+            return;
+        }
+
+        final File file = new File(path);
+        if (!isFileValid(file)) {
+            Log.e(TAG, "License file " + path + " does not exist");
+            showErrorAndFinish();
+            return;
+        }
+        showHtmlFromUri(FileProvider.getUriForFile(getApplicationContext(), Utils.FILE_PROVIDER_AUTHORITY, file));
     }
 
     @Override
@@ -96,7 +124,14 @@ public class SettingsLicenseActivity extends FragmentActivity implements
         // before viewing.
         final Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setDataAndType(uri, "text/html");
-        intent.putExtra(Intent.EXTRA_TITLE, getString(R.string.settings_license_activity_title));
+
+        if (OPEN_SOURCE_LICENSES.equals(legalInfoExtra)) {
+            intent.putExtra(HTMLVIEWER_EXTRA_MODULE, HTMLVIEWER_EXTRA_MODULE_OSS_LICENSES);
+            intent.putExtra(Intent.EXTRA_TITLE, getString(R.string.legal_info_title));
+        } else {
+            intent.putExtra(Intent.EXTRA_TITLE, getString(R.string.settings_license_activity_title));
+        }
+
         if (ContentResolver.SCHEME_CONTENT.equals(uri.getScheme())) {
             intent.addFlags(
                     Intent.FLAG_GRANT_READ_URI_PERMISSION
@@ -112,6 +147,10 @@ public class SettingsLicenseActivity extends FragmentActivity implements
             Log.e(TAG, "Failed to find viewer", e);
             showErrorAndFinish();
         }
+    }
+
+    private boolean isFilePathValid(final String path) {
+        return !TextUtils.isEmpty(path) && isFileValid(new File(path));
     }
 
     private void showErrorAndFinish() {

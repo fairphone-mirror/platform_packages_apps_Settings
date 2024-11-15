@@ -13898,4 +13898,6 @@
 
     <string name="set_refresh_rate">Set Refresh Rate</string>
     <string name="pocket_mode">Pocket mode</string>
+
+    <string name="legal_info_title">Open source licenses</string>
 </resources>
