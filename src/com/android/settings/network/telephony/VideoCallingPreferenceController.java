@@ -19,6 +19,7 @@ package com.android.settings.network.telephony;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.PersistableBundle;
+import android.provider.Settings;
 import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyCallback;
@@ -68,6 +69,15 @@ public class VideoCallingPreferenceController extends TelephonyTogglePreferenceC
         //[BUG]-Modify-Begin by shaopan.tang 2024-01-22 FP5V-233 Porting from 5U-163 Carrier video calling option display obnormal when switch 4G calling
         // add by T2M.dengxiangyu for 4R-61 2021-04-14 begin
         Log.d(TAG, "getAvailabilityStatus VT");
+
+        // add by T2M.renjiezhang for 5V-88 2024-11-15 begin
+        boolean ims_enabled = Settings.Global.getInt(mContext.getContentResolver(), "ims_enable_settings",0) == 1;
+        if (ims_enabled){
+            Log.d(TAG, "vt toggle show because of ims_enabled =" + ims_enabled);
+            return AVAILABLE;
+        }
+        // add by T2M.renjiezhang for 5V-88 2024-11-15 end
+
         boolean vtToggleShow = false;
         final PersistableBundle carrierConfig = CarrierConfigCache.getInstance(mContext).getConfigForSubId(mSubId);
         if (carrierConfig != null) {
@@ -108,7 +118,7 @@ public class VideoCallingPreferenceController extends TelephonyTogglePreferenceC
             return;
         }
         final TwoStatePreference switchPreference = (TwoStatePreference) preference;
-        final boolean videoCallEnabled = isVideoCallEnabled(mSubId);
+        final boolean videoCallEnabled = getAvailabilityStatus(mSubId) == AVAILABLE;// add by T2M.renjiezhang for 5V-88 2024-11-15
         switchPreference.setVisible(videoCallEnabled);
         mCallingPreferenceCategoryController
                 .updateChildVisible(getPreferenceKey(), videoCallEnabled);
