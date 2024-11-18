@@ -47,6 +47,10 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import java.util.List;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import android.util.Log;
 
 /**
  * Displays a list of apps and subsystems that consume power, ordered by how much power was consumed
@@ -61,6 +65,8 @@ public class PowerUsageSummary extends PowerUsageBase
     @VisibleForTesting static final String KEY_BATTERY_ERROR = "battery_help_message";
     @VisibleForTesting static final String KEY_BATTERY_USAGE = "battery_usage_summary";
 
+    static final String KEY_BATTERY_HEALTH = "battery_health";
+
     @VisibleForTesting PowerUsageFeatureProvider mPowerFeatureProvider;
     @VisibleForTesting BatteryUtils mBatteryUtils;
     @VisibleForTesting BatteryInfo mBatteryInfo;
@@ -70,6 +76,8 @@ public class PowerUsageSummary extends PowerUsageBase
     @VisibleForTesting boolean mNeedUpdateBatteryTip;
     @VisibleForTesting Preference mHelpPreference;
     @VisibleForTesting Preference mBatteryUsagePreference;
+
+    Preference mBatteryHealthPreference;
 
     @VisibleForTesting
     final ContentObserver mSettingsObserver =
@@ -270,4 +278,38 @@ public class PowerUsageSummary extends PowerUsageBase
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.power_usage_summary);
+
+    private String getBatHealth(){
+        String batHealth = null;
+        String soh = readBatHealth("/sys/class/qcom-battery/soh");
+        String cycle_count = readBatHealth("/sys/class/power_supply/battery/cycle_count");
+        String charge_full_design = readBatHealth("/sys/class/power_supply/battery/charge_full_design");
+        batHealth = getString(R.string.batteryh_soh) + soh + "\n" +
+                getString(R.string.batteryh_soc) + cycle_count + "\n" +
+                getString(R.string.batteryh_cfd) + Long.valueOf(charge_full_design)/1000 + "mAh" ;
+        return batHealth;
+    }
+
+    private String readBatHealth(String filename) {
+        String value = "0";
+        BufferedReader reader = null;
+        FileReader fr = null;
+        try {
+            fr = new FileReader(filename);
+            reader = new BufferedReader(fr);
+            value = reader.readLine();
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }finally {
+            try{
+                if (reader != null)
+                    reader.close();
+                if (fr != null)
+                    fr.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return value;
+    }
 }
