@@ -5414,4 +5414,8 @@
 
     <string name="set_refresh_rate">设置刷新帧率</string>
     <string name="pocket_mode">口袋模式</string>
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="fingerprint_settings_open_title">指纹解锁方式</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="fingerprint_settings_open_description">默认按键解锁。如果需要触摸解锁则打开开关。</string>
 </resources>

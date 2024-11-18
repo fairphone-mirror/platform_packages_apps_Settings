@@ -5417,4 +5417,6 @@
     <string name="charging_state">Modalità di ricarica</string>
     <string name="enroll_main_first">Registra prima i dati del volto.</string>
     <string name="pocket_mode">Pocket Mode</string>
+    <string name="fingerprint_settings_open_description">"Selezionare se si preferisce sbloccare il telefono senza prima accendere lo schermo."</string>
+    <string name="fingerprint_settings_open_title">Controllo dello sblocco con impronte digitali</string>
 </resources>

@@ -852,4 +852,6 @@
 
     <!-- Whether the unlock failed reset is defaulted to be on or off-->
     <bool name="config_unlock_failed_reset_default_on">false</bool>
+    <!-- Whether the fingerpint behavior is defaulted to be on or off-->
+    <bool name="config_fingerprint_settings_behavior_on">true</bool>
 </resources>

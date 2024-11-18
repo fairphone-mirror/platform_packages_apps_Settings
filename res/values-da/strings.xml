@@ -5419,4 +5419,6 @@
     <string name="charging_state">Opladningstilstand</string>
     <string name="enroll_main_first">Tilmeld venligst ansigtsdata først.</string>
     <string name="pocket_mode">Lommetilstand</string>
+    <string name="fingerprint_settings_open_description">"Tænd, hvis du foretrækker at låse op uden at vågne telefonen først."</string>
+    <string name="fingerprint_settings_open_title">Fingerprint Lås op adfærd</string>
 </resources>

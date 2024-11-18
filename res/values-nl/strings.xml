@@ -5417,4 +5417,6 @@
     <string name="charging_state">Oplaadmodus</string>
     <string name="enroll_main_first">Registreer eerst gezichtsgegevens.</string>
     <string name="pocket_mode">Broekzakmodus</string>
+    <string name="fingerprint_settings_open_description">"Schakel in als je liever de telefoon ontgrendelt zonder hem eerst te activeren."</string>
+    <string name="fingerprint_settings_open_title">Ontgrendelgedrag vingerafdrukscanner</string>
 </resources>

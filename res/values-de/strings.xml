@@ -5417,4 +5417,6 @@
     <string name="security_settings_faceunlock_cancel_setup">Überspringen</string>
     <string name="security_settings_faceunlock_next">Weiter</string>
     <string name="pocket_mode">Taschenmodus</string>
+    <string name="fingerprint_settings_open_description">"Einschalten, um das Telefon ohne vorherige Aktivierung zu entsperren"</string>
+    <string name="fingerprint_settings_open_title">Fingerabruck Entsperrverhalten</string>
 </resources>
