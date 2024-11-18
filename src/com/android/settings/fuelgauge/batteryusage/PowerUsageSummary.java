@@ -25,6 +25,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings.Global;
+import android.content.SharedPreferences;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.loader.app.LoaderManager;
@@ -51,6 +52,9 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import android.util.Log;
+import android.os.UserHandle;
+import android.provider.Settings;
+import android.os.SystemProperties;
 
 /**
  * Displays a list of apps and subsystems that consume power, ordered by how much power was consumed
@@ -61,11 +65,13 @@ public class PowerUsageSummary extends PowerUsageBase
         implements BatteryTipPreferenceController.BatteryTipListener {
 
     static final String TAG = "PowerUsageSummary";
+    private boolean isDebug = false;
 
     @VisibleForTesting static final String KEY_BATTERY_ERROR = "battery_help_message";
     @VisibleForTesting static final String KEY_BATTERY_USAGE = "battery_usage_summary";
 
     static final String KEY_BATTERY_HEALTH = "battery_health";
+    static final String KEY_CHARGING_MODE = "charging_mode";
 
     @VisibleForTesting PowerUsageFeatureProvider mPowerFeatureProvider;
     @VisibleForTesting BatteryUtils mBatteryUtils;
@@ -78,6 +84,7 @@ public class PowerUsageSummary extends PowerUsageBase
     @VisibleForTesting Preference mBatteryUsagePreference;
 
     Preference mBatteryHealthPreference;
+    Preference mChargingModePreference;
 
     @VisibleForTesting
     final ContentObserver mSettingsObserver =
@@ -87,6 +94,13 @@ public class PowerUsageSummary extends PowerUsageBase
                     restartBatteryInfoLoader();
                 }
             };
+
+    final ContentObserver mUpdateSummarySettingsObserver = new ContentObserver(new Handler()) {
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            setBCMSummary();
+        }
+    };
 
     @VisibleForTesting
     LoaderManager.LoaderCallbacks<BatteryInfo> mBatteryInfoLoaderCallbacks =
@@ -171,13 +185,25 @@ public class PowerUsageSummary extends PowerUsageBase
                         Global.getUriFor(Global.BATTERY_ESTIMATES_LAST_UPDATE_TIME),
                         false,
                         mSettingsObserver);
+        getContentResolver().registerContentObserver(
+                Global.getUriFor(Global.UPDATE_BATTERY_CHARGING_MODE),
+                false,
+                mUpdateSummarySettingsObserver);
     }
 
     @Override
     public void onPause() {
         getContentResolver().unregisterContentObserver(mSettingsObserver);
+        getContentResolver().unregisterContentObserver(mUpdateSummarySettingsObserver);
         super.onPause();
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        setBCMSummary();
+    }
+
 
     @Override
     public int getMetricsCategory() {
@@ -237,6 +263,44 @@ public class PowerUsageSummary extends PowerUsageBase
 
         mHelpPreference = findPreference(KEY_BATTERY_ERROR);
         mHelpPreference.setVisible(false);
+
+        mChargingModePreference = findPreference(KEY_CHARGING_MODE);
+        setBCMSummary();
+
+        mBatteryHealthPreference = findPreference(KEY_BATTERY_HEALTH);
+        new Thread(new Runnable(){
+            @Override
+            public void run(){
+                mBatteryHealthPreference.setSummary(getBatHealth());
+            }
+        }).start();
+        boolean isRemoveBatteryHealth = getContext().getSharedPreferences("BatteryData", Context.MODE_PRIVATE).getBoolean(com.android.settings.SettingsApplication.IS_REMOVE_BATTERY_HEALTH,false);
+        if (isDebug) {
+            android.util.Log.d("debugdebug","PowerUsageSummary.java-initPreference-isRemoveBatteryHealth:"+isRemoveBatteryHealth);
+        }
+        if (isRemoveBatteryHealth) {
+            mBatteryHealthPreference.setVisible(false);
+        } else {
+            mBatteryHealthPreference.setVisible(true);
+        }
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        return super.onPreferenceTreeClick(preference);
+    }
+
+    private void setBCMSummary(){
+        String charging_mode_summary = "";
+        String charge_mode = SystemProperties.get("persist.sys.charge_mode");
+        if (charge_mode != null &&( "1".equals(charge_mode))){
+            charging_mode_summary = getString(R.string.charging_slow);
+        }else if (charge_mode != null && "0".equals(charge_mode)){
+            charging_mode_summary = getString(R.string.charging_normal);
+        }else {
+            charging_mode_summary = getString(R.string.charging_normal);
+        }
+        mChargingModePreference.setSummary(charging_mode_summary);
     }
 
     @VisibleForTesting

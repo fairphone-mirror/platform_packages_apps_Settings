@@ -5403,8 +5403,8 @@
     <string name="dialog_title_battery_healty">Akkugesundheit</string>
     <!-- Mobile network settings screen, title of item showing the name of the default subscription
     that will be used for data. This only appears in multi-SIM mode. [CHAR LIMIT=NONE] -->
-    <string name="charging_slow">Langsamer Modus</string>
-    <string name="charging_normal">Normaler Modus</string>
+    <string name="charging_slow">Öko-Modus</string>
+    <string name="charging_normal">Schneller Modus</string>
     <string name="charging_state">Lademodus</string>
     <string name="enroll_main_first">Bitte registriere zuerst deine Gesichtsdaten.</string>
     <string name="confirm_remove_enroll_face">Möchtest du das registrierte Gesicht wirklich entfernen?</string>
@@ -5416,6 +5416,11 @@
     <string name="face_unlock_less_secure_than_strong_auth">Hinweis: Unter Umständen ist Ihr Gesicht weniger sicher als ein sicheres Muster oder eine sichere PIN.</string>
     <string name="security_settings_faceunlock_cancel_setup">Überspringen</string>
     <string name="security_settings_faceunlock_next">Weiter</string>
+    <string name="battery_protect">Akku schützen</string>
+    <string name="battery_protect_description">Akku auf höchstens 80% laden</string>
+    <string name="battery_charging_privacy">Passe deine Ladegeschwindigkeit an. Langsameres Laden verlängert die Akku-Lebensdauer.</string>
+    <string name="battery_charging_privacy_eco">Optimiere mit diesem Modus auf die Langlebigkeit deines Akku.</string>
+    <string name="battery_charging_privacy_fast">Lade so schnell wie möglich auf 100% auf.</string>
     <string name="pocket_mode">Taschenmodus</string>
     <string name="fingerprint_settings_open_description">"Einschalten, um das Telefon ohne vorherige Aktivierung zu entsperren"</string>
     <string name="fingerprint_settings_open_title">Fingerabruck Entsperrverhalten</string>

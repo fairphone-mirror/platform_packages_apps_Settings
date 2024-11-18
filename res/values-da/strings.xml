@@ -5414,10 +5414,15 @@
     that will be used for data. This only appears in multi-SIM mode. [CHAR LIMIT=NONE] -->
     <string name="data_preference">Data-præference</string>
     <string name="dialog_title_battery_healty">Sundhedstilstand for batteri</string>
-    <string name="charging_slow">Langsom tilstand</string>
-    <string name="charging_normal">Normal tilstand</string>
+    <string name="charging_slow">ECO -opladning</string>
+    <string name="charging_normal">Hurtig opladning</string>
     <string name="charging_state">Opladningstilstand</string>
     <string name="enroll_main_first">Tilmeld venligst ansigtsdata først.</string>
+    <string name="battery_protect">Batteri beskytter</string>
+    <string name="battery_protect_description">Indstil det maksimale batteriopladningsniveau til 80%</string>
+    <string name="battery_charging_privacy">Tilpas din opladningshastighed. Husk langsommere opladning er lig med længere batterilevetid.</string>
+    <string name="battery_charging_privacy_eco">Optimer din batteris levetid med denne tilstand.</string>
+    <string name="battery_charging_privacy_fast">Kom tilbage til 100% så hurtigt som muligt.</string>
     <string name="pocket_mode">Lommetilstand</string>
     <string name="fingerprint_settings_open_description">"Tænd, hvis du foretrækker at låse op uden at vågne telefonen først."</string>
     <string name="fingerprint_settings_open_title">Fingerprint Lås op adfærd</string>

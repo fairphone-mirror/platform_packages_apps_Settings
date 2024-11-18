@@ -5412,10 +5412,15 @@
     <!-- Mobile network settings screen, title of item showing the name of the default subscription
     that will be used for data. This only appears in multi-SIM mode. [CHAR LIMIT=NONE] -->
     <string name="dialog_title_battery_healty">Livello di salute della batteria</string>
-    <string name="charging_slow">Modalità lenta</string>
-    <string name="charging_normal">Modalità normale</string>
+    <string name="charging_slow">ECO Charge</string>
+    <string name="charging_normal">Fast Charge</string>
     <string name="charging_state">Modalità di ricarica</string>
     <string name="enroll_main_first">Registra prima i dati del volto.</string>
+    <string name="battery_protect">Protezione della batteria</string>
+    <string name="battery_protect_description">Imposta il livello massimo della carica della batteria all 80%</string>
+    <string name="battery_charging_privacy">Personalizza la tua velocità di ricarica. Ricorda che la ricarica più lenta equivale a una durata della batteria più lunga.</string>
+    <string name="battery_charging_privacy_eco">Ottimizza la longevità della batteria con questa modalità.</string>
+    <string name="battery_charging_privacy_fast">Torna al 100% il più rapidamente possibile.</string>
     <string name="pocket_mode">Pocket Mode</string>
     <string name="fingerprint_settings_open_description">"Selezionare se si preferisce sbloccare il telefono senza prima accendere lo schermo."</string>
     <string name="fingerprint_settings_open_title">Controllo dello sblocco con impronte digitali</string>
