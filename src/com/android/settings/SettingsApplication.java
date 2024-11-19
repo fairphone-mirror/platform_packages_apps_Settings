@@ -26,6 +26,7 @@ import android.net.Uri;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.FeatureFlagUtils;
+import android.os.LocaleList;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -84,6 +85,7 @@ public class SettingsApplication extends Application {
     private static final String FIRST_BOOT_TIME = "persist.sys.first_boot_time";
     private static final String IS_BATTERY_HEALTH_HIDE = "persist.sys.is_battery_health_hide";
     private boolean isDebug = false;
+    public static boolean isLaunguageChanged = false;
 
     private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
@@ -130,6 +132,9 @@ public class SettingsApplication extends Application {
 
         registerReceiver(mBroadcastReceiver,
                 new IntentFilter(TelephonyManager.ACTION_MULTI_SIM_CONFIG_CHANGED));
+        registerReceiver(new LocaleChangeReceiver(),
+                new IntentFilter(Intent.ACTION_LOCALE_CHANGED));
+        registerUserSetupCompleteListener();
 
         registerActivityLifecycleCallbacks(new DeveloperOptionsActivityLifecycle());
         registerActivityLifecycleCallbacks(new LifecycleCallback());
@@ -171,6 +176,35 @@ public class SettingsApplication extends Application {
             Log.w(TAG, "Setting wallpaper to default threw exception", e);
         }
     }
+
+    private void registerUserSetupCompleteListener() {
+        Uri userSetupCompleteUri = Settings.Secure.getUriFor(
+                Settings.Secure.USER_SETUP_COMPLETE);
+        getContentResolver().registerContentObserver(userSetupCompleteUri,
+                false, new ContentObserver(null) {
+                    @Override
+                    public void onChange(boolean selfChange, Uri uri) {
+                        if (userSetupCompleteUri.equals(uri)) {
+                            boolean isUserSetupCompleted = Settings.Secure.getInt(getContentResolver(), Settings.Secure.USER_SETUP_COMPLETE, 0) != 0;
+                            if (isUserSetupCompleted) {
+                                if (!isLaunguageChanged) {
+                                    Locale oldLocale = Locale.getDefault();
+                                    Locale newLocal = new Locale("en_US");
+                                    LocaleList locales = getResources().getConfiguration().getLocales();
+                                    if (oldLocale.toString().startsWith("en")) {
+                                        newLocal = new Locale("zh_CN_#Hans");
+                                    }
+                                    LocalePicker.updateLocale(newLocal);
+                                    //LocalePicker.updateLocale(oldLocale);
+                                    LocalePicker.updateLocales(locales);
+                                    isLaunguageChanged = true;
+                                }
+                            }
+                        }
+                    }
+                }, UserHandle.USER_ALL);
+    }
+
     @Override
     public void onTerminate() {
         BackupRestoreStorageManager.getInstance(this).removeAll();

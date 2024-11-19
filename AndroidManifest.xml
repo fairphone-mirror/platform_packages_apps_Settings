@@ -5395,6 +5395,13 @@ SPDX-License-Identifier: BSD-3-Clause-Clear -->
                 android:value="com.android.settings.connecteddevice.audiosharing.audiostreams.AudioStreamConfirmDialog" />
         </activity>
 
+        <receiver android:name=".LocaleChangeReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+
         <service
             android:name="com.android.settings.connecteddevice.audiosharing.audiostreams.AudioStreamMediaService"
             android:foregroundServiceType="mediaPlayback"
