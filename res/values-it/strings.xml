@@ -5424,4 +5424,6 @@
     <string name="pocket_mode">Pocket Mode</string>
     <string name="fingerprint_settings_open_description">"Selezionare se si preferisce sbloccare il telefono senza prima accendere lo schermo."</string>
     <string name="fingerprint_settings_open_title">Controllo dello sblocco con impronte digitali</string>
+    <string name="swap_back_recents_title">"Inverti l'ordine dei pulsanti Indietro e Panoramica App"</string>
+    <string name="swap_back_recents_summary">"Inverti l'ordine dei pulsanti per tornare indietro e mostrare l'elenco app recenti nella barra di navigazione inferiore."</string>
 </resources>

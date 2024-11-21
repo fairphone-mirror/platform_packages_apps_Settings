@@ -5424,4 +5424,6 @@
     <string name="pocket_mode">Taschenmodus</string>
     <string name="fingerprint_settings_open_description">"Einschalten, um das Telefon ohne vorherige Aktivierung zu entsperren"</string>
     <string name="fingerprint_settings_open_title">Fingerabruck Entsperrverhalten</string>
+    <string name="swap_back_recents_title">"Zurück/Zuletzt verwendet wechseln"</string>
+    <string name="swap_back_recents_summary">"Die Schaltflächen "Zurück" und "Zuletzt verwendet" in der Navigationsleiste austauschen"</string>
 </resources>
