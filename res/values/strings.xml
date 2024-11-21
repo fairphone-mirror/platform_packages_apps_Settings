@@ -13918,4 +13918,8 @@
     <string name="battery_charging_privacy">Customize your charging speed. Remember slower charging equals longer battery life.</string>
     <string name="battery_charging_privacy_eco">Optimise your battery’s longevity with this mode.</string>
     <string name="battery_charging_privacy_fast">Get back to 100% as quickly as possible.</string>
+    <!-- Title text for swapping the back and recents buttons in the navigation bar. [CHAR LIMIT=60] -->
+    <string name="swap_back_recents_title">Swap Back/Recents Navigation</string>
+    <!-- Summary text for swapping the back and recents buttons in the navigation bar. [CHAR LIMIT=NONE] -->
+    <string name="swap_back_recents_summary">Swap the back and recents button in the navigation bar.</string>
 </resources>
