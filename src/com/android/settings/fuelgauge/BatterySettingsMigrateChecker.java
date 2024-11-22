@@ -44,6 +44,9 @@ public final class BatterySettingsMigrateChecker extends BroadcastReceiver {
 
     private static final String T2M_PROP_SET_FILESDEFAULT = "persist.sys.setfilesdefault";
 
+    private final int ON = 1;
+    private final int OFF = 0;
+
     @VisibleForTesting static BatteryOptimizeUtils sBatteryOptimizeUtils = null;
 
     @Override
@@ -65,6 +68,10 @@ public final class BatterySettingsMigrateChecker extends BroadcastReceiver {
                     Settings.System.MIN_REFRESH_RATE, 60f,cr.getUserId());
                 Settings.System.putFloatForUser(cr,
                     Settings.System.MIN_REFRESH_RATE, 90f,cr.getUserId());
+            }
+
+            if(Settings.Secure.getInt(cr, Settings.Secure.DOZE_ALWAYS_ON, -1) == ON){
+                Settings.Secure.putInt(cr, Settings.Secure.DOZE_ALWAYS_ON, OFF);
             }
 
             if("0".equals(SystemProperties.get(T2M_PROP_SET_FILESDEFAULT,"0"))){
