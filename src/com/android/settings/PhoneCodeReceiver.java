@@ -47,7 +47,7 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         Log.i(TAG, "onReceive : " + intent.toString());
         mContext = context;
-        
+
         final String action = intent.getAction();
         if (intent.getAction().equals("android.provider.Telephony.SECRET_CODE")) {
             String host = intent.getData() != null ? intent.getData().getHost() : null;
@@ -156,10 +156,10 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
 
             // add for FP5-197 show ENDC info 2023-03-27 begin
             else if (HOST_CODE_ENDC.equals(host)) {
-                /*Log.d(TAG, "ENCD code");
+                Log.d(TAG, "ENCD code");
                 Intent i = new Intent(context, BandCombination.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(i);*/
+                context.startActivity(i);
             }
             // add for FP5-197 show ENDC info 2023-03-27 end
 
