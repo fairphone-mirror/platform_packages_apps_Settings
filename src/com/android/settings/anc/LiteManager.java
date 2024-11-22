@@ -448,7 +448,21 @@ public class LiteManager {
 
         //(5)loadModel All
         final int result = ancFaceIdApi.loadModel(modelPath).toInt();
+        if(ancFaceIdApi.checkFeatureUpdate() == AncFaceIdStatus.ANC_UNLOCK_NEED_RESTORE_FEATURE) {
+            restoreFeature(new Callback() {
+                @Override
+                public void onSuccess(Object object) {
+                }
 
+                @Override
+                public void onFailed(int resultCode, Object object) {
+                }
+
+                @Override
+                public void onError(String errorMsg) {
+                }
+            });
+        }
         return result;
     }
 

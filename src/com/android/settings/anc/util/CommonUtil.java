@@ -424,7 +424,8 @@ public class CommonUtil {
         }
         File file = new File(dir, name);
         String ret = null;
-        if(file.exists() && file.isFile()){
+        int rawSize = getRawFileSize(context, res);
+        if(file.exists() && file.isFile() && (rawSize == file.length())){
             ret = file.getAbsolutePath();
         } else {
             File SDcard_path = Environment.getExternalStorageDirectory();
@@ -612,6 +613,25 @@ public class CommonUtil {
         }
 
         return fileData;
+    }
+
+    public static int getRawFileSize(Context context, int resId) {
+        InputStream inputStream = null;
+        int fileSize = 0;
+        try{
+            inputStream = context.getResources().openRawResource(resId);
+            fileSize = inputStream.available();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if(inputStream != null) {
+                try{
+                    inputStream.close();
+                }catch(IOException e){
+                }
+            }
+        }
+        return fileSize;
     }
 }
 
