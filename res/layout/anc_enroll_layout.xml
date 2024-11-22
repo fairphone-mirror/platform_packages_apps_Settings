@@ -96,7 +96,7 @@
             style="@style/FaceUnlockLongButton"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="70dp"
             android:text="@string/done"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
