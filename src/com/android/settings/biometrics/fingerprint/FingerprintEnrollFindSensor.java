@@ -123,7 +123,7 @@ public class FingerprintEnrollFindSensor extends BiometricEnrollBase implements
                     com.android.internal.R.bool.config_reverseDefaultRotation);
         } else {
             setHeaderText(R.string.security_settings_fingerprint_enroll_find_sensor_title);
-            setDescriptionText(R.string.security_settings_fingerprint_enroll_find_sensor_message);
+            setDescriptionText(R.string.security_settings_fingerprint_enroll_find_sensor_message_temporary);
         }
         if (savedInstanceState != null) {
             mNextClicked = savedInstanceState.getBoolean(SAVED_STATE_IS_NEXT_CLICKED, mNextClicked);

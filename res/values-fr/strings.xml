@@ -465,6 +465,7 @@
     <string name="security_settings_udfps_enroll_find_sensor_title" msgid="8077484429913330179">"Configurer votre empreinte digitale"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"Le lecteur se trouve à l\'arrière du téléphone. Utilisez l\'index."</string>
     <string name="security_settings_udfps_enroll_find_sensor_message" msgid="8383106460819519961">"Le lecteur d\'empreinte digitale se situe sur l\'écran. La capture de votre empreinte se fera sur l\'écran suivant."</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"C'est le bouton d'alimentation sur le côté de votre téléphone"</string>
     <string name="security_settings_udfps_enroll_find_sensor_start_button" msgid="3172268783620336357">"Démarrer"</string>
     <string name="security_settings_udfps_enroll_a11y" msgid="1899453114050362235">"Faites glisser le doigt sur l\'écran pour trouver le lecteur. Appuyez de manière prolongée sur le lecteur d\'empreinte digitale."</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_content_description" msgid="3065850549419750523">"Illustration présentant l\'appareil et la position du lecteur d\'empreintes digitales"</string>
