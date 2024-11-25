@@ -2641,7 +2641,7 @@
     <string name="config_list_label" translatable="false">Configured networks</string>
 
     <!-- Wireless networks, item title to go into the WFC settings [CHAR LIMIT=30] -->
-    <string name="wifi_calling_settings_title">Wi-Fi calling</string>
+    <string name="wifi_calling_settings_title">WIFI Calling</string>
     <!-- Title of suggestion to turn on wifi calling [CHAR LIMIT=46] -->
     <string name="wifi_calling_suggestion_title">Extend calls with Wi\u2011Fi</string>
     <!-- Summary of suggestion to turn on wifi calling [CHAR LIMIT=55] -->
