@@ -861,7 +861,7 @@
     <string name="wifi_display_options_forget" msgid="3140558691112356024">"Vergeten"</string>
     <string name="wifi_display_options_done" msgid="7608851767701954020">"Klaar"</string>
     <string name="wifi_display_options_name" msgid="8181334945680312228">"Naam"</string>
-    <string name="wifi_band_24ghz" msgid="7322286660245127384">"2,4 GHz"</string>
+    <string name="wifi_band_24ghz" msgid="7322286660245127384">"2.4 GHz"</string>
     <string name="wifi_band_5ghz" msgid="7995204987245404797">"5 GHz"</string>
     <string name="wifi_band_6ghz" msgid="8166833829829455339">"6 GHz"</string>
     <string name="wifi_sign_in_button_text" msgid="8483892122845654850">"Inloggen"</string>
@@ -957,8 +957,9 @@
     <string name="wifi_eap_anonymous" msgid="8630332141751267000">"Anonieme identiteit"</string>
     <string name="wifi_password" msgid="1458802324849513755">"Wachtwoord"</string>
     <string name="wifi_show_password" msgid="6865993988238157923">"Wachtwoord tonen"</string>
-    <string name="wifi_ap_choose_2G" msgid="1436802195991542016">"2,4-GHz-frequentieband"</string>
-    <string name="wifi_ap_prefer_5G" msgid="2520628479818369902">"Voorkeur voor 5-GHz-frequentieband"</string>
+    <string name="wifi_ap_choose_2G" msgid="1436802195991542016">"2.4 GHz band"</string>
+    <string name="wifi_ap_prefer_5G" msgid="2520628479818369902">"5 GHz band voorkeur"</string>
+    <string name="wifi_ap_prefer_6G" >"6 GHz band voorkeur"</string>
     <string name="wifi_ip_settings" msgid="6420498748726599133">"IP-instellingen"</string>
     <string name="wifi_privacy_settings" msgid="3283946009000725698">"Privacy"</string>
     <string name="wifi_privacy_mac_settings" msgid="3188060664478313363">"MAC"</string>
@@ -1099,17 +1100,17 @@
     <string name="wifi_hotspot_maximize_compatibility_single_ap_summary" msgid="383355687431591441">"Hiermee kunnen andere apparaten deze hotspot vinden. De verbindingssnelheid van de hotspot wordt verlaagd."</string>
     <string name="wifi_hotspot_maximize_compatibility_dual_ap_summary" msgid="3579549223159056533">"Hiermee kunnen andere apparaten deze hotspot vinden. Het batterijgebruik neemt toe"</string>
     <string name="wifi_hotspot_speed_title" msgid="8629448084180512685">"Snelheid en compatibiliteit"</string>
-    <string name="wifi_hotspot_speed_summary_2g" msgid="5063438001736234858">"2,4 GHz/Compatibel met de meeste apparaten"</string>
+    <string name="wifi_hotspot_speed_summary_2g" msgid="5063438001736234858">"2.4 GHz/Compatibel met de meeste apparaten"</string>
     <string name="wifi_hotspot_speed_summary_5g" msgid="6221158936983135040">"5 GHz/Compatibel met veel apparaten"</string>
     <string name="wifi_hotspot_speed_summary_6g" msgid="8863992901226595544">"6 GHz/Compatibel met weinig apparaten"</string>
-    <string name="wifi_hotspot_speed_summary_2g_and_5g" msgid="5931052946168943750">"2,4 GHz en 5 GHz/Compatibel met de meeste apparaten"</string>
+    <string name="wifi_hotspot_speed_summary_2g_and_5g" msgid="5931052946168943750">"2.4 GHz en 5 GHz/Compatibel met de meeste apparaten"</string>
     <string name="wifi_hotspot_speed_intro" msgid="6973482196363758925">"Kies een frequentie voor je hotspot. De frequentie is van invloed op de verbindingssnelheid en welke soorten apparaten je hotspot kunnen vinden."</string>
     <string name="wifi_hotspot_speed_category" msgid="5265655850463630286">"Voorkeursfrequentie"</string>
-    <string name="wifi_hotspot_speed_2g" msgid="3400600834257664480">"2,4 GHz"</string>
+    <string name="wifi_hotspot_speed_2g" msgid="3400600834257664480">"2.4 GHz"</string>
     <string name="wifi_hotspot_speed_2g_summary" msgid="6930273933810520155">"Lagere snelheden. Compatibel met de meeste apparaten."</string>
     <string name="wifi_hotspot_speed_5g" msgid="4058116867148848395">"5 GHz"</string>
     <string name="wifi_hotspot_speed_5g_summary" msgid="562987935924535694">"Hoge snelheden. Compatibel met veel apparaten."</string>
-    <string name="wifi_hotspot_speed_2g_5g" msgid="9192756255938408285">"2,4 en 5 GHz"</string>
+    <string name="wifi_hotspot_speed_2g_5g" msgid="9192756255938408285">"2.4 en 5 GHz"</string>
     <string name="wifi_hotspot_speed_2g_5g_summary" msgid="8104575293617700173">"Hoge snelheden. Deze dualband-hotspot is compatibel met de meeste apparaten."</string>
     <string name="wifi_hotspot_speed_6g" msgid="3787697484862730500">"6 GHz"</string>
     <string name="wifi_hotspot_speed_6g_summary" msgid="8675262219242174548">"Hoogste snelheden. Compatibel met weinig apparaten."</string>
@@ -1496,7 +1497,7 @@
     <string name="reset_bluetooth_wifi_button_text" msgid="3974098137045963639">"Resetten"</string>
     <string name="reset_bluetooth_wifi_complete_toast" msgid="5893439291030574365">"Bluetooth en wifi zijn gereset"</string>
     <string name="reset_esim_title" msgid="4194570573425902754">"E-simkaarten wissen"</string>
-    <string name="reset_esim_desc" msgid="6125192435907740751">"Je mobiele abonnement wordt hierdoor niet opgezegd. Neem contact op met je provider voor een vervangende simkaart."</string>
+    <string name="reset_esim_desc" msgid="6125192435907740751">"Hiermee zeg je geen mobiele abonnementen op. Neem contact op met je provider als je vervangende simkaarten wilt downloaden. Houd er rekening mee dat een internetverbinding (mobiele gegevens of Wi-Fi) vereist is om het geselecteerde SIM-profiel van het apparaat te wissen."</string>
     <string name="reset_network_button_text" msgid="2281476496459610071">"Instellingen resetten"</string>
     <string name="reset_network_final_desc" msgid="5304365082065278425">"Alle netwerkinstellingen resetten? Je kunt deze actie niet ongedaan maken."</string>
     <string name="reset_network_final_desc_esim" msgid="1129251284212847939">"Alle netwerkinstellingen resetten en e-simkaarten wissen? Je kunt deze actie niet ongedaan maken."</string>
@@ -4771,7 +4772,7 @@
     <string name="switch_sim_dialog_no_switch_text" msgid="7053939850026876088">"Als je mobiele data, gespreksfuncties en sms later wilt gebruiken, ga je naar de netwerkinstellingen"</string>
     <string name="sim_card_label" msgid="6263064316075963775">"Simkaart"</string>
     <string name="erase_sim_dialog_title" msgid="4742077437653028326">"Deze e-simkaart wissen?"</string>
-    <string name="erase_sim_dialog_text" msgid="1406141218170595272">"Het wissen van deze SIM verwijdert <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> -service van dit apparaat. Service voor  <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> wordt niet geannuleerd. Houd er rekening mee dat een internetverbinding (mobiele gegevens of Wi-Fi) vereist is om het geselecteerde SIM-profiel van het apparaat te wissen."</string>
+    <string name="erase_sim_dialog_text" msgid="1406141218170595272">"Het wissen van deze SIM verwijdert <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> -service van dit apparaat.\n\n Service voor  <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> wordt niet geannuleerd. Houd er rekening mee dat een internetverbinding (mobiele gegevens of Wi-Fi) vereist is om het geselecteerde SIM-profiel van het apparaat te wissen."</string>
     <string name="erase_sim_confirm_button" msgid="8309115684335320541">"Wissen"</string>
     <string name="erasing_sim" msgid="4237180547590463930">"E-simkaart wissen…"</string>
     <string name="erase_sim_fail_title" msgid="1445700500168357303">"Kan e-simkaart niet wissen"</string>
@@ -5378,6 +5379,7 @@
     <string name="warning_tips_rom4_third_part">" - Uw persoonlijke gegevens worden alleen op het apparaat opgeslagen en verwerkt."</string>
     <string name="warning_tips_rom4_third_part_title">Privacy-informatie</string>
     <string name="warning_title">"Waarschuwing voor risico's"</string>
+    <string name="data_preference">"Gegevens en voorkeuren"</string>
     <string name="confirm_remove_enroll_face">Weet je zeker dat je je geregistreerde gezicht wilt verwijderen?</string>
     <string name="main_face_title">Gezichtsregistratie</string>
     <string name="second_face_title">Terug naar gezichtsregistratie</string>

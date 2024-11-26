@@ -5382,6 +5382,8 @@
     <string name="faceunlock_setupwizard">Desbloquear con la cara</string>
     <string name="face_unlock_user_experience">Disfrute de una experiencia de desbloqueo más rápida y cómoda con el desbloqueo facial.</string>
     <string name="face_unlock_less_secure_than_strong_auth">Nota: El desbloqueo mediante el reconocimiento facial puede ser menos seguro que un patrón complejo o el PIN.</string>
+    <string name="swap_back_recents_title">"Cambia la navegación de volver/recientes"</string>
+    <string name="swap_back_recents_summary">"Cambia los botones de volver y recientes en la barra de navegación"</string>
     <string name="security_settings_faceunlock_cancel_setup">Saltar</string>
     <string name="security_settings_faceunlock_next">Siguiente</string>
 </resources>
