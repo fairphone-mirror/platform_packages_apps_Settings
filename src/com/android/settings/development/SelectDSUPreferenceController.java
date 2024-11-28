@@ -25,14 +25,39 @@ import androidx.preference.Preference;
 import com.android.settings.R;
 import com.android.settings.core.PreferenceControllerMixin;
 import com.android.settingslib.development.DeveloperOptionsPreferenceController;
+import android.service.oemlock.OemLockManager;
+import android.text.TextUtils;
 
 class SelectDSUPreferenceController extends DeveloperOptionsPreferenceController implements
         PreferenceControllerMixin {
 
     private static final String DSU_LOADER_KEY = "dsu_loader";
+    private static final String OEM_UNLOCK_SUPPORTED_KEY = "ro.oem_unlock_supported";
+    private static final String UNSUPPORTED = "-9999";
+    private static final String SUPPORTED = "1";
 
     SelectDSUPreferenceController(Context context) {
         super(context);
+    }
+
+    private boolean isBootloaderUnlocked(){
+        OemLockManager oemLockManager;
+        if (!TextUtils.equals(SystemProperties.get(OEM_UNLOCK_SUPPORTED_KEY, UNSUPPORTED),
+                SUPPORTED)) {
+            oemLockManager = null;
+        } else {
+            oemLockManager = (OemLockManager) mContext.getSystemService(Context.OEM_LOCK_SERVICE);
+        }
+        if(oemLockManager == null) {
+            return false;
+        } else {
+            return oemLockManager.isDeviceOemUnlocked();
+        }
+    }
+
+    @Override
+    public boolean isAvailable() {
+        return isBootloaderUnlocked();
     }
 
     @Override
