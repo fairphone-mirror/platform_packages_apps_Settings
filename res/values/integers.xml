@@ -36,4 +36,7 @@
     <integer name="enrollment_progress_minimum_time_display">0</integer>
     <!-- The time (in millis) to wait to collect messages in fingerprint enrollment before displaying it. -->
     <integer name="enrollment_collect_time">0</integer>
+
+    <!--Add by FPS-135-->
+    <integer name="job_shut_down">120</integer>
 </resources>

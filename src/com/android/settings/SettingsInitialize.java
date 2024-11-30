@@ -69,6 +69,9 @@ public class SettingsInitialize extends BroadcastReceiver {
         webviewSettingSetup(context, pm, userInfo);
         ThreadUtils.postOnBackgroundThread(() -> refreshExistingShortcuts(context));
         enableTwoPaneDeepLinkActivityIfNecessary(pm, context);
+        //Add by FPS-135
+        ShutdownJobService.startShutdownJob(context);
+        //Add by FPS-135
     }
 
     private void managedProfileSetup(Context context, final PackageManager pm, Intent broadcast,
