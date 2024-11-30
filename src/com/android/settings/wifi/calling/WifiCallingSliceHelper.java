@@ -56,6 +56,7 @@ import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+import com.android.settings.utils.CarrierParamsUtil;
 /**
  * Helper class to control slices for wifi calling settings.
  */
@@ -147,8 +148,33 @@ public class WifiCallingSliceHelper {
             // Activation needed for the next action of the user
             // Give instructions to go to settings app
             final Resources res = getResourcesForSubId(subId);
+            String title = res.getText(R.string.wifi_calling_settings_title).toString();
+
+            //Modify begin by renjie.zhang FPS-228 2024/2/23
+            PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(mContext).getCarrierParams(subId);
+            if (carrierParams != null) {
+                String carrierParamsTitle = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
+                if (!"".equals(carrierParamsTitle)) {
+                    Log.d(TAG, "get title from carrierParams");
+                    title = carrierParamsTitle;
+                }
+            }
+            //Modify end by renjie.zhang FPS-228 2024/2/23
+
+            final CarrierConfigManager configManager = getCarrierConfigManager(mContext);
+            if (configManager != null) {
+                PersistableBundle b = configManager.getConfigForSubId(subId);
+                if (b != null) {
+                    String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
+                    if (!"".equals(carrierconfig_title)){
+                        Log.d(TAG, "get title from carrierconfig");
+                        title = carrierconfig_title;
+                    }
+                    Log.d(TAG, "title: " + title);
+                }
+            }
             return getNonActionableWifiCallingSlice(
-                    res.getText(R.string.wifi_calling_settings_title),
+                    title,
                     res.getText(R.string.wifi_calling_settings_activation_instructions),
                     sliceUri, getActivityIntent(ACTION_WIFI_CALLING_SETTINGS_ACTIVITY));
         }
@@ -168,10 +194,35 @@ public class WifiCallingSliceHelper {
         final IconCompat icon = IconCompat.createWithResource(mContext, R.drawable.wifi_signal);
         final Resources res = getResourcesForSubId(subId);
 
+        String title = res.getText(R.string.wifi_calling_settings_title).toString();
+
+        //Modify begin by renjie.zhang FPS-228 2024/2/23
+        PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(mContext).getCarrierParams(subId);
+        if (carrierParams != null) {
+            String carrierParamsTitle = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
+            if (!"".equals(carrierParamsTitle)) {
+                Log.d(TAG, "get title from carrierParams");
+                title = carrierParamsTitle;
+            }
+        }
+        //Modify end by renjie.zhang FPS-228 2024/2/23
+
+        final CarrierConfigManager configManager = getCarrierConfigManager(mContext);
+        if (configManager != null) {
+            Log.d(TAG, "get title from carrierconfig");
+            PersistableBundle b = configManager.getConfigForSubId(subId);
+            if (b != null) {
+                String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
+                if (!"".equals(carrierconfig_title)){
+                    title = carrierconfig_title;
+                }
+                Log.d(TAG, "title: " + title);
+            }
+        }
         return new ListBuilder(mContext, sliceUri, ListBuilder.INFINITY)
                 .setAccentColor(Utils.getColorAccentDefaultColor(mContext))
                 .addRow(new RowBuilder()
-                        .setTitle(res.getText(R.string.wifi_calling_settings_title))
+                        .setTitle(title)
                         .addEndItem(
                                 SliceAction.createToggle(
                                         getBroadcastIntent(ACTION_WIFI_CALLING_CHANGED,
@@ -181,7 +232,7 @@ public class WifiCallingSliceHelper {
                                 getActivityIntent(ACTION_WIFI_CALLING_SETTINGS_ACTIVITY),
                                 icon,
                                 ListBuilder.ICON_IMAGE,
-                                res.getText(R.string.wifi_calling_settings_title))))
+                                title)))
                 .build();
     }
 
