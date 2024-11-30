@@ -406,7 +406,8 @@ public class MobileNetworkUtils {
      * Return {@code true} if show CDMA category
      */
     public static boolean isCdmaOptions(Context context, int subId) {
-        if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
+        /* add by T2M.zhangrenjie for FPS-254 */
+        /*if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
             return false;
         }
         final PersistableBundle carrierConfig =
@@ -439,7 +440,7 @@ public class MobileNetworkUtils {
             if (shouldSpeciallyUpdateGsmCdma(context, subId)) {
                 return true;
             }
-        }
+        }*/
 
         return false;
     }
