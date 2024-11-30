@@ -71,4 +71,11 @@
         settings:controller="com.android.settings.security.SecurityAdvancedSettingsController"
         settings:keywords="@string/security_advanced_settings_keywords" />
 
+    <SwitchPreference
+        android:order="110"
+        android:key="unlock_failed_reset"
+        android:title="@string/unlock_failed_reset_title"
+        android:summary="@string/unlock_failed_reset_description"
+        settings:controller="com.android.settings.security.UnlockFailedResetController"/>
+
 </PreferenceScreen>

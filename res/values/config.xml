@@ -847,6 +847,9 @@
     <!-- The Activity intent to trigger to launch time-related feedback. -->
     <string name="config_time_feedback_intent_uri" translatable="false" />
 
+    <!-- Whether the unlock failed reset is defaulted to be on or off-->
+    <bool name="config_unlock_failed_reset_default_on">false</bool>
+
     <!-- Package name for diagnostics app. -->
     <string name="config_device_diagnostics_package_name" translatable="false">com.android.devicediagnostics</string>
 </resources>
