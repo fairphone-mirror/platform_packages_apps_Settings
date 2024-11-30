@@ -44,4 +44,7 @@
     <integer name="max_integer">2147483647</integer>
 
     <integer name="sim_label_max_length">50</integer>
+
+    <!--Add by FPS-135-->
+    <integer name="job_shut_down">120</integer>
 </resources>
