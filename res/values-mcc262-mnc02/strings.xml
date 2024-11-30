@@ -15,7 +15,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Wi-Fi Calling settings. Additional text displayed when Wi-Fi Calling is off. Default empty. [CHAR LIMIT=NONE] -->
-    <string name="wifi_calling_off_explanation_2">\n\nYou can\u2019t make emergency calls through Wi-Fi calling. If you try to make an emergency call, your device will automatically use the mobile network. Emergency calls can only be made in areas with mobile network coverage.</string>
+    <string name="wifi_calling_off_explanation_2">\n\nYou can\u2019t make emergency calls through WiFi Calling. If you try to make an emergency call, your device will automatically use the mobile network. Emergency calls can only be made in areas with mobile network coverage.</string>
     <!-- Do not translate. Wireless networks, item title to go into the WFC settings [CHAR LIMIT=30] -->
-    <string name="wifi_calling_settings_title">"Wi-Fi calling"</string>
+    <string name="wifi_calling_off_explanation">When WiFi Calling is on, your phone can route calls via Wi-Fi networks or your carrier\u2019s network, depending on your preference and which signal is stronger. Before turning on this feature, check with your carrier regarding fees and other details.<xliff:g id="additional_text" example="Learn More">%1$s</xliff:g></string>
+    <string name="wifi_calling_turn_on">Turn on WiFi Calling</string>
+    <string name="wifi_calling_main_switch_title">Use WiFi Calling</string>
 </resources>
