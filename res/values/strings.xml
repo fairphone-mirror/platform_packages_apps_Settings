@@ -14622,4 +14622,6 @@ Data usage charges may apply.</string>
     <string name="supervision_full_screen_pin_verification_title">Enter supervision PIN</string>
     <string name="accessibility_illustration_content_description"><xliff:g id="feature" example="Select to Speak">%1$s</xliff:g> animation</string>
     <string name="status_sdn">"Service Dialing Number"</string>
+    <string name="hidden_activity_deivce_info">"Device information"</string>
+    <string name="dialog_title_image_mapping">"Image Mapping"</string>
 </resources>
