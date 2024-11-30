@@ -14630,4 +14630,5 @@ Data usage charges may apply.</string>
     <string name="hidden_activity_deivce_info">"Device information"</string>
     <string name="dialog_title_image_mapping">"Image Mapping"</string>
     <string name="verification_confirm_your_password_header">Input verify code :</string>
+    <string name="legal_info_title">Open source licenses</string>
 </resources>
