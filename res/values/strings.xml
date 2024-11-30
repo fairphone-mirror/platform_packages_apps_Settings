@@ -13822,5 +13822,14 @@
     <string name="dialog_title_image_mapping">"Image Mapping"</string>
     <string name="hidden_activity_module_info">"Module information"</string>
     <string name="verification_confirm_your_password_header">Input verify code :</string>
+    <string name="ims_settings_summary_on">"Debug mode for IMS Settings is ON."</string>
+    <string name="ims_settings_summary_off">"Debug mode for IMS Settings is OFF"</string>
+
+    <!--add by renjie-->
+    <string name="ims_unlock_enable">"IMS settings display"</string>
+    <string name="ims_unlock_enable_summary">"Debug mode when IMS enable"</string>
+
+    <string name="ims_settings_title">"IMS Settings"</string>
+    <string name="ims_settings_summary">"Debug mode for IMS Settings"</string>
     <string name="legal_info_title">Open source licenses</string>
 </resources>

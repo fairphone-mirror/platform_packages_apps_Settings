@@ -21,7 +21,9 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.PersistableBundle;
+import android.provider.Settings;
 import android.telephony.CarrierConfigManager;
+import android.telephony.PhoneStateListener;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyCallback;
 import android.telephony.TelephonyManager;
@@ -102,10 +104,19 @@ public class Enhanced4gBasePreferenceController extends TelephonyTogglePreferenc
 
     @Override
     public int getAvailabilityStatus(int subId) {
+        Log.d(TAG, "getAvailabilityStatus " + subId);
         init(subId);
         if (!isModeMatched()) {
             return CONDITIONALLY_UNAVAILABLE;
         }
+        // add by T2M.zhangrenjie for FPS-278 2021-07-22 begin
+        boolean ims_enabled = Settings.Global.getInt(mContext.getContentResolver(), "ims_enable_settings",0) == 1;
+        if (ims_enabled){
+            Log.d(TAG, "volte toggle show because of ims_enabled =" + ims_enabled);
+            return AVAILABLE;
+        }
+        // add by T2M.zhangrenjie for FPS-278 2021-07-22 end
+
         final VolteQueryImsState queryState = queryImsState(subId);
         // Show VoLTE settings if VoIMS opt-in has been enabled irrespective of other VoLTE settings
         if (queryState.isVoImsOptInEnabled()) {
@@ -128,6 +139,9 @@ public class Enhanced4gBasePreferenceController extends TelephonyTogglePreferenc
         if (!queryState.isReadyToVoLte()) {
             return CONDITIONALLY_UNAVAILABLE;
         }
+        Log.d(TAG, "isReadyToVoLte: " + queryState.isReadyToVoLte());
+        Log.d(TAG, "isAllowUserControl: " + queryState.isAllowUserControl());
+        Log.d(TAG, "isUserControlAllowed: " + isUserControlAllowed(carrierConfig));
         return (isUserControlAllowed(carrierConfig) && queryState.isAllowUserControl())
                 ? AVAILABLE : AVAILABLE_UNSEARCHABLE;
     }
@@ -214,7 +228,7 @@ public class Enhanced4gBasePreferenceController extends TelephonyTogglePreferenc
 
     @VisibleForTesting
     protected boolean isCallStateIdle() {
-        return (mCallState != null) && (mCallState == TelephonyManager.CALL_STATE_IDLE);
+        return ((mCallState != null) && (mCallState == TelephonyManager.CALL_STATE_IDLE) || (mCallState == null));
     }
 
     private boolean isUserControlAllowed(final PersistableBundle carrierConfig) {
