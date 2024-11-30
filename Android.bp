@@ -172,3 +172,15 @@ filegroup {
     name: "Settings_proguard_flags",
     srcs: ["proguard.flags"],
 }
+
+prebuilt_etc {
+    name: "FAIRPHONE.html.gz",
+    system_ext_specific: true,
+    src: "legalinfo/FAIRPHONE.html.gz",
+}
+
+prebuilt_etc {
+    name: "FAIRPHONE.png",
+    system_ext_specific: true,
+    src: "legalinfo/FAIRPHONE.png",
+}
