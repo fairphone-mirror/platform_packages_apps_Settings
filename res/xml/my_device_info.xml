@@ -61,6 +61,13 @@
             settings:isPreferenceVisible="@bool/config_show_sim_info"
             settings:controller="com.android.settings.deviceinfo.PhoneNumberPreferenceController"
             settings:enableCopying="true"/>
+
+        <Preference
+            android:key="phone_sdn"
+            android:order="8"
+            android:title="@string/status_sdn"
+            android:summary="@string/summary_placeholder"
+            settings:controller="com.android.settings.deviceinfo.SdnPreferenceController"/>
     </PreferenceCategory>
 
     <PreferenceCategory

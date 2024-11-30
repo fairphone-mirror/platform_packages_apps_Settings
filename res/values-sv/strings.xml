@@ -5764,4 +5764,5 @@
     <string name="supervision_web_content_filters_search_filter_off_summary" msgid="3834238970190924433">"Explicita resultat kan filtreras bort eller göras oskarpa utifrån kontoinställningarna"</string>
     <string name="supervision_full_screen_pin_verification_title" msgid="78513043528333399">"Ange pinkod för kontroll"</string>
     <string name="accessibility_illustration_content_description" msgid="557376174860150903">"Animering för <xliff:g id="FEATURE">%1$s</xliff:g>"</string>
+    <string name="status_sdn">Tjänstens uppringningsnummer</string>
 </resources>
