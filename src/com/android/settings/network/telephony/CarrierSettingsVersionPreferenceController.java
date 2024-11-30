@@ -19,8 +19,11 @@ package com.android.settings.network.telephony;
 import android.content.Context;
 import android.os.PersistableBundle;
 import android.telephony.CarrierConfigManager;
+import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
+import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.android.settings.core.BasePreferenceController;
 import com.android.settings.network.CarrierConfigCache;
@@ -29,11 +32,16 @@ public class CarrierSettingsVersionPreferenceController extends BasePreferenceCo
 
     private int mSubscriptionId;
     private CarrierConfigCache mCarrierConfigCache;
+    private SubscriptionManager mSubscriptionManager;
+    private String TAG = "CarrierSettingsVersion";
 
+    private TelephonyManager mTelephonyManager;
     public CarrierSettingsVersionPreferenceController(Context context, String preferenceKey) {
         super(context, preferenceKey);
         mCarrierConfigCache = CarrierConfigCache.getInstance(context);
+        mSubscriptionManager = SubscriptionManager.from(context);
         mSubscriptionId = SubscriptionManager.INVALID_SUBSCRIPTION_ID;
+        mTelephonyManager = context.getSystemService(TelephonyManager.class);
     }
 
     public void init(int subscriptionId) {
@@ -42,15 +50,47 @@ public class CarrierSettingsVersionPreferenceController extends BasePreferenceCo
 
     @Override
     public CharSequence getSummary() {
-        final PersistableBundle config = mCarrierConfigCache.getConfigForSubId(mSubscriptionId);
-        if (config == null) {
-            return null;
+        String summary = "";
+        if (mSubscriptionId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
+            for (int slotId = 0; slotId < mTelephonyManager.getActiveModemCount();
+                    slotId++) {
+                SubscriptionInfo info = mSubscriptionManager.
+                    getActiveSubscriptionInfoForSimSlotIndex(slotId);
+                if (info != null) {
+                    int subId = info.getSubscriptionId();
+                    String summaryBySubId = getSummaryBySubId(subId);
+                    if (summaryBySubId != null) {
+                        summary += "SIM" + (slotId + 1) + ": " + summaryBySubId + System.lineSeparator();
+                    }
+                }
+            }
+        } else {
+            summary = getSummaryBySubId(mSubscriptionId);
         }
-        return config.getString(CarrierConfigManager.KEY_CARRIER_CONFIG_VERSION_STRING);
+
+        return summary;
     }
 
     @Override
     public int getAvailabilityStatus() {
+        if (mSubscriptionId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
         return TextUtils.isEmpty(getSummary()) ? UNSUPPORTED_ON_DEVICE : AVAILABLE;
+        } else {
+            return UNSUPPORTED_ON_DEVICE;
+        }
+    }
+    private String getSummaryBySubId(int subId) {
+        final PersistableBundle config = mCarrierConfigCache.getConfigForSubId(subId);
+        if (config == null) {
+            return null;
+        }
+        String version = config.getString(CarrierConfigManager.KEY_CARRIER_CONFIG_VERSION_STRING);
+        SubscriptionInfo subInfo = mSubscriptionManager.getActiveSubscriptionInfo(subId);
+        String mccmnc = "";
+        if (subInfo != null) {
+            mccmnc = subInfo.getMccString() + subInfo.getMncString();
+        }
+        String summary = mccmnc + " " + version;
+        return summary;
     }
 }

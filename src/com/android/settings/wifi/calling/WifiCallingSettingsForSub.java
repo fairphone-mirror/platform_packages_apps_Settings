@@ -23,9 +23,14 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
+import android.content.ContentResolver;
+import android.database.ContentObserver;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.telephony.CarrierConfigManager;
 import android.telephony.ServiceState;
 import android.telephony.SubscriptionManager;
@@ -60,6 +65,8 @@ import com.android.settings.network.ims.WifiCallingQueryImsState;
 import com.android.settings.widget.SettingsMainSwitchPreference;
 
 import java.util.List;
+import android.provider.Settings;
+import com.android.settings.utils.CarrierParamsUtil;
 
 /**
  * This is the inner class of {@link WifiCallingSettings} fragment.
@@ -106,6 +113,9 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
     private ProvisioningManager mProvisioningManager;
     private TelephonyManager mTelephonyManager;
 
+    private ContentResolver mContentResolver;
+    private static final Uri WFC_URI = Uri.parse("content://telephony/siminfo");
+    private ContentObserver mWfcObserver;
     private PhoneTelephonyCallback mTelephonyCallback;
 
     private class PhoneTelephonyCallback extends TelephonyCallback implements
@@ -127,8 +137,9 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
                     getPreferenceScreen().findPreference(SWITCH_BAR);
             if (prefSwitch != null) {
                 isWfcEnabled = prefSwitch.isChecked();
-                isCallStateIdle = getTelephonyManagerForSub(
-                        WifiCallingSettingsForSub.this.mSubId).getCallStateForSubscription()
+                isCallStateIdle = /*getTelephonyManagerForSub(
+                        WifiCallingSettingsForSub.this.mSubId).getCallState()*/
+                        state
                         == TelephonyManager.CALL_STATE_IDLE;
 
                 boolean isNonTtyOrTtyOnVolteEnabled = true;
@@ -294,6 +305,31 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
                     FRAGMENT_BUNDLE_SUBID, SubscriptionManager.INVALID_SUBSCRIPTION_ID);
         }
 
+        String title = getResourcesForSubId().getString(R.string.wifi_calling_settings_title);
+        PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(getActivity()).getCarrierParams(mSubId);
+        if (carrierParams != null) {
+            String carrierParamsTitle = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
+            if (!"".equals(carrierParamsTitle)) {
+                Log.d(TAG, "get title from carrierParams");
+                title = carrierParamsTitle;
+            }
+        }
+        final CarrierConfigManager configManager =
+                getActivity().getSystemService(CarrierConfigManager.class);
+        if (configManager != null) {
+            Log.d(TAG, "get title from carrierconfig");
+            PersistableBundle b = configManager.getConfigForSubId(mSubId);
+            if (b != null) {
+                String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
+                if (!"".equals(carrierconfig_title)){
+                    title = carrierconfig_title;
+                }
+                Log.d(TAG, "title: " + title);
+            }
+        }
+
+        getActivity().setTitle(title);
+
         mProvisioningManager = getImsProvisioningManager();
         mImsMmTelManager = getImsMmTelManager();
 
@@ -313,6 +349,7 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
 
         updateDescriptionForOptions(
                 List.of(mButtonWfcMode, mButtonWfcRoamingMode, mUpdateAddress));
+        mContentResolver = getContext().getContentResolver();
     }
 
     @Override
@@ -338,7 +375,9 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
 
     @VisibleForTesting
     boolean isWfcProvisionedOnDevice() {
-        return queryImsState(mSubId).isWifiCallingProvisioned();
+        boolean ims_enabled = Settings.Global.getInt(getActivity().getContentResolver(), "ims_enable_settings",0) == 1;
+        Log.d(TAG, "debug ims_enabled = "+ims_enabled);
+        return ims_enabled || queryImsState(mSubId).isWifiCallingProvisioned();
     }
 
     private void updateBody() {
@@ -488,6 +527,15 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
         }
         // Register callback for provisioning changes.
         registerProvisioningChangedCallback();
+        if (mWfcObserver == null) {
+            mWfcObserver = new ContentObserver(new Handler(Looper.getMainLooper())) {
+                @Override
+                public void onChange(boolean selfChange) {
+                    updateBody();
+                }
+            };
+        }
+        mContentResolver.registerContentObserver(WFC_URI, false, mWfcObserver);
     }
 
     @Override
@@ -502,6 +550,7 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
         context.unregisterReceiver(mIntentReceiver);
         // Remove callback for provisioning changes.
         unregisterProvisioningChangedCallback();
+        mContentResolver.unregisterContentObserver(mWfcObserver);
     }
 
     /**
@@ -516,6 +565,28 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
             return;
         }
 
+        String title = getResourcesForSubId().getString(R.string.wifi_calling_settings_title);
+        PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(getActivity()).getCarrierParams(mSubId);
+        if (carrierParams != null) {
+            String carrierParamsTitle = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
+            if (!"".equals(carrierParamsTitle)) {
+                Log.d(TAG, "get title from carrierParams");
+                title = carrierParamsTitle;
+            }
+        }
+        final CarrierConfigManager configManager =
+                getActivity().getSystemService(CarrierConfigManager.class);
+        if (configManager != null) {
+            Log.d(TAG, "get title from carrierconfig");
+            PersistableBundle b = configManager.getConfigForSubId(mSubId);
+            if (b != null) {
+                String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
+                if (!"".equals(carrierconfig_title)){
+                    title = carrierconfig_title;
+                }
+                Log.d(TAG, "title: " + title);
+            }
+        }
         // Launch disclaimer fragment before turning on WFC
         final Context context = getActivity();
         final Bundle args = new Bundle();
@@ -523,7 +594,7 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
         new SubSettingLauncher(context)
                 .setDestination(WifiCallingDisclaimerFragment.class.getName())
                 .setArguments(args)
-                .setTitleRes(R.string.wifi_calling_settings_title)
+                .setTitleText(title)
                 .setSourceMetricsCategory(getMetricsCategory())
                 .setResultListener(this, REQUEST_CHECK_WFC_DISCLAIMER)
                 .launch();
