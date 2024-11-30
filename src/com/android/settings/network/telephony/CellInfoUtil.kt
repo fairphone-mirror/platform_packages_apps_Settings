@@ -244,6 +244,23 @@ object CellInfoUtil {
     }
 
     /**
+     * Returns the CellIdentity from CellInfo
+     *
+     * @param cellInfo contains the information of the network.
+     * @return CellIdentity within CellInfo
+     */
+    @JvmStatic
+    fun getCellIdentity(cellInfo: CellInfo?): CellIdentity? {
+        return when (cellInfo) {
+            is CellInfoGsm -> cellInfo?.cellIdentity
+            is CellInfoWcdma -> cellInfo?.cellIdentity
+            is CellInfoLte -> cellInfo?.cellIdentity
+            is CellInfoNr -> cellInfo?.cellIdentity
+            else -> null
+        }
+    }
+
+    /**
      * Returns the network info obtained in the manual search.
      *
      * @param cellId contains the identity of the network.
