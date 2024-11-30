@@ -24,6 +24,8 @@ import com.android.settings.core.BasePreferenceController
 import com.android.settings.network.telephony.MobileNetworkSettingsSearchIndex.MobileNetworkSettingsSearchItem
 import com.android.settings.network.telephony.MobileNetworkSettingsSearchIndex.MobileNetworkSettingsSearchResult
 
+import android.util.Log
+
 class CarrierSettingsVersionPreferenceController(context: Context, preferenceKey: String) :
     BasePreferenceController(context, preferenceKey) {
 
@@ -44,9 +46,48 @@ class CarrierSettingsVersionPreferenceController(context: Context, preferenceKey
             MobileNetworkSettingsSearchItem {
             private val carrierConfigRepository = CarrierConfigRepository(context)
 
-            fun getSummary(subId: Int): String? =
-                carrierConfigRepository.getString(
-                    subId, CarrierConfigManager.KEY_CARRIER_CONFIG_VERSION_STRING)
+            fun getSummary(subId: Int): String? = {
+                /*carrierConfigRepository.getString(
+                    subId, CarrierConfigManager.KEY_CARRIER_CONFIG_VERSION_STRING)*/
+                return if (subscriptionId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
+                    buildMultiSimSummary()
+                } else {
+                    getSummaryBySubId(subscriptionId).orEmpty()
+                }
+            }
+
+            private fun getSummaryBySubId(subId: Int): String? {
+
+                return try {
+                    val version = carrierConfigRepository.getString(
+                        subId,
+                        CarrierConfigManager.KEY_CARRIER_CONFIG_VERSION_STRING
+                    )
+        
+                    val subInfo = subscriptionManager.getActiveSubscriptionInfo(subId)
+                    val mccMnc = subInfo?.run { 
+                        (mccString ?: "") + (mncString ?: "") 
+                    } ?: ""
+        
+                    "$mccMnc $version".takeIf { it.isNotBlank() }
+                } catch (e: Exception) {
+                    Log.e(TAG, "getCarrierConfigVersion error for subId:$subId", e)
+                    null
+                }
+
+            }
+
+            private fun buildMultiSimSummary(): String {
+                return StringBuilder().apply {
+                    for (slotId in 0 until telephonyManager.activeModemCount) {
+                        subscriptionManager.getActiveSubscriptionInfoForSimSlotIndex(slotId)?.let { info ->
+                            getSummaryBySubId(info.subscriptionId)?.let { summary ->
+                                append("SIM${slotId + 1}: $summary${System.lineSeparator()}")
+                            }
+                        }
+                    }
+                }.toString().trim()
+            }
 
             fun isAvailable(subId: Int): Boolean = !getSummary(subId).isNullOrEmpty()
 
