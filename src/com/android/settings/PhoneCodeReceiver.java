@@ -98,9 +98,9 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                 intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent2);
             } else if (HOST_CODE_MODULEINFO.equals(host)) {
-                /*Intent i = new Intent(context, ModuleDeviceInfo.class);
+                Intent i = new Intent(context, ModuleDeviceInfo.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(i);*/
+                context.startActivity(i);
             } else if (HOST_CODE_IMS.equals(host)) {
                 /*boolean ims_enabled = Settings.Global.getInt(mContext.getContentResolver(), "ims_enable_settings", 0) == 1;
                 Settings.Global.putInt(mContext.getContentResolver(), "ims_enable_settings",
