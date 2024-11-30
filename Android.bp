@@ -137,6 +137,8 @@ android_library {
         "ims-common",
         "telephony-ext",
         "extphonelib",
+        "qcrilhook",
+        "sysrilcmd",
     ],
     flags_packages: [
         "aconfig_settings_flags",
@@ -179,7 +181,9 @@ android_app {
         proguard_flags_files: ["proguard.flags"],
     },
     libs: [
-        "extphonelib"
+        "extphonelib",
+        "qcrilhook",
+        "sysrilcmd",
     ],
     flags_packages: [
         "android.app.flags-aconfig",

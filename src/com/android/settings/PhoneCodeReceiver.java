@@ -102,7 +102,7 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(i);
             } else if (HOST_CODE_IMS.equals(host)) {
-                /*boolean ims_enabled = Settings.Global.getInt(mContext.getContentResolver(), "ims_enable_settings", 0) == 1;
+                boolean ims_enabled = Settings.Global.getInt(mContext.getContentResolver(), "ims_enable_settings", 0) == 1;
                 Settings.Global.putInt(mContext.getContentResolver(), "ims_enable_settings",
                         !ims_enabled ? 1 : 0);
                 String show = "";
@@ -119,7 +119,7 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                         .setCancelable(false)
                         .create();
                 alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
-                alert.show();*/
+                alert.show();
             } else if (HOST_CODE_TEST_OEM_UNLOCK.equals(host)) {
                 OemLockVerifier oemLockVerifier = new OemLockVerifier(context, (check_code, msg) -> Log.e(TAG, "oemLockVerifier queryVerifyResult msg > " + msg));
                 oemLockVerifier.queryVerifyResult(getIMEI(), Build.getSerial());
