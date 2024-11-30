@@ -5331,6 +5331,11 @@ SPDX-License-Identifier: BSD-3-Clause-Clear -->
             </intent-filter>
         </receiver>
 
+        <!--Add by FPS-135-->
+        <service android:name=".ShutdownJobService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <!--Add by FPS-135-->
         <!-- This is the longest AndroidManifest.xml ever. -->
     </application>
 </manifest>
