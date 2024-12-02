@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.setupdesign.GlifLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/setup_wizard_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:icon="@drawable/ic_face_key">
+
+    <LinearLayout
+        style="@style/SudContentFrame"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="vertical">
+
+        <com.google.android.setupdesign.view.RichTextView
+            android:id="@id/description_text"
+            style="@style/SudDescription.Glif"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16.0dip"
+            android:text="@string/face_unlock_recognition_ready_rom4" />
+
+        <Button
+            android:id="@+id/show_disclaimer"
+            style="@style/DisclaimerBtnStyle"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="17.0dip"
+            android:text="@string/disclamer"
+            android:textSize="14.0sp" />
+
+        <com.google.android.setupdesign.view.FillContentLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0">
+
+            <ImageView
+                android:id="@+id/face_demo_image"
+                style="@style/SudContentIllustration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_add_face_data_setup_wizard" />
+        </com.google.android.setupdesign.view.FillContentLayout>
+    </LinearLayout>
+
+</com.google.android.setupdesign.GlifLayout>

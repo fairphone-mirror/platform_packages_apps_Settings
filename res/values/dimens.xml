@@ -564,4 +564,8 @@
     <dimen name="locale_picker_dialog_title_padding">16dp</dimen>
     <dimen name="locale_picker_dialog_message_padding_left_right">24dp</dimen>
     <dimen name="locale_picker_dialog_message_padding_bottom">32dp</dimen>
+
+    <dimen name="suw_description_line_spacing_extra">4sp</dimen>
+    <dimen name="face_unlock_long_btn_text_size">14sp</dimen>
+    <dimen name="face_unlock_btn_radius">20dp</dimen>
 </resources>

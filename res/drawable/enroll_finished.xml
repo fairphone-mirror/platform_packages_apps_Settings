@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:drawable="@drawable/enroll_finished_0">
+    <target
+        android:name="path_circle"
+        android:animation="@drawable/enroll_finished_1" />
+    <target
+        android:name="path_tick"
+        android:animation="@drawable/enroll_finished_2" />
+    <target
+        android:name="time_group"
+        android:animation="@drawable/enroll_finished_3" />
+</animated-vector>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="124.0dip"
+    android:height="124.0dip"
+    android:viewportWidth="124.0"
+    android:viewportHeight="124.0">
+    <group android:name="_R_G">
+        <group android:name="_R_G_L_2_G">
+            <path
+                android:name="path_circle"
+                android:fillColor="#00000000"
+                android:fillType="evenOdd"
+                android:pathData="M62,62m-60,0a60,60 0,1 1,120 0a60,60 0,1 1,-120 0"
+                android:strokeWidth="4.0"
+                android:strokeColor="@color/tct_stander_accent_primary" />
+        </group>
+        <group android:name="_R_G_L_1_G_N_4_T_0">
+            <path
+                android:name="path_tick"
+                android:fillColor="#00000000"
+                android:fillType="evenOdd"
+                android:pathData="M41.012,60.622l14.732,15.254l29.506,-28.489"
+                android:strokeWidth="10.0"
+                android:strokeColor="@color/tct_stander_accent_primary"
+                android:strokeLineCap="round"
+                android:strokeLineJoin="round" />
+        </group>
+    </group>
+    <group android:name="time_group" />
+</vector>
