@@ -59,8 +59,8 @@ public class LocalePickerWithRegionActivity extends SettingsBaseActivity
                     : bundle.getParcelable(Settings.EXTRA_EXPLICIT_LOCALES, LocaleList.class);
             Log.i(TAG, "Has explicit locales : " + explicitLocales);
         }
-        getOnBackInvokedDispatcher()
-                .registerOnBackInvokedCallback(PRIORITY_DEFAULT, mOnBackInvokedCallback);
+        // getOnBackInvokedDispatcher()
+        //        .registerOnBackInvokedCallback(PRIORITY_DEFAULT, mOnBackInvokedCallback);
         mSelector = LocalePickerWithRegion.createLanguagePicker(
                 this,
                 LocalePickerWithRegionActivity.this,
@@ -79,7 +79,12 @@ public class LocalePickerWithRegionActivity extends SettingsBaseActivity
     @Override
     public void onDestroy() {
         super.onDestroy();
-        getOnBackInvokedDispatcher().unregisterOnBackInvokedCallback(mOnBackInvokedCallback);
+        // getOnBackInvokedDispatcher().unregisterOnBackInvokedCallback(mOnBackInvokedCallback);
+    }
+
+    @Override
+    public void onBackPressed() {
+        handleBackPressed();
     }
 
     @Override
