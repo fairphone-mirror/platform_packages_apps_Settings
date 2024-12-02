@@ -46,6 +46,7 @@ import com.android.settingslib.datastore.BackupRestoreStorageManager;
 import com.android.settingslib.spa.framework.common.SpaEnvironmentFactory;
 
 import com.google.android.setupcompat.util.WizardManagerHelper;
+import com.android.settings.anc.lifecycle.LifecycleCallback;
 
 import java.lang.ref.WeakReference;
 
@@ -102,6 +103,7 @@ public class SettingsApplication extends Application {
                 new IntentFilter(TelephonyManager.ACTION_MULTI_SIM_CONFIG_CHANGED));
 
         registerActivityLifecycleCallbacks(new DeveloperOptionsActivityLifecycle());
+        registerActivityLifecycleCallbacks(new LifecycleCallback());
     }
 
     @Override

@@ -5349,6 +5349,44 @@
     <string name="status_sdn">Servizio chiamata (SDN).</string>
     <string name="pick_up_to_wake_title">Prendi in mano per attivare lo schermo</string>
 
+    <string name="attention">Attenzione</string>
+    <string name="cannot_detect_face">Impossibile rilevare il viso</string>
+    <string name="face_add_title">Aggiungi i dati facciali</string>
+    <string name="face_detect_timeout_dialog_button_retry">RIPROVA</string>
+    <string name="face_detect_timeout_dialog_message">"Viso non registrato. Assicurarsi che l'obiettivo della fotocamera sia pulito e spostare il telefono a una distanza di circa 25-50 cm dal viso."</string>
+    <string name="face_detect_timeout_dialog_title">Impossibile registrare il viso</string>
+    <string name="face_disabled_condition3_rom4">Face Unlock non è riuscito tre volte di seguito.</string>
+    <string name="face_disabled_title_rom4">Face Unlock sarà disabilitato nei seguenti casi:</string>
+    <string name="face_enable_condition_rom4">"È necessario l'inserimento del PIN o della password se si desidera rendere di nuovo disponibile lo sblocco con il viso."</string>
+    <string name="face_recognition_button_start">Inizia</string>
+    <string name="face_unlock_finish_msg_rom4">I dati del tuo viso sono stati aggiunti</string>
+    <string name="face_unlock_recognition_ready_rom4">"Per ottenere migliori risultati, consigliamo di utilizzare Face Unlock all'interno e lontano dalla luce solare diretta."</string>
+    <string name="face_unlock_register_prompt">Tenere il telefono a una distanza di circa 20-50 cm dal viso. Posizionare il viso nel riquadro visualizzato sullo schermo.</string>
+    <string name="face_unlock_settings_title_rom4">Riconoscimento viso</string>
+    <string name="faceunlock_last_delete_title">Eliminare i dati sul viso?</string>
+    <string name="scanning_face">Scansionare i dati facciali...</string>
+    <string name="warning_tips_rom4_first_part">"Il riconoscimento del viso è un metodo nuovo e comodo per sbloccare il dispositivo. Gli utenti sono tenuti a leggere e comprendere i rischi riportati nelle seguenti avvertenze prima di utilizzare il riconoscimento del viso come metodo di sblocco:
+ 
+ - Il dispositivo potrebbe essere sbloccato da una persona o da un oggetto con tratti simili a quelli dell'utente
+ 
+ -La sicurezza del riconoscimento viso è inferiore rispetto a quella offerta da sequenza/PIN/password"</string>
+    <string name="warning_tips_rom4_second_part">" - Durante l'impostazione del riconoscimento viso, è preferibile mantenere le abitudini di utilizzo quotidiane. Svariate situazioni possono influenzare la velocità o la qualità del riconoscimento, tra cui: indossare occhiali, cappelli, maschere, trucco e così via.
+ 
+ - Durante l'impostazione del riconoscimento del viso, assicurarsi che l'obiettivo della fotocamera e l'area di riconoscimento siano puliti e ben illuminati."</string>
+    <string name="warning_tips_rom4_second_part_title">Migliorare la qualità del riconoscimento del viso</string>
+    <string name="warning_tips_rom4_third_part">" - I dati personali verranno salvati ed elaborati solo sul dispositivo."</string>
+    <string name="warning_tips_rom4_third_part_title">Informazioni sulla privacy</string>
+    <string name="warning_title">Avviso di rischio</string>
+    <string name="confirm_remove_enroll_face">Confermi di voler rimuovere il viso registrato?</string>
+    <string name="main_face_title">Registrazione del viso</string>
+    <string name="second_face_title">Registrazione del viso di backup</string>
+    <string name="disclamer">Disclaimer</string>
+    <string name="faceunlock_setupwizard">Sblocca con il viso</string>
+    <string name="face_unlock_user_experience">"Si prega di usare lo sblocco viso per un'esperienza di blocco più veloce e più scorrevole."</string>
+    <string name="face_unlock_less_secure_than_strong_auth">Nota: lo sblocco con il tuo viso potrebbe essere meno sicuro di una sequenza complessa o di un PIN.</string>
+    <string name="security_settings_faceunlock_cancel_setup">Salta</string>
+    <string name="security_settings_faceunlock_next">Avanti</string>
+    <string name="enroll_main_first">Registra prima i dati del volto.</string>
     <string name="swap_back_recents_title">"Inverti l'ordine dei pulsanti Indietro e Panoramica App"</string>
     <string name="swap_back_recents_summary">"Inverti l'ordine dei pulsanti per tornare indietro e mostrare l'elenco app recenti nella barra di navigazione inferiore."</string>
 </resources>

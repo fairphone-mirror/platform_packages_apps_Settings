@@ -76,5 +76,13 @@
 
     <!-- Switch bar disabled state color-->
     <color name="switch_bar_state_disabled_color">#1FE3E3E3</color>
+
+    <color name="face_unlock_btn_txt_color">#ff99acd9</color>
+    <color name="face_unlock_text_color">#deffffff</color>
+    <color name="face_unlock_long_btn_text_color">#ffffffff</color>
+    <color name="tct_alert_dialog_bg_color">#ff383838</color>
+    <color name="tct_stander_bg_basic">#ff121212</color>
+    <color name="tct_stander_divider">#0dffffff</color>
+    <color name="tct_stander_accent_primary">#ff99acd9</color>
 </resources>
 

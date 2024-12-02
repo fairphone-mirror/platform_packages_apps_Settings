@@ -48,7 +48,9 @@ public class FaceStatusUtils {
      * Returns whether the face settings entity should be shown.
      */
     public boolean isAvailable() {
-        return !Utils.isMultipleBiometricsSupported(mContext) && Utils.hasFaceHardware(mContext);
+        //add  for FPS-200 20241202
+        return isFaceUnlockSupported() ||
+                (!Utils.isMultipleBiometricsSupported(mContext) && Utils.hasFaceHardware(mContext));
     }
 
     /**
@@ -94,6 +96,11 @@ public class FaceStatusUtils {
      * Returns the class name of the Settings page corresponding to face settings.
      */
     public String getSettingsClassName() {
+        //add  for FPS-200 20241202
+        if(isFaceUnlockSupported()){
+            return FaceEnrollIntroductionInternal.class.getName();
+        }
+        //add  for FPS-200 20241202
         return hasEnrolled() ? Settings.FaceSettingsInternalActivity.class.getName()
                 : FaceEnrollIntroductionInternal.class.getName();
     }
@@ -102,6 +109,13 @@ public class FaceStatusUtils {
      * Returns whether at least one face template has been enrolled.
      */
     public boolean hasEnrolled() {
+        //add  for FPS-200 20241202
+        if(isFaceUnlockSupported()){
+            boolean hasFaceEnrolled = android.provider.Settings.System.getInt(mContext.getContentResolver(),"enroll_main_face_id", 0) > 0
+                    || android.provider.Settings.System.getInt(mContext.getContentResolver(), "enroll_second_face_id", 0) > 0;
+            return hasFaceEnrolled;
+        }
+        //add  for FPS-200 20241202
         return mFaceManager.hasEnrolledTemplates(mUserId);
     }
 
@@ -112,4 +126,10 @@ public class FaceStatusUtils {
         return RestrictedLockUtilsInternal.checkIfKeyguardFeaturesDisabled(
                 mContext, DevicePolicyManager.KEYGUARD_DISABLE_FACE, mUserId) != null;
     }
+
+    //add  for FPS-200 20241202
+    private boolean isFaceUnlockSupported(){
+        return true;
+    }
+    //add  for FPS-200 20241202
 }
