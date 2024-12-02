@@ -5348,4 +5348,6 @@
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"Während der Freigabe kann das Passwort nicht geändert werden. Wenn du das Passwort ändern möchtest, deaktiviere zuerst die Audiofreigabe."</string>
     <string name="status_sdn">Service Rufnummer</string>
     <string name="pick_up_to_wake_title">Zum Aktivieren hochheben</string>
+    <string name="swap_back_recents_title">"Zurück/Zuletzt verwendet wechseln"</string>
+    <string name="swap_back_recents_summary">"Die Schaltflächen "Zurück" und "Zuletzt verwendet" in der Navigationsleiste austauschen"</string>
 </resources>

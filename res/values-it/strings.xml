@@ -5348,4 +5348,7 @@
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"Impossibile modificare la password durante la condivisione. Per modificarla, devi prima disattivare la condivisione audio."</string>
     <string name="status_sdn">Servizio chiamata (SDN).</string>
     <string name="pick_up_to_wake_title">Prendi in mano per attivare lo schermo</string>
+
+    <string name="swap_back_recents_title">"Inverti l'ordine dei pulsanti Indietro e Panoramica App"</string>
+    <string name="swap_back_recents_summary">"Inverti l'ordine dei pulsanti per tornare indietro e mostrare l'elenco app recenti nella barra di navigazione inferiore."</string>
 </resources>
