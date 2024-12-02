@@ -5766,4 +5766,6 @@
     <string name="accessibility_illustration_content_description" msgid="557376174860150903">"Animation der Bedienungshilfe „<xliff:g id="FEATURE">%1$s</xliff:g>“"</string>
     <string name="status_sdn">Service Rufnummer</string>
     <string name="pick_up_to_wake_title">Zum Aktivieren hochheben</string>
+    <string name="swap_back_recents_title">"Zurück/Zuletzt verwendet wechseln"</string>
+    <string name="swap_back_recents_summary">"Die Schaltflächen "Zurück" und "Zuletzt verwendet" in der Navigationsleiste austauschen"</string>
 </resources>

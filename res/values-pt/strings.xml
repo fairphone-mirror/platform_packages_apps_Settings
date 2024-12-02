@@ -5763,4 +5763,7 @@
     <string name="accessibility_illustration_content_description" msgid="557376174860150903">"Animação do recurso <xliff:g id="FEATURE">%1$s</xliff:g>"</string>
     <string name="status_sdn">Número de ligação ao serviço</string>
     <string name="pick_up_to_wake_title">Levantar para acordar</string>
+
+    <string name="swap_back_recents_title">"Troque a ordem de Anterior e Vista geral de apps"</string>
+    <string name="swap_back_recents_summary">"Troque a ordem dos botões Anterior e Vista geral de apps na barra de navegação"</string>
 </resources>

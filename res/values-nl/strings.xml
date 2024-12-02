@@ -5766,4 +5766,7 @@
     <string name="accessibility_illustration_content_description" msgid="557376174860150903">"Animatie voor <xliff:g id="FEATURE">%1$s</xliff:g>"</string>
     <string name="status_sdn">Servicedienstnummer</string>
     <string name="pick_up_to_wake_title">Til op om te activeren</string>
+
+    <string name="swap_back_recents_title">"Terug- en recent-knop omwissel"</string>
+    <string name="swap_back_recents_summary">"Wissel de terug- en recent-knop om in de navigatiebalk"</string>
 </resources>
