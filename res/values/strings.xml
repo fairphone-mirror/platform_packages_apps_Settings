@@ -14539,6 +14539,7 @@ Data usage charges may apply.</string>
     <!-- Learn more link for audio sharing qrcode [CHAR LIMIT=none]-->
     <string name="audio_streams_qr_code_help_with_link"><annotation id="link">Need help?</annotation></string>
 
+    <string name="pick_up_to_wake_title">Pick up to wake</string>
     <string name="prefer_5G">"5G/4G/3G/2G"</string>
     <string name="prefer_4G">"4G/3G/2G"</string>
     <string name="prefer_3G">"3G/2G"</string>

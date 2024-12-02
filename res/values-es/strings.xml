@@ -5767,5 +5767,6 @@
     <string name="supervision_full_screen_pin_verification_title" msgid="78513043528333399">"Introduce el PIN de supervisión"</string>
     <string name="accessibility_illustration_content_description" msgid="557376174860150903">"Animación de <xliff:g id="FEATURE">%1$s</xliff:g>"</string>
     <string name="status_sdn">Número de marcación de servicio.</string>
+    <string name="pick_up_to_wake_title">Activación al coger el móvil</string>
     <string name="wfc_help_desc_text">Si selecciona Red móvil preferida se utilizará la red móvil de forma predeterminada para las llamadas. En caso de que no haya cobertura de red móvil o ésta sea muy débil, se utilizará la red Wi-Fi en su lugar.</string>
 </resources>

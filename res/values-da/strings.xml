@@ -5765,4 +5765,5 @@
     <string name="supervision_full_screen_pin_verification_title" msgid="78513043528333399">"Angiv pinkode til forældrestyring"</string>
     <string name="accessibility_illustration_content_description" msgid="557376174860150903">"Animation af <xliff:g id="FEATURE">%1$s</xliff:g>"</string>
     <string name="status_sdn">Indtast nummer service</string>
+    <string name="pick_up_to_wake_title">Løft op for at vække</string>
 </resources>

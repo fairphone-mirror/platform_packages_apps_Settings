@@ -5765,4 +5765,5 @@
     <string name="supervision_full_screen_pin_verification_title" msgid="78513043528333399">"Pincode voor toezicht invoeren"</string>
     <string name="accessibility_illustration_content_description" msgid="557376174860150903">"Animatie voor <xliff:g id="FEATURE">%1$s</xliff:g>"</string>
     <string name="status_sdn">Servicedienstnummer</string>
+    <string name="pick_up_to_wake_title">Til op om te activeren</string>
 </resources>
