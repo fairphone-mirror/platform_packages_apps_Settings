@@ -13836,6 +13836,13 @@
     <string name="ims_settings_summary_on">"Debug mode for IMS Settings is ON."</string>
     <string name="ims_settings_summary_off">"Debug mode for IMS Settings is OFF"</string>
 
+    <string name="orientation_timing_title">Orientation timing</string>
+    <string name="orientation_timing_spead_0_title">Slow down by 1 seconds</string>
+    <string name="orientation_timing_spead_1_title">Slow down by 0.5 seconds</string>
+    <string name="orientation_timing_spead_2_title">Normal</string>
+    <string name="orientation_timing_spead_3_title">Accelerate for 0.5 seconds</string>
+    <string name="orientation_timing_spead_4_title">Accelerate for 1 seconds</string>
+
     <!--add by renjie-->
     <string name="ims_unlock_enable">"IMS settings display"</string>
     <string name="ims_unlock_enable_summary">"Debug mode when IMS enable"</string>
