@@ -13807,6 +13807,7 @@
     <!-- Le audio streams password dialog  [CHAR LIMIT=NONE] -->
     <string name="audio_streams_main_page_password_dialog_cannot_edit">Can\u0027t edit password while sharing. To change the password, first turn off audio sharing.</string>
 
+    <string name="pick_up_to_wake_title">Pick up to wake</string>
     <string name="prefer_5G">"5G/4G/3G/2G"</string>
     <string name="prefer_4G">"4G/3G/2G"</string>
     <string name="prefer_3G">"3G/2G"</string>

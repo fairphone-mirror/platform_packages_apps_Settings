@@ -5349,5 +5349,6 @@
     <string name="audio_streams_main_page_qr_code_scanner_summary" msgid="5312980105735143360">"Escanea el código QR de una emisión de audio para escucharlo con <xliff:g id="DEVICE_NAME">%1$s</xliff:g>"</string>
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"No se puede modificar la contraseña durante el uso compartido. Para cambiarla, primero desactiva la función compartir audio."</string>
      <string name="status_sdn">Número de marcación de servicio.</string>
+     <string name="pick_up_to_wake_title">Activación al coger el móvil</string>
     <string name="wfc_help_desc_text">Si selecciona Red móvil preferida se utilizará la red móvil de forma predeterminada para las llamadas. En caso de que no haya cobertura de red móvil o ésta sea muy débil, se utilizará la red Wi-Fi en su lugar.</string>
 </resources>
