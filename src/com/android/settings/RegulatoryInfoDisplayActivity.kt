@@ -25,6 +25,8 @@ import androidx.appcompat.app.AlertDialog
 import com.android.settings.deviceinfo.regulatory.RegulatoryInfo.getRegulatoryInfo
 import com.android.settings.overlay.FeatureFactory.Companion.featureFactory
 
+import com.bumptech.glide.Glide;
+
 /**
  * [Activity] that displays regulatory information for the "Regulatory information"
  * preference item, and when "*#07#" is dialed on the Phone keypad. To enable this feature,
@@ -36,10 +38,18 @@ import com.android.settings.overlay.FeatureFactory.Companion.featureFactory
  * information (text will be centered in the dialog).
  */
 class RegulatoryInfoDisplayActivity : Activity() {
+    val sRegulatoryUrl = "https://techsupport.fairphone.com/labels/FP4_e-Label.png";
 
     /** Display the regulatory info graphic in a dialog window. */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        setContentView(R.layout.regulatory_info);
+        val image = findViewById<ImageView>(R.id.regulatoryInfo)
+        if(image != null) {
+            Glide.with(this).load(sRegulatoryUrl).error(R.drawable.regulatory_info_new).into(image);
+        }
+        /**
         val builder = AlertDialog.Builder(this)
             .setTitle(R.string.regulatory_labels)
             .setOnDismissListener { finish() }  // close the activity
@@ -64,6 +74,7 @@ class RegulatoryInfoDisplayActivity : Activity() {
             // neither drawable nor text resource exists, finish activity
             finish()
         }
+        */
     }
 
     private fun getRegulatoryText(): CharSequence? {

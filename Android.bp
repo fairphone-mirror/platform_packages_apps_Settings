@@ -111,6 +111,12 @@ android_library {
         "device_policy_aconfig_flags_lib",
         "kotlinx-coroutines-core",
         "kotlinx-coroutines-android",
+        "glide-prebuilt",
+        "glide-gifdecoder-prebuilt",
+        "glide-disklrucache-prebuilt",
+        "androidx.vectordrawable_vectordrawable-animated",
+        "androidx.exifinterface_exifinterface",
+        "glide-annotation-and-compiler-prebuilt",
     ],
 
     plugins: ["androidx.room_room-compiler-plugin"],

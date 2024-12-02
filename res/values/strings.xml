@@ -13824,6 +13824,7 @@
 
     <!-- url for learning more about bluetooth audio sharing -->
     <string name="help_url_audio_sharing" translatable="false"></string>
+    <string name="settings_elabel_activity_unavailable">There is a problem loading the elaebl file.</string>
 
     <string name="status_sdn">"Service Dialing Number"</string>
     <string name="wfc_help_desc_text">Wi-Fi calling\n\nUse Wi-Fi networks to make and receive calls anywhere in metropolitan France, without connecting to a mobile network.\n\nTo use the service, check that it is offered by your service provider, enable it in Call settings, then connect to a Wi-Fi network. The icon below will be shown whenever this function is available.</string>
