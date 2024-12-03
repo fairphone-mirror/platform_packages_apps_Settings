@@ -63,7 +63,7 @@ public class ShowOperatorNamePreferenceController extends AbstractPreferenceCont
     @Override
     public void updateState(Preference preference) {
         int value = Settings.Secure.getInt(mContext.getContentResolver(),
-                KEY_SHOW_OPERATOR_NAME, 1);
+                KEY_SHOW_OPERATOR_NAME, 0);//[FEATURE]-Modify by shaopan.tang 2024-06-07 FPS-265 Network name default off
         ((TwoStatePreference) preference).setChecked(value != 0);
     }
 }
