@@ -515,7 +515,7 @@ public class FingerprintSettings extends SubSettings {
                     column2.mLearnMoreOverrideText = getText(
                             R.string.security_settings_fingerprint_settings_footer_learn_more);
                 }
-                column2.mLearnMoreClickListener = learnMoreClickListener;
+                //column2.mLearnMoreClickListener = learnMoreClickListener;
                 mFooterColumns.add(column2);
             } else {
                 final FooterColumn column = new FooterColumn();
@@ -523,7 +523,7 @@ public class FingerprintSettings extends SubSettings {
                         ? R.string.private_space_fingerprint_enroll_introduction_message
                         : R.string.security_settings_fingerprint_enroll_introduction_v3_message,
                         DeviceHelper.getDeviceName(getActivity()));
-                column.mLearnMoreClickListener = learnMoreClickListener;
+                //column.mLearnMoreClickListener = learnMoreClickListener;
                 column.mLearnMoreOverrideText = getText(
                         R.string.security_settings_fingerprint_settings_footer_learn_more);
                 mFooterColumns.add(column);
