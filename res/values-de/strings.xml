@@ -5386,6 +5386,8 @@
     <string name="face_unlock_less_secure_than_strong_auth">Hinweis: Unter Umständen ist Ihr Gesicht weniger sicher als ein sicheres Muster oder eine sichere PIN.</string>
     <string name="security_settings_faceunlock_cancel_setup">Überspringen</string>
     <string name="security_settings_faceunlock_next">Weiter</string>
+    <string name="fingerprint_settings_open_description">"Einschalten, um das Telefon ohne vorherige Aktivierung zu entsperren"</string>
+    <string name="fingerprint_settings_open_title">Fingerabruck Entsperrverhalten</string>
     <string name="swap_back_recents_title">"Zurück/Zuletzt verwendet wechseln"</string>
     <string name="swap_back_recents_summary">"Die Schaltflächen "Zurück" und "Zuletzt verwendet" in der Navigationsleiste austauschen"</string>
 </resources>

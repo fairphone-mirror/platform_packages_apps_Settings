@@ -13883,6 +13883,10 @@
     <string name="ims_settings_title">"IMS Settings"</string>
     <string name="ims_settings_summary">"Debug mode for IMS Settings"</string>
     <string name="legal_info_title">Open source licenses</string>
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="fingerprint_settings_open_title">Fingerprint Unlock Behavior</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="fingerprint_settings_open_description">"Switch on if you prefer to unlock without waking up the phone first."</string>
 
     <!-- Title text for swapping the back and recents buttons in the navigation bar. [CHAR LIMIT=60] -->
     <string name="swap_back_recents_title">Swap Back/Recents Navigation</string>

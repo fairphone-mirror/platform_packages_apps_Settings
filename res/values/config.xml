@@ -852,4 +852,6 @@
 
     <!-- Package name for diagnostics app. -->
     <string name="config_device_diagnostics_package_name" translatable="false">com.android.devicediagnostics</string>
+    <!-- Whether the fingerpint behavior is defaulted to be on or off-->
+    <bool name="config_fingerprint_settings_behavior_on">true</bool>
 </resources>

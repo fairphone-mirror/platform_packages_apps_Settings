@@ -5389,7 +5389,8 @@
     <string name="security_settings_faceunlock_cancel_setup">Saltar</string>
     <string name="security_settings_faceunlock_next">Siguiente</string>
     <string name="wfc_help_desc_text">Si selecciona Red móvil preferida se utilizará la red móvil de forma predeterminada para las llamadas. En caso de que no haya cobertura de red móvil o ésta sea muy débil, se utilizará la red Wi-Fi en su lugar.</string>
-
+    <string name="fingerprint_settings_open_description">"Habilita si prefieres desbloquear con tu huella dactilar, sin encender el teléfono primero."</string>
+    <string name="fingerprint_settings_open_title">Modo de desbloqueo con huella digital</string>
     <string name="swap_back_recents_title">"Cambia la navegación de volver/recientes"</string>
     <string name="swap_back_recents_summary">"Cambia los botones de volver y recientes en la barra de navegación"</string>
 </resources>

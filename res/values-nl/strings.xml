@@ -5387,6 +5387,8 @@
     <string name="face_unlock_less_secure_than_strong_auth">Opmerking: Ontgrendelen met uw gezicht kan minder veilig zijn dan een sterk patroon of PIN-code.</string>
     <string name="security_settings_faceunlock_cancel_setup">Overslaan</string>
     <string name="security_settings_faceunlock_next">Volgende</string>
+    <string name="fingerprint_settings_open_description">"Schakel in als je liever de telefoon ontgrendelt zonder hem eerst te activeren."</string>
+    <string name="fingerprint_settings_open_title">Ontgrendelgedrag vingerafdrukscanner</string>
     <string name="swap_back_recents_title">"Terug- en recent-knop omwissel"</string>
     <string name="swap_back_recents_summary">"Wissel de terug- en recent-knop om in de navigatiebalk"</string>
 </resources>
