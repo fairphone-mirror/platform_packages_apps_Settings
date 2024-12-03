@@ -120,7 +120,7 @@ final class PowerMenuSettingsUtils {
             Settings.Global.putInt(
                     context.getContentResolver(),
                     KEY_CHORD_POWER_VOLUME_UP_SETTING,
-                    keyChordDefaultValue);
+                    1);
             return true;
         }
         return false;
