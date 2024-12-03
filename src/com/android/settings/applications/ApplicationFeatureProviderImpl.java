@@ -185,6 +185,8 @@ public class ApplicationFeatureProviderImpl implements ApplicationFeatureProvide
             keepEnabledPackages.add(locationHistoryPackage);
         }
         keepEnabledPackages.addAll(mSystemConfigManager.getPreventUserDisablePackages());
+        // Add SearchSelector
+        keepEnabledPackages.add("com.google.android.apps.setupwizard.searchselector");
         return keepEnabledPackages;
     }
 
