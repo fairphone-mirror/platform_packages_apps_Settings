@@ -869,4 +869,7 @@
 
     <!-- Whether the Gaze is enabled -->
     <bool name="config_gazeEnabled">false</bool>
+
+    <!-- Whether the fingerpint behavior is defaulted to be on or off-->
+    <bool name="config_fingerprint_settings_behavior_on">true</bool>
 </resources>
