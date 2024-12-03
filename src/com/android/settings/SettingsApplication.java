@@ -171,7 +171,7 @@ public class SettingsApplication extends Application {
                 finalBitmapDrawable = lockDrawableFromCustomization;
             }
             Bitmap lockBitmap = finalBitmapDrawable.getBitmap();
-            mWallpaperManager.setBitmap(lockBitmap,null,true,WallpaperManager.FLAG_LOCK);
+            mWallpaperManager.setBitmap(lockBitmap, null, true, WallpaperManager.FLAG_LOCK | WallpaperManager.FLAG_SYSTEM);
         } catch (IOException e) {
             Log.w(TAG, "Setting wallpaper to default threw exception", e);
         }
