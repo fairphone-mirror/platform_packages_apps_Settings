@@ -1132,7 +1132,7 @@
     <string name="wifi_add_app_networks_title" msgid="4384594865433042851">"Vil du gemme netværkene?"</string>
     <string name="wifi_add_app_networks_saving_summary" msgid="577680250954742033">"Gemmer <xliff:g id="NUMBER">%d</xliff:g> netværk…"</string>
     <string name="wifi_add_app_networks_saved_summary" msgid="1648417628665152905">"Netværkene blev gemt"</string>
-    <string name="wifi_calling_settings_title" msgid="264665264535884440">"Opkald via Wi-Fi"</string>
+    <string name="wifi_calling_settings_title" msgid="264665264535884440">"WIFI-opkald"</string>
     <string name="wifi_calling_suggestion_title" msgid="4791435106729906727">"Udvid opkaldsdækningen med Wi‑Fi"</string>
     <string name="wifi_calling_suggestion_summary" msgid="5413024679599742858">"Aktivér Wi-Fi-opkald for at udvide dækningen"</string>
     <string name="wifi_calling_mode_title" msgid="5145896168360825619">"Opkaldspræference"</string>
@@ -5384,6 +5384,11 @@
     <string name="faceunlock_setupwizard">Lås op med ansigt</string>
     <string name="face_unlock_user_experience">Brug ansigtslåsning for hurtigere op nemmere at låse op.</string>
     <string name="face_unlock_less_secure_than_strong_auth">Bemærk: Dit ansigt kan være mindre sikkert end et stærkt mønster eller en pinkode.</string>
+    <string name="auto_5G">"5G/4G/3G/2G Automatisk"</string>
+    <string name="auto_4G">"4G/3G/2G Automatisk"</string>
+    <string name="auto_3G">"3G/2G Automatisk"</string>
+    <string name="only_3G">"3G Kun"</string>
+    <string name="only_2G">"2G Kun"</string>
     <string name="security_settings_faceunlock_cancel_setup">Spring over</string>
     <string name="security_settings_faceunlock_next">Næste</string>
     <!--state of health-->

@@ -1132,7 +1132,7 @@
     <string name="wifi_add_app_networks_title" msgid="4384594865433042851">"Vuoi salvare le reti?"</string>
     <string name="wifi_add_app_networks_saving_summary" msgid="577680250954742033">"Salvataggio di <xliff:g id="NUMBER">%d</xliff:g> reti in corso…"</string>
     <string name="wifi_add_app_networks_saved_summary" msgid="1648417628665152905">"Reti salvate"</string>
-    <string name="wifi_calling_settings_title" msgid="264665264535884440">"Chiamate Wi-Fi"</string>
+    <string name="wifi_calling_settings_title" msgid="264665264535884440">"Chiamata WiFi"</string>
     <string name="wifi_calling_suggestion_title" msgid="4791435106729906727">"Estendi le chiamate usando il Wi‑Fi"</string>
     <string name="wifi_calling_suggestion_summary" msgid="5413024679599742858">"Attiva le chiamate Wi‑Fi per estendere la copertura"</string>
     <string name="wifi_calling_mode_title" msgid="5145896168360825619">"Preferenza di chiamata"</string>
@@ -5384,6 +5384,11 @@
     <string name="faceunlock_setupwizard">Sblocca con il viso</string>
     <string name="face_unlock_user_experience">"Si prega di usare lo sblocco viso per un'esperienza di blocco più veloce e più scorrevole."</string>
     <string name="face_unlock_less_secure_than_strong_auth">Nota: lo sblocco con il tuo viso potrebbe essere meno sicuro di una sequenza complessa o di un PIN.</string>
+    <string name="auto_5G">"5G/4G/3G/2G Automatico"</string>
+    <string name="auto_4G">"4G/3G/2G Automatico"</string>
+    <string name="auto_3G">"3G/2G Automatico"</string>
+    <string name="only_3G">"3G Solo"</string>
+    <string name="only_2G">"2G Solo"</string>
     <string name="security_settings_faceunlock_cancel_setup">Salta</string>
     <string name="security_settings_faceunlock_next">Avanti</string>
     <!--state of health-->
