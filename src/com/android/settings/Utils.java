@@ -1552,7 +1552,7 @@ public final class Utils extends com.android.settingslib.Utils {
     public static void disableComponentsToHideSettings(@NonNull Context context,
             @NonNull PackageManager pm) {
         // Disable settings app launcher icon
-        disableComponent(pm, new ComponentName(context, Settings.class));
+        disableComponent(pm, new ComponentName(context, com.android.settings.Settings.class));
 
         //Disable Shortcut picker
         disableComponent(pm, new ComponentName(context, com.android.settings.Settings.CreateShortcutActivity.class));
