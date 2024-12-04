@@ -5386,6 +5386,21 @@
     <string name="face_unlock_less_secure_than_strong_auth">Bemærk: Dit ansigt kan være mindre sikkert end et stærkt mønster eller en pinkode.</string>
     <string name="security_settings_faceunlock_cancel_setup">Spring over</string>
     <string name="security_settings_faceunlock_next">Næste</string>
+    <!--state of health-->
+    <string name="batteryh_soh">sundhedstilstand:</string>
+    <!--state of count-->
+    <string name="batteryh_soc">antal opladnings-/afladningscyklusser:</string>
+    <!--charge full design-->
+    <string name="batteryh_cfd">Design for fuld opladning:</string>
+    <string name="dialog_title_battery_healty">Sundhedstilstand for batteri</string>
+    <string name="charging_slow">ECO -opladning</string>
+    <string name="charging_normal">Hurtig opladning</string>
+    <string name="charging_state">Opladningstilstand</string>
+    <string name="battery_protect">Batteri beskytter</string>
+    <string name="battery_protect_description">Indstil det maksimale batteriopladningsniveau til 80%</string>
+    <string name="battery_charging_privacy">Tilpas din opladningshastighed. Husk langsommere opladning er lig med længere batterilevetid.</string>
+    <string name="battery_charging_privacy_eco">Optimer din batteris levetid med denne tilstand.</string>
+    <string name="battery_charging_privacy_fast">Kom tilbage til 100% så hurtigt som muligt.</string>
     <string name="fingerprint_settings_open_description">"Tænd, hvis du foretrækker at låse op uden at vågne telefonen først."</string>
     <string name="fingerprint_settings_open_title">Fingerprint Lås op adfærd</string>
 </resources>
