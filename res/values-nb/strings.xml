@@ -860,7 +860,7 @@
     <string name="wifi_display_options_forget" msgid="3140558691112356024">"Glem"</string>
     <string name="wifi_display_options_done" msgid="7608851767701954020">"Ferdig"</string>
     <string name="wifi_display_options_name" msgid="8181334945680312228">"Navn"</string>
-    <string name="wifi_band_24ghz" msgid="7322286660245127384">"2,4 GHz"</string>
+    <string name="wifi_band_24ghz" msgid="7322286660245127384">"2.4 GHz"</string>
     <string name="wifi_band_5ghz" msgid="7995204987245404797">"5 GHz"</string>
     <string name="wifi_band_6ghz" msgid="8166833829829455339">"6 GHz"</string>
     <string name="wifi_sign_in_button_text" msgid="8483892122845654850">"Logg på"</string>
@@ -956,8 +956,8 @@
     <string name="wifi_eap_anonymous" msgid="8630332141751267000">"Anonym identitet"</string>
     <string name="wifi_password" msgid="1458802324849513755">"Passord"</string>
     <string name="wifi_show_password" msgid="6865993988238157923">"Vis passord"</string>
-    <string name="wifi_ap_choose_2G" msgid="1436802195991542016">"2,4 GHz-bånd"</string>
-    <string name="wifi_ap_prefer_5G" msgid="2520628479818369902">"5,0 GHz-bånd foretrekkes"</string>
+    <string name="wifi_ap_choose_2G" msgid="1436802195991542016">"2.4 GHz-bånd"</string>
+    <string name="wifi_ap_prefer_5G" msgid="2520628479818369902">"5.0 GHz-bånd foretrekkes"</string>
     <string name="wifi_ip_settings" msgid="6420498748726599133">"IP-innstillinger"</string>
     <string name="wifi_privacy_settings" msgid="3283946009000725698">"Personvern"</string>
     <string name="wifi_privacy_mac_settings" msgid="3188060664478313363">"MAC"</string>
@@ -1104,11 +1104,11 @@
     <string name="wifi_hotspot_speed_summary_2g_and_5g" msgid="5931052946168943750">"2.4 og 5 GHz / kompatibel med de fleste enheter"</string>
     <string name="wifi_hotspot_speed_intro" msgid="6973482196363758925">"Velg en frekvens for wifi-sonen. Frekvensen påvirker tilkoblingshastigheten og hvilke typer enheter som kan finne wifi-sonen."</string>
     <string name="wifi_hotspot_speed_category" msgid="5265655850463630286">"Foretrukket frekvens"</string>
-    <string name="wifi_hotspot_speed_2g" msgid="3400600834257664480">"2,4 GHz"</string>
+    <string name="wifi_hotspot_speed_2g" msgid="3400600834257664480">"2.4 GHz"</string>
     <string name="wifi_hotspot_speed_2g_summary" msgid="6930273933810520155">"Lavere hastighet. Kompatibel med de fleste enheter."</string>
     <string name="wifi_hotspot_speed_5g" msgid="4058116867148848395">"5 GHz"</string>
     <string name="wifi_hotspot_speed_5g_summary" msgid="562987935924535694">"Høy hastighet. Kompatibel med mange enheter."</string>
-    <string name="wifi_hotspot_speed_2g_5g" msgid="9192756255938408285">"2,4 og 5 GHz"</string>
+    <string name="wifi_hotspot_speed_2g_5g" msgid="9192756255938408285">"2.4 og 5 GHz"</string>
     <string name="wifi_hotspot_speed_2g_5g_summary" msgid="8104575293617700173">"Høy hastighet. Denne wifi-sonen med to bånd er kompatibel med de fleste enheter."</string>
     <string name="wifi_hotspot_speed_6g" msgid="3787697484862730500">"6 GHz"</string>
     <string name="wifi_hotspot_speed_6g_summary" msgid="8675262219242174548">"Høyeste hastighet. Kompatibel med få enheter."</string>
@@ -5216,6 +5216,8 @@
     <string name="screen_flash_color_violet" msgid="1279950780509029495">"Fiolett"</string>
     <string name="color_selector_dialog_done" msgid="121253968943363376">"Ferdig"</string>
     <string name="color_selector_dialog_cancel" msgid="8667350644753900701">"Avbryt"</string>
+    <string name="swap_back_recents_title">"Bytt tilbake/nylig navigering"</string>
+    <string name="swap_back_recents_summary">"Bytt tilbake- og siste-knappen i navigasjonslinjen"</string>
     <string name="contrast_default" msgid="8918545965525226966">"Standard"</string>
     <string name="contrast_medium" msgid="384414510709285811">"Middels"</string>
     <string name="contrast_high" msgid="3988567609694797696">"Høy"</string>

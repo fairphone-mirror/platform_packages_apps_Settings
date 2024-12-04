@@ -5346,6 +5346,9 @@
     <string name="audio_streams_main_page_password_dialog_join_button" msgid="2967747276379153408">"聆聽串流"</string>
     <string name="audio_streams_main_page_qr_code_scanner_summary" msgid="5312980105735143360">"使用「<xliff:g id="DEVICE_NAME">%1$s</xliff:g>」掃描音訊串流 QR code 即可聆聽"</string>
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"分享期間無法編輯密碼。如要變更密碼，請先關閉音訊分享功能。"</string>
+    <string name="data_preference">"數據偏好設定"</string>
+    <string name="unlock_failed_reset_title">"自動恢復原廠設定"</string>
+    <string name="unlock_failed_reset_description">"若連續15次未正確解鎖您的手機, 手機會被重置回原廠設定。所有的資料, 包含您新增的檔案及下載的應用程式都將會被刪除"</string>
     <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
     <string name="fingerprint_settings_open_title">"指紋解鎖方式"</string>
     <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->

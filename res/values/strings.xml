@@ -2172,9 +2172,9 @@
     <!-- Label for the radio button to choose both wifi ap band (2.4GHz + 5GHz) -->
     <string name="wifi_ap_choose_vendor_dual_band">Dual Band</string>
     <!-- Label for the radio button to prefer 5GHz wifi ap band  [CHAR LIMIT=80]-->
-    <string name="wifi_ap_prefer_5G">5.0 GHz Band preferred</string>
+    <string name="wifi_ap_prefer_5G">5 GHz Band preferred</string>
     <!-- Label for the radio button to prefer 6GHz wifi ap band  [CHAR LIMIT=80]-->
-    <string name="wifi_ap_prefer_6G">6.0 GHz Band preferred</string>
+    <string name="wifi_ap_prefer_6G">6 GHz Band preferred</string>
     <!-- Label for adding to the list of selected bands when 2.4 GHz is selected -->
     <!-- Label for the spinner to show ip settings [CHAR LIMIT=25] -->
     <string name="wifi_ip_settings">IP settings</string>
@@ -3528,7 +3528,7 @@
     <!-- Erase Euicc dialog and SD card & phone storage settings screen, title for the menu option and checkbox to let user decide whether erase eSIM data together [CHAR LIMIT=50] -->
     <string name="reset_esim_title">Erase eSIMs</string>
     <!-- Erase Euicc dialog and SD card & phone storage settings screen, message for the checkbox to let user decide whether erase eSIM data together [CHAR LIMIT=NONE] -->
-    <string name="reset_esim_desc">This won’t cancel your mobile service plan. To get a replacement SIM, contact your carrier.</string>
+    <string name="reset_esim_desc">"This won’t cancel any mobile service plans. To download replacement SIMs, contact your carrier. Please note that an internet connection (mobile data or Wi-Fi) is required to erase the selected SIM profile from the device."</string>
 
     <!-- SD card & phone storage settings screen, button on screen after user selects Reset network settings -->
     <string name="reset_network_button_text">Reset settings</string>
@@ -12210,7 +12210,7 @@
     <!-- Title on confirmation dialog asking the user if they want to erase the eSIM from the device. [CHAR_LIMIT=NONE] -->
     <string name="erase_sim_dialog_title">Erase this eSIM?</string>
     <!-- Body text in confirmation dialog indicating what erasing a SIM entails. [CHAR_LIMIT=NONE] -->
-    <string name="erase_sim_dialog_text">This removes <xliff:g id="carrier_name_a" example="Google Fi">%1$s</xliff:g> service from this device, but your <xliff:g id="carrier_name_b" example="Google Fi">%1$s</xliff:g> plan won\'t be canceled.</string>
+    <string name="erase_sim_dialog_text">"Erasing this SIM removes <xliff:g id="carrier_name_a" example="Google Fi">%1$s</xliff:g> service from this device.\n\nService for <xliff:g id="carrier_name_b" example="Google Fi">%1$s</xliff:g> won't be canceled. Please note that an internet connection (mobile data or Wi-Fi) is required to erase the selected SIM profile from the device."</string>
     <!-- Button label to erase the eSIM [CHAR_LIMIT=20] -->
     <string name="erase_sim_confirm_button">Erase</string>
     <!-- Status message indicating the device is in the process of erasing the SIM. [CHAR_LIMIT=NONE] -->

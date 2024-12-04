@@ -860,7 +860,7 @@
     <string name="wifi_display_options_forget" msgid="3140558691112356024">"Oblida"</string>
     <string name="wifi_display_options_done" msgid="7608851767701954020">"Fet"</string>
     <string name="wifi_display_options_name" msgid="8181334945680312228">"Nom"</string>
-    <string name="wifi_band_24ghz" msgid="7322286660245127384">"2,4 GHz"</string>
+    <string name="wifi_band_24ghz" msgid="7322286660245127384">"2.4 GHz"</string>
     <string name="wifi_band_5ghz" msgid="7995204987245404797">"5 GHz"</string>
     <string name="wifi_band_6ghz" msgid="8166833829829455339">"6 GHz"</string>
     <string name="wifi_sign_in_button_text" msgid="8483892122845654850">"Inicia la sessió"</string>
@@ -956,8 +956,8 @@
     <string name="wifi_eap_anonymous" msgid="8630332141751267000">"Identitat anònima"</string>
     <string name="wifi_password" msgid="1458802324849513755">"Contrasenya"</string>
     <string name="wifi_show_password" msgid="6865993988238157923">"Mostra la contrasenya"</string>
-    <string name="wifi_ap_choose_2G" msgid="1436802195991542016">"Banda de 2,4 GHz"</string>
-    <string name="wifi_ap_prefer_5G" msgid="2520628479818369902">"Banda de 5,0 GHz preferida"</string>
+    <string name="wifi_ap_choose_2G" msgid="1436802195991542016">"Banda de 2.4 GHz"</string>
+    <string name="wifi_ap_prefer_5G" msgid="2520628479818369902">"Banda de 5.0 GHz preferida"</string>
     <string name="wifi_ip_settings" msgid="6420498748726599133">"Configuració d\'IP"</string>
     <string name="wifi_privacy_settings" msgid="3283946009000725698">"Privadesa"</string>
     <string name="wifi_privacy_mac_settings" msgid="3188060664478313363">"MAC"</string>
@@ -1098,17 +1098,17 @@
     <string name="wifi_hotspot_maximize_compatibility_single_ap_summary" msgid="383355687431591441">"Ajuda altres dispositius a trobar aquest punt d\'accés Wi‑Fi. Redueix la velocitat de connexió del punt d\'accés Wi‑Fi."</string>
     <string name="wifi_hotspot_maximize_compatibility_dual_ap_summary" msgid="3579549223159056533">"Ajuda altres dispositius a trobar aquest punt d\'accés Wi‑Fi. Augmenta l\'ús de la bateria."</string>
     <string name="wifi_hotspot_speed_title" msgid="8629448084180512685">"Velocitat i compatibilitat"</string>
-    <string name="wifi_hotspot_speed_summary_2g" msgid="5063438001736234858">"2,4 GHz / Compatible amb la majoria de dispositius"</string>
+    <string name="wifi_hotspot_speed_summary_2g" msgid="5063438001736234858">"2.4 GHz / Compatible amb la majoria de dispositius"</string>
     <string name="wifi_hotspot_speed_summary_5g" msgid="6221158936983135040">"5 GHz / Compatible amb molts dispositius"</string>
     <string name="wifi_hotspot_speed_summary_6g" msgid="8863992901226595544">"6 GHz / Compatible amb pocs dispositius"</string>
-    <string name="wifi_hotspot_speed_summary_2g_and_5g" msgid="5931052946168943750">"2,4 i 5 GHz / Compatible amb la majoria de dispositius"</string>
+    <string name="wifi_hotspot_speed_summary_2g_and_5g" msgid="5931052946168943750">"2.4 i 5 GHz / Compatible amb la majoria de dispositius"</string>
     <string name="wifi_hotspot_speed_intro" msgid="6973482196363758925">"Tria una freqüència per al punt d\'accés Wi‑Fi. La freqüència afecta la velocitat de connexió i els tipus de dispositius que poden trobar el punt d\'accés Wi‑Fi."</string>
     <string name="wifi_hotspot_speed_category" msgid="5265655850463630286">"Freqüència preferida"</string>
-    <string name="wifi_hotspot_speed_2g" msgid="3400600834257664480">"2,4 GHz"</string>
+    <string name="wifi_hotspot_speed_2g" msgid="3400600834257664480">"2.4 GHz"</string>
     <string name="wifi_hotspot_speed_2g_summary" msgid="6930273933810520155">"Velocitats més baixes. Compatible amb la majoria de dispositius."</string>
     <string name="wifi_hotspot_speed_5g" msgid="4058116867148848395">"5 GHz"</string>
     <string name="wifi_hotspot_speed_5g_summary" msgid="562987935924535694">"Velocitats altes. Compatible amb molts dispositius."</string>
-    <string name="wifi_hotspot_speed_2g_5g" msgid="9192756255938408285">"2,4 i 5 GHz"</string>
+    <string name="wifi_hotspot_speed_2g_5g" msgid="9192756255938408285">"2.4 i 5 GHz"</string>
     <string name="wifi_hotspot_speed_2g_5g_summary" msgid="8104575293617700173">"Velocitats altes. Aquest punt d\'accés Wi‑Fi de doble banda és compatible amb la majoria de dispositius."</string>
     <string name="wifi_hotspot_speed_6g" msgid="3787697484862730500">"6 GHz"</string>
     <string name="wifi_hotspot_speed_6g_summary" msgid="8675262219242174548">"Velocitats màximes. Compatible amb pocs dispositius."</string>

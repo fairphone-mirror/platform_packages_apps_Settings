@@ -860,7 +860,7 @@
     <string name="wifi_display_options_forget" msgid="3140558691112356024">"Glöm"</string>
     <string name="wifi_display_options_done" msgid="7608851767701954020">"Klar"</string>
     <string name="wifi_display_options_name" msgid="8181334945680312228">"Namn"</string>
-    <string name="wifi_band_24ghz" msgid="7322286660245127384">"2,4 GHz"</string>
+    <string name="wifi_band_24ghz" msgid="7322286660245127384">"2.4 GHz"</string>
     <string name="wifi_band_5ghz" msgid="7995204987245404797">"5 GHz"</string>
     <string name="wifi_band_6ghz" msgid="8166833829829455339">"6 GHz"</string>
     <string name="wifi_sign_in_button_text" msgid="8483892122845654850">"Logga in"</string>
@@ -956,8 +956,9 @@
     <string name="wifi_eap_anonymous" msgid="8630332141751267000">"Anonym identitet"</string>
     <string name="wifi_password" msgid="1458802324849513755">"Lösenord"</string>
     <string name="wifi_show_password" msgid="6865993988238157923">"Visa lösenord"</string>
-    <string name="wifi_ap_choose_2G" msgid="1436802195991542016">"2,4 GHz-bandet"</string>
-    <string name="wifi_ap_prefer_5G" msgid="2520628479818369902">"5,0 GHz-bandet föredras"</string>
+    <string name="wifi_ap_choose_2G" msgid="1436802195991542016">"2.4 GHz bandet"</string>
+    <string name="wifi_ap_prefer_5G" msgid="2520628479818369902">"5 GHz bandet föredras"</string>
+    <string name="wifi_ap_prefer_6G">"6 GHz bandet föredras"</string>
     <string name="wifi_ip_settings" msgid="6420498748726599133">"IP-inställningar"</string>
     <string name="wifi_privacy_settings" msgid="3283946009000725698">"Integritet"</string>
     <string name="wifi_privacy_mac_settings" msgid="3188060664478313363">"MAC"</string>
@@ -1098,17 +1099,17 @@
     <string name="wifi_hotspot_maximize_compatibility_single_ap_summary" msgid="383355687431591441">"Underlättar för andra enheter att hitta surfzonen. Minskar anslutningshastigheten för surfzonen."</string>
     <string name="wifi_hotspot_maximize_compatibility_dual_ap_summary" msgid="3579549223159056533">"Underlättar för andra enheter att hitta surfzonen. Ökar batteriförbrukningen."</string>
     <string name="wifi_hotspot_speed_title" msgid="8629448084180512685">"Hastighet och kompatibilitet"</string>
-    <string name="wifi_hotspot_speed_summary_2g" msgid="5063438001736234858">"2,4 GHz/Fungerar med nästan alla enheter"</string>
+    <string name="wifi_hotspot_speed_summary_2g" msgid="5063438001736234858">"2.4 GHz/Fungerar med nästan alla enheter"</string>
     <string name="wifi_hotspot_speed_summary_5g" msgid="6221158936983135040">"5 GHz/Fungerar med många enheter"</string>
     <string name="wifi_hotspot_speed_summary_6g" msgid="8863992901226595544">"6 GHz/Fungerar med få enheter"</string>
-    <string name="wifi_hotspot_speed_summary_2g_and_5g" msgid="5931052946168943750">"2,4 och 5 GHz/Fungerar med nästan alla enheter"</string>
+    <string name="wifi_hotspot_speed_summary_2g_and_5g" msgid="5931052946168943750">"2.4 och 5 GHz/Fungerar med nästan alla enheter"</string>
     <string name="wifi_hotspot_speed_intro" msgid="6973482196363758925">"Välj en frekvens för surfzonen. Frekvensen påverkar anslutningshastigheten och vilka typer av enheter som kan hitta surfzonen."</string>
     <string name="wifi_hotspot_speed_category" msgid="5265655850463630286">"Föredragen frekvens"</string>
-    <string name="wifi_hotspot_speed_2g" msgid="3400600834257664480">"2,4 GHz"</string>
+    <string name="wifi_hotspot_speed_2g" msgid="3400600834257664480">"2.4 GHz"</string>
     <string name="wifi_hotspot_speed_2g_summary" msgid="6930273933810520155">"Långsammare hastigheter. Fungerar med nästan alla enheter."</string>
     <string name="wifi_hotspot_speed_5g" msgid="4058116867148848395">"5 GHz"</string>
     <string name="wifi_hotspot_speed_5g_summary" msgid="562987935924535694">"Snabba hastigheter. Fungerar med många enheter."</string>
-    <string name="wifi_hotspot_speed_2g_5g" msgid="9192756255938408285">"2,4 och 5 GHz"</string>
+    <string name="wifi_hotspot_speed_2g_5g" msgid="9192756255938408285">"2.4 och 5 GHz"</string>
     <string name="wifi_hotspot_speed_2g_5g_summary" msgid="8104575293617700173">"Snabba hastigheter. Denna surfzon med dubbla band fungerar med nästan alla enheter."</string>
     <string name="wifi_hotspot_speed_6g" msgid="3787697484862730500">"6 GHz"</string>
     <string name="wifi_hotspot_speed_6g_summary" msgid="8675262219242174548">"Snabbaste hastigheterna. Fungerar med få enheter."</string>
@@ -1171,7 +1172,7 @@
     <string name="accessibility_personal_account_title" msgid="8535265881509557013">"Personligt konto – <xliff:g id="MANAGED_BY">%s</xliff:g>"</string>
     <string name="search_settings" msgid="7573686516434589771">"Sök"</string>
     <string name="display_settings" msgid="7197750639709493852">"Skärm"</string>
-    <string name="accelerometer_title" msgid="7745991950833748909">"Rotera skärmen automatiskt"</string>
+    <string name="accelerometer_title" msgid="7745991950833748909">"Auto-roterad skärm"</string>
     <string name="auto_rotate_option_off" msgid="2788096269396290731">"Av"</string>
     <string name="auto_rotate_option_on" msgid="5776678230808498171">"På"</string>
     <string name="auto_rotate_option_face_based" msgid="3438645484087953174">"På – ansiktsbaserad"</string>
@@ -1495,7 +1496,7 @@
     <string name="reset_bluetooth_wifi_button_text" msgid="3974098137045963639">"Återställ"</string>
     <string name="reset_bluetooth_wifi_complete_toast" msgid="5893439291030574365">"Bluetooth och wifi har återställts"</string>
     <string name="reset_esim_title" msgid="4194570573425902754">"Rensa eSIM-kort"</string>
-    <string name="reset_esim_desc" msgid="6125192435907740751">"Detta avslutar inte ditt mobilabonnemang. Kontakta operatören för att ersätta SIM-kortet."</string>
+    <string name="reset_esim_desc" msgid="6125192435907740751">"Det här avbryter inte något serviceavtal för telefonen. Om du vill ladda ned SIM-kort som ersätter de gamla kontaktar du operatören. Observera att en internetanslutning (mobildata eller Wi-Fi) krävs för att radera den valda SIM-profilen från enheten."</string>
     <string name="reset_network_button_text" msgid="2281476496459610071">"Återställ inställningar"</string>
     <string name="reset_network_final_desc" msgid="5304365082065278425">"Vill du återställa alla nätverksinställningar? Det går inte att ångra den här åtgärden."</string>
     <string name="reset_network_final_desc_esim" msgid="1129251284212847939">"Vill du återställa alla nätverksinställningar och rensa eSIM-kort? Det går inte att ångra den här åtgärden."</string>
@@ -4770,7 +4771,7 @@
     <string name="switch_sim_dialog_no_switch_text" msgid="7053939850026876088">"Om du senare vill använda mobildata, samtalsfunktioner och sms öppnar du nätverksinställningarna"</string>
     <string name="sim_card_label" msgid="6263064316075963775">"SIM-kort"</string>
     <string name="erase_sim_dialog_title" msgid="4742077437653028326">"Vill du rensa det här eSIM-kortet?"</string>
-    <string name="erase_sim_dialog_text" msgid="1406141218170595272">"Det här tar bort <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g>-tjänsten från den här enheten, men ditt <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g>-abonnemang avslutas inte."</string>
+    <string name="erase_sim_dialog_text" msgid="1406141218170595272">"Att radera denna SIM tar bort <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> -tjänsten från den här enheten.\n\n Tjänsten för <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> kommer inte att avbrytas. Observera att en internetanslutning (mobildata eller Wi-Fi) krävs för att radera den valda SIM-profilen från enheten."</string>
     <string name="erase_sim_confirm_button" msgid="8309115684335320541">"Rensa"</string>
     <string name="erasing_sim" msgid="4237180547590463930">"Rensar eSIM …"</string>
     <string name="erase_sim_fail_title" msgid="1445700500168357303">"Det gick inte att rensa detta eSIM"</string>
@@ -5408,6 +5409,8 @@
     <string name="battery_charging_privacy_eco">Optimera batteriets livslängd med det här läget.</string>
     <string name="battery_charging_privacy_fast">Kom tillbaka till 100% så snabbt som möjligt.</string>
     <string name="legal_info_title">Open source-licenser</string>
+    <string name="swap_back_recents_title">"Byt tillbaka/Senaste navigering"</string>
+    <string name="swap_back_recents_summary">"Byt tillbaka och senaste knappar i navigeringsfältet"</string>
     <string name="fingerprint_settings_open_description">"Slå på om du föredrar att låsa upp utan att väcka telefonen först."</string>
     <string name="fingerprint_settings_open_title">Finger Print Lås upp beteende</string>
 </resources>
