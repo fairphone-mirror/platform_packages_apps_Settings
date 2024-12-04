@@ -5378,6 +5378,16 @@
     <string name="warning_tips_rom4_third_part">" - Sus datos personales se almacenarán sólo en el dispositivo."</string>
     <string name="warning_tips_rom4_third_part_title">Acerca de la Privacidad</string>
     <string name="warning_title">Advertencia de riesgos</string>
+    <!--state of health-->
+    <string name="batteryh_soh">estado de salud:</string>
+    <!--state of count-->
+    <string name="batteryh_soc">recuento de ciclos de carga/descarga:</string>
+    <!--charge full design-->
+    <string name="batteryh_cfd">carga del diseño completo:</string>
+    <string name="dialog_title_battery_healty">Salud de la batería</string>
+    <string name="charging_slow">CARGA ECO</string>
+    <string name="charging_normal">CARGA RÁPIDA</string>
+    <string name="charging_state">Modo de carga</string>
     <string name="enroll_main_first">Por favor introduce los datos faciales primero.</string>
     <string name="confirm_remove_enroll_face">¿Confirmas que quieres eliminar el registro de cara?</string>
     <string name="main_face_title">Registro de cara</string>
@@ -5388,6 +5398,11 @@
     <string name="face_unlock_less_secure_than_strong_auth">Nota: El desbloqueo mediante el reconocimiento facial puede ser menos seguro que un patrón complejo o el PIN.</string>
     <string name="security_settings_faceunlock_cancel_setup">Saltar</string>
     <string name="security_settings_faceunlock_next">Siguiente</string>
+    <string name="battery_protect">Proteger la batería</string>
+    <string name="battery_protect_description">Establece el nivel máximo de carga de la batería al 80%</string>
+    <string name="battery_charging_privacy">Personaliza tu velocidad de carga. Recuerda que la carga más lenta equivale a una mayor duración de la batería.</string>
+    <string name="battery_charging_privacy_eco">Optimiza la longevidad de tu batería con este modo.</string>
+    <string name="battery_charging_privacy_fast">Vuelve al 100% lo más rápido posible.</string>
     <string name="wfc_help_desc_text">Si selecciona Red móvil preferida se utilizará la red móvil de forma predeterminada para las llamadas. En caso de que no haya cobertura de red móvil o ésta sea muy débil, se utilizará la red Wi-Fi en su lugar.</string>
     <string name="fingerprint_settings_open_description">"Habilita si prefieres desbloquear con tu huella dactilar, sin encender el teléfono primero."</string>
     <string name="fingerprint_settings_open_title">Modo de desbloqueo con huella digital</string>

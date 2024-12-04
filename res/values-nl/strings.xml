@@ -5387,6 +5387,21 @@
     <string name="face_unlock_less_secure_than_strong_auth">Opmerking: Ontgrendelen met uw gezicht kan minder veilig zijn dan een sterk patroon of PIN-code.</string>
     <string name="security_settings_faceunlock_cancel_setup">Overslaan</string>
     <string name="security_settings_faceunlock_next">Volgende</string>
+    <!--state of health-->
+    <string name="batteryh_soh">Gezondheidsstatus:</string>
+    <!--state of count-->
+    <string name="batteryh_soc">Aantal laad- en ontlaadcycli:</string>
+    <!--charge full design-->
+    <string name="batteryh_cfd">Volledige capaciteit (ontwerp):</string>
+    <string name="dialog_title_battery_healty">Gezondheid van de batterij</string>
+    <string name="charging_slow">Eco-laden</string>
+    <string name="charging_normal">Snel-laden</string>
+    <string name="charging_state">Oplaadmodus</string>
+    <string name="battery_protect">Batterijbescherming</string>
+    <string name="battery_protect_description">Beperkt de maximale 80%</string>
+    <string name="battery_charging_privacy">Pas je oplaadsnelheid aan. Langzaam laden verlengt de levensduur van de batterij.</string>
+    <string name="battery_charging_privacy_eco">Optimaliseer de levensduur van uw batterij met deze modus.</string>
+    <string name="battery_charging_privacy_fast">Laadt de batterij zo snel als mogelijk tot 100%.</string>
     <string name="fingerprint_settings_open_description">"Schakel in als je liever de telefoon ontgrendelt zonder hem eerst te activeren."</string>
     <string name="fingerprint_settings_open_title">Ontgrendelgedrag vingerafdrukscanner</string>
     <string name="swap_back_recents_title">"Terug- en recent-knop omwissel"</string>

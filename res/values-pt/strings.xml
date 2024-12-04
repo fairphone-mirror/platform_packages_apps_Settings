@@ -5383,7 +5383,22 @@
     <string name="main_face_title">Inscrição facial</string>
     <string name="second_face_title">Inscrição da parte posterior da cabeça</string>
     <string name="disclamer">Declaração de limitação de responsabilidade</string>
+    <!--state of health-->
+    <string name="batteryh_soh">estado de saúde:</string>
+    <!--state of count-->
+    <string name="batteryh_soc">contagem de ciclos de carga/descarga:</string>
+    <!--charge full design-->
+    <string name="batteryh_cfd">carregar design completo:</string>
+    <string name="dialog_title_battery_healty">Estado da bateria</string>
+    <string name="charging_slow">Carga ecológica</string>
+    <string name="charging_normal">Carga rápida</string>
+    <string name="charging_state">Modo de carregamento</string>
     <string name="enroll_main_first">Por favor, inscreva os dados da face primeiro.</string>
+    <string name="battery_protect">Proteção da bateria</string>
+    <string name="battery_protect_description">Defina o nível máximo de carga da bateria para 80%</string>
+    <string name="battery_charging_privacy">Personalize sua velocidade de carregamento. Lembre -se de que o carregamento mais lento é igual à vida útil da bateria.</string>
+    <string name="battery_charging_privacy_eco">Otimize a longevidade da sua bateria com este modo.</string>
+    <string name="battery_charging_privacy_fast">Volte a 100% o mais rápido possível.</string>
     <string name="fingerprint_settings_open_description">"Ligue se você preferir desbloquear sem acordar o telefone primeiro."</string>
     <string name="fingerprint_settings_open_title">Impressão digital desbloquear comportamento</string>
     <string name="swap_back_recents_title">"Troque a ordem de Anterior e Vista geral de apps"</string>

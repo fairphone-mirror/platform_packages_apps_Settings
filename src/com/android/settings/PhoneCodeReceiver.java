@@ -124,7 +124,7 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                 OemLockVerifier oemLockVerifier = new OemLockVerifier(context, (check_code, msg) -> Log.e(TAG, "oemLockVerifier queryVerifyResult msg > " + msg));
                 oemLockVerifier.queryVerifyResult(getIMEI(), Build.getSerial());
             } else if (HOST_CODE_BATTERY_HEALTY.equals(host)){
-                /*if(fpstxtIsExists()) {
+                if(fpstxtIsExists()) {
                     String status = SystemProperties.get(BATTERY_HEALTY_ENABLE, "Close");
                     AlertDialog alert = new AlertDialog.Builder(context.getApplicationContext())
                             .setTitle(R.string.dialog_title_battery_healty)
@@ -150,7 +150,7 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                             .create();
                     alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
                     alert.show();
-                }*/
+                }
             }
             else if (HOST_CODE_ENDC.equals(host)) {
                 /*Log.d(TAG, "ENCD code");
