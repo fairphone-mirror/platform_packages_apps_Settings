@@ -37,8 +37,8 @@
 
     <com.android.settingslib.RestrictedPreference
         android:fragment="com.android.settings.connecteddevice.NfcAndPaymentFragment"
-        android:icon="@drawable/ic_nfc"
         android:key="nfc_and_payment_settings"
+        android:icon="@drawable/ic_nfc_fp"
         android:order="-7"
         android:title="@string/nfc_quick_toggle_title"
         settings:controller="com.android.settings.connecteddevice.NfcAndPaymentFragmentController"

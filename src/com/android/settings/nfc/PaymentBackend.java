@@ -105,6 +105,7 @@ public class PaymentBackend {
             if (serviceInfosByProfile == null) continue;
 
             ArrayList<PaymentAppInfo> appInfos = new ArrayList<PaymentAppInfo>();
+            boolean hasDefaultApp = false;
 
             for (ApduServiceInfo service : serviceInfosByProfile) {
                 PaymentAppInfo appInfo = new PaymentAppInfo();
@@ -122,6 +123,7 @@ public class PaymentBackend {
                 }
                 if (appInfo.isDefault) {
                     foundDefaultApp = appInfo;
+                    hasDefaultApp = true;
                 }
                 appInfo.componentName = service.getComponent();
                 String settingsActivity = service.getSettingsActivityName();
@@ -138,6 +140,11 @@ public class PaymentBackend {
                 appInfo.icon = pm.getUserBadgedIcon(icon, appInfo.userHandle);
 
                 appInfos.add(appInfo);
+            }
+            if (!hasDefaultApp) {
+                PaymentAppInfo appInfo = appInfos.get(0);
+                appInfo.isDefault = true;
+                foundDefaultApp = appInfos.get(0);
             }
             appInfosAllProfiles.addAll(appInfos);
         }
