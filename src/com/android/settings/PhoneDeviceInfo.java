@@ -53,6 +53,7 @@ import android.os.storage.StorageManager;
 import android.text.format.Formatter;
 import com.android.internal.util.MemInfoReader;
 import java.lang.Math;
+import com.android.settings.Utils;
 /**
  * The "dialog" that shows from "Manual" in the Settings app.
  */
@@ -90,6 +91,7 @@ public class PhoneDeviceInfo extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utils.setupEdgeToEdge(this);
         View view = getLayoutInflater().inflate(R.layout.deviceinfo_activity, null);
         mHwstage = (TextView)view.findViewById(R.id.hwstage);
         mEmcp = (TextView)view.findViewById(R.id.emcp);
