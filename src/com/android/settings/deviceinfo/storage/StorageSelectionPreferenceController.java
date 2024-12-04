@@ -63,6 +63,10 @@ public class StorageSelectionPreferenceController extends BasePreferenceControll
         mOnItemSelectedListener = listener;
     }
 
+    public StorageEntry getLastStorageEntry(){
+        return (StorageEntry) mSpinnerPreference.getSelectedItem();
+    }
+
     /** Set the storages in the spinner. */
     public void setStorageEntries(List<StorageEntry> storageEntries) {
         mStorageAdapter.clear();
