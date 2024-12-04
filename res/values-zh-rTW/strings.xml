@@ -5764,6 +5764,9 @@
     <string name="supervision_web_content_filters_search_filter_off_summary" msgid="3834238970190924433">"帳戶設定可能仍會篩除或模糊處理情色露骨結果"</string>
     <string name="supervision_full_screen_pin_verification_title" msgid="78513043528333399">"輸入監護 PIN 碼"</string>
     <string name="accessibility_illustration_content_description" msgid="557376174860150903">"<xliff:g id="FEATURE">%1$s</xliff:g>動畫"</string>
+    <string name="data_preference">"數據偏好設定"</string>
+    <string name="unlock_failed_reset_title">"自動恢復原廠設定"</string>
+    <string name="unlock_failed_reset_description">"若連續15次未正確解鎖您的手機, 手機會被重置回原廠設定。所有的資料, 包含您新增的檔案及下載的應用程式都將會被刪除"</string>
     <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
     <string name="fingerprint_settings_open_title">"指紋解鎖方式"</string>
     <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
