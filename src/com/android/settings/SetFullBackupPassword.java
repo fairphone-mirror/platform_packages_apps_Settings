@@ -30,6 +30,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.settings.Utils;
+
 public class SetFullBackupPassword extends Activity {
     static final String TAG = "SetFullBackupPassword";
 
@@ -87,6 +89,7 @@ public class SetFullBackupPassword extends Activity {
 
         mBackupManager = IBackupManager.Stub.asInterface(ServiceManager.getService("backup"));
 
+        Utils.setupEdgeToEdge(this);
         setContentView(R.layout.set_backup_pw);
 
         mCurrentPw = (TextView) findViewById(R.id.current_backup_pw);
