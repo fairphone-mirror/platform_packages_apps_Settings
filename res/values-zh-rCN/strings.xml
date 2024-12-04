@@ -465,6 +465,7 @@
     <string name="security_settings_udfps_enroll_find_sensor_title" msgid="8077484429913330179">"如何设置指纹"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message" msgid="6160543980992596286">"指纹传感器位于您手机的背面。请用食指触摸传感器。"</string>
     <string name="security_settings_udfps_enroll_find_sensor_message" msgid="8383106460819519961">"指纹传感器就在屏幕上。系统会在下一个画面中获取您的指纹。"</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_temporary">"指纹传感器位于您手机的侧面。请用食指触摸传感器。"</string>
     <string name="security_settings_udfps_enroll_find_sensor_start_button" msgid="3172268783620336357">"开始"</string>
     <string name="security_settings_udfps_enroll_a11y" msgid="1899453114050362235">"请在屏幕上移动手指，以便找到传感器。轻触并按住指纹传感器。"</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_content_description" msgid="3065850549419750523">"关于设备和指纹传感器位置的图示说明"</string>
