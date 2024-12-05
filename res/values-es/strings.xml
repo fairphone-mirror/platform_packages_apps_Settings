@@ -5415,4 +5415,6 @@
     <string name="fingerprint_settings_open_title">Modo de desbloqueo con huella digital</string>
     <string name="swap_back_recents_title">"Cambia la navegación de volver/recientes"</string>
     <string name="swap_back_recents_summary">"Cambia los botones de volver y recientes en la barra de navegación"</string>
+
+    <string name="pocket_mode">Modo de bolsillo</string>
 </resources>

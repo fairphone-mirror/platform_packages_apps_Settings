@@ -5414,4 +5414,6 @@
     <string name="swap_back_recents_summary">"Byt tillbaka och senaste knappar i navigeringsfältet"</string>
     <string name="fingerprint_settings_open_description">"Slå på om du föredrar att låsa upp utan att väcka telefonen först."</string>
     <string name="fingerprint_settings_open_title">Finger Print Lås upp beteende</string>
+
+    <string name="pocket_mode">Fickläge</string>
 </resources>

@@ -217,5 +217,9 @@
         <SwitchPreference
             android:key="pick_up_to_wake"
             android:title="@string/pick_up_to_wake_title"/>
+
+        <SwitchPreference
+            android:key="pocket_mode"
+            android:title="@string/pocket_mode"/>
     </PreferenceCategory>
 </PreferenceScreen>
