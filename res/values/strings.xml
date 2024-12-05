@@ -14725,4 +14725,6 @@ Data usage charges may apply.</string>
     <string name="diagprotect_title">DiagProtector Setting</string>
     <string name="diagprotect_on">Diag Protector ON</string>
     <string name="diagprotect_off">Diag Protector OFF</string>
+
+    <string name="pocket_mode">Pocket mode</string>
 </resources>
