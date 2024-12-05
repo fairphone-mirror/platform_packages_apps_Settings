@@ -13909,4 +13909,9 @@
 
     <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
     <string name="toast_extra_dim_info">A darker environment is needed.</string> 
+
+    <!-- Diag -->
+    <string name="diagprotect_title">DiagProtector Setting</string>
+    <string name="diagprotect_on">Diag Protector ON</string>
+    <string name="diagprotect_off">Diag Protector OFF</string>
 </resources>
