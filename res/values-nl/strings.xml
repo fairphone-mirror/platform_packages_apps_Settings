@@ -5414,4 +5414,6 @@
     <string name="fingerprint_settings_open_title">Ontgrendelgedrag vingerafdrukscanner</string>
     <string name="swap_back_recents_title">"Terug- en recent-knop omwissel"</string>
     <string name="swap_back_recents_summary">"Wissel de terug- en recent-knop om in de navigatiebalk"</string>
+
+    <string name="pocket_mode">Broekzakmodus</string>
 </resources>
