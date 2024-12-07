@@ -20,6 +20,7 @@ import static android.app.Activity.RESULT_OK;
 import static com.android.settings.password.ChooseLockPattern.RESULT_FINISHED;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.biometrics.SensorProperties;
@@ -162,6 +163,14 @@ public abstract class BiometricsSettingsBase extends DashboardFragment {
         // Generate challenge (and request LSS to create a HAT) each time the preference is clicked,
         // since FingerprintSettings and FaceSettings revoke the challenge when finishing.
         if (getFacePreferenceKey().equals(key)) {
+            if (mFaceManager == null) {
+                try{
+                    Intent faceIntent = new Intent().setComponent(new ComponentName("com.android.settings","com.android.settings.anc.AncSettings"));
+                    startActivity(faceIntent);
+                } catch(Exception e) {
+                }
+                return true;
+            }
             mDoNotFinishActivity = true;
             mFaceManager.generateChallenge(mUserId, (sensorId, userId, challenge) -> {
                 final Activity activity = getActivity();
