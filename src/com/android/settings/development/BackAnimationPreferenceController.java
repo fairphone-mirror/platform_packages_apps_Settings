@@ -57,7 +57,8 @@ public class BackAnimationPreferenceController extends DeveloperOptionsPreferenc
 
     @Override
     public boolean isAvailable() {
-        return !predictiveBackSystemAnims();
+        //return !predictiveBackSystemAnims();
+        return true;
     }
 
     @Override
