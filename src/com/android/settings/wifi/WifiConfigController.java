@@ -174,6 +174,7 @@ public class WifiConfigController implements TextWatcher,
     private String mMultipleCertSetString;
     private String mUseSystemCertsString;
     private String mDoNotProvideEapUserCertString;
+    private String mDoNotValidateEapServerString;//Add by zxue 2024-02-22 [FP5U-132][WiFi] "Do not validate"is lost in CA certificate
 
     private Spinner mSecuritySpinner;
     @VisibleForTesting Spinner mEapMethodSpinner;
@@ -281,7 +282,11 @@ public class WifiConfigController implements TextWatcher,
         mUseSystemCertsString = mContext.getString(R.string.wifi_use_system_certs);
         mDoNotProvideEapUserCertString =
             mContext.getString(R.string.wifi_do_not_provide_eap_user_cert);
-
+        	    //[BUG]-Add-Begin by zxue 2024-02-22 [FP5U-132][WiFi] "Do not validate"is lost in CA certificate
+        mDoNotValidateEapServerString =
+            mContext.getString(R.string.wifi_do_not_validate_eap_server);
+        //[BUG]-Add-End by zxue
+		
         if (Flags.androidVWifiApi() && mAccessPointSecurity == WifiEntry.SECURITY_WEP) {
             LinearLayout wepWarningLayout =
                     (LinearLayout) mView.findViewById(R.id.wep_warning_layout);
@@ -566,10 +571,13 @@ public class WifiConfigController implements TextWatcher,
                 // Disallow submit if the user has not selected a CA certificate for an EAP network
                 // configuration.
                 enabled = false;
-            } else if (mEapDomainView != null
+            }
+			
+	        if (caCertSelection.equals(mUseSystemCertsString)//[BUG]-Add by zxue 2024-02-22 [FP5U-132][WiFi] "Do not validate"is lost in CA certificate
+                    && mEapDomainView != null
                     && mView.findViewById(R.id.l_domain).getVisibility() != View.GONE
                     && TextUtils.isEmpty(mEapDomainView.getText().toString())) {
-                // Disallow submit if the user chooses to use a certificate for EAP server
+                // Disallow submit if the user chooses to use system certificate for EAP server
                 // validation, but does not provide a domain.
                 enabled = false;
             }
@@ -588,6 +596,7 @@ public class WifiConfigController implements TextWatcher,
     }
 
     void showWarningMessagesIfAppropriate() {
+	    mView.findViewById(R.id.no_ca_cert_warning).setVisibility(View.GONE);//[BUG]-Add by zxue 2024-02-22 [FP5U-132][WiFi] "Do not validate"is lost in CA certificate
         mView.findViewById(R.id.no_user_cert_warning).setVisibility(View.GONE);
         mView.findViewById(R.id.no_domain_warning).setVisibility(View.GONE);
         mView.findViewById(R.id.ssid_too_long_warning).setVisibility(View.GONE);
@@ -600,7 +609,16 @@ public class WifiConfigController implements TextWatcher,
         }
         if (mEapCaCertSpinner != null
                 && mView.findViewById(R.id.l_ca_cert).getVisibility() != View.GONE) {
-            if (mEapDomainView != null
+           //[BUG]-Add-Begin by zxue 2024-02-22 [FP5U-132][WiFi] "Do not validate"is lost in CA certificate
+            String caCertSelection = (String) mEapCaCertSpinner.getSelectedItem();
+            if (caCertSelection.equals(mDoNotValidateEapServerString)) {
+                 // Display warning if user chooses not to validate the EAP server with a
+                 // user-supplied CA certificate in an EAP network configuration.
+                 mView.findViewById(R.id.no_ca_cert_warning).setVisibility(View.VISIBLE);
+            }
+            if (caCertSelection.equals(mUseSystemCertsString)
+                    && mEapDomainView != null
+            //[BUG]-Add-End by zxue
                     && mView.findViewById(R.id.l_domain).getVisibility() != View.GONE
                     && TextUtils.isEmpty(mEapDomainView.getText().toString())) {
                 // Display warning if user chooses to use a certificate without restricting the
@@ -744,7 +762,10 @@ public class WifiConfigController implements TextWatcher,
                 config.enterpriseConfig.setCaCertificateAliases(null);
                 config.enterpriseConfig.setCaPath(null);
                 config.enterpriseConfig.setDomainSuffixMatch(mEapDomainView.getText().toString());
-                if (caCert.equals(mUnspecifiedCertString)) {
+                //[BUG]-Add-Begin by zxue 2024-02-22 [FP5U-132][WiFi] "Do not validate"is lost in CA certificate
+                if (caCert.equals(mUnspecifiedCertString)
+                        || caCert.equals(mDoNotValidateEapServerString)) {
+                //[BUG]-Add-End by zxue
                     // ca_cert already set to null, so do nothing.
                 } else if (caCert.equals(mUseSystemCertsString)) {
                     config.enterpriseConfig.setCaPath(SYSTEM_CA_STORE_PATH);
@@ -778,7 +799,10 @@ public class WifiConfigController implements TextWatcher,
                 }
 
                 // Only set OCSP option if there is a valid CA certificate.
-                if (caCert.equals(mUnspecifiedCertString)) {
+                //[BUG]-Add-Begin by zxue 2024-02-22 [FP5U-132][WiFi] "Do not validate"is lost in CA certificate
+                if (caCert.equals(mUnspecifiedCertString)
+                        || caCert.equals(mDoNotValidateEapServerString)) {
+                //[BUG]-Add-End by zxue
                     config.enterpriseConfig.setOcsp(WifiEnterpriseConfig.OCSP_NONE);
                 } else {
                     config.enterpriseConfig.setOcsp(mEapOcspSpinner.getSelectedItemPosition());
@@ -1089,15 +1113,19 @@ public class WifiConfigController implements TextWatcher,
             loadCertificates(
                     mEapCaCertSpinner,
                     androidKeystoreAliasLoader.getCaCertAliases(),
-                    null /* noCertificateString */,
-                    false /* showMultipleCerts */,
-                    true /* showUsePreinstalledCertOption */);
+                    //[BUG]-Add-Begin by zxue 2024-02-22 [FP5U-132][WiFi] "Do not validate"is lost in CA certificate
+                    mDoNotValidateEapServerString,
+                    false,
+                    true);
+                    //[BUG]-Add-End by zxue
             loadCertificates(
                     mEapUserCertSpinner,
                     androidKeystoreAliasLoader.getKeyCertAliases(),
                     mDoNotProvideEapUserCertString,
-                    false /* showMultipleCerts */,
-                    false /* showUsePreinstalledCertOption */);
+                    //[BUG]-Add-Begin by zxue 2024-02-22 [FP5U-132][WiFi] "Do not validate"is lost in CA certificate
+                    false,
+                    false);
+                    //[BUG]-Add-End by zxue
             // To avoid the user connects to a non-secure network unexpectedly,
             // request using system trusted certificates by default
             // unless the user explicitly chooses "Do not validate" or other
@@ -1173,7 +1201,7 @@ public class WifiConfigController implements TextWatcher,
             } else {
                 String[] caCerts = enterpriseConfig.getCaCertificateAliases();
                 if (caCerts == null) {
-                    setSelection(mEapCaCertSpinner, mUnspecifiedCertString);
+                    setSelection(mEapCaCertSpinner, mDoNotValidateEapServerString);//[BUG]-Add by zxue 2024-02-22 [FP5U-132][WiFi] "Do not validate"is lost in CA certificate
                 } else if (caCerts.length == 1) {
                     setSelection(mEapCaCertSpinner, caCerts[0]);
                 } else {
@@ -1184,9 +1212,11 @@ public class WifiConfigController implements TextWatcher,
                     loadCertificates(
                             mEapCaCertSpinner,
                             androidKeystoreAliasLoader.getCaCertAliases(),
-                            null /* noCertificateString */,
-                            true /* showMultipleCerts */,
-                            true /* showUsePreinstalledCertOption */);
+                            //[BUG]-Add-Begin by zxue 2024-02-22 [FP5U-132][WiFi] "Do not validate"is lost in CA certificate
+                            mDoNotValidateEapServerString,
+                            true,
+                            true);
+                            //[BUG]-Add-End by zxue
                     setSelection(mEapCaCertSpinner, mMultipleCertSetString);
                 }
             }
@@ -1317,7 +1347,10 @@ public class WifiConfigController implements TextWatcher,
 
         if (mView.findViewById(R.id.l_ca_cert).getVisibility() != View.GONE) {
             String eapCertSelection = (String) mEapCaCertSpinner.getSelectedItem();
-            if (eapCertSelection.equals(mUnspecifiedCertString)) {
+            //[BUG]-Add-Begin by zxue 2024-02-22 [FP5U-132][WiFi] "Do not validate"is lost in CA certificate
+            if (eapCertSelection.equals(mDoNotValidateEapServerString)
+                    || eapCertSelection.equals(mUnspecifiedCertString)) {
+            //[BUG]-Add-End by zxue
                 // Domain suffix matching is not relevant if the user hasn't chosen a CA
                 // certificate yet, or chooses not to validate the EAP server.
                 setDomainInvisible();
@@ -1578,8 +1611,7 @@ public class WifiConfigController implements TextWatcher,
                     }).collect(Collectors.toList()));
         }
 
-        if (!TextUtils.isEmpty(noCertificateString)
-                && mAccessPointSecurity != AccessPoint.SECURITY_EAP_SUITE_B) {
+       if (mAccessPointSecurity != AccessPoint.SECURITY_EAP_SUITE_B) {//[BUG]-Add by zxue 2024-02-22 [FP5U-132][WiFi] "Do not validate"is lost in CA certificate
             certs.add(noCertificateString);
         }
 
