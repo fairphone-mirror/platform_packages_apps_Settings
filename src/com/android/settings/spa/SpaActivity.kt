@@ -20,6 +20,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.app.ActivityManager
 import androidx.annotation.VisibleForTesting
 import com.android.settings.spa.app.appinfo.AppInfoSettingsProvider
 import com.android.settingslib.core.lifecycle.HideNonSystemOverlayMixin
@@ -35,6 +36,10 @@ class SpaActivity : BrowseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (ActivityManager.isUserAMonkey()) {
+            finish()
+            return
+        }
         lifecycle.addObserver(HideNonSystemOverlayMixin(this))
     }
 
