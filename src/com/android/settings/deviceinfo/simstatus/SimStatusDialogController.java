@@ -498,6 +498,10 @@ public class SimStatusDialogController implements DefaultLifecycleObserver {
             dataNetworkTypeName = "NR NSA";
         }
 
+        Log.d(TAG, "actualDataNetworkType: " + actualDataNetworkType);
+        Log.d(TAG, "actualVoiceNetworkType: " + actualVoiceNetworkType);
+        Log.d(TAG, "overrideNetworkType: " + overrideNetworkType);
+
         boolean isLteVoice = (TelephonyManager.NETWORK_TYPE_LTE == actualVoiceNetworkType);
         boolean isLteData = (TelephonyManager.NETWORK_TYPE_LTE == actualDataNetworkType);
         if (isLteVoice || isLteData) {
@@ -609,6 +613,8 @@ public class SimStatusDialogController implements DefaultLifecycleObserver {
 
         @Override
         public void onServiceStateChanged(ServiceState serviceState) {
+            Log.d(TAG, "onServiceStateChanged: " + serviceState);
+            updateNetworkType();
             updateNetworkProvider();
             updateServiceState(serviceState);
             updateRoamingStatus(serviceState);
