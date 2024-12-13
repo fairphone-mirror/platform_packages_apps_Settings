@@ -67,7 +67,7 @@ public class WifiHotspotSecurityViewModel extends AndroidViewModel {
         mViewItemMap.put(SECURITY_TYPE_WPA3_SAE_TRANSITION, new ViewItem(KEY_SECURITY_WPA2_WPA3));
         mViewItemMap.put(SECURITY_TYPE_WPA2_PSK, new ViewItem(KEY_SECURITY_WPA2));
         mViewItemMap.put(SECURITY_TYPE_OPEN, new ViewItem(KEY_SECURITY_NONE));
-        mViewItemMap.put(SECURITY_TYPE_WPA3_OWE, new ViewItem(KEY_SECURITY_WPA3_OWE));
+        //mViewItemMap.put(SECURITY_TYPE_WPA3_OWE, new ViewItem(KEY_SECURITY_WPA3_OWE)); //FP5V-589 [Wifi hotspot]The security of Enhanced Open menu cannot be selected
 
         mWifiHotspotRepository = FeatureFactory.getFeatureFactory().getWifiFeatureProvider()
                 .getWifiHotspotRepository();
