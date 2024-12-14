@@ -5401,7 +5401,7 @@
     <!--state of count-->
     <string name="batteryh_soc">Conteggio dei cicli di carica/scarica:</string>
     <!--charge full design-->
-    <string name="batteryh_cfd">Carica il design completo:</string>
+    <string name="batteryh_cfd">Carica completa:</string>
     <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
     <string name="toast_extra_dim_info">È necessario un ambiente più scuro.</string>
     <string name="set_refresh_rate">Imposta la frequenza di aggiornamento del display</string>
