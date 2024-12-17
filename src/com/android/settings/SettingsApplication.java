@@ -146,8 +146,10 @@ public class SettingsApplication extends Application {
         }
 
         ParcelFileDescriptor mParcelFileDescriptor = WallpaperManager.getInstance(getBaseContext()).getWallpaperFile(WallpaperManager.FLAG_LOCK);
+
+        Log.d(TAG, "mParcelFileDescriptor = " + mParcelFileDescriptor);
         if (mParcelFileDescriptor == null) {
-            setDefaultOnLock(getBaseContext());
+            new Thread(() -> setDefaultOnLock(getBaseContext())).start();
         }
     }
 
