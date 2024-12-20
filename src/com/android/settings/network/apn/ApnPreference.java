@@ -114,6 +114,15 @@ public class ApnPreference extends Preference
         }
     }
 
+   //Add for FP5V-689 operator APN written with a white card is not selected by default begin
+    /**
+     * Check if preference isChecked.
+     */
+    public boolean getIsChecked() {
+        return mIsChecked;
+    }
+   //Add for FP5V-689 operator APN written with a white card is not selected by default end
+
     /**
      * Change the preference status.
      */
