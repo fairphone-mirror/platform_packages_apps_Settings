@@ -369,8 +369,7 @@ public class ApnSettings extends RestrictedSettingsFragment
                 ApnPreference pref = (ApnPreference) apnPrefList.getPreference(0);
                 pref.setIsChecked(true);
                 Log.d(TAG, "not matched, set the first APN(" + pref.getKey() + ") as selected");
-                // maybe no need this
-                mPreferredApnKey = pref.getKey();
+                mPreferredApnRepository.setPreferredApn(pref.getKey());
             }
             // add for FP5-929 end
 
