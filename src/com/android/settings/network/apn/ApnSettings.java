@@ -210,6 +210,7 @@ public class ApnSettings extends RestrictedSettingsFragment
                 });
 
         mPreferredApnRepository.collectPreferredApn(viewLifecycleOwner, (preferredApn) -> {
+            Log.d(TAG, "collectPreferredApn preferredApn = " + preferredApn);
             mPreferredApnKey = preferredApn;
             final PreferenceGroup apnPreferenceList = findPreference(APN_LIST);
             for (int i = 0; i < apnPreferenceList.getPreferenceCount(); i++) {
@@ -245,6 +246,7 @@ public class ApnSettings extends RestrictedSettingsFragment
     }
 
     private void fillList() {
+        boolean isSelectedKeyMatch = false;
         final Uri simApnUri = Uri.withAppendedPath(Telephony.Carriers.SIM_APN_URI,
                 String.valueOf(mSubId));
         final StringBuilder where =
@@ -328,9 +330,14 @@ public class ApnSettings extends RestrictedSettingsFragment
                 if (isVoLTEEnabled && defaultSelectable && Utils.isSupportCTPA(appContext)) {
                     defaultSelectable = ((type == null) || !type.equals("ims"));
                 }
+                Log.d(TAG, "defaultSelectable: " + defaultSelectable);
                 pref.setDefaultSelectable(defaultSelectable);
                 if (defaultSelectable) {
+                    Log.d(TAG, "key: " + key);
                     pref.setIsChecked(key.equals(mPreferredApnKey));
+                    if (key.equals(mPreferredApnKey)) {
+                        isSelectedKeyMatch = true;
+                    }
                     apnList.add(pref);
                 } else {
                     mmsApnList.add(pref);
@@ -342,6 +349,17 @@ public class ApnSettings extends RestrictedSettingsFragment
             for (Preference preference : apnList) {
                 apnPrefList.addPreference(preference);
             }
+
+            // add for FP5-929 begin
+            // If selectedkey is not matched, then set the first APN as selected
+            if (!isSelectedKeyMatch && apnPrefList.getPreferenceCount() > 0) {
+                ApnPreference pref = (ApnPreference) apnPrefList.getPreference(0);
+                pref.setIsChecked(true);
+                Log.d(TAG, "not matched, set the first APN(" + pref.getKey() + ") as selected");
+                mPreferredApnRepository.setPreferredApn(pref.getKey());
+            }
+            // add for FP5-929 end
+
             for (Preference preference : mmsApnList) {
                 apnPrefList.addPreference(preference);
             }
