@@ -802,10 +802,18 @@ public class ApnEditor extends SettingsPreferenceFragment
                     }
                     mMvnoMatchData.setText(telephonyManager.getGroupIdLevel1());
                 } else if (values[mvnoIndex].equals("ICCID")) {
-                    if (mMvnoMatchDataStr != null) {
-                        Log.d(TAG, "mMvnoMatchDataStr: " + mMvnoMatchDataStr);
-                        mMvnoMatchData.setText(mMvnoMatchDataStr);
+                    // add for FP5-1342(copy from FP4-1630), get iccid as MVNO DATA begin
+                    TelephonyManager telephonyManager = (TelephonyManager)
+                        getContext().getSystemService(TelephonyManager.class);
+                    final TelephonyManager telephonyManagerForSubId =
+                        telephonyManager.createForSubscriptionId(mSubId);
+                    if (telephonyManagerForSubId != null) {
+                        telephonyManager = telephonyManagerForSubId;
                     }
+                    String iccid = telephonyManager.getUiccCardsInfo().get(0).getIccId();
+                    Log.d(TAG, "iccic: " + iccid);
+                    mMvnoMatchData.setText(iccid);
+                    // add for FP5-1342(copy from FP4-1630) end
                 } else {
                     // mvno type 'none' case. At this time, mvnoIndex should be 0.
                     mMvnoMatchData.setText("");
