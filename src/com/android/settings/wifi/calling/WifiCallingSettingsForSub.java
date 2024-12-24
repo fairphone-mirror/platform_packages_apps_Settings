@@ -305,6 +305,7 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
                     FRAGMENT_BUNDLE_SUBID, SubscriptionManager.INVALID_SUBSCRIPTION_ID);
         }
 
+        //Modify begin by renjie.zhang FP5U-304 2024/2/23
         String title = getResourcesForSubId().getString(R.string.wifi_calling_settings_title);
         PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(getActivity()).getCarrierParams(mSubId);
         if (carrierParams != null) {
@@ -314,21 +315,9 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
                 title = carrierParamsTitle;
             }
         }
-        final CarrierConfigManager configManager =
-                getActivity().getSystemService(CarrierConfigManager.class);
-        if (configManager != null) {
-            Log.d(TAG, "get title from carrierconfig");
-            PersistableBundle b = configManager.getConfigForSubId(mSubId);
-            if (b != null) {
-                String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
-                if (!"".equals(carrierconfig_title)){
-                    title = carrierconfig_title;
-                }
-                Log.d(TAG, "title: " + title);
-            }
-        }
 
         getActivity().setTitle(title);
+        //Modify end by renjie.zhang FP5U-304 2024/2/23
 
         mProvisioningManager = getImsProvisioningManager();
         mImsMmTelManager = getImsMmTelManager();

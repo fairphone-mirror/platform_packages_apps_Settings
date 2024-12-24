@@ -22,6 +22,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.os.PersistableBundle;
 import android.provider.Settings;
 import android.telecom.PhoneAccountHandle;
 import android.telecom.TelecomManager;
@@ -44,6 +45,7 @@ import com.android.settings.R;
 import com.android.settings.network.SubscriptionUtil;
 import com.android.settings.network.SubscriptionsChangeListener;
 import com.android.settings.network.ims.WifiCallingQueryImsState;
+import com.android.settings.utils.CarrierParamsUtil;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 
@@ -204,6 +206,7 @@ public class NetworkProviderWifiCallingGroup extends
 
     private void setSubscriptionInfoForPreference(Map<Integer, Preference> toRemovePreferences) {
         int order = PREF_START_ORDER;
+        String categorytitle = mContext.getString(R.string.calls_and_sms_category);
         for (SubscriptionInfo info : mSubInfoListForWfc) {
             final int subId = info.getSubscriptionId();
 
@@ -250,6 +253,20 @@ public class NetworkProviderWifiCallingGroup extends
                 resId = R.string.calls_sms_wfc_summary;
             }
             pref.setSummary(resId);
+
+            // add for FP5-1231 begin
+            Log.d(TAG, "categorytitle: " + categorytitle);
+            PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(mContext).getCarrierParams(subId);
+            if (carrierParams != null) {
+                String carrierParamsTitle = carrierParams.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
+                if (!"".equals(carrierParamsTitle)) {
+                    Log.d(TAG, "update categorytitle: " + carrierParamsTitle);
+                    categorytitle = carrierParamsTitle;
+                }
+            }
+
+            mPreferenceGroup.setTitle(categorytitle);
+            // add for FP5-1231 end
 
             mWifiCallingForSubPreferences.put(subId, pref);
         }
