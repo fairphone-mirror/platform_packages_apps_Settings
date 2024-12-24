@@ -523,6 +523,10 @@ public class SimStatusDialogController implements DefaultLifecycleObserver {
             }
         }
 
+        Log.d(TAG, "actualDataNetworkType: " + actualDataNetworkType);
+        Log.d(TAG, "actualVoiceNetworkType: " + actualVoiceNetworkType);
+        Log.d(TAG, "overrideNetworkType: " + overrideNetworkType);
+
         mDialog.setText(CELL_VOICE_NETWORK_TYPE_VALUE_ID, voiceNetworkTypeName);
         mDialog.setText(CELL_DATA_NETWORK_TYPE_VALUE_ID, dataNetworkTypeName);
     }
@@ -644,6 +648,8 @@ public class SimStatusDialogController implements DefaultLifecycleObserver {
 
         @Override
         public void onServiceStateChanged(ServiceState serviceState) {
+            Log.d(TAG, "onServiceStateChanged: " + serviceState);
+            updateNetworkType();
             updateNetworkProvider();
             updateServiceState(serviceState);
             updateRoamingStatus(serviceState);
