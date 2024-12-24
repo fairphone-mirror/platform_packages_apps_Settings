@@ -29,6 +29,17 @@
             android:summary="@string/summary_placeholder"
             android:fragment="com.android.settings.applications.ProcessStatsSummary" />
 
+        <!-- add by T2M.dengxiangyu for FP5-2386 2023-07-26 begin -->
+        <Preference
+            android:key="carrier_settings_for_develper_key"
+            android:title="@string/carrier_settings_version"
+            android:enabled="false"
+            android:shouldDisableView="false"
+            android:selectable="false"
+            settings:controller="com.android.settings.network.telephony.CarrierSettingsVersionPreferenceController"
+            settings:enableCopying="true"/>
+        <!-- add by T2M.dengxiangyu for FP5-2386 2023-07-26 end -->
+
         <com.android.settings.BugreportPreference
             android:key="bugreport"
             android:title="@*android:string/bugreport_title"
