@@ -210,26 +210,13 @@ public class ApnSettings extends RestrictedSettingsFragment
                 });
 
         mPreferredApnRepository.collectPreferredApn(viewLifecycleOwner, (preferredApn) -> {
-            //Modify for FP5V-689 operator APN written with a white card is not selected by default begin
-            Log.d(TAG, "collectPreferredApn preferredApn = " + preferredApn+ ", mPreferredApnKey:" + mPreferredApnKey);
+            Log.d(TAG, "collectPreferredApn preferredApn = " + preferredApn);
             mPreferredApnKey = preferredApn;
             final PreferenceGroup apnPreferenceList = findPreference(APN_LIST);
-            boolean hasApnPreferenceSelect = false;
             for (int i = 0; i < apnPreferenceList.getPreferenceCount(); i++) {
                 ApnPreference apnPreference = (ApnPreference) apnPreferenceList.getPreference(i);
                 apnPreference.setIsChecked(apnPreference.getKey().equals(preferredApn));
-                Log.d(TAG, "if apnPreference["+i+"] select : " + apnPreference.getIsChecked());
-               if (apnPreference.getIsChecked()) {
-                  hasApnPreferenceSelect = true;
-               }
             }
-
-            if (!hasApnPreferenceSelect && apnPreferenceList.getPreferenceCount() > 0) {
-                ApnPreference pref = (ApnPreference) apnPreferenceList.getPreference(0);
-                Log.d(TAG, "there is no apn matched, set the first APN(" + pref.getKey() + ") as selected");
-                pref.setIsChecked(true);
-            }
-            //Modify for FP5V-689 operator APN written with a white card is not selected by default end
             return Unit.INSTANCE;
         });
     }
