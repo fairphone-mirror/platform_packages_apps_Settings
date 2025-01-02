@@ -13916,4 +13916,9 @@
     <string name="diagprotect_off">Diag Protector OFF</string>
 
     <string name="pocket_mode">Pocket mode</string>
+
+    <string name="phone_index_label">Select Phone Index</string>
+    <string name="bandcomb">Band Comb</string>
+    <string name="bandreg">Band Info</string>
+
 </resources>
