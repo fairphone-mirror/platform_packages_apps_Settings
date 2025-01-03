@@ -867,4 +867,30 @@
             android:defaultValue="true"
             android:summary="@string/stylus_handwriting_summary" />
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="engmode_category"
+        android:title="@string/engmode_title"
+        android:order="1500"
+        settings:controller="com.android.settings.development.EngModeController">
+
+        <Preference
+            android:title="@string/band_info_title"
+            android:key="band_info" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.phone"
+                android:targetClass="com.android.phone.settings.BandCombination" />
+        </Preference>
+
+        <Preference
+            android:title="@string/band_selection_title"
+            android:key="band_selection" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.phone"
+                android:targetClass="com.android.phone.settings.BandSelection" />
+        </Preference>
+
+    </PreferenceCategory>
 </PreferenceScreen>
