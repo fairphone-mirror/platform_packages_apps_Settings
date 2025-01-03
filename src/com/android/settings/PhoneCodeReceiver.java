@@ -15,6 +15,7 @@ import android.app.AlertDialog;
 import android.view.WindowManager;
 
 import com.android.internal.telephony.PhoneConstants;
+import com.android.settingslib.development.DevelopmentSettingsEnabler;
 import com.arima.settings.OemLockVerifier;
 import android.content.DialogInterface;
 import java.io.File;
@@ -46,7 +47,7 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         Log.i(TAG, "onReceive : " + intent.toString());
         mContext = context;
-        
+
         final String action = intent.getAction();
         if (intent.getAction().equals("android.provider.Telephony.SECRET_CODE")) {
             String host = intent.getData() != null ? intent.getData().getHost() : null;
@@ -153,10 +154,17 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                 }
             }
             else if (HOST_CODE_ENDC.equals(host)) {
-                /*Log.d(TAG, "ENCD code");
-                Intent i = new Intent(context, BandCombination.class);
-                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(i);*/
+                SystemProperties.set("sys.engmode.enabled", "1");
+                DevelopmentSettingsEnabler.setDevelopmentSettingsEnabled(context, true);
+
+                // check it in SearchResultTrampoline.java
+                final String className = "com.android.settings.development.DevelopmentSettingsDashboardFragment";
+                final String selectKey = "engmode_category";
+                Intent intentEngMode = new Intent("com.android.settings.SEARCH_RESULT_TRAMPOLINE");
+                intentEngMode.putExtra(SettingsActivity.EXTRA_SHOW_FRAGMENT, className)
+                        .putExtra(SettingsActivity.EXTRA_FRAGMENT_ARG_KEY, selectKey);
+                intentEngMode.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intentEngMode);
             }
 
         }
