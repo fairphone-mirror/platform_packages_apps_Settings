@@ -77,8 +77,8 @@ public class PhoneDeviceInfo extends Activity {
     private TextView mGMSversion;
     private TextView mCameraTuning;
     static final String BASEBAND_PROPERTY = "gsm.version.baseband";
-    static final String FACTORY_SN_PROPERTY = "ro.vendor.fp.trace.bsn";
-    static final String MFG_DATE_PROPERTY = "ro.vendor.fp.mfg.date";
+    static final String FACTORY_SN_PROPERTY = "ro.vendor.trace.bsn";
+    static final String MFG_DATE_PROPERTY = "ro.vendor.trace.date_hdt";
     static final String TFT_DATE_PROPERTY = "persist.sys.fp.tft.date";
     static final String TFT_PERSIST_PROPERTY = "sys.fp.tft";
     private Handler mHandler;
