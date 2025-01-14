@@ -3422,6 +3422,14 @@ SPDX-License-Identifier: BSD-3-Clause-Clear -->
         </receiver>
 
         <receiver
+            android:name=".fuelgauge.MMITestCompleteBootReceiber"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
             android:name=".fuelgauge.batteryusage.PeriodicJobReceiver"
             android:exported="false">
             <intent-filter>
