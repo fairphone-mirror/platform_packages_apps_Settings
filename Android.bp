@@ -181,7 +181,7 @@ android_library_import {
 
 android_library_import {
     name: "faceid_sdk",
-    aars: ["libs/faceid_sdk_V4.0.3.557_2024-12-18.aar"],
+    aars: ["libs/faceid_sdk_V4.0.3.596_2025-01-14.aar"],
 }
 
 filegroup {
