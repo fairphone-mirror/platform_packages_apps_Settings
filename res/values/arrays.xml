@@ -27,6 +27,7 @@
         <item>5 minutes</item>
         <item>10 minutes</item>
         <item>30 minutes</item>
+	    <item>Never</item>
     </string-array>
 
     <!-- Do not translate. -->
@@ -45,6 +46,8 @@
         <item>600000</item>
         <!-- Do not translate. -->
         <item>1800000</item>
+        <!-- Do not translate. -->
+        <item>2147483647</item>
     </string-array>
 
     <!-- Dark theme scheduling preferences  [CHAR LIMIT=NONE] -->

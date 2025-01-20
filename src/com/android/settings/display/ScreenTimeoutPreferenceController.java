@@ -80,6 +80,9 @@ public class ScreenTimeoutPreferenceController extends BasePreferenceController 
     private CharSequence getTimeoutSummary(long maxTimeout) {
         final long currentTimeout = getCurrentScreenTimeout();
         final CharSequence description = getTimeoutDescription(currentTimeout, maxTimeout);
+        if (2147483647 == currentTimeout){
+            return mContext.getString(R.string.notifications_sent_never);
+        }
         return description == null ? mContext.getString(
                 R.string.screen_timeout_summary_not_set) : mContext.getString(
                 R.string.screen_timeout_summary, description);
