@@ -141,8 +141,8 @@
 
         <SwitchPreferenceCompat
             android:key="hibernation_switch"
-            android:title="@string/unused_apps_switch"
-            android:summary="@string/unused_apps_switch_summary"
+            android:title="@string/unused_apps_switch_v2"
+            android:summary="@string/unused_apps_switch_summary_v2"
             settings:controller=
                 "com.android.settings.applications.appinfo.HibernationSwitchPreferenceController" />
     </PreferenceCategory>
