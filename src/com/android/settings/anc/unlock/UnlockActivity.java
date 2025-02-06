@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
+import android.provider.Settings;
 
 import androidx.annotation.Nullable;
 
@@ -31,6 +32,7 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
     // count ignored frames
     private int mFrameOffset = 0;
     private int failTimes = 0;
+    private boolean isNoLimit;
 
     private final CameraWrapper.CameraOpenCallback mCameraOpenListener = new CameraWrapper.CameraOpenCallback() {
         @Override
@@ -92,6 +94,7 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
         LiteManager.getInstance().setConfig(config);
         mCameraWrapper = CameraFactory.getCamera();
         openCamera();
+        isNoLimit = Settings.Global.getInt(getContentResolver(), "face_unlock_no_limit", 0) == 1;
     }
 
     @Override
@@ -109,7 +112,7 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
 
     @Override
     public void onPreviewFrame(final byte[] bytes) {
-        if (!LiteManager.getInstance().canCompare() || failTimes >= 3) {
+        if (!LiteManager.getInstance().canCompare() || (!isNoLimit && failTimes >= 3)) {
             return;
         }
 
@@ -178,7 +181,12 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
         stopUnlock();
         failTimes++;
         Intent intent = new Intent("intent.action.faceunlock");
-        intent.putExtra("faceunlock_status", failTimes);
+        if(isNoLimit) {
+            intent.putExtra("faceunlock_status", 1);
+        } else {
+            intent.putExtra("faceunlock_status", failTimes);
+        }
+        Log.d(TAG,"face unlock failed");
         UnlockActivity.this.sendBroadcast(intent);
     };
 
@@ -186,6 +194,7 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
         @Override
         public void onSuccess(Object object) {
             // stop unlock firstly
+            Log.d(TAG,"face unlock success");
             stopUnlock();
             AncFaceIdUnlockInfo info = (AncFaceIdUnlockInfo) object;
             Intent intent = new Intent("intent.action.faceunlock");
