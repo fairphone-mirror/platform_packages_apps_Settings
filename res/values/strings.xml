@@ -13920,4 +13920,5 @@
      <string name="engmode_title">Engineering Mode</string>
      <string name="band_info_title">Band Infomation</string>
      <string name="band_selection_title">Band Selection</string>
+    <string name="face_unlock_no_limit_title">Face Unlock no limit</string>
 </resources>

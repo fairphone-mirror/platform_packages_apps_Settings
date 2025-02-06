@@ -191,6 +191,11 @@
             android:summary="@string/enable_adb_summary" />
 
         <com.android.settingslib.RestrictedSwitchPreference
+            android:key="face_unlock_no_limit"
+            android:title="@string/face_unlock_no_limit_title"
+            android:summary="@string/face_unlock_no_limit_title" />
+
+        <com.android.settingslib.RestrictedSwitchPreference
             android:key="ims_unlock_enable"
             android:title="@string/ims_unlock_enable"
             android:summary="@string/ims_unlock_enable_summary" />
