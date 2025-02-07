@@ -205,7 +205,7 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
         mReceiver = new MyReceiver();
-        registerReceiver(mReceiver, filter);
+        registerReceiver(mReceiver, filter, Context.RECEIVER_EXPORTED);
     }
 
     @Override
