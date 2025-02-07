@@ -132,7 +132,7 @@ public class AncSettings extends SettingsBaseActivity {
         mReceiver = new MyReceiver();
         IntentFilter intentFilter = new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
         intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
-        registerReceiver(mReceiver, intentFilter);
+        registerReceiver(mReceiver, intentFilter, Context.RECEIVER_EXPORTED);
         mKeyguardManager = (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
     }
 
