@@ -47,7 +47,7 @@ public class FaceUnlockNoLimitController extends DeveloperOptionsPreferenceContr
         mPreference = screen.findPreference(getPreferenceKey());
 
         boolean mState = Settings.Global.getInt(mContext.getContentResolver(),
-                "face_unlock_no_limit", 0) == 1;
+                "face_unlock_no_limit", 1) == 1;
         mPreference.setChecked(mState);
 
     }
