@@ -94,7 +94,7 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
         LiteManager.getInstance().setConfig(config);
         mCameraWrapper = CameraFactory.getCamera();
         openCamera();
-        isNoLimit = Settings.Global.getInt(getContentResolver(), "face_unlock_no_limit", 0) == 1;
+        isNoLimit = Settings.Global.getInt(getContentResolver(), "face_unlock_no_limit", 1) == 1;
     }
 
     @Override
