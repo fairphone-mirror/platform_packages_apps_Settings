@@ -117,6 +117,13 @@
         settings:controller="com.android.settings.display.TopLevelWallpaperPreferenceController"/>
 
     <com.android.settings.widget.HomepagePreference
+        android:icon="@drawable/ic_settings_switch_button"
+        android:key="gesture_switch_button_settings_summary"
+        android:title="@string/switch_button_setting_name"
+        android:order="-65"
+        settings:controller="com.fairphone.settings.SwitchButtonSettingsPreferenceController"/>
+
+    <com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.accessibility.AccessibilitySettings"
         android:icon="@drawable/ic_settings_accessibility"
         android:key="top_level_accessibility"

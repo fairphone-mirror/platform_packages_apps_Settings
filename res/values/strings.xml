@@ -13883,6 +13883,11 @@
 
     <string name="ims_settings_title">"IMS Settings"</string>
     <string name="ims_settings_summary">"Debug mode for IMS Settings"</string>
+
+    <!-- Fairphone Spring Switch button setting name [CHAR LIMIT=60] -->
+    <!-- TODO: Add translations -->
+    <string name="switch_button_setting_name">Switch Button Settings</string>
+
     <string name="legal_info_title">Open source licenses</string>
     <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
     <string name="fingerprint_settings_open_title">Fingerprint Unlock Behavior</string>
