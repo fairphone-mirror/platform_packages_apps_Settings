@@ -34,7 +34,6 @@ public class TapToWakePreferenceController extends AbstractPreferenceController 
         PreferenceControllerMixin, Preference.OnPreferenceChangeListener {
 
     private static final String KEY_TAP_TO_WAKE = "tap_to_wake";
-    private static final String DOUBLE_TOP_EN = "/sys/devices/platform/goodix_ts.0/gesture/double_en";
 
     public TapToWakePreferenceController(Context context) {
         super(context);
@@ -55,69 +54,17 @@ public class TapToWakePreferenceController extends AbstractPreferenceController 
     public void updateState(Preference preference) {
         int value = Settings.Secure.getInt(
                 mContext.getContentResolver(), Settings.Secure.DOUBLE_TAP_TO_WAKE, 0);
-        String douTapEn = readDouEn();
-        if ("disable".equals(douTapEn) && value == 1){
-            Settings.Secure.putInt(mContext.getContentResolver(), Settings.Secure.DOUBLE_TAP_TO_WAKE, 0);
-            value = 0;
-        }else if ("enable".equals(douTapEn) && value == 0){
-            Settings.Secure.putInt(mContext.getContentResolver(), Settings.Secure.DOUBLE_TAP_TO_WAKE, 1);
-            value = 1;
-        }
         ((TwoStatePreference) preference).setChecked(value != 0);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         boolean value = (Boolean) newValue;
-        //writeDouEn(value ? "1" : "0");
-        SystemProperties.set("persist.sys.double_en",value ? "1" : "0");
+        SystemProperties.set("persist.odm.double_en",value ? "1" : "0");
         Settings.Secure.putInt(
                 mContext.getContentResolver(), Settings.Secure.DOUBLE_TAP_TO_WAKE, value ? 1 : 0);
         return true;
     }
 
-    private String readDouEn(){
-        String value = "0";
-        BufferedReader reader = null;
-        FileReader fr = null;
-        try {
-            fr = new FileReader(DOUBLE_TOP_EN);
-            reader = new BufferedReader(fr);
-            value = reader.readLine();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }finally {
-            try {
-                if (reader != null)
-                    reader.close();
-                if (fr != null)
-                    fr.close();
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-        return value;
-    }
 
-    private void writeDouEn(String value) {
-        BufferedWriter writer = null;
-        FileWriter fw = null;
-        try {
-            fw = new FileWriter(DOUBLE_TOP_EN);
-            writer = new BufferedWriter(fw, 256);
-            writer.write(value);
-            writer.flush();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }finally {
-            try{
-                if (writer != null)
-                    writer.close();
-                if (fw != null)
-                    fw.close();
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-    }
 }
