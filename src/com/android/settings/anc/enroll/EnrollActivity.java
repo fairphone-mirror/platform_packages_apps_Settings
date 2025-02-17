@@ -390,5 +390,10 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
             EnrollActivity.this.finish();
         });
         dialog.show();
+        boolean isNolimit = Settings.Global.getInt(getContentResolver(), "face_unlock_no_limit", 1) == 1;
+        if(isNolimit) {
+            TextView faceDisableTv = dialog.findViewById(R.id.tv_face_disabled_condition);
+            faceDisableTv.setVisibility(View.GONE);
+        }
     }
 }
