@@ -77,6 +77,10 @@ public class AncSettings extends SettingsBaseActivity {
         });
         ConstraintLayout mMainFaceLayout = findViewById(R.id.main_face_layout);
         mSecondFaceLayout = findViewById(R.id.second_face_layout);
+        boolean isNolimit = Settings.Global.getInt(getContentResolver(), "face_unlock_no_limit", 1) == 1;
+        if(isNolimit) {
+            mSecondFaceLayout.setVisibility(View.GONE);
+        }
         mMainDelete = findViewById(R.id.main_delete_button);
         mSecondDelete = findViewById(R.id.second_delete_button);
         mMainFaceLayout.setOnClickListener(v->{
