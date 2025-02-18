@@ -76,6 +76,7 @@ public class PhoneDeviceInfo extends Activity {
     private TextView mUpdateTime;
     private TextView mGMSversion;
     private TextView mCameraTuning;
+    private TextView mSwitchCount;
     static final String BASEBAND_PROPERTY = "gsm.version.baseband";
     static final String FACTORY_SN_PROPERTY = "ro.vendor.trace.bsn";
     static final String MFG_DATE_PROPERTY = "ro.vendor.trace.date_hdt";
@@ -108,6 +109,7 @@ public class PhoneDeviceInfo extends Activity {
         mUpdateTime = (TextView)view.findViewById(R.id.updatetime);
         mGMSversion = (TextView)view.findViewById(R.id.gmsversion);
         mCameraTuning = (TextView)view.findViewById(R.id.cameratuning);
+        mSwitchCount = (TextView)view.findViewById(R.id.switchcount);
         setContentView(view);
     }
 
@@ -151,6 +153,7 @@ public class PhoneDeviceInfo extends Activity {
         mUpdateTime.setText("Up time \n" + DateUtils.formatElapsedTime(SystemClock.elapsedRealtime() / 1000));
         mGMSversion.setText("GMS version : \n" + readGMSversion());
         mCameraTuning.setText("Camera tuning Version : \n" + readCameraTuningversion());
+        mSwitchCount.setText("Switch Count : \n" + readSwitchCount());
     }
 
     private String readGMSversion(){
@@ -436,6 +439,10 @@ public class PhoneDeviceInfo extends Activity {
         return cameratuning;
     }
 
+    private String readSwitchCount(){
+        return "" + SystemProperties.getLong("persist.sys.switchcount", 0);
+    }
+
     private class MyHandler extends Handler {
         private TextView m_updatetime;
         private TextView m_tft;
@@ -457,7 +464,7 @@ public class PhoneDeviceInfo extends Activity {
                     }else{
                         m_tft.setText("TFT :  \n" + DateUtils.formatElapsedTime(m_tftdate/1000));
                     }
-                    
+                    mSwitchCount.setText("Switch Count : \n" + readSwitchCount());
                     sendEmptyMessageDelayed(EVENT_UPDATE_STATS, 1000);
                     break;
 
