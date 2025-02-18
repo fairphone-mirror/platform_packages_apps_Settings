@@ -13926,4 +13926,7 @@
      <string name="band_info_title">Band Infomation</string>
      <string name="band_selection_title">Band Selection</string>
     <string name="face_unlock_no_limit_title">Face Unlock no limit</string>
+    <string name="face_unlock_success">Face Unlock success</string>
+    <string name="face_acquired_compare_failure">Face doesn\'t match</string>
+    <string name="face_acquired_liveness_failure">Liveness Attack</string>
 </resources>

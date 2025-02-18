@@ -5427,4 +5427,7 @@
     <string name="fingerprint_settings_open_description">默认按键解锁。如果需要触摸解锁则打开开关。</string>
 
     <string name="pocket_mode">口袋模式</string>
+    <string name="face_unlock_success">人脸解锁成功</string>
+    <string name="face_acquired_compare_failure">人脸不匹配</string>
+    <string name="face_acquired_liveness_failure">活体攻击</string>
 </resources>

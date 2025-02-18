@@ -12,12 +12,14 @@ import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
 import android.provider.Settings;
+import android.os.SystemClock;
 
 import androidx.annotation.Nullable;
 
 import com.anc.faceid.bean.AncFaceIdConfig;
 import com.anc.faceid.bean.AncFaceIdUnlockInfo;
 import com.anc.faceid.bean.AncPowerMode;
+import com.anc.faceid.bean.AncFaceIdStatus;
 import com.android.settings.anc.AncSettings;
 import com.android.settings.anc.LiteManager;
 import com.android.settings.anc.camera.CameraFactory;
@@ -33,6 +35,8 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
     private int mFrameOffset = 0;
     private int failTimes = 0;
     private boolean isNoLimit;
+    private long mLastFaceFailedTime;
+    private static final int FACE_FAILED_INTERVAL_MS = 800; //ms
 
     private final CameraWrapper.CameraOpenCallback mCameraOpenListener = new CameraWrapper.CameraOpenCallback() {
         @Override
@@ -196,6 +200,7 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
             // stop unlock firstly
             Log.d(TAG,"face unlock success");
             stopUnlock();
+            sendFaceUnlockMsg(getString(com.android.settings.R.string.face_unlock_success));
             AncFaceIdUnlockInfo info = (AncFaceIdUnlockInfo) object;
             Intent intent = new Intent("intent.action.faceunlock");
             intent.putExtra("faceunlock_status", 0);
@@ -209,10 +214,65 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
         @Override
         public void onFailed(int resultCode, Object object) {
             Log.d(TAG, "onFailed()...resultCode:" + resultCode);
+            if((SystemClock.uptimeMillis() - mLastFaceFailedTime) < FACE_FAILED_INTERVAL_MS) {
+                return;
+            }
+            String acquiredStr = changeStatus(resultCode);
+            if(acquiredStr != null) {
+                sendFaceUnlockMsg(acquiredStr);
+            }
         }
 
         @Override
         public void onError(String errorMsg) {
         }
     };
+
+    private void sendFaceUnlockMsg(String msg) {
+        Intent intent = new Intent("intent.action.faceunlock.acquired");
+        intent.putExtra("faceunlock_acquired", msg);
+        UnlockActivity.this.sendBroadcast(intent);
+        mLastFaceFailedTime = SystemClock.uptimeMillis();
+    }
+
+    private String changeStatus(int code) {
+        AncFaceIdStatus status = AncFaceIdStatus.valueOf(code);
+        switch(status){
+            case ANC_UNLOCK_FACE_NOT_FOUND:
+                return getString(com.android.internal.R.string.face_acquired_not_detected);
+            case ANC_UNLOCK_FACE_BAD_QUALITY:
+                return getString(com.android.internal.R.string.face_acquired_insufficient);
+            case ANC_UNLOCK_HIGHLIGHT:
+                return getString(com.android.internal.R.string.face_acquired_too_bright);
+            case ANC_UNLOCK_FACE_SCALE_TOO_LARGE:
+                return getString(com.android.internal.R.string.face_acquired_too_close);
+            case ANC_UNLOCK_FACE_SCALE_TOO_SMALL:
+                return getString(com.android.internal.R.string.face_acquired_too_far);
+            case ANC_UNLOCK_FACE_OFFSET_TOP:
+                return getString(com.android.internal.R.string.face_acquired_too_high);
+            case ANC_UNLOCK_FACE_OFFSET_BOTTOM:
+                return getString(com.android.internal.R.string.face_acquired_too_low);
+            case ANC_UNLOCK_FACE_OFFSET_RIGHT:
+                return getString(com.android.internal.R.string.face_acquired_too_right);
+            case ANC_UNLOCK_FACE_OFFSET_LEFT:
+                return getString(com.android.internal.R.string.face_acquired_too_left);
+            case ANC_UNLOCK_FACE_RISE:
+            case ANC_UNLOCK_FACE_DOWN:
+                return getString(com.android.internal.R.string.face_acquired_tilt_too_extreme);
+            case ANC_UNLOCK_FACE_ROTATED_LEFT:
+            case ANC_UNLOCK_FACE_ROTATED_RIGHT:
+                return getString(com.android.internal.R.string.face_acquired_roll_too_extreme);
+            case ANC_UNLOCK_ATTR_EYE_OCCLUSION:
+            case ANC_UNLOCK_ATTR_NOSE_OCCLUSION:
+            case ANC_UNLOCK_ATTR_MOUTH_OCCLUSION:
+                return getString(com.android.internal.R.string.face_acquired_obscured);
+            case ANC_UNLOCK_FACE_BLUR:
+                return getString(com.android.internal.R.string.face_acquired_sensor_dirty);
+            case ANC_UNLOCK_COMPARE_FAILURE:
+                return getString(com.android.settings.R.string.face_acquired_compare_failure);
+            case ANC_UNLOCK_LIVENESS_FAILURE:
+                return getString(com.android.settings.R.string.face_acquired_liveness_failure);
+        }
+        return null;
+    }
 }
