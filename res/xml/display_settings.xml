@@ -218,6 +218,12 @@
             android:key="pick_up_to_wake"
             android:title="@string/pick_up_to_wake_title"/>
 
+        <!--Add for FPS-183-->
+        <SwitchPreference
+            android:key="sunlight_mode"
+            android:title="@string/sunlight_mode_title"/>
+        <!--Add for FPS-183-->
+
         <SwitchPreference
             android:key="pocket_mode"
             android:title="@string/pocket_mode"/>

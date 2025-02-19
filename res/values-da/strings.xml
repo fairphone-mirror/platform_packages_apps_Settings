@@ -5379,6 +5379,7 @@
     <string name="warning_tips_rom4_third_part">" - Dine personlige data vil udelukkende blive gemt og behandlet på denne enhed."</string>
     <string name="warning_tips_rom4_third_part_title">Om privatlivsindstillinger</string>
     <string name="warning_title">Risikoadvarsel</string>
+    <string name="sunlight_mode_title">Sollys-tilstand</string>
     <string name="confirm_remove_enroll_face">Ønsker du at fjerne det registrerede ansigt?</string>
     <string name="main_face_title">Ansigtsgenkendelse</string>
     <string name="second_face_title">Tilbage til ansigtsregistrering</string>

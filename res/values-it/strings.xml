@@ -5380,6 +5380,7 @@
     <string name="warning_tips_rom4_third_part_title">Informazioni sulla privacy</string>
     <string name="warning_title">Avviso di rischio</string>
     <string name="data_preference">"Preferenze dati mobili"</string>
+    <string name="sunlight_mode_title">Sunlight mode (modalità luce solare)</string>
     <string name="confirm_remove_enroll_face">Confermi di voler rimuovere il viso registrato?</string>
     <string name="main_face_title">Registrazione del viso</string>
     <string name="second_face_title">Registrazione del viso di backup</string>

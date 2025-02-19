@@ -13809,6 +13809,7 @@
     <string name="audio_streams_main_page_password_dialog_cannot_edit">Can\u0027t edit password while sharing. To change the password, first turn off audio sharing.</string>
 
     <string name="pick_up_to_wake_title">Pick up to wake</string>
+    <string name="sunlight_mode_title">Sunlight mode</string>
     <string name="face_unlock_settings_title_rom4">Face unlock</string>
     <string name="face_unlock_register_prompt">Hold your phone 20-50 cm from your face.Position your face in the circle shown on the screen.</string>
     <string name="main_face_title">Face Enroll</string>

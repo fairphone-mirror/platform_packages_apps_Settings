@@ -29,6 +29,7 @@ import com.android.settings.display.TapToWakePreferenceController;
 import com.android.settings.display.ThemePreferenceController;
 import com.android.settings.display.VrDisplayPreferenceController;
 import com.android.settings.display.PickUpToWakePreferenceController;
+import com.android.settings.display.SunlightModePreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
@@ -84,6 +85,8 @@ public class DisplaySettings extends DashboardFragment {
         //add for FPS-161 20241202
         controllers.add(new PickUpToWakePreferenceController(context));
         controllers.add(new BrightnessLevelPreferenceController(context, lifecycle));
+        //Add for FPS-183
+        controllers.add(new SunlightModePreferenceController(context));
         controllers.add(new PocketModePreferenceController(context));
         return controllers;
     }
