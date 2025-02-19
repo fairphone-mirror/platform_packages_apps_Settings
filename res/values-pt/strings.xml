@@ -5765,6 +5765,7 @@
     <string name="accessibility_illustration_content_description" msgid="557376174860150903">"Animação do recurso <xliff:g id="FEATURE">%1$s</xliff:g>"</string>
     <string name="status_sdn">Número de ligação ao serviço</string>
     <string name="pick_up_to_wake_title">Levantar para acordar</string>
+    <string name="sunlight_mode_title">Modo de luz solar</string>
 
     <string name="attention">Atenção</string>
     <string name="cannot_detect_face">Não é possível detetar o seu rosto</string>
