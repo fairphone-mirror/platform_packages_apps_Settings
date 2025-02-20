@@ -5386,6 +5386,7 @@
     <!--charge full design-->
     <string name="batteryh_cfd">Design vollständige Ladung:</string>
     <string name="dialog_title_battery_healty">Akkugesundheit</string>
+    <string name="sunlight_mode_title">Sonnenlicht-Modus</string>
     <!-- Mobile network settings screen, title of item showing the name of the default subscription
     that will be used for data. This only appears in multi-SIM mode. [CHAR LIMIT=NONE] -->
     <string name="charging_slow">Öko-Modus</string>

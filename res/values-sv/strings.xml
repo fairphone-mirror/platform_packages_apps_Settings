@@ -5379,6 +5379,7 @@
     <string name="warning_tips_rom4_third_part">" -Dina personliga data lagras och behandlas endast på enheten."</string>
     <string name="warning_tips_rom4_third_part_title">Om sekretess</string>
     <string name="warning_title">Riskvarning</string>
+    <string name="sunlight_mode_title">Solljusläge</string>
     <string name="confirm_remove_enroll_face">Bekräftar du borttagning av registrerat ansikte?</string>
     <string name="main_face_title">Ansiktsregistrering</string>
     <string name="second_face_title">Tillbaka från ansiktsregistrering</string>

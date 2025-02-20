@@ -5366,6 +5366,7 @@
     <string name="audio_streams_main_page_scan_qr_code_summary" msgid="1991792283368249499">"扫描音频流二维码即可开始收听"</string>
     <string name="audio_streams_main_page_password_dialog_join_button" msgid="2967747276379153408">"收听音频流"</string>
     <string name="audio_streams_main_page_qr_code_scanner_summary" msgid="5312980105735143360">"扫描音频流二维码即可通过“<xliff:g id="DEVICE_NAME">%1$s</xliff:g>”收听"</string>
+    <string name="sunlight_mode_title">阳光模式</string>
 
     <!--state of health-->
     <string name="batteryh_soh">健康状态:</string>

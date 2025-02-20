@@ -5390,6 +5390,7 @@
     <string name="charging_slow">CARGA ECO</string>
     <string name="charging_normal">CARGA RÁPIDA</string>
     <string name="charging_state">Modo de carga</string>
+    <string name="sunlight_mode_title">Modo luz solar</string>
     <string name="enroll_main_first">Por favor introduce los datos faciales primero.</string>
     <string name="confirm_remove_enroll_face">¿Confirmas que quieres eliminar el registro de cara?</string>
     <string name="main_face_title">Registro de cara</string>
