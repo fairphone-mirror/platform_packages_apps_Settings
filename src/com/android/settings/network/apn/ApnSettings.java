@@ -109,11 +109,18 @@ public class ApnSettings extends RestrictedSettingsFragment
 
     private static final int DIALOG_RESTORE_DEFAULTAPN = 1001;
 
+    //[BUG]-Modify begin by shaopant.tang 2025-02-21 FPS-839 Update PreferredApnkey befor fillin apn list
+    public static final String PREFERRED_APN_URI =
+            "content://telephony/carriers/preferapn";
+    private static final Uri PREFERAPN_URI = Uri.parse(PREFERRED_APN_URI);
+    //[BUG]-Modify end by shaopant.tang
+
     private boolean mRestoreDefaultApnMode;
 
     private UserManager mUserManager;
     private int mSubId;
     private PreferredApnRepository mPreferredApnRepository;
+    private SubscriptionInfo mSubscriptionInfo;
     @Nullable
     private String mPreferredApnKey;
 
@@ -188,6 +195,7 @@ public class ApnSettings extends RestrictedSettingsFragment
                 SubscriptionManager.INVALID_SUBSCRIPTION_ID);
         mIntentFilter = new IntentFilter(CarrierConfigManager.ACTION_CARRIER_CONFIG_CHANGED);
         mPreferredApnRepository = new PreferredApnRepository(activity, mSubId);
+        mSubscriptionInfo = getSubscriptionInfo(mSubId);
         mSubscriptionManager =  getSystemService(SubscriptionManager.class);
 
         setIfOnlyAvailableForAdmins(true);
@@ -308,6 +316,11 @@ public class ApnSettings extends RestrictedSettingsFragment
 
             final ArrayList<ApnPreference> apnList = new ArrayList<ApnPreference>();
             final ArrayList<ApnPreference> mmsApnList = new ArrayList<ApnPreference>();
+
+            //[BUG]-Modify begin by shaopant.tang 2025-02-21 FPS-839 Update PreferredApnkey befor fillin apn list
+            mPreferredApnKey = getSelectedApnKey();
+            Log.d(TAG, "mPreferredApnKey: " + mPreferredApnKey);
+            //[BUG]-Modify end by shaopant.tang
 
             cursor.moveToFirst();
             final int radioTech = networkTypeToRilRidioTechnology(TelephonyManager.getDefault()
@@ -594,6 +607,36 @@ public class ApnSettings extends RestrictedSettingsFragment
 
         return true;
     }
+
+    //[BUG]-Modify begin by shaopant.tang 2025-02-21 FPS-839 Update PreferredApnkey befor fillin apn list
+    private SubscriptionInfo getSubscriptionInfo(int subId) {
+        return SubscriptionManager.from(getActivity()).getActiveSubscriptionInfo(subId);
+    }
+
+    // Append subId to the Uri
+    private Uri getUriForCurrSubId(Uri uri) {
+        final int subId = mSubscriptionInfo != null ? mSubscriptionInfo.getSubscriptionId()
+                : SubscriptionManager.INVALID_SUBSCRIPTION_ID;
+        if (SubscriptionManager.isValidSubscriptionId(subId)) {
+            return Uri.withAppendedPath(uri, "subId/" + String.valueOf(subId));
+        } else {
+            return uri;
+        }
+    }
+
+    private String getSelectedApnKey() {
+        String key = null;
+
+        final Cursor cursor = getContentResolver().query(getUriForCurrSubId(PREFERAPN_URI),
+                new String[] {"_id"}, null, null, Telephony.Carriers.DEFAULT_SORT_ORDER);
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            key = cursor.getString(ID_INDEX);
+        }
+        cursor.close();
+        return key;
+    }
+    //[BUG]-Modify end by shaopant.tang
 
     private void restoreDefaultApn() {
         showRestoreDefaultApnDialog();
