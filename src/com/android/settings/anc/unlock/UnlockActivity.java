@@ -249,13 +249,13 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
             case ANC_UNLOCK_FACE_SCALE_TOO_SMALL:
                 return getString(com.android.internal.R.string.face_acquired_too_far);
             case ANC_UNLOCK_FACE_OFFSET_TOP:
-                return getString(com.android.internal.R.string.face_acquired_too_high);
-            case ANC_UNLOCK_FACE_OFFSET_BOTTOM:
                 return getString(com.android.internal.R.string.face_acquired_too_low);
+            case ANC_UNLOCK_FACE_OFFSET_BOTTOM:
+                return getString(com.android.internal.R.string.face_acquired_too_high);
             case ANC_UNLOCK_FACE_OFFSET_RIGHT:
-                return getString(com.android.internal.R.string.face_acquired_too_right);
-            case ANC_UNLOCK_FACE_OFFSET_LEFT:
                 return getString(com.android.internal.R.string.face_acquired_too_left);
+            case ANC_UNLOCK_FACE_OFFSET_LEFT:
+                return getString(com.android.internal.R.string.face_acquired_too_right);
             case ANC_UNLOCK_FACE_RISE:
             case ANC_UNLOCK_FACE_DOWN:
                 return getString(com.android.internal.R.string.face_acquired_tilt_too_extreme);
