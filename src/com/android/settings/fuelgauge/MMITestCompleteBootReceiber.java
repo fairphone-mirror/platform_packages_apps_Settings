@@ -11,12 +11,13 @@ public class MMITestCompleteBootReceiber extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction()) && SystemProperties.getBoolean("dev.fp.MMITest", false)) {
+        if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
             try{
                 Intent intentMMI = new Intent();
                 intentMMI.setClassName("com.android.mmi",
                         "com.android.mmi.MMITest");
                 intentMMI.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intentMMI.putExtra("mmi_activity_fp6",!SystemProperties.getBoolean("dev.fp.MMITest", false));
                 context.startActivity(intentMMI);
                 Log.e(TAG, "----- start mmi.");
             }catch(Exception e){
