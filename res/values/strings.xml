@@ -13930,4 +13930,10 @@
     <string name="face_unlock_success">Face Unlock success</string>
     <string name="face_acquired_compare_failure">Face doesn\'t match</string>
     <string name="face_acquired_liveness_failure">Liveness Attack</string>
+    <string name="face_acquired_eye_occlusion">eyes is blocked</string>
+    <string name="face_acquired_mouth_occlusion">mouth is blocked</string>
+    <string name="face_acquired_nose_occlusion">nose is blocked</string>
+    <string name="face_acquired_eye_close">eye is closed</string>
+    <string name="face_acquired_bad_quality">Face incomplete</string>
+    <string name="face_acquired_face_multi">multi faces</string>
 </resources>

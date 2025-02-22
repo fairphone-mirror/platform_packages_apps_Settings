@@ -5431,4 +5431,10 @@
     <string name="face_unlock_success">人脸解锁成功</string>
     <string name="face_acquired_compare_failure">人脸不匹配</string>
     <string name="face_acquired_liveness_failure">活体攻击</string>
+    <string name="face_acquired_eye_occlusion">眼睛有遮挡</string>
+    <string name="face_acquired_mouth_occlusion">嘴部有遮挡</string>
+    <string name="face_acquired_nose_occlusion">鼻部有遮挡</string>
+    <string name="face_acquired_eye_close">请不要闭眼</string>
+    <string name="face_acquired_bad_quality">人脸不完整</string>
+    <string name="face_acquired_face_multi">多张人脸</string>
 </resources>
