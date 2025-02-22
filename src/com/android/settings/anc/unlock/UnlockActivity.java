@@ -116,7 +116,8 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
 
     @Override
     public void onPreviewFrame(final byte[] bytes) {
-        if (!LiteManager.getInstance().canCompare() || (!isNoLimit && failTimes >= 3)) {
+        if (++mFrameOffset < Constants.UNLOCK_IGNORED_AHEAD_FRAME ||
+                !LiteManager.getInstance().canCompare() || (!isNoLimit && failTimes >= 3)) {
             return;
         }
 
@@ -138,7 +139,6 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
         }
         if (mLiteManager != null) {
             mLiteManager.reset();
-            mLiteManager.commitSave();
             if(!ActivityManager.getInstance().containActivity(AncSettings.class.getSimpleName())){
                 mLiteManager.release();
             }
@@ -241,9 +241,11 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
             case ANC_UNLOCK_FACE_NOT_FOUND:
                 return getString(com.android.internal.R.string.face_acquired_not_detected);
             case ANC_UNLOCK_FACE_BAD_QUALITY:
-                return getString(com.android.internal.R.string.face_acquired_insufficient);
+                return getString(com.android.settings.R.string.face_acquired_bad_quality);
             case ANC_UNLOCK_HIGHLIGHT:
                 return getString(com.android.internal.R.string.face_acquired_too_bright);
+            case ANC_UNLOCK_DARKLIGHT:
+                return getString(com.android.internal.R.string.face_acquired_too_dark);
             case ANC_UNLOCK_FACE_SCALE_TOO_LARGE:
                 return getString(com.android.internal.R.string.face_acquired_too_close);
             case ANC_UNLOCK_FACE_SCALE_TOO_SMALL:
@@ -263,15 +265,21 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
             case ANC_UNLOCK_FACE_ROTATED_RIGHT:
                 return getString(com.android.internal.R.string.face_acquired_roll_too_extreme);
             case ANC_UNLOCK_ATTR_EYE_OCCLUSION:
+                return getString(com.android.settings.R.string.face_acquired_eye_occlusion);
             case ANC_UNLOCK_ATTR_NOSE_OCCLUSION:
+                return getString(com.android.settings.R.string.face_acquired_nose_occlusion);
             case ANC_UNLOCK_ATTR_MOUTH_OCCLUSION:
-                return getString(com.android.internal.R.string.face_acquired_obscured);
+                return getString(com.android.settings.R.string.face_acquired_mouth_occlusion);
             case ANC_UNLOCK_FACE_BLUR:
                 return getString(com.android.internal.R.string.face_acquired_sensor_dirty);
             case ANC_UNLOCK_COMPARE_FAILURE:
                 return getString(com.android.settings.R.string.face_acquired_compare_failure);
             case ANC_UNLOCK_LIVENESS_FAILURE:
                 return getString(com.android.settings.R.string.face_acquired_liveness_failure);
+            case ANC_UNLOCK_ATTR_EYE_CLOSE:
+                return getString(com.android.settings.R.string.face_acquired_eye_close);
+            case ANC_UNLOCK_FACE_MULTI:
+                return getString(com.android.settings.R.string.face_acquired_face_multi);
         }
         return null;
     }
