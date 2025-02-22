@@ -274,9 +274,7 @@ public class CommonUtil {
         if (data == null)
             return null;
 
-        String tags = "";
-        if (TextUtils.isEmpty(tags)) return null;
-        File mediaStorageDir = mContext.getExternalFilesDir(tags);
+        File mediaStorageDir = mContext.getExternalFilesDir("anc");
         File dir = new File(mediaStorageDir, path);
 
         if (!dir.exists()) {

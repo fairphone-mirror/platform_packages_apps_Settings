@@ -497,8 +497,8 @@ public class LiteManager {
         }
 
         if (result == AncFaceIdStatus.ANC_UNLOCK_OK) {
-            addSavedNV21(data, width, height, "camera", "savedYUV" + id[0]);
-            commitSave();
+            // addSavedNV21(data, width, height, "camera", "savedYUV" + id[0]);
+            // commitSave();
         }
 
         return result.toInt();
@@ -522,7 +522,12 @@ public class LiteManager {
                 .currentTimeMillis() % 1000);
         if (mLastResult != result) {
             mLastResult = result;
-            saveComparePic(width, height, data, result, fileName);
+            //saveComparePic(width, height, data, result, fileName);
+        }
+        boolean isNolimit = Settings.Global.getInt(mContext.getContentResolver(), "face_unlock_no_limit", 1) == 1;
+        if(isNolimit) {
+            addSavedNV21(data, width, height, "nv21", fileName);
+            commitSave();
         }
 
         return result;
