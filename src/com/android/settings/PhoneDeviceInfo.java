@@ -416,17 +416,20 @@ public class PhoneDeviceInfo extends Activity {
         String cameratuning = "";
         String version = null;
         try {
-            InputStream is = new FileInputStream("vendor/etc/camera/tuningversion_fp5.txt");
+            InputStream is = new FileInputStream("vendor/etc/camera/tuningversion_fps.txt");
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
             while ((version = reader.readLine()) != null) {
                 Log.e(TAG, "readCameraTuningversion version " + version);
-                if(version.contains("==imx800")){
-                    cameratuning += "Camera_IMX800:\n";
-                }else if(version.contains("==imx858")){
-                    cameratuning += "\nCamera_IMX858:\n";
-                }else if(version.contains("==s5kjn1")){
-                    cameratuning += "\nCamera_S5KJN1:\n";
+                if(version.contains("==IMX896")){
+                    cameratuning += "Camera_IMX896:\n";
+                }else if(version.contains("==OV13B10")){
+                    cameratuning += "\nCamera_OV13B10:\n";
+                }else if(version.contains("==S5KKD1")){
+                    cameratuning += "\nCamera_S5KKD1:\n";
                 }else{
+                    if("==========".equals(version)){
+                        continue;
+                    }
                     cameratuning += version.substring(7) +";";
                 }
             }
