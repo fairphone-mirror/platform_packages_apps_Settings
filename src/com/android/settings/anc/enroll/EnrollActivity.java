@@ -102,8 +102,7 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
         @Override
         public void onFailed(int resultCode, Object object) {
             AncFaceIdStatus status = AncFaceIdStatus.valueOf(resultCode);
-            if (AncFaceIdStatus.ANC_UNLOCK_LIVENESS_FAILURE.toInt() == resultCode
-                    || AncFaceIdStatus.ANC_UNLOCK_SAVE_FEATURES_MAX.toInt() == resultCode) {
+            if (AncFaceIdStatus.ANC_UNLOCK_SAVE_FEATURES_MAX.toInt() == resultCode) {
                 mCameraWrapper.closeCamera();
             } else {
                 int curStatus = -1;

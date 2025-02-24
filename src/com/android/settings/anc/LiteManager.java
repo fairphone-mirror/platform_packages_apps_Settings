@@ -524,8 +524,8 @@ public class LiteManager {
             mLastResult = result;
             //saveComparePic(width, height, data, result, fileName);
         }
-        boolean isNolimit = Settings.Global.getInt(mContext.getContentResolver(), "face_unlock_no_limit", 1) == 1;
-        if(isNolimit) {
+        boolean dump = Settings.Global.getInt(mContext.getContentResolver(), "face_unlock_dump", 0) == 1;
+        if(dump) {
             addSavedNV21(data, width, height, "nv21", fileName);
             commitSave();
         }

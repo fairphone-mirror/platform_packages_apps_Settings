@@ -24,7 +24,7 @@ public class ConfigInfoManager {
         config.storeDebugImgMode = 0;
         config.eyeOcclusion = true;
         config.eyeStatus = true;
-        config.noseOcclusion = false;
+        config.noseOcclusion = true;
         config.mouthOcclusion = true;
         config.light = true;
         config.blurness = true;
