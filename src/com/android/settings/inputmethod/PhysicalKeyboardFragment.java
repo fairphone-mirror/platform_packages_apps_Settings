@@ -129,8 +129,8 @@ public final class PhysicalKeyboardFragment extends SettingsPreferenceFragment
         mImm = Preconditions.checkNotNull(activity.getSystemService(InputMethodManager.class));
         mKeyboardAssistanceCategory = Preconditions.checkNotNull(
                 findPreference(KEYBOARD_OPTIONS_CATEGORY));
-        mShowVirtualKeyboardSwitch = Objects.requireNonNull(
-                mKeyboardAssistanceCategory.findPreference(SHOW_VIRTUAL_KEYBOARD_SWITCH));
+        // mShowVirtualKeyboardSwitch = Objects.requireNonNull(
+        //        mKeyboardAssistanceCategory.findPreference(SHOW_VIRTUAL_KEYBOARD_SWITCH));
 
         mKeyboardA11yCategory = Objects.requireNonNull(findPreference(KEYBOARD_A11Y_CATEGORY));
         mAccessibilityBounceKeys = Objects.requireNonNull(
@@ -207,8 +207,8 @@ public final class PhysicalKeyboardFragment extends SettingsPreferenceFragment
         mLastHardKeyboards.clear();
         scheduleUpdateHardKeyboards();
         mIm.registerInputDeviceListener(this, null);
-        Objects.requireNonNull(mShowVirtualKeyboardSwitch).setOnPreferenceChangeListener(
-                mShowVirtualKeyboardSwitchPreferenceChangeListener);
+        // Objects.requireNonNull(mShowVirtualKeyboardSwitch).setOnPreferenceChangeListener(
+        //        mShowVirtualKeyboardSwitchPreferenceChangeListener);
         Objects.requireNonNull(mAccessibilityBounceKeys).setOnPreferenceChangeListener(
                 mAccessibilityBounceKeysSwitchPreferenceChangeListener);
         Objects.requireNonNull(mAccessibilitySlowKeys).setOnPreferenceChangeListener(
@@ -223,7 +223,7 @@ public final class PhysicalKeyboardFragment extends SettingsPreferenceFragment
         super.onPause();
         mLastHardKeyboards.clear();
         mIm.unregisterInputDeviceListener(this);
-        Objects.requireNonNull(mShowVirtualKeyboardSwitch).setOnPreferenceChangeListener(null);
+        // Objects.requireNonNull(mShowVirtualKeyboardSwitch).setOnPreferenceChangeListener(null);
         Objects.requireNonNull(mAccessibilityBounceKeys).setOnPreferenceChangeListener(null);
         Objects.requireNonNull(mAccessibilitySlowKeys).setOnPreferenceChangeListener(null);
         Objects.requireNonNull(mAccessibilityStickyKeys).setOnPreferenceChangeListener(null);
@@ -385,8 +385,8 @@ public final class PhysicalKeyboardFragment extends SettingsPreferenceFragment
     }
 
     private void updateShowVirtualKeyboardSwitch() {
-        Objects.requireNonNull(mShowVirtualKeyboardSwitch).setChecked(
-                Secure.getInt(getContentResolver(), Secure.SHOW_IME_WITH_HARD_KEYBOARD, 0) != 0);
+        // Objects.requireNonNull(mShowVirtualKeyboardSwitch).setChecked(
+        //        Secure.getInt(getContentResolver(), Secure.SHOW_IME_WITH_HARD_KEYBOARD, 0) != 0);
     }
 
     private void updateAccessibilityBounceKeysSwitch() {
