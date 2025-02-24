@@ -94,15 +94,21 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
             }
         });
         mLiteManager = LiteManager.getInstance();
+        isNoLimit = Settings.Global.getInt(getContentResolver(), "face_unlock_no_limit", 1) == 1;
         AncFaceIdConfig config = LiteManager.getInstance().getConfig();
         config.rectTop = 0;
         config.rectLeft = 0;
         config.rectRight = 480;
         config.rectBottom = 640;
+        if(isNoLimit) {
+            config.noseOcclusion = false;
+            config.mouthOcclusion = false;
+            config.light = false;
+            config.faceIntact = false;
+        }
         LiteManager.getInstance().setConfig(config);
         mCameraWrapper = CameraFactory.getCamera();
         openCamera();
-        isNoLimit = Settings.Global.getInt(getContentResolver(), "face_unlock_no_limit", 1) == 1;
     }
 
     @Override
