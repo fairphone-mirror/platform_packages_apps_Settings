@@ -16,6 +16,11 @@ import android.os.SystemClock;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.anc.faceid.bean.AncFaceIdConfig;
 import com.anc.faceid.bean.AncFaceIdUnlockInfo;
 import com.anc.faceid.bean.AncPowerMode;
@@ -35,8 +40,7 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
     private int mFrameOffset = 0;
     private int failTimes = 0;
     private boolean isNoLimit;
-    private long mLastFaceFailedTime;
-    private static final int FACE_FAILED_INTERVAL_MS = 800; //ms
+    private List<String> failStrings = new ArrayList<>();
 
     private final CameraWrapper.CameraOpenCallback mCameraOpenListener = new CameraWrapper.CameraOpenCallback() {
         @Override
@@ -184,6 +188,7 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
     private final LiteManager.TimeoutCallback mTimeoutCallback = info -> {
         stopUnlock();
         failTimes++;
+        calculateMostFrequentString();
         Intent intent = new Intent("intent.action.faceunlock");
         if(isNoLimit) {
             intent.putExtra("faceunlock_status", 1);
@@ -214,12 +219,9 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
         @Override
         public void onFailed(int resultCode, Object object) {
             Log.d(TAG, "onFailed()...resultCode:" + resultCode);
-            if((SystemClock.uptimeMillis() - mLastFaceFailedTime) < FACE_FAILED_INTERVAL_MS) {
-                return;
-            }
             String acquiredStr = changeStatus(resultCode);
             if(acquiredStr != null) {
-                sendFaceUnlockMsg(acquiredStr);
+                failStrings.add(acquiredStr);
             }
         }
 
@@ -232,7 +234,6 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
         Intent intent = new Intent("intent.action.faceunlock.acquired");
         intent.putExtra("faceunlock_acquired", msg);
         UnlockActivity.this.sendBroadcast(intent);
-        mLastFaceFailedTime = SystemClock.uptimeMillis();
     }
 
     private String changeStatus(int code) {
@@ -282,5 +283,27 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
                 return getString(com.android.settings.R.string.face_acquired_face_multi);
         }
         return null;
+    }
+
+    private void calculateMostFrequentString() {
+        Map<String, Integer> frequencyMap = new HashMap<>();
+
+        for (String str : failStrings) {
+            frequencyMap.put(str, frequencyMap.getOrDefault(str, 0) + 1);
+        }
+
+        String mostFrequentString = null;
+        int maxCount = 0;
+        for (Map.Entry<String, Integer> entry : frequencyMap.entrySet()) {
+            if (entry.getValue() > maxCount) {
+                mostFrequentString = entry.getKey();
+                maxCount = entry.getValue();
+            }
+        }
+
+        if (mostFrequentString != null) {
+            sendFaceUnlockMsg(mostFrequentString);
+        }
+        failStrings.clear();
     }
 }
