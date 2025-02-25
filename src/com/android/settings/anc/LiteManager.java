@@ -526,11 +526,103 @@ public class LiteManager {
         }
         boolean dump = Settings.Global.getInt(mContext.getContentResolver(), "face_unlock_dump", 0) == 1;
         if(dump) {
-            addSavedNV21(data, width, height, "nv21", fileName);
+            addSavedNV21(data, width, height, "nv21", fileName + getUnlockStatus(result));
             commitSave();
         }
 
         return result;
+    }
+
+    private String getUnlockStatus(int result){
+        AncFaceIdStatus status = AncFaceIdStatus.valueOf(result);
+        String unlockStatus = null;
+        switch (status) {
+            case ANC_UNLOCK_OK:
+                unlockStatus = "unlock_ok";
+                break;
+            case ANC_UNLOCK_LIVENESS_FAILURE:
+                unlockStatus = "liveness_failure";
+                break;
+            case ANC_UNLOCK_COMPARE_FAILURE:
+                unlockStatus = "compare_failure";
+                break;
+            case ANC_UNLOCK_FACE_OFFSET_BOTTOM:
+                unlockStatus = "offset_bottom";
+                break;
+            case ANC_UNLOCK_FACE_OFFSET_LEFT:
+                unlockStatus = "offset_left";
+                break;
+            case ANC_UNLOCK_FACE_OFFSET_RIGHT:
+                unlockStatus = "offset_right";
+                break;
+            case ANC_UNLOCK_FACE_OFFSET_TOP:
+                unlockStatus = "offset_top";
+                break;
+            case ANC_UNLOCK_FACE_BAD_QUALITY:
+                unlockStatus = "bad_quality";
+                break;
+            case ANC_UNLOCK_FACE_SCALE_TOO_LARGE:
+                unlockStatus = "scale_too_large";
+                break;
+            case ANC_UNLOCK_FACE_SCALE_TOO_SMALL:
+                unlockStatus = "scale_too_small";
+                break;
+            case ANC_UNLOCK_FAILURE:
+                unlockStatus = "unlock_failure";
+                break;
+            case ANC_UNLOCK_FACE_NOT_FOUND:
+                unlockStatus = "face_not_found";
+                break;
+            case ANC_UNLOCK_ATTR_BLUR:
+                unlockStatus = "blur";
+                break;
+            case ANC_UNLOCK_ATTR_EYE_OCCLUSION:
+                unlockStatus = "eye_occlusion";
+                break;
+            case ANC_UNLOCK_ATTR_EYE_CLOSE:
+                unlockStatus = "eye_close";
+                break;
+            case ANC_UNLOCK_ATTR_MOUTH_OCCLUSION:
+                unlockStatus = "mouth_occlusion";
+                break;
+            case ANC_UNLOCK_ATTR_NOSE_OCCLUSION:
+                unlockStatus = "nose_occlusion";
+                break;
+            case ANC_UNLOCK_FACE_ROTATED_LEFT:
+                unlockStatus = "rotated_left";
+                break;
+            case ANC_UNLOCK_FACE_ROTATED_RIGHT:
+                unlockStatus = "rotated_right";
+                break;
+            case ANC_UNLOCK_FACE_DOWN:
+                unlockStatus = "face_down";
+                break;
+            case ANC_UNLOCK_FACE_RISE:
+                unlockStatus = "face_rise";
+                break;
+            case ANC_UNLOCK_KEEP:
+                unlockStatus = "keep";
+                break;
+            case ANC_UNLOCK_FACE_MULTI:
+                unlockStatus = "face_multi";
+                break;
+            case ANC_UNLOCK_FACE_NOT_COMPLETE:
+                unlockStatus = "face_not_complete";
+                break;
+            case ANC_UNLOCK_DARKLIGHT:
+                unlockStatus = "darklight";
+                break;
+            case ANC_UNLOCK_HIGHLIGHT:
+                unlockStatus = "highlight";
+                break;
+            case ANC_UNLOCK_HALF_SHADOW:
+                unlockStatus = "half_shadow";
+                break;
+            default:
+                unlockStatus = "unkown";
+                break;
+        }
+        return unlockStatus;
     }
 
     int mLastResult = -1;
