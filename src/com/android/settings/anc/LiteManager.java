@@ -463,6 +463,8 @@ public class LiteManager {
                 }
             });
         }
+        String version = ancFaceIdApi.getVersion();
+        Log.d(TAG,"Jigan SDK version:"+version);
         return result;
     }
 
