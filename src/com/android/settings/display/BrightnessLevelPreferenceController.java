@@ -51,6 +51,7 @@ import com.android.settingslib.core.lifecycle.LifecycleObserver;
 import com.android.settingslib.core.lifecycle.events.OnStart;
 import com.android.settingslib.core.lifecycle.events.OnStop;
 import com.android.settingslib.transition.SettingsTransitionHelper;
+import static com.android.settingslib.display.BrightnessUtils.brightnessLinearToSliderVal;
 
 import java.text.NumberFormat;
 
@@ -177,7 +178,9 @@ public class BrightnessLevelPreferenceController extends BasePreferenceControlle
         int value = 0;
         final BrightnessInfo info = mContext.getDisplay().getBrightnessInfo();
         if (info != null) {
-            value = convertLinearToGammaFloat(info.brightness, info.brightnessMinimum,
+            //value = convertLinearToGammaFloat(info.brightness, info.brightnessMinimum,
+                    //info.brightnessMaximum);
+            value = brightnessLinearToSliderVal(info.brightness, info.brightnessMinimum,
                     info.brightnessMaximum);
         }
         return getPercentage(value, GAMMA_SPACE_MIN, GAMMA_SPACE_MAX);
