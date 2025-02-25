@@ -213,13 +213,12 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
             stopUnlock();
             sendFaceUnlockMsg(getString(com.android.settings.R.string.face_unlock_success));
             AncFaceIdUnlockInfo info = (AncFaceIdUnlockInfo) object;
-            Intent intent = new Intent("intent.action.faceunlock");
-            intent.putExtra("faceunlock_status", 0);
-            UnlockActivity.this.sendBroadcast(intent);
             new Handler().postDelayed(() -> {
+                Intent intent = new Intent("intent.action.faceunlock");
+                intent.putExtra("faceunlock_status", 0);
+                UnlockActivity.this.sendBroadcast(intent);
                 UnlockActivity.this.finish();
-            }, 500);
-
+            }, 200);
         }
 
         @Override
