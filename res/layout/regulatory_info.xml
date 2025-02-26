@@ -21,7 +21,6 @@
         android:adjustViewBounds="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
         android:contentDescription="@string/regulatory_labels"
         android:src="@drawable/regulatory_info" />
 </ScrollView>
