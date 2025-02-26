@@ -17,11 +17,11 @@ public class Constants {
     public final static String PREVIEW_ENABLE = "preview_enable";
 
     public final static int ORIENTATION_90 = 90;
-    public final static int UNLOCK_IGNORED_AHEAD_FRAME = 5;
+    public final static int UNLOCK_IGNORED_AHEAD_FRAME = 10;
     public final static int FEATURE_MAX_COUNT = 20;
 
     public final static int APP_EXIT_TIME = 2000; // ms
-    public final static int UNLOCK_TIMEOUT = 5000; // ms
+    public final static int UNLOCK_TIMEOUT = 10000; // ms
 
     public final static String UNLOCK_COUNT_KEY = "unlock_count";
 

@@ -5496,13 +5496,10 @@ SPDX-License-Identifier: BSD-3-Clause-Clear -->
             android:excludeFromRecents="true"
             android:exported="false"
             android:screenOrientation="portrait" />
-        <activity
-            android:name="com.android.settings.anc.unlock.UnlockActivity"
-            android:excludeFromRecents="true"
+        <service
+            android:name="com.android.settings.anc.unlock.UnlockService"
             android:exported="true"
-            android:taskAffinity="com.android.settings.unlock"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
+            android:taskAffinity="com.android.settings.unlock" />
 
         <activity android:name="com.android.settings.fuelgauge.batterysaver.BatsActivity"
             android:exported="true"

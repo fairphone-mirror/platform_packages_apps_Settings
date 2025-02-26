@@ -278,6 +278,7 @@ public class LiteManager {
 
                 // notify caller in UI thread
                 sendResultMessage(result, callBack, EVENT_COMPARE);
+                commitSave();
             }
         });
     }
@@ -397,7 +398,7 @@ public class LiteManager {
         }
 
         ancFaceIdApi.init(dir.getAbsolutePath(), null);
-        ancFaceIdApi.setLogLevel(1);
+        ancFaceIdApi.setLogLevel(4);
         //(3)customConfig
         AncFaceIdConfig config = ConfigInfoManager.getInstance().genCustomConfig(mContext);
 
@@ -529,7 +530,7 @@ public class LiteManager {
         boolean dump = Settings.Global.getInt(mContext.getContentResolver(), "face_unlock_dump", 0) == 1;
         if(dump) {
             addSavedNV21(data, width, height, "nv21", fileName + getUnlockStatus(result));
-            commitSave();
+            //commitSave();
         }
 
         return result;
