@@ -38,7 +38,7 @@ import com.bumptech.glide.Glide;
  * information (text will be centered in the dialog).
  */
 class RegulatoryInfoDisplayActivity : Activity() {
-    val sRegulatoryUrl = "https://techsupport.fairphone.com/labels/FP4_e-Label.png";
+    val sRegulatoryUrl = "https://techsupport.fairphone.com/labels/FP5_e-Label.png";
 
     /** Display the regulatory info graphic in a dialog window. */
     override fun onCreate(savedInstanceState: Bundle?) {
