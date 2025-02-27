@@ -227,5 +227,11 @@
         <SwitchPreference
             android:key="pocket_mode"
             android:title="@string/pocket_mode"/>
+
+        <!-- Add for FPS-4 begin-->
+        <ListPreference
+            android:key="peak_refresh_rate_list"
+            android:title="@string/peak_refresh_rate_list_title"/>
+        <!-- Add for FPS-4 end-->
     </PreferenceCategory>
 </PreferenceScreen>

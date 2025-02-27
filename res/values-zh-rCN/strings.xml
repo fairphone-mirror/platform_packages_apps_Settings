@@ -5437,4 +5437,6 @@
     <string name="face_acquired_eye_close">请不要闭眼</string>
     <string name="face_acquired_bad_quality">人脸不完整</string>
     <string name="face_acquired_face_multi">多张人脸</string>
+    <!-- Add for FPS-4 -->
+    <string name="peak_refresh_rate_list_title">刷新率</string>
 </resources>
