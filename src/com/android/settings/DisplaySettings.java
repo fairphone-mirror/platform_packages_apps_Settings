@@ -28,6 +28,7 @@ import com.android.settings.display.BrightnessLevelPreferenceController;
 import com.android.settings.display.CameraGesturePreferenceController;
 import com.android.settings.display.DisplayScreen;
 import com.android.settings.display.LiftToWakePreferenceController;
+import com.android.settings.display.PeakRefreshRateListPreferenceController;
 import com.android.settings.display.ShowOperatorNamePreferenceController;
 import com.android.settings.display.TapToWakePreferenceController;
 import com.android.settings.display.ThemePreferenceController;
@@ -92,6 +93,8 @@ public class DisplaySettings extends DashboardFragment {
         //Add for FPS-183
         controllers.add(new SunlightModePreferenceController(context));
         controllers.add(new PocketModePreferenceController(context));
+        //Add for FPS-4
+        controllers.add(new PeakRefreshRateListPreferenceController(context));
         return controllers;
     }
 

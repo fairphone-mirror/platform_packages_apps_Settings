@@ -14747,4 +14747,6 @@ Data usage charges may apply.</string>
     <string name="face_acquired_eye_close">eye is closed</string>
     <string name="face_acquired_bad_quality">Face incomplete</string>
     <string name="face_acquired_face_multi">multi faces</string>
+    <!-- Add for FPS-4 -->
+    <string name="peak_refresh_rate_list_title">Refresh Rate</string>
 </resources>
