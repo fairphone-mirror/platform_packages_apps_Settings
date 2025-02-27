@@ -59,7 +59,7 @@ public class AncSettings extends SettingsBaseActivity {
         }
         mDialogUtil = new DialogUtil(this);
         mHandler = new Handler();
-        LiteManager.getInstance().initLite(this, new LiteManager.Callback() {
+        LiteManager.getInstance().initLite(this, false, new LiteManager.Callback() {
             @Override
             public void onSuccess(Object object) {
                 checkFaceStatus();

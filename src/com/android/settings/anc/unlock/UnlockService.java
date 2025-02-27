@@ -75,7 +75,7 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         filter.addAction(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
         registerReceiver(mBroadcastReceiver, filter, Context.RECEIVER_EXPORTED);
-        LiteManager.getInstance().initLite(this, new LiteManager.Callback() {
+        LiteManager.getInstance().initLite(this, true, new LiteManager.Callback() {
             @Override
             public void onSuccess(Object object) {
 
@@ -98,12 +98,6 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
         config.rectLeft = 0;
         config.rectRight = 480;
         config.rectBottom = 640;
-        if(isNoLimit) {
-            config.noseOcclusion = false;
-            config.mouthOcclusion = false;
-            config.light = false;
-            config.faceIntact = false;
-        }
         LiteManager.getInstance().setConfig(config);
         mCameraWrapper = CameraFactory.getCamera();
         openCamera();

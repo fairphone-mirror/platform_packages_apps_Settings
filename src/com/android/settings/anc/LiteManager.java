@@ -135,7 +135,7 @@ public class LiteManager {
      * @param context  must be set to nonnull and Application context is preferred.
      * @param callBack
      */
-    public void initLite(@NonNull final Context context, final Callback callBack) {
+    public void initLite(@NonNull final Context context, final boolean isUnlock, final Callback callBack) {
         // check if params is invalid
         if (null == context) {
             Log.e(TAG, "context is null");
@@ -150,7 +150,7 @@ public class LiteManager {
         mHandler.post(new Runnable() {
             @Override
             public void run() {
-                int result = handleInit();
+                int result = handleInit(isUnlock);
 
                 // notify caller in UI thread
                 sendResultMessage(result, callBack, EVENT_INIT);
@@ -377,7 +377,7 @@ public class LiteManager {
     }
 
     // loadModel AncFaceIdApi SDK
-    private int handleInit() {
+    private int handleInit(boolean isUnlock) {
 
         //(1)get folder for save files of face unlock
         File dir = mContext.getExternalFilesDir(Constants.UNLOCK_FACE_FOLDER_PATH);
@@ -400,7 +400,7 @@ public class LiteManager {
         ancFaceIdApi.init(dir.getAbsolutePath(), null);
         ancFaceIdApi.setLogLevel(4);
         //(3)customConfig
-        AncFaceIdConfig config = ConfigInfoManager.getInstance().genCustomConfig(mContext);
+        AncFaceIdConfig config = ConfigInfoManager.getInstance().genCustomConfig(mContext, isUnlock);
 
         String targetModel = CommonUtil.readModelInfo(mContext, R.raw.model_config).get(2);//BuildConfig.ANC_MODEL_FILE;
         String[] partModel = targetModel.split("-");
