@@ -26,7 +26,7 @@ public class DeleteService extends IntentService {
             final int mainId = Settings.System.getInt(getContentResolver(), "enroll_main_face_id", 0);
             final int secondId = Settings.System.getInt(getContentResolver(), "enroll_second_face_id", 0);
             if (mainId > 0 || secondId > 0) {
-                LiteManager.getInstance().initLite(getApplicationContext(), new LiteManager.Callback() {
+                LiteManager.getInstance().initLite(getApplicationContext(), false, new LiteManager.Callback() {
                     @Override
                     public void onSuccess(Object object) {
                         if (mainId > 0) {

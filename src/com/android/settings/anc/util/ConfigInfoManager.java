@@ -19,17 +19,17 @@ public class ConfigInfoManager {
 
     }
 
-    public AncFaceIdConfig genCustomConfig(Context context) {
+    public AncFaceIdConfig genCustomConfig(Context context,boolean isUnlock) {
         AncFaceIdConfig config = LiteManager.getInstance().getConfig();
         config.storeDebugImgMode = 0;
         config.eyeOcclusion = true;
         config.eyeStatus = true;
-        config.noseOcclusion = true;
-        config.mouthOcclusion = true;
-        config.light = true;
+        config.noseOcclusion = isUnlock ? false : true;
+        config.mouthOcclusion = isUnlock ? false : true;
+        config.light = isUnlock ? false : true;
         config.blurness = true;
         config.compareBlurness = false;
-        config.faceIntact = true;
+        config.faceIntact = isUnlock ? false : true;
         config.bigCpuCore = AncConstants.ANC_UNLOCK_BIG_CPU_CORE_HIGH;
         config.respirator = true;
 

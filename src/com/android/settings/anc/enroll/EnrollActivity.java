@@ -182,7 +182,7 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
                 showAttentionDialog();
             }
         });
-        LiteManager.getInstance().initLite(this, new LiteManager.Callback() {
+        LiteManager.getInstance().initLite(this, false, new LiteManager.Callback() {
 
             @Override
             public void onSuccess(Object object) {
