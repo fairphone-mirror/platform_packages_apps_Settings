@@ -9,6 +9,8 @@ import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraDevice;
 import android.hardware.camera2.CameraManager;
 import android.hardware.camera2.CaptureRequest;
+import android.hardware.camera2.CaptureResult;
+import android.hardware.camera2.TotalCaptureResult;
 import android.media.Image;
 import android.media.ImageReader;
 import android.os.Handler;
@@ -56,6 +58,7 @@ public class Camera2WrapperImpl extends CameraWrapper {
     private SurfaceHolder mSurfaceHolder;
 
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
+    private boolean isAEReady = false;
 
     static {
         ORIENTATIONS.append(Surface.ROTATION_0, 90);
@@ -74,7 +77,7 @@ public class Camera2WrapperImpl extends CameraWrapper {
                 if (checkNotNull(mPreviewCallback) && image != null) {
                     byte[] yuvData = new byte[image.getHeight() * image.getWidth() * 3 / 2];
                     AncImageHelper.image2NV21(image, yuvData);
-                    if(mPreviewCallback != null){
+                    if(mPreviewCallback != null && isAEReady){
                         mPreviewCallback.onPreviewFrame(yuvData);
                     }
                 }
@@ -321,6 +324,7 @@ public class Camera2WrapperImpl extends CameraWrapper {
             surfaces.add(mSurfaceHolder.getSurface());
         }
 
+        isAEReady = false;
         try {
             // create Capture request
             final CaptureRequest.Builder builder = mCameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW);
@@ -343,8 +347,28 @@ public class Camera2WrapperImpl extends CameraWrapper {
 
                         mCameraCaptureSession = session;
 
+                        CameraCaptureSession.CaptureCallback captureCallback =
+                                new CameraCaptureSession.CaptureCallback() {
+                            @Override
+                            public void onCaptureProgressed(CameraCaptureSession session,
+                                    CaptureRequest request, CaptureResult partialResult) {
+                                Integer aeState = partialResult.get(CaptureResult.CONTROL_AE_STATE);
+                                if (aeState != null &&
+                                        (aeState == CaptureRequest.CONTROL_AE_STATE_CONVERGED ||
+                                        aeState == CaptureRequest.CONTROL_AE_STATE_FLASH_REQUIRED)) {
+                                    isAEReady = true;
+                                } else {
+                                    isAEReady = false;
+                                }
+                            }
+
+                            @Override
+                            public void onCaptureCompleted(CameraCaptureSession session,
+                                    CaptureRequest request, TotalCaptureResult result) {
+                            }
+                        };
                         // send request
-                        session.setRepeatingRequest(builder.build(), null, mHandler);
+                        session.setRepeatingRequest(builder.build(), captureCallback, mHandler);
                     } catch (CameraAccessException e) {
                         e.printStackTrace();
                     }

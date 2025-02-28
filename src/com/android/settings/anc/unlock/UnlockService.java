@@ -118,7 +118,7 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
 
     @Override
     public void onPreviewFrame(final byte[] bytes) {
-        if (++mFrameOffset < Constants.UNLOCK_IGNORED_AHEAD_FRAME ||
+        if (/*++mFrameOffset < Constants.UNLOCK_IGNORED_AHEAD_FRAME ||*/
                 !LiteManager.getInstance().canCompare() || (!isNoLimit && failTimes >= 3)) {
             return;
         }
