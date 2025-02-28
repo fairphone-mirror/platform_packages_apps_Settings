@@ -284,8 +284,10 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
                 return getString(com.android.settings.R.string.face_acquired_eye_close);
             case ANC_UNLOCK_FACE_MULTI:
                 return getString(com.android.settings.R.string.face_acquired_face_multi);
+            case ANC_UNLOCK_FAILURE:
+                return getString(com.android.settings.R.string.face_acquired_face_failure);
         }
-        return null;
+        return getString(com.android.settings.R.string.face_acquired_face_failure);
     }
 
     private void calculateMostFrequentString() {
