@@ -136,8 +136,8 @@ public class ModuleDeviceInfo extends Activity {
     }
 
     private String readRam() {
-        String model = readHwInfo("sys/emkit/info/emkit_memory");
-        String brand = readHwInfo("sys/emkit/info/emkit_memory_vendor");
+        String model = readHwInfo("/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:49476/model");
+        String brand = readHwInfo("/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:49476/vendor");
         String ramInfo = "model : " + model + "\n" + "brand : " + brand;
         return ramInfo;
     }
