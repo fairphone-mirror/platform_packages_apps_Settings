@@ -15,6 +15,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.provider.Settings;
 import android.os.SystemClock;
+import android.os.SystemProperties;
 
 import androidx.annotation.Nullable;
 
@@ -75,6 +76,7 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         filter.addAction(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
         registerReceiver(mBroadcastReceiver, filter, Context.RECEIVER_EXPORTED);
+        SystemProperties.set("odm.face_unlock", "1");
         LiteManager.getInstance().initLite(this, true, new LiteManager.Callback() {
             @Override
             public void onSuccess(Object object) {
@@ -132,6 +134,7 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
     @Override
     public void onDestroy() {
         super.onDestroy();
+        SystemProperties.set("odm.face_unlock", "0");
         if (mCameraWrapper != null) {
             mCameraWrapper.stopPreview();
         }
