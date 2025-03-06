@@ -36,6 +36,7 @@ import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
 import com.android.settings.display.PocketModePreferenceController;
+import com.android.settings.display.TouchSensensitivityPreferenceController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -91,6 +92,7 @@ public class DisplaySettings extends DashboardFragment {
         controllers.add(new PocketModePreferenceController(context));
         //Add for FPS-4
         controllers.add(new PeakRefreshRateListPreferenceController(context));
+        controllers.add(new TouchSensensitivityPreferenceController(context));
         return controllers;
     }
 

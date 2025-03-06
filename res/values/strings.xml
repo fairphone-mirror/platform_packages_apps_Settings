@@ -13939,4 +13939,7 @@
     <string name="face_acquired_face_failure">Face unlock failed</string>
     <!-- Add for FPS-4 -->
     <string name="peak_refresh_rate_list_title">Refresh Rate</string>
+
+    <string name="display_touch_sensitivity_title">Touch sensitivity</string>
+    <string name="display_touch_sensitivity_summary">Increase the touch sensitivity of the screen for use with screen protectors.</string>
 </resources>

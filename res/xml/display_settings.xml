@@ -228,6 +228,11 @@
             android:key="pocket_mode"
             android:title="@string/pocket_mode"/>
 
+        <SwitchPreference
+            android:key="touch_sensitivity"
+            android:title="@string/display_touch_sensitivity_title"
+            android:summary="@string/display_touch_sensitivity_summary"/>
+
         <!-- Add for FPS-4 begin-->
         <ListPreference
             android:key="peak_refresh_rate_list"
