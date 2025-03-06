@@ -529,7 +529,7 @@ public class LiteManager {
         }
         boolean dump = Settings.Global.getInt(mContext.getContentResolver(), "face_unlock_dump", 0) == 1;
         if(dump) {
-            addSavedNV21(data, width, height, "nv21", fileName + getUnlockStatus(result));
+            addSavedNV21(data, width, height, "nv21", fileName + getUnlockStatus(result) + result);
             //commitSave();
         }
 
