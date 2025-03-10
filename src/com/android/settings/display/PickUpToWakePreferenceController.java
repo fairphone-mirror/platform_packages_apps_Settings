@@ -28,7 +28,7 @@ public class PickUpToWakePreferenceController extends AbstractPreferenceControll
     @Override
     public boolean isAvailable() {
         SensorManager sensors = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
-        return sensors != null && sensors.getDefaultSensor(Sensor.TYPE_PICK_UP_GESTURE) != null;
+        return sensors != null && sensors.getDefaultSensor(Sensor.TYPE_TILT_DETECTOR) != null;
     }
 
     @Override
