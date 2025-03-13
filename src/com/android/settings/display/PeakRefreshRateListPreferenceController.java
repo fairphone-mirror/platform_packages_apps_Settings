@@ -144,6 +144,9 @@ public class PeakRefreshRateListPreferenceController extends AbstractPreferenceC
             }
         });
         for (Display.Mode mode : modeList) {
+            if (Math.round(mode.getRefreshRate()) < DEFAULT_REFRESH_RATE) {
+                continue;
+            }
             mPeakRefreshRates.add(Float.valueOf(Math.round(mode.getRefreshRate())));
             mPeakRefreshRateEntries.add("" + ((int)Math.round(mode.getRefreshRate())) + " HZ");
             mPeakRefreshRateValues.add(String.valueOf((int)mode.getRefreshRate()));
@@ -176,7 +179,7 @@ public class PeakRefreshRateListPreferenceController extends AbstractPreferenceC
         //Settings.System.putInt(mContext.getContentResolver(), SETTINGS_KEY_DYNAMIC_REFRESH_RATE_ENABLE, 0);
 
         float refreshRate = (float) Math.round(Float.valueOf((String)newValue));
-        Settings.System.putFloat(mContext.getContentResolver(), Settings.System.MIN_REFRESH_RATE, refreshRate);
+        Settings.System.putFloat(mContext.getContentResolver(), Settings.System.MIN_REFRESH_RATE, 1);
         Settings.System.putFloat(mContext.getContentResolver(), Settings.System.PEAK_REFRESH_RATE, refreshRate);
         refreshSummary(preference);
         return true;

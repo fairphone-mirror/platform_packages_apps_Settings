@@ -133,6 +133,12 @@
         android:title="@string/category_name_display_controls"
         android:order="-150">
 
+        <!-- Add for FPS-4 begin-->
+        <ListPreference
+            android:key="peak_refresh_rate_list"
+            android:title="@string/peak_refresh_rate_list_title"/>
+        <!-- Add for FPS-4 end-->
+
         <!--
             Standard auto-rotation preference that will be shown when device state based
             auto-rotation settings are NOT available.
@@ -232,11 +238,5 @@
             android:key="touch_sensitivity"
             android:title="@string/display_touch_sensitivity_title"
             android:summary="@string/display_touch_sensitivity_summary"/>
-
-        <!-- Add for FPS-4 begin-->
-        <ListPreference
-            android:key="peak_refresh_rate_list"
-            android:title="@string/peak_refresh_rate_list_title"/>
-        <!-- Add for FPS-4 end-->
     </PreferenceCategory>
 </PreferenceScreen>
