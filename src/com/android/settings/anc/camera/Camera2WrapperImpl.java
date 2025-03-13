@@ -25,6 +25,7 @@ import androidx.annotation.NonNull;
 
 import com.anc.faceid.utils.AncImageHelper;
 
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,6 +76,15 @@ public class Camera2WrapperImpl extends CameraWrapper {
             Image image = reader.acquireNextImage();
             try {
                 if (checkNotNull(mPreviewCallback) && image != null) {
+                    Log.d(TAG, "Image Received: Width=" + image.getWidth() + ", Height=" + image.getHeight());
+                    Log.d(TAG, "Image format: " + image.getFormat());
+                    Image.Plane[] planes = image.getPlanes();
+                    for (int i = 0; i < planes.length; i++) {
+                        ByteBuffer buffer = planes[i].getBuffer();
+                        Log.d(TAG, "Plane " + i + ": RowStride=" + planes[i].getRowStride() +
+                            ", PixelStride=" + planes[i].getPixelStride() +
+                            ", BufferSize=" + buffer.remaining());
+                    }
                     byte[] yuvData = new byte[image.getHeight() * image.getWidth() * 3 / 2];
                     AncImageHelper.image2NV21(image, yuvData);
                     if(mPreviewCallback != null && isAEReady){

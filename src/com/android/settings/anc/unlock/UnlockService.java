@@ -48,6 +48,7 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
     private final CameraWrapper.CameraOpenCallback mCameraOpenListener = new CameraWrapper.CameraOpenCallback() {
         @Override
         public void onOpenSuccess() {
+            Log.d(TAG,"Camera open success");
             // set orientation
             mCameraWrapper.setDisplayOrientation(Constants.ORIENTATION_90);
             mCameraWrapper.startPreview(null);
@@ -56,10 +57,12 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
 
         @Override
         public void onDisconnected() {
+            Log.d(TAG,"Camera disconnected");
         }
 
         @Override
         public void onOpenFailed() {
+            Log.d(TAG,"Camera onOpenFailed");
         }
     };
 
@@ -71,6 +74,7 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
     @Override
     public void onCreate() {
         super.onCreate();
+        Log.d(TAG,"onCreate");
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_USER_PRESENT);
         filter.addAction(Intent.ACTION_SCREEN_OFF);
@@ -80,12 +84,12 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
         LiteManager.getInstance().initLite(this, true, new LiteManager.Callback() {
             @Override
             public void onSuccess(Object object) {
-
+                Log.d(TAG,"init success");
             }
 
             @Override
             public void onFailed(int resultCode, Object object) {
-
+                Log.d(TAG,"init onFailed:"+resultCode);
             }
 
             @Override
@@ -134,6 +138,7 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
     @Override
     public void onDestroy() {
         super.onDestroy();
+        Log.d(TAG,"onDestroy");
         SystemProperties.set("odm.face_unlock", "0");
         if (mCameraWrapper != null) {
             mCameraWrapper.stopPreview();
@@ -178,6 +183,7 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
         if (mLiteManager == null) {
             return;
         }
+        Log.d(TAG,"start face Unlock");
         mLiteManager.prepare(AncPowerMode.ANC_UNLOCK_POWER_HIGH);
 
         LiteManager.getInstance().setCompareTimeout(Constants.UNLOCK_TIMEOUT, mTimeoutCallback);
