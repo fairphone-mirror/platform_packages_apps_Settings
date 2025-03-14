@@ -42,13 +42,13 @@ public class OemLockVerifier {
     public static final int HTTP_VERIFY_FAIL_NO_SUCH_PHONE = 404;
     public static final int HTTP_VERIFY_FAIL_UNKNOWN = 900;
 
-    private static final String SVR_URL = "https://factory.fairphone.com/api/unlock-codes";
-    private static final String DEBUG_SVR_URL = "https://app-26f9cbc0-2444-4200-a713-6575e61635b4.cleverapps.io/api/unlock-codes";
+    private static final String SVR_URL = "https://factory.service.fairphone.com/api/unlock-codes";
+    private static final String DEBUG_SVR_URL = "https://staging.factory.service.fairphone.com/api/unlock-codes";
 
     //private static final String DEBOUG_X_API_KEY = "E/xUciBHocHSzETALqTk9Q==";
     //private static final String X_API_KEY = "p0C44XA4efzIqbchuzGpYw==";
     //private static final String DEBUG_X_API_KEY_FOR_FP5_TEST = "D6CEhOGPjYQxfu24lvkMXw==";
-    private static final String DEBUG_X_API_KEY_FOR_FP5_RELEASE = "vGLa6e2U4hQ1Nh/Fe6nuXg==";
+    private static final String DEBUG_X_API_KEY_FOR_FP5_RELEASE = "CiXBt7r7D1J5T7vTSWNqzg==";
 
     //private static final String FP4_RELEASE_API_KEY = "nYhYMjXvVRd8SCNwPOTNuQ==";//warning !!!  Do not in code now !!!!!!
 
