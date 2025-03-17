@@ -18,6 +18,7 @@ package com.android.settings;
 
 import android.app.Activity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.util.Log;
@@ -115,6 +116,14 @@ public class ModuleDeviceInfo extends Activity {
     }
 
     private String readNfc() {
+        // Modified by yingsen.zhang 20250317 for FPS-1179 begin
+        if ("FP6".equals(Build.PRODUCT)) {
+            if (new File("/sys/bus/i2c/drivers/sec-nfc/").isDirectory()) {
+                return "SAMSUNGNFCD";
+            }
+        }
+        // Modified by yingsen.zhang 20250317 for FPS-1179 end
+
         if (new File("/sys/bus/i2c/drivers/st21nfc").isDirectory()) {
             return "ST21NFCD";
         } else {
