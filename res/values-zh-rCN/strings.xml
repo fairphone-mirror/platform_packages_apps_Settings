@@ -5858,4 +5858,9 @@
     <string name="face_acquired_face_failure">人脸解锁失败</string>
     <!-- Add for FPS-4 -->
     <string name="peak_refresh_rate_list_title">刷新率</string>
+
+    <!--[FEATURE]-Add-Begin by shaopan.tang 2025-03-20 FPS-1393 VONR switch -->
+    <string name="prefer_vonr_mode_title">打开/关闭 VoNR</string>
+    <string name="prefer_vonr_mode_summary">打开或者关闭VoNR</string>
+    <!--[FEATURE]-Add-End by shaopan.tang -->
 </resources>

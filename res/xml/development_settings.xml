@@ -352,6 +352,14 @@
         android:title="@string/debug_networking_category"
         android:order="400">
 
+        <!--[FEATURE]-Add-Begin by shaopan.tang 2025-03-20 FPS-1393 VONR switch -->
+        <com.android.settingslib.RestrictedPreference
+            android:fragment="com.android.settings.development.PreferVonrSettings"
+            android:key="prefer_vonr_mode"
+            android:title="@string/prefer_vonr_mode_title"
+            android:summary="@string/prefer_vonr_mode_summary"/>
+        <!--[FEATURE]-Add-End by shaopan.tang -->
+
         <SwitchPreferenceCompat
             android:key="wifi_display_certification"
             android:title="@string/wifi_display_certification"
