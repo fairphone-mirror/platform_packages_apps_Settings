@@ -13940,6 +13940,11 @@
     <!-- Add for FPS-4 -->
     <string name="peak_refresh_rate_list_title">Refresh Rate</string>
 
+    <!--[FEATURE]-Add-Begin by shaopan.tang 2025-03-20 FPS-1393 VONR switch -->
+    <string name="prefer_vonr_mode_title">Enable/Disable VoNR</string>
+    <string name="prefer_vonr_mode_summary">Enable or disable VoNR</string>
+    <!--[FEATURE]-Add-End by shaopan.tang -->
+
     <string name="display_touch_sensitivity_title">Touch sensitivity</string>
     <string name="display_touch_sensitivity_summary">Increase the touch sensitivity of the screen for use with screen protectors.</string>
 </resources>
