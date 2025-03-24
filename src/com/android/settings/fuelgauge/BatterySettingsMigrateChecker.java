@@ -37,6 +37,12 @@ import android.content.pm.ResolveInfo;
 import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.SystemProperties;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.io.InputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
+import android.os.UserHandle;
 
 /** Execute battery settings migration tasks in the device booting stage. */
 public final class BatterySettingsMigrateChecker extends BroadcastReceiver {
@@ -108,7 +114,29 @@ public final class BatterySettingsMigrateChecker extends BroadcastReceiver {
                     Log.w("SetdefaultFiles", "Failed to set ", e);
                 }
             }
+
+            String SwitchKey = readSwitchKeyState();
+            Intent intent_switch = new Intent("com.fairphone.action.SWITCH_STATE_CHANGED");
+            intent_switch.putExtra("com.fairphone.extra.SWITCH_STATUS", "0".equals(SwitchKey) ? "UP" : "DOWN");
+            intent_switch.addFlags(Intent.FLAG_RECEIVER_NO_ABORT | Intent.FLAG_RECEIVER_INCLUDE_BACKGROUND 
+                    | Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
+            context.sendBroadcastAsUser(intent_switch, UserHandle.ALL);
         }
+    }
+
+    private String readSwitchKeyState(){
+        String state = "0";
+        try {
+            InputStream is = new FileInputStream("/sys/bus/platform/drivers/gpio-keys/soc:gpio_keys/switch_state");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            state = reader.readLine();
+            reader.close();
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e(TAG, "get SwitchKeyState fail" + e);
+        }
+        return state;
     }
 
     static void verifyConfiguration(Context context) {
