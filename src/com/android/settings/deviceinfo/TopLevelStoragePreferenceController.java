@@ -20,6 +20,7 @@ import android.content.Context;
 import android.os.UserManager;
 import android.os.storage.StorageManager;
 import android.text.format.Formatter;
+import android.text.TextUtils;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.preference.Preference;
@@ -41,6 +42,8 @@ public class TopLevelStoragePreferenceController extends BasePreferenceControlle
     private final StorageManager mStorageManager;
     private final StorageManagerVolumeProvider mStorageManagerVolumeProvider;
 
+    private String oldSummary = "";
+
     public TopLevelStoragePreferenceController(Context context, String preferenceKey) {
         super(context, preferenceKey);
         mStorageManager = mContext.getSystemService(StorageManager.class);
@@ -57,6 +60,7 @@ public class TopLevelStoragePreferenceController extends BasePreferenceControlle
         if (preference == null) {
             return;
         }
+        android.util.Log.i("debugstorage", "refreshSummary");
 
         refreshSummaryThread(preference);
     }
@@ -69,7 +73,13 @@ public class TopLevelStoragePreferenceController extends BasePreferenceControlle
         long cachedUsedSize = storageCacheHelper.retrieveUsedSize();
         long cachedTotalSize = storageCacheHelper.retrieveCachedSize().totalSize;
         if (cachedUsedSize != 0 && cachedTotalSize != 0) {
-            preference.setSummary(getSummary(cachedUsedSize, cachedTotalSize));
+            String summary = getSummary(cachedUsedSize, cachedTotalSize);
+            android.util.Log.i("StoragePreference", "refreshSummaryThread summary cached = " + summary + "; oldSummary = " + oldSummary);
+
+            if (TextUtils.isEmpty(oldSummary)) {
+                oldSummary = summary;
+            }
+            preference.setSummary(oldSummary);
         }
 
         return ThreadUtils.postOnBackgroundThread(() -> {
@@ -79,8 +89,10 @@ public class TopLevelStoragePreferenceController extends BasePreferenceControlle
             long usedBytes = info.totalBytes - info.freeBytes;
             storageCacheHelper.cacheUsedSize(usedBytes);
             ThreadUtils.postOnMainThread(() -> {
-                preference.setSummary(
-                        getSummary(usedBytes, info.totalBytes));
+                String summary = getSummary(usedBytes, info.totalBytes);
+                android.util.Log.i("StoragePreference", "refreshSummaryThread summary finnaly = " + summary);
+                preference.setSummary(summary);
+                oldSummary = summary;
             });
         });
     }
