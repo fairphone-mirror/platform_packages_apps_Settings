@@ -231,6 +231,10 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
         @Override
         public void onFailed(int resultCode, Object object) {
             Log.d(TAG, "onFailed()...resultCode:" + resultCode);
+            if(resultCode == 3) {
+                stopUnlock();
+                startUnlock();
+            }
             String acquiredStr = changeStatus(resultCode);
             if(acquiredStr != null) {
                 failStrings.add(acquiredStr);
