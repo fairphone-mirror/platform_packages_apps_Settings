@@ -124,7 +124,11 @@ public class PreferVonrSettings extends SettingsPreferenceFragment implements
                 mPreferences.put(subId, pref);
                 mPreferenceList.add(pref);
                 pref.setChecked(isVoNrSwitchChecked(slotId));
-                pref.setEnabled(isVoNrSwitchEnabled(subId, slotId));
+                //[BUG]-Modify Begin by shaopan.tang 2025-03-31 FPS-1393 VONR switch
+                //AOSP can only set vonr when SA is not enabled
+                //But we need to set VONR all the time and ignore any conditons
+                pref.setEnabled(true);//isVoNrSwitchEnabled(subId, slotId)
+                //[BUG]-Modify End by shaopan.tang
                 maybeChangeNrCapability(slotId);
                 Log.d(TAG, "add preference for slot: " + slotId + " subId: " + subId);
             } else {
