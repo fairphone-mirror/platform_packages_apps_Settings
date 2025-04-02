@@ -380,7 +380,7 @@ public class LiteManager {
     private int handleInit(boolean isUnlock) {
 
         //(1)get folder for save files of face unlock
-        File dir = mContext.getExternalFilesDir(Constants.UNLOCK_FACE_FOLDER_PATH);
+        File dir = new File(mContext.getFilesDir(), Constants.UNLOCK_FACE_FOLDER_PATH);
         if (!dir.exists()) {
             dir.mkdirs();
         }
@@ -389,13 +389,6 @@ public class LiteManager {
         //(2)loadModel
         //ancFaceIdApi.unInit();
         File model_dir = new File(dir, "model");
-        if (model_dir.listFiles() == null) {
-            File SDcard_path = Environment.getExternalStorageDirectory();
-            StatFs stat = new StatFs(SDcard_path.getPath());
-            long avaliableBlocks = stat.getAvailableBlocks();
-            if (avaliableBlocks < 10240) //40M
-                return AncFaceIdStatus.ANC_UNLOCK_UNAVAILABLE_MEMORY.toInt();
-        }
 
         ancFaceIdApi.init(dir.getAbsolutePath(), null);
         ancFaceIdApi.setLogLevel(4);
@@ -484,19 +477,11 @@ public class LiteManager {
 
         //(3)save feature image for Demo Apk
         if (result == AncFaceIdStatus.ANC_UNLOCK_OK) {
-            byte[] yuvData = data;
-
-            Bitmap bitmap = CommonUtil.getBitMap(yuvData, new Rect(0, 0,
-                    Constants.FRAME_IMAGE_WIDTH, Constants.FRAME_IMAGE_HEIGHT), angle, false);
-            String fileName = String.format("%s%s", Constants.UNLOCK_FACE_FEATURE_NAME,
-                    id[0]);
             if (isMain) {
                 Settings.System.putInt(mContext.getContentResolver(), "enroll_main_face_id", id[0]);
             } else {
                 Settings.System.putInt(mContext.getContentResolver(), "enroll_second_face_id", id[0]);
             }
-            CommonUtil.saveBitmap(mContext, bitmap,
-                    Constants.UNLOCK_FACE_FEATURE_PATH, fileName);
         }
 
         if (result == AncFaceIdStatus.ANC_UNLOCK_OK) {

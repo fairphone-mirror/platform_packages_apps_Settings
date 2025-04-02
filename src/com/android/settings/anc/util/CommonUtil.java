@@ -414,7 +414,7 @@ public class CommonUtil {
     }
 
     public static String saveRaw(Context context, int res, String path, String name) {
-        File dir = new File(context.getExternalFilesDir(Constants.UNLOCK_FACE_FOLDER_PATH), path);
+        File dir = new File(context.getFilesDir(), Constants.UNLOCK_FACE_FOLDER_PATH+"/"+path);
         if (!dir.exists()) {
             if (!dir.mkdirs()) {
                 return null;
@@ -426,9 +426,6 @@ public class CommonUtil {
         if(file.exists() && file.isFile() && (rawSize == file.length())){
             ret = file.getAbsolutePath();
         } else {
-            File SDcard_path = Environment.getExternalStorageDirectory();
-            StatFs stat = new StatFs(SDcard_path.getPath());
-            long avaliableBlocks = stat.getAvailableBlocks();
 
             FileOutputStream fos = null;
             InputStream is = null;
@@ -438,9 +435,6 @@ public class CommonUtil {
                 byte[] buffer = new byte[1024];
                 fos = new FileOutputStream(file);
                 is = context.getResources().openRawResource(res);
-                long source_size = is.available();
-                if (avaliableBlocks < source_size / 4096 + 256)
-                    return Memory_flag;
                 while ((count = is.read(buffer)) != -1) {
                     fos.write(buffer, 0, count);
                 }

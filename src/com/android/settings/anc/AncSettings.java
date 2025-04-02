@@ -267,27 +267,7 @@ public class AncSettings extends SettingsBaseActivity {
         Log.d(TAG, "ret:" + ret);
         boolean success = false;
         if (ret == AncFaceIdStatus.ANC_UNLOCK_OK.toInt()) {
-            String fileName = String.format("%s%s", Constants.UNLOCK_FACE_FEATURE_NAME, faceId) + ".png";
-            success = deleteImageFile(fileName);
-        }
-        return success;
-    }
-
-    private boolean deleteImageFile(String name) {
-        boolean success = false;
-        File imageDir = getExternalFilesDir(String.format("%s/%s",
-                Constants.UNLOCK_FACE_FOLDER_PATH, Constants.UNLOCK_FACE_FEATURE_PATH));
-        if (!imageDir.exists()) {
-            Log.e(TAG, "deleteImageFile()...Invalid Folder.");
-            return false;
-        }
-        try {
-            File faceFile = new File(imageDir, name);
-            if (faceFile.exists()) {
-                success = faceFile.delete();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+            success = true;
         }
         return success;
     }
