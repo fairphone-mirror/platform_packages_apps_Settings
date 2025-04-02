@@ -46,6 +46,9 @@ import com.android.settings.network.SubscriptionUtil;
 import com.android.settings.network.SubscriptionsChangeListener;
 import com.android.settingslib.RestrictedSwitchPreference;
 import com.android.settings.SettingsPreferenceFragment;
+import com.qualcomm.qcrilhook.QcRilHookCallback;
+import com.qualcomm.sysrilcmd.ISysRilCmd;
+import com.qualcomm.sysrilcmd.SysRilCmd;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,6 +70,10 @@ public class PreferVonrSettings extends SettingsPreferenceFragment implements
     private SharedPreferences mSharedPreferences;
     private final List<RestrictedSwitchPreference> mPreferenceList = new ArrayList<>();
 
+    private boolean mRilHookReady;
+    private SysRilCmd mSysRil;
+    private QcRilHookCallback mQcrilHookCb;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +90,25 @@ public class PreferVonrSettings extends SettingsPreferenceFragment implements
         mPreferences = new ArrayMap<>();
         mSharedPreferences = mContext.getSharedPreferences(mContext.getPackageName(),
                 mContext.MODE_PRIVATE);
+
+        mQcrilHookCb = new QcRilHookCallback() {
+            public void onQcRilHookReady() {
+                Log.d(TAG, " onQcRilHookReady");
+                mRilHookReady = true;
+                try {
+                    update();
+
+                } catch (Exception e) {
+                    Log.e(TAG, "SysRilCmd IOException" + e.getMessage());
+                }
+            }
+
+            @Override
+            public void onQcRilHookDisconnected() {
+                Log.d(TAG, " onQcRilHookDisconnected");
+            }
+        };
+        mSysRil = new SysRilCmd(mContext, mQcrilHookCb);
     }
 
     @OnLifecycleEvent(ON_RESUME)
@@ -162,7 +188,7 @@ public class PreferVonrSettings extends SettingsPreferenceFragment implements
      * SA in carrier config
      */
     private boolean isVoNrSwitchChecked(int slotId) {
-        ImsManager imsMgr = ImsManager.getInstance(mContext, slotId);
+        /*ImsManager imsMgr = ImsManager.getInstance(mContext, slotId);
         boolean isVolteEnabled = imsMgr.isEnhanced4gLteModeSettingEnabledByUser();
         if (!isVolteEnabled) {
             return false;
@@ -173,7 +199,17 @@ public class PreferVonrSettings extends SettingsPreferenceFragment implements
         Log.d(TAG, "enhanced 4g enabled: " + isVolteEnabled + ", vonr enabled by carrier: "
                 + isVoNrEnabledByCarrier + ", vonr enabled by user: " + isVoNrEnabledByUser
                 + " for slot: " + slotId);
-        return isVoNrEnabledByCarrier ? isVolteEnabled : isVoNrEnabledByUser;
+        return isVoNrEnabledByCarrier ? isVolteEnabled : isVoNrEnabledByUser;*/
+        boolean mEnabled = false;
+        try {
+            mEnabled = (mSysRil.getInt8Val(ISysRilCmd.RIL_SUB_CMD_INT8_5GNR_VOICE_SUPPORT) == 1);
+            Log.d(TAG, "isVoNrSwitchChecked: " + mEnabled);
+        } catch (Exception e) {
+            Log.e(TAG, "failed to set 5GNR_VOICE_SUPPORT");
+            //loge(e.getMessage());
+        }
+
+        return mEnabled;
     }
 
     /**
@@ -217,12 +253,19 @@ public class PreferVonrSettings extends SettingsPreferenceFragment implements
     }
 
     private void changeNrCapability(ImsManager imsMgr, boolean enabled) {
-        try {
+        /*try {
             imsMgr.changeMmTelCapability(enabled,
                     MmTelFeature.MmTelCapabilities.CAPABILITY_TYPE_VOICE,
                     ImsRegistrationImplBase.REGISTRATION_TECH_NR);
         } catch (ImsException e) {
             Log.e(TAG, "Failed to change vonr mode to " + enabled + " since " + e);
+        }*/
+
+        try {
+            mSysRil.setInt8Val(ISysRilCmd.RIL_SUB_CMD_INT8_5GNR_VOICE_SUPPORT, (byte)(enabled ? 1 : 0));
+        } catch (Exception e) {
+            Log.e(TAG,"failed to set 5GNR_VOICE_SUPPORT");
+            //loge(e.getMessage());
         }
     }
 
@@ -256,5 +299,11 @@ public class PreferVonrSettings extends SettingsPreferenceFragment implements
 
     @Override
     public void onAirplaneModeChanged(boolean airplaneModeEnabled) {
+    }
+
+    @Override
+    public void onStop() {
+        Log.i(TAG, "onStop" );
+        mSysRil.SysRilDispose();
     }
 }
