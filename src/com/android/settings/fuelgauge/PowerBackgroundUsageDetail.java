@@ -122,6 +122,9 @@ public class PowerBackgroundUsageDetail extends DashboardFragment
 
         mExecutor.execute(
                 () -> {
+                    if(getContext() == null){
+                        return;
+                    }
                     if (currentOptimizeMode != mOptimizationMode) {
                         AppOptModeSharedPreferencesUtils.deleteAppOptimizationModeEventByUid(
                                 getContext(), mBatteryOptimizeUtils.getUid());
