@@ -102,6 +102,9 @@ public class PowerBackgroundUsageDetail extends DashboardFragment {
         logMetricCategory(currentOptimizeMode);
         mExecutor.execute(
                 () -> {
+                    if(getContext() == null){
+                        return;
+                    }
                     if (currentOptimizeMode != mOptimizationMode) {
                         AppOptModeSharedPreferencesUtils.deleteAppOptimizationModeEventByUid(
                                 applicationContext, mBatteryOptimizeUtils.getUid());
