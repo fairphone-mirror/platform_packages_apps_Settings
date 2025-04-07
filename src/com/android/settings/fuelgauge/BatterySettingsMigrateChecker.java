@@ -49,6 +49,8 @@ public final class BatterySettingsMigrateChecker extends BroadcastReceiver {
     private static final String TAG = "BatterySettingsMigrateChecker";
 
     private static final String T2M_PROP_SET_FILESDEFAULT = "persist.sys.setfilesdefault";
+    private static boolean mHassendSwitch = false;
+    private static final String T2M_PROP_SET_SENDSWITCH = "sys.sethassendswitch_key";
 
     @VisibleForTesting static BatteryOptimizeUtils sBatteryOptimizeUtils = null;
 
@@ -115,12 +117,15 @@ public final class BatterySettingsMigrateChecker extends BroadcastReceiver {
                 }
             }
 
-            String SwitchKey = readSwitchKeyState();
-            Intent intent_switch = new Intent("com.fairphone.action.SWITCH_STATE_CHANGED");
-            intent_switch.putExtra("com.fairphone.extra.SWITCH_STATUS", "0".equals(SwitchKey) ? "UP" : "DOWN");
-            intent_switch.addFlags(Intent.FLAG_RECEIVER_NO_ABORT | Intent.FLAG_RECEIVER_INCLUDE_BACKGROUND 
-                    | Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
-            context.sendBroadcastAsUser(intent_switch, UserHandle.ALL);
+            if("0".equals(SystemProperties.get(T2M_PROP_SET_SENDSWITCH,"0"))){
+                String SwitchKey = readSwitchKeyState();
+                Intent intent_switch = new Intent("com.fairphone.action.SWITCH_STATE_CHANGED");
+                intent_switch.putExtra("com.fairphone.extra.SWITCH_STATUS", "0".equals(SwitchKey) ? "UP" : "DOWN");
+                intent_switch.addFlags(Intent.FLAG_RECEIVER_NO_ABORT | Intent.FLAG_RECEIVER_INCLUDE_BACKGROUND 
+                        | Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
+                context.sendBroadcastAsUser(intent_switch, UserHandle.ALL);
+                SystemProperties.set(T2M_PROP_SET_SENDSWITCH,"1");
+            }
         }
     }
 
