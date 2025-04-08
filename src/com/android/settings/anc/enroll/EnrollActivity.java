@@ -175,14 +175,9 @@ public class EnrollActivity extends Activity implements CameraWrapper.IPreviewCa
         mBtDone = findViewById(R.id.bt_done);
         mIvSuccess = findViewById(R.id.iv_success);
         mBtDone.setOnClickListener(v -> {
-            boolean isNolimit = Settings.Global.getInt(getContentResolver(), "face_unlock_no_limit", 1) == 1;
-            if(isNolimit) {
-                EnrollActivity.this.finish();
-            } else {
-                showAttentionDialog();
-            }
+            showAttentionDialog();
         });
-        LiteManager.getInstance().initLite(this, false, new LiteManager.Callback() {
+        LiteManager.getInstance().initLite(this, new LiteManager.Callback() {
 
             @Override
             public void onSuccess(Object object) {

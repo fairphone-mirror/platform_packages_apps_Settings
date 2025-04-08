@@ -42,7 +42,6 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
     // count ignored frames
     private int mFrameOffset = 0;
     private int failTimes = 0;
-    private boolean isNoLimit;
     private List<String> failStrings = new ArrayList<>();
 
     private final CameraWrapper.CameraOpenCallback mCameraOpenListener = new CameraWrapper.CameraOpenCallback() {
@@ -81,7 +80,7 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
         filter.addAction(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
         registerReceiver(mBroadcastReceiver, filter, Context.RECEIVER_EXPORTED);
         SystemProperties.set("odm.face_unlock", "1");
-        LiteManager.getInstance().initLite(this, true, new LiteManager.Callback() {
+        LiteManager.getInstance().initLite(this, new LiteManager.Callback() {
             @Override
             public void onSuccess(Object object) {
                 Log.d(TAG,"init success");
@@ -98,7 +97,6 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
             }
         });
         mLiteManager = LiteManager.getInstance();
-        isNoLimit = Settings.Global.getInt(getContentResolver(), "face_unlock_no_limit", 1) == 1;
         AncFaceIdConfig config = LiteManager.getInstance().getConfig();
         config.rectTop = 0;
         config.rectLeft = 0;
@@ -124,8 +122,8 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
 
     @Override
     public void onPreviewFrame(final byte[] bytes) {
-        if (/*++mFrameOffset < Constants.UNLOCK_IGNORED_AHEAD_FRAME ||*/
-                !LiteManager.getInstance().canCompare() || (!isNoLimit && failTimes >= 3)) {
+        if (++mFrameOffset < Constants.UNLOCK_IGNORED_AHEAD_FRAME ||
+                !LiteManager.getInstance().canCompare() || failTimes >= 3) {
             return;
         }
 
@@ -149,9 +147,6 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
         }
         if (mLiteManager != null) {
             mLiteManager.reset();
-            if(!ActivityManager.getInstance().containActivity(AncSettings.class.getSimpleName())){
-                mLiteManager.release();
-            }
         }
     }
 
@@ -203,11 +198,7 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
         failTimes++;
         calculateMostFrequentString();
         Intent intent = new Intent("intent.action.faceunlock");
-        if(isNoLimit) {
-            intent.putExtra("faceunlock_status", 1);
-        } else {
-            intent.putExtra("faceunlock_status", failTimes);
-        }
+        intent.putExtra("faceunlock_status", failTimes);
         Log.d(TAG,"face unlock failed");
         UnlockService.this.sendBroadcast(intent);
     };
@@ -220,12 +211,10 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
             stopUnlock();
             sendFaceUnlockMsg(getString(com.android.settings.R.string.face_unlock_success));
             AncFaceIdUnlockInfo info = (AncFaceIdUnlockInfo) object;
-            new Handler().postDelayed(() -> {
-                Intent intent = new Intent("intent.action.faceunlock");
-                intent.putExtra("faceunlock_status", 0);
-                UnlockService.this.sendBroadcast(intent);
-                UnlockService.this.stopSelf();
-            }, 200);
+            Intent intent = new Intent("intent.action.faceunlock");
+            intent.putExtra("faceunlock_status", 0);
+            UnlockService.this.sendBroadcast(intent);
+            UnlockService.this.stopSelf();
         }
 
         @Override
