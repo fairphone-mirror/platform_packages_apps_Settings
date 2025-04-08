@@ -135,7 +135,7 @@ public class LiteManager {
      * @param context  must be set to nonnull and Application context is preferred.
      * @param callBack
      */
-    public void initLite(@NonNull final Context context, final boolean isUnlock, final Callback callBack) {
+    public void initLite(@NonNull final Context context, final Callback callBack) {
         // check if params is invalid
         if (null == context) {
             Log.e(TAG, "context is null");
@@ -150,7 +150,7 @@ public class LiteManager {
         mHandler.post(new Runnable() {
             @Override
             public void run() {
-                int result = handleInit(isUnlock);
+                int result = handleInit();
 
                 // notify caller in UI thread
                 sendResultMessage(result, callBack, EVENT_INIT);
@@ -278,7 +278,6 @@ public class LiteManager {
 
                 // notify caller in UI thread
                 sendResultMessage(result, callBack, EVENT_COMPARE);
-                commitSave();
             }
         });
     }
@@ -377,7 +376,7 @@ public class LiteManager {
     }
 
     // loadModel AncFaceIdApi SDK
-    private int handleInit(boolean isUnlock) {
+    private int handleInit() {
 
         //(1)get folder for save files of face unlock
         File dir = new File(mContext.getFilesDir(), Constants.UNLOCK_FACE_FOLDER_PATH);
@@ -393,7 +392,7 @@ public class LiteManager {
         ancFaceIdApi.init(dir.getAbsolutePath(), null);
         ancFaceIdApi.setLogLevel(4);
         //(3)customConfig
-        AncFaceIdConfig config = ConfigInfoManager.getInstance().genCustomConfig(mContext, isUnlock);
+        AncFaceIdConfig config = ConfigInfoManager.getInstance().genCustomConfig(mContext);
 
         String targetModel = CommonUtil.readModelInfo(mContext, R.raw.model_config).get(2);//BuildConfig.ANC_MODEL_FILE;
         String[] partModel = targetModel.split("-");
@@ -511,11 +510,6 @@ public class LiteManager {
         if (mLastResult != result) {
             mLastResult = result;
             //saveComparePic(width, height, data, result, fileName);
-        }
-        boolean dump = Settings.Global.getInt(mContext.getContentResolver(), "face_unlock_dump", 0) == 1;
-        if(dump) {
-            addSavedNV21(data, width, height, "nv21", fileName + getUnlockStatus(result) + result);
-            //commitSave();
         }
 
         return result;

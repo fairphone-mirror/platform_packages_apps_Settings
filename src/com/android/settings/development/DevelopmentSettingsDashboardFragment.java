@@ -806,7 +806,6 @@ public class DevelopmentSettingsDashboardFragment extends RestrictedDashboardFra
         controllers.add(new ForceEnableNotesRolePreferenceController(context));
         controllers.add(new GrammaticalGenderPreferenceController(context));
         controllers.add(new SensitiveContentProtectionPreferenceController(context));
-        controllers.add(new FaceUnlockNoLimitController(context));
 
         return controllers;
     }
