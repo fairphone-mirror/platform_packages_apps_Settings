@@ -347,8 +347,7 @@ public class PowerUsageSummary extends PowerUsageBase
         String cycle_count = readBatHealth("/sys/class/power_supply/battery/cycle_count");
         String charge_full_design = readBatHealth("/sys/class/power_supply/battery/charge_full_design");
         batHealth = getString(R.string.batteryh_soh) + soh + "\n" +
-                getString(R.string.batteryh_soc) + cycle_count + "\n" +
-                getString(R.string.batteryh_cfd) + Long.valueOf(charge_full_design)/1000 + "mAh" ;
+                getString(R.string.batteryh_soc) + cycle_count + "\n";
         return batHealth;
     }
 
