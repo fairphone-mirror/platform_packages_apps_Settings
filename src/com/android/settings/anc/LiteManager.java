@@ -390,7 +390,7 @@ public class LiteManager {
         File model_dir = new File(dir, "model");
 
         ancFaceIdApi.init(dir.getAbsolutePath(), null);
-        ancFaceIdApi.setLogLevel(4);
+        ancFaceIdApi.setLogLevel(1);
         //(3)customConfig
         AncFaceIdConfig config = ConfigInfoManager.getInstance().genCustomConfig(mContext);
 
