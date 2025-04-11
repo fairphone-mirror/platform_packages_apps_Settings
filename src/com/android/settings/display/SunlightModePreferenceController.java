@@ -25,7 +25,7 @@ public class SunlightModePreferenceController extends AbstractPreferenceControll
 
     @Override
     public boolean isAvailable() {
-        return true;
+        return false;
     }
 
     @Override
