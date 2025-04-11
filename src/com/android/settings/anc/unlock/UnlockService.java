@@ -16,6 +16,7 @@ import android.view.WindowManager;
 import android.provider.Settings;
 import android.os.SystemClock;
 import android.os.SystemProperties;
+import android.os.BatteryManager;
 
 import androidx.annotation.Nullable;
 
@@ -79,7 +80,11 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         filter.addAction(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
         registerReceiver(mBroadcastReceiver, filter, Context.RECEIVER_EXPORTED);
-        SystemProperties.set("odm.face_unlock", "1");
+        BatteryManager batteryManager = getSystemService(BatteryManager.class);
+        int level = batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
+        if(level >= 20) {
+            SystemProperties.set("odm.face_unlock", "1");
+        }
         LiteManager.getInstance().initLite(this, new LiteManager.Callback() {
             @Override
             public void onSuccess(Object object) {
