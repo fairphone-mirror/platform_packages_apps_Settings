@@ -324,6 +324,9 @@ public class AppStorageSettings extends AppInfoWithHeader
     private void initMoveDialog() {
         final Context context = getActivity();
         final StorageManager storage = context.getSystemService(StorageManager.class);
+        if(mAppEntry == null){
+            finish();
+        }
         final PackageManager pm = context.getPackageManager();
         final List<VolumeInfo> candidates =
             mAppEntry != null && pm != null
