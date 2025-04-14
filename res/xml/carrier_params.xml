@@ -1429,98 +1429,78 @@
 
     <carrier_ui_params mcc="228" mnc="01">
         <string name="wifi_calling_settings_title">WiFi Call</string>
-        <string-array name="preferred_network_mode_values" num="4">
+        <string-array name="preferred_network_mode_values" num="2">
             <item value="26"/>
             <item value="9"/>
-            <item value="0"/>
-            <item value="1"/>
         </string-array>
 
-        <string-array name="preferred_network_mode_choices" num="4">
+        <string-array name="preferred_network_mode_choices" num="2">
             <item value="5G/4G/3G/2G"/>
             <item value="4G/3G/2G"/>
-            <item value="3G/2G"/>
-            <item value="2G"/>
         </string-array>
     </carrier_ui_params>
 
     <carrier_ui_params mcc="228" mnc="01" language="da">
         <string name="wifi_calling_settings_title">WIFI-opkald</string>
-        <string-array name="preferred_network_mode_choices" num="4">
+        <string-array name="preferred_network_mode_choices" num="2">
             <item value="5G/4G/3G/2G"/>
             <item value="4G/3G/2G"/>
-            <item value="3G/2G"/>
-            <item value="2G"/>
         </string-array>
     </carrier_ui_params>
 
     <carrier_ui_params mcc="228" mnc="01" language="de">
         <string name="wifi_calling_settings_title">WIFI-Anrufe</string>
-        <string-array name="preferred_network_mode_choices" num="4">
+        <string-array name="preferred_network_mode_choices" num="2">
             <item value="5G/4G/3G/2G"/>
             <item value="4G/3G/2G"/>
-            <item value="3G/2G"/>
-            <item value="2G"/>
         </string-array>
     </carrier_ui_params>
 
     <carrier_ui_params mcc="228" mnc="01" language="es">
         <string name="wifi_calling_settings_title">Llamadas WIFI</string>
-        <string-array name="preferred_network_mode_choices" num="4">
+        <string-array name="preferred_network_mode_choices" num="2">
             <item value="5G/4G/3G/2G"/>
             <item value="4G/3G/2G"/>
-            <item value="3G/2G"/>
-            <item value="2G"/>
         </string-array>
     </carrier_ui_params>
 
     <carrier_ui_params mcc="228" mnc="01" language="fr">
         <string name="wifi_calling_settings_title">Appels WIFI</string>
-        <string-array name="preferred_network_mode_choices" num="4">
+        <string-array name="preferred_network_mode_choices" num="2">
             <item value="5G/4G/3G/2G"/>
             <item value="4G/3G/2G"/>
-            <item value="3G/2G"/>
-            <item value="2G"/>
         </string-array>
     </carrier_ui_params>
 
     <carrier_ui_params mcc="228" mnc="01" language="it">
         <string name="wifi_calling_settings_title">Chiamata WiFi</string>
-        <string-array name="preferred_network_mode_choices" num="4">
+        <string-array name="preferred_network_mode_choices" num="2">
             <item value="5G/4G/3G/2G"/>
             <item value="4G/3G/2G"/>
-            <item value="3G/2G"/>
-            <item value="2G"/>
         </string-array>
     </carrier_ui_params>
 
     <carrier_ui_params mcc="228" mnc="01" language="nl">
         <string name="wifi_calling_settings_title">Bellen via wifi</string>
-        <string-array name="preferred_network_mode_choices" num="4">
+        <string-array name="preferred_network_mode_choices" num="2">
             <item value="5G/4G/3G/2G"/>
             <item value="4G/3G/2G"/>
-            <item value="3G/2G"/>
-            <item value="2G"/>
         </string-array>
     </carrier_ui_params>
 
     <carrier_ui_params mcc="228" mnc="01" language="pt">
         <string name="wifi_calling_settings_title">Chamada WI-FI</string>
-        <string-array name="preferred_network_mode_choices" num="4">
+        <string-array name="preferred_network_mode_choices" num="2">
             <item value="5G/4G/3G/2G"/>
             <item value="4G/3G/2G"/>
-            <item value="3G/2G"/>
-            <item value="2G"/>
         </string-array>
     </carrier_ui_params>
 
     <carrier_ui_params mcc="228" mnc="01" language="sv">
         <string name="wifi_calling_settings_title">WiFi Call</string>
-        <string-array name="preferred_network_mode_choices" num="4">
+        <string-array name="preferred_network_mode_choices" num="2">
             <item value="5G/4G/3G/2G"/>
             <item value="4G/3G/2G"/>
-            <item value="3G/2G"/>
-            <item value="2G"/>
         </string-array>
     </carrier_ui_params>
 
