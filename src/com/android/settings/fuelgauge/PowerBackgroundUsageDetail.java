@@ -129,13 +129,15 @@ public class PowerBackgroundUsageDetail extends DashboardFragment
                         AppOptModeSharedPreferencesUtils.deleteAppOptimizationModeEventByUid(
                                 getContext(), mBatteryOptimizeUtils.getUid());
                     }
-                    if(getContext() != null){
+                    try {
                         BatteryOptimizeLogUtils.writeLog(
                                 getContext().getApplicationContext(),
                                 Action.LEAVE,
                                 BatteryOptimizeLogUtils.getPackageNameWithUserId(
                                         mBatteryOptimizeUtils.getPackageName(), UserHandle.myUserId()),
                                 mLogStringBuilder.toString());
+                    } catch (Exception e){
+                        //do nothing
                     }
                 });
         Log.d(TAG, "Leave with mode: " + currentOptimizeMode);
