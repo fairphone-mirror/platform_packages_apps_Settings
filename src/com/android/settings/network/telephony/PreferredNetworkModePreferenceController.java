@@ -201,6 +201,7 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
         boolean otherSubCiwlanEnabled = isDDS ? MobileNetworkSettings.isCiwlanEnabled(nDDS) :
                 MobileNetworkSettings.isCiwlanEnabled(DDS);
         Log.d(LOG_TAG, "isDDS = " + isDDS +
+                ", isMsimCiwlanSupported = " + isMsimCiwlanSupported +
                 ", currentSubCiwlanEnabled = " + currentSubCiwlanEnabled +
                 ", otherSubCiwlanEnabled = " + otherSubCiwlanEnabled +
                 ", isCiwlanIncompatibleNetworkSelected = " + isCiwlanIncompatibleNetworkSelected);
@@ -245,14 +246,39 @@ public class PreferredNetworkModePreferenceController extends TelephonyBasePrefe
             }
         }
 
-        mTelephonyManager.setAllowedNetworkTypesForReason(
+        //[BUG]-Modify-Begin by shaopan.tang 2025-04-18 FPS-2109 Pop up the warning message if the user selects a different network mode than the default multi-mode
+        final PersistableBundle carrierConfig = mCarrierConfigCache.getConfigForSubId(mSubId);
+        final ListPreference listPreference = (ListPreference) preference;
+        Log.d(LOG_TAG, "set networkmode " + newPreferredNetworkMode);
+        if (carrierConfig != null && carrierConfig.getBoolean(
+                CarrierConfigManager.KEY_SHOW_DIALOG_WHEN_PREFERRED_NETWORK_TYPE_CHANGE_BOOL)
+                && (newPreferredNetworkMode != TelephonyManagerConstants.NETWORK_MODE_NR_LTE_GSM_WCDMA)) {
+            Log.d(LOG_TAG, "show warning message when preferred network mode changed");
+            AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+            builder.setTitle(R.string.preferred_network_mode_change_dialogtitle)
+               .setMessage(R.string.preferred_network_mode_change_waring_message)
+               .setPositiveButton(R.string.okay, new DialogInterface.OnClickListener() {
+                   public void onClick(DialogInterface dialog, int id) {
+                        mTelephonyManager.setAllowedNetworkTypesForReason(
+                            TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER,
+                            MobileNetworkUtils.getRafFromNetworkType(newPreferredNetworkMode));
+
+                        //listPreference.setSummary(getPreferredNetworkModeSummaryResId(newPreferredNetworkMode));
+                        setNetworkModeSummaryText(listPreference, newPreferredNetworkMode);
+                   }
+               });
+            builder.show();
+        } else {
+            mTelephonyManager.setAllowedNetworkTypesForReason(
                 TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER,
                 MobileNetworkUtils.getRafFromNetworkType(newPreferredNetworkMode));
 
-        final ListPreference listPreference = (ListPreference) preference;
-        //listPreference.setSummary(getPreferredNetworkModeSummaryResId(newPreferredNetworkMode));
-        setNetworkModeSummaryText(listPreference, newPreferredNetworkMode);
-        return true;
+            //listPreference.setSummary(getPreferredNetworkModeSummaryResId(newPreferredNetworkMode));
+            setNetworkModeSummaryText(listPreference, newPreferredNetworkMode);
+            return true;
+        }
+        //[BUG]-Modify-End by shaopan.tang
+        return false;
     }
 
     private boolean isCiwlanIncompatibleNetworkSelected(int networkMode) {

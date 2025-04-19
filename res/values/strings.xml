@@ -11937,6 +11937,11 @@
     <string name="incompatible_pref_nw_for_ndds_with_ciwlan_ui_on_dds">Voice Over Cellular Internet might become unavailable on the other subscription when the data preference changes since the selection does not contain LTE, NR, or Global.</string>
     <string name="incompatible_pref_nw_for_ndds_with_ciwlan_ui_on_ndds">Voice Over Cellular Internet might become unavailable when the data preference changes since the selection does not contain LTE, NR, or Global.</string>
 
+    <!--[BUG]-Modify-Begin by shaopan.tang 2025-04-18 FPS-2109 Pop up the warning message if the user selects a different network mode than the default multi-mode -->
+    <string name="preferred_network_mode_change_dialogtitle">Preferred network type changed</string>
+    <string name="preferred_network_mode_change_waring_message">Network coverage may be reduced by your selection</string>
+    <!--[BUG]-Modify-End by shaopan.tang -->
+
     <!-- Mobile network settings screen, a string showing the version of carrier settings for this
          subscription [CHAR LIMIT=NONE] -->
     <string name="carrier_settings_version">Carrier settings version</string>
