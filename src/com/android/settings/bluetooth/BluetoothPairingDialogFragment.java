@@ -230,7 +230,7 @@ public class BluetoothPairingDialogFragment extends InstrumentedDialogFragment i
             if (TextUtils.isEmpty(getPairingViewText())) {
                 mDialog.getButton(Dialog.BUTTON_POSITIVE).setEnabled(false);
             }
-            if (mPairingView != null && mPairingView.requestFocus()) {
+            if (mPairingView != null && mPairingView.requestFocus() && getContext() != null) {
                 InputMethodManager imm = (InputMethodManager)
                         getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                 if (imm != null) {
