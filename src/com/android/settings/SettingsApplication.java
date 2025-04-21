@@ -75,6 +75,7 @@ import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.ParcelFileDescriptor;
+import android.text.TextUtils;
 import android.app.WallpaperManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -105,6 +106,7 @@ public class SettingsApplication extends Application {
     private static final String FIRST_BOOT_TIME = "persist.sys.first_boot_time";
     private static final String IS_BATTERY_HEALTH_HIDE = "persist.sys.is_battery_health_hide";
     private boolean isDebug = false;
+    final String WALLPAPER_CONFIG = "persist.sys.config.wallpaper";
 
     private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
@@ -189,6 +191,11 @@ public class SettingsApplication extends Application {
      * Set default Lock wallpaper
      */
     private void setDefaultOnLock(Context mContext) {
+        String wallpaperConfig = SystemProperties.get(WALLPAPER_CONFIG, null);
+        Log.d(TAG, "setDefaultOnLock wallpaperConfig = " + wallpaperConfig);
+        if (!TextUtils.isEmpty(wallpaperConfig)) {
+            return;
+        }
         try {
             WallpaperManager mWallpaperManager = WallpaperManager.getInstance(mContext);
             BitmapDrawable finalBitmapDrawable = null;
