@@ -1495,7 +1495,7 @@
     <string name="reset_bluetooth_wifi_button_text" msgid="3974098137045963639">"Reset"</string>
     <string name="reset_bluetooth_wifi_complete_toast" msgid="5893439291030574365">"Bluetooth &amp; Wi‑Fi have been reset"</string>
     <string name="reset_esim_title" msgid="4194570573425902754">"Erase eSIMs"</string>
-    <string name="reset_esim_desc" msgid="6125192435907740751">"This won’t cancel your mobile service plan. To get a replacement SIM, contact your operator."</string>
+    <string name="reset_esim_desc" msgid="6125192435907740751">"This won’t cancel your mobile service plan. To get a replacement SIM, contact your operator. Please note that an internet connection (mobile data or Wi-Fi) is required to erase the selected SIM profile from the device."</string>
     <string name="reset_network_button_text" msgid="2281476496459610071">"Reset settings"</string>
     <string name="reset_network_final_desc" msgid="5304365082065278425">"Reset all network settings? You can\'t undo this action."</string>
     <string name="reset_network_final_desc_esim" msgid="1129251284212847939">"Reset all network settings and erase eSIMs? You can’t undo this action."</string>
@@ -4770,7 +4770,7 @@
     <string name="switch_sim_dialog_no_switch_text" msgid="7053939850026876088">"To use mobile data, call features and SMS at a later time, go to your network settings"</string>
     <string name="sim_card_label" msgid="6263064316075963775">"SIM"</string>
     <string name="erase_sim_dialog_title" msgid="4742077437653028326">"Erase this eSIM?"</string>
-    <string name="erase_sim_dialog_text" msgid="1406141218170595272">"This removes <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> service from this device, but your <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> plan won\'t be cancelled."</string>
+    <string name="erase_sim_dialog_text" msgid="1406141218170595272">"This removes <xliff:g id="CARRIER_NAME_A">%1$s</xliff:g> service from this device, but your <xliff:g id="CARRIER_NAME_B">%1$s</xliff:g> plan won\'t be cancelled. Please note that an internet connection (mobile data or Wi-Fi) is required to erase the selected SIM profile from the device."</string>
     <string name="erase_sim_confirm_button" msgid="8309115684335320541">"Erase"</string>
     <string name="erasing_sim" msgid="4237180547590463930">"Erasing eSIM…"</string>
     <string name="erase_sim_fail_title" msgid="1445700500168357303">"Can\'t erase eSIM"</string>
