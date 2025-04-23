@@ -69,6 +69,11 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
         @Override
         public void onOpenFailed() {
             Log.d(TAG,"Camera onOpenFailed");
+            sendFaceUnlockMsg("");
+            Intent intent = new Intent("intent.action.faceunlock");
+            intent.putExtra("faceunlock_status", 1);
+            UnlockService.this.sendBroadcast(intent);
+            UnlockService.this.stopSelf();
         }
     };
 
