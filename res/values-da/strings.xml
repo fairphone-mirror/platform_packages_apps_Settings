@@ -5351,4 +5351,9 @@
     <string name="status_sdn">Indtast nummer service</string>
     <string name="fingerprint_settings_open_description">"Tænd, hvis du foretrækker at låse op uden at vågne telefonen først."</string>
     <string name="fingerprint_settings_open_title">Fingerprint Lås op adfærd</string>
+
+    <string name="qsb_search_bar_title">Søgelinje</string>
+    <string name="qsb_search_bar_title_description">Vis/Skjul søgelinje på startskærmen</string>
+    <string name="reboot_required_title">Genstart påkrævet</string>
+    <string name="reboot_required_message">Anvend og genstart for at anvende ændringer</string>
 </resources>

@@ -13848,14 +13848,15 @@
     <string name="fingerprint_settings_open_description">"Switch on if you prefer to unlock without waking up the phone first."</string>
 
     <!--Add search bar toggle-->
-    <string name="qsb_search_bar_title">Search bar on homescreen</string>
+    <string name="qsb_search_bar_title">Search bar</string>
+    <string name="qsb_search_bar_title_description">Show/Hide Homescreen Search Bar</string>
 
     <!-- Title text for swapping the back and recents buttons in the navigation bar. [CHAR LIMIT=60] -->
     <string name="swap_back_recents_title">Swap Back/Recents Navigation</string>
     <!-- Summary text for swapping the back and recents buttons in the navigation bar. [CHAR LIMIT=NONE] -->
     <string name="swap_back_recents_summary">Swap the back and recents button in the navigation bar.</string>
     <string name="reboot_required_title">Reboot Required</string>
-    <string name="reboot_required_message">Change the search bar visibility requires a reboot. Reboot now?</string>
+    <string name="reboot_required_message">Apply &amp; Reboot to Apply Changes</string>
     <string name="settings_elabel_activity_unavailable">There is a problem loading the elabel file.</string>
 
     <string name="ims_settings_summary_on">"Debug mode for IMS Settings is ON."</string>
