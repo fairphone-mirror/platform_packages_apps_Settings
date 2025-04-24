@@ -35,6 +35,7 @@ import com.android.settings.anc.camera.CameraFactory;
 import com.android.settings.anc.camera.CameraWrapper;
 import com.android.settings.anc.util.Constants;
 import com.android.settings.anc.lifecycle.ActivityManager;
+import android.util.BoostFramework;
 
 public class UnlockService extends Service implements CameraWrapper.IPreviewCallback {
     private static final String TAG = "UnlockService";
@@ -44,6 +45,11 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
     private int mFrameOffset = 0;
     private int failTimes = 0;
     private List<String> failStrings = new ArrayList<>();
+    private BoostFramework mPerf;
+    private static final int MPCTLV3_MAX_FREQ_CLUSTER_LITTLE_CORE_0 = 0x40804100;
+    private static final int MPCTLV3_MAX_FREQ_CLUSTER_LITTLE_CORE_1 = 0x40804110;
+    private static final int MPCTLV3_MAX_FREQ_CLUSTER_LITTLE_CORE_2 = 0x40804120;
+    private static final int MPCTLV3_MAX_FREQ_CLUSTER_LITTLE_CORE_3 = 0x40804130;
 
     private final CameraWrapper.CameraOpenCallback mCameraOpenListener = new CameraWrapper.CameraOpenCallback() {
         @Override
@@ -63,6 +69,11 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
         @Override
         public void onOpenFailed() {
             Log.d(TAG,"Camera onOpenFailed");
+            sendFaceUnlockMsg("");
+            Intent intent = new Intent("intent.action.faceunlock");
+            intent.putExtra("faceunlock_status", 1);
+            UnlockService.this.sendBroadcast(intent);
+            UnlockService.this.stopSelf();
         }
     };
 
@@ -80,11 +91,7 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         filter.addAction(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
         registerReceiver(mBroadcastReceiver, filter, Context.RECEIVER_EXPORTED);
-        BatteryManager batteryManager = getSystemService(BatteryManager.class);
-        int level = batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
-        if(level >= 20) {
-            SystemProperties.set("odm.face_unlock", "1");
-        }
+        perlock();
         LiteManager.getInstance().initLite(this, new LiteManager.Callback() {
             @Override
             public void onSuccess(Object object) {
@@ -142,7 +149,10 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
     public void onDestroy() {
         super.onDestroy();
         Log.d(TAG,"onDestroy");
-        SystemProperties.set("odm.face_unlock", "0");
+        if(mPerf != null) {
+            Log.d(TAG, "perlock release...");
+            mPerf.perfLockRelease();
+        }
         if (mCameraWrapper != null) {
             mCameraWrapper.stopPreview();
         }
@@ -318,4 +328,20 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
         }
         failStrings.clear();
     }
+
+    private void perlock() {
+        mPerf = new BoostFramework();
+        int duration = 30 * 1000;
+        int[] list = new int[8];
+        list[0] = MPCTLV3_MAX_FREQ_CLUSTER_LITTLE_CORE_0;
+        list[1] = 2000;
+        list[2] = MPCTLV3_MAX_FREQ_CLUSTER_LITTLE_CORE_1;
+        list[3] = 2000;
+        list[4] = MPCTLV3_MAX_FREQ_CLUSTER_LITTLE_CORE_2;
+        list[5] = 2000;
+        list[6] = MPCTLV3_MAX_FREQ_CLUSTER_LITTLE_CORE_3;
+        list[7] = 2000;
+        Log.i(TAG, "perlock...");
+        mPerf.perfLockAcquire(duration, list);
+   }
 }

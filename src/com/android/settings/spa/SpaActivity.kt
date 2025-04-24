@@ -28,6 +28,7 @@ import com.android.settingslib.spa.framework.common.SettingsPage
 import com.android.settingslib.spa.framework.util.SESSION_BROWSE
 import com.android.settingslib.spa.framework.util.appendSpaParams
 import com.google.android.setupcompat.util.WizardManagerHelper
+import com.android.settings.Utils
 
 class SpaActivity : BrowseActivity() {
     override fun isPageEnabled(page: SettingsPage) =
@@ -35,6 +36,9 @@ class SpaActivity : BrowseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (Utils.isMonkeyRunning()) {
+            finish()
+        }
         lifecycle.addObserver(HideNonSystemOverlayMixin(this))
     }
 

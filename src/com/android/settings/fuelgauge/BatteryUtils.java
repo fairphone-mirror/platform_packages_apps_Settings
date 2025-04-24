@@ -568,7 +568,7 @@ public class BatteryUtils {
 
     /** Whether the package is installed from Google Play Store or not */
     public static boolean isAppInstalledFromGooglePlayStore(Context context, String packageName) {
-        if (TextUtils.isEmpty(packageName)) {
+        if (TextUtils.isEmpty(packageName) || context == null) {
             return false;
         }
         InstallSourceInfo installSourceInfo;
