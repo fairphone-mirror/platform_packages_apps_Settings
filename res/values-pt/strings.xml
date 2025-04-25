@@ -5348,7 +5348,10 @@
     <string name="status_sdn">Número de ligação ao serviço</string>
     <string name="pick_up_to_wake_title">Levantar para acordar</string>
     <string name="sunlight_mode_title">Modo de luz solar</string>
-
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="unlock_failed_reset_title">Reposição automática de fábrica</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="unlock_failed_reset_description">Se tentar desbloquear o telemóvel incorretamente 15 vezes, este será reposto para as definições de fábrica. Todos os dados, ficheiros incluídos e aplicações descarregadas serão eliminados.</string>
     <string name="attention">Atenção</string>
     <string name="cannot_detect_face">Não é possível detetar o seu rosto</string>
     <string name="face_add_title">Adicionar dados faciais</string>

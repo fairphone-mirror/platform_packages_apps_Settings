@@ -5380,6 +5380,10 @@
     <string name="warning_tips_rom4_third_part_title">Om sekretess</string>
     <string name="warning_title">Riskvarning</string>
     <string name="sunlight_mode_title">Solljusläge</string>
+    <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
+    <string name="unlock_failed_reset_title">Automatisk fabriksåterställning</string>
+    <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
+    <string name="unlock_failed_reset_description">Om du misslyckas med att låsa upp din telefon 15 gånger så kommer den att återställas till fabriksinställningarna. All data såsom filer och nedladdade appar kommer att raderas.</string>
     <string name="confirm_remove_enroll_face">Bekräftar du borttagning av registrerat ansikte?</string>
     <string name="main_face_title">Ansiktsregistrering</string>
     <string name="second_face_title">Tillbaka från ansiktsregistrering</string>
