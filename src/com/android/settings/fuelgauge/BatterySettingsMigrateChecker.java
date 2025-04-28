@@ -132,7 +132,7 @@ public final class BatterySettingsMigrateChecker extends BroadcastReceiver {
     private String readSwitchKeyState(){
         String state = "0";
         try {
-            InputStream is = new FileInputStream("/sys/bus/platform/drivers/gpio-keys/soc:gpio_keys/switch_state");
+            InputStream is = new FileInputStream("/sys/emkit/info/switch_state");
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
             state = reader.readLine();
             reader.close();
