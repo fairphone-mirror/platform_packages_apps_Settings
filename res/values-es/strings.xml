@@ -5422,4 +5422,10 @@
     <string name="swap_back_recents_summary">"Cambia los botones de volver y recientes en la barra de navegación"</string>
 
     <string name="pocket_mode">Modo de bolsillo</string>
+    <string name="orientation_timing_title">Tiempo de orientación</string>
+    <string name="orientation_timing_spead_0_title">Ralentizar 1 segundo</string>
+    <string name="orientation_timing_spead_1_title">Ralentizar 0,5 segundos</string>
+    <string name="orientation_timing_spead_2_title">Normal</string>
+    <string name="orientation_timing_spead_3_title">Acelerar 0,5 segundos</string>
+    <string name="orientation_timing_spead_4_title">Acelerar 1 segundo</string>
 </resources>

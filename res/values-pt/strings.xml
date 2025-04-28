@@ -5415,4 +5415,10 @@
     <string name="swap_back_recents_title">"Troque a ordem de Anterior e Vista geral de apps"</string>
     <string name="swap_back_recents_summary">"Troque a ordem dos botões Anterior e Vista geral de apps na barra de navegação"</string>
     <string name="pocket_mode">Modo de bolso</string>
+    <string name="orientation_timing_title">Calendário de orientação</string>
+    <string name="orientation_timing_spead_0_title">Abrande 1 segundo</string>
+    <string name="orientation_timing_spead_1_title">Abrande 0,5 segundos</string>
+    <string name="orientation_timing_spead_2_title">Normal</string>
+    <string name="orientation_timing_spead_3_title">Acelere durante 0,5 segundos</string>
+    <string name="orientation_timing_spead_4_title">Acelerar durante 1 segundo</string>
 </resources>
