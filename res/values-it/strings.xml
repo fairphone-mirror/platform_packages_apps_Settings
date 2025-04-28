@@ -5839,4 +5839,10 @@
     <string name="swap_back_recents_summary">"Inverti l'ordine dei pulsanti per tornare indietro e mostrare l'elenco app recenti nella barra di navigazione inferiore."</string>
 
     <string name="pocket_mode">Pocket Mode</string>
+    <string name="orientation_timing_title">Velocità di orientamento</string>
+    <string name="orientation_timing_spead_0_title">Rallenta di 1 secondo</string>
+    <string name="orientation_timing_spead_1_title">Rallenta di 0,5 secondi</string>
+    <string name="orientation_timing_spead_2_title">Normale</string>
+    <string name="orientation_timing_spead_3_title">Accellera di 0,5 secondi</string>
+    <string name="orientation_timing_spead_4_title">Accellera di 1 secondo</string>
 </resources>

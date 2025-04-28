@@ -5839,4 +5839,10 @@
     <string name="swap_back_recents_summary">"Échangez les boutons arrière et récent dans la barre de navigation"</string>
 
     <string name="pocket_mode">Mode de poche</string>
+    <string name="orientation_timing_title">Durée d’orientation</string>
+    <string name="orientation_timing_spead_0_title">Ralentir de 1 seconde</string>
+    <string name="orientation_timing_spead_1_title">Ralentir de 0,5 seconde</string>
+    <string name="orientation_timing_spead_2_title">Normal</string>
+    <string name="orientation_timing_spead_3_title">Accélérer pendant 0,5 seconde</string>
+    <string name="orientation_timing_spead_4_title">Accélérer pendant 1 seconde</string>
 </resources>

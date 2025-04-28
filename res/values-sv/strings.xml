@@ -5839,4 +5839,10 @@
     <string name="fingerprint_settings_open_title">Finger Print Lås upp beteende</string>
 
     <string name="pocket_mode">Fickläge</string>
+    <string name="orientation_timing_title">Orienteringstidpunkt</string>
+    <string name="orientation_timing_spead_0_title">Sakta ner med 1 sekund</string>
+    <string name="orientation_timing_spead_1_title">Sakta ner med 0,5 sekunder</string>
+    <string name="orientation_timing_spead_2_title">Normal</string>
+    <string name="orientation_timing_spead_3_title">Accelerera med 0,5 sekunder</string>
+    <string name="orientation_timing_spead_4_title">Accelerera med 1 sekund</string>
 </resources>

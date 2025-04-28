@@ -5837,4 +5837,10 @@
     <string name="fingerprint_settings_open_title">Fingerprint Lås op adfærd</string>
 
     <string name="pocket_mode">Lommetilstand</string>
+     <string name="orientation_timing_title">Orienteringstidspunkt</string>
+    <string name="orientation_timing_spead_0_title">Sæt farten ned med 1 sekund</string>
+    <string name="orientation_timing_spead_1_title">Sæt farten ned med 0,5 sekunder</string>
+    <string name="orientation_timing_spead_2_title">Normal</string>
+    <string name="orientation_timing_spead_3_title">Accelerér i 0,5 sekunder</string>
+    <string name="orientation_timing_spead_4_title">Accelerer i 1 sekund</string>
 </resources>

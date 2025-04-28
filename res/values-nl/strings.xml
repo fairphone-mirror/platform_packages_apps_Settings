@@ -5839,4 +5839,10 @@
     <string name="swap_back_recents_summary">"Wissel de terug- en recent-knop om in de navigatiebalk"</string>
 
     <string name="pocket_mode">Broekzakmodus</string>
+    <string name="orientation_timing_title">Timing van de oriëntatie</string>
+    <string name="orientation_timing_spead_0_title">Met 1 seconde vertragen</string>
+    <string name="orientation_timing_spead_1_title">Met een halve seconde vertragen</string>
+    <string name="orientation_timing_spead_2_title">Normaal</string>
+    <string name="orientation_timing_spead_3_title">Met een halve seconde versnellen</string>
+    <string name="orientation_timing_spead_4_title">Met 1 seconde versnellen</string>
 </resources>
