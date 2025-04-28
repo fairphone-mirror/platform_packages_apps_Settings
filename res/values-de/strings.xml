@@ -5422,4 +5422,10 @@
     <string name="swap_back_recents_summary">"Die Schaltflächen "Zurück" und "Zuletzt verwendet" in der Navigationsleiste austauschen"</string>
 
     <string name="pocket_mode">Taschenmodus</string>
+    <string name="orientation_timing_title">Orientierungszeit</string>
+    <string name="orientation_timing_spead_0_title">Um 1 Sekunde verlangsamen</string>
+    <string name="orientation_timing_spead_1_title">Um 0,5 Sekunden verlangsamen</string>
+    <string name="orientation_timing_spead_2_title">Normal</string>
+    <string name="orientation_timing_spead_3_title">Um 0,5 Sekunden beschleunigen</string>
+    <string name="orientation_timing_spead_4_title">Um 1 Sekunde beschleunigen</string>
 </resources>
