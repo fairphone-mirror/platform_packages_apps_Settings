@@ -5427,4 +5427,6 @@
     <string name="orientation_timing_spead_2_title">Normaal</string>
     <string name="orientation_timing_spead_3_title">Met een halve seconde versnellen</string>
     <string name="orientation_timing_spead_4_title">Met 1 seconde versnellen</string>
+    <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
+    <string name="toast_extra_dim_info">Zorg voor een donkerdere omgeving.</string>
 </resources>
