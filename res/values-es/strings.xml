@@ -5428,4 +5428,6 @@
     <string name="orientation_timing_spead_2_title">Normal</string>
     <string name="orientation_timing_spead_3_title">Acelerar 0,5 segundos</string>
     <string name="orientation_timing_spead_4_title">Acelerar 1 segundo</string>
+    <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
+    <string name="toast_extra_dim_info">Se necesita un entorno más oscuro.</string>
 </resources>

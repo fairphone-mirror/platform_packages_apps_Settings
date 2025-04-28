@@ -5426,4 +5426,6 @@
     <string name="orientation_timing_spead_2_title">Normal</string>
     <string name="orientation_timing_spead_3_title">Accelerér i 0,5 sekunder</string>
     <string name="orientation_timing_spead_4_title">Accelerer i 1 sekund</string>
+    <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
+    <string name="toast_extra_dim_info">EDer er brug for et mørkere miljø.</string>
 </resources>
