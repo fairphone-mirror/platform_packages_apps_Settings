@@ -296,7 +296,7 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
             case ANC_UNLOCK_COMPARE_FAILURE:
                 return getString(com.android.settings.R.string.face_acquired_compare_failure);
             case ANC_UNLOCK_LIVENESS_FAILURE:
-                return getString(com.android.settings.R.string.face_acquired_liveness_failure);
+                return getString(com.android.settings.R.string.face_acquired_compare_failure);
             case ANC_UNLOCK_ATTR_EYE_CLOSE:
                 return getString(com.android.settings.R.string.face_acquired_eye_close);
             case ANC_UNLOCK_FACE_MULTI:

@@ -5423,4 +5423,13 @@
     <string name="orientation_timing_spead_4_title">Acelerar durante 1 segundo</string>
     <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
     <string name="toast_extra_dim_info">É necessário um ambiente mais escuro.</string>
+    <string name="face_unlock_success">desbloqueio facial com sucesso</string>
+    <string name="face_acquired_compare_failure">"rosto não corresponde"</string>
+    <string name="face_acquired_eye_occlusion">"os olhos estão tapados"</string>
+    <string name="face_acquired_mouth_occlusion">"a boca está tapada"</string>
+    <string name="face_acquired_nose_occlusion">"o nariz está tapado"</string>
+    <string name="face_acquired_eye_close">"os olhos estão fechados"</string>
+    <string name="face_acquired_bad_quality">"rosto tapado"</string>
+    <string name="face_acquired_face_multi">"múltiplos rostos visíveis"</string>
+    <string name="face_acquired_face_failure">falha no desbloqueio facial</string>
 </resources>

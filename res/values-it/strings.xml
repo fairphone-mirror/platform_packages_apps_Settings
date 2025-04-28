@@ -5429,4 +5429,13 @@
     <string name="orientation_timing_spead_4_title">Accellera di 1 secondo</string>
     <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
     <string name="toast_extra_dim_info">È necessario un ambiente più scuro.</string>
+    <string name="face_unlock_success">sblocco facciale riuscito</string>
+    <string name="face_acquired_compare_failure">volto non corrispondente</string>
+    <string name="face_acquired_eye_occlusion">gli occhi sono coperti</string>
+    <string name="face_acquired_mouth_occlusion">"la bocca è coperta"</string>
+    <string name="face_acquired_nose_occlusion">"il naso è coperto"</string>
+    <string name="face_acquired_eye_close">gli occhi sono chiusi</string>
+    <string name="face_acquired_bad_quality">volto coperto</string>
+    <string name="face_acquired_face_multi">"più volti visibili"</string>
+    <string name="face_acquired_face_failure">sblocco facciale non riuscito</string>
 </resources>
