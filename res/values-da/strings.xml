@@ -5400,6 +5400,7 @@
     <string name="swap_back_recents_summary">"Skift tilbage og seneste-knappen i navigationslinjen"</string>
     <string name="security_settings_faceunlock_cancel_setup">Spring over</string>
     <string name="security_settings_faceunlock_next">Næste</string>
+    <string name="enroll_main_first">Tilmeld venligst ansigtsdata først.</string>
     <!--state of health-->
     <string name="batteryh_soh">sundhedstilstand:</string>
     <!--state of count-->
