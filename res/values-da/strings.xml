@@ -5846,4 +5846,13 @@
     <string name="orientation_timing_spead_4_title">Accelerer i 1 sekund</string>
     <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
     <string name="toast_extra_dim_info">EDer er brug for et mørkere miljø.</string>
+    <string name="face_unlock_success">"ansigtslåsning lykkedes"</string>
+    <string name="face_acquired_compare_failure">"ansigtet matcher ikke"</string>
+    <string name="face_acquired_eye_occlusion">"øjne er dækket"</string>
+    <string name="face_acquired_mouth_occlusion">"munden er dækket"</string>
+    <string name="face_acquired_nose_occlusion">"næsen er dækket"</string>
+    <string name="face_acquired_eye_close">"øjnene er lukkede"</string>
+    <string name="face_acquired_bad_quality">"ansigt dækket"</string>
+    <string name="face_acquired_face_multi">"flere ansigter synlige"</string>
+    <string name="face_acquired_face_failure">"ansigtslåsning mislykkedes"</string>
 </resources>

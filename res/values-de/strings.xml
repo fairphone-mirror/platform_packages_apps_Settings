@@ -5848,4 +5848,13 @@
     <string name="orientation_timing_spead_4_title">Um 1 Sekunde beschleunigen</string>
     <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
     <string name="toast_extra_dim_info">Dunklere Umgebung erforderlich.</string>
+    <string name="face_unlock_success">Face Unlock erfolgreich</string>
+    <string name="face_acquired_compare_failure">Das Gesicht stimmt nicht überein</string>
+    <string name="face_acquired_eye_occlusion">Die Augen sind blockiert</string>
+    <string name="face_acquired_mouth_occlusion">Der Mund ist blockiert</string>
+    <string name="face_acquired_nose_occlusion">Die Nase ist blockiert</string>
+    <string name="face_acquired_eye_close">Die Augen sind geschlossen</string>
+    <string name="face_acquired_bad_quality">Gesicht bedeckt</string>
+    <string name="face_acquired_face_multi">mehrere Gesichter sichtbar</string>
+    <string name="face_acquired_face_failure">Face Unlock ist fehlgeschlagen</string>
 </resources>

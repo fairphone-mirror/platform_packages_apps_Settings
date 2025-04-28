@@ -5847,4 +5847,13 @@
     <string name="orientation_timing_spead_4_title">Accélérer pendant 1 seconde</string>
     <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
     <string name="toast_extra_dim_info">Un environnement plus sombre est nécessaire.</string>
+    <string name="face_unlock_success">déverrouillage réussi</string>
+    <string name="face_acquired_compare_failure">visage non reconnu</string>
+    <string name="face_acquired_eye_occlusion">yeux non visible</string>
+    <string name="face_acquired_mouth_occlusion">bouche non visible</string>
+    <string name="face_acquired_nose_occlusion">nez non visible</string>
+    <string name="face_acquired_eye_close">oeil fermé</string>
+    <string name="face_acquired_bad_quality">visage caché</string>
+    <string name="face_acquired_face_multi">plusieurs visages</string>
+    <string name="face_acquired_face_failure">échec du déverrouillage</string>
 </resources>

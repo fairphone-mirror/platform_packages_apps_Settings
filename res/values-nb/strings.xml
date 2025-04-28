@@ -5766,4 +5766,13 @@
     <string name="supervision_web_content_filters_search_filter_off_summary" msgid="3834238970190924433">"Kontoinnstillingene kan fortsatt filtrere bort ikke-barnevennlige resultater eller gjøre dem uskarpe"</string>
     <string name="supervision_full_screen_pin_verification_title" msgid="78513043528333399">"Legg inn PIN-koden for tilsyn"</string>
     <string name="accessibility_illustration_content_description" msgid="557376174860150903">"<xliff:g id="FEATURE">%1$s</xliff:g>-animasjon"</string>
+    <string name="face_unlock_success">"ansiktslåsen var vellykket"</string>
+    <string name="face_acquired_compare_failure">"ansiktet stemmer ikke"</string>
+    <string name="face_acquired_eye_occlusion">"øynene er dekket"</string>
+    <string name="face_acquired_mouth_occlusion">"munnen er dekket"</string>
+    <string name="face_acquired_nose_occlusion">"nesen er dekket"</string>
+    <string name="face_acquired_eye_close">"øynene er lukket"</string>
+    <string name="face_acquired_bad_quality">"ansikt dekket"</string>
+    <string name="face_acquired_face_multi">"flere ansikter synlige"</string>
+    <string name="face_acquired_face_failure">"ansiktslås mislyktes"</string>
 </resources>

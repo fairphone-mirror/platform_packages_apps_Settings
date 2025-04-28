@@ -5847,4 +5847,13 @@
     <string name="orientation_timing_spead_4_title">Met 1 seconde versnellen</string>
     <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
     <string name="toast_extra_dim_info">Zorg voor een donkerdere omgeving.</string>
+    <string name="face_unlock_success">ontgrendeling succesvol</string>
+    <string name="face_acquired_compare_failure">gezicht niet herkend</string>
+    <string name="face_acquired_eye_occlusion">ogen niet zichtbaar</string>
+    <string name="face_acquired_mouth_occlusion">mond niet zichtbaar</string>
+    <string name="face_acquired_nose_occlusion">neus niet zichtbaar</string>
+    <string name="face_acquired_eye_close">ogen zijn gesloten</string>
+    <string name="face_acquired_bad_quality">gezicht bedekt</string>
+    <string name="face_acquired_face_multi">meerdere gezichten zichtbaar</string>
+    <string name="face_acquired_face_failure">gezichtsontgrendeling mislukt</string>
 </resources>

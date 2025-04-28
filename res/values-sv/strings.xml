@@ -5847,4 +5847,13 @@
     <string name="orientation_timing_spead_4_title">Accelerera med 1 sekund</string>
     <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
     <string name="toast_extra_dim_info">En mörkare miljö behövs.</string>
+    <string name="face_unlock_success">"ansiktsupplåsning lyckades"</string>
+    <string name="face_acquired_compare_failure">"ansiktet matchar inte"</string>
+    <string name="face_acquired_eye_occlusion">"ögonen är täckta"</string>
+    <string name="face_acquired_mouth_occlusion">"munnen är täckt"</string>
+    <string name="face_acquired_nose_occlusion">"näsan är täckt"</string>
+    <string name="face_acquired_eye_close">"ögonen är stängda"</string>
+    <string name="face_acquired_bad_quality">"ansikte täckt"</string>
+    <string name="face_acquired_face_multi">"flera ansikten synliga"</string>
+    <string name="face_acquired_face_failure">"ansiktslåsning misslyckades"</string>
 </resources>
