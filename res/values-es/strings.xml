@@ -545,8 +545,8 @@
     <string name="privacy_header" msgid="5526002421324257007">"Privacidad"</string>
     <string name="work_profile_category_header" msgid="85707750968948517">"Perfil de trabajo"</string>
     <string name="private_space_title" msgid="1752064212078238723">"Espacio privado"</string>
-    <string name="private_space_summary" msgid="2274405892301976238">"Bloquea y oculta tus aplicaciones privadas"</string>
-    <string name="private_space_description" msgid="4059594203775816136">"Mantén las aplicaciones privadas en un espacio separado que puedas ocultar o bloquear"</string>
+    <string name="private_space_summary" msgid="2274405892301976238">"Mantener aplicaciones privadas bloqueadas"</string>
+    <string name="private_space_description" msgid="4059594203775816136">"Manten las aplicaciones privadas en un espacio separado que puedas bloquear"</string>
     <string name="private_space_lock_title" msgid="7230836881433350526">"Bloqueo de espacio privado"</string>
     <string name="private_space_one_lock_summary" msgid="2106513606571219068">"Puedes desbloquear el espacio privado de la misma forma que desbloqueas tu dispositivo, o bien con un bloqueo diferente"</string>
     <string name="private_space_screen_lock_title" msgid="8679383894967823163">"Usar el bloqueo de pantalla del dispositivo"</string>
