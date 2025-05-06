@@ -546,8 +546,8 @@
     <string name="privacy_header" msgid="5526002421324257007">"Confidentialité"</string>
     <string name="work_profile_category_header" msgid="85707750968948517">"Profil professionnel"</string>
     <string name="private_space_title" msgid="1752064212078238723">"Espace privé"</string>
-    <string name="private_space_summary" msgid="2274405892301976238">"Gardez les applications privées verrouillées et masquées"</string>
-    <string name="private_space_description" msgid="4059594203775816136">"Gardez vos applis privées dans un espace séparé que vous pouvez masquer ou verrouiller"</string>
+    <string name="private_space_summary" msgid="2274405892301976238">"Gardez les applications privées verrouillées"</string>
+    <string name="private_space_description" msgid="4059594203775816136">"Gardez vos applis privées dan un espace séparé que vous pouvez verrouiller"</string>
     <string name="private_space_lock_title" msgid="7230836881433350526">"Déverrouillage de l\'espace privé"</string>
     <string name="private_space_one_lock_summary" msgid="2106513606571219068">"Vous pouvez déverrouiller votre espace privé de la même manière que vous déverrouillez votre appareil ou bien choisir une méthode différente"</string>
     <string name="private_space_screen_lock_title" msgid="8679383894967823163">"Utiliser le déverrouillage de l\'écran de l\'appareil"</string>
