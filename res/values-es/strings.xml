@@ -5438,4 +5438,9 @@
     <string name="fingerprint_settings_open_title">Modo de desbloqueo con huella digital</string>
     <string name="swap_back_recents_title">"Cambia la navegación de volver/recientes"</string>
     <string name="swap_back_recents_summary">"Cambia los botones de volver y recientes en la barra de navegación"</string>
+
+    <string name="qsb_search_bar_title">Barra de búsqueda</string>
+    <string name="qsb_search_bar_title_description">Mostrar/Ocultar la barra de búsqueda en la pantalla de inicio</string>
+    <string name="reboot_required_title">Reinicio necesario</string>
+    <string name="reboot_required_message">Aplicar y reiniciar para que los cambios tengan efecto</string>
 </resources>

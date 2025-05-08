@@ -225,6 +225,13 @@
             android:fragment="com.android.settings.display.VrDisplayPreferencePicker"/>
 
         <SwitchPreference
+            android:key="qsb_search_bar"
+            android:title="@string/qsb_search_bar_title"
+            android:summary="@string/qsb_search_bar_title_description"
+            android:defaultValue="true"
+            settings:controller="com.android.settings.display.SearchModePreferenceController"/>
+
+        <SwitchPreference
             android:key="pick_up_to_wake"
             android:title="@string/pick_up_to_wake_title"/>
 

@@ -13934,4 +13934,11 @@
     <string name="diagprotect_title">DiagProtector Setting</string>
     <string name="diagprotect_on">Diag Protector ON</string>
     <string name="diagprotect_off">Diag Protector OFF</string>
+
+    <!--Add search bar toggle-->
+    <string name="qsb_search_bar_title">Search bar</string>
+    <string name="qsb_search_bar_title_description">Show/Hide Homescreen Search Bar</string>
+    <string name="reboot_required_title">Reboot Required</string>
+    <string name="reboot_required_message">Apply &amp; Reboot to Apply Changes</string>
+
 </resources>

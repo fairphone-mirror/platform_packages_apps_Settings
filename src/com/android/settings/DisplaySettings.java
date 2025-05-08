@@ -28,6 +28,7 @@ import com.android.settings.display.LiftToWakePreferenceController;
 import com.android.settings.display.SetRefreshRatePreferenceController;
 import com.android.settings.display.ShowOperatorNamePreferenceController;
 import com.android.settings.display.TapToWakePreferenceController;
+import com.android.settings.display.SearchModePreferenceController;
 import com.android.settings.display.ThemePreferenceController;
 import com.android.settings.display.VrDisplayPreferenceController;
 import com.android.settings.display.PickUpToWakePreferenceController;
@@ -83,6 +84,7 @@ public class DisplaySettings extends DashboardFragment {
         controllers.add(new LiftToWakePreferenceController(context));
         controllers.add(new SetRefreshRatePreferenceController(context));
         controllers.add(new TapToWakePreferenceController(context));
+        controllers.add(new SearchModePreferenceController(context));
         controllers.add(new VrDisplayPreferenceController(context));
         controllers.add(new ShowOperatorNamePreferenceController(context));
         controllers.add(new ThemePreferenceController(context));

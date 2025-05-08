@@ -5434,4 +5434,9 @@
     <string name="fingerprint_settings_open_title">Fingerabruck Entsperrverhalten</string>
     <string name="swap_back_recents_title">"Zurück/Zuletzt verwendet wechseln"</string>
     <string name="swap_back_recents_summary">"Die Schaltflächen "Zurück" und "Zuletzt verwendet" in der Navigationsleiste austauschen"</string>
+
+    <string name="qsb_search_bar_title">Suchleiste</string>
+    <string name="qsb_search_bar_title_description">Suchleiste des Startbildschirms anzeigen/verbergen</string>
+    <string name="reboot_required_title">Neustart erforderlich</string>
+    <string name="reboot_required_message">Übernehmen und neu starten, um anzuwenden</string>
 </resources>
