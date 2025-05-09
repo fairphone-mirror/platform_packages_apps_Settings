@@ -31,6 +31,10 @@ import android.content.pm.PackageManager;
 import android.database.ContentObserver;
 import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
+import android.net.wifi.SoftApConfiguration;
+import android.net.wifi.WifiManager;
+import android.os.Build;
+import android.os.SystemProperties;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.FeatureFlagUtils;
@@ -178,6 +182,40 @@ public class SettingsApplication extends Application {
         if (mParcelFileDescriptor == null) {
             new Thread(() -> setDefaultOnLock(getBaseContext())).start();
         }
+
+        Log.d(TAG, "Try initialize default wifi ssid");
+        updateDefaultWifiSsid();
+    }
+
+    private void updateDefaultWifiSsid() {
+        if (!"FP6".equalsIgnoreCase(Build.PRODUCT)) return;
+        if (getApplicationContext() == null) return;
+
+        final String KEY_SSID_UPDATE = "wifi_default_ssid_update";
+        SharedPreferences prefs = getSharedPreferences("wifi_tether",
+            Context.MODE_PRIVATE);
+        if (prefs.getBoolean(KEY_SSID_UPDATE, false)) {
+            Log.d(TAG, "Default wifi ssid updated already, bail");
+            return;
+        }
+
+        WifiManager wifiManager = getApplicationContext().getSystemService(
+                WifiManager.class);
+        SoftApConfiguration config = wifiManager.getSoftApConfiguration();
+        SoftApConfiguration.Builder configBuilder = new SoftApConfiguration.Builder(config);
+
+        String ssid = SystemProperties.get("ro.product.product.model");
+        Log.d(TAG, "Update wifi default ssid: " + ssid);
+        configBuilder.setSsid(ssid);
+        wifiManager.setSoftApConfiguration(configBuilder.build());
+
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean("wifi_default_ssid_update", true);
+        editor.commit();
+
+        boolean success = prefs.getBoolean(KEY_SSID_UPDATE, false);
+        Log.d(TAG, "Update Wifi default ssid(" + ssid + ") updated "
+            + (success ? "success" : "failed"));
     }
 
     /** Returns the factories of preference screen metadata. */
