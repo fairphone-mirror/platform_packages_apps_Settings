@@ -5438,4 +5438,7 @@
     <string name="face_acquired_bad_quality">visage caché</string>
     <string name="face_acquired_face_multi">plusieurs visages</string>
     <string name="face_acquired_face_failure">échec du déverrouillage</string>
+
+    <!-- FPS: Switch Button Settings -->
+    <string name="switch_button_setting_summary">Régler l\'action associée au switch</string>
 </resources>

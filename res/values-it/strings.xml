@@ -5438,4 +5438,7 @@
     <string name="face_acquired_bad_quality">volto coperto</string>
     <string name="face_acquired_face_multi">"più volti visibili"</string>
     <string name="face_acquired_face_failure">sblocco facciale non riuscito</string>
+
+    <!-- FPS: Switch Button Settings -->
+    <string name="switch_button_setting_summary">Scegli l\'azione associata allo Switch</string>
 </resources>

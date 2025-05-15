@@ -5439,4 +5439,7 @@
     <string name="face_acquired_bad_quality">cara cubierta</string>
     <string name="face_acquired_face_multi">"múltiples caras visibles"</string>
     <string name="face_acquired_face_failure">error en desbloqueo facial</string>
+
+    <!-- FPS: Switch Button Settings -->
+    <string name="switch_button_setting_summary">Ajusta la acción asociada con el Switch</string>
 </resources>
