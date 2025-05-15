@@ -23,7 +23,6 @@ import android.content.Intent;
 
 import androidx.preference.Preference;
 
-import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
 
 public class SwitchButtonSettingsPreferenceController extends BasePreferenceController {
@@ -35,11 +34,6 @@ public class SwitchButtonSettingsPreferenceController extends BasePreferenceCont
 
     public SwitchButtonSettingsPreferenceController(Context context, String key) {
         super(context, key);
-    }
-
-    @Override
-    public CharSequence getSummary() {
-        return mContext.getText(R.string.switch_button_setting_name);
     }
 
     @Override

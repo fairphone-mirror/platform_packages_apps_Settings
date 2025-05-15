@@ -5857,4 +5857,7 @@
     <string name="face_acquired_bad_quality">Gesicht bedeckt</string>
     <string name="face_acquired_face_multi">mehrere Gesichter sichtbar</string>
     <string name="face_acquired_face_failure">Face Unlock ist fehlgeschlagen</string>
+
+    <!-- FPS: Switch Button Settings -->
+    <string name="switch_button_setting_summary">Passt die mit dem Switch verbundene Aktion an</string>
 </resources>

@@ -5856,4 +5856,7 @@
     <string name="face_acquired_bad_quality">"ansikte täckt"</string>
     <string name="face_acquired_face_multi">"flera ansikten synliga"</string>
     <string name="face_acquired_face_failure">"ansiktslåsning misslyckades"</string>
+
+    <!-- FPS: Switch Button Settings -->
+    <string name="switch_button_setting_summary">Justera åtgärden som är kopplad till omkopplaren</string>
 </resources>

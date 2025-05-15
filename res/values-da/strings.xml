@@ -5855,4 +5855,7 @@
     <string name="face_acquired_bad_quality">"ansigt dækket"</string>
     <string name="face_acquired_face_multi">"flere ansigter synlige"</string>
     <string name="face_acquired_face_failure">"ansigtslåsning mislykkedes"</string>
+
+    <!-- FPS: Switch Button Settings -->
+    <string name="switch_button_setting_summary">Juster den handling, der er knyttet til kontakten</string>
 </resources>

@@ -5856,4 +5856,7 @@
     <string name="face_acquired_bad_quality">gezicht bedekt</string>
     <string name="face_acquired_face_multi">meerdere gezichten zichtbaar</string>
     <string name="face_acquired_face_failure">gezichtsontgrendeling mislukt</string>
+
+    <!-- FPS: Switch Button Settings -->
+    <string name="switch_button_setting_summary">Stel de actie in voor de Switch</string>
 </resources>
