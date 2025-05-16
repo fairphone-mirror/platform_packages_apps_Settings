@@ -20,7 +20,9 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.settings.SettingsEnums;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -45,6 +47,7 @@ public class EuiccRacConnectivityDialogFragment extends ObservableDialogFragment
             SettingsEnums.ACTION_RESET_ESIMS_RAC_CONNECTIVITY_WARNING;
     private static final int METRICS_CANCEL_VALUE = 0;
     private static final int METRICS_CONTINUE_VALUE = 1;
+    private static final Intent WIFI_SETTINGS = new Intent(Settings.ACTION_WIFI_SETTINGS);//[BUG]-Modify by shaopan.tang 2025-05-16 FPS-2655 ESIM Delete possible only with Wifi Connection
 
     private MetricsFeatureProvider mMetricsFeatureProvider;
 
@@ -76,7 +79,7 @@ public class EuiccRacConnectivityDialogFragment extends ObservableDialogFragment
                         // Return is on the right side
                         .setPositiveButton(R.string.wifi_warning_return_button, this)
                         // Continue is on the left side
-                        .setNegativeButton(R.string.wifi_warning_continue_button, this);
+                        .setNegativeButton(R.string.wifi_warning_goto_wifi_button, this);//[BUG]-Modify by shaopan.tang 2025-05-16 FPS-2655 ESIM Delete possible only with Wifi Connection
 
         View content =
                 LayoutInflater.from(getContext())
@@ -121,8 +124,11 @@ public class EuiccRacConnectivityDialogFragment extends ObservableDialogFragment
         // Positions of the buttons have been switch:
         // negative button = left button = the button to continue
         if (which == DialogInterface.BUTTON_NEGATIVE) {
-            logMetrics(METRICS_CONTINUE_VALUE);
-            EraseEuiccDataDialogFragment.show(((ResetDashboardFragment) fragment));
+            //[BUG]-Modify begin by shaopan.tang 2025-05-16 FPS-2655 ESIM Delete possible only with Wifi Connection
+            //logMetrics(METRICS_CONTINUE_VALUE);
+            //EraseEuiccDataDialogFragment.show(((ResetDashboardFragment) fragment));
+            startActivity(WIFI_SETTINGS);
+            //[BUG]-Modify end by shaopan.tang
         } else {
             logMetrics(METRICS_CANCEL_VALUE);
         }

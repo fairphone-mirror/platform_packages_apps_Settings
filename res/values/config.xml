@@ -848,6 +848,7 @@
 
     <!-- Array of carrier id that uses reusable activation code-->
     <integer-array name="config_carrier_use_rac" translatable="false">
+        <item>1487</item> <!-- carrier_name: "Bouygues Telecom" -->
     </integer-array>
 
     <!-- The Activity intent to trigger to launch time-related feedback. -->

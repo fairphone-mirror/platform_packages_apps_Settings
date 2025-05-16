@@ -3932,6 +3932,10 @@
     <!-- Main clear progress screen text [CHAR LIMIT=75] -->
     <string name="main_clear_progress_text">Please wait\u2026</string>
 
+    <!--[BUG]-Modify by shaopan.tang 2025-05-16 FPS-2655 ESIM Delete possible only with Wifi Connection -->
+    <!-- Main clear progress screen text [CHAR LIMIT=75] -->
+    <string name="main_clear_progress_esim_reset_text">Do not allowed to enable eSIM reset as there is no WiFi connection</string>
+
     <!-- Main settings screen, Call settings title for item to go into the call settings -->
     <string name="call_settings_title">Call settings</string>
     <!-- Main settings screen, Call settings summary for item to go into call settings -->
@@ -13168,6 +13172,8 @@ Data usage charges may apply.</string>
     <string name="wifi_warning_continue_button">Erase anyway</string>
     <!-- Button label to return to settings [CHAR_LIMIT=20] -->
     <string name="wifi_warning_return_button">OK</string>
+    <!-- Button label to continue with erasing [CHAR_LIMIT=20] -->
+    <string name="wifi_warning_goto_wifi_button">Goto Wifi settings</string>
 
     <!-- Title for Network connection request Dialog [CHAR LIMIT=60] -->
     <string name="network_connection_request_dialog_title">Connect to device</string>

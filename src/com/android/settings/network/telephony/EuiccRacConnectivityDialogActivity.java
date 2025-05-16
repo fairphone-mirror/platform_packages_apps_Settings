@@ -20,6 +20,7 @@ import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.telephony.SubscriptionManager;
 import android.util.Log;
 
@@ -39,6 +40,7 @@ public class EuiccRacConnectivityDialogActivity extends FragmentActivity
     private static final String TAG = "EuiccRacConnectivityDialogActivity";
     private static final String ARG_SUB_ID = "sub_id";
     private static final String ARG_RESET_MOBILE_NETWORK_ID = "reset_mobile_netword_id";
+    private static final Intent WIFI_SETTINGS = new Intent(Settings.ACTION_WIFI_SETTINGS);//[BUG]-Modify by shaopan.tang 2025-05-16 FPS-2655 ESIM Delete possible only with Wifi Connection
 
     private int mSubId;
     @Nullable
@@ -104,8 +106,11 @@ public class EuiccRacConnectivityDialogActivity extends FragmentActivity
         finish();
         switch (tag) {
             case SettingsEnums.ACTION_SETTINGS_ESIM_RAC_CONNECTIVITY_WARNING:
-                Log.i(TAG, "Show dialogue activity that handles deleting eSIM profile");
-                startActivity(DeleteEuiccSubscriptionDialogActivity.getIntent(this, mSubId));
+                //[BUG]-Modify begin by shaopan.tang 2025-05-16 FPS-2655 ESIM Delete possible only with Wifi Connection
+                //Log.i(TAG, "Show dialogue activity that handles deleting eSIM profile");
+                //startActivity(DeleteEuiccSubscriptionDialogActivity.getIntent(this, mSubId));
+                startActivity(WIFI_SETTINGS);
+                //[BUG]-Modify end by shaopan.tang
                 break;
             case SettingsEnums.ACTION_RESET_MOBILE_NETWORK_RAC_CONNECTIVITY_WARNING:
                 if (mResetMobileNetworkIntent != null) {
@@ -127,7 +132,7 @@ public class EuiccRacConnectivityDialogActivity extends FragmentActivity
                 getMetricsTag(),
                 getString(R.string.wifi_warning_dialog_title),
                 getString(R.string.wifi_warning_dialog_text),
-                getString(R.string.wifi_warning_continue_button),
+                getString(R.string.wifi_warning_goto_wifi_button),//[BUG]-Modify by shaopan.tang 2025-05-16 FPS-2655 ESIM Delete possible only with Wifi Connection
                 getString(R.string.wifi_warning_return_button));
     }
 
