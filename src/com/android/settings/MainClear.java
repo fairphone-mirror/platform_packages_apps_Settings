@@ -62,6 +62,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.VisibleForTesting;
 
@@ -354,7 +355,15 @@ public class MainClear extends InstrumentedFragment implements OnGlobalLayoutLis
                 mEsimStorageContainer.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mEsimStorage.toggle();
+                        //[BUG]-Modify begin by shaopan.tang 2025-05-16 FPS-2655 ESIM Delete possible only with Wifi Connection
+                        // Do not allow to reset eSIM when no wifi or data network connection
+                        if (!SubscriptionUtil.shouldShowRacDialogWhenErasingAllEsims(getContext())){
+                            mEsimStorage.toggle();
+                        } else {
+                            Toast.makeText(getContext(), R.string.main_clear_progress_esim_reset_text,Toast.LENGTH_SHORT).show();
+                            mEsimStorage.setChecked(false /* checked */);
+                        }
+                        //[BUG]-Modify end by shaopan.tang
                     }
                 });
             } else {
