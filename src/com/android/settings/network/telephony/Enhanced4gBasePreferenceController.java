@@ -117,10 +117,18 @@ public class Enhanced4gBasePreferenceController extends TelephonyTogglePreferenc
         }
 
         final PersistableBundle carrierConfig = getCarrierConfigForSubId(subId);
-        if (!CarrierConfigManager.isConfigForIdentifiedCarrier(carrierConfig) ||
+        //Modify begin by renjie.zhang FPS-2722 2025/5/20
+        final boolean roamingUnlock = carrierConfig != null && carrierConfig.getBoolean(
+                CarrierConfigManager.KEY_ROAMING_UNLOCK_VOLTE_OPTIONAL_NETWORK_TYPE_BOOL, false);
+        final boolean isRoaming = MobileNetworkSettings.isRoaming(mSubId);
+        Log.i(TAG, "roamingUnlock : " + roamingUnlock + " isRoaming : "+isRoaming);
+        if (roamingUnlock && isRoaming) {
+            Log.i(TAG, "Unlock VoLTE switch when under roaming network.");
+        } else if (!CarrierConfigManager.isConfigForIdentifiedCarrier(carrierConfig) ||
                 carrierConfig.getBoolean(CarrierConfigManager.KEY_HIDE_ENHANCED_4G_LTE_BOOL)) {
             return CONDITIONALLY_UNAVAILABLE;
         }
+        //Modify end by renjie.zhang FPS-2722 2025/5/20
 
         try {
             if (!queryState.isReadyToVoLte()) {

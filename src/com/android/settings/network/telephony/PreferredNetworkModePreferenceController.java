@@ -33,12 +33,8 @@ import static com.android.settings.network.telephony.EnabledNetworkModePreferenc
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.database.ContentObserver;
-import android.os.Handler;
 import android.os.Looper;
 import android.os.PersistableBundle;
-import android.os.RemoteException;
-import android.provider.Settings;
 import android.telephony.CarrierConfigManager;
 import android.telephony.PhoneStateListener;
 import android.telephony.RadioAccessFamily;
@@ -89,8 +85,8 @@ public class PreferredNetworkModePreferenceController extends BasePreferenceCont
     private AllowedNetworkTypesListener mAllowedNetworkTypesListener;
     @VisibleForTesting
     Integer mCallState;
-    private String[] pref_network_mode = null;
-    private String[] pref_network_value = null;
+    private String[] mPreferredNetworkModes = null;
+    private String[] mPreferredNetworkValues = null;
 
     @VisibleForTesting
     final SelectedNbIotSatelliteSubscriptionCallback mSelectedNbIotSatelliteSubscriptionCallback =
@@ -167,42 +163,93 @@ public class PreferredNetworkModePreferenceController extends BasePreferenceCont
         listPreference.setEnabled(isCallStateIdle());
     }
 
-    //Modify begin by renjie.zhang FPS-228 2024/2/23
+    //Modify begin by renjie.zhang FPS-2722 2025/5/20
+
     private void updatePreferenceEntries(ListPreference preference) {
-        // Default values
-        final PersistableBundle carrierConfig = mCarrierConfigCache.getConfigForSubId(mSubId);
 
-        if (carrierConfig != null) {
-            pref_network_mode = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_MODE);
-            pref_network_value = carrierConfig.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_VALUE);
-        }
+        // order：carrier config > carrier param > default config
+        final boolean roamingUnlock = getRoamingUnlockStatus();
+        final boolean isRoaming = MobileNetworkSettings.isRoaming(mSubId);
+        Log.d(LOG_TAG, "roamingUnlock : " + roamingUnlock + " isRoaming : "+isRoaming);
 
-        if (pref_network_mode != null && pref_network_value != null && pref_network_mode.length != 0 && pref_network_value.length != 0) {
-            Log.d(LOG_TAG, "init preferred network from carrier config");
-        }else {
+        if (!roamingUnlock || !isRoaming) {
 
-            PersistableBundle carrierParams = CarrierParamsUtil.loadInstance(mContext).getCarrierParams(mSubId);
-            if (carrierParams != null) {
-                pref_network_mode = carrierParams.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_MODE);
-                pref_network_value = carrierParams.getStringArray(CarrierConfigManager.KEY_PREFERRED_NETWORK_VALUE);
+            mPreferredNetworkModes =
+                    getCarrierConfig(CarrierConfigManager.KEY_PREFERRED_NETWORK_MODE);
+            mPreferredNetworkValues =
+                    getCarrierConfig(CarrierConfigManager.KEY_PREFERRED_NETWORK_VALUE);
+
+            if (isValidConfiguration(mPreferredNetworkModes, mPreferredNetworkValues)) {
+                logConfigurationSource("Carrier Config");
+                updatePreferenceEntries(preference, mPreferredNetworkModes,
+                        mPreferredNetworkValues);
+                return;
             }
 
-            if (pref_network_mode != null && pref_network_value != null && pref_network_mode.length != 0 && pref_network_value.length != 0) {
-                Log.d(LOG_TAG, "init preferred network from Settings params");
-            } else {
-                Log.d(LOG_TAG, "init preferred network from default config");
-                //[11086878] The preferred network modes defined begin
-                final Resources res = SubscriptionManager.getResourcesForSubId(mContext, mSubId);
-                pref_network_mode = res.getStringArray(R.array.preferred_network_mode_custom_choices);
-                pref_network_value = res.getStringArray(R.array.preferred_network_mode_custom_choices_value);
-                //[11086878] The preferred network modes defined end
+            mPreferredNetworkModes =
+                    getCarrierParams(CarrierConfigManager.KEY_PREFERRED_NETWORK_MODE);
+            mPreferredNetworkValues =
+                    getCarrierParams(CarrierConfigManager.KEY_PREFERRED_NETWORK_VALUE);
+
+
+            if (isValidConfiguration(mPreferredNetworkModes, mPreferredNetworkValues)) {
+                logConfigurationSource("Settings Carrier Params");
+                updatePreferenceEntries(preference, mPreferredNetworkModes,
+                        mPreferredNetworkValues);
+                return;
             }
         }
 
-        preference.setEntries(pref_network_mode);
-        preference.setEntryValues(pref_network_value);
+        logConfigurationSource("Default Config");
+        final Resources res = SubscriptionManager.getResourcesForSubId(mContext, mSubId);
+        mPreferredNetworkModes = res.getStringArray(R.array.preferred_network_mode_custom_choices);
+        mPreferredNetworkValues =
+                res.getStringArray(R.array.preferred_network_mode_custom_choices_value);
+        updatePreferenceEntries(preference, mPreferredNetworkModes, mPreferredNetworkValues);
     }
-    //Modify END by renjie.zhang FPS-228 2024/2/23
+
+    private boolean getRoamingUnlockStatus() {
+
+        final PersistableBundle carrierConfig = mCarrierConfigCache.getConfigForSubId(mSubId);
+        return carrierConfig != null && carrierConfig.getBoolean(
+                CarrierConfigManager.KEY_ROAMING_UNLOCK_VOLTE_OPTIONAL_NETWORK_TYPE_BOOL,false);
+    }
+
+
+    private String[] getCarrierConfig(String key) {
+
+        final PersistableBundle carrierConfig = mCarrierConfigCache.getConfigForSubId(mSubId);
+        return carrierConfig != null ? carrierConfig.getStringArray(key) : null;
+    }
+
+    private String[] getCarrierParams(String key) {
+
+        final PersistableBundle carrierParams =
+                CarrierParamsUtil.loadInstance(mContext).getCarrierParams(mSubId);
+        return carrierParams != null ? carrierParams.getStringArray(key) : null;
+    }
+
+    private boolean isValidConfiguration(String[] modes, String[] values) {
+
+        return modes != null
+                && values != null
+                && modes.length > 0
+                && values.length > 0
+                && modes.length == values.length;
+    }
+
+    private void logConfigurationSource(String source) {
+
+        Log.d(LOG_TAG, "Initializing preferred network from: " + source);
+    }
+
+    private void updatePreferenceEntries(ListPreference preference, String[] modes, String[] values) {
+
+        preference.setEntries(modes);
+        preference.setEntryValues(values);
+    }
+
+    //Modify end by renjie.zhang FPS-2722 2025/5/20
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object object) {
@@ -437,9 +484,9 @@ public class PreferredNetworkModePreferenceController extends BasePreferenceCont
 
         Log.d(LOG_TAG, "set networkmode(" + networkmode + ") summary");
 
-        for (int index = 0; index < pref_network_value.length; index++) {
-            if (pref_network_value[index].equals(String.valueOf(networkmode))){
-                summary = pref_network_mode[index];
+        for (int index = 0; index < mPreferredNetworkValues.length; index++) {
+            if (mPreferredNetworkValues[index].equals(String.valueOf(networkmode))){
+                summary = mPreferredNetworkModes[index];
                 break;
             }
         }
