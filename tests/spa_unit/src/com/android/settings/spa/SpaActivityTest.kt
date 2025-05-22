@@ -36,6 +36,8 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.ArgumentCaptor
 import org.mockito.Mock
+import org.mockito.Mockito.any
+import org.mockito.Mockito.never
 import org.mockito.Mockito.verify
 import org.mockito.MockitoSession
 import org.mockito.quality.Strictness
@@ -113,6 +115,17 @@ class SpaActivityTest {
         assertThat(capturedIntent.component?.className).isEqualTo(SpaActivity::class.qualifiedName)
         assertThat(capturedIntent.getStringExtra(KEY_DESTINATION))
             .isEqualTo("Destination/package.name/${UserHandle.myUserId()}")
+    }
+
+    @Test
+    fun startSpaActivityForApp_hasMalformedPackageName() {
+        val intent = Intent().apply {
+            data = Uri.parse("package:package.name/10#")
+        }
+
+        context.startSpaActivityForApp(DESTINATION, intent)
+
+        verify(context, never()).startActivity(any())
     }
 
     private companion object {

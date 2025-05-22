@@ -64,7 +64,7 @@ class SpaActivity : BrowseActivity() {
 
         @JvmStatic
         fun Context.startSpaActivityForApp(destinationPrefix: String, intent: Intent): Boolean {
-            val packageName = intent.data?.schemeSpecificPart ?: return false
+            val packageName = intent.data?.schemeSpecificPart?.takeIf { Regex("^([a-zA-Z]\\w*\\.)*[a-zA-Z]\\w*$").matches(it) } ?: return false
             startSpaActivity("$destinationPrefix/$packageName/${UserHandle.myUserId()}")
             return true
         }
