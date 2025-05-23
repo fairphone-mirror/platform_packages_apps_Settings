@@ -75,7 +75,8 @@ public class BluetoothLeAudioModePreferenceController
 
     @Override
     public boolean isAvailable() {
-        return BluetoothProperties.isProfileBapBroadcastSourceEnabled().orElse(false);
+        //return BluetoothProperties.isProfileBapBroadcastSourceEnabled().orElse(false);
+        return false;
     }
 
     @Override
