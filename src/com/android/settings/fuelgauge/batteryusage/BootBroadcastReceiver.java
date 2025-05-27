@@ -29,6 +29,11 @@ import com.android.settings.fuelgauge.batteryusage.bugreport.BatteryUsageLogUtil
 import com.android.settingslib.fuelgauge.BatteryUtils;
 
 import java.time.Duration;
+import android.os.Message;
+import android.net.wifi.WifiManager;
+import android.os.SystemProperties;
+import android.widget.Toast;
+import android.os.PowerManager;
 
 /** Receives broadcasts to start or stop the periodic fetching job. */
 public final class BootBroadcastReceiver extends BroadcastReceiver {
@@ -37,6 +42,15 @@ public final class BootBroadcastReceiver extends BroadcastReceiver {
             Duration.ofSeconds(6).toMillis();
 
     private final Handler mHandler = new Handler(Looper.getMainLooper());
+
+    private final Handler mBackgroundHandler = new BackgroundHandler(Looper.getMainLooper());
+    private static final int MSG_GET_COUNTRY_CODE = 1;
+    private static final int MSG_REBOOT_LOAD_WIFI = 2;
+    private static int mtrytimes = 0;
+
+    private WifiManager mWifiManager;
+    private PowerManager mPm;
+    private static Context mContext;
 
     public static final String ACTION_PERIODIC_JOB_RECHECK =
             "com.android.settings.battery.action.PERIODIC_JOB_RECHECK";
@@ -49,6 +63,35 @@ public final class BootBroadcastReceiver extends BroadcastReceiver {
         final Intent intent = new Intent(ACTION_PERIODIC_JOB_RECHECK);
         intent.setClass(context, BootBroadcastReceiver.class);
         context.sendBroadcast(intent);
+    }
+
+    private class BackgroundHandler extends Handler {
+
+        public BackgroundHandler(Looper looper) {
+            super(looper);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case MSG_GET_COUNTRY_CODE:
+                    mtrytimes++;
+                    if(mtrytimes <= 2){
+                        getWifiCountryCode();
+                    }
+                    break;
+                case MSG_REBOOT_LOAD_WIFI:
+                    if(mPm != null){
+                        mPm.reboot(null);
+                    }else{
+                        if(mContext != null){
+                            mPm = mContext.getSystemService(PowerManager.class);
+                            mPm.reboot(null);
+                        }
+                    }
+                    break;
+            }
+        }
     }
 
     @Override
@@ -89,8 +132,47 @@ public final class BootBroadcastReceiver extends BroadcastReceiver {
             DatabaseUtils.removeUsageSource(context);
 
             BatteryUsageLogUtils.writeLog(context, Action.RECHECK_JOB, "delay:" + delayedTime);
+
+            if(mContext == null){
+                 mContext = context.getApplicationContext();
+            }
+
+            if(mWifiManager == null){
+                mWifiManager = context.getSystemService(WifiManager.class);
+                mPm = context.getSystemService(PowerManager.class);
+            }
+            String countrycode = SystemProperties.get("persist.odm.ccode","");
+            Log.d("wificode", "countrycode from property = " + countrycode);
+            if("".equals(countrycode)){
+                getWifiCountryCode();
+            }
         } else if (ACTION_SETUP_WIZARD_FINISHED.equals(action)) {
             ElapsedTimeUtils.storeSuwFinishedTimestamp(context, System.currentTimeMillis());
+        }
+    }
+
+    private void getWifiCountryCode(){
+        if(mWifiManager == null && mContext != null){
+            mWifiManager = mContext.getSystemService(WifiManager.class);
+        }
+
+        if(mWifiManager != null){
+            String countrycode = mWifiManager.getCountryCode();
+            Log.d("wificode", "countrycode = " + countrycode);
+            if(countrycode == null || countrycode.isEmpty()){
+                mBackgroundHandler.sendEmptyMessageDelayed(MSG_GET_COUNTRY_CODE,10*1000);
+            }else{
+                if("US".equals(countrycode) || "CA".equals(countrycode)){
+                    SystemProperties.set("persist.odm.ccode","fcc");
+                    Toast toast = Toast.makeText(mContext, "In the NA region. Restart the phone to load the corresponding configuration.", Toast.LENGTH_SHORT);
+                    toast.show();
+                    mBackgroundHandler.sendEmptyMessageDelayed(MSG_REBOOT_LOAD_WIFI,3*1000);
+                }else if("CN".equals(countrycode)){
+                    //do nothing
+                }else{
+                    SystemProperties.set("persist.odm.ccode","eu");
+                }
+            }
         }
     }
 
