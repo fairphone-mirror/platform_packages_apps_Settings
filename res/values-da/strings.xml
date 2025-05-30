@@ -5440,4 +5440,7 @@
 
     <!-- FPS: Switch Button Settings -->
     <string name="switch_button_setting_summary">Juster den handling, der er knyttet til kontakten</string>
+
+    <string name="preferred_network_mode_change_dialogtitle">"Foretrukken netværkstype er ændret"</string>
+    <string name="preferred_network_mode_change_waring_message">"Netværksdækningen kan være reduceret af dit valg"</string>
 </resources>

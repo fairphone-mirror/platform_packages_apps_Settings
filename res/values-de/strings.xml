@@ -5442,4 +5442,7 @@
 
     <!-- FPS: Switch Button Settings -->
     <string name="switch_button_setting_summary">Passt die mit dem Switch verbundene Aktion an</string>
+
+    <string name="preferred_network_mode_change_dialogtitle">"Bevorzugte Netzwerkverbindung geändert"</string>
+    <string name="preferred_network_mode_change_waring_message">"Netzverfügbarkeit kann durch Ihre Wahl reduziert werden"</string>
 </resources>

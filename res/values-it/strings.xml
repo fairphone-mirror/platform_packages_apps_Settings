@@ -5441,4 +5441,7 @@
 
     <!-- FPS: Switch Button Settings -->
     <string name="switch_button_setting_summary">Scegli l\'azione associata allo Switch</string>
+
+    <string name="preferred_network_mode_change_dialogtitle">"Tipo di rete preferito modificato"</string>
+    <string name="preferred_network_mode_change_waring_message">"La copertura di rete potrebbe essere ridotta dalla tua selezione"</string>
 </resources>
