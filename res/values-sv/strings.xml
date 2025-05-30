@@ -5859,4 +5859,7 @@
 
     <!-- FPS: Switch Button Settings -->
     <string name="switch_button_setting_summary">Justera åtgärden som är kopplad till omkopplaren</string>
+
+    <string name="preferred_network_mode_change_dialogtitle">"Föredragen nätverkstyp har ändrats"</string>
+    <string name="preferred_network_mode_change_waring_message">"Nätverkstäckningen kan minska på grund av ditt val"</string>
 </resources>
