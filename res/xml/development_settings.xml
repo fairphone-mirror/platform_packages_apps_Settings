@@ -339,6 +339,13 @@
         android:title="@string/debug_networking_category"
         android:order="400">
 
+        <!--[FEATURE]-Add-Begin by shaopan.tang 2025-05-30 FPS-2904 5GSA switch -->
+        <com.android.settings.widget.AddPreference
+            android:key="prefer_5G_nr_mode"
+            android:title="@string/prefer_5G_nr_mode_title"
+            settings:controller="com.android.settings.development.Prefer5GNetworkSummaryController" />
+        <!--[FEATURE]-Add-End by shaopan.tang -->
+
         <!--[FEATURE]-Add-Begin by shaopan.tang 2025-03-20 FPS-1393 VONR switch -->
         <com.android.settingslib.RestrictedPreference
             android:fragment="com.android.settings.development.PreferVonrSettings"

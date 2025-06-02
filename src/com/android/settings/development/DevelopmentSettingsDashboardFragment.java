@@ -667,6 +667,7 @@ public class DevelopmentSettingsDashboardFragment extends RestrictedDashboardFra
             @Nullable DevelopmentSettingsDashboardFragment fragment,
             @Nullable BluetoothA2dpConfigStore bluetoothA2dpConfigStore) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
+        controllers.add(new Prefer5GNetworkSummaryController(context, lifecycle));//[FEATURE]-Add by shaopan.tang 2025-05-30 FPS-2904 5GSA switch
         controllers.add(new PreferVonrController(context, lifecycle));
         controllers.add(new MemoryUsagePreferenceController(context));
         controllers.add(new BugReportPreferenceController(context));
