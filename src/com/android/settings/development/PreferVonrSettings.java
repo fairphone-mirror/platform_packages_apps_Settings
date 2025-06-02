@@ -304,6 +304,7 @@ public class PreferVonrSettings extends SettingsPreferenceFragment implements
     @Override
     public void onStop() {
         Log.i(TAG, "onStop" );
+        super.onStop();
         mSysRil.SysRilDispose();
     }
 }

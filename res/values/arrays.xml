@@ -1778,4 +1778,17 @@
         <item>@string/battery_charging_privacy_eco</item>
         <item>@string/battery_charging_privacy_fast</item>
     </string-array>
+
+    <!--[FEATURE]-Add-Begin by shaopan.tang 2025-05-30 FPS-2904 5GSA switch -->
+    <string-array name="preferred_5g_network_mode_choices">
+        <item>NSA Mode</item>
+        <item>SA Mode</item>
+        <item>NSA + SA Mode</item>
+    </string-array>
+    <string-array name="preferred_5g_network_mode_values" translatable="false">
+        <item>"1"</item>
+        <item>"2"</item>
+        <item>"0"</item>
+    </string-array>
+    <!--[FEATURE]-Add-End by shaopan.tang -->
 </resources>
