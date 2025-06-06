@@ -5445,4 +5445,5 @@
 
     <string name="preferred_network_mode_change_dialogtitle">"Bevorzugte Netzwerkverbindung geändert"</string>
     <string name="preferred_network_mode_change_waring_message">"Netzverfügbarkeit kann durch Ihre Wahl reduziert werden"</string>
+    <string name="verification_confirm_your_password_header">"Bestätigungscode eingeben :"</string>
 </resources>

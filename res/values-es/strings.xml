@@ -5445,4 +5445,5 @@
 
     <string name="preferred_network_mode_change_dialogtitle">"Tipo de red preferido cambiado"</string>
     <string name="preferred_network_mode_change_waring_message">"La cobertura de red puede verse reducida por su selección"</string>
+    <string name="verification_confirm_your_password_header">"Ingresar código de verificación :"</string>
 </resources>
