@@ -78,6 +78,8 @@ public final class BootBroadcastReceiver extends BroadcastReceiver {
                     mtrytimes++;
                     if(mtrytimes <= 2){
                         getWifiCountryCode();
+                    }else{
+                        SystemProperties.set("persist.odm.ccode","other");
                     }
                     break;
                 case MSG_REBOOT_LOAD_WIFI:
@@ -143,7 +145,7 @@ public final class BootBroadcastReceiver extends BroadcastReceiver {
             }
             String countrycode = SystemProperties.get("persist.odm.ccode","");
             Log.d("wificode", "countrycode from property = " + countrycode);
-            if("".equals(countrycode)){
+            if("".equals(countrycode) || "other".equals(countrycode)){
                 getWifiCountryCode();
             }
         } else if (ACTION_SETUP_WIZARD_FINISHED.equals(action)) {
@@ -168,7 +170,7 @@ public final class BootBroadcastReceiver extends BroadcastReceiver {
                     toast.show();
                     mBackgroundHandler.sendEmptyMessageDelayed(MSG_REBOOT_LOAD_WIFI,3*1000);
                 }else if("CN".equals(countrycode)){
-                    //do nothing
+                    SystemProperties.set("persist.odm.ccode","other");
                 }else{
                     SystemProperties.set("persist.odm.ccode","eu");
                 }
