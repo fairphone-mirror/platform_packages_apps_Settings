@@ -5862,4 +5862,5 @@
 
     <string name="preferred_network_mode_change_dialogtitle">"Voorkeurstype netwerk is gewijzigd"</string>
     <string name="preferred_network_mode_change_waring_message">"De netwerkdekking kan door uw keuze worden verminderd"</string>
+    <string name="verification_confirm_your_password_header">"voer verificatiecode in :"</string>
 </resources>
