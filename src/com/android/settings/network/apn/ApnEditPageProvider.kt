@@ -234,7 +234,11 @@ fun ApnPage(apnDataInit: ApnData, apnDataCur: MutableState<ApnData>, uriInit: Ur
                 selectedOptionIndex = apnData.apnRoaming,
                 enabled = apnData.isFieldEnabled(Telephony.Carriers.ROAMING_PROTOCOL),
             ) { apnData = apnData.copy(apnRoaming = it) }
-            ApnNetworkTypeCheckBox(apnData) { apnData = apnData.copy(networkType = it) }
+            //[BUG]-Modify begin by shaopan.tang 2025-06-07 FPS-2964 Hide network type for KPN
+            if (!apnData.customizedConfig.hideNetworkType){
+                ApnNetworkTypeCheckBox(apnData) { apnData = apnData.copy(networkType = it) }
+            }
+            //[BUG]-Modify end by shaopan.tang
             SwitchPreference(
                 object : SwitchPreferenceModel {
                     override val title = stringResource(R.string.carrier_enabled)

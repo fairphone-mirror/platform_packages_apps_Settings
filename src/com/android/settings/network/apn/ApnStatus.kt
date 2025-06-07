@@ -89,6 +89,8 @@ data class ApnData(
 data class CustomizedConfig(
     val readOnlyApn: Boolean = false,
     val isAddApnAllowed: Boolean = true,
+    //[BUG]-Modify by shaopan.tang 2025-06-07 FPS-2964 Hide network type for KPN
+    val hideNetworkType: Boolean = false,
     val readOnlyApnTypes: List<String> = emptyList(),
     val readOnlyApnFields: List<String> = emptyList(),
     val defaultApnTypes: List<String>? = null,
@@ -206,7 +208,8 @@ fun getCarrierCustomizedConfig(
         CarrierConfigManager.KEY_APN_SETTINGS_DEFAULT_APN_TYPES_STRING_ARRAY,
         CarrierConfigManager.Apn.KEY_SETTINGS_DEFAULT_PROTOCOL_STRING,
         CarrierConfigManager.Apn.KEY_SETTINGS_DEFAULT_ROAMING_PROTOCOL_STRING,
-        CarrierConfigManager.KEY_ALLOW_ADDING_APNS_BOOL
+        CarrierConfigManager.KEY_ALLOW_ADDING_APNS_BOOL,
+        CarrierConfigManager.KEY_HIDE_NETWORK_TYPE_APNS_FIELDS_BOOL
     )
     val customizedConfig = CustomizedConfig(
         readOnlyApnTypes = b.getStringArray(
@@ -225,10 +228,17 @@ fun getCarrierCustomizedConfig(
             CarrierConfigManager.Apn.KEY_SETTINGS_DEFAULT_ROAMING_PROTOCOL_STRING
         ) ?: "",
         isAddApnAllowed = b.getBoolean(CarrierConfigManager.KEY_ALLOW_ADDING_APNS_BOOL),
+        //[BUG]-Modify by shaopan.tang 2025-06-07 FPS-2964 Hide network type for KPN
+        hideNetworkType = b.getBoolean(CarrierConfigManager.KEY_HIDE_NETWORK_TYPE_APNS_FIELDS_BOOL),
     )
     if (customizedConfig.readOnlyApnTypes.isNotEmpty()) {
         log("read only APN type: " + customizedConfig.readOnlyApnTypes)
     }
+    //[BUG]-Modify begin by shaopan.tang 2025-06-07 FPS-2964 Hide network type for KPN
+    if (!customizedConfig.hideNetworkType) {
+        log("Show network type")
+    }
+    //[BUG]-Modify end by shaopan.tang
     customizedConfig.defaultApnTypes?.takeIf { it.isNotEmpty() }?.let {
         log("default apn types: $it")
     }
