@@ -1,6 +1,6 @@
 package com.android.settings.anc.unlock;
 
-import android.app.Service;
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -8,15 +8,12 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.Handler;
-import android.os.IBinder;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
 import android.provider.Settings;
 import android.os.SystemClock;
-import android.os.SystemProperties;
-import android.os.BatteryManager;
 
 import androidx.annotation.Nullable;
 
@@ -37,8 +34,8 @@ import com.android.settings.anc.util.Constants;
 import com.android.settings.anc.lifecycle.ActivityManager;
 import android.util.BoostFramework;
 
-public class UnlockService extends Service implements CameraWrapper.IPreviewCallback {
-    private static final String TAG = "UnlockService";
+public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCallback {
+    private static final String TAG = "UnlockActivity";
     private CameraWrapper mCameraWrapper;
     private LiteManager mLiteManager;
     // count ignored frames
@@ -72,20 +69,25 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
             sendFaceUnlockMsg("");
             Intent intent = new Intent("intent.action.faceunlock");
             intent.putExtra("faceunlock_status", 1);
-            UnlockService.this.sendBroadcast(intent);
-            UnlockService.this.stopSelf();
+            UnlockActivity.this.sendBroadcast(intent);
+            finish();
         }
     };
 
     @Override
-    public IBinder onBind(Intent intent) {
-        return null;
-    }
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         Log.d(TAG,"onCreate");
+        Window window = getWindow();
+        window.setGravity(Gravity.LEFT | Gravity.TOP);
+        WindowManager.LayoutParams layoutParams = window.getAttributes();
+        layoutParams.x = 0;
+        layoutParams.y = 0;
+        layoutParams.width = 1;
+        layoutParams.height = 1;
+        layoutParams.type = WindowManager.LayoutParams.TYPE_STATUS_BAR;
+        layoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+        window.setAttributes(layoutParams);
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_USER_PRESENT);
         filter.addAction(Intent.ACTION_SCREEN_OFF);
@@ -120,16 +122,16 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
     }
 
     @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
         if(intent != null){
             boolean stopUnlock = intent.getBooleanExtra("stop_unlock",false);
             if(stopUnlock){
-                stopSelf();
-                return START_NOT_STICKY;
+                finish();
+                return;
             }
         }
         startUnlock();
-        return START_NOT_STICKY;
     }
 
     @Override
@@ -146,7 +148,7 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
     }
 
     @Override
-    public void onDestroy() {
+    protected void onDestroy() {
         super.onDestroy();
         Log.d(TAG,"onDestroy");
         if(mPerf != null) {
@@ -172,11 +174,11 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
             PowerManager powerManager = context.getSystemService(PowerManager.class);
             if (Intent.ACTION_USER_PRESENT.equals(action) ||
                     (Intent.ACTION_SCREEN_OFF.equals(action) && !powerManager.isInteractive())) {
-                UnlockService.this.stopSelf();
+                UnlockActivity.this.finish();
             } else if (Intent.ACTION_CLOSE_SYSTEM_DIALOGS.equals(action)) {
                 String reason = intent.getStringExtra("reason");
                 if("dream".equals(reason)) {
-                    UnlockService.this.stopSelf();
+                    UnlockActivity.this.finish();
                 }
             }
         }
@@ -215,7 +217,7 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
         Intent intent = new Intent("intent.action.faceunlock");
         intent.putExtra("faceunlock_status", failTimes);
         Log.d(TAG,"face unlock failed");
-        UnlockService.this.sendBroadcast(intent);
+        UnlockActivity.this.sendBroadcast(intent);
     };
 
     private final LiteManager.Callback mCallBack = new LiteManager.Callback() {
@@ -228,8 +230,8 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
             AncFaceIdUnlockInfo info = (AncFaceIdUnlockInfo) object;
             Intent intent = new Intent("intent.action.faceunlock");
             intent.putExtra("faceunlock_status", 0);
-            UnlockService.this.sendBroadcast(intent);
-            UnlockService.this.stopSelf();
+            UnlockActivity.this.sendBroadcast(intent);
+            UnlockActivity.this.finish();
         }
 
         @Override
@@ -253,7 +255,7 @@ public class UnlockService extends Service implements CameraWrapper.IPreviewCall
     private void sendFaceUnlockMsg(String msg) {
         Intent intent = new Intent("intent.action.faceunlock.acquired");
         intent.putExtra("faceunlock_acquired", msg);
-        UnlockService.this.sendBroadcast(intent);
+        UnlockActivity.this.sendBroadcast(intent);
     }
 
     private String changeStatus(int code) {
