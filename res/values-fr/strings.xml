@@ -5349,7 +5349,7 @@
     <string name="audio_streams_main_page_qr_code_scanner_summary" msgid="5312980105735143360">"Scanner le code QR d\'un flux audio pour l\'écouter avec <xliff:g id="DEVICE_NAME">%1$s</xliff:g>"</string>
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"Impossible de modifier le mot de passe lors du partage. Pour modifier le mot de passe, il faut d\'abord désactiver le partage audio."</string>
     <string name="status_sdn">Numéro de numérotation de service</string>
-    <string name="pick_up_to_wake_title">Lever pour activer</string>
+    <string name="pick_up_to_wake_title">"Soulever pour réveiller"</string>
     <string name="attention">Avertissement</string>
     <string name="cannot_detect_face">Impossible de détecter votre visage</string>
     <string name="face_add_title">Ajouter des données faciales</string>
@@ -5389,7 +5389,7 @@
     <string name="charging_slow">Charge Eco</string>
     <string name="charging_normal">Charge rapide</string>
     <string name="charging_state">Mode de recharge</string>
-    <string name="sunlight_mode_title">Mode Lumière du soleil</string>
+    <string name="sunlight_mode_title">"Mode plein soleil"</string>
     <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
     <string name="unlock_failed_reset_title">Réinitialisation automatique</string>
     <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
@@ -5420,8 +5420,8 @@
     <string name="swap_back_recents_title">"Échanger la navigation arrière / récentes"</string>
     <string name="swap_back_recents_summary">"Échangez les boutons arrière et récent dans la barre de navigation"</string>
 
-    <string name="pocket_mode">Mode de poche</string>
-    <string name="orientation_timing_title">Durée d’orientation</string>
+    <string name="pocket_mode">"Mode poche"</string>
+    <string name="orientation_timing_title">"Délai de rotation"</string>
     <string name="orientation_timing_spead_0_title">Ralentir de 1 seconde</string>
     <string name="orientation_timing_spead_1_title">Ralentir de 0,5 seconde</string>
     <string name="orientation_timing_spead_2_title">Normal</string>
@@ -5439,6 +5439,10 @@
     <string name="face_acquired_face_multi">plusieurs visages</string>
     <string name="face_acquired_face_failure">échec du déverrouillage</string>
 
+    <string name="display_touch_sensitivity_title">"Sensibilité tactile"</string>
+    <string name="display_touch_sensitivity_summary">"augmenter la sensibilité tactile de l'écran pour une utilisation avec les protections d'écran"</string>
+    <string name="peak_refresh_rate_list_title">"Taux de rafraîchissement de l'écran"</string>
+
     <!-- FPS: Switch Button Settings -->
     <string name="switch_button_setting_summary">Régler l\'action associée au switch</string>
 
@@ -5447,4 +5451,5 @@
     <string name="preferred_network_mode_change_dialogtitle">"Type de réseau préféré modifié."</string>
     <string name="preferred_network_mode_change_waring_message">"La couverture réseau peut être réduite par votre sélection."</string>
     <string name="verification_confirm_your_password_header">"Saisir le code de vérification :"</string>
+
 </resources>

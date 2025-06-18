@@ -5351,7 +5351,7 @@
     <string name="audio_streams_main_page_qr_code_scanner_summary" msgid="5312980105735143360">"Escanea el código QR de una emisión de audio para escucharlo con <xliff:g id="DEVICE_NAME">%1$s</xliff:g>"</string>
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"No se puede modificar la contraseña durante el uso compartido. Para cambiarla, primero desactiva la función compartir audio."</string>
      <string name="status_sdn">Número de marcación de servicio.</string>
-     <string name="pick_up_to_wake_title">Activación al coger el móvil</string>
+     <string name="pick_up_to_wake_title">"Levantar para activar"</string>
      <string name="attention">Atención</string>
     <string name="cannot_detect_face">No se puede detectar su rostro</string>
     <string name="face_add_title">Añadir datos faciales</string>
@@ -5390,7 +5390,7 @@
     <string name="charging_slow">CARGA ECO</string>
     <string name="charging_normal">CARGA RÁPIDA</string>
     <string name="charging_state">Modo de carga</string>
-    <string name="sunlight_mode_title">Modo luz solar</string>
+    <string name="sunlight_mode_title">"Modo luz solar"</string>
     <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
     <string name="unlock_failed_reset_title">Restablecimiento automático de fábrica</string>
     <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
@@ -5421,8 +5421,8 @@
     <string name="swap_back_recents_title">"Cambia la navegación de volver/recientes"</string>
     <string name="swap_back_recents_summary">"Cambia los botones de volver y recientes en la barra de navegación"</string>
 
-    <string name="pocket_mode">Modo de bolsillo</string>
-    <string name="orientation_timing_title">Tiempo de orientación</string>
+    <string name="pocket_mode">"Modo bolsillo"</string>
+    <string name="orientation_timing_title">"Duración de la rotación"</string>
     <string name="orientation_timing_spead_0_title">Ralentizar 1 segundo</string>
     <string name="orientation_timing_spead_1_title">Ralentizar 0,5 segundos</string>
     <string name="orientation_timing_spead_2_title">Normal</string>
@@ -5439,6 +5439,10 @@
     <string name="face_acquired_bad_quality">cara cubierta</string>
     <string name="face_acquired_face_multi">"múltiples caras visibles"</string>
     <string name="face_acquired_face_failure">error en desbloqueo facial</string>
+
+    <string name="display_touch_sensitivity_title">"Sensibilidad táctil"</string>
+    <string name="display_touch_sensitivity_summary">"aumentar la sensibilidad táctil de la pantalla para usar con protectores de pantalla."</string>
+    <string name="peak_refresh_rate_list_title">"Frecuencia de actualización"</string>
 
     <!-- FPS: Switch Button Settings -->
     <string name="switch_button_setting_summary">Ajusta la acción asociada con el Switch</string>

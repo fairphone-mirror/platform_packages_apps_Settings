@@ -5349,7 +5349,7 @@
     <string name="audio_streams_main_page_qr_code_scanner_summary" msgid="5312980105735143360">"Scan en QR-kode til en lydstream for at lytte via <xliff:g id="DEVICE_NAME">%1$s</xliff:g>"</string>
     <string name="audio_streams_main_page_password_dialog_cannot_edit" msgid="9020898619297520153">"Adgangskoden kan ikke ændres under deling. Deaktiver lyddeling for at ændre adgangskoden."</string>
     <string name="status_sdn">Indtast nummer service</string>
-    <string name="pick_up_to_wake_title">Løft op for at vække</string>
+    <string name="pick_up_to_wake_title">"Løft for at vække"</string>
     <string name="attention">Bemærk</string>
     <string name="cannot_detect_face">Kan ikke registrere dit ansigt</string>
     <string name="face_add_title">Tilføj ansigtsdata</string>
@@ -5379,7 +5379,7 @@
     <string name="warning_tips_rom4_third_part">" - Dine personlige data vil udelukkende blive gemt og behandlet på denne enhed."</string>
     <string name="warning_tips_rom4_third_part_title">Om privatlivsindstillinger</string>
     <string name="warning_title">Risikoadvarsel</string>
-    <string name="sunlight_mode_title">Sollys-tilstand</string>
+    <string name="sunlight_mode_title">"Sollys-tilstand"</string>
     <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
     <string name="unlock_failed_reset_title">Automatisk fabriksnulstilling</string>
     <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
@@ -5419,8 +5419,8 @@
     <string name="fingerprint_settings_open_description">"Tænd, hvis du foretrækker at låse op uden at vågne telefonen først."</string>
     <string name="fingerprint_settings_open_title">Fingerprint Lås op adfærd</string>
 
-    <string name="pocket_mode">Lommetilstand</string>
-     <string name="orientation_timing_title">Orienteringstidspunkt</string>
+    <string name="pocket_mode">"Lommetilstand"</string>
+    <string name="orientation_timing_title">"Orienteringsvarighed"</string>
     <string name="orientation_timing_spead_0_title">Sæt farten ned med 1 sekund</string>
     <string name="orientation_timing_spead_1_title">Sæt farten ned med 0,5 sekunder</string>
     <string name="orientation_timing_spead_2_title">Normal</string>
@@ -5437,6 +5437,10 @@
     <string name="face_acquired_bad_quality">"ansigt dækket"</string>
     <string name="face_acquired_face_multi">"flere ansigter synlige"</string>
     <string name="face_acquired_face_failure">"ansigtslåsning mislykkedes"</string>
+
+    <string name="display_touch_sensitivity_title">"Berøringsfølsomhed"</string>
+    <string name="display_touch_sensitivity_summary">"øg skærmens berøringsfølsomhed til brug med skærmbeskyttere."</string>
+    <string name="peak_refresh_rate_list_title">"Opdateringshastighed"</string>
 
     <!-- FPS: Switch Button Settings -->
     <string name="switch_button_setting_summary">Juster den handling, der er knyttet til kontakten</string>
