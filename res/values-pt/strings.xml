@@ -5764,8 +5764,8 @@
     <string name="supervision_full_screen_pin_verification_title" msgid="78513043528333399">"Digite o PIN de supervisão"</string>
     <string name="accessibility_illustration_content_description" msgid="557376174860150903">"Animação do recurso <xliff:g id="FEATURE">%1$s</xliff:g>"</string>
     <string name="status_sdn">Número de ligação ao serviço</string>
-    <string name="pick_up_to_wake_title">Levantar para acordar</string>
-    <string name="sunlight_mode_title">Modo de luz solar</string>
+    <string name="pick_up_to_wake_title">"Levantar para ativar"</string>
+    <string name="sunlight_mode_title">"Modo luz solar"</string>
     <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
     <string name="unlock_failed_reset_title">Reposição automática de fábrica</string>
     <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
@@ -5832,8 +5832,8 @@
     <string name="fingerprint_settings_open_title">Impressão digital desbloquear comportamento</string>
     <string name="swap_back_recents_title">"Troque a ordem de Anterior e Vista geral de apps"</string>
     <string name="swap_back_recents_summary">"Troque a ordem dos botões Anterior e Vista geral de apps na barra de navegação"</string>
-    <string name="pocket_mode">Modo de bolso</string>
-    <string name="orientation_timing_title">Calendário de orientação</string>
+    <string name="pocket_mode">"Modo bolso"</string>
+    <string name="orientation_timing_title">"Duração da orientação "</string>
     <string name="orientation_timing_spead_0_title">Abrande 1 segundo</string>
     <string name="orientation_timing_spead_1_title">Abrande 0,5 segundos</string>
     <string name="orientation_timing_spead_2_title">Normal</string>
@@ -5850,6 +5850,10 @@
     <string name="face_acquired_bad_quality">"rosto tapado"</string>
     <string name="face_acquired_face_multi">"múltiplos rostos visíveis"</string>
     <string name="face_acquired_face_failure">falha no desbloqueio facial</string>
+
+    <string name="display_touch_sensitivity_title">"Sensibilidade tátil"</string>
+    <string name="display_touch_sensitivity_summary">"aumentar a sensibilidade do toque do ecrã para utilização com protetores de ecrã."</string>
+    <string name="peak_refresh_rate_list_title">"Taxa de atualização"</string>
 
     <!-- FPS: Switch Button Settings -->
     <string name="switch_button_setting_summary">Ajuste a ação associada ao switch</string>

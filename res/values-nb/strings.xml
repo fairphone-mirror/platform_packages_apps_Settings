@@ -5776,6 +5776,14 @@
     <string name="face_acquired_face_multi">"flere ansikter synlige"</string>
     <string name="face_acquired_face_failure">"ansiktslås mislyktes"</string>
 
+    <string name="display_touch_sensitivity_title">"Berøringsfølsomhet"</string>
+    <string name="display_touch_sensitivity_summary">"øk skjermens berøringsfølsomhet for bruk med skjermbeskyttere."</string>
+    <string name="peak_refresh_rate_list_title">"Oppdateringsfrekvens"</string>
+    <string name="orientation_timing_title">"Orienteringsvarighet"</string>
+    <string name="sunlight_mode_title">"Sollysmodus"</string>
+    <string name="pocket_mode">"Lommemodus"</string>
+    <string name="pick_up_to_wake_title">"Løft for å vekke"</string>
+
     <string name="preferred_network_mode_change_dialogtitle">"Foretrukket nettverkstype er endret"</string>
     <string name="preferred_network_mode_change_waring_message">"Nettverksdekningen kan bli redusert av valget ditt"</string>
     <string name="verification_confirm_your_password_header">"Skriv inn bekreftelseskode :"</string>

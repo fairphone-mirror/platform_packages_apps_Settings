@@ -5767,7 +5767,7 @@
     <string name="supervision_full_screen_pin_verification_title" msgid="78513043528333399">"Ange pinkod för kontroll"</string>
     <string name="accessibility_illustration_content_description" msgid="557376174860150903">"Animering för <xliff:g id="FEATURE">%1$s</xliff:g>"</string>
     <string name="status_sdn">Tjänstens uppringningsnummer</string>
-    <string name="pick_up_to_wake_title">Plocka upp för att väcka</string>
+    <string name="pick_up_to_wake_title">"Lyft för att väcka"</string>
     <string name="attention">Obs!</string>
     <string name="cannot_detect_face">Det går inte att läsa in ditt ansikte</string>
     <string name="face_add_title">Lägg till ansiktsdata</string>
@@ -5797,7 +5797,7 @@
     <string name="warning_tips_rom4_third_part">" -Dina personliga data lagras och behandlas endast på enheten."</string>
     <string name="warning_tips_rom4_third_part_title">Om sekretess</string>
     <string name="warning_title">Riskvarning</string>
-    <string name="sunlight_mode_title">Solljusläge</string>
+    <string name="sunlight_mode_title">"Solljusläge"</string>
     <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
     <string name="unlock_failed_reset_title">Automatisk fabriksåterställning</string>
     <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
@@ -5838,8 +5838,8 @@
     <string name="fingerprint_settings_open_description">"Slå på om du föredrar att låsa upp utan att väcka telefonen först."</string>
     <string name="fingerprint_settings_open_title">Finger Print Lås upp beteende</string>
 
-    <string name="pocket_mode">Fickläge</string>
-    <string name="orientation_timing_title">Orienteringstidpunkt</string>
+    <string name="pocket_mode">"Fickläge"</string>
+    <string name="orientation_timing_title">"Orienteringshastighet"</string>
     <string name="orientation_timing_spead_0_title">Sakta ner med 1 sekund</string>
     <string name="orientation_timing_spead_1_title">Sakta ner med 0,5 sekunder</string>
     <string name="orientation_timing_spead_2_title">Normal</string>
@@ -5856,6 +5856,10 @@
     <string name="face_acquired_bad_quality">"ansikte täckt"</string>
     <string name="face_acquired_face_multi">"flera ansikten synliga"</string>
     <string name="face_acquired_face_failure">"ansiktslåsning misslyckades"</string>
+
+    <string name="display_touch_sensitivity_title">"Pekskärmskänslighet"</string>
+    <string name="display_touch_sensitivity_summary">"öka skärmens beröringskänslighet för användning med skärmskydd."</string>
+    <string name="peak_refresh_rate_list_title">"Uppdateringsfrekvens"</string>
 
     <!-- FPS: Switch Button Settings -->
     <string name="switch_button_setting_summary">Justera åtgärden som är kopplad till omkopplaren</string>

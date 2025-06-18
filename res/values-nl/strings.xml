@@ -5767,7 +5767,7 @@
     <string name="supervision_full_screen_pin_verification_title" msgid="78513043528333399">"Pincode voor toezicht invoeren"</string>
     <string name="accessibility_illustration_content_description" msgid="557376174860150903">"Animatie voor <xliff:g id="FEATURE">%1$s</xliff:g>"</string>
     <string name="status_sdn">Servicedienstnummer</string>
-    <string name="pick_up_to_wake_title">Til op om te activeren</string>
+    <string name="pick_up_to_wake_title">"Oppakken om te activeren"</string>
 
     <string name="attention">Let op</string>
     <string name="cannot_detect_face">Kan uw gezicht niet detecteren</string>
@@ -5799,7 +5799,7 @@
     <string name="warning_title">"Waarschuwing voor risico's"</string>
     <string name="data_preference">"Gegevens en voorkeuren"</string>
     <string name="enroll_main_first">Registreer eerst gezichtsgegevens.</string>
-    <string name="sunlight_mode_title">Zonlichtmodus</string>
+    <string name="sunlight_mode_title">"Zonlicht Modus"</string>
     <!-- [CHAR LIMIT=60] turn unlock failed reset on/off  -->
     <string name="unlock_failed_reset_title">Automatisch terugzetten naar fabrieksinstellingen</string>
     <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
@@ -5838,8 +5838,8 @@
     <string name="swap_back_recents_title">"Terug- en recent-knop omwissel"</string>
     <string name="swap_back_recents_summary">"Wissel de terug- en recent-knop om in de navigatiebalk"</string>
 
-    <string name="pocket_mode">Broekzakmodus</string>
-    <string name="orientation_timing_title">Timing van de oriëntatie</string>
+    <string name="pocket_mode">"Broekzak Modus"</string>
+    <string name="orientation_timing_title">"Rotatieduur"</string>
     <string name="orientation_timing_spead_0_title">Met 1 seconde vertragen</string>
     <string name="orientation_timing_spead_1_title">Met een halve seconde vertragen</string>
     <string name="orientation_timing_spead_2_title">Normaal</string>
@@ -5856,6 +5856,10 @@
     <string name="face_acquired_bad_quality">gezicht bedekt</string>
     <string name="face_acquired_face_multi">meerdere gezichten zichtbaar</string>
     <string name="face_acquired_face_failure">gezichtsontgrendeling mislukt</string>
+
+    <string name="display_touch_sensitivity_title">"Aanraakgevoeligheid"</string>
+    <string name="display_touch_sensitivity_summary">"verhoog de aanraakgevoeligheid van het scherm voor gebruik met screen protectors"</string>
+    <string name="peak_refresh_rate_list_title">"Verversingssnelheid"</string>
 
     <!-- FPS: Switch Button Settings -->
     <string name="switch_button_setting_summary">Stel de actie in voor de Switch</string>
