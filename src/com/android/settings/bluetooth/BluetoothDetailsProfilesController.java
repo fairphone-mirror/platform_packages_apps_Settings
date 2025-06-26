@@ -82,7 +82,7 @@ public class BluetoothDetailsProfilesController extends BluetoothDetailsControll
             "persist.bluetooth.enable_dual_mode_audio";
     private static final String LE_AUDIO_CONNECTION_BY_DEFAULT_PROPERTY =
             "ro.bluetooth.leaudio.le_audio_connection_by_default";
-    private static final boolean LE_AUDIO_TOGGLE_VISIBLE_DEFAULT_VALUE = false;
+    private static final boolean LE_AUDIO_TOGGLE_VISIBLE_DEFAULT_VALUE = true;
     private static final String LE_AUDIO_TOGGLE_VISIBLE_PROPERTY =
             "persist.bluetooth.leaudio.toggle_visible";
     private static final String BYPASS_LE_AUDIO_ALLOWLIST_PROPERTY =
@@ -162,7 +162,7 @@ public class BluetoothDetailsProfilesController extends BluetoothDetailsControll
         pref.setOrder(profile.getOrdinal());
 
         boolean isLeEnabledByDefault =
-                SystemProperties.getBoolean(LE_AUDIO_CONNECTION_BY_DEFAULT_PROPERTY, false);
+                SystemProperties.getBoolean(LE_AUDIO_CONNECTION_BY_DEFAULT_PROPERTY, true);
 
         if (profile instanceof LeAudioProfile && (!isLeEnabledByDefault || !isModelNameInAllowList(
                 BluetoothUtils.getStringMetaData(mCachedDevice.getDevice(),
@@ -509,7 +509,7 @@ public class BluetoothDetailsProfilesController extends BluetoothDetailsControll
         boolean isLeAudioToggleVisible = SystemProperties.getBoolean(
                 LE_AUDIO_TOGGLE_VISIBLE_PROPERTY, LE_AUDIO_TOGGLE_VISIBLE_DEFAULT_VALUE);
         boolean isLeEnabledByDefault =
-                SystemProperties.getBoolean(LE_AUDIO_CONNECTION_BY_DEFAULT_PROPERTY, false);
+                SystemProperties.getBoolean(LE_AUDIO_CONNECTION_BY_DEFAULT_PROPERTY, true);
         mIsLeAudioToggleEnabled = isLeAudioToggleVisible || isLeEnabledByDefault;
         Log.d(TAG, "LE_AUDIO_TOGGLE_VISIBLE_PROPERTY:" + isLeAudioToggleVisible
                 + ", LE_AUDIO_CONNECTION_BY_DEFAULT_PROPERTY:" + isLeEnabledByDefault);
