@@ -381,6 +381,7 @@ public class WifiCallingSettingsForSub extends DashboardFragment
                 getSystemService(Context.CARRIER_CONFIG_SERVICE);
         boolean isWifiOnlySupported = true;
         boolean isImsPreferredSupported = false;
+        boolean isShowImsPreferredNoCellular = false;
 
         if (configManager != null) {
             final PersistableBundle b = configManager.getConfigForSubId(mSubId);
@@ -399,6 +400,8 @@ public class WifiCallingSettingsForSub extends DashboardFragment
                         true);
                 isImsPreferredSupported = b.getBoolean(
                         CarrierConfigManager.KEY_CARRIER_WFC_SUPPORTS_IMS_PREFERRED_BOOL, false);
+                isShowImsPreferredNoCellular = b.getBoolean(
+                        CarrierConfigManager.KEY_WFC_SHOW_IMS_PREFERRED_NO_CELLULAR_BOOL, false);
             }
         }
 
@@ -410,9 +413,23 @@ public class WifiCallingSettingsForSub extends DashboardFragment
                 res.getString(R.string.wifi_calling_roaming_mode_dialog_title));
 
         Log.d(TAG, "isWifiOnlySupported = " + isWifiOnlySupported + " isImsPreferredSupported = "
-                + isImsPreferredSupported);
+                + isImsPreferredSupported + " isShowImsPreferredNoCellular = " + isShowImsPreferredNoCellular);
 
-        if (isWifiOnlySupported) {
+        if (isImsPreferredSupported && isShowImsPreferredNoCellular){
+            mButtonWfcMode.setEntries(res.getStringArray(
+                    R.array.wifi_calling_mode_choices_without_cellular_with_ims_preferred));
+            mButtonWfcMode.setEntryValues(res.getStringArray(
+                    R.array.wifi_calling_mode_values_without_cellular_with_ims_preferred));
+            mButtonWfcMode.setEntrySummaries(res.getStringArray(
+                    R.array.wifi_calling_mode_summaries_without_cellular_with_ims_preferred));
+
+            mButtonWfcRoamingMode.setEntries(res.getStringArray(
+                    R.array.wifi_calling_mode_choices_v2_without_cellular_with_ims_preferred));
+            mButtonWfcRoamingMode.setEntryValues(res.getStringArray(
+                    R.array.wifi_calling_mode_values_without_cellular_with_ims_preferred));
+            mButtonWfcRoamingMode.setEntrySummaries(res.getStringArray(
+                    R.array.wifi_calling_mode_summaries_without_cellular_with_ims_preferred));
+        } else if (isWifiOnlySupported) {
             if (isImsPreferredSupported) {
                 mButtonWfcMode.setEntries(res.getStringArray(
                         R.array.wifi_calling_mode_choices_with_ims_preferred));
