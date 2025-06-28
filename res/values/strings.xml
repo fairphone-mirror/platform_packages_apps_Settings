@@ -2699,6 +2699,18 @@
         <item>@*android:string/wfc_mode_wifi_preferred_summary</item>
         <item>@*android:string/wfc_mode_cellular_preferred_summary</item>
     </string-array>
+    <string-array name="wifi_calling_mode_choices_without_cellular_with_ims_preferred" translatable="false">
+        <item>@*android:string/wfc_mode_ims_preferred_summary</item>
+        <item>@*android:string/wfc_mode_wifi_preferred_summary</item>
+    </string-array>
+    <string-array name="wifi_calling_mode_values_without_cellular_with_ims_preferred" translatable="false">
+        <item>"10"</item>
+        <item>"2"</item>
+    </string-array>
+    <string-array name="wifi_calling_mode_choices_v2_without_cellular_with_ims_preferred">
+        <item>Ims Preferred</item>
+        <item>Wi-Fi</item>
+    </string-array>
     <string-array name="wifi_calling_mode_choices_v2_without_wifi_only">
         <item>Wi-Fi</item>
         <item>Mobile</item>
