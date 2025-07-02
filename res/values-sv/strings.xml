@@ -5442,6 +5442,8 @@
     <!-- FPS: Switch Button Settings -->
     <string name="switch_button_setting_summary">Justera åtgärden som är kopplad till omkopplaren</string>
 
+    <string name="wifi_warning_goto_wifi_button">"Gå till Wi-Fi-inställningar"</string>
+    <string name="main_clear_progress_esim_reset_text">"Det är inte möjligt att aktivera eSIM-återställning utan Wi-Fi-anslutning"</string>
     <string name="preferred_network_mode_change_dialogtitle">"Föredragen nätverkstyp har ändrats"</string>
     <string name="preferred_network_mode_change_waring_message">"Nätverkstäckningen kan minska på grund av ditt val"</string>
     <string name="verification_confirm_your_password_header">"Ange verifieringskod :"</string>

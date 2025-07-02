@@ -3582,7 +3582,7 @@
 
     <!--[BUG]-Modify by shaopan.tang 2025-05-16 FPS-2655 ESIM Delete possible only with Wifi Connection -->
     <!-- Main clear progress screen text [CHAR LIMIT=75] -->
-    <string name="main_clear_progress_esim_reset_text">Do not allowed to enable eSIM reset as there is no WiFi connection</string>
+    <string name="main_clear_progress_esim_reset_text">"Not possible to enable eSIM reset without a Wi-Fi connection"</string>
 
     <!-- Main settings screen, Call settings title for item to go into the call settings -->
     <string name="call_settings_title">Call settings</string>

@@ -5358,6 +5358,8 @@
     <string name="face_acquired_face_multi">"flere ansikter synlige"</string>
     <string name="face_acquired_face_failure">"ansiktslås mislyktes"</string>
 
+    <string name="wifi_warning_goto_wifi_button">"Gå til Wi-Fi-innstillinger"</string>
+    <string name="main_clear_progress_esim_reset_text">"Det er ikke mulig å aktivere eSIM-tilbakestilling uten Wi-Fi-tilkobling"</string>
     <string name="preferred_network_mode_change_dialogtitle">"Foretrukket nettverkstype er endret"</string>
     <string name="preferred_network_mode_change_waring_message">"Nettverksdekningen kan bli redusert av valget ditt"</string>
     <string name="verification_confirm_your_password_header">"Skriv inn bekreftelseskode :"</string>

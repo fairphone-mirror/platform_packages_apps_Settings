@@ -5442,6 +5442,8 @@
     <!-- FPS: Switch Button Settings -->
     <string name="switch_button_setting_summary">Régler l\'action associée au switch</string>
 
+    <string name="wifi_warning_goto_wifi_button">"Vers les paramètres Wi-Fi"</string>
+    <string name="main_clear_progress_esim_reset_text">"Impossible d'activer l'initialisation eSIM sans connexion Wi-Fi"</string>
     <string name="preferred_network_mode_change_dialogtitle">"Type de réseau préféré modifié."</string>
     <string name="preferred_network_mode_change_waring_message">"La couverture réseau peut être réduite par votre sélection."</string>
     <string name="verification_confirm_your_password_header">"Saisir le code de vérification :"</string>
