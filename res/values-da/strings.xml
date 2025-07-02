@@ -5863,6 +5863,8 @@
     <!-- FPS: Switch Button Settings -->
     <string name="switch_button_setting_summary">Juster den handling, der er knyttet til kontakten</string>
 
+    <string name="wifi_warning_goto_wifi_button">"Åbn Wi-Fi-indstillinger"</string>
+    <string name="main_clear_progress_esim_reset_text">"Det er ikke muligt at aktivere eSIM-nulstilling uden Wi-Fi-forbindelse"</string>
     <string name="preferred_network_mode_change_dialogtitle">"Foretrukken netværkstype er ændret"</string>
     <string name="preferred_network_mode_change_waring_message">"Netværksdækningen kan være reduceret af dit valg"</string>
     <string name="verification_confirm_your_password_header">"Indtast bekræftelseskode :"</string>

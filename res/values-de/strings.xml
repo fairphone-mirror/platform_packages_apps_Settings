@@ -5865,6 +5865,8 @@
     <!-- FPS: Switch Button Settings -->
     <string name="switch_button_setting_summary">Passt die mit dem Switch verbundene Aktion an</string>
 
+    <string name="wifi_warning_goto_wifi_button">"Zu den WLAN-Einstellungen"</string>
+    <string name="main_clear_progress_esim_reset_text">"eSIM-Reset kann nicht ohne WLAN-Verbindung durchgeführt werden"</string>
     <string name="preferred_network_mode_change_dialogtitle">"Bevorzugte Netzwerkverbindung geändert"</string>
     <string name="preferred_network_mode_change_waring_message">"Netzverfügbarkeit kann durch Ihre Wahl reduziert werden"</string>
     <string name="verification_confirm_your_password_header">"Bestätigungscode eingeben :"</string>
