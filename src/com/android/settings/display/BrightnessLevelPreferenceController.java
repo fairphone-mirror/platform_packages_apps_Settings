@@ -176,7 +176,7 @@ public class BrightnessLevelPreferenceController extends BasePreferenceControlle
             //value = convertLinearToGammaFloat(info.brightness, info.brightnessMinimum,
                     //info.brightnessMaximum);
             value = brightnessLinearToSliderVal(info.brightness, info.brightnessMinimum,
-                    info.brightnessMaximum);
+                    0.4999f);
         }
         return getPercentage(value, GAMMA_SPACE_MIN, GAMMA_SPACE_MAX);
     }
