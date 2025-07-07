@@ -13,16 +13,17 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<com.android.settings.NonInterceptingScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/regulatoryInfo_scroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.android.settings.AdvancedZoomableImageView
+    <com.android.settings.photoview.PhotoView
         android:id="@+id/regulatoryInfo"
         android:adjustViewBounds="true"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:contentDescription="@string/regulatory_labels"
         android:src="@drawable/regulatory_info" />
-</com.android.settings.NonInterceptingScrollView>
+</FrameLayout>
 
