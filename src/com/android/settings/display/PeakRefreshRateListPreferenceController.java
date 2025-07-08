@@ -174,11 +174,17 @@ public class PeakRefreshRateListPreferenceController extends AbstractPreferenceC
         //     refreshSummary(preference);
         //     return true;
         // }
+        float refreshRate = (float) Math.round(Float.valueOf((String)newValue));
+        float currentrefreshRate = getCurrentRefreshRate();
+        if(currentrefreshRate == refreshRate){
+            Log.d(TAG, "same with old value ,do nothing");
+            return true;
+        }
 
         Settings.Secure.putInt(mContext.getContentResolver(), Settings.Secure.MATCH_CONTENT_FRAME_RATE, Settings.Secure.MATCH_CONTENT_FRAMERATE_NEVER);
         //Settings.System.putInt(mContext.getContentResolver(), SETTINGS_KEY_DYNAMIC_REFRESH_RATE_ENABLE, 0);
 
-        float refreshRate = (float) Math.round(Float.valueOf((String)newValue));
+
         Settings.System.putFloat(mContext.getContentResolver(), Settings.System.MIN_REFRESH_RATE, 1);
         Settings.System.putFloat(mContext.getContentResolver(), Settings.System.PEAK_REFRESH_RATE, refreshRate);
         refreshSummary(preference);
