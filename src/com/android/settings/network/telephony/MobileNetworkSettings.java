@@ -522,6 +522,7 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings impleme
         use(CarrierPreferenceController.class).init(mSubId);
         use(DataUsagePreferenceController.class).init(mSubId);
         use(PreferredNetworkModePreferenceController.class).init(getLifecycle(), mSubId);
+        use(Enabled5GNRModePreferenceController.class).init(mSubId);//[BUG]-Modify by shaopan.tang 2025-07-09 FPS-3170 Add 5G SA/NSA switch for Elisa
         use(EnabledNetworkModePreferenceController.class).init(mSubId, getParentFragmentManager());
         use(DataServiceSetupPreferenceController.class).init(mSubId);
         use(Enable2gPreferenceController.class).init(mSubId);
