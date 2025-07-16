@@ -14794,6 +14794,10 @@ Data usage charges may apply.</string>
     </plurals>
     <!--[FEATURE]-Add-End by shaopan.tang -->
 
+    <!--[BUG]-Modify-Begin by shaopan.tang 2025-07-09 FPS-3170 Add 5G SA/NSA switch for Elisa -->
+    <string name="enabled_5gsa_mode_title">5G Standalone</string>
+    <!--[BUG]-Modify-End by shaopan.tang -->
+
     <string name="display_touch_sensitivity_title">"Touch sensitivity"</string>
     <string name="display_touch_sensitivity_summary">"Increase the touch sensitivity of the screen for use with screen protectors."</string>
 

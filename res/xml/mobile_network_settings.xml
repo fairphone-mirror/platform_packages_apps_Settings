@@ -167,7 +167,13 @@
             android:title="@string/enabled_5g_mode_title"
             android:persistent="true"
             settings:controller="com.android.settings.network.telephony.Enabled5GPreferenceController"/>
-
+        <!--[BUG]-Modify-Begin by shaopan.tang 2025-07-09 FPS-3170 Add 5G SA/NSA switch for Elisa -->
+        <SwitchPreference
+            android:key="enabled_5G_nr_mode"
+            android:title="@string/enabled_5gsa_mode_title"
+            android:persistent="true"
+            settings:controller="com.android.settings.network.telephony.Enabled5GNRModePreferenceController"/>
+        <!--[BUG]-Modify-End by shaopan.tang -->
         <SwitchPreferenceCompat
             android:key="contact_discovery_opt_in"
             android:title="@string/contact_discovery_opt_in_title"
