@@ -284,18 +284,6 @@ public class Enabled5GNRModePreferenceController extends TelephonyTogglePreferen
         }
     }
 
-    private int getSummaryResId(int nrMode) {
-        if (nrMode == NrConfig.NR_CONFIG_COMBINED_SA_NSA) {
-            return R.string.nr_nsa_sa;
-        } else if (nrMode == NrConfig.NR_CONFIG_NSA) {
-            return R.string.nr_nsa_only;
-        } else if (nrMode == NrConfig.NR_CONFIG_SA) {
-            return R.string.nr_sa_only;
-        } else {
-            return R.string.nr_nsa_sa;
-        }
-    }
-
     /**
      * Returns {@code true} when the key is enabled for the carrier, and {@code false} otherwise.
      */
