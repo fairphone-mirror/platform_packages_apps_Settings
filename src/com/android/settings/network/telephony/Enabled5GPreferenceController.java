@@ -65,7 +65,6 @@ import com.android.settingslib.core.lifecycle.events.OnStop;
 
 import com.android.settings.R;
 import com.android.settings.network.AllowedNetworkTypesListener;
-import com.android.settings.network.telephony.MobileNetworkUtils;
 import com.android.settings.network.telephony.mode.NetworkModes;
 /**
  * Preference controller for "Enabled 5G Switch"
@@ -234,13 +233,13 @@ public class Enabled5GPreferenceController extends TelephonyTogglePreferenceCont
         int userSelectedNwMode = getPreviousSelectedNwType();
         if ((userSelectedNwMode != NETWORK_MODE_TYPE_INVALID)) {
             // If the previously saved PNT is valid, use it
-            newNetworkBitMask = MobileNetworkUtils
+            newNetworkBitMask = RadioAccessFamily
                     .getRafFromNetworkType(userSelectedNwMode);
             cachePreviousSelectedNwType(NETWORK_MODE_TYPE_INVALID);
         } else {
             // If the previously saved PNT is invalid, generate a new PNT closest to current one
             int oldNetworkMode = getAllowedNetworkMode();
-            long oldNetworkBitMask = MobileNetworkUtils.getRafFromNetworkType(oldNetworkMode);
+            long oldNetworkBitMask = RadioAccessFamily.getRafFromNetworkType(oldNetworkMode);
             newNetworkBitMask = getNetworkFromPreferredPreference(isChecked, oldNetworkBitMask);
             cachePreviousSelectedNwType(oldNetworkMode);
         }
@@ -327,13 +326,13 @@ public class Enabled5GPreferenceController extends TelephonyTogglePreferenceCont
 
         Log.d(TAG, "enable 5G: " + is5GChecked);
         Log.d(TAG, "old network type {BitMask: " + oldBitMask
-                + ", Type: " + MobileNetworkUtils.getNetworkTypeFromRaf((int)oldBitMask) + "}");
+                + ", Type: " + RadioAccessFamily.getNetworkTypeFromRaf((int)oldBitMask) + "}");
 
         // loop every PTN(preferred network type) in prefered network list
         int index = 0;
         for (CharSequence s : values) {
             int networkType = Integer.valueOf(s.toString());
-            long networkBitMask = MobileNetworkUtils.getRafFromNetworkType(networkType);
+            long networkBitMask = RadioAccessFamily.getRafFromNetworkType(networkType);
             Log.d(TAG, "loop preference list[" + index + "]"
                     + " {BitMask: " + networkBitMask + ", Type: " + networkType + "}");
             index++;
@@ -352,7 +351,7 @@ public class Enabled5GPreferenceController extends TelephonyTogglePreferenceCont
                 }
 
                 // if need no 5G and old PNT is 5G only, this is special case
-                if (MobileNetworkUtils.getNetworkTypeFromRaf((int)oldBitMask)
+                if (RadioAccessFamily.getNetworkTypeFromRaf((int)oldBitMask)
                         == TelephonyManager.NETWORK_MODE_NR_ONLY) {
                     // if current PNT is LTE only, return immediately
                     if (networkType == TelephonyManager.NETWORK_MODE_LTE_ONLY) {
@@ -397,7 +396,7 @@ public class Enabled5GPreferenceController extends TelephonyTogglePreferenceCont
         }
 
         Log.d(TAG, "new network type {BitMask: " + newNetworkBitMask
-                + ", Type: " + MobileNetworkUtils.getNetworkTypeFromRaf((int)newNetworkBitMask) + "}");
+                + ", Type: " + RadioAccessFamily.getNetworkTypeFromRaf((int)newNetworkBitMask) + "}");
         return newNetworkBitMask;
     }
 

@@ -28,6 +28,7 @@ import android.telephony.CarrierConfigManager
 import android.telephony.SubscriptionManager
 import android.telephony.TelephonyManager
 import android.telephony.ims.ImsMmTelManager
+import android.util.Log
 import androidx.lifecycle.LifecycleOwner
 import androidx.preference.Preference
 import androidx.preference.PreferenceScreen
@@ -63,10 +64,10 @@ open class WifiCallingPreferenceController @JvmOverloads constructor(
     },
 ) : BasePreferenceController(context, key), LifecycleObserver, OnStart, OnStop {
 
-    companion object {
-        private const val TAG = "WifiCallingPreference"
-        private val WFC_URI: Uri = Uri.parse("content://telephony/siminfo")
-    }
+//    companion object {
+//        private const val TAG = "WifiCallingPreference"
+//        private val WFC_URI: Uri = Uri.parse("content://telephony/siminfo")
+//    }
 
     private var subId = SubscriptionManager.INVALID_SUBSCRIPTION_ID
     private lateinit var preference: Preference
@@ -97,7 +98,7 @@ open class WifiCallingPreferenceController @JvmOverloads constructor(
      */
     override fun getAvailabilityStatus(): Int {
         // add by T2M.renjiezhang for FPS-278 2024-11-15 begin
-        Log.d(TAG, "getAvailabilityStatus $subId")
+        Log.d("WifiCallingPreferenceController", "getAvailabilityStatus $subId")
         val imsEnabled = Settings.Global.getInt(context.contentResolver, "ims_enable_settings", 0) == 1
         if (imsEnabled) {
             Log.d(TAG, "wfc toggle show because of ims_enabled = $imsEnabled")
@@ -199,7 +200,7 @@ open class WifiCallingPreferenceController @JvmOverloads constructor(
             preference.summary = null
         } else {
             preference.title = title
-            preference.summary = withContext(Dispatchers.Default) { getSummaryForWfcMode(subId) }
+            preference.summary = withContext(Dispatchers.Default) { getSummaryForWfcMode() }
         }
     }
 
@@ -243,5 +244,7 @@ open class WifiCallingPreferenceController @JvmOverloads constructor(
                 )
             }
         }
+        private const val TAG = "WifiCallingPreference"
+        private val WFC_URI: Uri = Uri.parse("content://telephony/siminfo")
     }
 }

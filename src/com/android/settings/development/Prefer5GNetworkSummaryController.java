@@ -47,6 +47,7 @@ import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.instrumentation.MetricsFeatureProvider;
 
 import java.util.List;
+import com.android.settings.network.telephony.euicc.EuiccRepository;
 
 public class Prefer5GNetworkSummaryController extends AbstractPreferenceController implements
         SubscriptionsChangeListener.SubscriptionsChangeListenerClient, LifecycleObserver,
@@ -95,7 +96,7 @@ public class Prefer5GNetworkSummaryController extends AbstractPreferenceControll
         final List<SubscriptionInfo> subs = SubscriptionUtil.getAvailableSubscriptions(
                 mContext);
         if (subs.isEmpty()) {
-            if (MobileNetworkUtils.showEuiccSettings(mContext)) {
+            if (new EuiccRepository(mContext).showEuiccSettings()) {
                 return mContext.getResources().getString(
                         R.string.mobile_network_summary_add_a_network);
             }
@@ -127,7 +128,7 @@ public class Prefer5GNetworkSummaryController extends AbstractPreferenceControll
                 mContext);
 
         if (subs.isEmpty()) {
-            if (MobileNetworkUtils.showEuiccSettings(mContext)) {
+            if (new EuiccRepository(mContext).showEuiccSettings()) {
                 mPreference.setOnPreferenceClickListener((Preference pref) -> {
                     mMetricsFeatureProvider.logClickedPreference(pref,
                             pref.getExtras().getInt(DashboardFragment.CATEGORY));
@@ -140,7 +141,7 @@ public class Prefer5GNetworkSummaryController extends AbstractPreferenceControll
         } else {
             // We have one or more existing subscriptions, so we want the plus button if eSIM is
             // supported.
-            if (MobileNetworkUtils.showEuiccSettings(mContext)) {
+            if (new EuiccRepository(mContext).showEuiccSettings()) {
                 mPreference.setAddWidgetEnabled(!mChangeListener.isAirplaneModeOn());
                 mPreference.setOnAddClickListener(p -> {
                     mMetricsFeatureProvider.logClickedPreference(p,

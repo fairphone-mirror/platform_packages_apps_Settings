@@ -1,0 +1,52 @@
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libFaceDetectCA",
+    shared_libs: ["liblog"],
+    strip: {
+        none: true,
+    },
+    compile_multilib: "64",
+    target: {
+        android_arm64: {
+            srcs: ["arm64-v8a/libFaceDetectCA.so"]
+        },
+    },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libanc_faceid",
+    shared_libs: ["liblog"],
+    strip: {
+        none: true,
+    },
+    compile_multilib: "64",
+    target: {
+        android_arm64: {
+            srcs: ["arm64-v8a/libanc_faceid.so"],
+        },
+    },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libanc_faceid_jni",
+    shared_libs: [
+        "libFaceDetectCA",
+        "libanc_faceid",
+        "liblog"
+    ],
+    strip: {
+        none: true,
+    },
+    compile_multilib: "64",
+    target: {
+        android: {
+            srcs: ["arm64-v8a/libanc_faceid_jni.so"],
+        },
+    },
+    system_ext_specific: true,
+}

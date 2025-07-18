@@ -70,6 +70,8 @@ import org.codeaurora.internal.IExtTelephony;
 import org.codeaurora.internal.INetworkCallback;
 import org.codeaurora.internal.NetworkCallbackBase;
 
+import com.android.settings.network.telephony.euicc.EuiccRepository;
+
 /**
  * This populates the entries on a page which lists all available mobile subscriptions. Each entry
  * has the name of the subscription with some subtext giving additional detail, and clicking on the
@@ -243,7 +245,7 @@ public class Prefer5GNetworkListController extends AbstractPreferenceController 
         Log.i(TAG, "displayPreference");
         mPreferenceScreen = screen;
         mPreferenceScreen.findPreference(KEY_ADD_MORE).setVisible(
-                MobileNetworkUtils.showEuiccSettings(mContext));
+                new EuiccRepository(mContext).showEuiccSettings());
     }
 
     private void update() {

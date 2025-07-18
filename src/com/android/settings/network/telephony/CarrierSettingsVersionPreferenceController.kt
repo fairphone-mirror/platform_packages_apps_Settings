@@ -25,10 +25,11 @@ import com.android.settings.network.telephony.MobileNetworkSettingsSearchIndex.M
 import com.android.settings.network.telephony.MobileNetworkSettingsSearchIndex.MobileNetworkSettingsSearchResult
 
 import android.util.Log
+import android.telephony.TelephonyManager
 
+private const val TAG = "CarrierSettingsVersionPreferenceController"
 class CarrierSettingsVersionPreferenceController(context: Context, preferenceKey: String) :
     BasePreferenceController(context, preferenceKey) {
-
     private var subId: Int = SubscriptionManager.INVALID_SUBSCRIPTION_ID
     private val searchItem = CarrierSettingsVersionSearchItem(context)
 
@@ -45,14 +46,16 @@ class CarrierSettingsVersionPreferenceController(context: Context, preferenceKey
         class CarrierSettingsVersionSearchItem(private val context: Context) :
             MobileNetworkSettingsSearchItem {
             private val carrierConfigRepository = CarrierConfigRepository(context)
+            private val telephonyManager =  context.getSystemService(TelephonyManager::class.java)
+            private val subscriptionManager = context.getSystemService(SubscriptionManager::class.java)
 
-            fun getSummary(subId: Int): String? = {
+            fun getSummary(subId: Int): String? {
                 /*carrierConfigRepository.getString(
                     subId, CarrierConfigManager.KEY_CARRIER_CONFIG_VERSION_STRING)*/
-                return if (subscriptionId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
-                    buildMultiSimSummary()
+                if (subId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
+                    return buildMultiSimSummary()
                 } else {
-                    getSummaryBySubId(subscriptionId).orEmpty()
+                    return getSummaryBySubId(subId).orEmpty()
                 }
             }
 
@@ -63,8 +66,7 @@ class CarrierSettingsVersionPreferenceController(context: Context, preferenceKey
                         subId,
                         CarrierConfigManager.KEY_CARRIER_CONFIG_VERSION_STRING
                     )
-        
-                    val subInfo = subscriptionManager.getActiveSubscriptionInfo(subId)
+                    val subInfo = subscriptionManager?.getActiveSubscriptionInfo(subId)
                     val mccMnc = subInfo?.run { 
                         (mccString ?: "") + (mncString ?: "") 
                     } ?: ""
@@ -80,7 +82,7 @@ class CarrierSettingsVersionPreferenceController(context: Context, preferenceKey
             private fun buildMultiSimSummary(): String {
                 return StringBuilder().apply {
                     for (slotId in 0 until telephonyManager.activeModemCount) {
-                        subscriptionManager.getActiveSubscriptionInfoForSimSlotIndex(slotId)?.let { info ->
+                        subscriptionManager?.getActiveSubscriptionInfoForSimSlotIndex(slotId)?.let { info ->
                             getSummaryBySubId(info.subscriptionId)?.let { summary ->
                                 append("SIM${slotId + 1}: $summary${System.lineSeparator()}")
                             }

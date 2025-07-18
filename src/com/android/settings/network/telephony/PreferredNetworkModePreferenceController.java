@@ -170,7 +170,7 @@ public class PreferredNetworkModePreferenceController extends BasePreferenceCont
         // order：carrier config > carrier param > default config
         final boolean roamingUnlock = getRoamingUnlockStatus();
         final boolean isRoaming = MobileNetworkSettings.isRoaming(mSubId);
-        Log.d(LOG_TAG, "roamingUnlock : " + roamingUnlock + " isRoaming : "+isRoaming);
+        Log.d(TAG, "roamingUnlock : " + roamingUnlock + " isRoaming : "+isRoaming);
 
         if (!roamingUnlock || !isRoaming) {
 
@@ -240,7 +240,7 @@ public class PreferredNetworkModePreferenceController extends BasePreferenceCont
 
     private void logConfigurationSource(String source) {
 
-        Log.d(LOG_TAG, "Initializing preferred network from: " + source);
+        Log.d(TAG, "Initializing preferred network from: " + source);
     }
 
     private void updatePreferenceEntries(ListPreference preference, String[] modes, String[] values) {
@@ -317,11 +317,11 @@ public class PreferredNetworkModePreferenceController extends BasePreferenceCont
         //[BUG]-Modify-Begin by shaopan.tang 2025-04-18 FPS-2109 Pop up the warning message if the user selects a different network mode than the default multi-mode
         final PersistableBundle carrierConfig = mCarrierConfigCache.getConfigForSubId(mSubId);
         final ListPreference listPreference = (ListPreference) preference;
-        Log.d(LOG_TAG, "set networkmode " + newPreferredNetworkMode);
+        Log.d(TAG, "set networkmode " + newPreferredNetworkMode);
         if (carrierConfig != null && carrierConfig.getBoolean(
                 CarrierConfigManager.KEY_SHOW_DIALOG_WHEN_PREFERRED_NETWORK_TYPE_CHANGE_BOOL)
-                && (newPreferredNetworkMode != TelephonyManagerConstants.NETWORK_MODE_NR_LTE_GSM_WCDMA)) {
-            Log.d(LOG_TAG, "show warning message when preferred network mode changed");
+                && (newPreferredNetworkMode != TelephonyManager.NETWORK_MODE_NR_LTE_GSM_WCDMA)) {
+            Log.d(TAG, "show warning message when preferred network mode changed");
             AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
             builder.setTitle(R.string.preferred_network_mode_change_dialogtitle)
                .setMessage(R.string.preferred_network_mode_change_waring_message)
@@ -329,7 +329,7 @@ public class PreferredNetworkModePreferenceController extends BasePreferenceCont
                    public void onClick(DialogInterface dialog, int id) {
                         mTelephonyManager.setAllowedNetworkTypesForReason(
                             TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER,
-                            MobileNetworkUtils.getRafFromNetworkType(newPreferredNetworkMode));
+                            RadioAccessFamily.getRafFromNetworkType(newPreferredNetworkMode));
 
                         //listPreference.setSummary(getPreferredNetworkModeSummaryResId(newPreferredNetworkMode));
                         setNetworkModeSummaryText(listPreference, newPreferredNetworkMode);
@@ -482,7 +482,7 @@ public class PreferredNetworkModePreferenceController extends BasePreferenceCont
     private void setNetworkModeSummaryText(ListPreference preference, int networkmode) {
         String summary = null;
 
-        Log.d(LOG_TAG, "set networkmode(" + networkmode + ") summary");
+        Log.d(TAG, "set networkmode(" + networkmode + ") summary");
 
         for (int index = 0; index < mPreferredNetworkValues.length; index++) {
             if (mPreferredNetworkValues[index].equals(String.valueOf(networkmode))){
@@ -492,7 +492,7 @@ public class PreferredNetworkModePreferenceController extends BasePreferenceCont
         }
 
         if (summary != null) {
-            Log.d(LOG_TAG, "summary: " + summary);
+            Log.d(TAG, "summary: " + summary);
             preference.setSummary(summary);
         } else {
             preference.setSummary(getPreferredNetworkModeSummaryResId(networkmode));
