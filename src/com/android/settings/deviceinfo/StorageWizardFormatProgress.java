@@ -38,6 +38,8 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 import android.view.WindowManager;
 
+import androidx.activity.OnBackPressedCallback;
+
 public class StorageWizardFormatProgress extends StorageWizardBase {
     private static final String TAG = "StorageWizardFormatProgress";
 
@@ -47,6 +49,9 @@ public class StorageWizardFormatProgress extends StorageWizardBase {
 
     private PartitionTask mTask;
 
+    // add a return gesture callback
+    private OnBackPressedCallback mBackPressedCallback;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +60,16 @@ public class StorageWizardFormatProgress extends StorageWizardBase {
             return;
         }
         setContentView(R.layout.storage_wizard_progress);
+
+        // add return gesture interception
+        mBackPressedCallback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                // completely disable the return operation and do nothing
+            }
+        };
+
+        getOnBackPressedDispatcher().addCallback(this, mBackPressedCallback);
 
         // hide the navigation bar for this activity only. So that user can not press back button accidentally.
         View decorView = getWindow().getDecorView();
