@@ -196,7 +196,7 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "FAIRPHONE.png",
+    name: "fairphone.svg",
     system_ext_specific: true,
-    src: "legalinfo/FAIRPHONE.png",
+    src: "legalinfo/fairphone.svg",
 }
