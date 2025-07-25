@@ -607,7 +607,7 @@
     <string name="private_space_cancel_label" msgid="379259667396956886">"Avbryt"</string>
     <string name="private_space_setup_button_label" msgid="2094882154623560585">"Ställ in"</string>
     <string name="private_space_setup_title" msgid="2272968244329821450">"Privat område"</string>
-    <string name="private_space_hide_apps_summary" msgid="4418722947376042418">"Dölj eller lås privata appar i ett separat område. Använd ett dedikerat Google-konto för extra säkerhet."</string>
+    <string name="private_space_hide_apps_summary" msgid="4418722947376042418">"Lås privata appar i ett separat utrymme och använd ett dedikerat Google-konto för extra säkerhet."</string>
     <string name="private_space_setup_sub_header" msgid="550476876393954356">"Så fungerar det"</string>
     <string name="private_space_separate_account_text" msgid="790319706810190320"><b>"Skapa ett Google-konto för ditt privata område"</b>\n"Om du använder ett separat konto förhindrar det att synkroniserade filer, foton och e-postmeddelanden visas utanför det privata området"</string>
     <string name="private_space_protected_lock_text" msgid="9123250938334372735"><b>"Ställ in ett lås"</b>\n"Lås ditt område så att andra inte kan öppna det"</string>

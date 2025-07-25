@@ -607,7 +607,7 @@
     <string name="private_space_cancel_label" msgid="379259667396956886">"Abbrechen"</string>
     <string name="private_space_setup_button_label" msgid="2094882154623560585">"Einrichten"</string>
     <string name="private_space_setup_title" msgid="2272968244329821450">"Vertrauliches Profil"</string>
-    <string name="private_space_hide_apps_summary" msgid="4418722947376042418">"Du kannst private Apps in einem separaten Profil verbergen, das sich sperren lässt. Für zusätzliche Sicherheit kannst du dafür ein eigenes Google-Konto verwenden."</string>
+    <string name="private_space_hide_apps_summary" msgid="4418722947376042418">"Sperren Sie private Apps in einem separaten Bereich und verwenden Sie ein dediziertes Google-Konto für zusätzliche Sicherheit."</string>
     <string name="private_space_setup_sub_header" msgid="550476876393954356">"Funktionsweise"</string>
     <string name="private_space_separate_account_text" msgid="790319706810190320"><b>"Google-Konto für dein Profil erstellen"</b>\n"Wenn du ein eigenes Konto verwendest, vermeidest du, dass synchronisierte Dateien, Fotos und E‑Mails außerhalb deines Profils erscheinen"</string>
     <string name="private_space_protected_lock_text" msgid="9123250938334372735"><b>"Sperre einrichten"</b>\n"Du kannst deinen privaten Bereich sperren, damit andere nicht darauf zugreifen können"</string>

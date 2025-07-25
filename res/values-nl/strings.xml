@@ -607,7 +607,7 @@
     <string name="private_space_cancel_label" msgid="379259667396956886">"Annuleren"</string>
     <string name="private_space_setup_button_label" msgid="2094882154623560585">"Instellen"</string>
     <string name="private_space_setup_title" msgid="2272968244329821450">"Privégedeelte"</string>
-    <string name="private_space_hide_apps_summary" msgid="4418722947376042418">"Verberg of vergrendel privé-apps in een afzonderlijk gedeelte. Gebruik voor extra beveiliging een apart Google-account."</string>
+    <string name="private_space_hide_apps_summary" msgid="4418722947376042418">"Vergrendel privé-apps in een aparte ruimte en gebruik een toegewijd Google-account voor extra beveiliging."</string>
     <string name="private_space_setup_sub_header" msgid="550476876393954356">"Hoe het werkt"</string>
     <string name="private_space_separate_account_text" msgid="790319706810190320"><b>"Een Google account maken voor je gedeelte"</b>\n"Als je een speciaal account gebruikt, kan dit voorkomen dat gesynchroniseerde bestanden, foto\'s en e-mails buiten je gedeelte verschijnen"</string>
     <string name="private_space_protected_lock_text" msgid="9123250938334372735"><b>"Stel een vergrendeling in"</b>\n"Vergrendel je privégedeelte, zodat anderen het niet kunnen openen."</string>

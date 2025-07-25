@@ -607,7 +607,7 @@
     <string name="private_space_cancel_label" msgid="379259667396956886">"Cancelar"</string>
     <string name="private_space_setup_button_label" msgid="2094882154623560585">"Configurar"</string>
     <string name="private_space_setup_title" msgid="2272968244329821450">"Espacio privado"</string>
-    <string name="private_space_hide_apps_summary" msgid="4418722947376042418">"Oculta o bloquea las aplicaciones privadas en un espacio separado. Usa una cuenta de Google exclusiva para aumentar la seguridad."</string>
+    <string name="private_space_hide_apps_summary" msgid="4418722947376042418">"Bloquea las aplicaciones privadas en un espacio separado y usa una cuenta de Google dedicada para mayor seguridad."</string>
     <string name="private_space_setup_sub_header" msgid="550476876393954356">"Cómo funciona"</string>
     <string name="private_space_separate_account_text" msgid="790319706810190320"><b>"Crea una cuenta de Google para tu espacio"</b>\n"Si usas una cuenta específica, podrás evitar que los archivos, fotos y correos sincronizados aparezcan fuera de tu espacio"</string>
     <string name="private_space_protected_lock_text" msgid="9123250938334372735"><b>"Define un bloqueo"</b>\n"Bloquea tu espacio para evitar que otras personas lo abran."</string>

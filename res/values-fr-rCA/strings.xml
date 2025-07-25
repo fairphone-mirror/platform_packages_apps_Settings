@@ -606,7 +606,7 @@
     <string name="private_space_cancel_label" msgid="379259667396956886">"Annuler"</string>
     <string name="private_space_setup_button_label" msgid="2094882154623560585">"Configuration"</string>
     <string name="private_space_setup_title" msgid="2272968244329821450">"Espace privé"</string>
-    <string name="private_space_hide_apps_summary" msgid="4418722947376042418">"Masquez ou verrouillez les applis privées dans un espace à part. Utilisez un compte Google dédié pour plus de sécurité."</string>
+    <string name="private_space_hide_apps_summary" msgid="4418722947376042418">"Verrouillez les applications privées dans un espace séparé et utilisez un compte Google dédié pour une sécurité accrue."</string>
     <string name="private_space_setup_sub_header" msgid="550476876393954356">"Fonctionnement"</string>
     <string name="private_space_separate_account_text" msgid="790319706810190320"><b>"Créer un compte Google pour votre espace"</b>\n"Si vous utilisez un compte dédié, cela permet d\'éviter que des fichiers, des photos et des courriels synchronisés se retrouvent en dehors de votre espace"</string>
     <string name="private_space_protected_lock_text" msgid="9123250938334372735"><b>"Configurer un verrouillage"</b>\n"Verrouillez votre espace pour empêcher d\'autres personnes d\'y accéder"</string>
