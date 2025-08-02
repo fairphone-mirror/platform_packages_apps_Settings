@@ -143,11 +143,8 @@ public final class BootBroadcastReceiver extends BroadcastReceiver {
                 mWifiManager = context.getSystemService(WifiManager.class);
                 mPm = context.getSystemService(PowerManager.class);
             }
-            String countrycode = SystemProperties.get("persist.odm.ccode","");
-            Log.d("wificode", "countrycode from property = " + countrycode);
-            if("".equals(countrycode) || "other".equals(countrycode)){
-                getWifiCountryCode();
-            }
+
+            getWifiCountryCode();
         } else if (ACTION_SETUP_WIZARD_FINISHED.equals(action)) {
             ElapsedTimeUtils.storeSuwFinishedTimestamp(context, System.currentTimeMillis());
         }
@@ -164,15 +161,33 @@ public final class BootBroadcastReceiver extends BroadcastReceiver {
             if(countrycode == null || countrycode.isEmpty()){
                 mBackgroundHandler.sendEmptyMessageDelayed(MSG_GET_COUNTRY_CODE,10*1000);
             }else{
+                String countrycodeFromProperty = SystemProperties.get("persist.odm.ccode","other");
+                Log.d("wificode", "countrycode from property = " + countrycodeFromProperty);
                 if("US".equals(countrycode) || "CA".equals(countrycode)){
-                    SystemProperties.set("persist.odm.ccode","fcc");
-                    Toast toast = Toast.makeText(mContext, "In the NA region. Restart the phone to load the corresponding configuration.", Toast.LENGTH_SHORT);
-                    toast.show();
-                    mBackgroundHandler.sendEmptyMessageDelayed(MSG_REBOOT_LOAD_WIFI,3*1000);
+                    if(!"fcc".equals(countrycodeFromProperty)){
+                        SystemProperties.set("persist.odm.ccode","fcc");
+                        Toast toast = Toast.makeText(mContext, "Restart the phone to load the corresponding configuration.", Toast.LENGTH_SHORT);
+                        toast.show();
+                        mBackgroundHandler.sendEmptyMessageDelayed(MSG_REBOOT_LOAD_WIFI,3*1000);
+                    }
                 }else if("CN".equals(countrycode)){
-                    SystemProperties.set("persist.odm.ccode","other");
+                    if(!"other".equals(countrycodeFromProperty)){
+                        SystemProperties.set("persist.odm.ccode","other");
+                    }
+                    if("fcc".equals(countrycodeFromProperty)){
+                        Toast toast = Toast.makeText(mContext, "Restart the phone to load the corresponding configuration.", Toast.LENGTH_SHORT);
+                        toast.show();
+                        mBackgroundHandler.sendEmptyMessageDelayed(MSG_REBOOT_LOAD_WIFI,3*1000);
+                    }
                 }else{
-                    SystemProperties.set("persist.odm.ccode","eu");
+                    if(!"eu".equals(countrycodeFromProperty)){
+                        SystemProperties.set("persist.odm.ccode","eu");
+                    }
+                    if("fcc".equals(countrycodeFromProperty)){
+                        Toast toast = Toast.makeText(mContext, "Restart the phone to load the corresponding configuration.", Toast.LENGTH_SHORT);
+                        toast.show();
+                        mBackgroundHandler.sendEmptyMessageDelayed(MSG_REBOOT_LOAD_WIFI,3*1000);
+                    }
                 }
             }
         }
