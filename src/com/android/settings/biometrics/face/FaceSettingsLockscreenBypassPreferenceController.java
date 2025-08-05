@@ -46,9 +46,7 @@ public class FaceSettingsLockscreenBypassPreferenceController
 
     @Override
     public boolean isChecked() {
-        if (!FaceSettings.isFaceHardwareDetected(mContext)) {
-            return false;
-        } else if (getRestrictingAdmin() != null) {
+        if (getRestrictingAdmin() != null) {
             return false;
         }
         int defaultValue = mContext.getResources().getBoolean(
@@ -67,15 +65,7 @@ public class FaceSettingsLockscreenBypassPreferenceController
     @Override
     public void updateState(Preference preference) {
         super.updateState(preference);
-        if (!FaceSettings.isFaceHardwareDetected(mContext)) {
-            preference.setEnabled(false);
-        } else if (getRestrictingAdmin() != null) {
-            preference.setEnabled(false);
-        } else if (!mFaceManager.hasEnrolledTemplates(getUserId())) {
-            preference.setEnabled(false);
-        } else {
-            preference.setEnabled(true);
-        }
+        preference.setEnabled(true);
     }
 
     @Override
