@@ -3789,7 +3789,7 @@
     <string name="notification_pulse_title" msgid="8013178454646671529">"閃燈"</string>
     <string name="lock_screen_notifications_title" msgid="2876323153692406203">"私隱設定"</string>
     <string name="lockscreen_bypass_title" msgid="6519964196744088573">"略過上鎖畫面"</string>
-    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"解鎖後直接前往上次使用的畫面。通知不會在上鎖畫面上顯示。從頂部向下滑動，即可查看通知。"</string>
+    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"解鎖後直接前往上次使用的畫面。"</string>
     <string name="keywords_lockscreen_bypass" msgid="41035425468915498">"上鎖畫面, 鎖定螢幕, 略過, 繞過"</string>
     <string name="locked_work_profile_notification_title" msgid="279367321791301499">"當工作設定檔鎖定時"</string>
     <string name="lock_screen_notif_minimalism" msgid="5556871004042668149">"減少上鎖畫面通知"</string>

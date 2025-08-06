@@ -3790,7 +3790,7 @@
     <string name="notification_pulse_title" msgid="8013178454646671529">"Luce lampeggiante"</string>
     <string name="lock_screen_notifications_title" msgid="2876323153692406203">"Privacy"</string>
     <string name="lockscreen_bypass_title" msgid="6519964196744088573">"Ignora schermata di blocco"</string>
-    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Dopo lo sblocco, vai direttamente all\'ultima schermata usata. Le notifiche non compaiono nella schermata di blocco. Scorri verso il basso per vederle."</string>
+    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Dopo lo sblocco, vai direttamente all\'ultima schermata usata."</string>
     <string name="keywords_lockscreen_bypass" msgid="41035425468915498">"Schermata di blocco, Schermata blocco, Salta, Ignora"</string>
     <string name="locked_work_profile_notification_title" msgid="279367321791301499">"Con profilo di lavoro bloccato"</string>
     <string name="lock_screen_notif_minimalism" msgid="5556871004042668149">"Riduci al minimo le notifiche sulla schermata di blocco"</string>

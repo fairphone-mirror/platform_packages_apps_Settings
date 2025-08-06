@@ -3790,7 +3790,7 @@
     <string name="notification_pulse_title" msgid="8013178454646671529">"Knipperlicht"</string>
     <string name="lock_screen_notifications_title" msgid="2876323153692406203">"Privacy"</string>
     <string name="lockscreen_bypass_title" msgid="6519964196744088573">"Vergrendelscherm overslaan"</string>
-    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Ga na ontgrendeling meteen naar het laatst gebruikte scherm. Meldingen worden niet op het vergrendelscherm getoond. Swipe omlaag om ze te zien."</string>
+    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Ga na ontgrendeling meteen naar het laatst gebruikte scherm."</string>
     <string name="keywords_lockscreen_bypass" msgid="41035425468915498">"Scherm vergrendelen, vergrendelscherm, overslaan"</string>
     <string name="locked_work_profile_notification_title" msgid="279367321791301499">"Als werkprofiel is vergrendeld"</string>
     <string name="lock_screen_notif_minimalism" msgid="5556871004042668149">"Aantal meldingen op het vergrendelscherm minimaliseren"</string>

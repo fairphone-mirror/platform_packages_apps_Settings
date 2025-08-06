@@ -3790,7 +3790,7 @@
     <string name="notification_pulse_title" msgid="8013178454646671529">"Benachrichtigungslicht blinkt"</string>
     <string name="lock_screen_notifications_title" msgid="2876323153692406203">"Datenschutz"</string>
     <string name="lockscreen_bypass_title" msgid="6519964196744088573">"Sperrbildschirm überspringen"</string>
-    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Nach dem Entsperren wird direkt der zuletzt genutzte Bildschirm angezeigt. Um Benachrichtigungen zu sehen, wische von oben nach unten."</string>
+    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Nach dem Entsperren wird direkt der zuletzt genutzte Bildschirm angezeigt."</string>
     <string name="keywords_lockscreen_bypass" msgid="41035425468915498">"Sperrbildschirm, überspringen, umgehen"</string>
     <string name="locked_work_profile_notification_title" msgid="279367321791301499">"Wenn das Arbeitsprofil gesperrt ist"</string>
     <string name="lock_screen_notif_minimalism" msgid="5556871004042668149">"Benachrichtigungen auf dem Sperrbildschirm verringern"</string>

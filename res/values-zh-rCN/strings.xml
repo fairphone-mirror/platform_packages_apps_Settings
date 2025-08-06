@@ -3792,7 +3792,7 @@
     <string name="notification_pulse_title" msgid="8013178454646671529">"闪烁指示灯"</string>
     <string name="lock_screen_notifications_title" msgid="2876323153692406203">"隐私"</string>
     <string name="lockscreen_bypass_title" msgid="6519964196744088573">"跳过锁屏画面"</string>
-    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"解锁后直接进入上次使用的界面。锁屏状态下不会显示通知。从屏幕顶部向下滑动可查看通知。"</string>
+    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"解锁后直接进入上次使用的界面。"</string>
     <string name="keywords_lockscreen_bypass" msgid="41035425468915498">"锁定屏幕, 锁屏, 跳过, 绕过"</string>
     <string name="locked_work_profile_notification_title" msgid="279367321791301499">"当工作资料锁定时"</string>
     <string name="lock_screen_notif_minimalism" msgid="5556871004042668149">"尽可能减少锁定屏幕上显示的通知"</string>

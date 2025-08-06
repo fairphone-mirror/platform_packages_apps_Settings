@@ -3790,7 +3790,7 @@
     <string name="notification_pulse_title" msgid="8013178454646671529">"Blinkande ljus"</string>
     <string name="lock_screen_notifications_title" msgid="2876323153692406203">"Integritet"</string>
     <string name="lockscreen_bypass_title" msgid="6519964196744088573">"Hoppa över låsskärmen"</string>
-    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Öppna den senast använda skärmen när du låser upp. Aviseringar visas inte på låsskärmen. Svep nedåt från skärmens överkant för att se dem."</string>
+    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Öppna den senast använda skärmen när du låser upp."</string>
     <string name="keywords_lockscreen_bypass" msgid="41035425468915498">"Låsskärm, Hoppa över, Kringgå"</string>
     <string name="locked_work_profile_notification_title" msgid="279367321791301499">"När jobbprofilen är låst"</string>
     <string name="lock_screen_notif_minimalism" msgid="5556871004042668149">"Få aviseringar på låsskärmen"</string>

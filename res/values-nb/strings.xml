@@ -3788,7 +3788,7 @@
     <string name="notification_pulse_title" msgid="8013178454646671529">"Blinkende lys"</string>
     <string name="lock_screen_notifications_title" msgid="2876323153692406203">"Personvern"</string>
     <string name="lockscreen_bypass_title" msgid="6519964196744088573">"Hopp over låseskjermen"</string>
-    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Gå rett til forrige skjerm når enheten låses opp. Varsler vises ikke på låseskjermen. Du kan se dem ved å sveipe ned fra toppen."</string>
+    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Gå rett til forrige skjerm når enheten låses opp."</string>
     <string name="keywords_lockscreen_bypass" msgid="41035425468915498">"Låseskjerm, låseskjerm, hopp over, omgå"</string>
     <string name="locked_work_profile_notification_title" msgid="279367321791301499">"Når jobbprofilen er låst"</string>
     <string name="lock_screen_notif_minimalism" msgid="5556871004042668149">"Minimer antall varsler på låseskjermen"</string>

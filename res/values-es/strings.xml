@@ -3790,7 +3790,7 @@
     <string name="notification_pulse_title" msgid="8013178454646671529">"Luz parpadeante"</string>
     <string name="lock_screen_notifications_title" msgid="2876323153692406203">"Privacidad"</string>
     <string name="lockscreen_bypass_title" msgid="6519964196744088573">"Saltar pantalla de bloqueo"</string>
-    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Al desbloquear, vuelve a la última pantalla que usaste. No verás notificaciones en la pantalla de bloqueo. Desliza desde arriba para verlas."</string>
+    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Al desbloquear, vuelve a la última pantalla que usaste."</string>
     <string name="keywords_lockscreen_bypass" msgid="41035425468915498">"Pantalla de bloqueo, pantalla bloqueo, saltar, evitar"</string>
     <string name="locked_work_profile_notification_title" msgid="279367321791301499">"Con el perfil de trabajo bloqueado"</string>
     <string name="lock_screen_notif_minimalism" msgid="5556871004042668149">"Minimalismo en las notificaciones de la pantalla de bloqueo"</string>

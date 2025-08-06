@@ -3790,7 +3790,7 @@
     <string name="notification_pulse_title" msgid="8013178454646671529">"Blinkende lys"</string>
     <string name="lock_screen_notifications_title" msgid="2876323153692406203">"Privatliv"</string>
     <string name="lockscreen_bypass_title" msgid="6519964196744088573">"Spring låseskærmen over"</string>
-    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Gå direkte til den seneste skærm efter oplåsning. Notifikationer vises ikke på låseskærmen. Stryg nedad fra toppen for at se dem."</string>
+    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Gå direkte til den seneste skærm efter oplåsning."</string>
     <string name="keywords_lockscreen_bypass" msgid="41035425468915498">"Låseskærm, lås skærm, spring over, tilsidesæt"</string>
     <string name="locked_work_profile_notification_title" msgid="279367321791301499">"Når arbejdsprofilen er låst"</string>
     <string name="lock_screen_notif_minimalism" msgid="5556871004042668149">"Minimalt antal af notifikationer på låseskærmen"</string>

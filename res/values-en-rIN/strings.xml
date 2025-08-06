@@ -3788,7 +3788,7 @@
     <string name="notification_pulse_title" msgid="8013178454646671529">"Blink light"</string>
     <string name="lock_screen_notifications_title" msgid="2876323153692406203">"Privacy"</string>
     <string name="lockscreen_bypass_title" msgid="6519964196744088573">"Skip lock screen"</string>
-    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"After unlocking, go directly to last-used screen. Notifications won’t show on lock screen. Swipe down from top to see them."</string>
+    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"After unlocking, go directly to last used screen."</string>
     <string name="keywords_lockscreen_bypass" msgid="41035425468915498">"Lock screen, Lockscreen, Skip, Bypass"</string>
     <string name="locked_work_profile_notification_title" msgid="279367321791301499">"When work profile is locked"</string>
     <string name="lock_screen_notif_minimalism" msgid="5556871004042668149">"Lock screen notification minimalism"</string>

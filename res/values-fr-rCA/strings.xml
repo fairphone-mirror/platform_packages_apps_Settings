@@ -3788,7 +3788,7 @@
     <string name="notification_pulse_title" msgid="8013178454646671529">"Faire clignoter le voyant"</string>
     <string name="lock_screen_notifications_title" msgid="2876323153692406203">"Confidentialité"</string>
     <string name="lockscreen_bypass_title" msgid="6519964196744088573">"Ignorer l\'écran de verrouillage"</string>
-    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Après le déverrouillage, vous accéderez au dernier écran utilisé, sans voir l\'écran de verrouillage. Pour voir les notifications, balayez vers le bas."</string>
+    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Après le déverrouillage, accédez au dernier écran utilisé."</string>
     <string name="keywords_lockscreen_bypass" msgid="41035425468915498">"Écran de verrouillage, écran verrouillé, ignorer, contourner"</string>
     <string name="locked_work_profile_notification_title" msgid="279367321791301499">"Lorsque le profil professionnel est verrouillé"</string>
     <string name="lock_screen_notif_minimalism" msgid="5556871004042668149">"Minimalisme des notifications sur l\'écran de verrouillage"</string>

@@ -3789,7 +3789,7 @@
     <string name="notification_pulse_title" msgid="8013178454646671529">"Emitir luz intermitente"</string>
     <string name="lock_screen_notifications_title" msgid="2876323153692406203">"Privacidade"</string>
     <string name="lockscreen_bypass_title" msgid="6519964196744088573">"Ignorar ecrã de bloqueio"</string>
-    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Após o desbloqueio, aceda diretamente ao último ecrã usado. As notificações não aparecem no ecrã de bloqueio. Deslize para baixo para as ver."</string>
+    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Após o desbloqueio, aceda diretamente ao último ecrã usado."</string>
     <string name="keywords_lockscreen_bypass" msgid="41035425468915498">"Ecrã de bloqueio, ignorar"</string>
     <string name="locked_work_profile_notification_title" msgid="279367321791301499">"Quando o perfil de trabalho está bloqueado"</string>
     <string name="lock_screen_notif_minimalism" msgid="5556871004042668149">"Minimalismo das notificações no ecrã de bloqueio"</string>

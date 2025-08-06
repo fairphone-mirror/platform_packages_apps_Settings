@@ -3790,7 +3790,7 @@
     <string name="notification_pulse_title" msgid="8013178454646671529">"Piscar a luz"</string>
     <string name="lock_screen_notifications_title" msgid="2876323153692406203">"Privacidade"</string>
     <string name="lockscreen_bypass_title" msgid="6519964196744088573">"Pular tela de bloqueio"</string>
-    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Após o desbloqueio, a última tela usada será mostrada. Deslize de cima para baixo para conferir as notificações, que não vão aparecer na tela de bloqueio."</string>
+    <string name="lockscreen_bypass_summary" msgid="4578154430436224161">"Após o desbloqueio, a última tela usada será mostrada."</string>
     <string name="keywords_lockscreen_bypass" msgid="41035425468915498">"Bloquear tela, tela de bloqueio, pular, ignorar"</string>
     <string name="locked_work_profile_notification_title" msgid="279367321791301499">"Quando o perfil está bloqueado"</string>
     <string name="lock_screen_notif_minimalism" msgid="5556871004042668149">"Notificações minimalistas na tela de bloqueio"</string>
