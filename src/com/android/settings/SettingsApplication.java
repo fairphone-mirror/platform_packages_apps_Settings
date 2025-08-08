@@ -89,7 +89,14 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Locale;
-
+import android.os.Handler;
+import android.os.Looper;
+import android.net.wifi.WifiManager;
+import android.widget.Toast;
+import android.os.PowerManager;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 
 import java.lang.ref.WeakReference;
 
@@ -111,7 +118,37 @@ public class SettingsApplication extends Application {
     private static final String IS_BATTERY_HEALTH_HIDE = "persist.sys.is_battery_health_hide";
     private boolean isDebug = false;
     final String WALLPAPER_CONFIG = "persist.sys.config.wallpaper";
+    private AirplaneModeContentObserver mContentObserver;
+    private WifiManager mWifiManager;
+    private PowerManager mPm;
+    private final Handler mBackgroundHandler = new BackgroundHandler(Looper.getMainLooper());
+    private static int mtrytimes = 0;
+    private static final int MSG_GET_COUNTRY_CODE = 1;
+    private static final int MSG_REBOOT_LOAD_WIFI = 2;
 
+    private class BackgroundHandler extends Handler {
+
+        public BackgroundHandler(Looper looper) {
+            super(looper);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case MSG_GET_COUNTRY_CODE:
+                    mtrytimes++;
+                    if(mtrytimes <= 2){
+                        getWifiCountryCode();
+                    }
+                    break;
+                case MSG_REBOOT_LOAD_WIFI:
+                    if(mPm != null){
+                        mPm.reboot(null);
+                    }
+                    break;
+            }
+        }
+    }
     private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
@@ -127,6 +164,81 @@ public class SettingsApplication extends Application {
         FeatureFactory.setFactory(this, getFeatureFactory());
     }
 
+    private class AirplaneModeContentObserver extends ContentObserver {
+        public AirplaneModeContentObserver() {
+            super(null /* handler */);
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            boolean isAirModeOn = Settings.Global.getInt(getBaseContext().getContentResolver(),
+                Settings.Global.AIRPLANE_MODE_ON, 0) != 0;
+            if(!isAirModeOn){
+                getWifiCountryCode();
+            }else{
+                mtrytimes = 0;
+            }
+        }
+
+        public void register(Context context) {
+            final Uri airplaneModeUri = Settings.Global.getUriFor(
+                    Settings.Global.AIRPLANE_MODE_ON);
+            context.getContentResolver().registerContentObserver(airplaneModeUri,
+                    false, this);
+        }
+
+        public void unRegister(Context context) {
+            context.getContentResolver().unregisterContentObserver(this);
+        }
+    }
+
+    private void getWifiCountryCode(){
+
+        if(mWifiManager != null){
+            String countrycode = mWifiManager.getCountryCode();
+            Log.d("wificode_airmode", "countrycode = " + countrycode);
+            if(countrycode == null || countrycode.isEmpty()){
+                mBackgroundHandler.sendEmptyMessageDelayed(MSG_GET_COUNTRY_CODE,10*1000);
+            }else{
+                String countrycodeFromProperty = SystemProperties.get("persist.odm.ccode","other");
+                Log.d("wificode_airmode", "countrycode from property = " + countrycodeFromProperty);
+                if("US".equals(countrycode) || "CA".equals(countrycode)){
+                    if(!"fcc".equals(countrycodeFromProperty)){
+                        SystemProperties.set("persist.odm.ccode","fcc");
+                        showToast();
+                        mBackgroundHandler.sendEmptyMessageDelayed(MSG_REBOOT_LOAD_WIFI,3*1000);
+                    }
+                }else if("CN".equals(countrycode)){
+                    if(!"other".equals(countrycodeFromProperty)){
+                        SystemProperties.set("persist.odm.ccode","other");
+                    }
+                    if("fcc".equals(countrycodeFromProperty)){
+                        showToast();
+                        mBackgroundHandler.sendEmptyMessageDelayed(MSG_REBOOT_LOAD_WIFI,3*1000);
+                    }
+                }else{
+                    if(!"eu".equals(countrycodeFromProperty)){
+                        SystemProperties.set("persist.odm.ccode","eu");
+                    }
+                    if("fcc".equals(countrycodeFromProperty)){
+                        showToast();
+                        mBackgroundHandler.sendEmptyMessageDelayed(MSG_REBOOT_LOAD_WIFI,3*1000);
+                    }
+                }
+            }
+        }
+    }
+
+    private void showToast(){
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                Toast toast = Toast.makeText(getBaseContext(), "Restart the phone to load the corresponding configuration.", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -139,6 +251,10 @@ public class SettingsApplication extends Application {
             PreferenceBindingFactory.setDefaultFactory(new SettingsPreferenceBindingFactory());
         }
 
+        mContentObserver = new AirplaneModeContentObserver();
+        mContentObserver.register(getBaseContext());
+        mWifiManager = getBaseContext().getSystemService(WifiManager.class);
+        mPm = getBaseContext().getSystemService(PowerManager.class);
         BackupRestoreStorageManager.getInstance(this)
                 .add(
                         new BatterySettingsStorage(this),
