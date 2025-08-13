@@ -5870,4 +5870,9 @@
     <string name="preferred_network_mode_change_waring_message">"La couverture réseau peut être réduite par votre sélection."</string>
     <string name="verification_confirm_your_password_header">"Saisir le code de vérification :"</string>
 
+
+
+    <string name="gesture_switch_for_screenshot_title">"Raccourci capture d'écran"</string>
+    <string name="gesture_switch_for_screenshot_subtitle">"Appuyez simultanément sur le bouton de réduction du volume et sur le bouton d'alimentation"</string>
+
 </resources>

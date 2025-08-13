@@ -5863,4 +5863,7 @@
     <string name="prefer_vonr_mode_title">打开/关闭 VoNR</string>
     <string name="prefer_vonr_mode_summary">打开或者关闭VoNR</string>
     <!--[FEATURE]-Add-End by shaopan.tang -->
+
+    <string name="gesture_switch_for_screenshot_title">截图快捷键</string>
+    <string name="gesture_switch_for_screenshot_subtitle">同时按下音量调低键和电源键</string>
 </resources>

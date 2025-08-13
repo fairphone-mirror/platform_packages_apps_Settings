@@ -5772,4 +5772,8 @@
     <string name="fingerprint_settings_open_title">"指紋解鎖方式"</string>
     <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
     <string name="fingerprint_settings_open_description">"默認按鍵後觸摸指紋鍵解鎖。若需要觸摸指紋鍵直接解鎖則打開開關"</string>
+
+
+    <string name="gesture_switch_for_screenshot_title">"截圖快速鍵"</string>
+    <string name="gesture_switch_for_screenshot_subtitle">"同時按下音量調低鍵和電源鍵"</string>
 </resources>

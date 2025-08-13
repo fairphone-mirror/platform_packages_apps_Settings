@@ -5870,4 +5870,9 @@
     <string name="preferred_network_mode_change_dialogtitle">"Tipo de red preferido cambiado"</string>
     <string name="preferred_network_mode_change_waring_message">"La cobertura de red puede verse reducida por su selección"</string>
     <string name="verification_confirm_your_password_header">"Ingresar código de verificación :"</string>
+
+
+    <string name="gesture_switch_for_screenshot_title">"Captura de pantalla shotcut"</string>
+    <string name="gesture_switch_for_screenshot_subtitle">"Presione el botón para bajar el volumen + el botón de encendido al mismo tiempo"</string>
+
 </resources>

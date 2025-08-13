@@ -11703,6 +11703,9 @@ Data usage charges may apply.</string>
     <!-- Summary text for double twist for camera mode  [CHAR LIMIT=160]-->
     <string name="double_twist_for_camera_mode_summary"></string>
 
+    <string name="gesture_switch_for_screenshot_title">Screenshot shortcut</string>
+    <string name="gesture_switch_for_screenshot_subtitle">Press volume down + power button at the same time</string>
+
     <!-- Title text for system navigation [CHAR LIMIT=60] -->
     <string name="system_navigation_title">Navigation mode</string>
 

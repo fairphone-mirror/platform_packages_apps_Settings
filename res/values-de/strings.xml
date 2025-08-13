@@ -5870,4 +5870,10 @@
     <string name="preferred_network_mode_change_dialogtitle">"Bevorzugte Netzwerkverbindung geändert"</string>
     <string name="preferred_network_mode_change_waring_message">"Netzverfügbarkeit kann durch Ihre Wahl reduziert werden"</string>
     <string name="verification_confirm_your_password_header">"Bestätigungscode eingeben :"</string>
+
+
+
+    <string name="gesture_switch_for_screenshot_title">"Screenshot Tastenkombination"</string>
+    <string name="gesture_switch_for_screenshot_subtitle">"Drücken Sie gleichzeitig die Lautstärkeverringerungs- und die Einschalttaste "</string>
+
 </resources>

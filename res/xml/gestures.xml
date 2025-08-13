@@ -74,7 +74,11 @@
         android:fragment="com.android.settings.gestures.PickupGestureSettings"
         settings:searchable="false"
         settings:controller="com.android.settings.gestures.PickupGesturePreferenceController" />
-
+    <com.android.settingslib.PrimarySwitchPreference
+        android:key="gesture_disable_screenshot_summary"
+        android:title="@string/gesture_switch_for_screenshot_title"
+        android:summary="@string/gesture_switch_for_screenshot_subtitle"
+        settings:controller="com.android.settings.gestures.DisableScreenshotsPreferenceController" />
     <Preference
         android:key="gesture_power_menu_summary"
         android:title="@string/power_menu_setting_name"
