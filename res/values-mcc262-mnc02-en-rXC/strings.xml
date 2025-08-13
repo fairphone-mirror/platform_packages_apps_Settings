@@ -16,5 +16,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="wifi_calling_off_explanation_2" msgid="5645212744935818562"></string>
+    <string name="wifi_calling_off_explanation" msgid="6295526820826322895">"When the \"WiFi Calling\" option is enabled, your smartphone can transfer calls via WiFi or your mobile network provider\u2019s network, depending on your settings and signal strength. Before enabling this feature, you should check with your mobile network provider about any applicable fees and other requirements.<xliff:g id="additional_text" example="Learn More">%1$s</xliff:g>"</string>
+    <string name="wifi_calling_off_explanation_2" msgid="5645212744935818562">\n\n"Emergency calls via WiFi Calling are not supported. The device automatically switches to a mobile network to make an emergency call.\n\nEmergency calls are therefore only possible when mobile coverage is available."</string>
+    <string name="wifi_calling_turn_on" msgid="7687886259199428823">"Turn on WiFi Calling"</string>
+    <string name="wifi_calling_main_switch_title" msgid="4070224008346815634">"Use WiFi Calling"</string>
+    <string name="wfc_disclaimer_emergency_limitation_desc_text" msgid="5503902001191552196">"Emergency calls via WiFi Calling are not supported.\nThe device automatically switches to a mobile network to make an emergency call.\nEmergency calls are only possible in areas with mobile coverage."</string>
 </resources>
