@@ -5451,4 +5451,9 @@
     <string name="preferred_network_mode_change_dialogtitle">"Voorkeurstype netwerk is gewijzigd"</string>
     <string name="preferred_network_mode_change_waring_message">"De netwerkdekking kan door uw keuze worden verminderd"</string>
     <string name="verification_confirm_your_password_header">"Voer verificatiecode in :"</string>
+
+
+    <string name="gesture_switch_for_screenshot_title">"Schermafbeelding snelkoppeling"</string>
+    <string name="gesture_switch_for_screenshot_subtitle">"Druk tegelijkertijd op de volumeknop omlaag en de aan/uit-knop"</string>
+
 </resources>

@@ -5445,4 +5445,8 @@
     <string name="preferred_network_mode_change_dialogtitle">"Tipo de rede preferido alterado"</string>
     <string name="preferred_network_mode_change_waring_message">"A cobertura da rede pode ser reduzida pela sua seleção"</string>
     <string name="verification_confirm_your_password_header">"Introduzir código de verificação :"</string>
+
+
+    <string name="gesture_switch_for_screenshot_title">"Captura de tela"</string>
+    <string name="gesture_switch_for_screenshot_subtitle">"Pressione o botão de diminuir volume + ligar ao mesmo tempo"</string>
 </resources>
