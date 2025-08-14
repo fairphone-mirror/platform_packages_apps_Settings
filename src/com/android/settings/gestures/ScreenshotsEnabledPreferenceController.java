@@ -17,10 +17,10 @@ import com.android.settingslib.core.lifecycle.LifecycleObserver;
 import com.android.settingslib.core.lifecycle.events.OnStart;
 import com.android.settingslib.core.lifecycle.events.OnStop;
 /** The controller manages whether to take a screenshot of the key press. */
-public class DisableScreenshotsPreferenceController extends TogglePreferenceController {
+public class ScreenshotsEnabledPreferenceController extends TogglePreferenceController {
     private PrimarySwitchPreference mPreference;
 
-    public DisableScreenshotsPreferenceController(Context context, String preferenceKey) {
+    public ScreenshotsEnabledPreferenceController(Context context, String preferenceKey) {
         super(context, preferenceKey);
     }
 
@@ -39,13 +39,13 @@ public class DisableScreenshotsPreferenceController extends TogglePreferenceCont
     public boolean isChecked() {
         int defaultVal = 1;
         return Settings.Secure.getInt(mContext.getContentResolver(),
-                Settings.Secure.DISABLED_SCREENSHOT, defaultVal) != 0;
+                Settings.Secure.ENABLED_SCREENSHOT, defaultVal) != 0;
     }
 
     @Override
     public boolean setChecked(boolean isChecked) {
         return Settings.Secure.putInt(mContext.getContentResolver(),
-                Settings.Secure.DISABLED_SCREENSHOT, isChecked
+                Settings.Secure.ENABLED_SCREENSHOT, isChecked
                         ? 1 : 0);
     }
 
