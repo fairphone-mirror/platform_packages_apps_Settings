@@ -43,6 +43,7 @@ import com.android.settingslib.datastore.SettingsSystemStore
 import com.android.settingslib.display.BrightnessUtils.GAMMA_SPACE_MAX
 import com.android.settingslib.display.BrightnessUtils.GAMMA_SPACE_MIN
 import com.android.settingslib.display.BrightnessUtils.convertLinearToGammaFloat
+import com.android.settingslib.display.BrightnessUtils.brightnessLinearToSliderVal
 import com.android.settingslib.metadata.IntRangeValuePreference
 import com.android.settingslib.metadata.PreferenceChangeReason
 import com.android.settingslib.metadata.PreferenceMetadata
@@ -199,11 +200,11 @@ class BrightnessLevelPreference :
         private val Context.brightnessPercent: Double
             get() {
                 val info: BrightnessInfo = display.brightnessInfo ?: return 0.0
-                return info.brightnessInGammaSpace.toPercentage()
+                return info.brightnessInLinearSpace.toPercentage()
             }
 
-        private val BrightnessInfo.brightnessInGammaSpace: Int
-            get() = convertLinearToGammaFloat(brightness, brightnessMinimum, brightnessMaximum)
+        private val BrightnessInfo.brightnessInLinearSpace: Int
+            get() = brightnessLinearToSliderVal(brightness, brightnessMinimum, 0.4999f)
 
         private fun Int.toPercentage(): Double =
             when {
