@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import android.os.UserHandle;
+import android.content.ComponentName;
 
 public class PhoneCodeReceiver extends BroadcastReceiver {
 
@@ -37,6 +38,7 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
     private static final String HOST_CODE_IMS = "23486583";
     private static final String HOST_CODE_TEST_OEM_UNLOCK = "002";
     private static final String HOST_CODE_BATTERY_HEALTY = "2288379";
+    private static final String HOST_CODE_FEEDBACK = "0574";
     private static final String BATTERY_HEALTY_ENABLE = "persist.sys.battery.healty.enable";
     private Context mContext;
     private String READ_ERROR_STR = "????????";
@@ -165,6 +167,15 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                         .putExtra(SettingsActivity.EXTRA_FRAGMENT_ARG_KEY, selectKey);
                 intentEngMode.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intentEngMode);
+            }else if (HOST_CODE_FEEDBACK.equals(host)){
+                Intent intent2 = new Intent();
+                intent2.setComponent(new ComponentName("com.fp.endusertest",
+                      "com.fp.feedback.activity.SMCBaseActivity"));
+                intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                try {
+                    context.startActivity(intent2);
+                } catch (Exception e) {
+                }
             }
 
         }

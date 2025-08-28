@@ -5462,6 +5462,10 @@ SPDX-License-Identifier: BSD-3-Clause-Clear -->
                 <data
                     android:host="36327"
                     android:scheme="android_secret_code" />
+
+                <data
+                    android:host="0574"
+                    android:scheme="android_secret_code" />
             </intent-filter>
         </receiver>
 
