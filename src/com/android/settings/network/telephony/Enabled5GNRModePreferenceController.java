@@ -95,6 +95,7 @@ public class Enabled5GNRModePreferenceController extends TelephonyTogglePreferen
     private PreferenceScreen mPreferenceScreen;
     private boolean mServiceConnected;
     private int userPrefNrConfig;
+    private boolean showPreferred5GNRMode;
     Preference mPreference;
 
     private ExtPhoneCallbackBase mCallback = new ExtPhoneCallbackBase() {
@@ -122,7 +123,7 @@ public class Enabled5GNRModePreferenceController extends TelephonyTogglePreferen
                     mMainThreadHandler.sendMessage(mMainThreadHandler
                              .obtainMessage(EVENT_GET_NR_CONFIG_STATUS, slotId, -1));
                 } else if (nrconfigmode == NR_MODE_NSA_SA){
-                    if (mServiceConnected && mClient != null) {
+                    if (mServiceConnected && mClient != null && showPreferred5GNRMode) {
                         userPrefNrConfig = NR_MODE_SA;
                         mExtTelephonyManager.setNrConfig(mSlotId, new NrConfig(NR_MODE_SA), mClient);
                         Log.d(TAG, "setNrConfig to SA only if current is NR_MODE_NSA_SA ");
@@ -179,6 +180,7 @@ public class Enabled5GNRModePreferenceController extends TelephonyTogglePreferen
         mSharedPreferences = mContext.getSharedPreferences(mContext.getPackageName(),
                 mContext.MODE_PRIVATE);
         mTelephonyManager = context.getSystemService(TelephonyManager.class);
+
         mExtTelephonyManager = ExtTelephonyManager.getInstance(mContext.getApplicationContext());
         Log.d(TAG, "Connect to ExtTelephony bound service...");
         mExtTelephonyManager.connectService(mServiceCallback);
@@ -187,6 +189,8 @@ public class Enabled5GNRModePreferenceController extends TelephonyTogglePreferen
     public void init(int subId) {
         mSlotId = mSubscriptionManager.getSlotIndex(subId);
         mSubId = subId;
+        showPreferred5GNRMode = isCarrierConfigManagerKeyEnabled(
+                CarrierConfigManager.KEY_SHOW_5GNR_MODE_OPTION_BOOL, subId, true);
     }
 
     private void update() {
@@ -202,8 +206,6 @@ public class Enabled5GNRModePreferenceController extends TelephonyTogglePreferen
 
     @Override
     public int getAvailabilityStatus(int subId) {
-        final boolean showPreferred5GNRMode = isCarrierConfigManagerKeyEnabled(
-                CarrierConfigManager.KEY_SHOW_5GNR_MODE_OPTION_BOOL, subId, true);
         Log.i(TAG, "getAvailabilityStatus showPreferred5GNRMode " + showPreferred5GNRMode);
         return showPreferred5GNRMode ? AVAILABLE : UNSUPPORTED_ON_DEVICE;
     }
