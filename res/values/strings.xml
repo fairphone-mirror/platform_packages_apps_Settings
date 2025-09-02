@@ -13941,4 +13941,19 @@
     <string name="reboot_required_title">Reboot Required</string>
     <string name="reboot_required_message">Apply &amp; Reboot to Apply Changes</string>
 
+    <!--[FEATURE]-Add-Begin by shaopan.tang 2025-05-30 FPS-2904 5GSA switch -->
+    <string name="airplaneModeEnabled">Turn off airplane mode and try again</string>
+    <string name="non_active_subscription">Subscription is not active</string>
+    <string name="nr_nsa">NSA</string>
+    <string name="nr_sa">SA</string>
+    <string name="nr_nsa_sa">NSA + SA</string>
+    <string name="prefer_5G_nr_mode_title">Prefer 5G NR Mode</string>
+    <!-- Summary of the 'Mobile network' item on the Network & internet page when there is more than
+         one mobile service configured (aka "dual SIM") - it shows a count of SIM/eSIM and tapping
+         it leads to a page showing a list of the mobile service subscriptions. [CHAR LIMIT=40] -->
+    <plurals name="mobile_network_summary_count">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> SIM</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> SIMs</item>
+    </plurals>
+    <!--[FEATURE]-Add-End by shaopan.tang -->
 </resources>
