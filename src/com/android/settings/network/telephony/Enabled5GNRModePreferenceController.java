@@ -52,6 +52,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
+import com.android.internal.telephony.GlobalSettingsHelper;
 import com.android.internal.telephony.TelephonyIntents;
 import com.android.settingslib.core.lifecycle.LifecycleObserver;
 import com.android.settingslib.core.lifecycle.events.OnStart;
@@ -95,6 +96,7 @@ public class Enabled5GNRModePreferenceController extends TelephonyTogglePreferen
     private PreferenceScreen mPreferenceScreen;
     private boolean mServiceConnected;
     private int userPrefNrConfig;
+    private boolean showPreferred5GNRMode;
     Preference mPreference;
 
     private ExtPhoneCallbackBase mCallback = new ExtPhoneCallbackBase() {
@@ -115,6 +117,8 @@ public class Enabled5GNRModePreferenceController extends TelephonyTogglePreferen
                 throws RemoteException {
             Log.d(TAG, "onNrConfigStatus: slotId = " + slotId + " token = " + token + " status = " +
                     status + " nrConfig = " + nrConfig);
+            Log.d(TAG, "onNrConfigStatus: mServiceConnected = " + mServiceConnected + " mClient = " + mClient + " showPreferred5GNRMode = " +
+                    showPreferred5GNRMode);
             if (status.get() == Status.SUCCESS) {
                 int nrconfigmode = nrConfig.get();
                 if ((nrconfigmode == NR_MODE_NSA) || (nrconfigmode == NR_MODE_SA)){
@@ -122,7 +126,7 @@ public class Enabled5GNRModePreferenceController extends TelephonyTogglePreferen
                     mMainThreadHandler.sendMessage(mMainThreadHandler
                              .obtainMessage(EVENT_GET_NR_CONFIG_STATUS, slotId, -1));
                 } else if (nrconfigmode == NR_MODE_NSA_SA){
-                    if (mServiceConnected && mClient != null) {
+                    if (mServiceConnected && mClient != null && showPreferred5GNRMode) {
                         userPrefNrConfig = NR_MODE_SA;
                         mExtTelephonyManager.setNrConfig(mSlotId, new NrConfig(NR_MODE_SA), mClient);
                         Log.d(TAG, "setNrConfig to SA only if current is NR_MODE_NSA_SA ");
@@ -187,6 +191,8 @@ public class Enabled5GNRModePreferenceController extends TelephonyTogglePreferen
     public void init(int subId) {
         mSlotId = mSubscriptionManager.getSlotIndex(subId);
         mSubId = subId;
+        showPreferred5GNRMode = isCarrierConfigManagerKeyEnabled(
+                CarrierConfigManager.KEY_SHOW_5GNR_MODE_OPTION_BOOL, subId, false);
     }
 
     private void update() {
@@ -202,17 +208,17 @@ public class Enabled5GNRModePreferenceController extends TelephonyTogglePreferen
 
     @Override
     public int getAvailabilityStatus(int subId) {
-        final boolean showPreferred5GNRMode = isCarrierConfigManagerKeyEnabled(
-                CarrierConfigManager.KEY_SHOW_5GNR_MODE_OPTION_BOOL, subId, true);
         Log.i(TAG, "getAvailabilityStatus showPreferred5GNRMode " + showPreferred5GNRMode);
         return showPreferred5GNRMode ? AVAILABLE : UNSUPPORTED_ON_DEVICE;
     }
 
     private void updateSharedPreference(int slotId, int nrConfig) {
         if (mSharedPreferences != null) {
-            Log.i(TAG, "updateSharedPreference nrConfig " + nrConfig);
+            Log.i(TAG, "updateSharedPreference nrConfig " + nrConfig + " slotId " + slotId);
             mSharedPreferences.edit().putInt("nr_mode_" + slotId, nrConfig).apply();
         }
+        boolean changed = GlobalSettingsHelper.setInt(mContext,"nr_mode", mSubId, nrConfig);
+        Log.i(TAG, "updateSharedPreference nrConfig " + nrConfig + " changed " + changed);
     }
 
     @Override
@@ -223,6 +229,8 @@ public class Enabled5GNRModePreferenceController extends TelephonyTogglePreferen
 
     @Override
     public void onStart() {
+        Log.d(TAG, "onStart()");
+        mExtTelephonyManager.connectService(mServiceCallback);
     }
 
     @Override
@@ -273,8 +281,10 @@ public class Enabled5GNRModePreferenceController extends TelephonyTogglePreferen
 
     @Override
     public boolean isChecked(){
-        int nrConfig = mSharedPreferences.getInt("nr_mode_" + mSlotId,
-                NrConfig.NR_CONFIG_COMBINED_SA_NSA);
+        int nrConfig = GlobalSettingsHelper.getInt(mContext, "nr_mode", mSubId, NrConfig.NR_CONFIG_SA);
+        Log.i(TAG, "isChecked() for slot: " + mSlotId + ", nrConfig: " + nrConfig);
+        //int nrConfig = mSharedPreferences.getInt("nr_mode_" + mSlotId,
+                //NrConfig.NR_CONFIG_COMBINED_SA_NSA);
         if (nrConfig == NrConfig.NR_CONFIG_NSA) {
             return false;
         } else if (nrConfig == NrConfig.NR_CONFIG_SA) {
