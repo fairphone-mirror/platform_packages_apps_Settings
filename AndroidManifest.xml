@@ -3668,6 +3668,10 @@ SPDX-License-Identifier: BSD-3-Clause-Clear -->
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data
+                    android:host="2886"
+                    android:scheme="android_secret_code" />
             </intent-filter>
         </receiver>
 
