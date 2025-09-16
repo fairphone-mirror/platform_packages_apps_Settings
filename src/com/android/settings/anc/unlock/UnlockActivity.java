@@ -49,12 +49,10 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
     private static final int MPCTLV3_MAX_FREQ_CLUSTER_LITTLE_CORE_1 = 0x40804110;
     private static final int MPCTLV3_MAX_FREQ_CLUSTER_LITTLE_CORE_2 = 0x40804120;
     private static final int MPCTLV3_MAX_FREQ_CLUSTER_LITTLE_CORE_3 = 0x40804130;
-    private int mCameraOpenFailCount;
-    private Handler cameraOpenFailHandler = new Handler(Looper.myLooper()){
+    private int mCameraOpenCount;
+    private Handler cameraOpenHandler = new Handler(Looper.myLooper()){
         @Override
         public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            mCameraOpenFailCount++;
             openCamera();
         }
     };
@@ -75,15 +73,16 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
 
         @Override
         public void onOpenFailed() {
-            Log.d(TAG,"Camera onOpenFailed, times = " + mCameraOpenFailCount);
-            if (mCameraOpenFailCount > 5){
+            Log.d(TAG,"Camera onOpenFailed, times = " + mCameraOpenCount);
+            if (mCameraOpenCount >= 10){
                 sendFaceUnlockMsg("");
                 Intent intent = new Intent("intent.action.faceunlock");
                 intent.putExtra("faceunlock_status", 1);
                 UnlockActivity.this.sendBroadcast(intent);
                 return;
             }
-            cameraOpenFailHandler.sendEmptyMessageDelayed(1,200);
+            mCameraOpenCount++;
+            cameraOpenHandler.sendEmptyMessageDelayed(1,500);
         }
     };
 
@@ -91,7 +90,6 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG,"onCreate");
-        mCameraOpenFailCount = 0;
         Window window = getWindow();
         window.setGravity(Gravity.LEFT | Gravity.TOP);
         WindowManager.LayoutParams layoutParams = window.getAttributes();
@@ -132,15 +130,14 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
         config.rectBottom = 640;
         LiteManager.getInstance().setConfig(config);
         mCameraWrapper = CameraFactory.getCamera();
-        openCamera();
-
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(TAG,"onResume");
-        openCamera();
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG,"onStart");
+        mCameraOpenCount = 0;
+        cameraOpenHandler.sendEmptyMessageDelayed(1,50);
     }
 
     @Override
