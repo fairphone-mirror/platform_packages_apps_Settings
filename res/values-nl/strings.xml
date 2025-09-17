@@ -5971,4 +5971,12 @@
     <string name="qsb_search_bar_title_description">Zoekbalk startscherm weergeven/verbergen</string>
     <string name="reboot_required_title">Opnieuw opstarten vereist</string>
     <string name="reboot_required_message">Toepassen en herstarten om toe te passen</string>
+
+    <string name="oem_unlock_error_no_internet_connection">Verbindingsfout. Controleer uw internetverbinding en probeer het opnieuw.</string>
+    <string name="oem_unlock_error_server_error">Er is een probleem opgetreden bij het verwerken van uw verzoek. Probeer het opnieuw of neem contact op met Fairphone Support (support@fairphone.com).</string>
+    <string name="oem_unlock_error_forbidden">Uw apparaat kan niet worden ontgrendeld. Neem contact op met Fairphone Support (support@fairphone.com).</string>
+    <string name="unlock_request_loading">Controleren of het apparaat ontgrendeld kan worden...</string>
+    <string name="unlock_request_success_title">Success</string>
+    <string name="unlock_request_success_message">Het apparaat kan worden ontgrendeld</string>
+
 </resources>

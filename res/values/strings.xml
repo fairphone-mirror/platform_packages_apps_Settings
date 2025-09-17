@@ -14607,4 +14607,12 @@
     <string name="qsb_search_bar_title_description">Show/Hide Homescreen Search Bar</string>
     <string name="reboot_required_title">Reboot Required</string>
     <string name="reboot_required_message">Apply &amp; Reboot to Apply Changes</string>
+
+    <string name="oem_unlock_error_no_internet_connection">Connection error. Please check your internet connection and try again.</string>
+    <string name="oem_unlock_error_server_error">There was a problem processing your request, please try again or contact Fairphone Support (support@fairphone.com).</string>
+    <string name="oem_unlock_error_forbidden">Your device cannot be unlocked. Please contact Fairphone Support (support@fairphone.com).</string>
+    <string name="unlock_request_loading">Checking if device can be unlocked...</string>
+    <string name="unlock_request_success_title">Success</string>
+    <string name="unlock_request_success_message">You can unlock the device now</string>
+
 </resources>

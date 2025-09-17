@@ -5971,4 +5971,12 @@
     <string name="qsb_search_bar_title_description">Mostra/Nascondi la barra di ricerca della schermata iniziale</string>
     <string name="reboot_required_title">Riavvio richiesto</string>
     <string name="reboot_required_message">Applica e riavvia per applicare le modifiche</string>
-    </resources>
+
+    <string name="oem_unlock_error_no_internet_connection">Errore di connessione. Controlla la tua connessione Internet e riprova.</string>
+    <string name="oem_unlock_error_server_error">Si è verificato un problema durante l\'elaborazione della tua richiesta. Riprova o contatta l\'assistenza Fairphone (support@fairphone.com).</string>
+    <string name="oem_unlock_error_forbidden">Il tuo dispositivo non può essere sbloccato. Contatta l\'assistenza Fairphone (support@fairphone.com).</string>
+    <string name="unlock_request_loading">Verifica se il dispositivo può essere sbloccato...</string>
+    <string name="unlock_request_success_title">Successo</string>
+    <string name="unlock_request_success_message">Il dispositivo può essere sbloccato</string>
+
+</resources>

@@ -5970,4 +5970,12 @@
     <string name="qsb_search_bar_title_description">Visa/Dölj sökfältet på startskärmen</string>
     <string name="reboot_required_title">Omstart krävs</string>
     <string name="reboot_required_message">Tillämpa och starta om för att tillämpa ändringar</string>
+
+    <string name="oem_unlock_error_no_internet_connection">Anslutningsfel. Kontrollera din internetanslutning och försök igen.</string>
+    <string name="oem_unlock_error_server_error">Det uppstod ett problem när du behandlade din förfrågan, försök igen eller kontakta Fairphone Support (support@fairphone.com).</string>
+    <string name="oem_unlock_error_forbidden">Din enhet kan inte låsas upp. Vänligen kontakta Fairphone Support (support@fairphone.com).</string>
+    <string name="unlock_request_loading">Kontrollerar om enheten kan låsas upp...</string>
+    <string name="unlock_request_success_title">Framgång</string>
+    <string name="unlock_request_success_message">Enheten kan låsas upp</string>
+
 </resources>

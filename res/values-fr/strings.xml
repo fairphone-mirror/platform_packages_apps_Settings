@@ -5971,4 +5971,12 @@
     <string name="qsb_search_bar_title_description">Afficher/supprimer la barre de recherche sur l\'écran d\'accueil</string>
     <string name="reboot_required_title">Redémarrer le téléphone (obligatoire)</string>
     <string name="reboot_required_message">Enregistrer les préférences et redémarrer</string>
+
+    <string name="oem_unlock_error_no_internet_connection">Erreur de connexion. Veuillez vérifier votre connexion Internet et réessayer.</string>
+    <string name="oem_unlock_error_server_error">Un problème est survenu lors du traitement de votre demande, veuillez réessayer ou contacter le support Fairphone (support@fairphone.com)</string>
+    <string name="oem_unlock_error_forbidden">Impossible de déverrouiller votre appareil. Veuillez contacter l\'assistance Fairphone (support@fairphone.com).</string>
+    <string name="unlock_request_loading">Vérification si l\'appareil peut être déverrouillé...</string>
+    <string name="unlock_request_success_title">Succès</string>
+    <string name="unlock_request_success_message">L\'appareil peut être déverrouillé</string>
+
 </resources>

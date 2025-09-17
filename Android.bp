@@ -56,6 +56,7 @@ android_library {
     srcs: ["src/**/*.java", "src/**/*.kt"],
 
     static_libs: [
+        "androidx.fragment_fragment",
         "androidx-constraintlayout_constraintlayout",
         "androidx.slice_slice-builders",
         "androidx.slice_slice-core",
