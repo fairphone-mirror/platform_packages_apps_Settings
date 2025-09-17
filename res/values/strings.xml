@@ -13865,4 +13865,14 @@
     <string name="ims_unlock_enable_summary">"Debug mode when IMS enable"</string>
     <string name="ims_settings_title">"IMS Settings"</string>
     <string name="ims_settings_summary">"Debug mode for IMS Settings"</string>
+
+    <!-- #609: [Bootloader unlock] Simplify bootloader unlock process  -->
+    <string name="oem_unlock_error_no_internet_connection">Connection error. Please check your internet connection and try again.</string>
+    <string name="oem_unlock_error_server_error">There was a problem processing your request, please try again or contact Fairphone Support (support@fairphone.com).</string>
+    <string name="oem_unlock_error_forbidden">Your device cannot be unlocked. Please contact Fairphone Support (support@fairphone.com).</string>
+    <string name="unlock_request_loading">Checking if device can be unlocked...</string>
+    <string name="unlock_request_success_title">Success</string>
+    <string name="unlock_request_success_message">You can unlock the device now</string>
+    <!-- end of [Bootloader unlock] Simplify bootloader unlock process -->
+
 </resources>

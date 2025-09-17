@@ -5363,4 +5363,14 @@
 
     <string name="swap_back_recents_title">Échanger la navigation arrière / récentes</string>
     <string name="swap_back_recents_summary">Échangez les boutons arrière et récent dans la barre de navigation</string>
+
+    <!-- #609: [Bootloader unlock] Simplify bootloader unlock process  -->
+    <string name="oem_unlock_error_no_internet_connection">Erreur de connexion. Veuillez vérifier votre connexion Internet et réessayer.</string>
+    <string name="oem_unlock_error_server_error">Un problème est survenu lors du traitement de votre demande, veuillez réessayer ou contacter le support Fairphone (support@fairphone.com)</string>
+    <string name="oem_unlock_error_forbidden">Impossible de déverrouiller votre appareil. Veuillez contacter l\'assistance Fairphone (support@fairphone.com).</string>
+    <string name="unlock_request_loading">Vérification si l\'appareil peut être déverrouillé...</string>
+    <string name="unlock_request_success_title">Succès</string>
+    <string name="unlock_request_success_message">L\'appareil peut être déverrouillé</string>
+    <!-- end of [Bootloader unlock] Simplify bootloader unlock process -->
+
 </resources>

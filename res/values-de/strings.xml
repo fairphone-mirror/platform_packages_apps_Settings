@@ -5362,4 +5362,14 @@
 
     <string name="swap_back_recents_title">Zurück/Zuletzt verwendet wechseln</string>
     <string name="swap_back_recents_summary">Die Schaltflächen "Zurück" und "Zuletzt verwendet" in der Navigationsleiste austauschen</string>
+
+    <!-- #609: [Bootloader unlock] Simplify bootloader unlock process  -->
+    <string name="oem_unlock_error_no_internet_connection">Verbindungsfehler. Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.</string>
+    <string name="oem_unlock_error_server_error">Bei der Verarbeitung Ihrer Anfrage ist ein Problem aufgetreten. Bitte versuchen Sie es erneut oder wenden Sie sich an den Fairphone-Support (support@fairphone.com).</string>
+    <string name="oem_unlock_error_forbidden">Ihr Gerät kann nicht entsperrt werden. Bitte kontaktieren Sie den Fairphone-Support (support@fairphone.com).</string>
+    <string name="unlock_request_loading">Überprüfen, ob das Gerät entsperrt werden kann ...</string>
+    <string name="unlock_request_success_title">Erfolg</string>
+    <string name="unlock_request_success_message">Das Gerät kann entsperrt werden</string>
+    <!-- end of [Bootloader unlock] Simplify bootloader unlock process -->
+
 </resources>

@@ -5362,4 +5362,13 @@
 
     <string name="swap_back_recents_title">Terug- en recent-knop omwissel</string>
     <string name="swap_back_recents_summary">Wissel de terug- en recent-knop om in de navigatiebalk</string>
+
+    <!-- #609: [Bootloader unlock] Simplify bootloader unlock process  -->
+    <string name="oem_unlock_error_no_internet_connection">Verbindingsfout. Controleer uw internetverbinding en probeer het opnieuw.</string>
+    <string name="oem_unlock_error_server_error">Er is een probleem opgetreden bij het verwerken van uw verzoek. Probeer het opnieuw of neem contact op met Fairphone Support (support@fairphone.com).</string>
+    <string name="oem_unlock_error_forbidden">Uw apparaat kan niet worden ontgrendeld. Neem contact op met Fairphone Support (support@fairphone.com).</string>
+    <string name="unlock_request_loading">Controleren of het apparaat ontgrendeld kan worden...</string>
+    <string name="unlock_request_success_title">Success</string>
+    <string name="unlock_request_success_message">Het apparaat kan worden ontgrendeld</string>
+    <!-- end of [Bootloader unlock] Simplify bootloader unlock process -->
 </resources>
