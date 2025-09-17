@@ -5356,4 +5356,14 @@
     <string name="qsb_search_bar_title_description">Vis/Skjul søgelinje på startskærmen</string>
     <string name="reboot_required_title">Genstart påkrævet</string>
     <string name="reboot_required_message">Anvend og genstart for at anvende ændringer</string>
+
+    <!-- #609: [Bootloader unlock] Simplify bootloader unlock process  -->
+    <string name="oem_unlock_error_no_internet_connection">Forbindelsesfejl. Tjek venligst din internetforbindelse og prøv igen.</string>
+    <string name="oem_unlock_error_server_error">Der opstod et problem med at behandle din anmodning. Prøv venligst igen, eller kontakt Fairphone Support (support@fairphone.com).</string>
+    <string name="oem_unlock_error_forbidden">Din enhed kan ikke låses op. Kontakt venligst Fairphone Support (support@fairphone.com).</string>
+    <string name="unlock_request_loading">Kontrollerer, om enheden kan låses op...</string>
+    <string name="unlock_request_success_title">Succes</string>
+    <string name="unlock_request_success_message">Enheden kan låses op</string>
+    <!-- end of [Bootloader unlock] Simplify bootloader unlock process -->
+
 </resources>
