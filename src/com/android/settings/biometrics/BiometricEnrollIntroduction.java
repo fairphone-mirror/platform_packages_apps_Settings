@@ -236,7 +236,8 @@ public abstract class BiometricEnrollIntroduction extends BiometricEnrollBase
 
         if (!getPackageName().equals(getCallingPackage())) {
             for (String key : List.of(MultiBiometricEnrollHelper.EXTRA_SKIP_PENDING_ENROLL,
-                    MultiBiometricEnrollHelper.EXTRA_ENROLL_AFTER_FACE)) {
+                    MultiBiometricEnrollHelper.EXTRA_ENROLL_AFTER_FACE,
+                    MultiBiometricEnrollHelper.EXTRA_ENROLL_AFTER_FINGERPRINT)) {
                 getIntent().removeExtra(key);
             }
         }
