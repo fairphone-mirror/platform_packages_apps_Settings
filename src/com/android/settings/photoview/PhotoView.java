@@ -5,6 +5,8 @@ import android.graphics.Matrix;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 
@@ -19,6 +21,9 @@ public class PhotoView extends AppCompatImageView {
 
     private PhotoViewAttacher attacher;
     private ScaleType pendingScaleType;
+    private Handler handler = new Handler(Looper.getMainLooper());
+    private static final long DELAY_MILLIS = 100;
+    private int count = 0;
 
     public PhotoView(Context context) {
         this(context, null);
@@ -43,7 +48,26 @@ public class PhotoView extends AppCompatImageView {
             setScaleType(pendingScaleType);
             pendingScaleType = null;
         }
+        handler.postDelayed(task,DELAY_MILLIS);
     }
+
+    private Runnable task = new Runnable(){
+        @Override
+        public void run(){
+            if (count < 5) {
+                if (attacher != null) {
+                    if (getRight()!= 0 && getBottom()!= 0) {
+                        attacher.setScale(PhotoViewAttacher.DEFAULT_MIN_SCALE,0f,0f,false);
+                    } else {
+                        handler.postDelayed(task,DELAY_MILLIS);
+                    }
+                } else {
+                    handler.postDelayed(task,DELAY_MILLIS);
+                }
+                count++;
+            }
+        }
+    };
 
     /**
      * Get the current {@link PhotoViewAttacher} for this view. Be wary of holding on to references
