@@ -17,11 +17,13 @@
 package com.android.settings.network.telephony
 
 import android.content.Context
+import android.provider.Settings
 import android.telephony.AccessNetworkConstants
 import android.telephony.CarrierConfigManager
 import android.telephony.SubscriptionManager
 import android.telephony.ims.feature.MmTelFeature
 import android.telephony.ims.stub.ImsRegistrationImplBase
+import android.util.Log
 import com.android.settings.network.telephony.ims.ImsFeatureRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
@@ -30,16 +32,29 @@ import kotlinx.coroutines.flow.flowOf
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class VideoCallingRepository(
-    context: Context,
+    private val context: Context,
     private val mobileDataRepository: MobileDataRepository = MobileDataRepository(context),
     private val imsFeatureRepositoryFactory: (Int) -> ImsFeatureRepository = { subId ->
         ImsFeatureRepository(context, subId)
     },
 ) {
+
+    companion object {
+        private const val TAG = "VideoCallingRepository"
+    }
     private val carrierConfigRepository = CarrierConfigRepository(context)
+    private val mCarrierConfigManager: CarrierConfigManager? = context.getSystemService(CarrierConfigManager::class.java)
 
     fun isVideoCallReadyFlow(subId: Int): Flow<Boolean> {
+        val imsEnabled = Settings.Global.getInt(context.contentResolver, "ims_enable_settings", 0) == 1
+        if (imsEnabled) {
+            Log.d(TAG, "vt toggle show because of ims_enabled = $imsEnabled")
+            return flowOf(true)
+        }
+
         if (!SubscriptionManager.isValidSubscriptionId(subId)) return flowOf(false)
+
+        if (!isVTEnabledByCarrierConfig(subId)) return flowOf(false)
 
         return isPreconditionMeetFlow(subId).flatMapLatest { isPreconditionMeet ->
             if (isPreconditionMeet) {
@@ -62,4 +77,14 @@ class VideoCallingRepository(
         } else {
             mobileDataRepository.isMobileDataEnabledFlow(subId)
         }
+
+    // add by T2M.renjiezhang for FPSW-317 2025-09-28 begin
+    private fun isVTEnabledByCarrierConfig(subId: Int): Boolean {
+        Log.d(TAG, "isVtEnabledByCarrierConfig")
+        val b = mCarrierConfigManager?.getConfigForSubId(subId)
+        val isVtEnabled = b?.getBoolean(CarrierConfigManager.KEY_VT_TOGGLE_SHOW_BOOL, false) ?: false
+        Log.d(TAG, "VT toggle show: $isVtEnabled")
+        return isVtEnabled
+    }
+    // add by T2M.renjiezhang for FPSW-317 2025-09-28 end
 }
