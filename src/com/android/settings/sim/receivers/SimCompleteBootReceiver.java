@@ -16,13 +16,17 @@
 
 package com.android.settings.sim.receivers;
 
+import android.app.role.RoleManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.android.settings.sim.SimActivationNotifier;
 import com.android.settings.sim.SimNotificationService;
+
+import com.google.common.util.concurrent.MoreExecutors;
 
 /** This class manage all SIM operations after device boot up. */
 public class SimCompleteBootReceiver extends BroadcastReceiver {
@@ -34,6 +38,24 @@ public class SimCompleteBootReceiver extends BroadcastReceiver {
             Log.e(TAG, "Invalid broadcast received.");
             return;
         }
+
+        SharedPreferences sharedPreference = context.getSharedPreferences("default_payment_component", Context.MODE_PRIVATE);
+        int isCommit= sharedPreference.getInt("isCommit",0);
+        RoleManager roleManager = context.getSystemService(RoleManager.class);
+        String defaultApplication = roleManager.getDefaultApplication(RoleManager.ROLE_WALLET);
+        boolean  isRoleAvailable = roleManager.isRoleAvailable(RoleManager.ROLE_WALLET);
+        if (isCommit == 0 && defaultApplication == null && isRoleAvailable) {
+            roleManager.setDefaultApplication(RoleManager.ROLE_WALLET,
+                "com.google.android.gms", 0,
+                MoreExecutors.directExecutor(), aBoolean -> {
+                    Log.i(TAG,"Set default payment component:"+aBoolean);
+                    if (aBoolean) {
+                        boolean commit = sharedPreference.edit().putInt("isCommit",1).commit();
+                        Log.i(TAG,"Submit a one-time flag:"+commit);
+                    }
+                });
+        }
+
         if (SimActivationNotifier.getShowSimSettingsNotification(context)) {
             SimNotificationService.scheduleSimNotification(
                     context, SimActivationNotifier.NotificationType.NETWORK_CONFIG);
