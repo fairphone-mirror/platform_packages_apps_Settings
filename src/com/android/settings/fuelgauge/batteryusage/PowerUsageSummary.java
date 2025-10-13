@@ -280,11 +280,11 @@ public class PowerUsageSummary extends PowerUsageBase
         if (isDebug) {
             android.util.Log.d("debugdebug","PowerUsageSummary.java-initPreference-isRemoveBatteryHealth:"+isRemoveBatteryHealth);
         }
-        // if (isRemoveBatteryHealth) {
-        mBatteryHealthPreference.setVisible(false);
-        // } else {
-        //     mBatteryHealthPreference.setVisible(true);
-        // }
+        if (isRemoveBatteryHealth) {
+            mBatteryHealthPreference.setVisible(false);
+        } else {
+            mBatteryHealthPreference.setVisible(true);
+        }
     }
 
     @Override
