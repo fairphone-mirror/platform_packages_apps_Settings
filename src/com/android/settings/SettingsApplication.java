@@ -145,10 +145,12 @@ public class SettingsApplication extends Application {
             registerReceiver(mBatteryBroadcastReceiver, intentFilter);
         }
 
-        ParcelFileDescriptor mParcelFileDescriptor = WallpaperManager.getInstance(getBaseContext()).getWallpaperFile(WallpaperManager.FLAG_LOCK);
+        WallpaperManager wallpaperManager = WallpaperManager.getInstance(getBaseContext());
+        ParcelFileDescriptor lockWallpaper = wallpaperManager.getWallpaperFile(WallpaperManager.FLAG_LOCK);
+        ParcelFileDescriptor systemWallpaper = wallpaperManager.getWallpaperFile(WallpaperManager.FLAG_SYSTEM);
 
-        Log.d(TAG, "mParcelFileDescriptor = " + mParcelFileDescriptor);
-        if (mParcelFileDescriptor == null) {
+        Log.d(TAG, "SettingsApplication#onCreate lockWallpaper = " + lockWallpaper + ", systemWallpaper = " + systemWallpaper);
+        if (lockWallpaper == null && systemWallpaper == null) {
             new Thread(() -> setDefaultOnLock(getBaseContext())).start();
         }
     }
