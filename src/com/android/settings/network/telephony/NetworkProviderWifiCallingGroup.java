@@ -265,6 +265,18 @@ public class NetworkProviderWifiCallingGroup extends
                 }
             }
 
+            if (mCarrierConfigManager != null) {
+                Log.d(TAG, "get title from carrierconfig");
+                PersistableBundle b = mCarrierConfigManager.getConfigForSubId(subId);
+                if (b != null) {
+                    String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
+                    if (!"".equals(carrierconfig_title)){
+                        categorytitle = carrierconfig_title;
+                    }
+                    Log.d(TAG, "categorytitle: " + categorytitle);
+                }
+            }
+
             mPreferenceGroup.setTitle(categorytitle);
             // add for FP5-1231 end
 

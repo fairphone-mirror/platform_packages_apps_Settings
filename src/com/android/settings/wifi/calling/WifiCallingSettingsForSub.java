@@ -316,6 +316,20 @@ public class WifiCallingSettingsForSub extends SettingsPreferenceFragment
             }
         }
 
+        final CarrierConfigManager configManager =
+                getActivity().getSystemService(CarrierConfigManager.class);
+        if (configManager != null) {
+            Log.d(TAG, "get title from carrierconfig");
+            PersistableBundle b = configManager.getConfigForSubId(mSubId);
+            if (b != null) {
+                String carrierconfig_title = b.getString(CarrierConfigManager.KEY_WIFI_CALLING_TITLE ,"");
+                if (!"".equals(carrierconfig_title)){
+                    title = carrierconfig_title;
+                }
+                Log.d(TAG, "title: " + title);
+            }
+        }
+
         getActivity().setTitle(title);
         //Modify end by renjie.zhang FP5U-304 2024/2/23
 
