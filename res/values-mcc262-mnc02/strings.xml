@@ -20,4 +20,8 @@
     <string name="wifi_calling_off_explanation">When WiFi Calling is on, your phone can route calls via Wi-Fi networks or your carrier\u2019s network, depending on your preference and which signal is stronger. Before turning on this feature, check with your carrier regarding fees and other details.<xliff:g id="additional_text" example="Learn More">%1$s</xliff:g></string>
     <string name="wifi_calling_turn_on">Turn on WiFi Calling</string>
     <string name="wifi_calling_main_switch_title">Use WiFi Calling</string>
+    <string-array name="wifi_calling_mode_choices_v2_without_wifi_only">
+        <item>@*android:string/wfc_mode_wifi_preferred_summary</item>
+        <item>@*android:string/wfc_mode_cellular_preferred_summary</item>
+    </string-array>
 </resources>
