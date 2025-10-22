@@ -21,4 +21,8 @@
     <string name="wifi_calling_turn_on">Turn on WiFi Calling</string>
     <string name="wifi_calling_main_switch_title">Use WiFi Calling</string>
     <string name="wfc_disclaimer_emergency_limitation_desc_text">Emergency calls via WiFi Calling are not supported.\nThe device automatically switches to a mobile network to make an emergency call.\nEmergency calls are only possible in areas with mobile coverage.</string>
+    <string-array name="wifi_calling_mode_choices_v2_without_wifi_only">
+        <item>@*android:string/wfc_mode_wifi_preferred_summary</item>
+        <item>@*android:string/wfc_mode_cellular_preferred_summary</item>
+    </string-array>
 </resources>
