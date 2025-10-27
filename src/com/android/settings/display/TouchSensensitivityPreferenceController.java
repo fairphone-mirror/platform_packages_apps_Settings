@@ -46,7 +46,7 @@ public class TouchSensensitivityPreferenceController extends AbstractPreferenceC
 
     @Override
     public boolean isAvailable() {
-        return true;
+        return false;
     }
 
     @Override
