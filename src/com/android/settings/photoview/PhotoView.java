@@ -57,7 +57,9 @@ public class PhotoView extends AppCompatImageView {
             if (count < 5) {
                 if (attacher != null) {
                     if (getRight()!= 0 && getBottom()!= 0) {
-                        attacher.setScale(PhotoViewAttacher.DEFAULT_MIN_SCALE,0f,0f,false);
+                        float scaleRatio = attacher.getRatio();
+                        attacher.setMinScale(scaleRatio);
+                        attacher.setScale(scaleRatio,0f,0f,false);
                     } else {
                         handler.postDelayed(task,DELAY_MILLIS);
                     }

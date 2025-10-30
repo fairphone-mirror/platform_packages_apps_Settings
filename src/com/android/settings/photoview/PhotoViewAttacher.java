@@ -24,9 +24,10 @@ import android.widget.OverScroller;
 public class PhotoViewAttacher implements View.OnTouchListener,
     View.OnLayoutChangeListener {
 
+    private static final String TAG = "PhotoView";
     private static float DEFAULT_MAX_SCALE = 3.0f;
     private static float DEFAULT_MID_SCALE = 2.5f;
-    public static float DEFAULT_MIN_SCALE = 2.0f;
+    private static float DEFAULT_MIN_SCALE = 2.0f;
     private static int DEFAULT_ZOOM_DURATION = 200;
 
     private static final int HORIZONTAL_EDGE_NONE = -1;
@@ -288,6 +289,25 @@ public class PhotoViewAttacher implements View.OnTouchListener,
     public void setRotationBy(float degrees) {
         mSuppMatrix.postRotate(degrees % 360);
         checkAndDisplayMatrix();
+    }
+
+    public void setMinScale(float scaleValue){
+        mMinScale = scaleValue;
+    }
+
+    public float getRatio() {
+        if (mImageView == null) {
+            android.util.Log.i(TAG,"ImageView is null,return One times the size.");
+            return 1;
+        }
+        int viewWidth = mImageView.getWidth();
+        int viewHeight =  mImageView.getHeight();
+        int drawableWidth = mImageView.getDrawable().getIntrinsicWidth();
+        int drawableHeight = mImageView.getDrawable().getIntrinsicHeight();
+        float mViewAspectRatio = (float) viewHeight / viewWidth;
+        float mDrawableAspectRatio = (float) drawableHeight / drawableWidth;
+        float mFinalRatio = Math.round(mDrawableAspectRatio / mViewAspectRatio * 100) / 100;
+        return mFinalRatio;
     }
 
     public float getMinimumScale() {
@@ -635,6 +655,7 @@ public class PhotoViewAttacher implements View.OnTouchListener,
             }
         }
         resetMatrix();
+        setMinScale(getRatio());
     }
 
     private boolean checkMatrixBounds() {
