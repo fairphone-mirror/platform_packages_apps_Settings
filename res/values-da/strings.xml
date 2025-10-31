@@ -5845,7 +5845,7 @@
     <string name="orientation_timing_spead_3_title">Accelerér i 0,5 sekunder</string>
     <string name="orientation_timing_spead_4_title">Accelerer i 1 sekund</string>
     <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
-    <string name="toast_extra_dim_info">EDer er brug for et mørkere miljø.</string>
+    <string name="toast_extra_dim_info">Der er brug for et mørkere miljø.</string>
     <string name="face_unlock_success">"ansigtslåsning lykkedes"</string>
     <string name="face_acquired_compare_failure">"ansigtet matcher ikke"</string>
     <string name="face_acquired_eye_occlusion">"øjne er dækket"</string>
