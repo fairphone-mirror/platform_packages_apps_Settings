@@ -5846,7 +5846,7 @@
     <string name="orientation_timing_spead_3_title">Accellera di 0,5 secondi</string>
     <string name="orientation_timing_spead_4_title">Accellera di 1 secondo</string>
     <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
-    <string name="toast_extra_dim_info">È necessario un ambiente più scuro.</string>
+    <string name="toast_extra_dim_info">È necessario un ambiente più oscuro.</string>
     <string name="face_unlock_success">sblocco facciale riuscito</string>
     <string name="face_acquired_compare_failure">volto non corrispondente</string>
     <string name="face_acquired_eye_occlusion">gli occhi sono coperti</string>
