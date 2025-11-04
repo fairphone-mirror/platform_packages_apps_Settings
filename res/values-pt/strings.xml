@@ -5449,4 +5449,8 @@
 
     <string name="gesture_switch_for_screenshot_title">"Captura de tela"</string>
     <string name="gesture_switch_for_screenshot_subtitle">"Pressione o botão de diminuir volume + ligar ao mesmo tempo"</string>
+
+    <string name="category_flip_title">"Capa flip"</string>
+    <string name="flip_cover_title">"Capa Flip Wake/Sleep"</string>
+    <string name="flip_cover_summary">"Ligue e desligue a tela abrindo e fechando a capa"</string>
 </resources>
