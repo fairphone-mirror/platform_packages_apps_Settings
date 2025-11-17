@@ -13994,12 +13994,4 @@
     <string name="display_touch_sensitivity_summary">"Increase the touch sensitivity of the screen for use with screen protectors."</string>
 
     <string name="aptxacu_apps_settings_title">Qualcomm aptX settings</string>
-
-<!--    add for issue FPS-3586-->
-    <string name="category_flip_title">Flip-case</string>
-    <string name="flip_cover_title">Flip Cover Wake/Sleep</string>
-    <string name="flip_cover_summary">Turn the screen on and off by opening and closing your cover</string>
-<!--    add for issue FPS-3586-->
-
-
 </resources>

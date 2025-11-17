@@ -129,18 +129,6 @@
             settings:searchable="true"/>
     </PreferenceCategory>
 
-    <!--Add for FPS-3586-->
-    <PreferenceCategory
-        android:title="@string/category_flip_title"
-        android:order="-160">
-        <com.android.settingslib.PrimarySwitchPreference
-            android:key="flip_cover"
-            android:title="@string/flip_cover_title"
-            settings:controller="com.android.settings.display.FlipCoverPreferenceController"
-            android:summary="@string/flip_cover_summary" />
-    </PreferenceCategory>
-    <!--Add for FPS-3586-->
-
     <PreferenceCategory
         android:title="@string/category_name_display_controls"
         android:order="-150">
