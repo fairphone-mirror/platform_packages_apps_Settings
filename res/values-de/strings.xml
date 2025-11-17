@@ -5458,7 +5458,4 @@
     <string name="gesture_switch_for_screenshot_title">"Screenshot Tastenkombination"</string>
     <string name="gesture_switch_for_screenshot_subtitle">"Drücken Sie gleichzeitig die Lautstärkeverringerungs- und die Einschalttaste "</string>
 
-    <string name="category_flip_title">"Flip Case"</string>
-    <string name="flip_cover_title">"Flip Case Aufwachen/Schlafen"</string>
-    <string name="flip_cover_summary">"Schalten Sie den Bildschirm ein und aus, indem Sie Ihr Flip Case öffnen und schließen."</string>
 </resources>

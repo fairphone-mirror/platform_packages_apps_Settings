@@ -5456,7 +5456,4 @@
     <string name="gesture_switch_for_screenshot_title">"Schermafbeelding snelkoppeling"</string>
     <string name="gesture_switch_for_screenshot_subtitle">"Druk tegelijkertijd op de volumeknop omlaag en de aan/uit-knop"</string>
 
-    <string name="category_flip_title">"Flip-case"</string>
-    <string name="flip_cover_title">"Flip-case wake-up/sleepfunctie"</string>
-    <string name="flip_cover_summary">"Zet het scherm aan en uit door je cover te openen en te sluiten"</string>
 </resources>
