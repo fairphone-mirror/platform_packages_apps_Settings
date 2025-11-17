@@ -5376,8 +5376,4 @@
 
     <string name="gesture_switch_for_screenshot_title">"Skjermdump"</string>
     <string name="gesture_switch_for_screenshot_subtitle">"Trykk på volum ned + strømknappen samtidig"</string>
-
-    <string name="category_flip_title">"Flip-deksel"</string>
-    <string name="flip_cover_title">"Vendbart deksel for vekking/hvilemodus"</string>
-    <string name="flip_cover_summary">"Slå skjermen av og på ved å åpne og lukke dekselet"</string>
 </resources>

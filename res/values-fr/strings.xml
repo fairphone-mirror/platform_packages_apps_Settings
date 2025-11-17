@@ -5457,8 +5457,4 @@
     <string name="gesture_switch_for_screenshot_title">"Raccourci capture d'écran"</string>
     <string name="gesture_switch_for_screenshot_subtitle">"Appuyez simultanément sur le bouton de réduction du volume et sur le bouton d'alimentation"</string>
 
-    <string name="category_flip_title">"Étui à rabat"</string>
-    <string name="flip_cover_title">"Affichage intelligent"</string>
-    <string name="flip_cover_summary">"Activer l’écran de verrouillage à l’ouverture du rabat"</string>
-
 </resources>
