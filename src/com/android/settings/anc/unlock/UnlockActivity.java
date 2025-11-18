@@ -70,7 +70,12 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
         LiteManager.getInstance().initLite(this, new LiteManager.Callback() {
             @Override
             public void onSuccess(Object object) {
-
+                AncFaceIdConfig config = LiteManager.getInstance().getConfig();
+                config.rectTop = 0;
+                config.rectLeft = 0;
+                config.rectRight = 480;
+                config.rectBottom = 640;
+                LiteManager.getInstance().setConfig(config);
             }
 
             @Override
@@ -84,12 +89,6 @@ public class UnlockActivity extends Activity implements CameraWrapper.IPreviewCa
             }
         });
         mLiteManager = LiteManager.getInstance();
-        AncFaceIdConfig config = LiteManager.getInstance().getConfig();
-        config.rectTop = 0;
-        config.rectLeft = 0;
-        config.rectRight = 480;
-        config.rectBottom = 640;
-        LiteManager.getInstance().setConfig(config);
         mCameraWrapper = CameraFactory.getCamera();
         openCamera();
     }
