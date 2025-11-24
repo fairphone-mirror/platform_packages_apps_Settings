@@ -67,6 +67,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import com.android.settings.Utils;
 
 /**
  * Fragment with print service settings.
@@ -294,7 +295,7 @@ public class PrintServiceSettingsFragment extends SettingsPreferenceFragment
             }
         }
 
-        if (service == null) {
+        if (service == null || Utils.isMonkeyRunning()) {
             // The print service was uninstalled
             finishFragment();
         }
