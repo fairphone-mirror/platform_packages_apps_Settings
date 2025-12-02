@@ -7768,6 +7768,7 @@
     <string name="keywords_backup">backup, back up</string>
     <string name="keywords_face_unlock">face, unlock, auth, sign in</string>
     <string name="keywords_biometric_unlock">face, unlock, auth, sign in, fingerprint, biometric</string>
+    <string name="keywords_eid_info">E, I, D, EI, ED, IE, ID, DE, DI, EID, EDI, IED, IDE, DEI, DIE</string>
     <string name="keywords_imei_info">imei, meid, min, prl version, imei sv</string>
     <string name="keywords_sim_status">network, mobile network state, service state, signal strength, mobile network type, roaming</string>
     <string name="keywords_sim_status_esim">network, mobile network state, service state, signal strength, mobile network type, roaming, eid</string>
