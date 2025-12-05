@@ -5349,6 +5349,8 @@
     <string name="accessibility_notification_vibration_title">Notification vibration</string>
     <!-- Title for accessibility preference for configuring touch feedback vibrations. -->
     <string name="accessibility_touch_vibration_title">Touch feedback</string>
+    <!-- Title for accessibility preference for configuring fingerprint haptic feedback vibrations. -->
+    <string name="accessibility_fingerprint_haptic_vibration_title">Fingerprint haptic feedback</string>
     <!-- Used in the accessibility service settings to control turning on/off the service entirely [CHAR LIMIT=60] -->
     <string name="accessibility_service_primary_switch_title">Use <xliff:g id="accessibility_app_name" example="TalkBack">%1$s</xliff:g></string>
     <!-- Used in the accessibility service settings to open the activity. [CHAR LIMIT=NONE] -->
@@ -7860,6 +7862,8 @@
     <string name="keywords_accessibility_vibration_primary_switch">haptics, vibrate, vibration</string>
     <!-- List of synonyms for touch vibration setting (where you get a haptic response for touching things on the screen), used to match in settings search [CHAR LIMIT=NONE] -->
     <string name="keywords_touch_vibration">haptics, vibrate, screen, sensitivity</string>
+    <!-- List of synonyms for fingerprint haptic feedback setting (where you get a haptic response for fingerprint operations), used to match in settings search [CHAR LIMIT=NONE] -->
+    <string name="keywords_fingerprint_haptic_vibration">haptics, vibrate, fingerprint, sensitivity</string>
     <!-- List of synonyms for ring vibration setting (changes whether your phone vibrates when it rings), used to match in settings search [CHAR LIMIT=NONE] -->
     <string name="keywords_ring_vibration">haptics, vibrate, phone, call, sensitivity, ring</string>
     <!-- List of synonyms for ring vibration setting (changes whether your phone vibrates when it rings), used to match in settings search [CHAR LIMIT=NONE] -->
