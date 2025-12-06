@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"وارد کردن شماره تلفن"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"شماره تلفن وارد نشده است."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"تأیید"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"محافظت دربرابر شبکه نسل دوم"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"از اتصال به شبکه‌های نسل دوم که امنیت کمتری دارند خودداری می‌کند. ممکن است اتصال‌پذیری در برخی مکان‌ها محدود شود. تماس اضطراری همیشه مجاز است."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"اجازه دادن به شبکه نسل دوم"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"‏شبکه نسل دوم (2G) امنیت کمتری دارد، اما ممکن است در بعضی مناطق اتصالتان را بهبود ببخشد. اتصال 2G همواره برای تماس‌های اضطراری مجاز است."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"‏<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> برای دردسترس بودن به 2G نیاز دارد"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"فقط شبکه‌های رمزگذاری‌شده مجاز باشد"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"این کار ایمن‌تر است اما ممکن است اتصال شبکه تلفن همراه شما را در برخی مکان‌ها محدود کند. تماس اضطراری همیشه مجاز است."</string>

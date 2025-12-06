@@ -5427,8 +5427,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Introdueix un número de telèfon"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Falta el número de telèfon."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"D\'acord"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"Protecció contra xarxes 2G"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Evita les xarxes 2G, que són menys segures. Això pot limitar la connectivitat en alguns llocs. Les trucades d\'emergència sempre estan permeses."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"Permet 2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"El 2G és menys segur, però pot millorar la teva connexió en algunes ubicacions. Per a les trucades d\'emergència, el 2G sempre es permet."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> necessita una connexió 2G disponible"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Permet només xarxes encriptades"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Aquesta opció és més segura, però pot ser que limiti la connexió de xarxa mòbil en algunes ubicacions. Les trucades d\'emergència sempre estan permeses."</string>

@@ -5427,8 +5427,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Ange telefonnummer"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Telefonnummer saknas."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"OK"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"2G-nätverksskydd"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Undviker 2G-nätverk, som är mindre säkra. Detta kan begränsa anslutningen på vissa platser. Nödsamtal tillåts alltid."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"Tillåt 2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G är mindre säkert men kan ge bättre anslutning på vissa platser. 2G är alltid tillåtet för nödsamtal."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> kräver att 2G är tillgängligt"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Tillåt endast krypterade nätverk"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Detta är säkrare men kan begränsa din mobilnätverksanslutning på vissa platser. Nödsamtal tillåts alltid."</string>

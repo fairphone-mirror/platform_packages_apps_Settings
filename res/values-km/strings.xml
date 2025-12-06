@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"បញ្ចូល​លេខទូរសព្ទ"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"មិនបានបញ្ចូល​លេខទូរសព្ទ​ទេ។"</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"យល់ព្រម"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"ការការពារបណ្ដាញ 2G"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"ជៀសវាងបណ្ដាញ 2G ដែលមិនសូវមានសុវត្ថិភាព។ សកម្មភាពនេះអាចដាក់កំហិតការតភ្ជាប់នៅកន្លែងមួយចំនួន។ ការហៅទៅលេខសង្គ្រោះបន្ទាន់ត្រូវបានអនុញ្ញាតជានិច្ច។"</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"អនុញ្ញាត 2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G មិនសូវមាន​សុវត្ថិភាពទេ ប៉ុន្តែអាចនឹង​ធ្វើឱ្យការតភ្ជាប់​របស់អ្នកប្រសើរឡើង​នៅក្នុងទីតាំង​មួយចំនួន។ 2G ត្រូវបានអនុញ្ញាត​ជានិច្ច សម្រាប់​ការហៅទៅលេខ​សង្គ្រោះបន្ទាន់។"</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> តម្រូវឱ្យ​មាន 2G"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"អនុញ្ញាតបណ្ដាញដែលបានអ៊ីនគ្រីបតែប៉ុណ្ណោះ"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"ការធ្វើបែបនេះកាន់តែមានសុវត្ថិភាព ប៉ុន្តែអាចដាក់កំហិតការតភ្ជាប់បណ្ដាញ​ទូរសព្ទ​ចល័តរបស់អ្នកនៅក្នុងទីតាំងមួយចំនួន។ ការហៅទៅលេខសង្គ្រោះបន្ទាន់ត្រូវបានអនុញ្ញាតជានិច្ច។"</string>

@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Masukkan Nomor telepon"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Tidak ada nomor telepon."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"Oke"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"Perlindungan dari jaringan 2G"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Menghindari jaringan 2G yang kurang aman. Setelan ini mungkin membatasi konektivitas di beberapa tempat. Panggilan darurat selalu diizinkan."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"Izinkan 2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"Jaringan 2G kurang aman, tetapi dapat memperbaiki koneksi Anda di beberapa lokasi. Jaringan 2G selalu diizinkan untuk panggilan darurat."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> mengharuskan jaringan 2G tersedia"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Hanya izinkan jaringan yang terenkripsi"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Setelan ini lebih aman tetapi mungkin membatasi koneksi jaringan seluler Anda di beberapa tempat. Panggilan darurat selalu diizinkan."</string>

@@ -5427,8 +5427,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Vnesite telefonsko številko"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Manjka telefonska številka."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"V redu"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"Zaščita omrežja 2G"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Izogiba se omrežjem 2G, ki so manj varna. To lahko omeji povezljivost na nekaterih mestih. Klici v sili so vedno dovoljeni."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"Omogoči 2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G je manj varen, vendar lahko izboljša kakovost povezave na nekaterih lokacijah. Povezava 2G je vedno dovoljena za klice v sili."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"Operater <xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> zahteva razpoložljivo povezavo 2G"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Dovoli samo šifrirana omrežja"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"To je varnejše, vendar pa je tako povezava z mobilnim omrežjem morda omejena na nekaterih lokacijah. Klici v sili so vedno dovoljeni."</string>

@@ -5429,8 +5429,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"إدخال رقم الهاتف"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"رقم الهاتف مفقود."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"حسنًا"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"الحماية من شبكات الجيل الثاني"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"يؤدي هذا الخيار إلى تجنُّب شبكات الجيل الثاني التي تتسم بمستوى أمان أقل، ما قد يحدّ من إمكانية الاتصال في بعض الأماكن. ويُسمح بإجراء مكالمات الطوارئ دائمًا."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"السماح بشبكة الجيل الثاني"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"شبكة الجيل الثاني أقل أمانًا، ولكن قد تحسِّن الاتصال بالإنترنت في بعض المواقع الجغرافية. يُسمح باستخدام شبكة الجيل الثاني دائمًا لمكالمات الطوارئ."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"يطلب مشغّل شبكة الجوال <xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> توفّر شبكة الجيل الثاني"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"السماح بالشبكات المشفَّرة فقط"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"إجراء أكثر أمانًا، ولكن قد يؤدي إلى الحد من إمكانية الاتصال بشبكة الجوّال في بعض المواقع الجغرافية، ويُسمح بإجراء مكالمات الطوارئ دائمًا"</string>

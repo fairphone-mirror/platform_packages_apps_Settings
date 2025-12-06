@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Weka Nambari ya simu"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Nambari ya simu haipo."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"Sawa"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"Ulinzi dhidi ya hatari za mtandao wa 2G"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Huepuka mitandao ya 2G, ambayo si salama ipasavyo. Hatua hii inaweza kuzuia muunganisho katika baadhi ya maeneo. Huduma ya kupiga simu za dharura inaruhusiwa kila wakati."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"Ruhusu 2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G haina usalama wa kutosha, ila inaweza kuboresha muunganisho wako katika baadhi ya maeneo. Kwa simu za dharura, 2G inaruhusiwa kila wakati."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> inahitaji 2G ipatikane"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Ruhusu tu mitandao iliyosimbwa kwa njia fiche"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Mbinu hii ni salama zaidi lakini huenda ikazuia muunganisho wa mtandao wako wa simu katika baadhi ya maeneo. Huduma ya kupiga simu za dharura inaruhusiwa kila wakati."</string>

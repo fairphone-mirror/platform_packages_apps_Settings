@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Lisää puhelinnumero"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Puhelinnumero puuttuu."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"OK"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"Suojaus 2G-verkoilta"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Välttää vähemmän turvallisia 2G-verkkoja. Tämä voi rajoittaa yhteyksiä joissakin paikoissa. Hätäpuhelut sallitaan aina."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"Salli 2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G ei ole yhtä turvallinen, mutta se voi parantaa yhteyttä joissakin paikoissa. 2G sallitaan aina hätäpuheluita varten."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> edellyttää 2G:tä"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Salli vain salatut verkot"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Tämä on turvallisempaa, mutta voi rajoittaa mobiiliverkkoyhteyttä joissakin paikoissa. Hätäpuhelut sallitaan."</string>

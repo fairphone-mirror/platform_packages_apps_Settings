@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"फोन नंबर एंटर करा"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"फोन नंबर आढळला नाही."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"ओके"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"2G नेटवर्क संरक्षण"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"कमी सुरक्षित असलेली 2G नेटवर्क टाळते. यामुळे काही ठिकाणी कनेक्टिव्हिटी मर्यादित असू शकते. आणीबाणी कॉलला नेहमी अनुमती दिलेली असते."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"2G ला अनुमती द्या"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G कमी सुरक्षित आहे, पण ते काही ठिकाणी तुमच्या कनेक्शनमध्ये सुधारणा करू शकते. आणीबाणी कॉलसाठी, 2G ला नेहमी अनुमती आहे."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> साठी 2G उपलब्ध असण्याची आवश्यकता आहे"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"एन्क्रिप्ट केलेल्या नेटवर्कनाच अनुमती द्या"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"हे आणखी सुरक्षित आहे, पण काही ठिकाणी तुमच्या मोबाइल नेटवर्कचे कनेक्शन मर्यादित करू शकते. आणीबाणी कॉलला नेहमी अनुमती दिलेली असते."</string>

@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Voer foonnommer in"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Foonnommer ontbreek."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"OK"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"2G-netwerkbeskerming"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Vermy 2G-netwerke wat minder veilig is. Dit kan konnektiwiteit in sommige plekke beperk. Noodoproepe word altyd toegelaat."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"Laat 2G toe"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G is minder veilig, maar kan jou verbinding in sekere liggings verbeter. 2G word altyd toegelaat vir noodoproepe."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> vereis 2G om beskikbaar te wees"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Laat slegs geënkripteerde netwerke toe"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Dit is veiliger, maar kan jou selnetwerkverbinding in sekere liggings beperk. Noodoproepe word altyd toegelaat."</string>

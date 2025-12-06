@@ -161,9 +161,10 @@ public class Enable2gPreferenceController extends TelephonyTogglePreferenceContr
      */
     @Override
     public int getAvailabilityStatus(int subId) {
+        //add by T2M.renjie,zhang for FPSW-628 2025-12-06 begin
         if (mTelephonyManager == null) {
-            Log.w(LOG_TAG, "getAvailabilityStatus: Telephony manager not yet initialized");
-            return CONDITIONALLY_UNAVAILABLE;
+            Log.w(LOG_TAG, "Telephony manager not yet initialized");
+            mTelephonyManager = mContext.getSystemService(TelephonyManager.class);
         }
         boolean visible =
                 SubscriptionManager.isUsableSubscriptionId(subId)
@@ -173,7 +174,7 @@ public class Enable2gPreferenceController extends TelephonyTogglePreferenceContr
     }
 
     /**
-     * Return {@code true} if only 3G and higher is currently enabled.
+     * Return {@code true} if 2g is currently enabled.
      *
      * <p><b>NOTE:</b> This method returns the active state of the preference controller and is not
      * the parameter passed into {@link #setChecked(boolean)}, which is instead the requested future
@@ -181,21 +182,17 @@ public class Enable2gPreferenceController extends TelephonyTogglePreferenceContr
      */
     @Override
     public boolean isChecked() {
-        // If an enterprise admin has disabled 2g, we show the toggle as checked to avoid
-        // user confusion of seeing a unchecked toggle, but having 3G and higher actually enable.
+        // If an enterprise admin has disabled 2g, we show the toggle as not checked to avoid
+        // user confusion of seeing a checked toggle, but having 2g actually disabled.
         // The RestrictedSwitchPreference will take care of transparently informing the user that
         // the setting was disabled by their admin
         if (isDisabledByAdmin()) {
-            return true;
-        }
-
-        if (mTelephonyManager == null) {
-            Log.w(LOG_TAG, "isChecked: Telephony manager not yet initialized");
             return false;
         }
+
         long currentlyAllowedNetworkTypes = mTelephonyManager.getAllowedNetworkTypesForReason(
                 mTelephonyManager.ALLOWED_NETWORK_TYPES_REASON_ENABLE_2G);
-        return (currentlyAllowedNetworkTypes & BITMASK_2G) == 0;
+        return (currentlyAllowedNetworkTypes & BITMASK_2G) != 0;
     }
 
     /**
@@ -206,7 +203,7 @@ public class Enable2gPreferenceController extends TelephonyTogglePreferenceContr
      * details.
      *
      * @param isChecked The toggle value that we're being requested to enforce. A value of {@code
-     *                  true} denotes that 2g will be disabled by the modem after this function
+     *                  false} denotes that 2g will be disabled by the modem after this function
      *                  completes, if it is not already.
      */
     @Override
@@ -218,30 +215,25 @@ public class Enable2gPreferenceController extends TelephonyTogglePreferenceContr
         if (!SubscriptionManager.isUsableSubscriptionId(mSubId)) {
             return false;
         }
-
-        if (mTelephonyManager == null) {
-            Log.w(LOG_TAG, "setChecked: Telephony manager not yet initialized");
-            return false;
-        }
-
         long currentlyAllowedNetworkTypes = mTelephonyManager.getAllowedNetworkTypesForReason(
                 mTelephonyManager.ALLOWED_NETWORK_TYPES_REASON_ENABLE_2G);
         boolean enabled = (currentlyAllowedNetworkTypes & BITMASK_2G) != 0;
-        if (enabled != isChecked) {
+        if (enabled == isChecked) {
             return false;
         }
         long newAllowedNetworkTypes = currentlyAllowedNetworkTypes;
         if (isChecked) {
-            newAllowedNetworkTypes = currentlyAllowedNetworkTypes & ~BITMASK_2G;
-            Log.i(LOG_TAG, "Disabling 2g. Allowed network types: " + newAllowedNetworkTypes);
-        } else {
             newAllowedNetworkTypes = currentlyAllowedNetworkTypes | BITMASK_2G;
             Log.i(LOG_TAG, "Enabling 2g. Allowed network types: " + newAllowedNetworkTypes);
+        } else {
+            newAllowedNetworkTypes = currentlyAllowedNetworkTypes & ~BITMASK_2G;
+            Log.i(LOG_TAG, "Disabling 2g. Allowed network types: " + newAllowedNetworkTypes);
         }
         mTelephonyManager.setAllowedNetworkTypesForReason(
                 mTelephonyManager.ALLOWED_NETWORK_TYPES_REASON_ENABLE_2G, newAllowedNetworkTypes);
         mMetricsFeatureProvider.action(
-                mContext, SettingsEnums.ACTION_2G_ENABLED, !isChecked);
+                mContext, SettingsEnums.ACTION_2G_ENABLED, isChecked);
+        //add by T2M.renjie,zhang for FPSW-628 2025-12-06 end
         return true;
     }
 

@@ -5427,8 +5427,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Zadajte telefónne číslo"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Chýba telefónne číslo."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"OK"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"Ochrana v sieti 2G"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Nepoužívajte siete 2G, ktoré sú menej zabezpečené. Na niektorých miestach môže byť pripojenie obmedzené. Tiesňové volanie je vždy povolené."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"Povoliť 2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"Sieť 2G je menej bezpečná, ale na niektorých miestach môže zlepšiť pripojenie. V prípade tiesňových volaní je sieť 2G stále povolená."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> vyžaduje dostupnosť siete 2G"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Povoliť iba šifrované siete"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Táto možnosť je zabezpečenejšia, ale môže v niektorých oblastiach obmedziť vaše pripojenie k mobilnej sieti. Tiesňové volanie je vždy povolené."</string>

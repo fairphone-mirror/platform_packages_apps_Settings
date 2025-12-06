@@ -5426,8 +5426,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Telefon numarası girin"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Telefon numarası eksik."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"Tamam"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"2G ağ koruması"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Daha az güvenli olan 2G ağlarını kullanmaz. Bu durum, bazı yerlerde bağlantıyı sınırlandırabilir. Acil durum aramasına her zaman izin verilir."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"2G\'ye izin ver"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G daha az güvenli olsa da bazı konumlarda bağlantınızı iyileştirebilir. Acil durum aramaları için 2G\'ye her zaman izin verilir."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> için 2G\'nin kullanılabilir olması gerekir"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Yalnızca şifrelenmiş ağlara izin ver"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Bu daha güvenli olsa da bazı konumlarda mobil ağ bağlantınızı sınırlayabilir. Acil durum aramasına her zaman izin verilir."</string>

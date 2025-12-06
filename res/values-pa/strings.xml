@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"ਫ਼ੋਨ ਨੰਬਰ ਦਾਖਲ ਕਰੋ"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"ਫ਼ੋਨ ਨੰਬਰ ਮੌਜੂਦ ਨਹੀਂ ਹੈ।"</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"ਠੀਕ ਹੈ"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"2G ਨੈੱਟਵਰਕ ਸੁਰੱਖਿਆ"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"ਅਜਿਹੇ 2G ਨੈੱਟਵਰਕਾਂ ਤੋਂ ਬਚਾਉਂਦਾ ਹੈ, ਜੋ ਘੱਟ ਸੁਰੱਖਿਅਤ ਹੁੰਦੇ ਹਨ। ਕੁਝ ਥਾਵਾਂ \'ਤੇ ਇਹ ਕਨੈਕਟੀਵਿਟੀ ਨੂੰ ਸੀਮਤ ਕਰ ਸਕਦਾ ਹੈ। ਐਮਰਜੈਂਸੀ ਕਾਲਿੰਗ ਨੂੰ ਹਮੇਸ਼ਾਂ ਇਜਾਜ਼ਤ ਹੈ।"</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"2G ਨੂੰ ਆਗਿਆ ਦਿਓ"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G ਘੱਟ ਸੁਰੱਖਿਅਤ ਹੈ, ਪਰ ਕੁਝ ਟਿਕਾਣਿਆਂ \'ਤੇ ਤੁਹਾਡੇ ਕਨੈਕਸ਼ਨ ਨੂੰ ਬਿਹਤਰ ਬਣਾ ਸਕਦਾ ਹੈ। ਐਮਰਜੈਂਸੀ ਕਾਲਾਂ ਲਈ, 2G ਨੂੰ ਹਮੇਸ਼ਾਂ ਆਗਿਆ ਹੈ।"</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> ਉਪਲਬਧ ਹੋਣ ਲਈ 2G ਦੀ ਲੋੜ ਹੈ"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"ਸਿਰਫ਼ ਇਨਕ੍ਰਿਪਟਡ ਨੈੱਟਵਰਕਾਂ ਨੂੰ ਇਜਾਜ਼ਤ ਦਿਓ"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"ਇਹ ਜ਼ਿਆਦਾ ਸੁਰੱਖਿਅਤ ਹੈ ਪਰ ਕੁਝ ਟਿਕਾਣਿਆਂ ਵਿੱਚ ਤੁਹਾਡੇ ਮੋਬਾਈਲ ਨੈੱਟਵਰਕ ਕਨੈਕਸ਼ਨ ਨੂੰ ਸੀਮਤ ਕਰ ਸਕਦਾ ਹੈ। ਐਮਰਜੈਂਸੀ ਕਾਲ ਨੂੰ ਹਮੇਸ਼ਾਂ ਇਜਾਜ਼ਤ ਹੈ।"</string>

@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"ໃສ່ເບີໂທລະສັບ"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"ບໍ່ມີເບີໂທລະສັບ."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"ຕົກລົງ"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"ການປົກປ້ອງເຄືອຂ່າຍ 2G"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"ຫຼີກເວັ້ນເຄືອຂ່າຍ 2G, ເຊິ່ງມີຄວາມປອດໄພໜ້ອຍ. ນີ້ອາດຈຳກັດການເຊື່ອມຕໍ່ໃນສະຖານທີ່ບາງແຫ່ງ. ການໂທສຸກເສີນແມ່ນອະນຸຍາດທຸກເທື່ອ."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"ອະນຸຍາດ 2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G ມີຄວາມປອດໄພໜ້ອຍກວ່າ, ແຕ່ອາດປັບປຸງການເຊື່ອມຕໍ່ຂອງທ່ານໄດ້ໃນບາງສະຖານທີ່. ສຳລັບການໂທສຸກເສີນ, ລະບົບຈະອະນຸຍາດໃຫ້ໃຊ້ 2G ໄດ້ຕະຫຼອດ."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> ຕ້ອງການໃຫ້ໃຊ້ 2G ໄດ້"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"ອະນຸຍາດສະເພາະເຄືອຂ່າຍທີ່ໄດ້ຖືກເຂົ້າລະຫັດ"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"ວິທີນີ້ມີຄວາມປອດໄພຫຼາຍກວ່າ ແຕ່ອາດຈຳກັດການເຊື່ອມຕໍ່ເຄືອຂ່າຍມືຖືຂອງທ່ານໃນບາງສະຖານທີ່. ການໂທສຸກເສີນແມ່ນອະນຸຍາດທຸກເທື່ອ."</string>

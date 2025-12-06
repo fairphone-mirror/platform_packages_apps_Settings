@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"மொபைல் எண்ணை உள்ளிடுக"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"மொபைல் எண் உள்ளிடப்படவில்லை."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"சரி"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"2G நெட்வொர்க் பாதுகாப்பு"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"குறைவான பாதுகாப்புடைய 2G நெட்வொர்க்குகளைத் தவிர்க்கும். இதனால் சில இடங்களில் சரியாக நெட்வொர்க் கிடைக்காமல் போகலாம். அவசர அழைப்பு எப்போதும் அனுமதிக்கப்படும்."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"2G சேவையை அனுமதி"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G நெட்வொர்க் குறைந்த பாதுகாப்புடையது, எனினும் சில இருப்பிடங்களில் உங்கள் இணைப்பை மேம்படுத்தும். அவசர அழைப்புகளுக்கு 2G நெட்வொர்க் எப்போதும் அனுமதிக்கப்படுகிறது."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g>க்கு 2G நெட்வொர்க் தேவை"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"என்க்ரிப்ட் நெட்வொர்க்கை மட்டும் அனுமதி"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"இது மிகவும் பாதுகாப்பானது. ஆனால் சில இடங்களில் உங்கள் மொபைல் நெட்வொர்க் இணைப்பை இது கட்டுப்படுத்தலாம். அவசர அழைப்பு எப்போதும் அனுமதிக்கப்படும்."</string>

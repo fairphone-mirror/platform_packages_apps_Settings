@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"전화번호 입력"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"전화번호를 입력하세요."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"확인"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"2G 네트워크 보호"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"보안 수준이 낮은 2G 네트워크는 사용하지 않습니다. 이로 인해 일부 지역에서 연결이 제한될 수 있습니다. 긴급 전화는 항상 허용됩니다"</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"2G 허용"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G는 보안이 약한 대신 일부 위치에서 연결 품질을 개선할 수 있습니다. 긴급 전화의 경우 2G는 항상 허용됩니다."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> 이동통신사 사용 시 2G 필요"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"암호화된 네트워크만 허용"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"이렇게 하면 보안을 강화하지만 일부 위치에서 모바일 네트워크 연결이 제한될 수 있습니다. 긴급 전화는 항상 허용됩니다."</string>

@@ -5427,8 +5427,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Ввести номер телефону"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Номер телефону відсутній."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"OK"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"Захист від мереж 2G"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Уникати мереж 2G, які є менш надійними. Це налаштування обмежуватиме можливість зв’язку в деяких місцях. Екстрені виклики дозволені завжди."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"Дозволити 2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"Використання 2G може покращити зв’язок у деяких місцезнаходженнях, однак це менш безпечно. З’єднання 2G завжди можна використовувати для екстрених викликів."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"Оператор <xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> вимагає підключення до мережі 2G"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Дозволяти лише зашифровані мережі"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Це безпечніший варіант, але в деяких місцях з’єднання з мобільною мережею може бути обмежене. Екстрені виклики дозволені завжди."</string>

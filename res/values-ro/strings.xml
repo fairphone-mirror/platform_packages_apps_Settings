@@ -5426,8 +5426,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Introdu numărul de telefon"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Lipsește numărul de telefon."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"OK"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"Protecție față de rețeaua 2G"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Evită rețelele 2G, care sunt mai puțin sigure. Acest lucru poate limita conectivitatea în unele locații. Apelarea de urgență este permisă întotdeauna."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"Activează conexiunea 2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"Tehnologia 2G este mai puțin sigură, dar îți poate îmbunătăți conexiunea în unele locații. Pentru apeluri de urgență, tehnologia 2G este mereu permisă."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> necesită 2G pentru a fi disponibil"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Permite numai rețele criptate"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Această opțiune este mai sigură, dar poate limita conexiunea la rețeaua mobilă în unele locații. Apelarea de urgență este permisă întotdeauna."</string>

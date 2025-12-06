@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Fut numrin e telefonit"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Numri i telefonit mungon."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"Në rregull"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"Mbrojtja në rrjetin 2G"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Shmang rrjetet 2G, të cilat janë më pak të sigurta. Kjo mund të kufizojë lidhshmërinë në disa vende. Telefonatat e urgjencës lejohen gjithmonë."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"Lejo 2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G është më pak i sigurt, por mund të përmirësojë lidhjen tënde në disa vendndodhje. Për telefonatat e urgjencës, 2G lejohet gjithmonë."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> ofrohet vetëm me 2G"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Lejo vetëm rrjetet e enkriptuara"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Kjo është më e sigurt, por mund ta kufizojë lidhjen e rrjetit celular në disa vendndodhje. Telefonatat e urgjencës lejohen gjithmonë."</string>

@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Внесете телефонски број"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Телефонскиот број недостасува."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"Во ред"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"Заштита од 2G-мрежи"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Избегнува 2G-мрежи, коишто се помалку безбедни. Ова може да ја ограничи поврзливоста на некои места. Итните повици се секогаш дозволени."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"Дозволи 2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G е помалку безбедна, но може да ја подобри врската на некои локации. За итни повици, 2G е секогаш дозволена."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> има потреба од 2G за да биде достапен"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Дозволи само шифрирани мрежи"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Ова е побезбедно, но може да ја ограничи врската со мобилната мрежа на некои локации. Итните повици се секогаш дозволени."</string>

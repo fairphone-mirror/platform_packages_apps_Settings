@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"電話番号を入力"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"電話番号が指定されていません。"</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"OK"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"2G ネットワークの保護"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"安全性の低い 2G ネットワークを使用しません。ON にすると、一部の地域では接続が制限される場合があります。緊急通報は常に利用可能です。"</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"2G を許可"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G は安全面で劣りますが、場所によっては接続性が改善される場合があります。緊急通報では 2G は常に許可されます。"</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> を利用するには、2G が必要です"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"暗号化されたネットワークのみを許可する"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"セキュリティは強化されますが、場所によってモバイル ネットワーク接続が制限される可能性があります。緊急通報は常に許可されます。"</string>

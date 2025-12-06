@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"የስልክ ቁጥር ያስገቡ"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"የስልክ ቁጥር ይቀራል።"</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"እሺ"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"የ2G አውታረ መረብ ጥበቃ"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"ያነሰ አስተማማኝነት ያላቸውን 2G አውታረ መረቦች ያስቀራል። ይህ በአንዳንድ ቦታዎች ውስጥ ግንኙነትን ሊገድብ ይችላል። የአደጋ ጊዜ ጥሪ ሁልጊዜ ይፈቀዳል።"</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"2ጂ ይፍቀዱ"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2ጂ ደህንነቱ ያነሰ ነው፣ ነገር ግን በአንዳንድ አካባቢዎች የእርስዎን ግንኙነት ሊያሻሽል ይችላል። ለአደጋ ጥሪ 2ጂ ሁልጊዜ ይፈቀዳል።"</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> 2ጂ እንዲኖር ይጠይቃል"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"የተመሰጠሩ አውታረ መረቦችን ብቻ ፍቀድ"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"ይህ ደኅንነቱ ይበልጥ የተጠበቀ ነው፣ ነገር ግን በአንዳንድ አካባቢዎች ላይ የተንቀሳቃሽ ስልክ አውታረ መረብ ግንኙነትዎን ሊገድብ ይችላል። የአደጋ ጊዜ ጥሪ ሁልጊዜ ይፈቀዳል።"</string>

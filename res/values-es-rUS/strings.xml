@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Ingresa el número de teléfono"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Falta el número de teléfono."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"Aceptar"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"Protección de red 2G"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Evita las redes 2G, que son menos seguras. Esto puede limitar la conectividad en algunos lugares. Las llamadas de emergencia siempre están permitidas."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"Permitir 2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G es menos seguro, pero podría mejorar tu conexión en algunas ubicaciones. Para llamadas de emergencia, siempre se permite 2G"</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> requiere 2G para brindar servicio"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Permitir solo las redes encriptadas"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Esto es más seguro, pero podría limitar tu conexión de red móvil en algunas ubicaciones. Las llamadas de emergencia siempre están permitidas"</string>

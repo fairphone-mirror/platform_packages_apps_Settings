@@ -5426,8 +5426,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Ievadiet tālruņa numuru"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Nav norādīts tālruņa numurs."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"Labi"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"Aizsardzība 2G tīklā"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Izvairās no 2G tīkliem, kas ir mazāk droši. Tādējādi dažās vietās var tikt ierobežota savienojamība. Ārkārtas izsaukumi vienmēr ir atļauti."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"Atļaut 2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G drošības līmenis ir zemāks, taču dažās atrašanās vietās šis savienojums var būt stabilāks. Ārkārtas izsaukumiem 2G lietošana vienmēr ir atļauta."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> pieprasa 2G tīkla pieejamību"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Atļaut tikai šifrētus tīklus"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Tas ir drošāks risinājums, tomēr dažās vietās tādēļ var tikt ierobežots mobilā tīkla savienojums. Ārkārtas izsaukumi vienmēr ir atļauti."</string>

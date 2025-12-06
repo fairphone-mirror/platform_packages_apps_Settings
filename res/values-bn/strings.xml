@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"ফোন নম্বর লিখুন"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"ফোন নম্বর নেই।"</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"ঠিক আছে"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"2G নেটওয়ার্ক সংক্রান্ত সুরক্ষা"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"2G নেটওয়ার্ক এড়িয়ে চলুন, এগুলি কম নিরাপদ। এর ফলে কিছু জায়গায় কানেক্টিভিটি সীমিত হতে পারে। জরুরি কল সবসময় ব্যবহারের অনুমতি রয়েছে।"</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"2G ব্যবহারের অনুমতি দিন"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G কম নিরাপদ কিন্তু কিছু লোকেশনে হয়ত আপনার কানেকশন উন্নত করতে পারে। জরুরি কলের জন্য, 2G সবসময় ব্যবহার করা যায়।"</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g>-এর জন্য 2G উপলভ্য থাকতে হবে"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"শুধু এনক্রিপটেড নেটওয়ার্কের অনুমতি রয়েছে"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"এটি আরও বেশি সুরক্ষিত কিন্তু এটির জন্য কিছু লোকেশনে আপনার মোবাইল নেটওয়ার্ক কানেকশন সীমিত হতে পারে। জরুরি কল সবসময় ব্যবহারের অনুমতি রয়েছে।"</string>

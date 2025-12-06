@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Entrer le numéro de téléphone"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Le numéro de téléphone est manquant."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"OK"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"Protection du réseau 2G"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Permet d\'éviter les réseaux 2G, qui sont moins sécurisés. Cela peut limiter la connectivité à certains endroits. Les appels d\'urgence sont toujours autorisés."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"Autoriser les réseaux 2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"La 2G est moins sécurisée, mais elle peut améliorer votre connexion à certains endroits. La 2G est toujours autorisée pour effectuer des appels d\'urgence."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> requiert que la 2G soit activée"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Autoriser seulement les réseaux chiffrés"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Cette option est plus sûre, mais peut limiter votre connexion au réseau cellulaire dans certains endroits. Les appels d\'urgence sont toujours autorisés."</string>

@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Телефон нөмірін енгізіңіз"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Телефон нөмірі енгізілмеген."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"Жарайды"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"2G желісінен қорғау"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Қауіпсіздігі төменірек 2G желілеріне қосылуды болдырмайды. Осы себепті кейбір жерлерде қосылу мүмкіндігі шектелуі мүмкін. Құтқару қызметіне әрдайым қоңырау шалуға болады."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"2G қолдануға рұқсат беру"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G қауіпсіздігі төменірек, алайда кейбір жерлерде байланысты жақсарта алады. Құтқару қызметіне қоңырау шалу үшін әрқашан 2G байланысын қолдануға болады."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> операторы 2G байланысының қолжетімді болуын талап етеді"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Тек шифрланған желілерге рұқсат ету"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Бұл шифрлау әдісі әлдеқайда қауіпсіз, бірақ мобильдік желі байланысын кейбір аймақтарда шектеуі мүмкін. Құтқару қызметіне әрдайым қоңырау шалуға болады."</string>

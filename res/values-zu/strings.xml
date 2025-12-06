@@ -5427,8 +5427,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Faka inombolo yefoni"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Inombolo yefoni ayikho."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"KULUNGILE"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"Ukuvikelwa kwenethiwekhi ye-2G"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Igwema amanethiwekhi e-2G, angavikeleki kancane. Lokhu kungakhawulela ukuxhumeka kwezinye izindawo. Ukufona okuphuthumayo kuvunyelwe njalo."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"Vumela i-2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"I-2G ivikeleke kancane, kodwa ingase ithuthukise ukuxhumeka kwakho kwezinye izindawo. Mayelana namakholi aphuthumayo, i-2G ihlala njalo ivunyelwe."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"I-<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> idinga i-2G ibe khona"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Vumela amanethiwekhi abethelwe kuphela"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Lokhu kuvikeleke kakhulu kodwa kungase kukhawulele uxhumano lwakho lwenethiwekhi yeselula kwezinye izindawo. Ukufona okuphuthumayo kuvunyelwe njalo."</string>

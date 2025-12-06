@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"ဖုန်းနံပါတ် ထည့်ပါ"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"ဖုန်းနံပါတ် မထည့်ရသေးပါ။"</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"OK"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"2G ကွန်ရက် အကာအကွယ်"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"လုံခြုံမှုအားနည်းသော 2G ကွန်ရက်များကို ရှောင်ပါ။ ၎င်းက အချို့နေရာများတွင် ချိတ်ဆက်မှုကန့်သတ်နိုင်သည်။ အရေးပေါ်ဖုန်းခေါ်ခြင်းကို အမြဲခွင့်ပြုထားသည်။"</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"2G ခွင့်ပြုခြင်း"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G သည် လုံခြုံရေး အားနည်းသော်လည်း အချို့ဒေသများတွင် ချိတ်ဆက်မှု အားကောင်းနိုင်သည်။ အရေးပေါ်ဖုန်းခေါ်ခြင်းများအတွက် 2G ကို အမြဲခွင့်ပြုထားသည်။"</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> သုံးနိုင်ရန် 2G လိုအပ်သည်"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"အသွင်ဝှက်ထားသော ကွန်ရက်များသာ"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"၎င်းသည် ပိုမိုလုံခြုံသော်လည်း အချို့နေရာများ၌ သင့်မိုဘိုင်းကွန်ရက် ချိတ်ဆက်မှု အကန့်အသတ်ရှိနိုင်သည်။ အရေးပေါ် ခေါ်ဆိုမှုကို အမြဲခွင့်ပြုထားသည်။"</string>

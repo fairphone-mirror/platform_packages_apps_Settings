@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"ഫോൺ നമ്പർ നൽകുക"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"ഫോൺ നമ്പർ കാണുന്നില്ല."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"ശരി"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"2G നെറ്റ്‌വർക്ക് സംരക്ഷണം"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"സുരക്ഷ കുറഞ്ഞ 2G നെറ്റ്‌വർക്കുകൾ ഒഴിവാക്കുന്നു. ഇത് ചില സ്ഥലങ്ങളിൽ കണക്റ്റിവിറ്റി പരിമിതപ്പെടുത്തിയേക്കാം. എമർജൻസി കോൾ എ‌പ്പോഴും അനുവദനീയമാണ്."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"2G അനുവദിക്കുക"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G-യ്ക്ക് സുരക്ഷ കുറവാണെങ്കിലും ചില ലൊക്കേഷനുകളിൽ അത് നിങ്ങളുടെ കണക്ഷൻ മെച്ചപ്പെടുത്തിയേക്കാം. എമർജൻസി കോളുകൾക്ക്, 2G എപ്പോഴും അനുവദനീയമാണ്."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> എന്നതിന് 2G ആവശ്യമാണ്"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"എൻക്രിപ്റ്റ് ചെയ്ത നെറ്റ്‍വർക്ക് മാത്രം"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"ഇത് കൂടുതൽ സുരക്ഷിതമാണെങ്കിലും ചില സ്ഥലങ്ങളിൽ നിങ്ങളുടെ മൊബൈൽ നെറ്റ്‌വർക്ക് കണക്ഷൻ പരിമിതപ്പെടുത്തിയേക്കാം. എമർജൻസി കോൾ എ‌പ്പോഴും അനുവദനീയം."</string>

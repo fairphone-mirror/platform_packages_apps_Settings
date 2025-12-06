@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Εισαγωγή αριθμού τηλεφώνου"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Ο αριθμός τηλεφώνου απουσιάζει."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"ΟΚ"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"Προστασία δικτύου 2G"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Αποφεύγονται τα δίκτυα 2G, τα οποία είναι λιγότερο ασφαλή. Η συνδεσιμότητα σε ορισμένα μέρη μπορεί να περιοριστεί. Οι κλήσεις έκτακτης ανάγκης επιτρέπονται πάντα."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"Να επιτρέπεται το 2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"Το 2G είναι λιγότερο ασφαλές, αλλά μπορεί να βελτιώσει τη σύνδεσή σας σε ορισμένες τοποθεσίες. Για κλήσεις έκτακτης ανάγκης, το 2G επιτρέπεται πάντα."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"Το <xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> απαιτεί τη διαθεσιμότητα 2G"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Επιτρέπονται μόνο κρυπτογραφημένα δίκτυα"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Αυτή η ρύθμιση είναι πιο ασφαλής, αλλά μπορεί να περιορίσει τη σύνδεση του δικτύου κινητής τηλεφωνίας σε ορισμένες τοποθεσίες. Οι κλήσεις έκτακτης ανάγκης επιτρέπονται πάντα."</string>

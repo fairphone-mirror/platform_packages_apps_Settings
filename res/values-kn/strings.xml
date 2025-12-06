@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"ಫೋನ್ ಸಂಖ್ಯೆ ತಪ್ಪಿಹೋಗಿದೆ."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"ಸರಿ"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"2G ನೆಟ್‌ವರ್ಕ್ ರಕ್ಷಣೆ"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"ಕಡಿಮೆ ಸುರಕ್ಷಿತವಾಗಿರುವ 2G ನೆಟ್‌ವರ್ಕ್‌ಗಳನ್ನು ತಪ್ಪಿಸುತ್ತದೆ. ಇದು ಕೆಲವು ಸ್ಥಳಗಳಲ್ಲಿ ಕನೆಕ್ಟಿವಿಟಿಯನ್ನು ಮಿತಿಗೊಳಿಸಬಹುದು. ತುರ್ತು ಕರೆ ಮಾಡುವಿಕೆಯನ್ನು ಯಾವಾಗಲೂ ಅನುಮತಿಸಲಾಗುತ್ತದೆ."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"2G ಅನ್ನು ಅನುಮತಿಸಿ"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G ಅಷ್ಟು ಸುರಕ್ಷಿತವಲ್ಲ, ಆದರೆ ಕೆಲವು ಸ್ಥಳಗಳಲ್ಲಿ ನಿಮ್ಮ ಕನೆಕ್ಷನ್ ಅನ್ನು ಸುಧಾರಿಸಬಹುದು. ತುರ್ತು ಕರೆಗಳಿಗಾಗಿ 2G ಅನ್ನು ಯಾವಾಗಲೂ ಅನುಮತಿಸಲಾಗುತ್ತದೆ."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> ಗೆ 2G ಲಭ್ಯವಿರುವ ಅಗತ್ಯವಿದೆ"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"ಎನ್‌ಕ್ರಿಪ್ಟೆಡ್ ನೆಟ್‌ವರ್ಕ್ ಮಾತ್ರ ಅನುಮತಿಸಿ"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"ಇದು ಹೆಚ್ಚು ಸುರಕ್ಷಿತವಾಗಿದೆ ಆದರೆ ಕೆಲವು ಸ್ಥಳಗಳಲ್ಲಿ ನಿಮ್ಮ ಮೊಬೈಲ್ ನೆಟ್‌ವರ್ಕ್ ಕನೆಕ್ಷನ್ ಅನ್ನು ಮಿತಿಗೊಳಿಸಬಹುದು. ತುರ್ತು ಕರೆ ಮಾಡುವಿಕೆಯನ್ನು ಯಾವಾಗಲೂ ಅನುಮತಿಸಲಾಗುತ್ತದೆ."</string>

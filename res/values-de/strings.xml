@@ -5428,8 +5428,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Telefonnummer eingeben"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Telefonnummer fehlt."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"OK"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"Schutz vor 2G-Netzen"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"2G-Netze werden vermieden, da sie weniger sicher sind. Dadurch kann es an einigen Orten zu Verbindungsproblemen kommen. Notrufe werden immer unterstützt."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"2G zulassen"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G ist weniger sicher, bietet aber an manchen Orten eine bessere Verbindung. Für Notrufe ist 2G immer zugelassen."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"Für <xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> muss 2G verfügbar sein"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Nur verschlüsselte Netzwerke zulassen"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Dies ist sicherer, schränkt aber eventuell die Möglichkeit einer Mobilfunkverbindung an manchen Orten ein. Notrufe sind immer erlaubt."</string>

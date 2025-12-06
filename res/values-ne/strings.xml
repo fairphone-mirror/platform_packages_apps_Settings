@@ -5425,8 +5425,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"फोन नम्बर हाल्नुहोस्"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"फोन नम्बर हालिएको छैन।"</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"ठिक छ"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"2G नेटवर्कको सुरक्षा"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"2G नेटवर्कहरू कम सुरक्षित हुने भएकाले त्यस्ता नेटवर्क प्रयोग गर्दैन। तपाईंले यो सुविधा अन गर्नुभयो भने केही ठाउँको कनेक्टिभिटीमा असर पर्न सक्छ। आपत्कालीन कल गर्न भने कहिले पनि रोक लगाइँदैन।"</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"2G चलाउन दिनुहोस्"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G अलि कम सुरक्षित हुन्छ तर तपाईंले यसको प्रयोग गर्नुभयो भने यसले कतिपय लोकेसनमा तपाईंको डिभाइसमा इन्टरनेट कनेक्ट गर्न सजिलो बनाउन सक्छ। 2G प्रयोग गरेर जुनसुकै बेला आपत्‌कालीन कल गर्न सकिन्छ।"</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> को सेवा लिन 2G चाहिन्छ"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"इन्क्रिप्ट गरिएका नेटवर्क मात्र प्रयोग गर्न दिनुहोस्"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"यो बढी सुरक्षित छ तर केही लोकेसनमा तपाईंको मोबाइल नेटवर्क कनेक्सनले राम्रोसँग काम नगर्न सक्छ। आपत्‌कालीन कल गर्न भने कहिले पनि रोक लगाइँदैन।"</string>

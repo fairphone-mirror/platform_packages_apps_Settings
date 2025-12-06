@@ -5427,8 +5427,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Įveskite telefono numerį"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Nėra telefono numerio."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"Gerai"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"2G tinklo apsauga"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Venkite mažiau saugių 2G tinklų. Dėl to gali būti apribotas ryšys kai kuriose vietose. Skambučiai pagalbos numeriu visada leidžiami."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"Leisti 2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"2G ne toks saugus, bet kai kur ryšys gali būti geresnis. 2G visada leidžiama naudoti skambučiams pagalbos numeriu."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"„<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g>“ būtinas 2G"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Leisti tik šifruotus tinklus"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Tai užtikrina geresnę saugą, bet gali apriboti mobiliojo ryšio tinklo ryšį tam tikrose vietovėse. Skambučiai pagalbos numeriu visada leidžiami."</string>

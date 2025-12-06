@@ -5427,8 +5427,8 @@
     <string name="smart_forwarding_input_mdn_dialog_title" msgid="7542216086697868415">"Въведете телефонен номер"</string>
     <string name="smart_forwarding_missing_mdn_text" msgid="2907314684242542226">"Липсва телефонен номер."</string>
     <string name="smart_forwarding_missing_alert_dialog_text" msgid="7870419247987316112">"OK"</string>
-    <string name="enable_2g_title" msgid="5657132300321750181">"Защита от 2G мрежи"</string>
-    <string name="enable_2g_summary" msgid="6317192326100541563">"Избягват се 2G мрежите, които не са толкова надеждни. Това може да ограничи свързаността на някои места. Спешните обаждания са разрешени винаги."</string>
+    <string name="enable_2g_title" msgid="5657132300321750181">"Разрешаване на 2G"</string>
+    <string name="enable_2g_summary" msgid="6317192326100541563">"Мрежата 2G е по-малко надеждна, но може да подобри връзката ви в някои местоположения. Тя е винаги разрешена за спешните обаждания."</string>
     <string name="enable_2g_summary_disabled_carrier" msgid="8141118453219482762">"<xliff:g id="CARRIER_NAME_2G">%1$s</xliff:g> изисква 2G да е налице"</string>
     <string name="require_cellular_encryption_title" msgid="6087085031703089235">"Разрешаване само на шифрованите мрежи"</string>
     <string name="require_cellular_encryption_summary" msgid="6090569065420631457">"Тази опция е по-сигурна, но може да ограничи връзката ви с мобилната мрежа в някои местоположения. Спешните обаждания са разрешени винаги."</string>
