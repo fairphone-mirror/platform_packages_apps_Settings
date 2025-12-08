@@ -74,7 +74,6 @@
         <com.android.settings.widget.SeekBarPreference
             android:key="vibration_intensity_preference_fingerprint_haptic"
             android:title="@string/accessibility_fingerprint_haptic_vibration_title"
-            app:keywords="@string/keywords_fingerprint_haptic_vibration"
             app:controller="com.android.settings.accessibility.FingerprintHapticFeedbackIntensityPreferenceController" />
 
         <com.android.settings.widget.SeekBarPreference

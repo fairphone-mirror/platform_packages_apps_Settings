@@ -56,6 +56,6 @@ public class FingerprintHapticFeedbackIntensityPreferenceController
 
     @Override
     public int getAvailabilityStatus() {
-        return AVAILABLE;
+        return UNSUPPORTED_ON_DEVICE;
     }
 }
