@@ -133,6 +133,7 @@
             android:dialogLayout="@layout/dialog_eid_status"
             settings:isPreferenceVisible="@bool/config_show_sim_info"
             settings:enableCopying="true"
+            settings:keywords="@string/keywords_esim_eid"
             settings:controller="com.android.settings.deviceinfo.simstatus.SimEidPreferenceController"/>
 
         <!-- IMEI -->
