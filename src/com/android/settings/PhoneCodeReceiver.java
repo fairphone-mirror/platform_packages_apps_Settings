@@ -7,15 +7,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.SystemProperties;
 import android.provider.Settings;
-import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.WindowManager;
-
-import com.android.internal.telephony.PhoneConstants;
-import com.arima.settings.OemLockVerifier;
 
 import java.util.List;
 
@@ -30,7 +25,6 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
     private static final String HOST_CODE_REGULATORY_INFO = "3522";
     private static final String HOST_CODE_MODULEINFO = "001";
     private static final String HOST_CODE_IMS = "23486583";
-    private static final String HOST_CODE_TEST_OEM_UNLOCK = "002";
     private Context mContext;
     private String READ_ERROR_STR = "????????";
 
@@ -124,9 +118,6 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                         .create();
                 alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
                 alert.show();
-            } else if (HOST_CODE_TEST_OEM_UNLOCK.equals(host)) {
-                OemLockVerifier oemLockVerifier = new OemLockVerifier(context, (check_code, msg) -> Log.e(TAG, "oemLockVerifier queryVerifyResult msg > " + msg));
-                oemLockVerifier.queryVerifyResult(getIMEI(), Build.getSerial());
             }
         }
     }
@@ -139,12 +130,8 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                         .setPositiveButton(android.R.string.ok, null)
                         .setCancelable(true)
                         .create();
+
         alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
         alert.show();
-    }
-
-    private String getIMEI() {
-        TelephonyManager telephonyManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
-        return telephonyManager.getImei(PhoneConstants.SIM_ID_1);
     }
 }
