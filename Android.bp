@@ -91,7 +91,6 @@ android_library {
         "SystemUIUnfoldLib",
         "setup-wizard-lib",
         "setup-wizard-lib-gingerbread-compat",
-        "oemunlock",
     ],
 
     libs: [
