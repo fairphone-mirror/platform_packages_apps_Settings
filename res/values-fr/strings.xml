@@ -5785,12 +5785,12 @@
     <string name="faceunlock_last_delete_title">Supprimer les données faciales ?</string>
     <string name="scanning_face">Numérisation des données faciales ...</string>
     <string name="warning_tips_rom4_first_part">"La reconnaissance faciale est un nouveau moyen pratique de déverrouiller votre appareil. Les utilisateurs doivent avoir lu et déclaré avoir compris les risques liés aux points suivants avant d’utiliser la reconnaissance faciale pour déverrouiller leur appareil :
- 
+
  - Il se peut que votre appareil soit déverrouillé par une personne ou un objet vous ressemblant ou vous imitant.
- 
+
  -La sécurité de la reconnaissance faciale est inférieure à la saisie d’un schéma/code PIN/mot de passe"</string>
     <string name="warning_tips_rom4_second_part">" -Lorsque vous tentez de configurer la reconnaissance faciale, il est conseillé de l’utiliser tous les jours pour qu’elle s’améliore. De nombreux états peuvent affecter la vitesse ou la qualité de la reconnaissance, par exemple : porter des lunettes de soleil, un chapeau, un masque, du maquillage, etc.
- 
+
  -Si vous essayez de configurer la reconnaissance faciale, assurez-vous que l’objectif de l’appareil photo est propre et que l’éclairage est suffisant."</string>
     <string name="warning_tips_rom4_second_part_title">Amélioration de la qualité de la reconnaissance faciale</string>
     <string name="warning_tips_rom4_third_part">" -Vos données personnelles seront stockées et traitées sur le téléphone uniquement."</string>
@@ -5798,9 +5798,9 @@
     <string name="warning_title">Avis de risque</string>
     <string name="data_preference">Préférence de données</string>
     <!--state of health-->
-    <string name="batteryh_soh">état de santé :</string>
+    <string name="batteryh_soh">État de santé:</string>
     <!--state of count-->
-    <string name="batteryh_soc">nombre de cycles de charge/décharge :</string>
+    <string name="batteryh_soc">Nombre de cycles de charge/décharge:</string>
     <!--charge full design-->
     <string name="batteryh_cfd">charge complète d’origine :</string>
     <string name="dialog_title_battery_healty">État de la batterie</string>

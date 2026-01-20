@@ -14732,8 +14732,8 @@ Data usage charges may apply.</string>
     <!-- [CHAR LIMIT=NONE] unlock failed reset  description  -->
     <string name="fingerprint_settings_open_description">"Switch on if you prefer to unlock without waking up the phone first."</string>
 
-    <string name="batteryh_soh">state of health:</string>
-    <string name="batteryh_soc">charge/discharge cycle count:</string>
+    <string name="batteryh_soh">State of health:</string>
+    <string name="batteryh_soc">Charge/discharge cycle count:</string>
     <string name="batteryh_cfd">charge full design:</string>
     <string name="dialog_title_battery_healty">Battery health</string>
 
@@ -14741,7 +14741,7 @@ Data usage charges may apply.</string>
     <string name="charging_slow">Eco Charge</string>
     <string name="charging_normal">Fast Charge</string>
     <string name="battery_protect">Battery Protect</string>
-    <string name="battery_protect_description">set the maximum battery charge level to 80%</string>
+    <string name="battery_protect_description">Set the maximum battery charge level to 80%</string>
     <string name="battery_charging_privacy">Customize your charging speed. Remember slower charging equals longer battery life.</string>
     <string name="battery_charging_privacy_eco">Optimise your battery’s longevity with this mode.</string>
     <string name="battery_charging_privacy_fast">Get back to 100% as quickly as possible.</string>
@@ -14751,7 +14751,7 @@ Data usage charges may apply.</string>
     <string name="swap_back_recents_summary">Swap the back and recents button in the navigation bar.</string>
 
     <!-- Used in the reduce bright colors settings to show tips when button is grey. [CHAR LIMIT=NONE]-->
-    <string name="toast_extra_dim_info">A darker environment is needed.</string> 
+    <string name="toast_extra_dim_info">A darker environment is needed.</string>
 
     <!-- Diag -->
     <string name="diagprotect_title">DiagProtector Setting</string>

@@ -5787,21 +5787,21 @@
     <string name="faceunlock_last_delete_title">¿Desea eliminar los datos faciales?</string>
     <string name="scanning_face">Escanear datos faciales...</string>
     <string name="warning_tips_rom4_first_part">"El reconocimiento facial es una forma nueva y cómoda de desbloquear el dispositivo. El usuario debe haber leído y entendido los riesgos de las siguientes afirmaciones antes de utilizar el reconocimiento facial para desbloquear el dispositivo:
- 
+
  - El dispositivo puede desbloquearse por una persona o cosa que se le parezca.
- 
+
  - La seguridad del reconocimiento facial es inferior a la que ofrece un patrón, un PIN o una contraseña"</string>
     <string name="warning_tips_rom4_second_part">" - Mientras trata de configurar el reconocimiento facial, se recomienda mantenerlo a diario a través de un hábito. Hay muchas situaciones que pueden afectar a la rapidez o la calidad del reconocimiento, por ejemplo: llevar gafas de sol, gorras, máscaras, maquillaje, etc.
- 
+
  - Mientras trata de configurar el reconocimiento facial, asegúrese de que el objetivo de la cámara y la zona reconocida están limpios y colocados en un punto de luz."</string>
     <string name="warning_tips_rom4_second_part_title">Mejora de la calidad del reconocimiento facial</string>
     <string name="warning_tips_rom4_third_part">" - Sus datos personales se almacenarán sólo en el dispositivo."</string>
     <string name="warning_tips_rom4_third_part_title">Acerca de la Privacidad</string>
     <string name="warning_title">Advertencia de riesgos</string>
     <!--state of health-->
-    <string name="batteryh_soh">estado de salud:</string>
+    <string name="batteryh_soh">Estado de salud:</string>
     <!--state of count-->
-    <string name="batteryh_soc">recuento de ciclos de carga/descarga:</string>
+    <string name="batteryh_soc">Recuento de ciclos de carga/descarga:</string>
     <!--charge full design-->
     <string name="batteryh_cfd">carga del diseño completo:</string>
     <string name="dialog_title_battery_healty">Salud de la batería</string>
@@ -5829,7 +5829,7 @@
     <string name="security_settings_faceunlock_cancel_setup">Saltar</string>
     <string name="security_settings_faceunlock_next">Siguiente</string>
     <string name="battery_protect">Proteger la batería</string>
-    <string name="battery_protect_description">Establece el nivel máximo de carga de la batería al 80%</string>
+    <string name="battery_protect_description">Establece el nivel máximo de carga de la battería al 80%</string>
     <string name="battery_charging_privacy">Personaliza tu velocidad de carga. Recuerda que la carga más lenta equivale a una mayor duración de la batería.</string>
     <string name="battery_charging_privacy_eco">Optimiza la longevidad de tu batería con este modo.</string>
     <string name="battery_charging_privacy_fast">Vuelve al 100% lo más rápido posible.</string>
