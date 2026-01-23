@@ -5873,4 +5873,8 @@
 
     <string name="gesture_switch_for_screenshot_title">"Skärmdump shotcut"</string>
     <string name="gesture_switch_for_screenshot_subtitle">"Tryck på volym ned + strömknappen samtidigt"</string>
+
+    <string name="category_flip_title">"Flip-fodral"</string>
+    <string name="flip_cover_title">"Vikskydd Väckning/Sömn"</string>
+    <string name="flip_cover_summary">"Slå på och av skärmen genom att öppna och stänga fodralet"</string>
 </resources>

@@ -5874,6 +5874,8 @@
     <string name="gesture_switch_for_screenshot_title">"Scorciatoia per screenshot"</string>
     <string name="gesture_switch_for_screenshot_subtitle">"Premere contemporaneamente il pulsante di riduzione del volume + il pulsante di accensione"</string>
 
-
+    <string name="category_flip_title">"Flip-case"</string>
+    <string name="flip_cover_title">"Attivazione dello schermo intelligente"</string>
+    <string name="flip_cover_summary">"Accendi e spegni lo quando apri o chiudi la cover"</string>
 
 </resources>

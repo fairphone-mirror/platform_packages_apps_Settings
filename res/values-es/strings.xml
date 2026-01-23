@@ -5876,4 +5876,7 @@
     <string name="gesture_switch_for_screenshot_subtitle">"Presione el botón para bajar el volumen + el botón de encendido al mismo tiempo"</string>
     <string name="data_preference">"Preferencia de datos"</string>
 
+    <string name="category_flip_title">"Funda con tapa"</string>
+    <string name="flip_cover_title">"Función de funda con tapa para activar/suspender"</string>
+    <string name="flip_cover_summary">"Enciende y apaga la pantalla abriendo y cerrando la tapa de la funda"</string>
 </resources>
