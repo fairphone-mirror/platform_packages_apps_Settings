@@ -36,6 +36,8 @@ import android.util.ArraySet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -53,6 +55,7 @@ import com.android.settingslib.applications.AppUtils;
 import com.android.settingslib.widget.FooterPreference;
 import com.android.settingslib.widget.SelectorWithWidgetPreference;
 
+import java.lang.reflect.Constructor;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -300,10 +303,31 @@ public class AppLaunchSettings extends AppInfoBase implements
                 .create();
         if (dialog.getListView() != null) {
             dialog.getListView().setTextDirection(View.TEXT_DIRECTION_LOCALE);
-            dialog.getListView().setEnabled(false);
         } else {
             Log.w(TAG, "createVerifiedLinksDialog: dialog.getListView() is null, please check it.");
         }
+        dialog.setOnShowListener(dlg -> {
+            ListView listView = dialog.getListView();
+            if (listView == null) return;
+
+            ViewGroup.LayoutParams oldLp = listView.getLayoutParams();
+            if (oldLp == null) return;
+
+            Class<?> lpClass = oldLp.getClass();
+            ViewGroup.LayoutParams newLp;
+            try {
+                Constructor<?> c = lpClass.getConstructor(int.class, int.class);
+                newLp = (ViewGroup.LayoutParams) c.newInstance(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        (int) (listView.getResources().getDisplayMetrics().heightPixels * 0.6f)
+                );
+            } catch (Throwable e) {
+                newLp = new ViewGroup.LayoutParams(oldLp);
+                newLp.height = (int) (listView.getResources().getDisplayMetrics().heightPixels * 0.6f);
+                newLp.width = ViewGroup.LayoutParams.MATCH_PARENT;
+            }
+            listView.setLayoutParams(newLp);
+        });
         return dialog;
     }
 

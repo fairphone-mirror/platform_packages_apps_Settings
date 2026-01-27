@@ -26,6 +26,8 @@ import android.icu.text.MessageFormat;
 import android.os.Bundle;
 import android.util.ArraySet;
 import android.util.Log;
+import android.view.ViewGroup;
+import android.widget.ListView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
@@ -35,6 +37,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.android.settings.R;
 import com.android.settings.core.instrumentation.InstrumentedDialogFragment;
 
+import java.lang.reflect.Constructor;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -73,7 +76,31 @@ public class SupportedLinksDialogFragment extends InstrumentedDialogFragment {
                     doSelectedAction();
                 })
                 .setNegativeButton(R.string.app_launch_dialog_cancel, /* listener= */ null);
-        return builder.create();
+        AlertDialog mAlertDialog = builder.create();
+
+        mAlertDialog.setOnShowListener(dlg -> {
+            ListView listView = mAlertDialog.getListView();
+            if (listView == null) return;
+
+            ViewGroup.LayoutParams oldLp = listView.getLayoutParams();
+            if (oldLp == null) return;
+
+            Class<?> lpClass = oldLp.getClass();
+            ViewGroup.LayoutParams newLp;
+            try {
+                Constructor<?> c = lpClass.getConstructor(int.class, int.class);
+                newLp = (ViewGroup.LayoutParams) c.newInstance(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        (int) (listView.getResources().getDisplayMetrics().heightPixels * 0.6f)
+                );
+            } catch (Throwable e) {
+                newLp = new ViewGroup.LayoutParams(oldLp);
+                newLp.height = (int) (listView.getResources().getDisplayMetrics().heightPixels * 0.6f);
+                newLp.width = ViewGroup.LayoutParams.MATCH_PARENT;
+            }
+            listView.setLayoutParams(newLp);
+        });
+        return (Dialog)mAlertDialog;
     }
 
     @Override
