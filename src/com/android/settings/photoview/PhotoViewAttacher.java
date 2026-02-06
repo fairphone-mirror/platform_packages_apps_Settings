@@ -81,6 +81,8 @@ public class PhotoViewAttacher implements View.OnTouchListener,
     private boolean mZoomEnabled = true;
     private ScaleType mScaleType = ScaleType.FIT_CENTER;
 
+    private boolean mIsLandscape;
+
     private OnGestureListener onGestureListener = new OnGestureListener() {
         @Override
         public void onDrag(float dx, float dy) {
@@ -289,6 +291,17 @@ public class PhotoViewAttacher implements View.OnTouchListener,
     public void setRotationBy(float degrees) {
         mSuppMatrix.postRotate(degrees % 360);
         checkAndDisplayMatrix();
+        if (mImageView.getWidth() == 0 || mImageView.getHeight() == 0)return;
+        // Adjust for landscape orientation
+        mIsLandscape = mImageView.getWidth() > mImageView.getHeight();
+        if (mIsLandscape){
+            setScaleLevels(
+                    DEFAULT_MIN_SCALE * 3,
+                    DEFAULT_MID_SCALE * 3,
+                    DEFAULT_MAX_SCALE * 3);
+        }else {
+            setScaleLevels(DEFAULT_MIN_SCALE,DEFAULT_MID_SCALE,DEFAULT_MAX_SCALE);
+        }
     }
 
     public void setMinScale(float scaleValue){
@@ -304,10 +317,10 @@ public class PhotoViewAttacher implements View.OnTouchListener,
         int viewHeight =  mImageView.getHeight();
         int drawableWidth = mImageView.getDrawable().getIntrinsicWidth();
         int drawableHeight = mImageView.getDrawable().getIntrinsicHeight();
-        float mViewAspectRatio = (float) viewHeight / viewWidth;
+        float mViewAspectRatio = mIsLandscape? ((float) viewWidth / viewHeight) : ((float) viewHeight / viewWidth);
         float mDrawableAspectRatio = (float) drawableHeight / drawableWidth;
         float mFinalRatio = Math.round(mDrawableAspectRatio / mViewAspectRatio * 100) / 100;
-        return mFinalRatio;
+        return Math.max(mMinScale, Math.min(mFinalRatio, mMaxScale));
     }
 
     public float getMinimumScale() {
