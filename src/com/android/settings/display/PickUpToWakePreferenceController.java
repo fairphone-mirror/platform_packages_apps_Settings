@@ -9,7 +9,7 @@ import android.provider.Settings;
 
 import androidx.preference.Preference;
 import androidx.preference.SwitchPreference;
-
+import androidx.preference.SwitchPreferenceCompat;
 import com.android.settings.core.PreferenceControllerMixin;
 import com.android.settingslib.core.AbstractPreferenceController;
 
@@ -46,6 +46,6 @@ public class PickUpToWakePreferenceController extends AbstractPreferenceControll
     @Override
     public void updateState(Preference preference) {
         int value = Settings.Secure.getInt(mContext.getContentResolver(), PICK_UP_GESTURE_ENABLED, 0);
-        ((SwitchPreference) preference).setChecked(value != 0);
+        ((SwitchPreferenceCompat) preference).setChecked(value != 0);
     }
 }

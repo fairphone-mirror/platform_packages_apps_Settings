@@ -78,7 +78,7 @@
         android:title="@string/dialog_title_battery_healty"
         android:summary="@string/dialog_title_battery_healty"/>
 
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:key="battery_protect"
         android:title="@string/battery_protect"
         android:summary="@string/battery_protect_description"

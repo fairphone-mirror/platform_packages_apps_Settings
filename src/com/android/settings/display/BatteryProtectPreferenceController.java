@@ -9,6 +9,7 @@ import android.provider.Settings;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.internal.R;
 import com.android.settings.Utils;
@@ -47,7 +48,7 @@ public class BatteryProtectPreferenceController extends BasePreferenceController
     public void updateState(Preference preference) {
         boolean isProtected = false;
         String bat_pro_en = SystemProperties.get(BATTERY_PROTECT_ENABLE);
-        ((SwitchPreference) preference).setChecked((bat_pro_en != null && "1".equals(bat_pro_en))? true : false);
+        ((SwitchPreferenceCompat) preference).setChecked((bat_pro_en != null && "1".equals(bat_pro_en))? true : false);
     }
 
     @Override

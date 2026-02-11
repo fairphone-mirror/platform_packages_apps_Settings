@@ -7,6 +7,7 @@ import android.provider.Settings;
 
 import androidx.preference.Preference;
 import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.settings.core.PreferenceControllerMixin;
 import com.android.settingslib.core.AbstractPreferenceController;
@@ -41,6 +42,6 @@ public class PocketModePreferenceController extends AbstractPreferenceController
     @Override
     public void updateState(Preference preference) {
         int value = Settings.Secure.getInt(mContext.getContentResolver(), DISABLE_POCKET_MODE, 0);
-        ((SwitchPreference) preference).setChecked(value != 0);
+        ((SwitchPreferenceCompat) preference).setChecked(value != 0);
     }
 }

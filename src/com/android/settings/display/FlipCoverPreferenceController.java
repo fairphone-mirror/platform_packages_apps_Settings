@@ -7,7 +7,6 @@ import com.android.settings.core.TogglePreferenceController;
 import com.android.settingslib.PrimarySwitchPreference;
 import android.provider.Settings;
 public class FlipCoverPreferenceController extends TogglePreferenceController {
-    private PrimarySwitchPreference mPreference;
     private final String KEY_SLIP_COVER = Settings.System.ENABLE_SLIP_COVER;
     private final int SLIP_COVER_ENABLE_VALUE = Settings.System.SLIP_COVER_ENABLE; // 1
     private final int SLIP_COVER_DISABLE_VALUE = Settings.System.SLIP_COVER_DISABLE; // 0
@@ -18,7 +17,6 @@ public class FlipCoverPreferenceController extends TogglePreferenceController {
     @Override
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
-        mPreference = screen.findPreference(getPreferenceKey());
     }
     @Override
     public int getAvailabilityStatus() {
@@ -46,6 +44,5 @@ public class FlipCoverPreferenceController extends TogglePreferenceController {
     public void updateState(Preference preference) {
         super.updateState(preference);
         preference.setEnabled(true);
-        mPreference.setSwitchEnabled(true);
     }
 }
