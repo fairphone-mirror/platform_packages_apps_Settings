@@ -129,7 +129,7 @@
         android:persistent="false"
         android:title="@string/captions_category_title">
 
-        <Preference
+        <com.android.settings.widget.InfoPreference
             android:key="live_caption"
             android:icon="@drawable/ic_live_caption"
             android:persistent="false"
@@ -138,7 +138,7 @@
             settings:keywords="@string/keywords_live_caption"
             settings:controller="com.android.settings.accessibility.LiveCaptionPreferenceController"/>
 
-        <Preference
+        <com.android.settings.widget.InfoPreference
             android:fragment="com.android.settings.accessibility.CaptioningPropertiesFragment"
             android:key="captioning_preference_screen"
             android:icon="@drawable/ic_captioning"

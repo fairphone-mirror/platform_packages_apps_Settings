@@ -171,7 +171,7 @@
         android:title="@string/my_device_info_device_identifiers_category_title">
 
         <!--IP address -->
-        <Preference
+        <com.android.settings.widget.InfoPreference
             android:key="wifi_ip_address"
             android:order="44"
             android:title="@string/wifi_ip_address"
@@ -180,7 +180,7 @@
             settings:enableCopying="true"/>
 
         <!-- Wi-Fi MAC address -->
-        <Preference
+        <com.android.settings.widget.InfoPreference
             android:key="saved_accesspoints_wifi_mac_address"
             android:order="45"
             android:title="@string/status_wifi_mac_address"
@@ -189,7 +189,7 @@
             settings:enableCopying="false"/>
 
         <!-- Factory Wi-Fi MAC address -->
-        <Preference
+        <com.android.settings.widget.InfoPreference
             android:key="wifi_mac_address"
             android:order="46"
             android:title="@string/status_device_wifi_mac_address"
@@ -198,7 +198,7 @@
             settings:enableCopying="true"/>
 
         <!-- Bluetooth address -->
-        <Preference
+        <com.android.settings.widget.InfoPreference
             android:key="bt_address"
             android:order="47"
             android:title="@string/status_bt_address"
@@ -207,7 +207,7 @@
             settings:enableCopying="true"/>
 
         <!-- Device up time -->
-        <Preference
+        <com.android.settings.widget.InfoPreference
             android:key="up_time"
             android:order="48"
             android:title="@string/status_up_time"
