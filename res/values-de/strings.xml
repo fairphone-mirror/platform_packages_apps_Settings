@@ -5881,4 +5881,5 @@
     <string name="category_flip_title">"Flip Case"</string>
     <string name="flip_cover_title">"Flip Case Aufwachen/Schlafen"</string>
     <string name="flip_cover_summary">"Schalten Sie den Bildschirm ein und aus, indem Sie Ihr Flip Case öffnen und schließen."</string>
+    <string name="legal_info_title">Open-Source Lizenzen</string>
 </resources>

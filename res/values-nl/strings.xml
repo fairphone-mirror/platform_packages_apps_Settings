@@ -5879,4 +5879,5 @@
     <string name="category_flip_title">"Flip-case"</string>
     <string name="flip_cover_title">"Flip-case wake-up/sleepfunctie"</string>
     <string name="flip_cover_summary">"Zet het scherm aan en uit door je cover te openen en te sluiten"</string>
+    <string name="legal_info_title">Open-source licenties</string>
 </resources>

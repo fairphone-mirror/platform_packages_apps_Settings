@@ -5798,4 +5798,5 @@
     <string name="category_flip_title">"Flip-deksel"</string>
     <string name="flip_cover_title">"Vendbart deksel for vekking/hvilemodus"</string>
     <string name="flip_cover_summary">"Slå skjermen av og på ved å åpne og lukke dekselet"</string>
+    <string name="legal_info_title">Åpen kildekode-lisenser</string>
 </resources>

@@ -5878,4 +5878,5 @@
     <string name="category_flip_title">"Flip-cover"</string>
     <string name="flip_cover_title">"Klapdæksel Vågn op/dvale"</string>
     <string name="flip_cover_summary">"Tænd og sluk skærmen ved at åbne og lukke dit cover"</string>
+    <string name="legal_info_title">Open source-licenser</string>
 </resources>

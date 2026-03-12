@@ -5878,5 +5878,6 @@
     <string name="category_flip_title">"Flip-case"</string>
     <string name="flip_cover_title">"Attivazione dello schermo intelligente"</string>
     <string name="flip_cover_summary">"Accendi e spegni lo quando apri o chiudi la cover"</string>
+    <string name="legal_info_title">Licenze open source</string>
 
 </resources>
