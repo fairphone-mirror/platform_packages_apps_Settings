@@ -232,14 +232,14 @@
         android:fragment="com.android.settings.security.MemtagPage"
         settings:controller="com.android.settings.security.MemtagPagePreferenceController" />
 
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:order="310"
         android:key="unlock_failed_reset"
         android:title="@string/unlock_failed_reset_title"
         android:summary="@string/unlock_failed_reset_description"
         settings:controller="com.android.settings.security.UnlockFailedResetController"/>
 
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:order="320"
         android:key="fingerprint_settings_behavior"
         android:title="@string/fingerprint_settings_open_title"

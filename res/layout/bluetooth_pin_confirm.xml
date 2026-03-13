@@ -108,6 +108,10 @@
                 android:layout_height="48dp"
                 android:gravity="center_vertical"
                 android:contentDescription="@string/bluetooth_pairing_phonebook_toggle_text"
+                android:filterTouchesWhenObscured="false"
+                android:focusable="true"
+                android:clickable="true"
+                style="@style/SettingslibSwitchStyle.Expressive"
                 android:switchMinWidth="48dp" />
         </LinearLayout>
     </LinearLayout>

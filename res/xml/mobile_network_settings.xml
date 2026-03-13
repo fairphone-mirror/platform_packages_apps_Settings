@@ -87,7 +87,7 @@
             settings:controller="com.android.settings.network.telephony.MobileDataPreferenceController"
             settings:allowDividerAbove="true"/>
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="data_during_calls"
             android:title="@string/data_during_calls_title"
             android:summary="@string/data_during_calls_summary"
@@ -162,13 +162,13 @@
             android:summary="@string/enhanced_4g_lte_mode_summary"
             settings:keywords="@string/keywords_enhance_4g_lte"
             settings:controller="com.android.settings.network.telephony.Enhanced4gAdvancedCallingPreferenceController"/>
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="enabled_5g"
             android:title="@string/enabled_5g_mode_title"
             android:persistent="true"
             settings:controller="com.android.settings.network.telephony.Enabled5GPreferenceController"/>
         <!--[BUG]-Modify-Begin by shaopan.tang 2025-07-09 FPS-3170 Add 5G SA/NSA switch for Elisa -->
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="enabled_5G_nr_mode"
             android:title="@string/enabled_5gsa_mode_title"
             android:persistent="true"
@@ -270,7 +270,7 @@
                 settings:searchable="false"
                 settings:controller="com.android.settings.network.telephony.VideoCallingPreferenceController"/>
 
-            <SwitchPreference
+            <SwitchPreferenceCompat
                 android:key="backup_calling_key"
                 android:title="@string/backup_calling_settings_title"
                 android:persistent="false"
