@@ -633,6 +633,16 @@
         <item>@string/color_mode_option_boosted</item>
         <item>@string/color_mode_option_saturated</item>
         <item>@string/color_mode_option_automatic</item>
+        <item>@string/color_mode_option_boosted</item>
+        <item>@string/color_mode_option_automatic</item>
+        <item>Reserved and unset: 258</item>
+        <item>Reserved and unset: 259</item>
+        <item>Reserved and unset: 260</item>
+        <item>Reserved and unset: 261</item>
+        <item>Reserved and unset: 262</item>
+        <item>Reserved and unset: 263</item>
+        <item>Reserved and unset: 264</item>
+        <item>Reserved and unset: 265</item>
     </string-array>
 
     <!-- Display settings screen, Color mode options. Must be the same length and order as
@@ -643,6 +653,17 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <!-- 256 to 265 are extended render intents -->
+        <item>256</item>
+        <item>257</item>
+        <item>258</item>
+        <item>259</item>
+        <item>260</item>
+        <item>261</item>
+        <item>262</item>
+        <item>263</item>
+        <item>264</item>
+        <item>265</item>
     </integer-array>
 
     <!-- App aspect ratio settings screen, user aspect ratio override options. Must be the same
