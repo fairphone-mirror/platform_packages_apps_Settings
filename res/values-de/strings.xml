@@ -5859,8 +5859,8 @@
     <string name="face_acquired_face_multi">mehrere Gesichter sichtbar</string>
     <string name="face_acquired_face_failure">Face Unlock ist fehlgeschlagen</string>
 
-    <string name="display_touch_sensitivity_title">"Touchscreen-empfindlichkeit"</string>
-    <string name="display_touch_sensitivity_summary">"bildschirm-Berührungsempfindlichkeit für die Verwendung mit einer Displayschutzfolien erhöhen"</string>
+    <string name="display_touch_sensitivity_title">"Touchscreen-Empfindlichkeit"</string>
+    <string name="display_touch_sensitivity_summary">"Bildschirm-Berührungsempfindlichkeit für die Verwendung mit einer Schutzfolie erhöhen"</string>
     <string name="peak_refresh_rate_list_title">"Bildwiederholfrequenz"</string>
 
     <!-- FPS: Switch Button Settings -->
