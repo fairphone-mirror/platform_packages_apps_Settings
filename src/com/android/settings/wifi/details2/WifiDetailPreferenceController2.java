@@ -607,16 +607,22 @@ public class WifiDetailPreferenceController2 extends AbstractPreferenceControlle
 
         // clear tint list to make sure can set 87% black after enlarge
         original.setTintList(null);
-
-        // enlarge icon size
+        // Modify by taotao.huang for FPSW-946 begin
+        final float scale = Math.min(
+                (float) iconSize / actualWidth,
+                (float) iconSize / actualHeight);
+        final int targetWidth = Math.round(actualWidth * scale);
+        final int targetHeight = Math.round(actualHeight * scale);
+        // enlarge icon size (but keep aspect ratio)
         final Bitmap bitmap = Utils.createBitmap(original,
-                iconSize /*width*/,
-                iconSize /*height*/);
+                targetWidth,
+                targetHeight);
         Drawable newIcon = new BitmapDrawable(null /*resource*/, bitmap);
 
         // config color for 87% black after enlarge
-        newIcon.setTintList(Utils.getColorAttr(mContext, android.R.attr.textColorPrimary));
-
+        newIcon.setTintList(
+                Utils.getColorAttr(mContext, android.R.attr.textColorPrimary));
+        // Modify by taotao.huang for FPSW-946 end
         return newIcon;
     }
 
