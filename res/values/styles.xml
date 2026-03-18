@@ -1120,4 +1120,16 @@
         <item name="android:windowBackground">@drawable/tct_alert_dialog_window_bg</item>
         <item name="android:textColorPrimary">@color/face_unlock_text_color</item>
     </style>
+
+    <style name="ThemeHomepageCardTitle">
+        <item name="android:textAppearance">@*android:style/TextAppearance.DeviceDefault.Subhead</item>
+        <item name="android:fontFamily">@*android:string/config_headlineFontFamilyMedium</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="ThemeHomepageCardSummary">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">14sp</item>
+    </style>
 </resources>
