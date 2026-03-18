@@ -56,7 +56,7 @@ import androidx.annotation.VisibleForTesting;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.internal.telephony.TelephonyIntents;
 import com.android.settingslib.core.lifecycle.LifecycleObserver;
@@ -210,7 +210,7 @@ public class Enabled5GPreferenceController extends TelephonyTogglePreferenceCont
             return;
         }
         super.updateState(preference);
-        final SwitchPreference switchPreference = (SwitchPreference) preference;
+        final SwitchPreferenceCompat switchPreference = (SwitchPreferenceCompat) preference;
         switchPreference.setVisible(isAvailable());
         long preferredNetworkBitMask = RadioAccessFamily.getRafFromNetworkType(
                 getAllowedNetworkMode());

@@ -48,7 +48,7 @@ import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.settings.R;
 import com.android.settings.network.SubscriptionUtil;
@@ -393,13 +393,13 @@ public class BackupCallingPreferenceController extends TelephonyTogglePreference
         super.updateState(preference);
         Log.d(LOG_TAG, "updateState subId " + mSubId + ", call state " + mCallState);
         if ((mCallState == null) || (preference == null) ||
-                (!(preference instanceof SwitchPreference))) {
+                (!(preference instanceof SwitchPreferenceCompat))) {
             Log.d(LOG_TAG, "Skip update under mCallState = " + mCallState);
             return;
         }
         mCallingPreferenceCategoryController.updateChildVisible(getPreferenceKey(), true);
         SubscriptionInfo subInfo = getSubscriptionInfoFromActiveList(mSubId);
-        final SwitchPreference switchPreference = (SwitchPreference) preference;
+        final SwitchPreferenceCompat switchPreference = (SwitchPreferenceCompat) preference;
         // Gray out the setting during calls
         switchPreference.setEnabled(mCallState == TelephonyManager.CALL_STATE_IDLE);
         switchPreference.setChecked((subInfo != null) ? isChecked() : false);

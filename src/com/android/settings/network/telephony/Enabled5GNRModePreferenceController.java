@@ -50,7 +50,7 @@ import androidx.annotation.VisibleForTesting;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.internal.telephony.GlobalSettingsHelper;
 import com.android.internal.telephony.TelephonyIntents;
@@ -247,7 +247,7 @@ public class Enabled5GNRModePreferenceController extends TelephonyTogglePreferen
             return;
         }
         super.updateState(preference);
-        final SwitchPreference switchPreference = (SwitchPreference) preference;
+        final SwitchPreferenceCompat switchPreference = (SwitchPreferenceCompat) preference;
         switchPreference.setVisible(isAvailable());
 
         switchPreference.setChecked(isChecked());
