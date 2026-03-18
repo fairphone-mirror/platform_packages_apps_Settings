@@ -103,7 +103,7 @@
         android:title="@string/vpn_settings_title"
         android:icon="@drawable/ic_vpn_key"
         android:order="15"
-        android:summary="@string/summary_placeholder"
+        android:summary="@string/vpn_disconnected_summary"
         settings:userRestriction="no_config_vpn"
         settings:useAdminDisabledSummary="true" />
 
