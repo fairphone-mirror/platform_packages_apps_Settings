@@ -59,7 +59,7 @@
         settings:isPreferenceVisible="@bool/config_show_sim_info"
         settings:controller="com.android.settings.network.NetworkMobileProviderController"/>
 
-    <com.android.settingslib.RestrictedSwitchPreference
+    <com.android.settings.togglewifi.MainToggleWifiPreference
         android:key="main_toggle_wifi"
         android:title="@string/wifi"
         settings:keywords="@string/keywords_wifi"
@@ -84,13 +84,13 @@
             android:icon="@drawable/ic_add_24dp"/>
     </PreferenceCategory>
 
-    <Preference
+    <com.android.settings.networkinternet.NetworkAndInternetPreference
         android:key="configure_network_settings"
         android:title="@string/network_and_internet_preferences_title"
         settings:allowDividerAbove="true"
         android:fragment="com.android.settings.wifi.ConfigureWifiSettings"/>
 
-    <Preference
+    <com.android.settings.savednetworks.SavedNetworksPreference
         android:key="saved_networks"
         android:title="@string/wifi_saved_access_points_label"
         android:fragment="com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSettings2"/>

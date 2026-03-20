@@ -21,10 +21,16 @@ import android.content.res.TypedArray;
 import android.net.NetworkTemplate;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.util.TypedValue;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.content.res.TypedArrayUtils;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceViewHolder;
 
 import com.android.settings.R;
 import com.android.settings.core.SubSettingLauncher;
@@ -94,5 +100,26 @@ public class DataUsagePreference extends Preference implements TemplatePreferenc
     @VisibleForTesting
     DataUsageController getDataUsageController() {
         return new DataUsageController(getContext());
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull PreferenceViewHolder holder) {
+        super.onBindViewHolder(holder);
+        TextView textView = (TextView) holder.findViewById(android.R.id.title);
+        if (textView != null) {
+            RelativeLayout container = (RelativeLayout) textView.getParent();
+
+            int paddingTop = container.getPaddingTop();
+            int paddingBottom = container.getPaddingBottom();
+            int paddingEnd = container.getPaddingEnd();
+            int newPaddingStart = (int) TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP,
+                    8f,
+                    getContext().getResources().getDisplayMetrics());
+
+            container.setPaddingRelative(newPaddingStart, paddingTop, paddingEnd, paddingBottom);
+        } else {
+            Log.e(DataUsagePreference.class.getSimpleName(), "DataUsagePreference.java#onBindViewHolder text=null !");
+        }
     }
 }
