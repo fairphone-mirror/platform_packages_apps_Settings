@@ -27,7 +27,10 @@ import com.android.settings.R
 import com.android.settings.network.telephony.DataSubscriptionRepository
 import com.android.settings.wifi.WifiSummaryRepository
 import com.android.settings.wifi.repository.WifiRepository
+import com.android.settingslib.flags.Flags.newStatusBarIcons
 import com.android.settingslib.spaprivileged.settingsprovider.settingsGlobalBooleanFlow
+import com.android.settingslib.wifi.WifiUtils
+import com.android.wifitrackerlib.WifiEntry
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
@@ -89,7 +92,11 @@ class InternetPreferenceRepository(
         wifiSummaryRepository.summaryFlow().map { summary ->
             DisplayInfo(
                 summary = summary,
-                iconResId = R.drawable.ic_wifi_signal_4,
+                iconResId = if (newStatusBarIcons()) {
+                    WifiUtils.getInternetIconResource(WifiEntry.WIFI_LEVEL_MAX, false)
+                } else {
+                    R.drawable.ic_wifi_signal_4
+                },
             )
         }
 
