@@ -5872,6 +5872,7 @@
     <string name="preferred_network_mode_change_waring_message">"Netzverfügbarkeit kann durch Ihre Wahl reduziert werden"</string>
     <string name="verification_confirm_your_password_header">"Bestätigungscode eingeben :"</string>
     <string name="aptxacu_apps_settings_title">"Qualcomm aptX Einstellungen"</string>
+    <string name="aptxacu_apps_settings_summary">"Die Einstellungen für Qualcomm aptX sind nur in englischer Sprache verfügbar."</string>
 
 
     <string name="gesture_switch_for_screenshot_title">"Screenshot Tastenkombination"</string>

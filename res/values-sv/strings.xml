@@ -5870,6 +5870,7 @@
     <string name="preferred_network_mode_change_waring_message">"Nätverkstäckningen kan minska på grund av ditt val"</string>
     <string name="verification_confirm_your_password_header">"Ange verifieringskod :"</string>
 
+    <string name="aptxacu_apps_settings_summary">"Inställningarna för Qualcomm aptX finns endast på engelska."</string>
 
     <string name="gesture_switch_for_screenshot_title">"Skärmdump shotcut"</string>
     <string name="gesture_switch_for_screenshot_subtitle">"Tryck på volym ned + strömknappen samtidigt"</string>

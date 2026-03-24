@@ -104,6 +104,7 @@
     <Preference
         android:key="aptxacu_apps_settings"
         android:title="@string/aptxacu_apps_settings_title"
+        android:summary="@string/aptxacu_apps_settings_summary"
         settings:controller="com.android.settings.connecteddevice.AptxacuPreferenceController" />
 
     <com.android.settingslib.widget.FooterPreference

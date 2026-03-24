@@ -5869,6 +5869,7 @@
     <string name="preferred_network_mode_change_waring_message">"Netværksdækningen kan være reduceret af dit valg"</string>
     <string name="verification_confirm_your_password_header">"Indtast bekræftelseskode :"</string>
 
+    <string name="aptxacu_apps_settings_summary">"Qualcomm aptX-indstillingerne er kun på engelsk."</string>
 
 
     <string name="gesture_switch_for_screenshot_title">"Skærmbillede shotcut"</string>

@@ -3,11 +3,8 @@ package com.android.settings.connecteddevice;
 import android.content.Context;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
-import com.android.internal.app.LocaleHelper;
 import com.android.settings.core.BasePreferenceController;
 import android.content.Intent;
-
-import java.util.Locale;
 
 public class AptxacuPreferenceController extends BasePreferenceController {
     private final String TAG = "aptxacu_apps_settings";
@@ -21,13 +18,6 @@ public class AptxacuPreferenceController extends BasePreferenceController {
     @Override
     public int getAvailabilityStatus() {
         return AVAILABLE;
-    }
-
-    @Override
-    public CharSequence getSummary() {
-        Locale locale = mContext.getResources().getSystem().getConfiguration().getLocales().get(0);
-        String language = LocaleHelper.getDisplayName(locale,true);
-        return language;
     }
 
     @Override
@@ -46,9 +36,6 @@ public class AptxacuPreferenceController extends BasePreferenceController {
         }
         return false;
     }
-
-
-
 }
 
 

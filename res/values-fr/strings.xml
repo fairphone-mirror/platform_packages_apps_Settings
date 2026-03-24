@@ -5870,6 +5870,7 @@
     <string name="preferred_network_mode_change_waring_message">"La couverture réseau peut être réduite par votre sélection."</string>
     <string name="verification_confirm_your_password_header">"Saisir le code de vérification :"</string>
 
+    <string name="aptxacu_apps_settings_summary">"Les paramètres Qualcomm aptX sont disponibles en anglais uniquement."</string>
 
 
     <string name="gesture_switch_for_screenshot_title">"Raccourci capture d'écran"</string>
