@@ -5868,10 +5868,17 @@
     <string name="main_clear_progress_esim_reset_text">"Impossible d'activer l'initialisation eSIM sans connexion Wi-Fi"</string>
     <string name="preferred_network_mode_change_dialogtitle">"Type de réseau préféré modifié."</string>
     <string name="preferred_network_mode_change_waring_message">"La couverture réseau peut être réduite par votre sélection."</string>
-    <string name="verification_confirm_your_password_header">"Saisir le code de vérification :"</string>
 
     <string name="aptxacu_apps_settings_summary">"Les paramètres Qualcomm aptX sont disponibles en anglais uniquement."</string>
 
+    <!-- #609: [Bootloader unlock] Simplify bootloader unlock process  -->
+    <string name="oem_unlock_error_no_internet_connection">Erreur de connexion. Veuillez vérifier votre connexion Internet et réessayer.</string>
+    <string name="oem_unlock_error_server_error">Un problème est survenu lors du traitement de votre demande, veuillez réessayer ou contacter le support Fairphone (support@fairphone.com)</string>
+    <string name="oem_unlock_error_forbidden">Impossible de déverrouiller votre appareil. Veuillez contacter l\'assistance Fairphone (support@fairphone.com).</string>
+    <string name="unlock_request_loading">Vérification si l\'appareil peut être déverrouillé...</string>
+    <string name="unlock_request_success_title">Succès</string>
+    <string name="unlock_request_success_message">L\'appareil peut être déverrouillé</string>
+    <!-- end of [Bootloader unlock] Simplify bootloader unlock process -->
 
     <string name="gesture_switch_for_screenshot_title">"Raccourci capture d'écran"</string>
     <string name="gesture_switch_for_screenshot_subtitle">"Appuyez simultanément sur le bouton de réduction du volume et sur le bouton d'alimentation"</string>

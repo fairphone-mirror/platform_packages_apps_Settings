@@ -14704,7 +14704,6 @@ Data usage charges may apply.</string>
     <string name="hidden_activity_deivce_info">"Device information"</string>
     <string name="dialog_title_image_mapping">"Image Mapping"</string>
     <string name="hidden_activity_module_info">"Module information"</string>
-    <string name="verification_confirm_your_password_header">Input verify code :</string>
     <string name="ims_settings_summary_on">"Debug mode for IMS Settings is ON."</string>
     <string name="ims_settings_summary_off">"Debug mode for IMS Settings is OFF"</string>
 
@@ -14807,6 +14806,14 @@ Data usage charges may apply.</string>
     <string name="aptxacu_apps_settings_title">Qualcomm aptX settings</string>
     <string name="aptxacu_apps_settings_summary">"The Qualcomm aptX settings are in English only"</string>
 
+    <!-- #609: [Bootloader unlock] Simplify bootloader unlock process  -->
+    <string name="oem_unlock_error_no_internet_connection">Connection error. Please check your internet connection and try again.</string>
+    <string name="oem_unlock_error_server_error">There was a problem processing your request, please try again or contact Fairphone Support (support@fairphone.com).</string>
+    <string name="oem_unlock_error_forbidden">Your device cannot be unlocked. Please contact Fairphone Support (support@fairphone.com).</string>
+    <string name="unlock_request_loading">Checking if device can be unlocked...</string>
+    <string name="unlock_request_success_title">Success</string>
+    <string name="unlock_request_success_message">You can unlock the device now</string>
+    <!-- end of [Bootloader unlock] Simplify bootloader unlock process -->
 
     <!--    add for issue FPS-3586-->
     <string name="category_flip_title">Flip-case</string>

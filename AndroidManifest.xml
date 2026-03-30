@@ -5454,9 +5454,6 @@ SPDX-License-Identifier: BSD-3-Clause-Clear -->
                     android:host="001"
                     android:scheme="android_secret_code" />
                 <data
-                    android:host="002"
-                    android:scheme="android_secret_code" />
-                <data
                     android:host="23486583"
                     android:scheme="android_secret_code" />
                 <data

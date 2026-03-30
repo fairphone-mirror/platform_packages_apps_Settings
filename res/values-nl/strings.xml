@@ -5868,8 +5868,15 @@
     <string name="main_clear_progress_esim_reset_text">"eSIM-reset is niet mogelijk zonder Wi-Fi-verbinding"</string>
     <string name="preferred_network_mode_change_dialogtitle">"Voorkeurstype netwerk is gewijzigd"</string>
     <string name="preferred_network_mode_change_waring_message">"De netwerkdekking kan door uw keuze worden verminderd"</string>
-    <string name="verification_confirm_your_password_header">"Voer verificatiecode in :"</string>
 
+    <!-- #609: [Bootloader unlock] Simplify bootloader unlock process  -->
+    <string name="oem_unlock_error_no_internet_connection">Verbindingsfout. Controleer uw internetverbinding en probeer het opnieuw.</string>
+    <string name="oem_unlock_error_server_error">Er is een probleem opgetreden bij het verwerken van uw verzoek. Probeer het opnieuw of neem contact op met Fairphone Support (support@fairphone.com).</string>
+    <string name="oem_unlock_error_forbidden">Uw apparaat kan niet worden ontgrendeld. Neem contact op met Fairphone Support (support@fairphone.com).</string>
+    <string name="unlock_request_loading">Controleren of het apparaat ontgrendeld kan worden...</string>
+    <string name="unlock_request_success_title">Success</string>
+    <string name="unlock_request_success_message">Het apparaat kan worden ontgrendeld</string>
+    <!-- end of [Bootloader unlock] Simplify bootloader unlock process -->
 
     <string name="gesture_switch_for_screenshot_title">"Schermafbeelding snelkoppeling"</string>
     <string name="gesture_switch_for_screenshot_subtitle">"Druk tegelijkertijd op de volumeknop omlaag en de aan/uit-knop"</string>

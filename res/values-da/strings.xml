@@ -5867,10 +5867,17 @@
     <string name="main_clear_progress_esim_reset_text">"Det er ikke muligt at aktivere eSIM-nulstilling uden Wi-Fi-forbindelse"</string>
     <string name="preferred_network_mode_change_dialogtitle">"Foretrukken netværkstype er ændret"</string>
     <string name="preferred_network_mode_change_waring_message">"Netværksdækningen kan være reduceret af dit valg"</string>
-    <string name="verification_confirm_your_password_header">"Indtast bekræftelseskode :"</string>
 
     <string name="aptxacu_apps_settings_summary">"Qualcomm aptX-indstillingerne er kun på engelsk."</string>
 
+    <!-- #609: [Bootloader unlock] Simplify bootloader unlock process  -->
+    <string name="oem_unlock_error_no_internet_connection">Forbindelsesfejl. Tjek venligst din internetforbindelse og prøv igen.</string>
+    <string name="oem_unlock_error_server_error">Der opstod et problem med at behandle din anmodning. Prøv venligst igen, eller kontakt Fairphone Support (support@fairphone.com).</string>
+    <string name="oem_unlock_error_forbidden">Din enhed kan ikke låses op. Kontakt venligst Fairphone Support (support@fairphone.com).</string>
+    <string name="unlock_request_loading">Kontrollerer, om enheden kan låses op...</string>
+    <string name="unlock_request_success_title">Succes</string>
+    <string name="unlock_request_success_message">Enheden kan låses op</string>
+    <!-- end of [Bootloader unlock] Simplify bootloader unlock process -->
 
     <string name="gesture_switch_for_screenshot_title">"Skærmbillede shotcut"</string>
     <string name="gesture_switch_for_screenshot_subtitle">"Tryk på lydstyrke ned + tænd/sluk-knappen på samme tid"</string>

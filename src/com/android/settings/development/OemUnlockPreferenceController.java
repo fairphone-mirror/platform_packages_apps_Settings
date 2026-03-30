@@ -18,15 +18,14 @@ package com.android.settings.development;
 
 import static com.android.settings.development.DevelopmentOptionsActivityRequestCodes.REQUEST_CODE_ENABLE_OEM_UNLOCK;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
+import android.os.Bundle;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.UserManager;
@@ -35,26 +34,13 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentResultListener;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
-//<2019/08/06-kanewang, [8901][FEATURE][COMMON][SETTINGS][][]Add oem_lock password protection feature.
-import com.android.internal.telephony.Phone;
-import com.android.internal.telephony.PhoneConstants;
-import com.android.internal.telephony.PhoneFactory;
-import android.widget.Toast;
-import android.util.Log;
-//>2019/08/06-kanewang
-
-//<2019/10/31-kanewang, [8901][FEATURE][COMMON][SETTINGS][][]Change oem_lock password protection algorithm with IMEI+SN.
-import android.os.Build;
-//>2019/10/31-kanewang
-//<2020/09/23,lucygao,OEM unlock flow change.
-import com.arima.settings.OemLockVerifier;
-import java.util.Timer;
-import java.util.TimerTask;
-//>2020/09/23,lucygao.
 
 import com.android.settings.R;
 import com.android.settings.core.PreferenceControllerMixin;
@@ -62,32 +48,31 @@ import com.android.settings.password.ChooseLockSettingsHelper;
 import com.android.settingslib.RestrictedSwitchPreference;
 import com.android.settingslib.development.DeveloperOptionsPreferenceController;
 
+import com.fairphone.settings.development.OemUnlockHelper;
+import com.fairphone.settings.development.OemUnlockRequestResultListener;
+import com.fairphone.settings.development.OemUnlockResult;
+import com.fairphone.settings.development.OemUnlockUtils;
+import com.fairphone.settings.development.OemUnlockUtilsKt;
+import com.fairphone.settings.development.UnlockRequestErrorDialog;
+import com.fairphone.settings.development.UnlockRequestLoadingDialog;
+
 public class OemUnlockPreferenceController extends DeveloperOptionsPreferenceController implements
-        Preference.OnPreferenceChangeListener, PreferenceControllerMixin, OnActivityResultListener {
+        Preference.OnPreferenceChangeListener, PreferenceControllerMixin, OnActivityResultListener,
+        OemUnlockRequestResultListener, FragmentResultListener {
 
     private static final String PREFERENCE_KEY = "oem_unlock_enable";
     private static final String TAG = "OemUnlockPreferenceController";
     private static final String OEM_UNLOCK_SUPPORTED_KEY = "ro.oem_unlock_supported";
     private static final String UNSUPPORTED = "-9999";
     private static final String SUPPORTED = "1";
-    private static final int HTTP_OK_RESULT = 0x01;
-    private static final int HTTP_CREATED_RESULT = 0x02;
-    private static final int HTTP_FAIL_RESULT = 0x03;
-    private static final int HTTP_VERIFY_FAIL_UNKNOWN = 0x04;
-    private static final boolean DEBUG = true;
-    private OemLockVerifier mVerifier = null;
-    private AlertDialog mWaitingDlg = null;
+
     private final OemLockManager mOemLockManager;
     private final UserManager mUserManager;
     private final TelephonyManager mTelephonyManager;
     private final Activity mActivity;
     @Nullable private final DevelopmentSettingsDashboardFragment mFragment;
     private RestrictedSwitchPreference mPreference;
-
-    //<2019/08/06-kanewang, [8901][FEATURE][COMMON][SETTINGS][][]Add oem_lock password protection feature.
-    private fp_password password_ckecker = new fp_password();
-    private Toast toast_msg = null;
-    //>2019/08/06-kanewang
+    private final OemUnlockHelper mOemUnlockHelper;
 
     public OemUnlockPreferenceController(Context context, Activity activity,
             @Nullable DevelopmentSettingsDashboardFragment fragment) {
@@ -104,6 +89,7 @@ public class OemUnlockPreferenceController extends DeveloperOptionsPreferenceCon
         mTelephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         mActivity = activity;
         mFragment = fragment;
+        mOemUnlockHelper = new OemUnlockHelper(this);
     }
 
     @Override
@@ -167,156 +153,186 @@ public class OemUnlockPreferenceController extends DeveloperOptionsPreferenceCon
         return false;
     }
 
+    /**
+     * Handles the result from a fragment.
+     *
+     * This method is called when a fragment that was started for a result
+     * (e.g., a dialog) returns a result. It checks if the request key
+     * matches {@link UnlockRequestErrorDialog#REQUEST_KEY}. If it does,
+     * it then checks the result bundle for the
+     * {@link UnlockRequestErrorDialog#PARAM_RETRY} boolean. If this
+     * parameter is true, it calls {@link #sendUnlockRequestToFactory()}
+     * to retry the unlock request.
+     *
+     * @param requestKey The unique key identifying the request.
+     * @param result A Bundle containing the result data.
+     */
+    @Override
+    public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+        if (requestKey.equals(UnlockRequestErrorDialog.REQUEST_KEY)) {
+            if (result.getBoolean(UnlockRequestErrorDialog.PARAM_RETRY)) {
+                sendUnlockRequestToFactory();
+            }
+        }
+    }
+
     @Override
     protected void onDeveloperOptionsSwitchEnabled() {
         handleDeveloperOptionsToggled();
     }
 
     public void onOemUnlockConfirmed() {
-        mOemLockManager.setOemUnlockAllowedByUser(true);
+        if (OemUnlockUtils.INSTANCE.isDebugOsBuild()) {
+            mOemLockManager.setOemUnlockAllowedByUser(true);
+            updatePreferenceState();
+        } else {
+            sendUnlockRequestToFactory();
+        }
     }
 
     public void onOemUnlockDismissed() {
+        updatePreferenceState();
+    }
+
+    private void updatePreferenceState() {
         if (mPreference == null) {
             return;
         }
         updateState(mPreference);
     }
 
-    //<2019/10/31-kanewang, [8901][FEATURE][COMMON][SETTINGS][][]Change oem_lock password protection algorithm with IMEI+SN.
-    private String getKey() {
-        String imei = getIMEI();
-        String sn = Build.getSerial();
-
-        //Log.e(TAG, "getKey input: imei=" + imei + ",sn=" + sn);
-
-        return imei + sn;
-    }
-    //>2019/10/31-kanewang
-
-    //<2019/08/06-kanewang, [8901][FEATURE][COMMON][SETTINGS][][]Add oem_lock password protection feature.
-    private String getIMEI() {
-        TelephonyManager telephonyManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
-        return telephonyManager.getImei(PhoneConstants.SIM_ID_1);
+    /**
+     * Sends a request to the OEM's factory service to determine if the device
+     * is eligible for OEM unlocking. This is typically an asynchronous operation.
+     * After sending the request, a dialog is shown to the user indicating that
+     * the system is waiting for a response from the server.
+     */
+    private void sendUnlockRequestToFactory() {
+        mOemUnlockHelper.sendUnlockRequest(mContext);
+        showWaitingServerResponseDialog();
     }
 
-    //<2020/09/23,lucygao,OEM unlock flow change.
-    Handler uiUpdater = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what)
-            {
-                case HTTP_OK_RESULT:
-                    if (mWaitingDlg.isShowing()) mWaitingDlg.dismiss();
-                    EnableOemUnlockSettingWarningDialog.show(mFragment);
-                    break;
-                case HTTP_CREATED_RESULT:
-                    if (mWaitingDlg.isShowing()) mWaitingDlg.dismiss();
-                    OemLockVerifyDialog.show(mFragment);
-                    break;
-                case HTTP_FAIL_RESULT:
-                    if (mWaitingDlg.isShowing()) mWaitingDlg.dismiss();
-                    break;
-                case HTTP_VERIFY_FAIL_UNKNOWN:
-                    if (mWaitingDlg.isShowing()) mWaitingDlg.dismiss();
-                    break;
-            }
+    /**
+     * Callback method invoked when the result of an OEM unlock request is received
+     * from the factory service.
+     * <p>
+     * This method dismisses any "waiting for server response" dialog. It then processes
+     * the {@code result} to determine if the request was successful, resulted in a
+     * connection error, or a generic error, and calls the appropriate handler method.
+     *
+     * @param result The {@link OemUnlockResult} object containing the outcome of the
+     *               OEM unlock request. Cannot be null.
+     */
+    @Override
+    public void onOemRequestResult(@NonNull OemUnlockResult result) {
+        dismissWaitingServerResponseDialog();
+
+        if (result instanceof OemUnlockResult.Success) {
+            onOemUnlockRequestSuccess();
+        } else {
+            onOemUnlockRequestError(result);
         }
-    };
-    public void onOemUnlockVerifyDialogConfirmed(String password) {
-        //verify entered password with IMEI>MD5
-        boolean verified = true;
-        String md5_out = "";
+    }
 
-        //<2019/10/31-kanewang, [8901][FEATURE][COMMON][SETTINGS][][]Change oem_lock password protection algorithm with IMEI+SN.
-        int checksum = 0;
-        int checksum_from_user = 0;
-        String s_checksum_from_user = "";
-        String key = getKey();
+    /**
+     * Handles the successful outcome of an OEM unlock request.
+     * <p>
+     * This method updates the system state to allow OEM unlocking by the user.
+     * The {@code MissingPermission} lint suppression is present because setting
+     * OEM unlock allowance might require specific system permissions that are assumed
+     * to be held by the Settings app.
+     */
+    @SuppressLint("MissingPermission")
+    private void onOemUnlockRequestSuccess() {
+        mOemLockManager.setOemUnlockAllowedByUser(true);
+        updatePreferenceState();
 
-        if (("".equals(key)) || ("".equals(password))) {
-            verified = false;
-        }
+        new AlertDialog.Builder(mFragment.getContext())
+                .setTitle(R.string.unlock_request_success_title)
+                .setMessage(R.string.unlock_request_success_message)
+                .setPositiveButton(
+                        R.string.reboot_dialog_reboot_now,
+                        (dialog, which) -> rebootDevice(mActivity)
+                )
+                .setNegativeButton(R.string.reboot_dialog_reboot_later, null)
+                .show();
+    }
 
-       // checksum_from_user = Integer.parseUnsignedInt(password, 16);
-        //s_checksum_from_user = Integer.toHexString(checksum_from_user);
+    private void rebootDevice(Context context) {
+        final Intent intent = new Intent(Intent.ACTION_REBOOT).setPackage("android");
+        context.startActivity(intent);
+    }
 
-        if (verified) {
-            Log.i(TAG, "mVerifier == null ? " + (mVerifier == null));
-            if (mVerifier == null) {
-                mVerifier = new OemLockVerifier(mContext, new OemLockVerifier.onResponseListener() {
-                    @Override
-                    public void onFinish(final int check_code, final String msg) {
-                        Log.i(TAG, "Verify oem lock Result : " + check_code + ",msg: " + msg);
-                        String message = msg;
+    /**
+     * Handles errors encountered during the OEM unlock request process.
+     * <p>
+     * This method displays an error dialog to the user with the provided {@code message}.
+     * The dialog offers options to retry the request or dismiss the process.
+     * The outcome of the user's interaction with the dialog (retry or dismiss)
+     * is handled by the provided lambda callback.
+     *
+     * @param error The error OemUnlockResult
+     */
+    private void onOemUnlockRequestError(OemUnlockResult error) {
+        if (mFragment == null) return;
 
-                        //process result
-                        //200 for pass, 400 for code incorrect, 404 for no such phone
-                        switch (check_code) {
-                            case OemLockVerifier.HTTP_OK:
-                                uiUpdater.obtainMessage(HTTP_OK_RESULT).sendToTarget();
-                                message = "Correct code";
-                                break;
-                            case OemLockVerifier.HTTP_VERIFY_FAIL_WRONG_CODE:
-                                uiUpdater.obtainMessage(HTTP_FAIL_RESULT).sendToTarget();
-                                message = "Incorrect code";
-                                break;
-                            case OemLockVerifier.HTTP_VERIFY_FAIL_NO_SUCH_PHONE:
-                                uiUpdater.obtainMessage(HTTP_FAIL_RESULT).sendToTarget();
-                                message = "No such phone";
-                                break;
-                            case OemLockVerifier.HTTP_VERIFY_FAIL_UNKNOWN:
-                                uiUpdater.obtainMessage(HTTP_VERIFY_FAIL_UNKNOWN).sendToTarget();
-                                message = "No internet connection found";
-                                break;
-                            default:
-                                //prmpt fail message
-                                break;
-                        }
-                        if (DEBUG) {
-                            Looper.prepare();
-                            Toast.makeText(mContext, message, Toast.LENGTH_LONG).show();
-                            Looper.loop();
+        String message = getOemUnlockRequestErrorMessage(error);
+
+        UnlockRequestErrorDialog.Companion
+                .show(mFragment, message, (requestKey, result) -> {
+                    if (requestKey.equals(UnlockRequestErrorDialog.REQUEST_KEY)) {
+                        dismissWaitingServerResponseDialog();
+
+                        if (result.getBoolean(UnlockRequestErrorDialog.PARAM_RETRY)) {
+                            sendUnlockRequestToFactory();
+                        } else {
+                            onOemUnlockDismissed();
                         }
                     }
                 });
-            }
-            Log.i(TAG, "invoke mVerifier.queryVerifyResult()----password="+password);
-            mVerifier.queryVerifyResultGet(password, getIMEI(), Build.getSerial());
-            //mVerifier.queryVerifyResultGet(password, "357811090354522", "A209FNJY0201");
-            //Show waiting dialog
-            showWaitingLockQueryDialog();
-
-        } else {
-            Toast.makeText(mContext, "Password verification failed.", Toast.LENGTH_LONG).show();
-        }
-
-        /*
-        if (verified) {
-            EnableOemUnlockSettingWarningDialog.show(mFragment);
-        } else {
-            Toast.makeText(mContext, "Password verification failed.", Toast.LENGTH_LONG).show();
-        }*/
-        //>2019/10/31-kanewang
     }
 
-    private void showWaitingLockQueryDialog() {
+    /**
+     * Find a user-friendly error message for the given OemUnlockResult error
+     *
+     * @param error The error OemUnlockResult
+     * @return a user-friendly error message
+     */
+    private String getOemUnlockRequestErrorMessage(OemUnlockResult error) {
+        Resources resources = mActivity.getResources();
+
+        String message = "";
+        if (error instanceof OemUnlockResult.ConnectionError) {
+            message = resources.getString(R.string.oem_unlock_error_no_internet_connection);
+        } else if (error instanceof OemUnlockResult.ServerError) {
+            message = resources.getString(R.string.oem_unlock_error_server_error);
+        } else if (error instanceof OemUnlockResult.ForbiddenError) {
+            message = resources.getString(R.string.oem_unlock_error_forbidden);
+        } else if (error instanceof OemUnlockResult.Error) {
+            message = resources.getString(R.string.oem_unlock_error_server_error);
+        }
+        return message;
+    }
+
+    private void showWaitingServerResponseDialog() {
         if (mContext == null) return;
 
-        mWaitingDlg = new AlertDialog.Builder(mContext)
-                //.setTitle("Waiting")
-                .setMessage("Processing...")
-                .create();
-        mWaitingDlg.show();
+        UnlockRequestLoadingDialog.Companion.show(mFragment, () -> {
+            onOemUnlockDismissed();
+            return null;
+        });
     }
-    //>2020/09/23,lucygao.
-    public void onOemUnlockVerifyDialogDismissed() {
-        if (mPreference == null) {
-            return;
+
+    private void dismissWaitingServerResponseDialog() {
+        if (mFragment != null) {
+            final FragmentManager manager = mFragment.getChildFragmentManager();
+            UnlockRequestLoadingDialog dialog = (UnlockRequestLoadingDialog) manager
+                    .findFragmentByTag(UnlockRequestLoadingDialog.TAG);
+            if (dialog != null) {
+                dialog.dismissAllowingStateLoss();
+            }
         }
-        updateState(mPreference);
     }
-    //>2019/08/06-kanewang
 
     private void handleDeveloperOptionsToggled() {
         mPreference.setEnabled(enableOemUnlockPreference());
@@ -384,15 +400,7 @@ public class OemUnlockPreferenceController extends DeveloperOptionsPreferenceCon
 
     @VisibleForTesting
     void confirmEnableOemUnlock() {
-        if (isDebugOsBuild()) {
-            EnableOemUnlockSettingWarningDialog.show(mFragment);
-        }else {
-            OemLockVerifyDialog.show(mFragment);
-        }
-    }
-
-    private boolean isDebugOsBuild() {
-        return "userdebug".equals(Build.TYPE) || "eng".equals(Build.TYPE);
+        EnableOemUnlockSettingWarningDialog.show(mFragment);
     }
 
     /**

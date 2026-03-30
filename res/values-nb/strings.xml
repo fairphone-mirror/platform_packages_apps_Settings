@@ -5788,7 +5788,6 @@
     <string name="main_clear_progress_esim_reset_text">"Det er ikke mulig å aktivere eSIM-tilbakestilling uten Wi-Fi-tilkobling"</string>
     <string name="preferred_network_mode_change_dialogtitle">"Foretrukket nettverkstype er endret"</string>
     <string name="preferred_network_mode_change_waring_message">"Nettverksdekningen kan bli redusert av valget ditt"</string>
-    <string name="verification_confirm_your_password_header">"Skriv inn bekreftelseskode :"</string>
 
     <string name="aptxacu_apps_settings_summary">"Innstillingene for Qualcomm aptX er kun tilgjengelige på engelsk."</string>
 

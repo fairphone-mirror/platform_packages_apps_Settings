@@ -16,10 +16,8 @@ import android.view.WindowManager;
 
 import com.android.internal.telephony.PhoneConstants;
 import com.android.settingslib.development.DevelopmentSettingsEnabler;
-import com.arima.settings.OemLockVerifier;
 import android.content.DialogInterface;
 import java.io.File;
-import java.io.IOException;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import android.os.UserHandle;
@@ -36,7 +34,6 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
     private static final String HOST_CODE_REGULATORY_INFO = "3522";
     private static final String HOST_CODE_MODULEINFO = "001";
     private static final String HOST_CODE_IMS = "23486583";
-    private static final String HOST_CODE_TEST_OEM_UNLOCK = "002";
     private static final String HOST_CODE_BATTERY_HEALTY = "2288379";
     private static final String HOST_CODE_FEEDBACK = "0574";
     private static final String BATTERY_HEALTY_ENABLE = "persist.sys.battery.healty.enable";
@@ -123,9 +120,6 @@ public class PhoneCodeReceiver extends BroadcastReceiver {
                         .create();
                 alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
                 alert.show();
-            } else if (HOST_CODE_TEST_OEM_UNLOCK.equals(host)) {
-                OemLockVerifier oemLockVerifier = new OemLockVerifier(context, (check_code, msg) -> Log.e(TAG, "oemLockVerifier queryVerifyResult msg > " + msg));
-                oemLockVerifier.queryVerifyResult(getIMEI(), Build.getSerial());
             } else if (HOST_CODE_BATTERY_HEALTY.equals(host)){
                 if(fpstxtIsExists()) {
                     String status = SystemProperties.get(BATTERY_HEALTY_ENABLE, "Close");
