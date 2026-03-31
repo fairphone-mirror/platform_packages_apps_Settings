@@ -46,10 +46,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-                android:textAppearance="@*android:style/TextAppearance.DeviceDefault.Subhead"
-                android:textSize="20sp"
                 android:textAlignment="viewStart"
                 android:ellipsize="marquee"
+                android:textAppearance="@*android:style/TextAppearance.DeviceDefault.Subhead"
+                android:fontFamily="@*android:string/config_headlineFontFamilyMedium"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@android:id/summary"/>
 
@@ -59,9 +60,10 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="viewStart"
                 android:textAppearance="@*android:style/TextAppearance.DeviceDefault.Body1"
-                android:textSize="20sp"
                 android:textColor="?android:attr/textColorSecondary"
                 android:maxLines="10"
+                android:fontFamily="sans-serif"
+                android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@android:id/title"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
